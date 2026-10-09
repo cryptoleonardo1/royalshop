@@ -1,0 +1,4003 @@
+{
+  "categories": [
+    {
+      "slug": "aku-naradie",
+      "name": "Aku náradie",
+      "parent_slug": null,
+      "description": "Profesionálne akumulátorové náradie Makita na platformách LXT 18V a XGT 40V – sólo telá aj kompletné sady s batériami.",
+      "sort_order": 1
+    },
+    {
+      "slug": "elektricke-naradie",
+      "name": "Elektrické náradie",
+      "parent_slug": null,
+      "description": "Sieťové náradie pre nepretržitú záťaž na stavbe: kladivá, brúsky, píly a priemyselné vysávače.",
+      "sort_order": 2
+    },
+    {
+      "slug": "stavebne-stroje",
+      "name": "Stavebné stroje",
+      "parent_slug": null,
+      "description": "Hutniaca a rezacia technika pre stavby a záhradnú architektúru – vibračné dosky, pechy, valce a rezačky škár.",
+      "sort_order": 3
+    },
+    {
+      "slug": "zahradna-technika",
+      "name": "Záhradná technika",
+      "parent_slug": null,
+      "description": "Akumulátorové kosačky, reťazové píly, krovinorezy a zemné vrtáky pre profesionálov aj náročných majiteľov pozemkov.",
+      "sort_order": 4
+    },
+    {
+      "slug": "baterie-a-nabijacky",
+      "name": "Batérie a nabíjačky",
+      "parent_slug": null,
+      "description": "Originálne batérie a rýchlonabíjačky Makita LXT 18V a XGT 40V.",
+      "sort_order": 5
+    },
+    {
+      "slug": "prislusenstvo",
+      "name": "Príslušenstvo",
+      "parent_slug": null,
+      "description": "Kufre, rezné kotúče a ďalšie originálne príslušenstvo k náradiu.",
+      "sort_order": 6
+    },
+    {
+      "slug": "aku-vrtacie-a-buracie-kladiva",
+      "name": "Aku vŕtacie a búracie kladivá",
+      "parent_slug": "aku-naradie",
+      "description": "Akumulátorové kladivá SDS-plus a SDS-max na vŕtanie a sekanie bez kábla.",
+      "sort_order": 1
+    },
+    {
+      "slug": "aku-razove-utahovace",
+      "name": "Aku rázové uťahovače",
+      "parent_slug": "aku-naradie",
+      "description": "Vysokomomentové rázové uťahovače pre montáže oceľových konštrukcií, kotvenie a servis.",
+      "sort_order": 2
+    },
+    {
+      "slug": "aku-vrtacky-a-skrutkovace",
+      "name": "Aku vŕtačky a skrutkovače",
+      "parent_slug": "aku-naradie",
+      "description": "Príklepové vŕtačky so skrutkovačom s bezuhlíkovými motormi.",
+      "sort_order": 3
+    },
+    {
+      "slug": "aku-brusky",
+      "name": "Aku uhlové brúsky",
+      "parent_slug": "aku-naradie",
+      "description": "Veľké akumulátorové uhlové brúsky 230 mm na rezanie a brúsenie.",
+      "sort_order": 4
+    },
+    {
+      "slug": "aku-pily",
+      "name": "Aku píly a rozbrusovačky",
+      "parent_slug": "aku-naradie",
+      "description": "Kotúčové, ponorné a rozbrusovacie píly na batériu.",
+      "sort_order": 5
+    },
+    {
+      "slug": "vrtacie-kladiva",
+      "name": "Vŕtacie kladivá",
+      "parent_slug": "elektricke-naradie",
+      "description": "Kombinované kladivá SDS-max na vŕtanie veľkých priemerov a sekanie.",
+      "sort_order": 1
+    },
+    {
+      "slug": "buracie-kladiva",
+      "name": "Búracie kladivá",
+      "parent_slug": "elektricke-naradie",
+      "description": "Sekacie a búracie kladivá SDS-max a so šesťhranným upnutím 30 mm.",
+      "sort_order": 2
+    },
+    {
+      "slug": "brusky",
+      "name": "Brúsky",
+      "parent_slug": "elektricke-naradie",
+      "description": "Uhlové brúsky a brúsky na betón pre ťažkú prácu.",
+      "sort_order": 3
+    },
+    {
+      "slug": "pily",
+      "name": "Píly a drážkovačky",
+      "parent_slug": "elektricke-naradie",
+      "description": "Pokosové a ponorné píly, drážkovacie frézy do muriva.",
+      "sort_order": 4
+    },
+    {
+      "slug": "priemyselne-vysavace",
+      "name": "Priemyselné vysávače",
+      "parent_slug": "elektricke-naradie",
+      "description": "Stavebné vysávače triedy L a M pre prácu s prachom.",
+      "sort_order": 5
+    },
+    {
+      "slug": "vibracne-dosky",
+      "name": "Vibračné dosky",
+      "parent_slug": "stavebne-stroje",
+      "description": "Jednosmerné a reverzné vibračné dosky na hutnenie zemín, štrku a dlažby.",
+      "sort_order": 1
+    },
+    {
+      "slug": "vibracne-pechy",
+      "name": "Vibračné pechy",
+      "parent_slug": "stavebne-stroje",
+      "description": "Vibračné nohy (pechy) na hutnenie súdržných zemín vo výkopoch a okolo potrubí.",
+      "sort_order": 2
+    },
+    {
+      "slug": "vibracne-valce",
+      "name": "Vibračné valce",
+      "parent_slug": "stavebne-stroje",
+      "description": "Vedené vibračné valce pre plošné hutnenie podkladov a asfaltu.",
+      "sort_order": 3
+    },
+    {
+      "slug": "rezacky-skar",
+      "name": "Rezačky škár",
+      "parent_slug": "stavebne-stroje",
+      "description": "Benzínové rezače škár do betónu a asfaltu s vodným chladením.",
+      "sort_order": 4
+    },
+    {
+      "slug": "miesadla",
+      "name": "Miešadlá",
+      "parent_slug": "stavebne-stroje",
+      "description": "Ručné miešadlá na malty, lepidlá a betónové zmesi.",
+      "sort_order": 5
+    },
+    {
+      "slug": "kosacky",
+      "name": "Aku kosačky",
+      "parent_slug": "zahradna-technika",
+      "description": "Akumulátorové kosačky na trávu bez hluku a výfukových plynov.",
+      "sort_order": 1
+    },
+    {
+      "slug": "retazove-pily",
+      "name": "Reťazové píly",
+      "parent_slug": "zahradna-technika",
+      "description": "Akumulátorové reťazové píly s výkonom porovnateľným s benzínovými.",
+      "sort_order": 2
+    },
+    {
+      "slug": "krovinorezy",
+      "name": "Krovinorezy",
+      "parent_slug": "zahradna-technika",
+      "description": "Akumulátorové krovinorezy a vyžínače.",
+      "sort_order": 3
+    },
+    {
+      "slug": "zemne-vrtaky",
+      "name": "Zemné vrtáky",
+      "parent_slug": "zahradna-technika",
+      "description": "Akumulátorové pôdne vrtáky na jamy pre stĺpiky a výsadbu.",
+      "sort_order": 4
+    },
+    {
+      "slug": "baterie",
+      "name": "Batérie",
+      "parent_slug": "baterie-a-nabijacky",
+      "description": "Originálne Li-ion batérie Makita s indikátorom nabitia.",
+      "sort_order": 1
+    },
+    {
+      "slug": "nabijacky",
+      "name": "Nabíjačky",
+      "parent_slug": "baterie-a-nabijacky",
+      "description": "Rýchlonabíjačky s aktívnym chladením batérie.",
+      "sort_order": 2
+    },
+    {
+      "slug": "kufre",
+      "name": "Kufre a systémové boxy",
+      "parent_slug": "prislusenstvo",
+      "description": "Systémové kufre MAKPAC na prepravu a uskladnenie náradia.",
+      "sort_order": 1
+    },
+    {
+      "slug": "rezne-kotuce",
+      "name": "Rezné kotúče",
+      "parent_slug": "prislusenstvo",
+      "description": "Diamantové kotúče na betón, kameň a stavebné materiály.",
+      "sort_order": 2
+    }
+  ],
+  "brands": [
+    {
+      "slug": "makita",
+      "name": "Makita",
+      "manufacturer_name": "Makita Corporation",
+      "manufacturer_address": "3-11-8 Sumiyoshi-cho, Anjo, Aichi 446-8502, Japonsko; zodpovedná osoba v EÚ (SK): Makita s.r.o., Priemyselná 26, 974 01 Banská Bystrica, Slovenská republika",
+      "manufacturer_email": "info@makita.sk",
+      "website": "https://www.makita.sk"
+    },
+    {
+      "slug": "ntc",
+      "name": "NTC",
+      "manufacturer_name": "NTC STAVEBNÍ TECHNIKA spol. s r.o.",
+      "manufacturer_address": "Jiřinková 120, 552 03 Česká Skalice, Česká republika",
+      "manufacturer_email": "info@ntc.cz",
+      "website": "https://www.ntc.cz"
+    }
+  ],
+  "products": [
+    {
+      "slug": "makita-tw001gm201",
+      "name": "Makita TW001GM201 Aku rázový uťahovač 3/4\" XGT 40V (2× 4,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-razove-utahovace",
+      "sku": "TW001GM201",
+      "ean": "0088381721059",
+      "short_description": "Najsilnejší rázový uťahovač Makita s momentom až 2 000 Nm v kompletnej sade s dvoma batériami 4,0 Ah a nabíjačkou.",
+      "description": "Model **TW001G** je určený na prácu, pri ktorej bežné uťahovače nestačia – montáž oceľových konštrukcií, kotvenie veľkých skrutiek, servis nákladných vozidiel a stavebných strojov. Bezuhlíkový motor napájaný z platformy XGT 40V dosahuje uťahovací moment 1 630 Nm a pri povoľovaní až 2 000 Nm.\n\nŠtyri stupne výkonu a elektronicky riadené režimy umožňujú presne dávkovať silu, takže rovnaký nástroj zvládne citlivé dotiahnutie aj uvoľnenie zhrdzaveného spoja. Upínanie 3/4\" štvorhran je štandardom pre nástrčné hlavice vyšších rozmerov.\n\nSada obsahuje dve batérie 4,0 Ah, rýchlonabíjačku DC40RA a systémový kufor – stačí vybaliť a pracovať.",
+      "price_gross_eur": 699.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 465.81,
+      "vat_rate": 23,
+      "weight_kg": 9.0,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja alebo údržbou vyberte batériu. Používajte ochranné okuliare, chrániče sluchu a rukavice. Batérie nabíjajte len originálnou nabíjačkou Makita a chráňte ich pred teplotami nad 50 °C.",
+      "is_featured": true,
+      "rental_url": "https://royalstroje.sk/makita-tw001gm201",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "torque_nm",
+          "label": "Max. uťahovací moment",
+          "value": "1630",
+          "unit": "Nm",
+          "is_filterable": true
+        },
+        {
+          "key": "loosening_torque_nm",
+          "label": "Povoľovací moment",
+          "value": "2000",
+          "unit": "Nm",
+          "is_filterable": false
+        },
+        {
+          "key": "anvil",
+          "label": "Upínanie",
+          "value": "3/4\" štvorhran",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "ipm",
+          "label": "Počet príklepov",
+          "value": "0 – 2 500",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "4.2",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "4.0",
+          "unit": "Ah",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-tw001gm201.webp",
+        "/demo-products/makita-tw001gm201-2.webp"
+      ]
+    },
+    {
+      "slug": "makita-ce001gz",
+      "name": "Makita CE001GZ Aku rozbrusovacia píla 355 mm XGT 2× 40V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-pily",
+      "sku": "CE001GZ",
+      "ean": "0088381760911",
+      "short_description": "Akumulátorová rozbrusovačka s kotúčom 355 mm a hĺbkou rezu 127 mm – výkon benzínovej píly bez výfukových plynov.",
+      "description": "**CE001G** nahrádza benzínové rozbrusovačky všade, kde prekáža hluk, výpary alebo zložité štartovanie – v interiéroch, šachtách aj v obývaných zónach. Napájajú ju dve batérie XGT 40V, ktoré poháňajú bezuhlíkový motor s otáčkami 5 300 min⁻¹.\n\nKotúč s priemerom 355 mm prereže betón, dlažbu, obrubníky či kanalizačné rúry do hĺbky 127 mm. Prípojka na vodu viaže prach priamo pri reze a elektronika chráni motor aj batérie pred preťažením.\n\nDodáva sa bez batérií a nabíjačky – odporúčame dve batérie BL4050F a dvojnabíjačku DC40RB.",
+      "price_gross_eur": 919.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 588.31,
+      "vat_rate": 23,
+      "weight_kg": 10.3,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": true,
+      "rental_url": "https://royalstroje.sk/makita-ce001gz",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "80",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× XGT 40 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "355",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "127",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "5 300",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť s batériami (EPTA)",
+          "value": "12.3",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-ce001gz.webp"
+      ]
+    },
+    {
+      "slug": "makita-hr005gz01",
+      "name": "Makita HR005GZ01 Aku vŕtacie a sekacie kladivo SDS-max XGT 40V (bez batérie)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacie-a-buracie-kladiva",
+      "sku": "HR005GZ01",
+      "ean": "0088381732437",
+      "short_description": "Kombinované kladivo SDS-max s energiou úderu 8 J, ktoré výkonom zodpovedá sieťovým 40 mm kladivám.",
+      "description": "**HR005G** je akumulátorová alternatíva k osvedčeným sieťovým kladivám triedy 40 mm. Energia úderu 8,0 J (EPTA) stačí na vŕtanie otvorov do priemeru 40 mm v betóne, vŕtanie korunkami aj na ľahšie sekacie práce.\n\nAntivibračný systém AVT znižuje zaťaženie rúk a funkcia AFT okamžite zastaví motor, keď sa vrták zasekne. Vďaka bezdrôtovému prepojeniu AWS môžete kladivo spárovať s vysávačom, ktorý sa zapne spolu s náradím.\n\nBalenie obsahuje kufor, bočnú rukoväť a hĺbkový doraz; batérie a nabíjačka nie sú súčasťou dodávky.",
+      "price_gross_eur": 759.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 522.94,
+      "vat_rate": 23,
+      "weight_kg": 8.2,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": true,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "8.0",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Max. priemer vŕtania v betóne",
+          "value": "40",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "1 450 – 2 900",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "8.2",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-hm001gz02",
+      "name": "Makita HM001GZ02 Aku búracie kladivo SDS-max XGT 40V (bez batérie)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacie-a-buracie-kladiva",
+      "sku": "HM001GZ02",
+      "ean": "0088381732598",
+      "short_description": "Kompaktné akumulátorové sekacie kladivo SDS-max s energiou úderu 9,4 J pre rekonštrukcie a inštalácie.",
+      "description": "Sekacie kladivo **HM001G** je ideálne na odstraňovanie obkladov, sekanie drážok a prestupov a búranie menších konštrukcií tam, kde nie je k dispozícii elektrická prípojka. Energia úderu 9,4 J (EPTA) je porovnateľná so sieťovými kladivami 6 kg triedy.\n\nSekáč je možné nastaviť do 12 polôh, čo uľahčuje prácu v rohoch a pri stropoch. Bezuhlíkový motor a ochrana XPT zaručujú dlhú životnosť aj v prašnom prostredí stavby.\n\nDodávka zahŕňa kufor, bočnú rukoväť a modul AWS; batéria a nabíjačka sa objednávajú samostatne.",
+      "price_gross_eur": 429.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 266.24,
+      "vat_rate": 23,
+      "weight_kg": 7.1,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "9.4",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "0 – 2 650",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "7.1",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-hm002gz03",
+      "name": "Makita HM002GZ03 Aku búracie kladivo SDS-max XGT 2× 40V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacie-a-buracie-kladiva",
+      "sku": "HM002GZ03",
+      "ean": null,
+      "short_description": "Ťažké akumulátorové búracie kladivo s energiou úderu 20,9 J napájané dvoma batériami XGT.",
+      "description": "**HM002G** posúva akumulátorové búranie do triedy 12 kg kladív. Dve batérie XGT 40V poháňajú bezuhlíkový motor, ktorý dodáva energiu úderu 20,9 J (EPTA) – dosť na búranie stien, základov či betónových podláh.\n\nKonštrukcia s antivibračnou technológiou AVT tlmí rázy, takže s kladivom sa dá pracovať dlhšie bez únavy. Absenciu kábla oceníte najmä na lešení, na streche alebo pri búracích prácach na viacerých miestach stavby.\n\nV balení je kufor a špicatý sekáč; batérie a nabíjačka nie sú súčasťou.",
+      "price_gross_eur": 689.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 451.74,
+      "vat_rate": 23,
+      "weight_kg": 12.0,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "80",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× XGT 40 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "20.9",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "950 – 1 900",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "13.3",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-ga038gz",
+      "name": "Makita GA038GZ Aku uhlová brúska 230 mm XGT 40V (bez batérie)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-brusky",
+      "sku": "GA038GZ",
+      "ean": "0088381733755",
+      "short_description": "Veľká akumulátorová uhlová brúska 230 mm s bezuhlíkovým motorom, brzdou a ochranou proti spätnému rázu.",
+      "description": "**GA038G** prináša výkon 230 mm sieťovej brúsky bez kábla. Je vhodná na rezanie dlažby, betónových tvárnic, ocele a na hrubé brúsenie zvarov priamo na stavbe.\n\nElektronická brzda zastaví kotúč v priebehu niekoľkých sekúnd a systém AFT okamžite vypne motor pri zaseknutí kotúča. Modul AWS umožňuje automatické spúšťanie kompatibilného vysávača.\n\nDodávka obsahuje ochranný kryt, bočnú rukoväť, prírubu a kľúč. Batéria a nabíjačka nie sú súčasťou balenia.",
+      "price_gross_eur": 249.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 168.7,
+      "vat_rate": 23,
+      "weight_kg": 4.6,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "230",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "6 600",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "spindle",
+          "label": "Závit vretena",
+          "value": "M14",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "73",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "4.6",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-uc030gz01",
+      "name": "Makita UC030GZ01 Aku reťazová píla XGT 40V (bez batérie)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "retazove-pily",
+      "sku": "UC030GZ01",
+      "ean": null,
+      "short_description": "Profesionálna akumulátorová reťazová píla s výkonom triedy 50 cm³ benzínových píl a rýchlosťou reťaze 29 m/s.",
+      "description": "**UC030G** je určená pre lesníkov, arboristov a stavebné firmy, ktoré chcú nahradiť benzínovú pílu strednej triedy. Bezuhlíkový motor dosahuje rýchlosť reťaze 29 m/s a pri použití výkonnej batérie sa výkonom vyrovná píle s objemom 50 cm³.\n\nPíla je kompatibilná s lištami 40, 45 a 50 cm a reťazou s deľbou 0,325\". Automatické mazanie s nádržkou 260 ml a ochrana XPT proti prachu a vlhkosti (IPX4) ju predurčujú na celodenné nasadenie.\n\nBatéria a nabíjačka nie sú súčasťou dodávky.",
+      "price_gross_eur": 599.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 366.16,
+      "vat_rate": 23,
+      "weight_kg": 4.5,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pri práci s reťazovou pílou noste ochrannú prilbu so štítom, chrániče sluchu, protiporezové nohavice, rukavice a obuv. Pred čistením a napínaním reťaze vyberte batériu. Dbajte na riziko spätného vrhu.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-uc030gz01",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "bar_cm",
+          "label": "Kompatibilné lišty",
+          "value": "40 / 45 / 50",
+          "unit": "cm",
+          "is_filterable": false
+        },
+        {
+          "key": "chain_pitch",
+          "label": "Deľba reťaze",
+          "value": "0,325\"",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "chain_speed",
+          "label": "Rýchlosť reťaze",
+          "value": "29",
+          "unit": "m/s",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť bez batérie",
+          "value": "4.5",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-lm001gz",
+      "name": "Makita LM001GZ Aku kosačka s pojazdom 48 cm XGT 40V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "kosacky",
+      "sku": "LM001GZ",
+      "ean": "0088381773850",
+      "short_description": "Samohybná akumulátorová kosačka s oceľovým skeletom a záberom 48 cm pre veľké trávniky.",
+      "description": "**LM001G** je profesionálna kosačka pre údržbu väčších plôch – záhrady, areály firiem či bytové domy. Oceľový skelet so záberom 48 cm a samohybný pojazd s plynulou reguláciou 1,5 – 5 km/h uľahčujú kosenie aj vo svahu.\n\nVýšku kosenia nastavíte v rozsahu 20 – 100 mm, kôš má objem 62 litrov. Dva sloty na batérie XGT predlžujú prevádzku bez prestávky na nabíjanie.\n\nDodáva sa bez batérií a nabíjačky. Vzhľadom na hmotnosť a rozmery doručujeme vlastnou dopravou.",
+      "price_gross_eur": 729.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 510.93,
+      "vat_rate": 23,
+      "weight_kg": 33.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred čistením, nastavovaním alebo výmenou nástroja vyberte batériu. Noste ochranné okuliare, pevnú obuv a dlhé nohavice; udržujte deti a zvieratá v bezpečnej vzdialenosti.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_width_cm",
+          "label": "Šírka záberu",
+          "value": "48",
+          "unit": "cm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_height",
+          "label": "Výška kosenia",
+          "value": "20 – 100",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "catcher_l",
+          "label": "Objem koša",
+          "value": "62",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "drive",
+          "label": "Pojazd",
+          "value": "1,5 – 5 km/h",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "33.0",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-hp001gm201",
+      "name": "Makita HP001GM201 Aku príklepová vŕtačka XGT 40V (2× 4,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacky-a-skrutkovace",
+      "sku": "HP001GM201",
+      "ean": "0088381894104",
+      "short_description": "Výkonná príklepová vŕtačka so skrutkovačom s momentom 140 Nm v sade s dvoma batériami a nabíjačkou.",
+      "description": "**HP001G** je vlajková loď medzi akumulátorovými vŕtačkami Makita. Krútiaci moment 140 Nm zvládne vŕtanie veľkých priemerov do dreva, oceľové korunky aj skrutkovanie dlhých tesárskych skrutiek.\n\nDva mechanické prevodové stupne a elektronická spojka zaisťujú presnú kontrolu, príklepová funkcia poslúži pri vŕtaní do muriva. Rýchloupínacie sklučovadlo 13 mm drží nástroj pevne aj pri vysokom zaťažení.\n\nSada obsahuje dve batérie BL4040, nabíjačku DC40RA a kufor MAKPAC.",
+      "price_gross_eur": 579.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 364.91,
+      "vat_rate": 23,
+      "weight_kg": 6.5,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja alebo údržbou vyberte batériu. Používajte ochranné okuliare, chrániče sluchu a rukavice. Batérie nabíjajte len originálnou nabíjačkou Makita a chráňte ich pred teplotami nad 50 °C.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "torque_nm",
+          "label": "Max. uťahovací moment",
+          "value": "140",
+          "unit": "Nm",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Sklučovadlo",
+          "value": "13",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "0 – 650 / 0 – 2 600",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť náradia",
+          "value": "2.7",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "4.0",
+          "unit": "Ah",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-bl4050f",
+      "name": "Makita BL4050F Batéria XGT 40V 5,0 Ah",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "baterie",
+      "sku": "BL4050F",
+      "ean": "0088381580946",
+      "short_description": "Vysokovýkonná batéria XGT 40V s kapacitou 5,0 Ah a krytím IP64 pre najnáročnejšie náradie.",
+      "description": "**BL4050F** je výkonová batéria pre celú platformu XGT 40V. Je vhodná najmä pre náradie s vysokým odberom – rozbrusovacie píly, kladivá SDS-max či reťazové píly.\n\nIntegrovaný čip komunikuje s náradím a nabíjačkou a chráni články pred preťažením, prehriatím aj hlbokým vybitím. Krytie IP64 zvyšuje odolnosť voči prachu a striekajúcej vode.\n\nNa nabíjačke DC40RA je plne nabitá približne za 50 minút.",
+      "price_gross_eur": 199.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 128.4,
+      "vat_rate": 23,
+      "weight_kg": 1.3,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Predĺžená 3-ročná záruka Makita po registrácii sa na batérie a nabíjačky nevzťahuje – platí zákonná záruka 24 mesiacov.",
+      "safety_info": "Batériu nevystavujte teplotám nad 50 °C, vode ani mechanickému poškodeniu. Neskratujte kontakty. Poškodenú batériu prestaňte používať a odovzdajte ju na recykláciu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "5.0",
+          "unit": "Ah",
+          "is_filterable": true
+        },
+        {
+          "key": "ip",
+          "label": "Krytie",
+          "value": "IP64",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "1.3",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "charge_time",
+          "label": "Čas nabíjania (DC40RA)",
+          "value": "cca 50",
+          "unit": "min",
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dc40rb",
+      "name": "Makita DC40RB Dvojitá rýchlonabíjačka XGT 40V",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "nabijacky",
+      "sku": "DC40RB",
+      "ean": "0088381579117",
+      "short_description": "Dvojportová rýchlonabíjačka, ktorá súčasne nabije dve batérie XGT 40V s aktívnym chladením.",
+      "description": "**DC40RB** šetrí čas všade, kde sa pracuje s náradím na dve batérie alebo vo viacerých ľuďoch. Dve batérie BL4050F nabije súčasne približne za 50 minút.\n\nVentilátor aktívne chladí články počas nabíjania, čo predlžuje ich životnosť. Digitálna komunikácia s batériou optimalizuje nabíjací prúd podľa teploty a stavu článkov.\n\nS adaptérom ADP10 je možné nabíjať aj batérie LXT 18V.",
+      "price_gross_eur": 169.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 113.55,
+      "vat_rate": 23,
+      "weight_kg": 2.0,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Predĺžená 3-ročná záruka Makita po registrácii sa na batérie a nabíjačky nevzťahuje – platí zákonná záruka 24 mesiacov.",
+      "safety_info": "Nabíjačku používajte len v suchom interiéri a len s originálnymi batériami Makita. Nezakrývajte vetracie otvory a pri poškodenom kábli ju nepoužívajte.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Výstupné napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "ports",
+          "label": "Počet portov",
+          "value": "2",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "input",
+          "label": "Vstupné napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": false
+        },
+        {
+          "key": "charge_time",
+          "label": "Nabitie 2× 5,0 Ah",
+          "value": "cca 50",
+          "unit": "min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "2.0",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dg002gz",
+      "name": "Makita DG002GZ Aku pôdny vrták XGT 40V (bez batérie)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "zemne-vrtaky",
+      "sku": "DG002GZ",
+      "ean": null,
+      "short_description": "Akumulátorový pôdny vrták na jamy do priemeru 200 mm s dvoma rýchlostnými stupňami a spätným chodom.",
+      "description": "**DG002G** urýchli osádzanie plotových stĺpikov, výsadbu stromčekov či prípravu základov pre terasy. Vrták zvládne jamy až do priemeru 200 mm a vďaka akumulátorovému pohonu je pripravený okamžite – bez miešania paliva a štartovania.\n\nDva prevodové stupne (0 – 400 a 0 – 1 500 min⁻¹) umožňujú prispôsobiť otáčky typu pôdy. Spätný chod pomáha uvoľniť zaseknutý vrták v kamenistom teréne.\n\nDodáva sa bez batérie, nabíjačky a vrtákov.",
+      "price_gross_eur": 479.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 288.47,
+      "vat_rate": 23,
+      "weight_kg": 8.0,
+      "shipping_class": "courier",
+      "battery_platform": "XGT_40V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred čistením, nastavovaním alebo výmenou nástroja vyberte batériu. Noste ochranné okuliare, pevnú obuv a dlhé nohavice; udržujte deti a zvieratá v bezpečnej vzdialenosti.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-dg002gz",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "40",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "torque_nm",
+          "label": "Max. krútiaci moment",
+          "value": "136",
+          "unit": "Nm",
+          "is_filterable": true
+        },
+        {
+          "key": "max_diameter",
+          "label": "Max. priemer vrtáka",
+          "value": "200",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky",
+          "value": "0 – 400 / 0 – 1 500",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "8.0",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dhr400zkun",
+      "name": "Makita DHR400ZKUN Aku vŕtacie a sekacie kladivo SDS-max 2× 18V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacie-a-buracie-kladiva",
+      "sku": "DHR400ZKUN",
+      "ean": null,
+      "short_description": "Kladivo SDS-max s energiou 8 J napájané dvoma batériami LXT 18V – ideálne, ak už máte batérie LXT.",
+      "description": "**DHR400** je odpoveď pre firmy, ktoré majú vybavenie na platforme LXT 18V a potrebujú 40 mm kladivo bez kábla. Dve batérie 18V napájajú bezuhlíkový motor s energiou úderu 8,0 J (EPTA).\n\nAntivibračná technológia AVT, ochrana XPT a modul AWS pre bezdrôtové spúšťanie vysávača robia z kladiva plnohodnotnú náhradu sieťových modelov pri vŕtaní kotiev, prestupov a pri sekaní.\n\nV balení je kufor, bočná rukoväť, hĺbkový doraz a modul AWS; batérie a nabíjačka nie sú súčasťou.",
+      "price_gross_eur": 709.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 484.39,
+      "vat_rate": 23,
+      "weight_kg": 7.3,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": true,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× LXT 18 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "8.0",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Max. priemer vŕtania v betóne",
+          "value": "40",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "8.1",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dhr241rtj",
+      "name": "Makita DHR241RTJ Aku vŕtacie kladivo SDS-plus 18V (2× 5,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacie-a-buracie-kladiva",
+      "sku": "DHR241RTJ",
+      "ean": null,
+      "short_description": "Ľahké akumulátorové kladivo SDS-plus pre elektrikárov a inštalatérov v kompletnej sade s dvoma batériami 5,0 Ah.",
+      "description": "**DHR241** je obľúbený pomocník pri inštaláciách – vŕtanie otvorov pre hmoždinky, kotvy a krabice do priemeru 20 mm v betóne zvládne bez kábla a s minimálnou hmotnosťou.\n\nTri režimy (vŕtanie, vŕtanie s príklepom a sekanie) pokrývajú bežné úlohy na stavbe. Kompaktné rozmery oceníte pri práci nad hlavou a v stiesnených priestoroch.\n\nSada obsahuje dve batérie BL1850B, rýchlonabíjačku DC18RC a kufor MAKPAC.",
+      "price_gross_eur": 399.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 253.43,
+      "vat_rate": 23,
+      "weight_kg": 7.0,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-dhr241rtj",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "18",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "2.0",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-plus",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Max. priemer vŕtania v betóne",
+          "value": "20",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť náradia",
+          "value": "3.2",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "5.0",
+          "unit": "Ah",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-dhr241rtj.webp"
+      ]
+    },
+    {
+      "slug": "makita-dhp486rtj",
+      "name": "Makita DHP486RTJ Aku príklepová vŕtačka 18V (2× 5,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-vrtacky-a-skrutkovace",
+      "sku": "DHP486RTJ",
+      "ean": null,
+      "short_description": "Najvýkonnejšia 18V príklepová vŕtačka Makita s momentom 130 Nm v sade s dvoma batériami 5,0 Ah.",
+      "description": "**DHP486** je určená pre remeselníkov, ktorí od 18V vŕtačky čakajú maximum. Bezuhlíkový motor s krútiacim momentom 130 Nm zvládne veľké vrtáky do dreva, korunky aj dlhé konštrukčné skrutky.\n\nDvojstupňová prevodovka, elektronická spojka a ochrana XPT proti prachu a vode zaisťujú spoľahlivosť v náročnom prostredí. Príklep poslúži pri vŕtaní do tehly a muriva.\n\nSada obsahuje dve batérie BL1850B, nabíjačku DC18RC a kufor MAKPAC.",
+      "price_gross_eur": 469.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 310.0,
+      "vat_rate": 23,
+      "weight_kg": 6.5,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja alebo údržbou vyberte batériu. Používajte ochranné okuliare, chrániče sluchu a rukavice. Batérie nabíjajte len originálnou nabíjačkou Makita a chráňte ich pred teplotami nad 50 °C.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "18",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "torque_nm",
+          "label": "Max. uťahovací moment",
+          "value": "130",
+          "unit": "Nm",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Sklučovadlo",
+          "value": "13",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "gears",
+          "label": "Prevodové stupne",
+          "value": "2",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť náradia",
+          "value": "2.7",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "5.0",
+          "unit": "Ah",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dtw1002rtj",
+      "name": "Makita DTW1002RTJ Aku rázový uťahovač 1/2\" 18V (2× 5,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-razove-utahovace",
+      "sku": "DTW1002RTJ",
+      "ean": null,
+      "short_description": "Rázový uťahovač 1/2\" s uťahovacím momentom 1 000 Nm a povoľovacím 1 600 Nm v kompletnej sade.",
+      "description": "**DTW1002** je univerzálny vysokomomentový uťahovač pre autoservisy, montážne firmy a kovovýrobu. Uťahovací moment 1 000 Nm a povoľovací 1 600 Nm stačí na kolesá nákladných áut aj na kotvenie oceľových konštrukcií.\n\nTri stupne výkonu umožňujú zvoliť silu podľa veľkosti spoja, bezuhlíkový motor zvyšuje výdrž batérie a životnosť náradia. Štvorhran 1/2\" je kompatibilný s bežnými rázovými hlavicami.\n\nSada obsahuje dve batérie BL1850B, nabíjačku DC18RC a kufor MAKPAC.",
+      "price_gross_eur": 529.0,
+      "compare_at_price_eur": 599.0,
+      "purchase_price_net_eur": 367.59,
+      "vat_rate": 23,
+      "weight_kg": 8.0,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja alebo údržbou vyberte batériu. Používajte ochranné okuliare, chrániče sluchu a rukavice. Batérie nabíjajte len originálnou nabíjačkou Makita a chráňte ich pred teplotami nad 50 °C.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "18",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "torque_nm",
+          "label": "Max. uťahovací moment",
+          "value": "1000",
+          "unit": "Nm",
+          "is_filterable": true
+        },
+        {
+          "key": "loosening_torque_nm",
+          "label": "Povoľovací moment",
+          "value": "1600",
+          "unit": "Nm",
+          "is_filterable": false
+        },
+        {
+          "key": "anvil",
+          "label": "Upínanie",
+          "value": "1/2\" štvorhran",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "3.6",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "5.0",
+          "unit": "Ah",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dga900z",
+      "name": "Makita DGA900Z Aku uhlová brúska 230 mm 2× 18V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-brusky",
+      "sku": "DGA900Z",
+      "ean": null,
+      "short_description": "Akumulátorová uhlová brúska 230 mm napájaná dvoma batériami LXT 18V s ochranou proti spätnému rázu.",
+      "description": "**DGA900** prináša 230 mm kotúč do sveta LXT. Dve batérie 18V poháňajú bezuhlíkový motor s otáčkami 6 000 min⁻¹, čo stačí na rezanie dlažby, obrubníkov, profilov aj na hrubé brúsenie.\n\nSystém ADT automaticky prispôsobuje otáčky a krútiaci moment zaťaženiu, funkcia AFT vypne motor pri zaseknutí kotúča. Ochrana XPT zvyšuje odolnosť proti prachu a vlhkosti.\n\nDodáva sa s krytom, bočnou rukoväťou a kľúčom, bez batérií a nabíjačky.",
+      "price_gross_eur": 279.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 174.48,
+      "vat_rate": 23,
+      "weight_kg": 5.2,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× LXT 18 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "230",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "6 000",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "spindle",
+          "label": "Závit vretena",
+          "value": "M14",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "5.2",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dhs900zu",
+      "name": "Makita DHS900ZU Aku okružná píla 235 mm 2× 18V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "aku-pily",
+      "sku": "DHS900ZU",
+      "ean": null,
+      "short_description": "Okružná píla s kotúčom 235 mm a hĺbkou rezu 85 mm pre tesárov a stavbu drevostavieb.",
+      "description": "**DHS900** je akumulátorová okružná píla pre tesárske a stolárske práce vo veľkom. Kotúč 235 mm reže do hĺbky 85 mm pri 90°, takže zvládne hranoly, trámy aj dosky OSB vo zväzku.\n\nĽahké magnéziové telo znižuje hmotnosť, bezuhlíkový motor s dvoma batériami 18V poskytuje výkon sieťovej píly. Modul AWS umožní automatické spúšťanie vysávača.\n\nBalenie obsahuje pílový kotúč Efficut, paralelné pravítko a modul AWS; batérie a nabíjačka nie sú súčasťou.",
+      "price_gross_eur": 539.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 350.57,
+      "vat_rate": 23,
+      "weight_kg": 4.6,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× LXT 18 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "235",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Hĺbka rezu 90° / 45°",
+          "value": "85 / 44",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "4 500",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť bez batérií",
+          "value": "4.6",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-duc353z",
+      "name": "Makita DUC353Z Aku reťazová píla 35 cm 2× 18V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "retazove-pily",
+      "sku": "DUC353Z",
+      "ean": null,
+      "short_description": "Tichá akumulátorová reťazová píla s lištou 35 cm na prerezávanie stromov a palivové drevo.",
+      "description": "**DUC353** je spoľahlivá píla pre údržbu záhrad, sadov a pozemkov. Lišta 35 cm a rýchlosť reťaze 20 m/s stačia na prerezávanie korún, odstraňovanie polámaných konárov aj na prípravu palivového dreva.\n\nBezuhlíkový motor napájaný dvoma batériami LXT 18V štartuje okamžite a pracuje výrazne tichšie ako benzínová píla. Napínanie reťaze bez náradia a ochrana XPT zjednodušujú prácu v teréne.\n\nDodáva sa bez batérií a nabíjačky.",
+      "price_gross_eur": 269.0,
+      "compare_at_price_eur": 309.0,
+      "purchase_price_net_eur": 179.26,
+      "vat_rate": 23,
+      "weight_kg": 4.7,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pri práci s reťazovou pílou noste ochrannú prilbu so štítom, chrániče sluchu, protiporezové nohavice, rukavice a obuv. Pred čistením a napínaním reťaze vyberte batériu. Dbajte na riziko spätného vrhu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× LXT 18 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "bar_cm",
+          "label": "Dĺžka lišty",
+          "value": "35",
+          "unit": "cm",
+          "is_filterable": false
+        },
+        {
+          "key": "chain_pitch",
+          "label": "Deľba reťaze",
+          "value": "3/8\"",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "chain_speed",
+          "label": "Rýchlosť reťaze",
+          "value": "20",
+          "unit": "m/s",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "5.4",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dlm382pt2",
+      "name": "Makita DLM382PT2 Aku kosačka 38 cm 2× 18V (2× 5,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "kosacky",
+      "sku": "DLM382PT2",
+      "ean": null,
+      "short_description": "Ľahká akumulátorová kosačka so záberom 38 cm v sade s dvoma batériami 5,0 Ah a dvojnabíjačkou.",
+      "description": "**DLM382** je ideálna pre menšie a stredné záhrady do približne 560 m². Kosí ticho, bez výfukových plynov a štartuje stlačením spínača.\n\nVýšku kosenia nastavíte v 13 polohách od 20 do 75 mm, zberný kôš má objem 40 litrov. Nízka hmotnosť uľahčuje manipuláciu aj odkladanie.\n\nSada obsahuje dve batérie BL1850B a dvojitú rýchlonabíjačku DC18RD.",
+      "price_gross_eur": 449.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 287.43,
+      "vat_rate": 23,
+      "weight_kg": 19.0,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred čistením, nastavovaním alebo výmenou nástroja vyberte batériu. Noste ochranné okuliare, pevnú obuv a dlhé nohavice; udržujte deti a zvieratá v bezpečnej vzdialenosti.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-aku-dlm382pt2",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_width_cm",
+          "label": "Šírka záberu",
+          "value": "38",
+          "unit": "cm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_height",
+          "label": "Výška kosenia",
+          "value": "20 – 75",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "catcher_l",
+          "label": "Objem koša",
+          "value": "40",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "16.9",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "5.0",
+          "unit": "Ah",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-dlm382pt2.webp"
+      ]
+    },
+    {
+      "slug": "makita-dlm481ct2",
+      "name": "Makita DLM481CT2 Aku kosačka 48 cm 2× 18V (2× 5,0 Ah)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "kosacky",
+      "sku": "DLM481CT2",
+      "ean": null,
+      "short_description": "Akumulátorová kosačka so záberom 48 cm a mulčovaním pre trávniky do 800 m², v sade s batériami.",
+      "description": "**DLM481** je určená pre väčšie trávniky do približne 800 m². Záber 48 cm skracuje čas kosenia a mulčovací klin, ktorý je súčasťou dodávky, umožňuje vracať jemne posekanú trávu späť do trávnika.\n\nCentrálne nastavenie výšky v rozsahu 20 – 100 mm a zberný kôš 62 litrov uľahčujú pravidelnú údržbu. Napájanie dvoma batériami LXT znamená, že ich využijete aj v ďalšom náradí Makita.\n\nSada obsahuje dve batérie BL1850B a dvojnabíjačku.",
+      "price_gross_eur": 789.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 543.61,
+      "vat_rate": 23,
+      "weight_kg": 28.5,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": true,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred čistením, nastavovaním alebo výmenou nástroja vyberte batériu. Noste ochranné okuliare, pevnú obuv a dlhé nohavice; udržujte deti a zvieratá v bezpečnej vzdialenosti.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_width_cm",
+          "label": "Šírka záberu",
+          "value": "48",
+          "unit": "cm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_height",
+          "label": "Výška kosenia",
+          "value": "20 – 100",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "catcher_l",
+          "label": "Objem koša",
+          "value": "62",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "26.8",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "5.0",
+          "unit": "Ah",
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dur190uzx3",
+      "name": "Makita DUR190UZX3 Aku vyžínač 18V (bez batérie)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "krovinorezy",
+      "sku": "DUR190UZX3",
+      "ean": null,
+      "short_description": "Ľahký akumulátorový vyžínač s bicyklovou rukoväťou a bezuhlíkovým motorom na jednu batériu LXT.",
+      "description": "**DUR190U** je obratný vyžínač na údržbu okrajov trávnikov, priekop a ťažko dostupných miest. Bicyklová rukoväť umožňuje pohodlné vedenie aj pri dlhšej práci.\n\nBezuhlíkový motor s tromi rýchlosťami a funkciou spätného chodu na uvoľnenie namotanej trávy pracuje na jednu batériu LXT 18V. Záber je 300 mm so strunovou hlavou alebo 230 mm s nožom.\n\nDodáva sa bez batérie a nabíjačky.",
+      "price_gross_eur": 199.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 123.5,
+      "vat_rate": 23,
+      "weight_kg": 3.4,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred čistením, nastavovaním alebo výmenou nástroja vyberte batériu. Noste ochranné okuliare, pevnú obuv a dlhé nohavice; udržujte deti a zvieratá v bezpečnej vzdialenosti.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-dur190uzx3",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "18",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_width",
+          "label": "Šírka záberu struna / nôž",
+          "value": "300 / 230",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky",
+          "value": "3 500 / 5 100 / 6 000",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "3.4",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "brushless",
+          "label": "Bezuhlíkový motor",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-dur190uzx3.webp"
+      ]
+    },
+    {
+      "slug": "makita-dur369az",
+      "name": "Makita DUR369AZ Aku krovinorez 2× 18V (bez batérií)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "krovinorezy",
+      "sku": "DUR369AZ",
+      "ean": null,
+      "short_description": "Výkonný akumulátorový krovinorez s bicyklovou rukoväťou, napájaný dvoma batériami LXT 18V.",
+      "description": "**DUR369A** zvláda aj hustý porast, buriny a nálety, s ktorými si bežné vyžínače neporadia. Napájanie 2× 18V poskytuje výkon porovnateľný s benzínovým krovinorezom, no bez hluku a výparov.\n\nTri rýchlostné stupne a spätný chod umožňujú prispôsobiť prácu typu porastu. Súčasťou dodávky je strunová hlava, kovový nôž a dvojramenný popruh pre rovnomerné rozloženie hmotnosti.\n\nDodáva sa bez batérií a nabíjačky.",
+      "price_gross_eur": 389.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 255.05,
+      "vat_rate": 23,
+      "weight_kg": 6.6,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred čistením, nastavovaním alebo výmenou nástroja vyberte batériu. Noste ochranné okuliare, pevnú obuv a dlhé nohavice; udržujte deti a zvieratá v bezpečnej vzdialenosti.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-dur369a",
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "36",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "batteries",
+          "label": "Batérie",
+          "value": "2× LXT 18 V",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cut_width",
+          "label": "Šírka záberu kovový nôž / struna",
+          "value": "255 / 430",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "speeds",
+          "label": "Rýchlostné stupne",
+          "value": "3",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "6.6",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-bl1860b",
+      "name": "Makita BL1860B Batéria LXT 18V 6,0 Ah",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "baterie",
+      "sku": "BL1860B",
+      "ean": null,
+      "short_description": "Originálna batéria LXT 18V s kapacitou 6,0 Ah a LED indikátorom stavu nabitia.",
+      "description": "**BL1860B** je najpoužívanejšia veľkokapacitná batéria platformy LXT, ktorá zahŕňa stovky modelov náradia Makita. Kapacita 6,0 Ah zabezpečí dlhú prevádzku vŕtačiek, brúsok aj záhradného náradia.\n\nŠtvorstupňový LED indikátor ukáže zostávajúcu kapacitu jedným stlačením tlačidla. Batéria komunikuje s nabíjačkou, ktorá prispôsobí nabíjanie jej teplote.\n\nKompatibilná so všetkým náradím a nabíjačkami Makita LXT 18V.",
+      "price_gross_eur": 84.9,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 57.52,
+      "vat_rate": 23,
+      "weight_kg": 0.7,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Predĺžená 3-ročná záruka Makita po registrácii sa na batérie a nabíjačky nevzťahuje – platí zákonná záruka 24 mesiacov.",
+      "safety_info": "Batériu nevystavujte teplotám nad 50 °C, vode ani mechanickému poškodeniu. Neskratujte kontakty. Poškodenú batériu prestaňte používať a odovzdajte ju na recykláciu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie",
+          "value": "18",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "battery_capacity_ah",
+          "label": "Kapacita batérie",
+          "value": "6.0",
+          "unit": "Ah",
+          "is_filterable": true
+        },
+        {
+          "key": "indicator",
+          "label": "Indikátor nabitia",
+          "value": "LED, 4 stupne",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "chemistry",
+          "label": "Technológia",
+          "value": "Li-ion",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-dc18rd",
+      "name": "Makita DC18RD Dvojitá rýchlonabíjačka LXT 14,4 – 18V",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "nabijacky",
+      "sku": "DC18RD",
+      "ean": null,
+      "short_description": "Rýchlonabíjačka s dvoma portami pre batérie LXT 14,4 V a 18 V s USB výstupom.",
+      "description": "**DC18RD** nabíja dve batérie LXT postupne v rýchlom režime, takže ráno máte pripravenú celú sadu. Batériu 5,0 Ah nabije približne za 45 minút.\n\nAktívne chladenie ventilátorom chráni články pred prehriatím a USB port poslúži na dobitie telefónu alebo tabletu priamo na stavbe.\n\nKompatibilná s batériami Makita LXT 14,4 V a 18 V.",
+      "price_gross_eur": 109.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 66.63,
+      "vat_rate": 23,
+      "weight_kg": 1.6,
+      "shipping_class": "courier",
+      "battery_platform": "LXT_18V",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Predĺžená 3-ročná záruka Makita po registrácii sa na batérie a nabíjačky nevzťahuje – platí zákonná záruka 24 mesiacov.",
+      "safety_info": "Nabíjačku používajte len v suchom interiéri a len s originálnymi batériami Makita. Nezakrývajte vetracie otvory a pri poškodenom kábli ju nepoužívajte.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "voltage",
+          "label": "Napätie batérií",
+          "value": "18",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "ports",
+          "label": "Počet portov",
+          "value": "2",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "usb",
+          "label": "USB výstup",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "charge_time",
+          "label": "Nabitie 5,0 Ah",
+          "value": "cca 45",
+          "unit": "min",
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-hr4013c",
+      "name": "Makita HR4013C Vŕtacie a sekacie kladivo SDS-max s AVT",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "vrtacie-kladiva",
+      "sku": "HR4013C",
+      "ean": "0088381651332",
+      "short_description": "Osvedčené 40 mm kombinované kladivo SDS-max s antivibračnou technológiou AVT a príkonom 1 100 W.",
+      "description": "**HR4013C** patrí medzi najobľúbenejšie kladivá triedy 40 mm na slovenských stavbách. Energia úderu 8,0 J (EPTA) a príkon 1 100 W zvládnu vŕtanie do priemeru 40 mm, korunky do 105 mm aj sekanie.\n\nAntivibračný systém AVT výrazne znižuje vibrácie prenášané do rúk, plynulý rozbeh a elektronika s konštantnými otáčkami držia výkon aj pri zaťažení. Kábel dlhý 5 m dáva voľnosť pohybu.\n\nDodávka obsahuje kufor, bočnú rukoväť, hĺbkový doraz a mazivo.",
+      "price_gross_eur": 659.0,
+      "compare_at_price_eur": 729.0,
+      "purchase_price_net_eur": 461.87,
+      "vat_rate": 23,
+      "weight_kg": 6.8,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1100",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "8.0",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Vŕtanie vrták / korunka",
+          "value": "40 / 105",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "1 450 – 2 900",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "6.8",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "cable",
+          "label": "Dĺžka kábla",
+          "value": "5",
+          "unit": "m",
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-hr5212c",
+      "name": "Makita HR5212C Kombinované kladivo SDS-max 52 mm s AVT",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "vrtacie-kladiva",
+      "sku": "HR5212C",
+      "ean": "0088381677578",
+      "short_description": "Ťažké kombinované kladivo SDS-max s energiou úderu 20 J pre vŕtanie do 52 mm a korunky do 160 mm.",
+      "description": "**HR5212C** je pracovný kôň pre prierazy, prestupy a kotvenie vo vystuženom betóne. Energia úderu 20 J (EPTA) a príkon 1 510 W umožňujú vŕtanie vrtákmi do 52 mm a korunkami do 160 mm.\n\nSystém AVT a protivibračné rukoväte robia prácu znesiteľnou aj pri celodennom nasadení. Okrem vŕtania zvládne kladivo aj ťažké sekanie.\n\nV balení nájdete kufor, bočnú a D-rukoväť, hĺbkový doraz a mazivo.",
+      "price_gross_eur": 769.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 484.65,
+      "vat_rate": 23,
+      "weight_kg": 11.9,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1510",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "20",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Vŕtanie vrták / korunka",
+          "value": "52 / 160",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "1 100 – 2 250",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "11.9",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "cable",
+          "label": "Dĺžka kábla",
+          "value": "5",
+          "unit": "m",
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-hr4003c",
+      "name": "Makita HR4003C Vŕtacie a sekacie kladivo SDS-max",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "vrtacie-kladiva",
+      "sku": "HR4003C",
+      "ean": null,
+      "short_description": "Robustné kombinované kladivo SDS-max s energiou úderu 8,3 J – klasika pre vŕtanie do 40 mm.",
+      "description": "**HR4003C** je overený model bez antivibračného systému, ktorý ocenia tí, čo hľadajú spoľahlivé kladivo SDS-max za rozumnú cenu. Energia úderu 8,3 J a príkon 1 100 W pokryjú vŕtanie vrtákmi do 40 mm a korunkami do 105 mm.\n\nElektronika s plynulým rozbehom a konštantnými otáčkami udržiava výkon pod zaťažením. Režim samotného sekania z neho robí univerzálny nástroj pre rekonštrukcie.\n\nKladivo si môžete vyskúšať aj v našej požičovni Royal Stroje.",
+      "price_gross_eur": 549.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 354.24,
+      "vat_rate": 23,
+      "weight_kg": 6.2,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-hr4003c",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1100",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "8.3",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Vŕtanie vrták / korunka",
+          "value": "40 / 105",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "6.2",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-hr4003c.webp"
+      ]
+    },
+    {
+      "slug": "makita-hr5202c",
+      "name": "Makita HR5202C Vŕtacie a sekacie kladivo SDS-max 52 mm",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "vrtacie-kladiva",
+      "sku": "HR5202C",
+      "ean": null,
+      "short_description": "Výkonné kombinované kladivo SDS-max s energiou úderu 20 J na vŕtanie do 52 mm a ťažké sekanie.",
+      "description": "**HR5202C** je určené na náročné vŕtanie veľkých priemerov – vrtáky do 52 mm a jadrové korunky do 160 mm. Príkon 1 510 W a energia úderu 20 J zaručujú rýchly postup aj v tvrdom betóne.\n\nKladivo má elektroniku s plynulým rozbehom a ochranou proti preťaženiu. Prepínanie medzi vŕtaním s príklepom a sekaním je jednoduché a rýchle.\n\nKladivo si môžete pred kúpou vyskúšať v požičovni Royal Stroje.",
+      "price_gross_eur": 699.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 469.66,
+      "vat_rate": 23,
+      "weight_kg": 10.9,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-hr5202c",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1510",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "20",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "max_concrete_mm",
+          "label": "Vŕtanie vrták / korunka",
+          "value": "52 / 160",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "10.9",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-hr5202c.webp"
+      ]
+    },
+    {
+      "slug": "makita-hm1213c",
+      "name": "Makita HM1213C Búracie kladivo SDS-max s AVT",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "buracie-kladiva",
+      "sku": "HM1213C",
+      "ean": "0088381602181",
+      "short_description": "Sekacie kladivo SDS-max s energiou úderu 18,6 J a antivibračnou technológiou pre celodennú prácu.",
+      "description": "**HM1213C** je najpredávanejšie 10 kg sekacie kladivo Makita. Energia úderu 18,6 J (EPTA) stačí na búranie priečok, odstraňovanie poterov a sekanie prestupov v betóne.\n\nAntivibračná technológia AVT s odpruženou rukoväťou výrazne znižuje vibrácie, elektronika udržiava konštantný počet úderov pod zaťažením a plynulý rozbeh zabraňuje skĺznutiu sekáča.\n\nV balení je kufor, bočná rukoväť, mazivo a špicatý sekáč 280 mm.",
+      "price_gross_eur": 539.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 324.6,
+      "vat_rate": 23,
+      "weight_kg": 10.8,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": true,
+      "rental_url": "https://royalstroje.sk/makita-hm1213c",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1510",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "18.6",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "SDS-max",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "950 – 1 900",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "10.8",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "cable",
+          "label": "Dĺžka kábla",
+          "value": "4",
+          "unit": "m",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/makita-hm1213c.webp"
+      ]
+    },
+    {
+      "slug": "makita-hm1307c",
+      "name": "Makita HM1307C Búracie kladivo šesťhran 30 mm",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "buracie-kladiva",
+      "sku": "HM1307C",
+      "ean": null,
+      "short_description": "Búracie kladivo 15 kg triedy s upnutím šesťhran 30 mm a energiou úderu 25,5 J.",
+      "description": "**HM1307C** je určené na stredne ťažké búracie práce – odstraňovanie betónových podláh, búranie murovaných stien a sekanie základov. Energia úderu 25,5 J a príkon 1 510 W zabezpečujú rýchly postup.\n\nŠesťhranné upnutie 30 mm je štandardom pre robustné sekáče a lopatky. Elektronika s plynulým rozbehom a regulovateľným počtom úderov (730 – 1 450 /min) umožňuje prispôsobiť výkon materiálu.\n\nDodávka zahŕňa kufor a špicatý sekáč 400 mm.",
+      "price_gross_eur": 719.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 491.22,
+      "vat_rate": 23,
+      "weight_kg": 15.3,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-hm1307c",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1510",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "25.5",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "šesťhran 30 mm",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "730 – 1 450",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "15.3",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-hm1307c.webp"
+      ]
+    },
+    {
+      "slug": "makita-hm1812",
+      "name": "Makita HM1812 Búracie kladivo šesťhran 28,6 mm s AVT",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "buracie-kladiva",
+      "sku": "HM1812",
+      "ean": "0088381693349",
+      "short_description": "Najsilnejšie búracie kladivo Makita s energiou úderu 72,8 J pre búranie betónu a asfaltu.",
+      "description": "**HM1812** je ťažké búracie kladivo pre demolácie, rozbíjanie železobetónových konštrukcií, asfaltu a skalného podložia. Energia úderu 72,8 J (EPTA) a príkon 2 000 W ho radia medzi najvýkonnejšie elektrické kladivá na trhu.\n\nAntivibračná technológia AVT tlmí rázy v rukovätiach, takže kladivo je napriek hmotnosti 31,3 kg ovládateľné. Upínanie šesťhran 28,6 mm (1-1/8\") je určené pre ťažké sekáče.\n\nSúčasťou dodávky je samoostriaci špicatý sekáč 400 mm. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 1249.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 793.32,
+      "vat_rate": 23,
+      "weight_kg": 31.3,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja odpojte napájanie. Povinné sú chrániče sluchu, ochranné okuliare, rukavice a bezpečnostná obuv; pri sekaní betónu používajte respirátor FFP3. Dodržiavajte prestávky na obmedzenie expozície vibráciám.",
+      "is_featured": true,
+      "rental_url": "https://royalstroje.sk/makita-hm1812",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "2000",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_energy_j",
+          "label": "Energia úderu (EPTA)",
+          "value": "72.8",
+          "unit": "J",
+          "is_filterable": true
+        },
+        {
+          "key": "chuck",
+          "label": "Upínanie",
+          "value": "šesťhran 28,6 mm",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Počet úderov",
+          "value": "870",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "31.3",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "cable",
+          "label": "Dĺžka kábla",
+          "value": "4",
+          "unit": "m",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/makita-hm1812.webp"
+      ]
+    },
+    {
+      "slug": "makita-ga9071x1",
+      "name": "Makita GA9071X1 Uhlová brúska 230 mm 2 800 W",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "brusky",
+      "sku": "GA9071X1",
+      "ean": null,
+      "short_description": "Najvýkonnejšia 230 mm uhlová brúska Makita s príkonom 2 800 W, brzdou motora a D-rukoväťou.",
+      "description": "**GA9071X1** je určená pre profesionálov, ktorí denne režú betón, kameň a oceľ. Príkon 2 800 W udržiava otáčky aj pri hlbokom reze a D-rukoväť poskytuje istý úchop.\n\nBezpečnosť zvyšuje brzda motora, systém AFT proti spätnému rázu, plynulý rozbeh a ochrana proti opätovnému spusteniu po výpadku prúdu. Antivibračná bočná rukoväť znižuje únavu pri dlhšej práci.\n\nV balení nájdete bočnú rukoväť, prírubu, maticu a kľúč.",
+      "price_gross_eur": 259.0,
+      "compare_at_price_eur": 289.0,
+      "purchase_price_net_eur": 171.19,
+      "vat_rate": 23,
+      "weight_kg": 6.4,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "2800",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "230",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "6 600",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "spindle",
+          "label": "Závit vretena",
+          "value": "M14",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "6.4",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "cable",
+          "label": "Dĺžka kábla",
+          "value": "2,5",
+          "unit": "m",
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-ls1018ln",
+      "name": "Makita LS1018LN Pokosová píla 260 mm s laserom",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "pily",
+      "sku": "LS1018LN",
+      "ean": null,
+      "short_description": "Skracovacia a pokosová píla s kotúčom 260 mm, posuvom a laserovým ukazovateľom rezu.",
+      "description": "**LS1018LN** je obľúbená pokosová píla pre tesárov, podlahárov a montážnikov. Posuvné rameno umožňuje rez do šírky 305 mm pri hĺbke 91 mm, takže zvládne aj široké dosky a hranoly.\n\nPokos aj úkos sa nastavujú rýchlo a presne, laserový ukazovateľ ukazuje líniu rezu ešte pred spustením. Brzda motora zastaví kotúč krátko po uvoľnení spínača.\n\nPílu si môžete vyskúšať aj v požičovni Royal Stroje.",
+      "price_gross_eur": 499.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 346.74,
+      "vat_rate": 23,
+      "weight_kg": 19.9,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-ls1018ln",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1430",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "260",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_capacity",
+          "label": "Max. rez 90°",
+          "value": "91 × 305",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "4 300",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "19.9",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-ls1018ln.webp"
+      ]
+    },
+    {
+      "slug": "makita-sp6000j1",
+      "name": "Makita SP6000J1 Ponorná píla 165 mm s vodiacou lištou 1,4 m",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "pily",
+      "sku": "SP6000J1",
+      "ean": "0088381078115",
+      "short_description": "Ponorná píla na presné rezy veľkoplošných materiálov, v sade s vodiacou lištou 1,4 m a kufrom MAKPAC.",
+      "description": "**SP6000J1** je sada pre stolárov, montážnikov kuchýň a podláh. Ponorná píla s kotúčom 165 mm v kombinácii s vodiacou lištou nahrádza formátovaciu pílu priamo na stavbe.\n\nElektronická regulácia otáčok umožňuje prispôsobiť rez drevu, laminátu aj plastom, hĺbku rezu nastavíte presne podľa materiálu. Odsávanie prachu udržuje čistotu pracoviska.\n\nSada obsahuje vodiacu lištu 1 400 mm, pílový kotúč 48 zubov a kufor MAKPAC typ 4.",
+      "price_gross_eur": 409.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 255.78,
+      "vat_rate": 23,
+      "weight_kg": 7.5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1300",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "165",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Hĺbka rezu 90° / 45°",
+          "value": "56 / 40",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rail",
+          "label": "Vodiaca lišta",
+          "value": "1 400",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť píly",
+          "value": "4.4",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-pc5010c",
+      "name": "Makita PC5010C Brúska na betón 125 mm",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "brusky",
+      "sku": "PC5010C",
+      "ean": "0088381865357",
+      "short_description": "Brúska na betón s diamantovým hrncom 125 mm, reguláciou otáčok a krytom na odsávanie prachu.",
+      "description": "**PC5010C** slúži na brúsenie betónových povrchov, odstraňovanie lepidiel, starých náterov a zarovnávanie nerovností. Regulácia otáčok 4 000 – 9 000 min⁻¹ umožňuje prispôsobiť brúsenie materiálu.\n\nKryt s prípojkou na vysávač zachytáva prach priamo pri zdroji, čo je pri práci s betónom nevyhnutné. Bezpečnostná spojka SJS chráni motor aj obsluhu pri zablokovaní nástroja.\n\nDodávka obsahuje oceľový kufor a kryt na odsávanie; diamantový hrniec nie je súčasťou.",
+      "price_gross_eur": 299.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 194.47,
+      "vat_rate": 23,
+      "weight_kg": 3.6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja vytiahnite zástrčku zo siete. Pri práci noste ochranné okuliare, chrániče sluchu, rukavice a pri prašných prácach respirátor FFP2/FFP3. Náradie držte vždy oboma rukami.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-pc5010c",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1400",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer brúsneho hrnca",
+          "value": "125",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky",
+          "value": "4 000 – 9 000",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "3.6",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-pc5010c.webp"
+      ]
+    },
+    {
+      "slug": "makita-sg150",
+      "name": "Makita SG150 Drážkovacia fréza do muriva 150 mm",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "pily",
+      "sku": "SG150",
+      "ean": "0088381028240",
+      "short_description": "Drážkovacia fréza na rýchle a presné drážky pre elektroinštalácie a rozvody do hĺbky 45 mm.",
+      "description": "**SG150** urýchli prípravu drážok pre elektrické rozvody, vodu a kúrenie. Dva diamantové kotúče 150 mm vyrežú drážku šírky 7 – 35 mm a hĺbky 7 – 45 mm jedným prechodom.\n\nPríkon 1 800 W zaručuje plynulý postup v tehle, betóne aj omietke. Pripojenie na priemyselný vysávač triedy M výrazne obmedzuje prašnosť.\n\nDodávka obsahuje oceľový kufor a kľúč; diamantové kotúče sa objednávajú samostatne.",
+      "price_gross_eur": 699.0,
+      "compare_at_price_eur": 779.0,
+      "purchase_price_net_eur": 465.81,
+      "vat_rate": 23,
+      "weight_kg": 5.7,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-sg150",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1800",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "150",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "groove",
+          "label": "Šírka × hĺbka drážky",
+          "value": "7–35 × 7–45",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky naprázdno",
+          "value": "7 800",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť (EPTA)",
+          "value": "5.7",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-sg150.webp"
+      ]
+    },
+    {
+      "slug": "makita-ut1200",
+      "name": "Makita UT1200 Miešadlo na malty a lepidlá",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "miesadla",
+      "sku": "UT1200",
+      "ean": "0088381648417",
+      "short_description": "Ručné miešadlo s reguláciou otáčok na miešanie mált, lepidiel a samonivelačných zmesí.",
+      "description": "**UT1200** zjednodušuje prípravu stavebných zmesí – mált, lepidiel na obklady, omietok a samonivelačných poterov. Regulácia otáčok umožňuje pomalý rozbeh bez vyprskávania materiálu.\n\nErgonomické rukoväte zabezpečujú pevný úchop a závit M14 je kompatibilný s miešacími metlami do priemeru 120 mm.\n\nMiešacia metla nie je súčasťou balenia.",
+      "price_gross_eur": 139.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 88.98,
+      "vat_rate": 23,
+      "weight_kg": 3.2,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja vytiahnite zástrčku zo siete. Pri práci noste ochranné okuliare, chrániče sluchu, rukavice a pri prašných prácach respirátor FFP2/FFP3. Náradie držte vždy oboma rukami.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-ut1200",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon (max.)",
+          "value": "960",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky",
+          "value": "0 – 600",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "paddle",
+          "label": "Max. priemer metly",
+          "value": "120",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "spindle",
+          "label": "Upínanie",
+          "value": "M14",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "3.2",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-ut1200.webp"
+      ]
+    },
+    {
+      "slug": "makita-vc4210l",
+      "name": "Makita VC4210L Priemyselný vysávač 42 l, trieda L",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "priemyselne-vysavace",
+      "sku": "VC4210L",
+      "ean": null,
+      "short_description": "Stavebný vysávač triedy L s nádobou 42 l, automatickým čistením filtra a zásuvkou pre náradie.",
+      "description": "**VC4210L** je spoľahlivý partner pre brúsky, drážkovačky a vŕtacie kladivá. Zásuvka pre náradie do 2 400 W s automatickým spúšťaním zapne vysávač spolu s pripojeným strojom.\n\nVýkon 4,5 m³/min a podtlak 250 mbar stačia na prach aj hrubé nečistoty, nádoba 42 l zvládne aj vysávanie vody. Automatické oklepávanie filtra udržiava stály sací výkon.\n\nBalenie obsahuje vrecko, podlahovú a štrbinovú hubicu.",
+      "price_gross_eur": 499.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 343.81,
+      "vat_rate": 23,
+      "weight_kg": 15.0,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": "Po registrácii náradia na www.makita.sk do 30 dní od nákupu poskytuje Makita s.r.o. predĺženú záruku na 3 roky (platí od dátumu nákupu). Nevzťahuje sa na batérie, nabíjačky a benzínové náradie.",
+      "safety_info": "Pred výmenou nástroja vytiahnite zástrčku zo siete. Pri práci noste ochranné okuliare, chrániče sluchu, rukavice a pri prašných prácach respirátor FFP2/FFP3. Náradie držte vždy oboma rukami.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/makita-vc4210l",
+      "specs": [
+        {
+          "key": "power_w",
+          "label": "Príkon",
+          "value": "1200",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "tank_l",
+          "label": "Objem nádoby",
+          "value": "42",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "dust_class",
+          "label": "Trieda prachu",
+          "value": "L",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "airflow",
+          "label": "Prietok vzduchu",
+          "value": "4,5",
+          "unit": "m³/min",
+          "is_filterable": false
+        },
+        {
+          "key": "vacuum",
+          "label": "Podtlak",
+          "value": "250",
+          "unit": "mbar",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "15.0",
+          "unit": "kg",
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/makita-vc4210l.webp"
+      ]
+    },
+    {
+      "slug": "makita-makpac-typ-4",
+      "name": "Makita MAKPAC typ 4 systémový kufor (821552-6)",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "kufre",
+      "sku": "821552-6",
+      "ean": null,
+      "short_description": "Najvyšší systémový kufor MAKPAC na prepravu a uskladnenie väčšieho náradia.",
+      "description": "Kufor **MAKPAC typ 4** je najvyšší v rade systémových kufrov Makita. Pojme väčšie náradie, napríklad ponorné píly, kladivá alebo sady s batériami a nabíjačkou.\n\nKufre MAKPAC sa navzájom spájajú západkami, takže z nich vytvoríte stabilnú prepravnú zostavu. Pevná konštrukcia chráni náradie pri preprave v dodávke.\n\nVnútorné vložky pre konkrétne náradie sa predávajú samostatne.",
+      "price_gross_eur": 39.9,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 24.03,
+      "vat_rate": 23,
+      "weight_kg": 2.0,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Používajte len s náradím, pre ktoré je príslušenstvo určené; dodržte maximálne povolené otáčky a pri práci noste ochranné okuliare a rukavice.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "dimensions",
+          "label": "Rozmery (Š × H × V)",
+          "value": "395 × 295 × 315",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "system",
+          "label": "Systém",
+          "value": "MAKPAC / kompatibilný so Systainer",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "type",
+          "label": "Veľkosť",
+          "value": "typ 4",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "stacking",
+          "label": "Spájanie",
+          "value": "áno, s ostatnými kuframi MAKPAC",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "makita-a-87317-diamantovy-kotuc-355",
+      "name": "Makita A-87317 Diamantový kotúč 355 mm na betón",
+      "brand_slug": "makita",
+      "supplier_slug": "makita",
+      "category_slug": "rezne-kotuce",
+      "sku": "A-87317",
+      "ean": null,
+      "short_description": "Segmentový diamantový kotúč 355 mm na rezanie betónu rozbrusovacími pílami.",
+      "description": "Diamantový kotúč **A-87317** je určený na rezanie betónu, betónovej dlažby a obrubníkov rozbrusovacími pílami s priemerom kotúča 355 mm.\n\nKotúč odporúčame používať s vodným chladením, ktoré predlžuje jeho životnosť a viaže prach.\n\nUpínací otvor 25,4 mm; pred použitím skontrolujte maximálne povolené otáčky kotúča a kompatibilitu s vašou pílou.",
+      "price_gross_eur": 219.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 131.89,
+      "vat_rate": 23,
+      "weight_kg": 1.5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte len s nepoškodeným kotúčom určeným pre daný materiál a otáčky. Nikdy neodstraňujte ochranný kryt. Noste ochranné okuliare, chrániče sluchu a pri rezaní minerálnych materiálov respirátor FFP3 alebo odsávanie triedy M.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "355",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "bore_mm",
+          "label": "Upínací otvor",
+          "value": "25,4",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "material",
+          "label": "Rezaný materiál",
+          "value": "betón, betónová dlažba",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "use",
+          "label": "Určenie",
+          "value": "rozbrusovacie píly s kotúčom 355 mm",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cooling",
+          "label": "Chladenie",
+          "value": "odporúčané vodou",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-vd-18",
+      "name": "NTC VD 18 Jednosmerná vibračná doska 95 kg (Honda GX 160)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VD18",
+      "ean": null,
+      "short_description": "Univerzálna jednosmerná vibračná doska radu Elegant so šírkou 450 mm na hutnenie štrku, piesku a zámkovej dlažby.",
+      "description": "**VD 18** z radu Elegant je spoľahlivá voľba pre záhradných architektov, dláždičov a menšie stavebné firmy. Odstredivá sila 18 kN a šírka dosky 450 mm sú ideálne na hutnenie podkladových vrstiev pod dlažbu, chodníky a príjazdové cesty.\n\nMotor Honda GX 160 štartuje spoľahlivo aj po dlhšom státí, frekvencia 100 Hz zaručuje rovnomerné zhutnenie. Integrovaná nádrž na vodu (12 l) s kropením umožňuje použitie aj pri hutnení asfaltu.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 2099.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1422.09,
+      "vat_rate": 23,
+      "weight_kg": 95.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": true,
+      "rental_url": "https://royalstroje.sk/ntc-vd18",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "95",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "3600",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "18",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "450",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "100",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 160, benzín",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Max. rýchlosť",
+          "value": "25",
+          "unit": "m/min",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank",
+          "label": "Nádrž na vodu",
+          "value": "12",
+          "unit": "l",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-vd-18.webp"
+      ]
+    },
+    {
+      "slug": "ntc-vd-24p",
+      "name": "NTC VD 24P Jednosmerná vibračná doska 110 kg (Honda GX 160)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VD24P",
+      "ean": null,
+      "short_description": "Najsilnejšia doska radu Practic so šírkou 500 mm a odstredivou silou 24 kN pre rýchle hutnenie väčších plôch.",
+      "description": "**VD 24P** z radu Practic spája vysokú odstredivú silu 24 kN so šírkou dosky 500 mm. Je preto vhodná na plošné hutnenie parkovísk, dvorov a podkladov pod veľkoformátovú dlažbu.\n\nMotor Honda GX 160 s výkonom 3,6 kW a rýchlosť pojazdu až 25 m/min výrazne skracujú čas práce. Kropenie z 12 l nádrže zabraňuje nalepovaniu asfaltu na dosku.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 2149.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1432.09,
+      "vat_rate": 23,
+      "weight_kg": 110.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "110",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "3600",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "24",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "500",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "100",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 160, benzín",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Max. rýchlosť",
+          "value": "25",
+          "unit": "m/min",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank",
+          "label": "Nádrž na vodu",
+          "value": "12",
+          "unit": "l",
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-vd-450-22",
+      "name": "NTC VD 450/22 Jednosmerná vibračná doska 140 kg (Honda GX 160)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VD450-22",
+      "ean": null,
+      "short_description": "Robustná vibračná doska radu Klasik s hmotnosťou 140 kg pre hlbšie hutnenie štrkových vrstiev.",
+      "description": "**VD 450/22** z radu Klasik je ťažšia jednosmerná doska, ktorá vďaka hmotnosti 140 kg a odstredivej sile 22 kN dosahuje lepší hĺbkový účinok ako ľahšie modely. Je vhodná na hutnenie štrkopieskov, zásypov a podkladov ciest.\n\nNižšia frekvencia 81 Hz je optimalizovaná pre nesúdržné zeminy. Masívny ochranný rám chráni motor Honda GX 160 pri preprave aj na stavbe.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 2789.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1954.72,
+      "vat_rate": 23,
+      "weight_kg": 140.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "140",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "3600",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "22",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "450",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "81",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 160, benzín",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Max. rýchlosť",
+          "value": "24",
+          "unit": "m/min",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank",
+          "label": "Nádrž na vodu",
+          "value": "5",
+          "unit": "l",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-vd-450-22.webp"
+      ]
+    },
+    {
+      "slug": "ntc-vdr-22",
+      "name": "NTC VDR 22 Reverzná vibračná doska 120 kg (Honda GX 160)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VDR22",
+      "ean": null,
+      "short_description": "Kompaktná reverzná vibračná doska radu Range, ktorá hutní vpred aj vzad – ideálna do výkopov a úzkych priestorov.",
+      "description": "**VDR 22** z radu Range je obratná reverzná doska, ktorá sa ovláda plynulo vpred aj vzad bez nutnosti otáčať stroj. Vďaka tomu je ideálna do výkopov, okolo základov a v stiesnených priestoroch.\n\nOdstredivá sila 22 kN pri šírke dosky 400 mm poskytuje dostatočný hĺbkový účinok pre zásypy a podkladové vrstvy. Možnosť zastaviť dosku na mieste umožňuje cielené dohutnenie problematických miest.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 4490.0,
+      "compare_at_price_eur": 4649.0,
+      "purchase_price_net_eur": 2992.14,
+      "vat_rate": 23,
+      "weight_kg": 120.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "120",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "3600",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "22",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "400",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "100",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 160, benzín",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Max. rýchlosť",
+          "value": "24",
+          "unit": "m/min",
+          "is_filterable": false
+        },
+        {
+          "key": "direction",
+          "label": "Smer pojazdu",
+          "value": "vpred / vzad (reverz)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-vdr-26h",
+      "name": "NTC VDR 26H Reverzná vibračná doska 170 kg (Hatz diesel)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VDR26H",
+      "ean": null,
+      "short_description": "Reverzná vibračná doska s dieselovým motorom Hatz pre každodenné profesionálne nasadenie na stavbách.",
+      "description": "**VDR 26H** je reverzná doska radu Range určená pre firmy, ktoré stroj využívajú denne. Dieselový motor Hatz 1 B 20 sa vyznačuje nízkou spotrebou, dlhou životnosťou a jednoduchou údržbou.\n\nOdstredivá sila 26 kN a hmotnosť 170 kg zabezpečujú účinné hutnenie zásypov výkopov, podkladov pod dlažbu a spevnených plôch. Plynulý reverz uľahčuje prácu pri stenách a v rohoch.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 7699.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 5130.61,
+      "vat_rate": 23,
+      "weight_kg": 170.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": true,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "170",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "3400",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "26",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "450",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "95",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Hatz 1 B 20, diesel",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Max. rýchlosť",
+          "value": "22",
+          "unit": "m/min",
+          "is_filterable": false
+        },
+        {
+          "key": "direction",
+          "label": "Smer pojazdu",
+          "value": "vpred / vzad (reverz)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-vdr-42",
+      "name": "NTC VDR 42 Reverzná vibračná doska 280 kg (Honda GX 270)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VDR42",
+      "ean": null,
+      "short_description": "Ťažká reverzná doska radu Prim s odstredivou silou 42 kN pre hutnenie hrubých vrstiev zemín a štrku.",
+      "description": "**VDR 42** z radu Prim je určená na náročné hutnenie hrubších vrstiev – podložia ciest, parkovísk, základových dosiek a zásypov inžinierskych sietí. Odstredivá sila 42 kN a hmotnosť 280 kg zaručujú výrazný hĺbkový účinok.\n\nMotor Honda GX 270 s výkonom 6,3 kW a šírka dosky 550 mm zabezpečujú vysoký plošný výkon. Reverzné ovládanie umožňuje presné manévrovanie aj v obmedzenom priestore.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 6890.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 4629.44,
+      "vat_rate": 23,
+      "weight_kg": 280.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "280",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "6300",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "42",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "550",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "80",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 270, benzín",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Max. rýchlosť",
+          "value": "25",
+          "unit": "m/min",
+          "is_filterable": false
+        },
+        {
+          "key": "direction",
+          "label": "Smer pojazdu",
+          "value": "vpred / vzad (reverz)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-vdv-10",
+      "name": "NTC VDV 10 Valčeková vibračná doska na dlažbu 125 kg",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-dosky",
+      "sku": "NTC-VDV10",
+      "ean": null,
+      "short_description": "Špeciálna valčeková doska na šetrné zhutnenie veľkoformátovej dlažby bez poškodenia povrchu.",
+      "description": "**VDV 10** z radu Roll je stroj vyvinutý špeciálne na pokládku veľkoformátovej a dekoratívnej dlažby. Namiesto plechovej dosky hutní štyrmi valčekmi, ktoré rozkladajú tlak a nezanechávajú stopy na povrchu dlaždíc.\n\nZnížená odstredivá sila 10 kN a frekvencia 100 Hz sú prispôsobené jemnému usadeniu dlažby do lôžka. Stroj je vhodný na dlažby s hmotnosťou kusa do približne 50 kg.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 3149.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2098.49,
+      "vat_rate": 23,
+      "weight_kg": 125.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "125",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "3600",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "10",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "plate_width_mm",
+          "label": "Šírka dosky",
+          "value": "500",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "100",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 160, benzín",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "rollers",
+          "label": "Počet hutniacich valčekov",
+          "value": "4",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-nt-64p",
+      "name": "NTC NT 64P Vibračný pech 64 kg (Honda GXR 120)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-pechy",
+      "sku": "NTC-NT64P",
+      "ean": null,
+      "short_description": "Ľahký vibračný pech radu Spark na hutnenie súdržných zemín vo výkopoch a okolo potrubí.",
+      "description": "**NT 64P** z radu Spark je kompaktný vibračný pech (vibračná noha) na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo šácht a potrubí. Pätka šírky 250 mm sa zmestí aj tam, kam sa vibračná doska nedostane.\n\nRázová sila 15 kN pri frekvencii 650 úderov za minútu a výška skoku 55 mm zabezpečujú účinné zhutnenie po vrstvách. Motor Honda GXR 120 spĺňa emisnú normu EU Stage V a je vybavený vzduchovým filtrom pre prašné prostredie.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 2890.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1974.45,
+      "vat_rate": 23,
+      "weight_kg": 64.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "64",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "2700",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_force_kn",
+          "label": "Rázová sila",
+          "value": "15",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "shoe",
+          "label": "Rozmer pätky",
+          "value": "250 × 350",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Frekvencia úderov",
+          "value": "650",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "jump",
+          "label": "Výška skoku",
+          "value": "55",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GXR 120, benzín",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-nt-72p",
+      "name": "NTC NT 72P Vibračný pech 72 kg (Honda GXR 120)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-pechy",
+      "sku": "NTC-NT72P",
+      "ean": null,
+      "short_description": "Vibračný pech so širšou pätkou 285 mm a rázovou silou 17 kN pre rýchlejšie hutnenie zásypov.",
+      "description": "**NT 72P** je stredný model radu Spark so širšou pätkou 285 mm, ktorá zvyšuje plošný výkon pri hutnení zásypov výkopov, prípojok a základových pásov.\n\nRázová sila 17 kN, výška skoku 60 mm a 650 úderov za minútu zabezpečujú dôkladné zhutnenie súdržných zemín. Motor Honda GXR 120 so vzduchovým filtrom spĺňa emisnú normu EU Stage V.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 3090.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2059.18,
+      "vat_rate": 23,
+      "weight_kg": 72.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "72",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "2700",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "impact_force_kn",
+          "label": "Rázová sila",
+          "value": "17",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "shoe",
+          "label": "Rozmer pätky",
+          "value": "285 × 340",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "bpm",
+          "label": "Frekvencia úderov",
+          "value": "650",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "jump",
+          "label": "Výška skoku",
+          "value": "60",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GXR 120, benzín",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-rz-123",
+      "name": "NTC RZ 123 Rezač škár 350 mm (Honda GX 200)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "rezacky-skar",
+      "sku": "NTC-RZ123",
+      "ean": null,
+      "short_description": "Ľahký rezač škár radu Easy s kotúčom 350 mm a hĺbkou rezu 120 mm pre menšie stavby.",
+      "description": "**RZ 123** z radu Easy je kompaktný rezač škár na rezanie dilatačných škár v betónových podlahách, úpravu asfaltu pri opravách výtlkov a rezanie dlažby. Hmotnosť 68 kg uľahčuje manipuláciu aj nakladanie.\n\nMotor Honda GX 200 s výkonom 4,1 kW poháňa kotúč s priemerom 350 mm do hĺbky rezu 120 mm. Nádrž na vodu s objemom 12 l chladí kotúč a viaže prach.\n\nDiamantový kotúč nie je súčasťou dodávky. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 1990.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1326.14,
+      "vat_rate": 23,
+      "weight_kg": 68.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pred štartom skontrolujte upnutie a stav diamantového kotúča a prívod chladiacej vody. Používajte chrániče sluchu, okuliare, bezpečnostnú obuv a respirátor. Nikdy nepracujte bez krytu kotúča a v uzavretých priestoroch (výfukové plyny).",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "68",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "4100",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "350",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "120",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank",
+          "label": "Nádrž na vodu",
+          "value": "12",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 200, benzín",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-rz-170",
+      "name": "NTC RZ 170 Rezač škár 450 mm (Honda GX 390)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "rezacky-skar",
+      "sku": "NTC-RZ170",
+      "ean": null,
+      "short_description": "Profesionálny rezač škár radu Pro s kotúčom 450 mm a hĺbkou rezu 170 mm pre betón aj asfalt.",
+      "description": "**RZ 170** z radu Pro je určený pre stavebné a cestárske firmy. Kotúč s priemerom 450 mm reže do hĺbky 170 mm, čo stačí na prerezanie betónových dosiek, vozoviek a priemyselných podláh.\n\nMotor Honda GX 390 s výkonom 8,7 kW udržiava stabilné otáčky kotúča aj v tvrdom kamenive. Nádrž na vodu s objemom 20 l zaisťuje chladenie kotúča počas dlhších rezov.\n\nDiamantový kotúč nie je súčasťou dodávky. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 2799.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1944.97,
+      "vat_rate": 23,
+      "weight_kg": 110.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pred štartom skontrolujte upnutie a stav diamantového kotúča a prívod chladiacej vody. Používajte chrániče sluchu, okuliare, bezpečnostnú obuv a respirátor. Nikdy nepracujte bez krytu kotúča a v uzavretých priestoroch (výfukové plyny).",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk/norton-clipper-cs451",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Hmotnosť",
+          "value": "110",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "8700",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Priemer kotúča",
+          "value": "450",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "170",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank",
+          "label": "Nádrž na vodu",
+          "value": "20",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "rpm",
+          "label": "Otáčky kotúča",
+          "value": "2 800",
+          "unit": "/min",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 390, benzín",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    },
+    {
+      "slug": "ntc-vvv-600-12",
+      "name": "NTC VVV 600/12 Vedený vibračný valec 560 kg (Honda GX 200)",
+      "brand_slug": "ntc",
+      "supplier_slug": "ntc",
+      "category_slug": "vibracne-valce",
+      "sku": "NTC-VVV600-12",
+      "ean": null,
+      "short_description": "Ručne vedený vibračný valec so šírkou valca 600 mm pre hutnenie asfaltu a podkladových vrstiev.",
+      "description": "**VVV 600/12** z radu Standard je ručne vedený vibračný valec, ktorý dosahuje najvyšší plošný výkon v triede ručne vedených hutniacich strojov. Je určený na hutnenie asfaltových vrstiev, štrkových podkladov a zásypov do hĺbky približne 25 cm.\n\nPojazd s plynulou reguláciou rýchlosti (vpred 0 – 5 km/h, vzad 0 – 2 km/h) uľahčuje presné manévrovanie. Motor Honda GX 200 s výkonom 4,1 kW poháňa vibrátor s odstredivou silou 12 kN.\n\nStroj vyrába česká spoločnosť NTC v Českej Skalici. Kvôli hmotnosti doručujeme vlastnou dopravou.",
+      "price_gross_eur": 9890.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 6590.7,
+      "vat_rate": 23,
+      "weight_kg": 560.0,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba starší ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv s oceľovou špičkou a rukavice. Benzín dopĺňajte len pri vypnutom a vychladnutom motore, nikdy nepracujte v uzavretých priestoroch (oxid uhoľnatý). Pri preprave stroj zaistite proti posunu.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "560",
+          "unit": "kg",
+          "is_filterable": true
+        },
+        {
+          "key": "power_w",
+          "label": "Výkon motora",
+          "value": "4100",
+          "unit": "W",
+          "is_filterable": true
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label": "Odstredivá sila",
+          "value": "12",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "drum_width_mm",
+          "label": "Šírka valca",
+          "value": "600",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "60",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "speed",
+          "label": "Rýchlosť vpred / vzad",
+          "value": "0 – 5 / 0 – 2",
+          "unit": "km/h",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 200, benzín",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": []
+    }
+  ]
+}
