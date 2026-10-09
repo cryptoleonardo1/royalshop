@@ -1,22 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Minus, Plus, ShoppingCart, Check } from "lucide-react";
-import { eur } from "../_data";
-import css from "./stavenisko.module.css";
+import { useState } from "react";
+import { Check, Minus, Plus, ShoppingCart } from "lucide-react";
+import { addToCart, MAX_QTY, type CartLine } from "@/lib/cart-store";
+import { formatEur } from "@/lib/money";
+import { useAddedFlash } from "./cart-buttons";
+import css from "./shop.module.css";
 
-const MAX_QTY = 99;
-
-export function BuyBox({ unitPrice, name }: { unitPrice: number; name: string }) {
+export function BuyBox({ item }: { item: Omit<CartLine, "quantity"> }) {
   const [qty, setQty] = useState(1);
-  const [added, setAdded] = useState(false);
-
-  useEffect(() => {
-    if (!added) return;
-    const t = window.setTimeout(() => setAdded(false), 2400);
-    return () => window.clearTimeout(t);
-  }, [added]);
-
+  const [added, flash] = useAddedFlash();
   const clamp = (n: number) => Math.max(1, Math.min(MAX_QTY, Number.isFinite(n) ? Math.round(n) : 1));
 
   return (
@@ -32,11 +25,11 @@ export function BuyBox({ unitPrice, name }: { unitPrice: number; name: string })
           >
             <Minus size={18} aria-hidden="true" />
           </button>
-          <label htmlFor="c-qty" className={css.srOnly}>
+          <label htmlFor="buy-qty" className={css.srOnly}>
             Počet kusov
           </label>
           <input
-            id="c-qty"
+            id="buy-qty"
             className={css.qtyInput}
             type="number"
             inputMode="numeric"
@@ -55,16 +48,24 @@ export function BuyBox({ unitPrice, name }: { unitPrice: number; name: string })
             <Plus size={18} aria-hidden="true" />
           </button>
         </div>
-        <button type="button" className={css.addBig} onClick={() => setAdded(true)} data-added={added || undefined}>
+        <button
+          type="button"
+          className={css.addBig}
+          data-added={added || undefined}
+          onClick={() => {
+            addToCart(item, qty);
+            flash();
+          }}
+        >
           {added ? <Check size={22} aria-hidden="true" /> : <ShoppingCart size={22} aria-hidden="true" />}
           {added ? "Pridané" : "Do košíka"}
         </button>
       </div>
       <p className={css.buyTotal}>
-        Spolu <strong>{eur(unitPrice * qty)}</strong> <span>s DPH · {qty} ks</span>
+        Spolu <strong>{formatEur(item.priceGrossCents * qty)}</strong> <span>s DPH · {qty} ks</span>
       </p>
       <p className={css.srOnly} aria-live="polite">
-        {added ? `${name}, ${qty} ks, pridané do košíka.` : ""}
+        {added ? `${item.name}, ${qty} ks, pridané do košíka.` : ""}
       </p>
     </div>
   );

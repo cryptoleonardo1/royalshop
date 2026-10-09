@@ -2,28 +2,28 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import css from "./stavenisko.module.css";
 import { Placeholder } from "./placeholder";
+import css from "./shop.module.css";
 
-const PENDING_VIEWS = ["Celkový pohľad", "Detail upínania", "Obsah kufra", "Typový štítok"];
+const PENDING_VIEWS = ["Celkový pohľad", "Detail", "Obsah balenia", "Typový štítok"];
 
-type Slide = { src: string | null; label: string };
+type Slide = { src: string | null; label: string; alt: string | null };
 
 export function Gallery({
   images,
   name,
   sku,
-  category,
+  categorySlug,
 }: {
-  images: string[];
+  images: { path: string; alt: string | null }[];
   name: string;
-  sku: string;
-  category: string;
+  sku: string | null;
+  categorySlug: string;
 }) {
   const slides: Slide[] =
     images.length > 0
-      ? images.map((src, i) => ({ src, label: `Foto ${i + 1}` }))
-      : PENDING_VIEWS.map((label) => ({ src: null, label }));
+      ? images.map((img, i) => ({ src: img.path, label: `Foto ${i + 1}`, alt: img.alt }))
+      : PENDING_VIEWS.map((label) => ({ src: null, label, alt: null }));
   const [active, setActive] = useState(0);
   const index = Math.min(active, slides.length - 1);
   const current = slides[index];
@@ -34,15 +34,14 @@ export function Gallery({
         {current.src ? (
           <Image
             src={current.src}
-            alt={`${name} – ${current.label}`}
+            alt={current.alt ?? `${name} – ${current.label}`}
             fill
             sizes="(max-width: 1023px) 100vw, 56vw"
             className={css.productImg}
-            unoptimized={current.src.toLowerCase().endsWith(".svg")}
-            loading="eager"
+            preload
           />
         ) : (
-          <Placeholder sku={sku} name={name} category={category} view={current.label} large />
+          <Placeholder sku={sku} name={name} categorySlug={categorySlug} view={current.label} large />
         )}
         <span className={css.galleryCount} aria-hidden="true">
           {String(index + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
@@ -61,14 +60,7 @@ export function Gallery({
                 onClick={() => setActive(i)}
               >
                 {slide.src ? (
-                  <Image
-                    src={slide.src}
-                    alt=""
-                    fill
-                    sizes="120px"
-                    className={css.productImg}
-                    unoptimized={slide.src.toLowerCase().endsWith(".svg")}
-                  />
+                  <Image src={slide.src} alt="" fill sizes="120px" className={css.productImg} />
                 ) : (
                   <span className={css.thumbLabel}>
                     <span className={css.thumbNum}>{String(i + 1).padStart(2, "0")}</span>
