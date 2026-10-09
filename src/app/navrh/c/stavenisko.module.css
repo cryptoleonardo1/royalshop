@@ -1,6 +1,6 @@
 /* =====================================================================
    Návrh C — "Stavenisko"
-   Concrete surfaces, heavy black blocks, one hi-vis lime accent.
+   Concrete surfaces, heavy black blocks, one hi-vis safety-orange accent.
    ===================================================================== */
 
 .root {
@@ -13,8 +13,8 @@
   --paper: #f1f0eb;
   --mute: #4c4c46;
   --mute-dark: #b9b9b1;
-  --hivis: #c8f31d;
-  --hivis-deep: #a9d10a;
+  --hivis: #ff6a13;
+  --hivis-deep: #e05200;
   --focus: var(--ink);
   --hazard: repeating-linear-gradient(-45deg, var(--hivis) 0 12px, var(--ink) 12px 24px);
   --shadow: 6px 6px 0 var(--ink);
