@@ -3,6 +3,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { createPublicClient } from "@/lib/supabase/admin";
 import { foldText } from "@/lib/format";
 import { discountPct } from "@/lib/pricing";
+import type { ShippingZone } from "@/lib/shipping";
 
 // Public catalog reads. Everything here goes through the anon key (RLS: active products only)
 // and is cached under the "catalog" tag, so admin edits can call revalidateTag("catalog").
@@ -374,4 +375,15 @@ export async function getShopSettings(): Promise<ShopSettings> {
     pickupHours: s.pickup_hours ?? null,
     handlingDays: s.handling_days ?? 1,
   };
+}
+
+export async function getShippingZones(): Promise<ShippingZone[]> {
+  "use cache";
+  tagCatalog();
+  const { data, error } = await createPublicClient()
+    .from("shipping_zones")
+    .select("id, name, max_km, price_cents")
+    .order("sort_order");
+  if (error) fail("shipping zones", error);
+  return data as ShippingZone[];
 }
