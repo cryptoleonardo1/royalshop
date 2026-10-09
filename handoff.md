@@ -4,46 +4,55 @@
 
 ## Current State
 
-- **Phase:** Demo build -- foundation done, waiting for founder to pick a design direction before building the real storefront.
-- **Session count:** 1
-- **Repo status:** Local-only. Remote `origin` = github.com/cryptoleonardo1/royalshop, but the local gh account (`bugiiiii11`) has NO access -- nothing pushed yet.
-- **Local DB:** Supabase via Docker on ports 564xx (API http://127.0.0.1:56421, Studio :56423). Seeded. Keys in `.env.local` (gitignored, standard local keys).
+- **Phase:** Demo build -- storefront (catalog, cart, checkout, guest order page) done on design C; next: hosted infra, emails, account, admin.
+- **Session count:** 2
+- **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, `bugiiiii11` is collaborator). 4 local commits ahead, NOT pushed -- pushing now breaks the Vercel build (see Heads Up in row 1).
+- **Vercel:** project `royalshop` under team "Bugiiiii's projects", Git-connected to origin `main`. Last live deploy = old `/navrh` drafts. Local Vercel CLI is logged in as a different account (`lovejoy1-5060`) -- use the web UI or `vercel login` first.
+- **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Docker Desktop must be running (it was off at session start). Keys in `.env.local`.
 
 ## What Was Done (Session 1) -- Research, spec, foundation, design directions
 
-- Market + legal research (docs/01, 03), founder Q&A (docs/02), technical spec (docs/04) incl. founder decisions of 2026-10-09.
-- Business model changed from dropship to: customer pays -> we buy from supplier (Makita SK ~48h, NTC CZ 3-5d) -> goods arrive at Senec branch -> tested + warranty card -> courier / own transport (heavy) / pickup Senec.
-- Next 16.4 + TS scaffold; Supabase migrations (schema, functions, RLS, demo-only `seed_reset`); libs `money.ts`, `order-state.ts`, `shipping.ts` + 11 Vitest tests.
-- Seed (`npx tsx scripts/seed.ts`): 53 products (41 Makita/12 NTC, only 18 have images), 2 admins, 3 customers, 10 orders in every status, 8 invoices (202600001..), 1 withdrawal, 2 claims. Password `RoyalDemo2026!`.
-- Three design directions built by subagents at `/navrh/a|b|c` (A Technicky list / B Dielna po zotmeni / C Stavenisko), verified via Playwright screenshots desktop + mobile.
-- Gotchas: Windows excludes ports 54775-55351 (and 543xx used by another project) -> use 564xx. Postgres rejects `timestamptz + interval` in generated columns -> legal deadlines set by trigger. `raise` not allowed inside SQL CASE. Turbopack Tailwind rule in next.config.ts must exclude `*.module.css` or CSS modules silently break (classes undefined).
-- Decisions: one Next.js app (shop + /ucet + /admin); Stripe Checkout hosted with manual capture (authorize, admin captures after supplier confirms); invoices issued at capture; withdrawal only for persons (B2B none); own-transport priced by distance zones; guest checkout allowed; order numbers `OBJ26-00001`, claims `RK26-0001`, returns `OD26-0001`, credit notes `D2026NNNNN` (format to confirm with accountant).
+- Research (docs/01, 03), founder Q&A (docs/02), technical spec (docs/04). Model: customer pays -> we buy from supplier (Makita SK ~48h, NTC CZ 3-5d) -> Senec branch -> tested -> courier / own transport / pickup.
+- Next 16.4 scaffold, Supabase migrations, seed (`npx tsx scripts/seed.ts`, password `RoyalDemo2026!`), libs money/order-state/shipping.
+- Gotchas: Windows excludes ports 54775-55351 -> 564xx. Postgres rejects `timestamptz + interval` in generated columns (deadlines via trigger). Turbopack Tailwind rule must exclude `*.module.css`.
+- Decisions: one Next app (shop + /ucet + /admin); Stripe Checkout hosted, manual capture; invoices at capture; withdrawal persons only; guest checkout; numbers `OBJ26-00001`, `RK26-0001`, `OD26-0001`, credit notes `D2026NNNNN` (confirm with accountant).
+
+## What Was Done (Session 2) -- Design C storefront, cart and checkout (2026-10-10)
+
+- Founder chose design C ("Stavenisko") with safety orange `#ff6a13` instead of lime. `/navrh` drafts deleted; styles live in `src/components/shop/shop.module.css` (one CSS module, tokens on `.root`).
+- Catalog reads: `src/lib/catalog.ts` (`"use cache"`, `cacheLife("hours")`, tag `catalog` -> admin edits must call `revalidateTag("catalog")`). Filters are pure (`src/lib/listing.ts`), URL-driven, facet counts exclude own group.
+- Omnibus decision: discount % and struck price use `lowest_price_30d()` (law 310/2025 § 7 "počítať od"), fallback compare_at (`src/lib/pricing.ts`).
+- Checkout: browser cart in localStorage (`cart-store.ts`) is display-only; `buildQuote` (`cart-pricing.ts`) is the single pricing path for cart page, summary and the written order. `fetchPricedProducts` reads fresh DB prices + purchase price for `order_items` snapshot; `publicFields()` strips it before quotes reach the browser (tested).
+- Payments: `placeOrder` -> Stripe Checkout `capture_method: manual`; webhook `/api/webhooks/stripe` (payment_events idempotency, deletes event on handler failure so Stripe retries); return URL also confirms the session (works without webhook forwarding locally). No `STRIPE_SECRET_KEY` => demo mode: "Zaplatiť (testovacia platba)" simulates authorization through the same `markPaymentAuthorized`.
+- Guest order page `/objednavka/<number>?t=<access_token>` (new migration adds `orders.access_token`). Status changes only via `transitionOrder` in `src/lib/orders.ts` (optimistic lock on current status + history row).
+- Gotchas: React 19 resets `<form action>` inputs after an action, so checkout dispatches the action from `onSubmit` in a transition. Zod v4 needs `z.string({ error })` or missing fields show English "Invalid input". Next 16 `Image` uses `preload`, not `priority`. Slovak weekday after "v" needs accusative (`formatDeliveryDate(d, "acc")` -> "v stredu"). Next keeps previous routes hidden in DOM (3x `h1` in Playwright).
+- Verified: 36 Vitest tests, tsc, eslint, `next build`; Playwright e2e for person/courier (desktop) and company/heavy machine/zone (mobile) -> orders OBJ26-00011/00012 in local DB.
 
 ## What To Do Next
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Get repo access: user adds `bugiiiii11` as collaborator on cryptoleonardo1/royalshop (or `gh auth login` as cryptoleonardo1), then `git push -u origin main`. |
-| 2 | High | Founder picks design A/B/C (or mix). Optional: deploy `/navrh` to Vercel for founder -- ask user first (creates a Vercel project). Run locally: `npm run build && npx next start` -> /navrh. |
-| 3 | High | Build real storefront on chosen design, reading Supabase: home, category with filters (platform, brand, price, specs), product detail (GPSR box, lowest 30-day price via `lowest_price_30d()`, delivery estimate via `estimateDelivery`), search (`search_vector`). Data helpers in `src/lib/supabase/{server,client,admin}.ts`; mind Cache Components (`cookies()` needs Suspense). Then delete `/navrh`. |
-| 4 | High | Auth (`proxy.ts` session refresh, login/register person/company) + cart (localStorage, merge to `cart_items`) + checkout + Stripe test (needs keys from user) + webhook `api/webhooks/stripe`. |
-| 5 | Med | Client portal `/ucet` (orders timeline, invoices, withdrawal 2-step form + public `/odstupenie`, claims with photo upload to `claims` bucket). |
-| 6 | Med | Admin `/admin` (orders with transitions + capture/cancel, products CRUD with costs/margins, claims/returns with deadlines, invoices). Port invoice PDF from crm_core (`src/lib/generateInvoicePdf.js`, `payBySquare.js`, `pdfFonts.js` -- replace browser APIs: fetch fonts->fs, canvas logo->PNG, blob->arraybuffer). |
-| 7 | Med | Hosted Supabase project (EU/Frankfurt) + Vercel project; user must create or grant access. Stripe test keys, Resend key. |
-| 8 | Low | Missing product photos (35 of 53); EANs null for 35 products; draft VOP / reklamacny poriadok / GDPR for lawyer (inputs in docs/03). |
+| 1 | High | Hosted Supabase (EU/Frankfurt): user is creating it. Need URL, anon key, service role key + DB password or access token. Then `npx supabase link --project-ref <ref>` + `npx supabase db push`, run `scripts/seed.ts` against it (point `.env` vars at hosted), set the 3 Supabase vars + `NEXT_PUBLIC_SITE_URL` in Vercel, then `git push`. Pages read Supabase at build time, so push BEFORE env vars = failed Vercel build (previous deploy stays live). |
+| 2 | High | Stripe test mode: user provides `pk_test`/`sk_test`. Add to `.env.local` + Vercel; create webhook endpoint `https://<vercel-url>/api/webhooks/stripe` for `checkout.session.completed`, `checkout.session.expired` -> `STRIPE_WEBHOOK_SECRET`. Test with 4242 card; demo mode switches off automatically. |
+| 3 | High | Emails (Resend + React Email): order received (with order-page link incl. token), contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice. Hook into `placeOrder` / `markPaymentAuthorized`. Checkout hint already promises a confirmation email. |
+| 4 | High | Admin `/admin` orders: list + detail, "Potvrdiť a strhnúť" (Stripe capture -> `confirmed` + `issue_invoice`), "Zrušiť autorizáciu", later transitions, via `transitionOrder`. Port invoice PDF from `../crm_core/src/lib/` (generateInvoicePdf.js, payBySquare.js, pdfFonts.js; replace browser APIs). Also handle `payment_intent.canceled` / `charge.refunded` in webhook. |
+| 5 | Med | Auth: `proxy.ts` session refresh, login/register person/company, merge localStorage cart into `cart_items`, set `orders.profile_id`; then `/ucet` (orders timeline, invoices, withdrawal 2-step + public `/odstupenie`, claims with photo upload). |
+| 6 | Med | Info pages linked from footer (all 404 now): `/obchodne-podmienky`, `/reklamacny-poriadok`, `/ochrana-osobnych-udajov`, `/doprava-a-platba`, `/kontakt`, `/odstupenie`; header "Účet" -> `/ucet` 404. Draft VOP/reklamačný poriadok/GDPR texts from docs/03. |
+| 7 | Low | Search autocomplete (route handler + header dropdown), mobile sticky add-to-cart on PDP, price toggle s/bez DPH for companies, cron (expire `pending_payment` after 24h, authorization reminders). Missing photos (35/53) and EANs. |
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `handoff.md` | Current state + next steps (capped; history in handoff-archive.md) |
-| `docs/04-technicka-dokumentacia.md` | Source of truth: architecture, order states, data model, screens, decisions |
-| `docs/03-legislativa-research.md` | Legal requirements + implementation checklist (ch. 10) + lawyer open points (ch. 11) |
-| `supabase/migrations/` | Schema, functions (numbering, invoice guard, price history), RLS, seed_reset |
-| `scripts/seed.ts` | Demo data loader (service role, reads `.env.local`) |
-| `supabase/seed-data/catalog.json` | 53 demo products incl. specs, prices, purchase prices, rental URLs |
-| `src/lib/money.ts`, `order-state.ts`, `shipping.ts` | Core business logic (tested in `src/lib/lib.test.ts`) |
-| `src/app/navrh/` | Three design directions (temporary) |
+| `docs/04-technicka-dokumentacia.md` | Source of truth: architecture, order states, data model, screens |
+| `docs/03-legislativa-research.md` | Legal requirements (ch. 10 checklist, ch. 11 lawyer points) |
+| `src/lib/catalog.ts` | Cached public catalog reads (tag `catalog`) |
+| `src/lib/cart-pricing.ts` | `buildQuote` -- the one pricing path for cart, checkout, order |
+| `src/lib/checkout-actions.ts` | `placeOrder`, `payOrder`, `quoteCart` server actions + Stripe session |
+| `src/lib/orders.ts` | `transitionOrder`, payment authorize/abandon, fresh pricing |
+| `src/app/api/webhooks/stripe/route.ts` | Stripe webhook |
+| `src/components/shop/shop.module.css` | All storefront styles (design C tokens) |
+| `supabase/migrations/` | Schema, functions, RLS, seed_reset, order access token |
 | `../crm_core/src/lib/` | Invoice PDF + Pay by Square source to port |
 
 ## Session Summary
@@ -51,3 +60,4 @@
 | Session | Date | Title |
 |---------|------|-------|
 | 1 | 2026-10-09 | Research, spec, foundation, design directions |
+| 2 | 2026-10-10 | Design C storefront, cart and checkout |
