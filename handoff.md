@@ -4,11 +4,13 @@
 
 ## Current State
 
-- **Phase:** Demo build -- storefront (catalog, cart, checkout, guest order page) done on design C; next: hosted infra, emails, account, admin.
-- **Session count:** 2
-- **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, `bugiiiii11` is collaborator). 4 local commits ahead, NOT pushed -- pushing now breaks the Vercel build (see Heads Up in row 1).
-- **Vercel:** project `royalshop` under team "Bugiiiii's projects", Git-connected to origin `main`. Last live deploy = old `/navrh` drafts. Local Vercel CLI is logged in as a different account (`lovejoy1-5060`) -- use the web UI or `vercel login` first.
-- **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Docker Desktop must be running (it was off at session start). Keys in `.env.local`.
+- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app (hosted Supabase + Stripe test mode); next: emails, admin, account.
+- **Session count:** 3
+- **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, now PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy.
+- **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby). Env vars set: 3 Supabase + `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET` (`NEXT_PUBLIC_SITE_URL` not needed, falls back to Vercel URL). Repo MUST stay public: Hobby blocks deploys of private-repo commits whose author (`bugiiiii11`) is not the Vercel-linked GitHub account; redeploying a blocked commit stays blocked. Local Vercel CLI is a different account (`lovejoy1-5060`) and Supabase CLI too -- use web UIs.
+- **Hosted Supabase:** project `royalshop1`, ref `vzytkquuljtoopgfcfak`, Frankfurt. Keys + DB URL in `.env.hosted.local` (gitignored). `supabase link` fails (CLI account lacks access) -> use `npx supabase db push --db-url "$SUPABASE_DB_URL"` (session pooler `aws-1-eu-central-1.pooler.supabase.com:5432`, user `postgres.<ref>`; direct `db.<ref>` host is IPv6-only). Seed: `set -a; . ./.env.hosted.local; set +a; npx tsx scripts/seed.ts` (shell env beats `.env.local`). Seeded 2026-10-10.
+- **Stripe:** test mode, webhook endpoint `https://royalshop.vercel.app/api/webhooks/stripe` (completed + expired). `sk_test` also in `.env.local`, so local checkout uses real Stripe (local webhook not reachable; return URL confirms).
+- **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Docker Desktop must be running. Keys in `.env.local`.
 
 ## What Was Done (Session 1) -- Research, spec, foundation, design directions
 
@@ -32,13 +34,12 @@
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Hosted Supabase (EU/Frankfurt): user is creating it. Need URL, anon key, service role key + DB password or access token. Then `npx supabase link --project-ref <ref>` + `npx supabase db push`, run `scripts/seed.ts` against it (point `.env` vars at hosted), set the 3 Supabase vars + `NEXT_PUBLIC_SITE_URL` in Vercel, then `git push`. Pages read Supabase at build time, so push BEFORE env vars = failed Vercel build (previous deploy stays live). |
-| 2 | High | Stripe test mode: user provides `pk_test`/`sk_test`. Add to `.env.local` + Vercel; create webhook endpoint `https://<vercel-url>/api/webhooks/stripe` for `checkout.session.completed`, `checkout.session.expired` -> `STRIPE_WEBHOOK_SECRET`. Test with 4242 card; demo mode switches off automatically. |
-| 3 | High | Emails (Resend + React Email): order received (with order-page link incl. token), contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice. Hook into `placeOrder` / `markPaymentAuthorized`. Checkout hint already promises a confirmation email. |
-| 4 | High | Admin `/admin` orders: list + detail, "Potvrdiť a strhnúť" (Stripe capture -> `confirmed` + `issue_invoice`), "Zrušiť autorizáciu", later transitions, via `transitionOrder`. Port invoice PDF from `../crm_core/src/lib/` (generateInvoicePdf.js, payBySquare.js, pdfFonts.js; replace browser APIs). Also handle `payment_intent.canceled` / `charge.refunded` in webhook. |
-| 5 | Med | Auth: `proxy.ts` session refresh, login/register person/company, merge localStorage cart into `cart_items`, set `orders.profile_id`; then `/ucet` (orders timeline, invoices, withdrawal 2-step + public `/odstupenie`, claims with photo upload). |
-| 6 | Med | Info pages linked from footer (all 404 now): `/obchodne-podmienky`, `/reklamacny-poriadok`, `/ochrana-osobnych-udajov`, `/doprava-a-platba`, `/kontakt`, `/odstupenie`; header "Účet" -> `/ucet` 404. Draft VOP/reklamačný poriadok/GDPR texts from docs/03. |
-| 7 | Low | Search autocomplete (route handler + header dropdown), mobile sticky add-to-cart on PDP, price toggle s/bez DPH for companies, cron (expire `pending_payment` after 24h, authorization reminders). Missing photos (35/53) and EANs. |
+| 1 | High | Verify live Stripe test payment end to end (card 4242): order -> `authorized`, PaymentIntent uncaptured, webhook delivered. |
+| 2 | High | Emails (Resend + React Email): order received (with order-page link incl. token), contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice. Hook into `placeOrder` / `markPaymentAuthorized`. Checkout hint already promises a confirmation email. |
+| 3 | High | Admin `/admin` orders: list + detail, "Potvrdiť a strhnúť" (Stripe capture -> `confirmed` + `issue_invoice`), "Zrušiť autorizáciu", later transitions, via `transitionOrder`. Port invoice PDF from `../crm_core/src/lib/` (generateInvoicePdf.js, payBySquare.js, pdfFonts.js; replace browser APIs). Also handle `payment_intent.canceled` / `charge.refunded` in webhook. |
+| 4 | Med | Auth (also set Supabase Auth Site URL + redirect URLs to royalshop.vercel.app): `proxy.ts` session refresh, login/register person/company, merge localStorage cart into `cart_items`, set `orders.profile_id`; then `/ucet` (orders timeline, invoices, withdrawal 2-step + public `/odstupenie`, claims with photo upload). |
+| 5 | Med | Info pages linked from footer (all 404 now): `/obchodne-podmienky`, `/reklamacny-poriadok`, `/ochrana-osobnych-udajov`, `/doprava-a-platba`, `/kontakt`, `/odstupenie`; header "Účet" -> `/ucet` 404. Draft VOP/reklamačný poriadok/GDPR texts from docs/03. |
+| 6 | Low | Search autocomplete (route handler + header dropdown), mobile sticky add-to-cart on PDP, price toggle s/bez DPH for companies, cron (expire `pending_payment` after 24h, authorization reminders). Missing photos (35/53) and EANs. |
 
 ## Key Files
 
@@ -61,3 +62,4 @@
 |---------|------|-------|
 | 1 | 2026-10-09 | Research, spec, foundation, design directions |
 | 2 | 2026-10-10 | Design C storefront, cart and checkout |
+| 3 | 2026-10-10 | Hosted Supabase, Vercel live, Stripe test mode |
