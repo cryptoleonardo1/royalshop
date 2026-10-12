@@ -1,29 +1,14 @@
-import {
-  Axe,
-  BatteryCharging,
-  Briefcase,
-  Construction,
-  Disc3,
-  Drill,
-  Fan,
-  Hammer,
-  Leaf,
-  Package,
-  Wrench,
-} from "lucide-react";
+import { AudioWaveform, Construction, Disc3, Droplets, Flame, Package, Waves, Zap } from "lucide-react";
 import css from "./shop.module.css";
 
 const ICONS: [RegExp, typeof Package][] = [
-  [/kladiv/, Hammer],
-  [/utahova/, Wrench],
-  [/vrtack|skrutkova|zemne-vrtaky/, Drill],
-  [/brusk|kotuc/, Disc3],
-  [/pily|pila|rezacky/, Axe],
-  [/vibracne|miesadla|stavebne/, Construction],
-  [/kosack|krovinorez|zahrad/, Leaf],
-  [/baterie|nabijack/, BatteryCharging],
-  [/vysavac/, Fan],
-  [/kufre/, Briefcase],
+  [/vibrator/, AudioWaveform],
+  [/vibracn|pech|dosk/, Construction],
+  [/elektrocentral/, Zap],
+  [/cerpadl/, Waves],
+  [/rezac|pily|pila/, Disc3],
+  [/odvlhc/, Droplets],
+  [/ohrieva|klima/, Flame],
 ];
 
 function categoryIcon(categorySlug: string, size: number) {

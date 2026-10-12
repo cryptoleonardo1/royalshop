@@ -655,120 +655,57 @@
   transform: translateX(4px);
 }
 
-/* ---------- platform picker ---------- */
+/* ---------- brands ---------- */
 
-.platforms {
+.brands {
   display: grid;
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
-.platform {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "volt name"
-    "text text"
-    "foot foot";
-  align-items: end;
-  gap: 4px 16px;
-  padding: clamp(22px, 3.5vw, 36px);
-  text-decoration: none;
+.brandTile a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 18px 20px 20px;
+  background: var(--paper);
   border: 3px solid var(--ink);
+  text-decoration: none;
   transition:
+    background 0.2s,
+    color 0.2s,
     transform 0.25s var(--ease),
     box-shadow 0.25s var(--ease);
 }
-.platformLxt {
+.brandName {
+  margin-top: 6px;
+  font-family: var(--f-stencil);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.brandCats {
+  flex: 1;
+  max-width: 34ch;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--mute);
+}
+.brandTile .catCount svg {
+  transition: transform 0.2s var(--ease);
+}
+.brandTile:first-child a {
   background: var(--ink);
   color: var(--paper);
 }
-.platformXgt {
-  background: var(--paper);
-}
-.platformVolt {
-  grid-area: volt;
-  font-family: var(--f-display);
-  font-variation-settings: "opsz" 72;
-  font-weight: 900;
-  font-size: clamp(5.5rem, 17vw, 11rem);
-  line-height: 0.78;
-  letter-spacing: -0.02em;
-}
-.platformVolt small {
-  font-size: 0.42em;
-  letter-spacing: 0;
-}
-.platformLxt .platformVolt {
+.brandTile:first-child .brandName,
+.brandTile:first-child .catIdx {
   color: var(--hivis);
 }
-.platformName {
-  grid-area: name;
-  justify-self: start;
-  padding: 6px 10px 3px;
-  font-family: var(--f-stencil);
-  font-weight: 800;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  line-height: 1;
-  letter-spacing: 0.06em;
-  border: 3px solid currentColor;
-}
-.platformXgt .platformName {
-  background: var(--ink);
-  color: var(--hivis);
-  border-color: var(--ink);
-}
-.platformText {
-  grid-area: text;
-  max-width: 44ch;
-  margin-top: 18px;
-  font-size: 1.0625rem;
-  font-weight: 500;
-}
-.platformLxt .platformText {
-  color: #d8d8d1;
-}
-.platformFoot {
-  grid-area: foot;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: 22px;
-  padding-top: 14px;
-  border-top: 1px solid currentColor;
-  font-family: var(--f-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.platformGo {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--f-body);
-  font-weight: 700;
-  font-size: 0.9375rem;
-  letter-spacing: 0.04em;
-}
-.platformGo svg {
-  transition: transform 0.2s var(--ease);
-}
-.platformNote {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 18px;
-  font-size: 0.9375rem;
-  color: var(--ink-2);
-}
-.platformNote svg {
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-.platformNote strong {
-  padding: 0 4px;
-  background: var(--hivis);
+.brandTile:first-child .brandCats {
+  color: var(--mute-dark);
 }
 
 /* ---------- categories ---------- */
@@ -1870,18 +1807,21 @@
   .card:hover .plateIcon {
     transform: rotate(-8deg) scale(1.05);
   }
-  .platform:hover {
-    transform: translate(-4px, -4px);
+  .brandTile a:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--hivis);
   }
-  .platformLxt:hover {
-    box-shadow:
-      10px 10px 0 var(--hivis),
-      10px 10px 0 3px var(--ink);
+  .brandTile a:hover .brandName {
+    color: var(--hivis);
   }
-  .platformXgt:hover {
-    box-shadow: 10px 10px 0 var(--ink);
+  .brandTile a:hover .brandCats {
+    color: var(--mute-dark);
   }
-  .platform:hover .platformGo svg,
+  .brandTile a:hover .catCount svg {
+    transform: translateX(5px);
+  }
   .rental:hover .rentalGo svg,
   .withdraw:hover .withdrawInner svg:last-child {
     transform: translateX(5px);
@@ -1987,7 +1927,8 @@
     overflow: visible;
     clip: auto;
   }
-  .cats {
+  .cats,
+  .brands {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .cat:first-child,
@@ -2025,9 +1966,6 @@
     grid-template-areas: "logo search user";
     gap: 28px;
   }
-  .platforms {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .footGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2057,7 +1995,8 @@
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .cats {
+  .cats,
+  .brands {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .cat:first-child {

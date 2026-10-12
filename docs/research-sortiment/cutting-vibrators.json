@@ -1,0 +1,1927 @@
+{
+  "research_date": "2026-10-12",
+  "conversion_rules": "Market price = median of converted sources (mean when 2 sources). EUR gross incl. 23 % SK VAT; DE prices /1.19*1.23; CZ prices /1.21 (if incl. DPH) /25 CZK/EUR *1.23; net prices *1.23.",
+  "brands": [
+    {
+      "brand": "Gölz",
+      "manufacturer_name": "Gölz GmbH",
+      "manufacturer_address": "Dommersbach 51, 53940 Hellenthal, Germany",
+      "manufacturer_email": "info@goelz.de",
+      "website": "https://www.goelz.de",
+      "eu_responsible_person": null
+    },
+    {
+      "brand": "Cedima",
+      "manufacturer_name": "CEDIMA Diamantwerkzeug- und Maschinenbaugesellschaft mbH",
+      "manufacturer_address": "Siedemeierkamp 5, 29227 Celle, Germany",
+      "manufacturer_email": "info@cedima.com",
+      "website": "https://www.cedima.com",
+      "eu_responsible_person": null
+    },
+    {
+      "brand": "Enar",
+      "manufacturer_name": "ENARCO S.A. (ENAR Group)",
+      "manufacturer_address": "C/ Burtina 16, Polígono Industrial Plaza, 50197 Zaragoza, Spain",
+      "manufacturer_email": null,
+      "website": "https://www.enargroup.com",
+      "eu_responsible_person": null
+    }
+  ],
+  "brand_notes": "All three manufacturers are EU-based, so no separate EU responsible person is needed under GPSR. Enar: general sales e-mail not found on the site (only gdpr@enar.es and phone +34 976 464 090); enar.es redirects/404s, current site is enargroup.com. Gölz also runs an official German web shop goelz-shop.com (used as price source).",
+  "supplier_notes": "Gölz – CZ: SC Koutský (https://eshop.sckoutsky.cz, full FS range incl. FS30E/FS40E), JKL servis Zlín (https://www.jklservis.cz/golz, floor and block saws); no dedicated SK dealer found; official DE shop https://goelz-shop.com; Gölz Ges.m.b.H. Salzburg (info@goelz.at) covers Austria and may cover SK. Cedima – CZ subsidiary/partner site https://www.cedima-diamant.cz; SK: madmat.sk (https://www.madmat.sk/cedima-m309 – CTS-57 G, CTS-81 L, CTS-265.2, CBAS-500). Enar – SK: Vibrotech.sk (https://www.vibrotech.sk, wide Enar range + ready-made sets), náradiestroje.sk (https://naradiestroje.sk), eprofi.sk (https://www.eprofi.sk/vyrobcovia/enar), nabager.sk; CZ: vibratory-betonu.cz, alitom.cz, gatl.cz, stasan.cz.",
+  "golz_table_saws_note": "Gölz table saws (not added as products): (1) GS350A-120 – aluminium bridge saw for tiles/granite, blade Ø 350 mm, cut depth 110 mm, cut length 1 000 (1 200) mm, 230 V 2,2 kW, 97 kg, miter cuts, order no. 0289 350 3100; 2 674 € incl. 19 % DE VAT on goelz-shop.com (https://goelz-shop.com/products/gs350a-120) ≈ 2 764 € SK gross. (2) MS600A – block/stone saw, blade Ø 600 mm, cut depth 230 mm, cut length 650-790 mm, 230 V 2,2 kW or 400 V 4 kW, 115 kg; 3 569 € (230 V) / 3 609 € (400 V) incl. 19 % on goelz-shop.com (https://goelz-shop.com/products/ms600a) ≈ 3 689 / 3 730 € SK gross. Cheaper alternative: MS400 (Ø 400 mm, 137 mm depth, 700 mm length, 230 V 2,2 kW, 70 kg) 1 377,90 € DE ≈ 1 424 € SK; CZ JKL servis 34 485 Kč s DPH.",
+  "excluded": [
+    "Gölz FS40E (≈ 26–30 k € DE) and FS250B/D (≈ 25–30 k € DE): above 20 000 € limit.",
+    "Gölz FS175 / FS125E / FS170 KOHLER: valid models but skipped to keep 5 floor saws (FS175 3 249 €, FS125E 3 148 €, FS170 KOHLER 3 149 € – official DE shop).",
+    "Gölz KB200 / KB350 sewer core drills: niche (sewer/road), 4 610–5 999 € DE.",
+    "Enar AVMU / DINGO / FOX sets: typically 670–812 € incl. VAT (e.g. vibrotech Set HEAVY DINGO 811,80 €, often discounted to ~755 €) – below or at the 800 € threshold.",
+    "Enar KAMEL petrol drive: no price found.",
+    "Enar SPYDER E-BATT battery vibrator: only FR/unclear variant prices found.",
+    "Enar AFE converters (42 V): converter-only item; included instead the petrol AFGH 2000 set."
+  ],
+  "products": [
+    {
+      "brand": "Gölz",
+      "model": "FS125",
+      "category_key": "rezacky-skar",
+      "product_url": "https://www.goelz.de/home/product/info/FS125",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/fs125_main.jpg?v=1737070692",
+        "https://www.goelz.de/uploads/attach/2025/03/20250315/a6de39eca82cc193dca1012be21108ce.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX200 petrol, 6,5 PS / 4,8 kW (gross), 5,5 PS / 4,1 kW (net)",
+      "weight_kg": 77,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 350,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 120,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX200 (benzín)",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 4.8,
+          "unit": "kW"
+        },
+        {
+          "key": "blade_shaft_rpm",
+          "label_sk": "Otáčky hriadeľa kotúča",
+          "value": 2730,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 25,
+          "unit": "l"
+        },
+        {
+          "key": "feed",
+          "label_sk": "Posuv",
+          "value": "manuálny",
+          "unit": null
+        },
+        {
+          "key": "depth_adjustment",
+          "label_sk": "Nastavenie hĺbky rezu",
+          "value": "plynulé ručným kolesom",
+          "unit": null
+        },
+        {
+          "key": "vibration_ms2",
+          "label_sk": "Vibrácie na rukoväti",
+          "value": 4.5,
+          "unit": "m/s²"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "650 × 450 × 1000",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 77,
+          "unit": "kg"
+        },
+        {
+          "key": "order_no",
+          "label_sk": "Objednávacie číslo výrobcu",
+          "value": "0282 125 6000",
+          "unit": null
+        }
+      ],
+      "applications": "Kompaktný benzínový rezač škár na mokré aj suché rezanie dilatačných škár a opráv v betóne a asfalte (chodníky, dvory, menšie plochy). Kupujú ho stavebné firmy, pokladači dlažby a požičovne ako náhradu rozbrusovačky na vozíku.",
+      "notes": "Diamantový kotúč nie je súčasťou dodávky (výrobca odkazuje na katalóg kotúčov). Veľký rozptyl cien: oficiálny Gölz e-shop 1 739 € (DE) vs. wefaru 2 606 € (DE); medián zvolený z CZ ceny JKL servis. EAN nenájdený.",
+      "market_price_eur_gross": 2066,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/fs-125",
+          "price": 1739.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 1797.45 EUR gross SK; official Gölz online shop"
+        },
+        {
+          "url": "https://www.jklservis.cz/golz-fs125-max-kotouce-350mm",
+          "price": 50820,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price incl. 21 % DPH; stripped 21 %, /25 CZK/EUR, added 23 % -> 2066.4 EUR gross SK"
+        },
+        {
+          "url": "https://www.wefaru.de/goelz-fugenschneider-fs125",
+          "price": 2606.1,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2693.7 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "FS170 (Honda GX390)",
+      "category_key": "rezacky-skar",
+      "product_url": "https://www.goelz.de/home/product/info/FS170",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/fs170_main.jpg?v=1741855779",
+        "https://www.goelz.de/uploads/attach/2025/03/20250315/7e3d584f33a9f33693e30d30edd4830c.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX390 petrol, 13 PS / 9,5 kW (gross), 11,8 PS / 8,7 kW (net)",
+      "weight_kg": 120,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 190,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX390 (benzín)",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 9.5,
+          "unit": "kW"
+        },
+        {
+          "key": "blade_shaft_rpm",
+          "label_sk": "Otáčky hriadeľa kotúča",
+          "value": 2300,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 25,
+          "unit": "l"
+        },
+        {
+          "key": "feed",
+          "label_sk": "Posuv",
+          "value": "manuálny",
+          "unit": null
+        },
+        {
+          "key": "depth_adjustment",
+          "label_sk": "Nastavenie hĺbky rezu",
+          "value": "plynulé nožným pedálom a plynovou pružinou",
+          "unit": null
+        },
+        {
+          "key": "vibration_ms2",
+          "label_sk": "Vibrácie na rukoväti",
+          "value": 4.5,
+          "unit": "m/s²"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "1210 × 630 × 1165",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 120,
+          "unit": "kg"
+        },
+        {
+          "key": "order_no",
+          "label_sk": "Objednávacie číslo výrobcu",
+          "value": "0282 170 1000",
+          "unit": null
+        }
+      ],
+      "applications": "Univerzálny benzínový rezač škár pre betón a asfalt – rezanie dilatačných škár v podlahách, cestách a parkoviskách, otvory pre inžinierske siete. Typický stroj stavebných firiem, cestárov a požičovní.",
+      "notes": "Bez diamantového kotúča. Existuje aj verzia s motorom KOHLER CH440 14 PS (obj. č. 0282 170 1400, 3 149 € v oficiálnom Gölz shope). Hmotnosť: shop/výrobca 120 kg, katalóg 2025 uvádza 120–130 kg.",
+      "market_price_eur_gross": 2707,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/fs-170",
+          "price": 2619.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2707.03 EUR gross SK; official Gölz online shop"
+        },
+        {
+          "url": "https://www.jklservis.cz/rezac-spar-golz-fs-170-motor-honda-max-o-kotouce-500mm",
+          "price": 66550,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price incl. 21 % DPH; stripped 21 %, /25 CZK/EUR, added 23 % -> 2706.0 EUR gross SK"
+        },
+        {
+          "url": "https://eshop.sckoutsky.cz/rezaci-technika/fs170---pojizdna-rezacka-pro-dlazbu-a-asfalt/",
+          "price": 63620,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price excl. DPH; /25 CZK/EUR, added 23 % -> 3130.1 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "FS170E",
+      "category_key": "rezacky-skar",
+      "product_url": "https://www.goelz.de/home/product/info/FS170E",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/fs170e_main_1.jpg?v=1742218983",
+        "https://www.goelz.de/uploads/attach/2025/03/20250315/71881c50d6b481eaa0603305b2b51f1d.png"
+      ],
+      "ean": null,
+      "engine": "electric 400 V 3~ 5,5 kW, 50-60 Hz",
+      "weight_kg": 136,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 190,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 5.5,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 400,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 3,
+          "unit": null
+        },
+        {
+          "key": "blade_shaft_rpm",
+          "label_sk": "Otáčky hriadeľa kotúča",
+          "value": 2300,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "water_supply",
+          "label_sk": "Prívod vody",
+          "value": "prípojka Gardena (bez nádrže)",
+          "unit": null
+        },
+        {
+          "key": "depth_adjustment",
+          "label_sk": "Nastavenie hĺbky rezu",
+          "value": "plynulé nožným pedálom a plynovou pružinou",
+          "unit": null
+        },
+        {
+          "key": "vibration_ms2",
+          "label_sk": "Vibrácie na rukoväti",
+          "value": 2.2,
+          "unit": "m/s²"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "1210 × 630 × 1165",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 136,
+          "unit": "kg"
+        },
+        {
+          "key": "order_no",
+          "label_sk": "Objednávacie číslo výrobcu",
+          "value": "0282 170 1300",
+          "unit": null
+        }
+      ],
+      "applications": "Elektrický rezač škár bez výfukových plynov – na rezanie betónových podláh v halách, podzemných garážach a interiéroch. Pre firmy robiace priemyselné podlahy a rekonštrukcie.",
+      "notes": "Bez diamantového kotúča a bez vodnej nádrže (napája sa z vodovodu). Rozptyl cien 3 349 € (oficiálny shop DE) až 89 100 Kč bez DPH (CZ).",
+      "market_price_eur_gross": 4059,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/fs-170-e",
+          "price": 3349.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 3461.57 EUR gross SK; official Gölz online shop"
+        },
+        {
+          "url": "https://www.wefaru.de/goelz-fugenschneider",
+          "price": 3927.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 4059.0 EUR gross SK; wefaru.de category listing"
+        },
+        {
+          "url": "https://eshop.sckoutsky.cz/rezaci-technika/fs170-e---elektricka-pojizdna-rezacka/",
+          "price": 89100,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price excl. DPH; /25 CZK/EUR, added 23 % -> 4383.72 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "FS190",
+      "category_key": "rezacky-skar",
+      "product_url": "https://www.goelz.de/home/product/info/FS190",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/fs190_main.jpg?v=1741857087",
+        "https://www.goelz.de/uploads/attach/2025/03/20250315/fe3809905f3e2b786470bd099013f1d1.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX390 petrol, 13 PS / 9,5 kW (gross); electric travel drive (self-propelled)",
+      "weight_kg": 137,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 190,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX390 (benzín)",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 9.5,
+          "unit": "kW"
+        },
+        {
+          "key": "blade_shaft_rpm",
+          "label_sk": "Otáčky hriadeľa kotúča",
+          "value": 2100,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 25,
+          "unit": "l"
+        },
+        {
+          "key": "feed",
+          "label_sk": "Posuv",
+          "value": "elektrický (samochodný)",
+          "unit": null
+        },
+        {
+          "key": "depth_adjustment",
+          "label_sk": "Nastavenie hĺbky rezu",
+          "value": "plynulé ručnou kľukou",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "1200 × 630 × 1010",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 137,
+          "unit": "kg"
+        },
+        {
+          "key": "order_no",
+          "label_sk": "Objednávacie číslo výrobcu",
+          "value": "0282 190 1000",
+          "unit": null
+        }
+      ],
+      "applications": "Samochodný benzínový rezač škár s elektrickým pojazdom pre dlhé rovné rezy v betóne a asfalte (cesty, parkoviská, priemyselné plochy) s rovnomerným posuvom a menšou námahou obsluhy.",
+      "notes": "Bez diamantového kotúča.",
+      "market_price_eur_gross": 7368,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/fs-190",
+          "price": 6749.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 6975.86 EUR gross SK; official Gölz online shop"
+        },
+        {
+          "url": "https://www.wefaru.de/goelz-fugenschneider",
+          "price": 7128.1,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 7367.7 EUR gross SK; wefaru.de category listing"
+        },
+        {
+          "url": "https://eshop.sckoutsky.cz/rezaci-technika/fs190---samojezdna-rezacka-pro-beton-i-asfalt/",
+          "price": 155115,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price excl. DPH; /25 CZK/EUR, added 23 % -> 7631.66 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "FS30E (7,5 kW)",
+      "category_key": "rezacky-skar",
+      "product_url": "https://www.goelz.de/home/product/info/FS30E",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/fs30e_web.jpg?v=1742223196",
+        "https://www.goelz.de/uploads/attach/2025/03/20250315/5d09ae639ed012732f867caa9f877ad4.png"
+      ],
+      "ean": null,
+      "engine": "electric 400 V 3~ 7,5 kW, 16 A (variant 11 kW / 32 A also available)",
+      "weight_kg": 118,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 800,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 320,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 7.5,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 400,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 3,
+          "unit": null
+        },
+        {
+          "key": "fuse_a",
+          "label_sk": "Istenie",
+          "value": 16,
+          "unit": "A"
+        },
+        {
+          "key": "blade_shaft_rpm",
+          "label_sk": "Otáčky hriadeľa kotúča",
+          "value": 1430,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "water_supply",
+          "label_sk": "Prívod vody",
+          "value": "externá prípojka (bez nádrže)",
+          "unit": null
+        },
+        {
+          "key": "depth_adjustment",
+          "label_sk": "Nastavenie hĺbky rezu",
+          "value": "plynulé ručným kolesom",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "1220 × 680 × 880",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 118,
+          "unit": "kg"
+        },
+        {
+          "key": "order_no",
+          "label_sk": "Objednávacie číslo výrobcu",
+          "value": "0282 030 1000",
+          "unit": null
+        }
+      ],
+      "applications": "Rozoberateľný elektrický rezač škár s kotúčom až 800 mm na hlboké rezy (do 320 mm) v betóne a železobetóne – prierazy stropov, deliace rezy, rezanie aj na stropných doskách. Pre firmy zaoberajúce sa diamantovým rezaním a búracími prácami.",
+      "notes": "Bez diamantového kotúča. Cena je pre verziu 7,5 kW / 16 A; verzia 11 kW / 32 A (obj. č. 0282 030 2000, 142 kg) stojí cca o 320 € viac (7 698 € DE oficiálny shop). Wefaru uvádza rozpätie 7 675,50 – 7 842,10 €, použitá nižšia hodnota (predpoklad = 7,5 kW).",
+      "market_price_eur_gross": 7769,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/fs-30e",
+          "price": 7379.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 7627.03 EUR gross SK; official Gölz online shop, variant 400V/7.5kW 16A"
+        },
+        {
+          "url": "https://www.wefaru.de/goelz-fugenschneider",
+          "price": 7675.5,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 7933.5 EUR gross SK; lower bound of listed range"
+        },
+        {
+          "url": "https://eshop.sckoutsky.cz/rezaci-technika/fs30e---demontovatelna-elektricka-rezacka-spar-7-5-kw/",
+          "price": 157900,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price excl. DPH; /25 CZK/EUR, added 23 % -> 7768.68 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "HS400S",
+      "category_key": "rezacia-technika-ostatne",
+      "product_url": "https://www.goelz.de/home/product/info/HS400S",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/hs400s_main.jpg?v=1742304452",
+        "https://www.goelz.de/uploads/attach/2025/03/20250318/43b2b8f3e5dfe9374df0d875baebb403.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 3,3 kW",
+      "weight_kg": 11.2,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 400,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 160,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": 3.3,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "rated_rpm",
+          "label_sk": "Menovité otáčky",
+          "value": 4000,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "cutting_mode",
+          "label_sk": "Spôsob rezania",
+          "value": "mokré aj suché",
+          "unit": null
+        },
+        {
+          "key": "blade_guard",
+          "label_sk": "Kryt kotúča",
+          "value": "otočný plný kryt",
+          "unit": null
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 11.2,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Elektrická ručná rozbrusovačka s kotúčom 400 mm – rezanie okenných a dverných otvorov v betóne, muriva, obrubníkov, dlažby a rúr bez výfukových plynov (vhodná aj do interiéru).",
+      "notes": "Dodáva sa so sadou kolies, bez diamantového kotúča (výrobca odporúča TS35 Ø 400). Odsávanie HS400VAC je voliteľné príslušenstvo. Cena profiwerkzeug24 1 654,10 € je akciová.",
+      "market_price_eur_gross": 2015,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/hs400s",
+          "price": 1974.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2040.35 EUR gross SK; official Gölz online shop"
+        },
+        {
+          "url": "https://nordmann-shop.com/GOeLZ-HS400S",
+          "price": 1949.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2014.51 EUR gross SK; assumed incl. 19 % MwSt (DE retail)"
+        },
+        {
+          "url": "https://profiwerkzeug24.de/goelz-hs400s-elektro-trennschleifer-400-mm",
+          "price": 1654.1,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 1709.7 EUR gross SK; special price, regular 2 011,10 €"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "SD250 + EDM25 (vŕtacia súprava)",
+      "category_key": "rezacia-technika-ostatne",
+      "product_url": "https://www.goelz.de/home/product/info/SD250-%7C-EDM25",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/sd250new_main.jpg?v=1741606301",
+        "https://www.goelz.de/uploads/attach/2025/03/20250311/fbddd79b25af96ccd85a6e71a820d346.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 2,5 kW, 3-speed core drill motor",
+      "weight_kg": null,
+      "specs": [
+        {
+          "key": "drill_diameter_mm",
+          "label_sk": "Rozsah priemeru vŕtania",
+          "value": "20 – 250",
+          "unit": "mm"
+        },
+        {
+          "key": "stroke_mm",
+          "label_sk": "Zdvih stojana",
+          "value": 600,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": 2.5,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "speeds_rpm",
+          "label_sk": "Otáčky (3 stupne)",
+          "value": "300 / 520 / 1700",
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "base",
+          "label_sk": "Päta stojana",
+          "value": "kombinovaná vákuová / kotviaca",
+          "unit": null
+        },
+        {
+          "key": "stand_weight_kg",
+          "label_sk": "Hmotnosť stojana",
+          "value": 12,
+          "unit": "kg"
+        },
+        {
+          "key": "order_no",
+          "label_sk": "Objednávacie číslo výrobcu",
+          "value": "0295 125 9370",
+          "unit": null
+        }
+      ],
+      "applications": "Kompletná jadrová vŕtacia súprava (stojan SD250 + motor) na mokré vŕtanie otvorov do Ø 250 mm v betóne a železobetóne – prestupy pre inštalácie, vzduchotechniku a kanalizáciu.",
+      "notes": "Jediný nájdený zdroj ceny (oficiálny Gölz shop). Variant v shope je označený EDM25, ale tabuľka v popise uvádza stĺpec 'EDM22L' s rovnakým obj. č. 0295 125 9370 – nejasné označenie motora. Celková hmotnosť súpravy neuvedená (stojan 12 kg podľa shopu, 10,5 kg podľa webu výrobcu; motor EDM25 9 kg). Vŕtacie korunky nie sú súčasťou.",
+      "market_price_eur_gross": 2665,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/sd250",
+          "price": 2578.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2664.66 EUR gross SK; official Gölz online shop, variant EDM25"
+        }
+      ]
+    },
+    {
+      "brand": "Gölz",
+      "model": "SF150",
+      "category_key": "rezacia-technika-ostatne",
+      "product_url": "https://www.goelz.de/home/product/info/SF150",
+      "image_urls": [
+        "https://cdn.shopify.com/s/files/1/0885/8386/4664/files/sf150.jpg?v=1737068820",
+        "https://www.goelz.de/uploads/attach/2025/03/20250314/2e7ab7fb53b08820046d3966d578b972.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 2,3 kW",
+      "weight_kg": 5.8,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 150,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka drážky",
+          "value": 45,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_width_mm",
+          "label_sk": "Max. šírka drážky",
+          "value": 46,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 22.23,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": 2.3,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "rated_rpm",
+          "label_sk": "Menovité otáčky",
+          "value": 4300,
+          "unit": "min⁻¹"
+        },
+        {
+          "key": "dust_port_mm",
+          "label_sk": "Odsávacie hrdlo",
+          "value": 35,
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 5.8,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Drážkovacia fréza do muriva na drážky pre elektroinštalácie a rozvody (vápenopiesok, pórobetón, tehla, betón) s odsávaním prachu. Pre elektrikárov, inštalatérov a stavebné firmy.",
+      "notes": "Tesne nad hranicou 800 €. Dodáva sa s transportným kufrom, bez diamantových kotúčov (DTS30). Variant SF150/4 so 4 kotúčmi na širokú drážku: 854 € (DE oficiálny shop) ≈ 883 € SK.",
+      "market_price_eur_gross": 826,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://goelz-shop.com/products/sf150-schlitzfrase",
+          "price": 790.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 816.55 EUR gross SK; official Gölz online shop"
+        },
+        {
+          "url": "https://profiwerkzeug24.de/goelz-sf-150-schlitzfraese",
+          "price": 799.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 825.86 EUR gross SK"
+        },
+        {
+          "url": "https://www.wefaru.de/goelz-mauerschlitzfraese-sf150",
+          "price": 841.18,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 869.45 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Cedima",
+      "model": "CTS-56.2",
+      "category_key": "stolove-pily",
+      "product_url": "https://www.cedima.com/index-de/anwendungen/produkt/tischsagen-50015743.html",
+      "image_urls": [
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/CTS-56.2/Produktbild_Tischs%C3%A4ge%20CTS-56.2.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 2,2 kW",
+      "weight_kg": 72,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 400,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 130,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora (netto)",
+          "value": 2.2,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 1,
+          "unit": null
+        },
+        {
+          "key": "water_pump",
+          "label_sk": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem vodnej vane",
+          "value": 35,
+          "unit": "l"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery pri preprave (D × Š × V)",
+          "value": "1300 × 670 × 830",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 72,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Kompaktná stavebná stolová píla na rýchle a čisté rezanie betónu, tehál, klinkeru a prírodného kameňa priamo na stavbe. Pre murárov, pokladačov dlažby a menšie stavebné firmy.",
+      "notes": "Nový model (nástupca CTS-56, art. č. 30001024, EAN 4023138151129). Dĺžka rezu nie je na stránke výrobcu pre .2 uvedená (CTS-56: 615 mm). Hmotnosť 72 kg v prevádzke / 95 kg pri preprave. Kotúč nie je súčasťou. Jediný nájdený zdroj ceny pre CTS-56.2 (990 € DE – pravdepodobne akcia); starší CTS-56 sa predáva za 1 188 – 1 546 € (DE).",
+      "market_price_eur_gross": 1023,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.bauportal24h.de/p/cedima-tischsaege-cts-56.2",
+          "price": 990.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 1023.28 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Cedima",
+      "model": "CTS-57 G",
+      "category_key": "stolove-pily",
+      "product_url": "https://www.cedima.com/index-de/anwendungen/produkt/tischsagen-30001025.html",
+      "image_urls": [
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/cts-57-g/CTS57G_MS_Gehrung.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 2,2 kW",
+      "weight_kg": 74,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 400,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_min_diameter_mm",
+          "label_sk": "Min. priemer kotúča",
+          "value": 350,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 105,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_length_mm",
+          "label_sk": "Max. dĺžka rezu",
+          "value": 615,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora (netto)",
+          "value": 2.2,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 1,
+          "unit": null
+        },
+        {
+          "key": "water_pump",
+          "label_sk": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem vodnej vane",
+          "value": 35,
+          "unit": "l"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery pri preprave (D × Š × V)",
+          "value": "1160 × 620 × 580",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 74,
+          "unit": "kg"
+        },
+        {
+          "key": "miter_cut",
+          "label_sk": "Pokosový rez",
+          "value": "do 45° (nakláňacia rezacia hlava)",
+          "unit": null
+        }
+      ],
+      "applications": "Stavebná stolová píla s nakláňacou hlavou na pokosové rezy do 45° – obklady, klinker, dlažba, prírodný kameň. Pre pokladačov dlažby a obkladov a fasádne firmy.",
+      "notes": "Výrobca uvádza max. hĺbku rezu 105 mm, slovenský predajca 125 mm (75 mm pri 45°) – nezhoda. Nástupca CTS-57.2 G (art. č. 50015744, 125 mm, 80 kg) – cenu pre .2 sa nepodarilo nájsť. Kotúč, pravítko ani uholník nie sú súčasťou (madmat.sk). Cena = priemer SK a DE zdroja (veľký rozdiel).",
+      "market_price_eur_gross": 1734,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.madmat.sk/cedima-stolova-pila-cts-57-g-p46713",
+          "price": 2058.8,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 2058.8 EUR gross SK"
+        },
+        {
+          "url": "https://www.bauportal24h.de/p/cedima-tischsaege-cts-57-g",
+          "price": 1362.95,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 1408.76 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Cedima",
+      "model": "CTS-175.2",
+      "category_key": "stolove-pily",
+      "product_url": "https://www.cedima.com/index-de/anwendungen/produkt/tischsagen-50015746.html",
+      "image_urls": [
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/CTS-175.2/Produktbild%20-%20Tischs%C3%A4ge%20CTS-175.2.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 3,0 kW",
+      "weight_kg": 97,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 450,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 175,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora (netto)",
+          "value": 3.0,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 1,
+          "unit": null
+        },
+        {
+          "key": "water_pump",
+          "label_sk": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem vodnej vane",
+          "value": 35,
+          "unit": "l"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery pri preprave (D × Š × V)",
+          "value": "1300 × 728 × 1520",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 97,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Robustná stavebná stolová píla s 230 V motorom pre veľké hĺbky rezu do 175 mm – betón, tehly, klinker, prírodný kameň. Vhodná aj tam, kde nie je k dispozícii 400 V.",
+      "notes": "Dĺžka rezu pre .2 na webe výrobcu neuvedená (predajca jansen-faust uvádza 620 mm; CTS-175.1: 620 mm). Hmotnosť 97 kg v prevádzke / 128 kg pri preprave. Cena jansen-faust (1 695 €) je vrátane diamantového kotúča Ø 400 mm, bauportal (1 550 €) vrátane uhlového dorazu bez kotúča.",
+      "market_price_eur_gross": 1677,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.bauportal24h.de/p/cedima-tischsaege-cts-175.2-inkl.-winkelanschlag",
+          "price": 1550.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 1602.1 EUR gross SK; incl. angle stop"
+        },
+        {
+          "url": "https://jansen-faust-shop.de/p/cedima-cts-175-2-tischsaege-incl-diamantscheibe-620-mm-schnittlaenge",
+          "price": 1695.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 1751.97 EUR gross SK; incl. diamond blade Ø 400 mm"
+        }
+      ]
+    },
+    {
+      "brand": "Cedima",
+      "model": "CTS-200",
+      "category_key": "stolove-pily",
+      "product_url": "https://www.cedima.com/index-de/anwendungen/produkt/tischsagen-30001052.html",
+      "image_urls": [
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/cts-200/CTS-200.png",
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/cts-200/CTS-200_2.png"
+      ],
+      "ean": "4023138151204",
+      "engine": "electric 400 V 3~ 4,0 kW",
+      "weight_kg": 98,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_min_diameter_mm",
+          "label_sk": "Min. priemer kotúča",
+          "value": 450,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 200,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_length_mm",
+          "label_sk": "Max. dĺžka rezu",
+          "value": 600,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora (netto)",
+          "value": 4.0,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 400,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 3,
+          "unit": null
+        },
+        {
+          "key": "water_pump",
+          "label_sk": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem vodnej vane",
+          "value": 35,
+          "unit": "l"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery pri preprave (D × Š × V)",
+          "value": "1480 × 600 × 810",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 98,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Výkonná stolová píla s 400 V motorom a kotúčom Ø 500 mm na rezy do hĺbky 200 mm – betónové tvárnice, obrubníky, klinker, prírodný kameň. Pre stavebné firmy a požičovne.",
+      "notes": "EAN prevzatý z URL predajcu ToolTeam (art. č. 30001052) – neoverený priamo u výrobcu. Cena jansen-faust je vrátane diamantového kotúča; profishop je cena bez DPH.",
+      "market_price_eur_gross": 2460,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.bauportal24h.de/p/cedima-tischsaege-cts-200",
+          "price": 2132.95,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2204.65 EUR gross SK"
+        },
+        {
+          "url": "https://jansen-faust-shop.de/p/cedima-cts-200-tischsaege-incl-diamantscheibe-610-mm-schnittlaenge",
+          "price": 2380.0,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2460.0 EUR gross SK; incl. diamond blade"
+        },
+        {
+          "url": "https://www.profishop.de/p/cedima-cts-200-tischsaege-30001052",
+          "price": 2439.79,
+          "currency": "EUR",
+          "vat_note": "price excl. VAT; added 23 % -> 3000.94 EUR gross SK; DE shop net price"
+        }
+      ]
+    },
+    {
+      "brand": "Cedima",
+      "model": "CTS-81 L",
+      "category_key": "stolove-pily",
+      "product_url": "https://www.cedima.com/index-de/anwendungen/produkt/tischsagen-50015243.html",
+      "image_urls": [
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/cts-81-l/cts-81l.png",
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/cts-81-l/CTS-81l_Gehrung_neu.png"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 2,2 kW (400 V on request)",
+      "weight_kg": 99,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 400,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_min_diameter_mm",
+          "label_sk": "Min. priemer kotúča",
+          "value": 350,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 130,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_length_mm",
+          "label_sk": "Max. dĺžka rezu",
+          "value": 1200,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora (netto)",
+          "value": 2.2,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 1,
+          "unit": null
+        },
+        {
+          "key": "water_pump",
+          "label_sk": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem vodnej vane",
+          "value": 35,
+          "unit": "l"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery pri preprave (D × Š × V)",
+          "value": "1560 × 670 × 600",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 99,
+          "unit": "kg"
+        },
+        {
+          "key": "miter_cut",
+          "label_sk": "Pokosový rez",
+          "value": "0° – 45° (výkyvná nadstavba)",
+          "unit": null
+        }
+      ],
+      "applications": "Stolová píla s dlhou dĺžkou rezu 1 200 mm na podlahové platne, dlažbu, schodiskové stupne a veľkoformátové kamenné dosky do hrúbky 130 mm, vrátane pokosových rezov.",
+      "notes": "Kotúč nie je súčasťou. SK cena madmat.sk 2 683 € vs. DE 2 163 € – použitý priemer.",
+      "market_price_eur_gross": 2459,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.madmat.sk/cedima-cts-81l-stolova-pila-120mm-30001046-p79980",
+          "price": 2683.0,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 2683.0 EUR gross SK"
+        },
+        {
+          "url": "https://www.bauportal24h.de/p/cedima-tischsaege-cts-81-l",
+          "price": 2162.95,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 2235.65 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Cedima",
+      "model": "CTS-265.2",
+      "category_key": "stolove-pily",
+      "product_url": "https://www.cedima.com/index-de/anwendungen/produkt/tischsagen-50007779.html",
+      "image_urls": [
+        "https://www.cedima.com/files/upload/webbilder/tischsaegen/tischsaegen/cts-265/CTS-265-2_von%20rechts_frei%20mit%20Blatt%20%281%29.png"
+      ],
+      "ean": null,
+      "engine": "electric 400 V 3~ 5,5 kW",
+      "weight_kg": 240,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Max. priemer kotúča",
+          "value": 650,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_min_diameter_mm",
+          "label_sk": "Min. priemer kotúča",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 265,
+          "unit": "mm"
+        },
+        {
+          "key": "cut_length_mm",
+          "label_sk": "Max. dĺžka rezu",
+          "value": 700,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora (netto)",
+          "value": 5.5,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 400,
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": 3,
+          "unit": null
+        },
+        {
+          "key": "water_pump",
+          "label_sk": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem vodnej vane",
+          "value": 50,
+          "unit": "l"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery pri preprave (D × Š × V)",
+          "value": "1750 × 900 × 1530",
+          "unit": "mm"
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 240,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Píla na veľkoformátové murovacie bloky (Poroton, vápenopiesok, betón) s kotúčom až Ø 650 mm a výkyvným rezacím ramenom. Pre murárske a stavebné firmy pri hrubej stavbe.",
+      "notes": "Kotúč nie je súčasťou (strobeldiamant predáva s kotúčom Ø 500 mm). Veľký rozptyl cien: 3 689 € (DE) až 5 992 € (SK madmat.sk) – použitý medián.",
+      "market_price_eur_gross": 4398,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.madmat.sk/cedima-stolova-pila-cts-265-2-p46717",
+          "price": 5991.7,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 5991.7 EUR gross SK"
+        },
+        {
+          "url": "https://www.bauportal24h.de/p/215000/cedima-tischsaege-cts-265.2",
+          "price": 3688.95,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 3812.95 EUR gross SK"
+        },
+        {
+          "url": "https://www.bmn-baumaschinen.de/product_info.php?products_id=100",
+          "price": 4255.44,
+          "currency": "EUR",
+          "vat_note": "DE shop, price incl. 19 % MwSt; stripped 19 %, added 23 % -> 4398.48 EUR gross SK"
+        }
+      ]
+    },
+    {
+      "brand": "Enar",
+      "model": "i-SPYDER 2V 50 B (230 V, Ø 50 mm)",
+      "category_key": "vibratory-do-betonu",
+      "product_url": "https://www.enargroup.com/eme/product/i-spyder-high-frequency-electronic-converter",
+      "image_urls": [
+        "https://www.enargroup.com/uploads/producto_web/0f4ab1d8-5157-4f65-bcb2-08dbd9edec65/iSPYDER.png",
+        "https://www.enargroup.com/uploads/producto_web/0f4ab1d8-5157-4f65-bcb2-08dbd9edec65/iSPYDER%202_2411%281%29.webp"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 1~ 850 W, integrated electronic frequency converter (output 3~ 200 Hz)",
+      "weight_kg": 17,
+      "specs": [
+        {
+          "key": "needle_diameter_mm",
+          "label_sk": "Priemer hlavice",
+          "value": 50,
+          "unit": "mm"
+        },
+        {
+          "key": "needle_length_mm",
+          "label_sk": "Dĺžka hlavice",
+          "value": 365,
+          "unit": "mm"
+        },
+        {
+          "key": "frequency_vpm",
+          "label_sk": "Frekvencia vibrácií",
+          "value": 12000,
+          "unit": "kmitov/min"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": 0.85,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "shaft_length_m",
+          "label_sk": "Dĺžka ohybnej hadice",
+          "value": 5,
+          "unit": "m"
+        },
+        {
+          "key": "cable_length_m",
+          "label_sk": "Dĺžka prívodného kábla",
+          "value": 15,
+          "unit": "m"
+        },
+        {
+          "key": "capacity_m3h",
+          "label_sk": "Výkonnosť zhutňovania",
+          "value": 30,
+          "unit": "m³/h"
+        },
+        {
+          "key": "protection",
+          "label_sk": "Krytie",
+          "value": "IP67",
+          "unit": null
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 17,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Vysokofrekvenčný ponorný vibrátor s meničom integrovaným v rukoväti – zapojí sa priamo do 230 V zásuvky. Na zhutňovanie betónu v základoch, stenách a stĺpoch; pre betonárske a stavebné firmy.",
+      "notes": "Predáva sa ako kompletná jednotka (menič + 5 m hadica + hlavica + 15 m kábel). Hmotnosť: výrobca 17 kg, vibrotech.sk 18,6 kg. Frekvencia 12 000 min⁻¹ / 200 Hz podľa SK predajcov (na stránke výrobcu v tabuľke neuvedená). Variant B = tlačidlo, S = vypínač.",
+      "market_price_eur_gross": 1586,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.vibrotech.sk/p/ponorny-vibrator-enar-i-spyder-b-230v-50-s-menicom-napatia/173",
+          "price": 1586.7,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 1586.7 EUR gross SK"
+        },
+        {
+          "url": "https://naradiestroje.sk/elektronicke-vibratory/1419-spyder-pro-230v-50-enar-vysokofrekvencny-elektronicky-menic-frekvencie-a-napatia.html",
+          "price": 1584.3,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 1584.3 EUR gross SK; 7 % discount from 1 703,55 €"
+        }
+      ]
+    },
+    {
+      "brand": "Enar",
+      "model": "i-SPYDER 2V 70 B (230 V, Ø 65 mm)",
+      "category_key": "vibratory-do-betonu",
+      "product_url": "https://www.enargroup.com/eme/product/i-spyder-high-frequency-electronic-converter",
+      "image_urls": [
+        "https://www.enargroup.com/uploads/producto_web/0f4ab1d8-5157-4f65-bcb2-08dbd9edec65/iSPYDER.png",
+        "https://www.enargroup.com/uploads/producto_web/0f4ab1d8-5157-4f65-bcb2-08dbd9edec65/iSPYDER%203_2411%281%29.webp"
+      ],
+      "ean": null,
+      "engine": "electric 230 V 1~ 1500 W, integrated electronic frequency converter (output 3~ 200 Hz)",
+      "weight_kg": 20,
+      "specs": [
+        {
+          "key": "needle_diameter_mm",
+          "label_sk": "Priemer hlavice",
+          "value": 65,
+          "unit": "mm"
+        },
+        {
+          "key": "needle_length_mm",
+          "label_sk": "Dĺžka hlavice",
+          "value": 412,
+          "unit": "mm"
+        },
+        {
+          "key": "frequency_vpm",
+          "label_sk": "Frekvencia vibrácií",
+          "value": 12000,
+          "unit": "kmitov/min"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": 1.5,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "shaft_length_m",
+          "label_sk": "Dĺžka ohybnej hadice",
+          "value": 5,
+          "unit": "m"
+        },
+        {
+          "key": "cable_length_m",
+          "label_sk": "Dĺžka prívodného kábla",
+          "value": 15,
+          "unit": "m"
+        },
+        {
+          "key": "capacity_m3h",
+          "label_sk": "Výkonnosť zhutňovania",
+          "value": 40,
+          "unit": "m³/h"
+        },
+        {
+          "key": "protection",
+          "label_sk": "Krytie",
+          "value": "IP67",
+          "unit": null
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť",
+          "value": 20,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Najvýkonnejšia verzia i-SPYDER pre veľké objemy betónu – masívne základy, steny a stropné dosky; 230 V bez externého meniča. Pre betonárske čaty a väčšie stavebné firmy.",
+      "notes": "Priemer hlavice: výrobca 65 mm, vibrotech.sk 68 mm. Hmotnosť: výrobca 20 kg, SK predajcovia 22 kg. nabager.sk uvádza 1 350 € bez DPH / 1 620 € s DPH (zrejme ešte 20 % DPH) – pri 23 % = 1 660,50 €.",
+      "market_price_eur_gross": 1661,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.vibrotech.sk/p/ponorny-vibrator-enar-i-spyder-b-230v-70-s-menicom-napatia/175",
+          "price": 1660.5,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 1660.5 EUR gross SK"
+        },
+        {
+          "url": "https://www.nabager.sk/sk/produkt/ponorny-vibrator-betonu-enar-ispyder-b-230v70_288127",
+          "price": 1350.0,
+          "currency": "EUR",
+          "vat_note": "price excl. VAT; added 23 % -> 1660.5 EUR gross SK; net price; shop's gross 1 620 € appears to use old 20 % VAT"
+        }
+      ]
+    },
+    {
+      "brand": "Enar",
+      "model": "BACKPACK H + TDX 3 m + AX 40 (súprava)",
+      "category_key": "vibratory-do-betonu",
+      "product_url": "https://www.enargroup.com/eme/product/backpack-gasoline-powered-backpack-vibrator",
+      "image_urls": [
+        "https://www.enargroup.com/uploads/producto_web/c76d45cf-af53-4b40-5f18-08dbe0553407/BACKPACK%201.webp",
+        "https://www.enargroup.com/uploads/producto_web/d65b2587-4158-48c6-b0cf-08dbe060f564/BACKPACK%20%282%29.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX35 4-stroke petrol, 35,8 cm³, 1,6 HP (~1,2 kW)",
+      "weight_kg": 7,
+      "specs": [
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX35 (benzín, 4-takt)",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 1.2,
+          "unit": "kW"
+        },
+        {
+          "key": "needle_diameter_mm",
+          "label_sk": "Priemer hlavice",
+          "value": 40,
+          "unit": "mm"
+        },
+        {
+          "key": "frequency_vpm",
+          "label_sk": "Frekvencia vibrácií (hlavica AX 40)",
+          "value": 13500,
+          "unit": "kmitov/min"
+        },
+        {
+          "key": "shaft_length_m",
+          "label_sk": "Dĺžka ohybného hriadeľa",
+          "value": 3,
+          "unit": "m"
+        },
+        {
+          "key": "capacity_m3h",
+          "label_sk": "Výkonnosť zhutňovania (AX 40)",
+          "value": 17,
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 0.7,
+          "unit": "l"
+        },
+        {
+          "key": "drive_weight_kg",
+          "label_sk": "Hmotnosť pohonnej jednotky",
+          "value": 7,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Chrbtový benzínový vibrátor pre stavby bez elektrickej prípojky – zhutňovanie betónu v základoch, vencoch a stropoch s plnou voľnosťou pohybu. Pre stavebné firmy na odľahlých stavbách a pri rodinných domoch.",
+      "notes": "Predáva sa ako súprava (pohon + hriadeľ + hlavica). Cena = vibrotech.sk 'Set OPTIMAL' (BACKPACK + TDX 3 m + AX 40). Pre porovnanie eprofi.sk: samotný motor 1 154,93 € + TDX 2/AX40 358,93 € = 1 513,86 €. Hmotnosť hriadeľa TDX 3 (5 kg) a hlavice AX 40 (2,2 kg) nie je v 7 kg zahrnutá. Frekvencia podľa tabuľky výrobcu pre AX 40.",
+      "market_price_eur_gross": 1303,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.vibrotech.sk/p/set-optimal-ponorny-vibrator-enar-backpack/176",
+          "price": 1302.57,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 1302.57 EUR gross SK; set: BACKPACK + TDX 3 m + AX 40"
+        },
+        {
+          "url": "https://www.eprofi.sk/produkt/ponorny-vibrator-enar-backpack",
+          "price": 1154.93,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 1154.93 EUR gross SK; drive unit only, shaft extra"
+        }
+      ]
+    },
+    {
+      "brand": "Enar",
+      "model": "VIB-BAR",
+      "category_key": "vibratory-do-betonu",
+      "product_url": "https://www.enargroup.com/eme/product/vib-bar-portable-petrol-powered-eccentric-vibrator",
+      "image_urls": [
+        "https://www.enargroup.com/uploads/producto_web/983681ac-d251-448f-1fea-08dbd958637b/VIBBAR%20COMPLETO%20%281%29.png",
+        "https://www.enargroup.com/uploads/producto_web/983681ac-d251-448f-1fea-08dbd958637b/VIBBAR%20%282%29.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX35 4-stroke petrol, 35,8 cm³, 1,6 HP (~1,2 kW)",
+      "weight_kg": 6,
+      "specs": [
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX35 (benzín, 4-takt)",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 1.2,
+          "unit": "kW"
+        },
+        {
+          "key": "length_m",
+          "label_sk": "Dĺžka zariadenia",
+          "value": 2.5,
+          "unit": "m"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 0.7,
+          "unit": "l"
+        },
+        {
+          "key": "compatible_heads",
+          "label_sk": "Kompatibilné hlavice",
+          "value": "AX 40 / AX 45",
+          "unit": null
+        },
+        {
+          "key": "weight",
+          "label_sk": "Hmotnosť pohonnej jednotky",
+          "value": 6,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Prenosný benzínový vibrátor s popruhom, vhodný najmä na horizontálne práce (stropné dosky, podlahy) bez prívodu elektriny. Pre stavebné firmy a betonárov.",
+      "notes": "Nejasné, čo presne je súčasťou: SK aj CZ predajca uvádzajú, že hriadeľ a hlavicu treba dokúpiť; výrobca však uvádza zostavu s krátkym hriadeľom TBX 0,5 m a hlavicou AX 45 (Ø 45 mm, 9 000 min⁻¹, 25 m³/h). Pred listovaním overiť u dodávateľa.",
+      "market_price_eur_gross": 1276,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/prenosny-vibrator-enar-vib-bar",
+          "price": 1295.18,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 1295.18 EUR gross SK; 5 % discount applied"
+        },
+        {
+          "url": "https://www.vibratory-betonu.cz/prenosny-benzinovy-vibrator-vib-bar",
+          "price": 25535,
+          "currency": "CZK",
+          "vat_note": "CZ shop, price excl. DPH; /25 CZK/EUR, added 23 % -> 1256.32 EUR gross SK; 30 897 Kč incl. 21 % DPH"
+        }
+      ]
+    },
+    {
+      "brand": "Enar",
+      "model": "AFGH 2000 + M 38 AFP 7 m (súprava)",
+      "category_key": "vibratory-do-betonu",
+      "product_url": "https://www.enargroup.com/eme/product/af-high-frequency-generator",
+      "image_urls": [
+        "https://www.enargroup.com/uploads/producto_web/ac724f91-60bc-4d74-d02a-08dbda1405ee/AFG%202.webp",
+        "https://www.enargroup.com/uploads/producto_web/4d8e73c3-0b71-4ea4-1737-08dbda05eb76/M%20AFP%20BQ%20AMARILLO%20webp.webp"
+      ],
+      "ean": null,
+      "engine": "Honda GX160 petrol 5,5 HP driving a 42 V 3~ 200 Hz high-frequency generator (1,6 kVA, 2 outlets)",
+      "weight_kg": 38,
+      "specs": [
+        {
+          "key": "engine",
+          "label_sk": "Motor generátora",
+          "value": "Honda GX160 (benzín)",
+          "unit": null
+        },
+        {
+          "key": "generator_output_kva",
+          "label_sk": "Výstupný výkon generátora",
+          "value": 1.6,
+          "unit": "kVA"
+        },
+        {
+          "key": "output_voltage_v",
+          "label_sk": "Výstupné napätie",
+          "value": "42 V 3~ 200 Hz",
+          "unit": null
+        },
+        {
+          "key": "outlets",
+          "label_sk": "Počet zásuviek",
+          "value": 2,
+          "unit": null
+        },
+        {
+          "key": "needle_diameter_mm",
+          "label_sk": "Priemer hlavice (M 38 AFP)",
+          "value": 38,
+          "unit": "mm"
+        },
+        {
+          "key": "frequency_vpm",
+          "label_sk": "Frekvencia vibrácií",
+          "value": 12000,
+          "unit": "kmitov/min"
+        },
+        {
+          "key": "shaft_length_m",
+          "label_sk": "Dĺžka hadice vibrátora",
+          "value": 7,
+          "unit": "m"
+        },
+        {
+          "key": "capacity_m3h",
+          "label_sk": "Výkonnosť zhutňovania",
+          "value": 20,
+          "unit": "m³/h"
+        },
+        {
+          "key": "generator_weight_kg",
+          "label_sk": "Hmotnosť generátora",
+          "value": 38,
+          "unit": "kg"
+        },
+        {
+          "key": "needle_unit_weight_kg",
+          "label_sk": "Hmotnosť vibrátora M 38 AFP",
+          "value": 11,
+          "unit": "kg"
+        }
+      ],
+      "applications": "Vysokofrekvenčný systém s bezpečným napätím 42 V a vlastným benzínovým generátorom – pre stavby bez elektriny a intenzívnu prácu; na generátor možno pripojiť aj druhý vibrátor. Pre betonárske čaty a stavebné firmy.",
+      "notes": "Jediný zdroj ceny (vibrotech.sk 'Set OPTIMAL'). Predajca uvádza aj 'hlavica AX 38', hoci M 38 AFP má motor v hlavici – pravdepodobne nepresný popis. Samotný generátor AFGH 2000: 2 742,90 € (vibrotech.sk), vibrátor M 38 AFP 5 m: 738 €. Hmotnosť 38 kg = iba generátor.",
+      "market_price_eur_gross": 2915,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.vibrotech.sk/p/set-optimal-ponorny-vibrator-enar-afgh-2000/203",
+          "price": 2915.1,
+          "currency": "EUR",
+          "vat_note": "SK shop, price incl. 23 % VAT (used as-is) -> 2915.1 EUR gross SK; set: AFGH 2000 + M 38 AFP 7 m"
+        }
+      ]
+    }
+  ]
+}

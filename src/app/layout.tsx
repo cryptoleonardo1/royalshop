@@ -10,10 +10,10 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Royal Shop – profesionálne náradie a stroje",
+    default: "Royal Shop – profesionálne stavebné stroje",
     template: "%s | Royal Shop",
   },
-  description: "Profesionálne náradie Makita a stavebné stroje, overené pred odoslaním. Osobný odber v Senci.",
+  description: "Profesionálne stavebné stroje od overených výrobcov, otestované pred odoslaním. Osobný odber v Senci.",
   // Demo phase: keep the whole site out of search engines until launch.
   robots: { index: false, follow: false },
 };

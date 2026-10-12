@@ -1,0 +1,2066 @@
+{
+  "generated": "2026-10-12",
+  "conversion_rules": "CZK→EUR kurzom 25; z CZ ceny s 21 % DPH sa DPH odráta a pripočíta 23 %; AT 20 %, NL 21 % rovnako; CHF kurzom ~1,07 EUR/CHF (odhad).",
+  "brands": [
+    {
+      "brand": "Honda",
+      "manufacturer_name": "Honda Motor Co., Ltd.",
+      "manufacturer_address": "2-1-1 Minami-Aoyama, Minato-ku, Tokyo 107-8556, Japonsko (adresu sídla overiť v návode/vyhlásení o zhode konkrétneho modelu)",
+      "manufacturer_email": null,
+      "website": "https://www.honda.sk/industrial.html",
+      "eu_responsible_person": "Honda Motor Europe Ltd – Aalst Office, Wijngaardveld 1 (Noord V), 9300 Aalst, Belgicko (importér/EU zástupca uvádzaný v dokumentácii Honda power equipment). Lokálne: Honda Motor Europe Limited Slovensko, organizačná zložka, Cesta na Senec 2/A, 821 04 Bratislava, IČO 46814281, stroje@honda.sk. Pre trojfázové ECT/ECMT 7000G: importér BG Technik cs, a.s., U Závodiště 251/8, 159 00 Praha 5 – Velká Chuchle, IČO 25253948 (výrobcu týchto strojov overiť – pravdepodobne Generga)."
+    },
+    {
+      "brand": "Atlas Copco",
+      "manufacturer_name": "Atlas Copco Airpower n.v. (divízia Power Technique)",
+      "manufacturer_address": "Boomsesteenweg 957, 2610 Wilrijk (Antverpy), Belgicko",
+      "manufacturer_email": "atlascopco.slovakia@atlascopco.com (slovenská pobočka; e-mail výrobcu nenájdený)",
+      "website": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "eu_responsible_person": "Nie je potrebný – výrobca sídli v EÚ. Na Slovensku: Atlas Copco s.r.o., Elektrárenská 4, 831 04 Bratislava, IČO 36289833."
+    },
+    {
+      "brand": "Grindex",
+      "manufacturer_name": "Grindex AB (súčasť skupiny Xylem)",
+      "manufacturer_address": "Gesällvägen 33, P.O. Box 7025, SE-174 07 Sundbyberg, Švédsko",
+      "manufacturer_email": "info@grindex.com",
+      "website": "https://www.grindex.com",
+      "eu_responsible_person": "Nie je potrebný – výrobca sídli v EÚ (Švédsko)."
+    }
+  ],
+  "supplier_notes": "HONDA: Na Slovensku je importérom Honda power equipment Honda Motor Europe Limited Slovensko, organizačná zložka (Bratislava, www.honda.sk, stroje@honda.sk). V ČR je výhradným distribútorom BG Technik cs, a.s. (Praha – Velká Chuchle, www.hondastroje.cz, www.bgtechnik.cz). Jeho sieť predajcov pokrýva aj SK a predáva aj vlastné Honda-brand rady (EC/ECT/ECMT \"G\", SP/TP od Generga). SK predajcovia s cenami: boel.sk, naradiestroje.sk, eshop.techgarden.sk, romerx.sk, pomocnik.sk. ATLAS COPCO (Power Technique, čerpadlá WEDA): Atlas Copco s.r.o., Elektrárenská 4, 831 04 Bratislava (www.atlascopco.com/sk-sk). SK predajca s e-shopom a cenami WEDA: Kolex, s.r.o. (www.kolex.sk, eshop.kolex.sk); ďalší SK partner: KCI TECH s.r.o. (www.kcitech.sk). CZ predajcovia: Mánek (manek.cz), Stasan (stasan.cz). GRINDEX: POZOR, Grindex NIE je súčasťou Atlas Copco Group, patrí do skupiny Xylem (pôvodne ho kúpila ITT, dnes Xylem). CZ distribútor: Unicon Ostrava s.r.o., Halasova 2999/8A, 703 00 Ostrava – Vítkovice (www.unicon.cz, info@unicon.cz). SK distribútora Grindex sa nepodarilo nájsť. Ceny sú preto z AT (empl.at, bst-hornstein.at), CZ (e-cerpadla.cz), NL a CH. Na SK treba zistiť dodávateľa priamo cez Xylem alebo Unicon.",
+  "alternatives_3f": "V aktuálnom oficiálnom rade Honda Motor Europe (honda.sk) nie je ŽIADNA trojfázová elektrocentrála: rámové modely EG3600CL/EG4500CL/EG5500CL/EM4500CXS/EM5500CXS sú iba 230 V. Trojfázové ECT 7000G / ECT 7000GP AVR / ECMT 7000G sa predávajú pod značkou Honda cez CZ/SK sieť BG Technik. Model ECT 7000 bol historicky európsky produkt Hondy (EAN s prefixom 357 = Francúzsko), dnešné verzie 'G' však pravdepodobne vyrába Generga (jeden CZ predajca: 'Honda Generga ECT 7000 G'). Preto sú v products zaradené s výhradou v notes. Alternatívy 3-fázové s motorom Honda od iných výrobcov (nie ako produkty): (1) Generga TP 7 H / TP 7 HE AVR – 7 kVA 400 V, Honda GX390, CZ cena 74 990–83 990 Kč s DPH (hondastroje.cz, naradiestroje.sk); (2) GEKO 7401 ED-AA/HHBA (resp. /HEBA) – Metallwarenfabrik Gemünden (DE), Honda GX390, elektrický štart, IP54, 20 l nádrž, cca 5 690 € s DPH na naradiestroje.sk; (3) Endress ESE 606 DHS-GT – Endress (DE), Honda GX390, 8,3 kVA 3-fáz. max / 5,9 kVA trvalo pri 400 V, ~81 kg. Heron (Madal Bal) a väčšina modelov Pramac/Europower používajú vlastné alebo iné motory; Honda-motorové verzie existujú len pri niektorých typoch Europower/Pramac a neboli overené.",
+  "excluded_models": [
+    "Honda EU10i (~1 119 € je nad 800 €, ale je to 1 kVA hobby model; v zadaní nebol, vynechaný kvôli rozsahu)",
+    "Honda EU30iS (3 189 € s DPH, nadbytočný popri EU32i/EU70is; možná náhrada)",
+    "Honda EG3600CL / EG4500CL (1 679 € / 2 039 € s DPH; vhodné náhrady, vynechané kvôli počtu)",
+    "Honda WB20/WB30, WX10 (~600–650 € s DPH, pod 800 €)",
+    "Honda WT20 (35 695 Kč ≈ 1 451 € s DPH; nad 800 €, vynechaný kvôli počtu 2–3)",
+    "Atlas Copco WEDA D04N / S04N / D04BN / S08N (492–898 € s DPH; D04N a S04N pod 800 €)",
+    "Atlas Copco PAS (motorové dieselové čerpadlá; najmenší PAS 100 má aj jazdené kusy za 15–18,5 tis. USD, nové výrazne nad 15 000 €). Malé benzínové motorové čerpadlá Atlas Copco v EÚ nepredáva.",
+    "Grindex Minex 400 V (2 248 € s AT DPH) – možná 400 V náhrada; Grindex Matador/Maxi/Mega/Magnum – cena v EÚ nenájdená, pravdepodobne nad 10–15 tis. €"
+  ],
+  "products": [
+    {
+      "brand": "Honda",
+      "model": "EU22i",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://www.honda.sk/industrial/products/generators/inverter/specifications.html#eu22i",
+      "image_urls": [
+        "https://www.honda.sk/content/dam/central/industrial/specifications/generators/inverter/eu22i/nc/eu22i_01.png"
+      ],
+      "ean": null,
+      "engine": "Honda GXR120, benzínový 4-taktný OHC, 121 cm³",
+      "weight_kg": 21.1,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon",
+          "value": 2.2,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon",
+          "value": 1.8,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "áno",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 3.6,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 3.5,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 90,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "dc_output",
+          "label_sk": "Jednosmerný výstup",
+          "value": "12 V / 8 A",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "509 × 290 × 425",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1649.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.boel.sk/inventorove-elektrocentraly/elektrocentrala-honda-eu-22i/",
+          "price": 1649.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (1 340,65 € bez DPH)"
+        },
+        {
+          "url": "https://eshop.techgarden.sk/elektrocentraly-honda/",
+          "price": 1689.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/jednofazove-elektrocentraly/kufrikove-tiche-jednofazove-elektrocentraly/elektrocentrala-eu-22it/",
+          "price": 39990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (akcia, bežne 42 990 Kč) = 1626.04 € s 23 % DPH"
+        }
+      ],
+      "applications": "Ľahká tichá invertorová elektrocentrála do 2 kVA na napájanie citlivej elektroniky, náradia na stavbe, food truckov a karavanov. Kupujú živnostníci, eventové firmy a kempujúci.",
+      "notes": "Na CZ trhu označovaná ako EU 22iT (typový kód verzie). Doba prevádzky pri menovitom zaťažení: boel.sk uvádza ~3,5 h, iné zdroje 3,2 h – overiť v manuáli. Boel.sk uvádza zdvihový objem 98,5 cm³, čo je chyba; importér (hondastroje.cz) uvádza GXR120 121 cm³. Heureka.sk ukazuje najnižšiu cenu od 1 529 €."
+    },
+    {
+      "brand": "Honda",
+      "model": "EU32i",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://www.honda.sk/industrial/products/generators/inverter/specifications.html#eu32i",
+      "image_urls": [
+        "https://www.honda.sk/content/dam/central/industrial/specifications/generators/inverter/eu32i/nc/eu32i_01.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX130 s elektronickým vstrekovaním (FI), benzínový 4-taktný, 130 cm³",
+      "weight_kg": 26.7,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon",
+          "value": 3.2,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon",
+          "value": 2.6,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "áno",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 4.6,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 3.0,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 91,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "bluetooth",
+          "label_sk": "Ovládanie cez aplikáciu (Bluetooth)",
+          "value": "áno",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "571 × 306 × 452",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 3679.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.boel.sk/inventorove-elektrocentraly/elektrocentrala-honda-eu-32i/",
+          "price": 3679.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (2 991,06 € bez DPH)"
+        },
+        {
+          "url": "https://eshop.techgarden.sk/honda-eu32i-f-elektrocentrala/",
+          "price": 3679.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/jednofazove-elektrocentraly/kufrikove-tiche-jednofazove-elektrocentraly/lehka-kufrikova-elektrocentrala-eu-32i/",
+          "price": 79990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (akcia, bežne 89 990 Kč) = 3252.49 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najvýkonnejšia kufríková invertorová elektrocentrála Hondy (3,2 kVA) s aplikáciou na diaľkové sledovanie. Pre remeselníkov, servisné vozidlá a záložné napájanie domácnosti.",
+      "notes": "Doba prevádzky: importér 3,0 h, boel.sk 3,5 h. Hlučnosť LpA na mieste obsluhy sa v zdrojoch líši (73 vs 84 dB(A)), preto je uvedená iba garantovaná LwA. Heureka.sk má ponuky od ~3 000 € (EU32i F), reálna pouličná cena je 3 000–3 700 €."
+    },
+    {
+      "brand": "Honda",
+      "model": "EU70is",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://www.honda.sk/industrial/products/generators/inverter/specifications.html#eu70is",
+      "image_urls": [
+        "https://www.honda.sk/content/dam/central/industrial/specifications/generators/inverter/eu70is/nc/eu70is_01.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX390 s elektronickým vstrekovaním PGM-FI, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 118.1,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon",
+          "value": 7.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon",
+          "value": 5.5,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "áno",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 19.2,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 6.5,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 90,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "elektrický + ručný",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "848 × 721 × 700",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 5059.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.boel.sk/inventorove-elektrocentraly/elektrocentrala-honda-eu-70is/",
+          "price": 5059.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (4 113,01 € bez DPH)"
+        },
+        {
+          "url": "https://www.protechnik.sk/p/441/honda-eu-70is",
+          "price": 4939.48,
+          "currency": "EUR",
+          "vat_note": "SK, s DPH (podľa výsledku vyhľadávania)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/jednofazove-elektrocentraly/",
+          "price": 143990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH = 5854.8 € s 23 % DPH"
+        }
+      ],
+      "applications": "Odhlučnená invertorová elektrocentrála 7 kVA na kolesách pre záložné napájanie domov, stavebné bunky, eventy a profesionálne servisy. Kupujú firmy aj náročnejší majitelia rodinných domov.",
+      "notes": "LwA: boel.sk 90 dB(A), iné CZ zdroje 91 dB(A). LpA na mieste obsluhy 76 dB(A). CZ cenník importéra je výrazne vyšší ako SK predajcovia."
+    },
+    {
+      "brand": "Honda",
+      "model": "EG5500CL",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://www.honda.sk/industrial/products/generators/specialist-open-frame/overview.html",
+      "image_urls": [
+        "https://www.honda.sk/content/dam/central/industrial/specifications/generators/specialist-open-frame/eg5500cl/nc/eg5500cl_01.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX390T2, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 82.5,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon",
+          "value": 5.5,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon",
+          "value": 5.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "avr",
+          "label_sk": "Regulácia napätia",
+          "value": "digitálna AVR (D-AVR)",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 24,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 8,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hladina akustického tlaku na mieste obsluhy LpA",
+          "value": 82,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "681 × 530 × 571",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2255.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.boel.sk/jednofazove-elektrocentraly/elektrocentrala-honda-eg-5500cl/",
+          "price": 2255.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (1 833,33 € bez DPH)"
+        },
+        {
+          "url": "https://eshop.techgarden.sk/honda-eg-5500cl-jednofazovy-generator/",
+          "price": 1949.99,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH, akciová cena (bežne 2 255 €)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/jednofazove-elektrocentraly/ramove-jednofazove-elektrocentraly/",
+          "price": 64990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (EG 5500 CL F1T) = 2642.57 € s 23 % DPH"
+        }
+      ],
+      "applications": "Rámová stavebná elektrocentrála 5,5 kVA s digitálnou AVR a veľkou nádržou na celodennú prevádzku. Pre stavebné firmy, požičovne a dielne.",
+      "notes": "Je to genuine Honda model z oficiálneho SK sortimentu (honda.sk, rad Specialist Open Frame). Garantovaná LwA nebola v zdrojoch nájdená."
+    },
+    {
+      "brand": "Honda",
+      "model": "EM5500CXS",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://www.honda.sk/industrial/products/generators/specialist-open-frame/overview.html",
+      "image_urls": [
+        "https://www.honda.sk/content/dam/central/industrial/specifications/generators/specialist-open-frame/em5500cxs/nc/em5500cxs_01.png"
+      ],
+      "ean": null,
+      "engine": "Honda iGX390, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 108.8,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon",
+          "value": 5.5,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon",
+          "value": 5.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "avr",
+          "label_sk": "Regulácia napätia",
+          "value": "inteligentná AVR (i-AVR)",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 23.5,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 8,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hladina akustického tlaku na mieste obsluhy LpA",
+          "value": 77,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "elektrický + ručný",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "1047 × 725 × 706",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2869.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.boel.sk/jednofazove-elektrocentraly/elektrocentrala-honda-em-5500cxs/",
+          "price": 2869.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (2 332,52 € bez DPH), momentálne nedostupné"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/jednofazove-elektrocentraly/ramove-jednofazove-elektrocentraly/",
+          "price": 69990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (EM 5500) = 2845.87 € s 23 % DPH"
+        }
+      ],
+      "applications": "Prémiová rámová elektrocentrála s elektrickým štartom, podvozkom a i-AVR pre kvalitné napätie aj pre citlivejšie spotrebiče. Pre profesionálne stavby a záložné napájanie objektov.",
+      "notes": "Na boel.sk vypredané; skladovú dostupnosť overiť u importéra. Garantovaná LwA nebola v zdrojoch nájdená."
+    },
+    {
+      "brand": "Honda",
+      "model": "ECT 7000G",
+      "category_key": "elektrocentraly-3f",
+      "product_url": "https://www.hondastroje.cz/elektrocentraly/trifazove-elektrocentraly/ramova-profesionalni-elektrocentrala-ect-7000g/",
+      "image_urls": [
+        "https://www.hondastroje.cz/res/archive/116/017413.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX390, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 79,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon 3-fázový",
+          "value": 7.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon 3-fázový",
+          "value": 6.5,
+          "unit": "kVA"
+        },
+        {
+          "key": "max_power_1f_kva",
+          "label_sk": "Maximálny výkon 1-fázový",
+          "value": 4.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400 / 230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "avr",
+          "label_sk": "Regulácia napätia",
+          "value": "indukčný transformátor (bez AVR)",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 6.2,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 3,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 97,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP23",
+          "unit": null
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "1× CEE 16 A 400 V, 1× Schuko 16 A 230 V",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "800 × 550 × 540",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2297.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/trojfazove-elektrocentraly/217-ect-7000-honda-trojfazova-elektrocentrala.html",
+          "price": 2297.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (1 867,48 € bez DPH)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/trifazove-elektrocentraly/ramova-profesionalni-elektrocentrala-ect-7000g/",
+          "price": 53990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH = 2195.3 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najpredávanejšia rámová trojfázová elektrocentrála na stavby: napája miešačky, čerpadlá, elektromotory a búracie kladivá na 400 V. Kupujú stavebné firmy a požičovne.",
+      "notes": "Predáva sa pod značkou Honda cez CZ/SK sieť importéra BG Technik (hondastroje.cz), ale NIE je v aktuálnom oficiálnom rade Honda Motor Europe na honda.sk (ten obsahuje iba 230 V rámové EG/EM). Jeden CZ predajca ho nazýva 'Honda Generga ECT 7000 G' – výrobcom generátora je pravdepodobne Generga s motorom Honda GX390. Pred zaradením overiť u importéra, kto je výrobca podľa vyhlásenia o zhode (GPSR)."
+    },
+    {
+      "brand": "Honda",
+      "model": "ECT 7000GP AVR",
+      "category_key": "elektrocentraly-3f",
+      "product_url": "https://www.hondastroje.cz/elektrocentraly/trifazove-elektrocentraly/ramova-profesionalni-elektrocentrala-ect-7000gp-avr/",
+      "image_urls": [
+        "https://www.hondastroje.cz/res/archive/083/016585.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX390, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 90,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon 3-fázový",
+          "value": 7.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "max_power_1f_kva",
+          "label_sk": "Maximálny výkon 1-fázový",
+          "value": 4.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400 / 230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "avr",
+          "label_sk": "Regulácia napätia",
+          "value": "AVR",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 6.2,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 2.3,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 97,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP54",
+          "unit": null
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "1× CEE 16 A 400 V, 3× Schuko 16 A 230 V",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "800 × 550 × 540",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 4197.9,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/trojfazove-elektrocentraly/219-ect-7000-p-honda-trojfazova-elektrocentrala-s-avr.html",
+          "price": 4197.9,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (3 412,93 € bez DPH)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/trifazove-elektrocentraly/ramova-profesionalni-elektrocentrala-ect-7000gp-avr/",
+          "price": 99990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH = 4065.71 € s 23 % DPH"
+        }
+      ],
+      "applications": "Trojfázová elektrocentrála so zvýšeným krytím IP54 a AVR pre hasičov, záchranné zložky a nasadenie v daždi a prachu. Kupujú HaZZ, obce, krízové štáby a stavebné firmy.",
+      "notes": "Rovnaká poznámka o pôvode ako pri ECT 7000G (Honda-brand od importéra, nie v rade honda.sk, pravdepodobne výroba Generga). Na SK webe uvádzaná aj ako 'ECT 7000 P'."
+    },
+    {
+      "brand": "Honda",
+      "model": "ECMT 7000G",
+      "category_key": "elektrocentraly-3f",
+      "product_url": "https://www.hondastroje.cz/elektrocentraly/trifazove-elektrocentraly/ramova-profesionalni-elektrocentrala-ecmt-7000g/",
+      "image_urls": [],
+      "ean": null,
+      "engine": "Honda GX390, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 104,
+      "specs": [
+        {
+          "key": "max_power_kva",
+          "label_sk": "Maximálny výkon 3-fázový",
+          "value": 7.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "rated_power_kva",
+          "label_sk": "Menovitý výkon 3-fázový",
+          "value": 6.5,
+          "unit": "kVA"
+        },
+        {
+          "key": "max_power_1f_kva",
+          "label_sk": "Maximálny výkon 1-fázový",
+          "value": 4.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400 / 230",
+          "unit": "V"
+        },
+        {
+          "key": "inverter",
+          "label_sk": "Invertor",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "avr",
+          "label_sk": "Regulácia napätia",
+          "value": "indukčný transformátor (bez AVR)",
+          "unit": null
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 22.8,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Prevádzka pri menovitom zaťažení",
+          "value": 8.2,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 97,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP23",
+          "unit": null
+        },
+        {
+          "key": "chassis",
+          "label_sk": "Podvozok",
+          "value": "áno, dvojkolesový",
+          "unit": null
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "1× CEE 16 A 400 V, 1× CEE 16 A 230 V, 2× Schuko 16 A 230 V",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "755 × 550 × 560",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 3752.8,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/trojfazove-elektrocentraly/218-ecmt-7000-honda-trojfazova-elektrocentrala.html",
+          "price": 3752.8,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (3 051,06 € bez DPH)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/elektrocentraly/trifazove-elektrocentraly/ramova-profesionalni-elektrocentrala-ecmt-7000g/",
+          "price": 89990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH = 3659.1 € s 23 % DPH"
+        }
+      ],
+      "applications": "Trojfázová elektrocentrála s veľkou 22,8 l nádržou a podvozkom na celodennú prevádzku bez dopĺňania. Pre stavby bez prípojky, požičovne a poľnohospodárstvo.",
+      "notes": "Pôvod ako pri ECT 7000G. naradiestroje.sk píše o 'ručnom elektrickom štarte', importér uvádza ručný štart, preto je uvedený ručný. Oficiálny obrázok sa nepodarilo jednoznačne priradiť."
+    },
+    {
+      "brand": "Honda",
+      "model": "WT30",
+      "category_key": "cerpadla-motorove",
+      "product_url": "https://www.hondastroje.cz/cerpadla/kalova-cerpadla/wt-30/",
+      "image_urls": [
+        "https://www.hondastroje.cz/res/archive/005/000886.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX270, benzínový 4-taktný OHV, 270 cm³",
+      "weight_kg": 60,
+      "specs": [
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 1210,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 27,
+          "unit": "m"
+        },
+        {
+          "key": "suction_head_m",
+          "label_sk": "Maximálna sacia výška",
+          "value": 8,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer sania / výtlaku",
+          "value": "80 / 80",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 28,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 6.3,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 6.0,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Doba prevádzky na nádrž",
+          "value": 2.2,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 110,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "660 × 495 × 515",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1955.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/kalove-cerpadla-so-spalovacim-motorom/169-wt-30-honda-kalove-cerpadlo-s-motorom-gx240.html",
+          "price": 1955.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (1 589,43 € bez DPH)"
+        },
+        {
+          "url": "https://www.pomocnik.sk/benzinove-cerpadla-c243",
+          "price": 1934.9,
+          "currency": "EUR",
+          "vat_note": "SK, s DPH (podľa výsledku vyhľadávania)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/cerpadla/kalova-cerpadla/wt-30/",
+          "price": 50215,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (41 500 Kč bez DPH) = 2041.8 € s 23 % DPH"
+        }
+      ],
+      "applications": "3\" kalové čerpadlo na odvodňovanie výkopov a zatopených priestorov, prečerpáva vodu s pieskom a štrkom do 28 mm. Kupujú stavebné a výkopové firmy, hasiči a obce.",
+      "notes": "Motor: importér (hondastroje.cz) uvádza GX270 6,3 kW a nádrž 6 l; naradiestroje.sk uvádza GX240 5,3 kW a 5,3 l (pravdepodobne staršia verzia / US špecifikácia). Model sa predáva aj ako WT30X / WT 30 XK3."
+    },
+    {
+      "brand": "Honda",
+      "model": "WT40",
+      "category_key": "cerpadla-motorove",
+      "product_url": "https://www.hondastroje.cz/cerpadla/kalova-cerpadla/wt-40/",
+      "image_urls": [
+        "https://www.hondastroje.cz/res/archive/005/000889.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX390, benzínový 4-taktný OHV, 389 cm³",
+      "weight_kg": 78,
+      "specs": [
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 1640,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 26,
+          "unit": "m"
+        },
+        {
+          "key": "suction_head_m",
+          "label_sk": "Maximálna sacia výška",
+          "value": 8,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer sania / výtlaku",
+          "value": "100 / 100",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 31,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 8.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 6.5,
+          "unit": "l"
+        },
+        {
+          "key": "runtime_h",
+          "label_sk": "Doba prevádzky na nádrž",
+          "value": 2,
+          "unit": "h"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Garantovaná hladina akustického výkonu LwA",
+          "value": 110,
+          "unit": "dB(A)"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "735 × 535 × 565",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2849.9,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://cerpadla.heureka.sk/honda-wt-40/",
+          "price": 2849.9,
+          "currency": "EUR",
+          "vat_note": "SK, s DPH, najnižšia ponuka na Heureka.sk (stránku nebolo možné priamo otvoriť, údaj z výsledku vyhľadávania)"
+        },
+        {
+          "url": "https://www.hondastroje.cz/cerpadla/kalova-cerpadla/wt-40/",
+          "price": 75625,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (62 500 Kč bez DPH) = 3075.0 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najväčšie 4\" kalové čerpadlo Honda na rýchle odčerpanie veľkých objemov znečistenej vody pri povodniach a na stavbách. Pre hasičov, obce, požičovne a stavebné firmy.",
+      "notes": "SK ceny sa v zdrojoch pohybujú 2 380–2 850 € s DPH; uvedená je horná, opakovane potvrdená hodnota. Predáva sa aj ako WT40X / WT 40 XK2."
+    },
+    {
+      "brand": "Honda",
+      "model": "WH20",
+      "category_key": "cerpadla-motorove",
+      "product_url": "https://www.honda.sk/industrial/products/water-pumps/high-pressure/overview.html",
+      "image_urls": [],
+      "ean": null,
+      "engine": "Honda GX160, benzínový 4-taktný OHV, 163 cm³, 3,6 kW",
+      "weight_kg": 27,
+      "specs": [
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 500,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 50,
+          "unit": "m"
+        },
+        {
+          "key": "max_pressure_bar",
+          "label_sk": "Maximálny tlak",
+          "value": 5,
+          "unit": "bar"
+        },
+        {
+          "key": "suction_head_m",
+          "label_sk": "Maximálna sacia výška",
+          "value": 8,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer sania / výtlaku",
+          "value": "50 (2\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 3,
+          "unit": "mm"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 3.1,
+          "unit": "l"
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (D × Š × V)",
+          "value": "520 × 400 × 450",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 969.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.romerx.sk/benzinove-cerpadlo-honda-wh-20",
+          "price": 969.0,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (787,80 € bez DPH)"
+        },
+        {
+          "url": "https://kerka.cz/motorove-prumyslove-tlakove-cerpadlo-honda-wh-20-0",
+          "price": 20990,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (17 347 Kč bez DPH) = 853.48 € s 23 % DPH"
+        }
+      ],
+      "applications": "Vysokotlakové čerpadlo na čistú vodu (do 50 m výtlaku) na zavlažovanie, prečerpávanie na veľké vzdialenosti a do kopca a ako pomocné hasiace čerpadlo. Pre farmárov, záhradníctva a obce.",
+      "notes": "Prietok: UK predajcovia a kerka.cz uvádzajú 500 l/min, romerx.sk 450 l/min. Rozmer výtlaku: EU predajcovia uvádzajú 2\" porty (US verzia 2\" NPT). Doba prevádzky na nádrž sa v zdrojoch líši (1,5–2,5 h), preto nie je uvedená. CZ cena po prepočte (~853 €) je tesne nad hranicou 800 €. Na hondastroje.cz model momentálne nie je uvedený."
+    },
+    {
+      "brand": "Atlas Copco",
+      "model": "WEDA D08N (230 V)",
+      "category_key": "cerpadla-230v",
+      "product_url": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 230 V, 1-fázový",
+      "weight_kg": 12.4,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Menovitý výkon P2",
+          "value": 0.75,
+          "unit": "kW"
+        },
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon P1",
+          "value": 1.2,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 325,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 15.2,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "50 (2\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 7.5,
+          "unit": "mm"
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd",
+          "value": 5.2,
+          "unit": "A"
+        }
+      ],
+      "market_price_eur_gross": 1020.9,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.kolex.sk/weda-d08n/",
+          "price": 1020.9,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (830 € bez DPH)"
+        },
+        {
+          "url": "https://www.manek.cz/elektricke-ponorne-kalove-cerpadlo-atlas-copco-weda-d08n",
+          "price": 20330,
+          "currency": "CZK",
+          "vat_note": "CZ bez DPH = 1000.24 € s 23 % DPH"
+        }
+      ],
+      "applications": "Kompaktné ponorné odvodňovacie čerpadlo na 230 V do 12,5 kg na odčerpanie pivníc, šácht a menších výkopov. Pre stavbárov, inštalatérov a požičovne.",
+      "notes": "Technické údaje podľa 50 Hz brožúry WEDA (stokker.com) a kolex.sk. Max. hĺbka ponoru nebola pre tento model overená."
+    },
+    {
+      "brand": "Atlas Copco",
+      "model": "WEDA D10N (230 V)",
+      "category_key": "cerpadla-230v",
+      "product_url": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 230 V, 1-fázový",
+      "weight_kg": 12.5,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Menovitý výkon P2",
+          "value": 1.0,
+          "unit": "kW"
+        },
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon P1",
+          "value": 1.6,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 483,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 15.5,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "50 (2\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 4,
+          "unit": "mm"
+        },
+        {
+          "key": "max_depth_m",
+          "label_sk": "Maximálna hĺbka ponoru",
+          "value": 20,
+          "unit": "m"
+        }
+      ],
+      "market_price_eur_gross": 1990.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.kolex.sk/ponorne-cerpadlo-atlas-copco-weda-d10n-storz/",
+          "price": 2386.2,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (1 940 € bez DPH); verzia so spojkou Storz, napätie na stránke neuvedené"
+        },
+        {
+          "url": "https://www.manek.cz/elektricke-ponorne-kalove-cerpadlo-atlas-copco-weda-d10n-230v",
+          "price": 36830,
+          "currency": "CZK",
+          "vat_note": "CZ bez DPH (akcia, cenník 38 770 Kč) = 1812.04 € s 23 % DPH"
+        },
+        {
+          "url": "https://www.stasan.cz/odvodnovaci-cerpadlo-weda-10n-atlas-copco/",
+          "price": 43439,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH = 1766.28 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najpredávanejšie ľahké ponorné odvodňovacie čerpadlo WEDA na 230 V na čistú aj piesočnatú vodu. Pre stavby, požičovne a technické služby.",
+      "notes": "Trhová cena je zaokrúhlený priemer troch zdrojov (1 766–2 386 €). Prietok/výška podľa 50 Hz tabuľky WEDA (483 l/min, 15,5 m); manek.cz uvádza 490 l/min / 14,7 m, stasan.cz 500 l/min / 16 m. Max. hĺbka 20 m je údaj predajcu (naradiestroje.sk)."
+    },
+    {
+      "brand": "Atlas Copco",
+      "model": "WEDA S30N (230 V)",
+      "category_key": "cerpadla-230v",
+      "product_url": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 230 V, 1-fázový",
+      "weight_kg": 25,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Menovitý výkon P2",
+          "value": 1.8,
+          "unit": "kW"
+        },
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon P1",
+          "value": 2.4,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 800,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 13,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "75 (3\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 50,
+          "unit": "mm"
+        },
+        {
+          "key": "cable_m",
+          "label_sk": "Dĺžka kábla",
+          "value": 20,
+          "unit": "m"
+        }
+      ],
+      "market_price_eur_gross": 4281.63,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.kolex.sk/odvodnovacie-cerpadlo-kalove-weda-s30n-bsp-230v/",
+          "price": 4281.63,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (3 481 € bez DPH)"
+        },
+        {
+          "url": "https://www.manek.cz/elektricke-ponorne-kalove-cerpadlo-atlas-copco-weda-s30n-230v",
+          "price": 74500,
+          "currency": "CZK",
+          "vat_note": "CZ, DPH režim na stránke nejasný; ak bez DPH = 3665.4 € s 23 % DPH, ak s 21 % DPH = 3029.26 €"
+        }
+      ],
+      "applications": "Kalové ponorné čerpadlo so spodným výtlakom na hustý kal a vodu s pevnými časticami do 50 mm, na 230 V. Pre čistenie nádrží, jám a stavebné jamy s blatom.",
+      "notes": "Prietok a výška (800 l/min, 13 m) sú z austrálskej 240 V/50 Hz ponuky (pwnps.com), nie z EU listu. Výkon P1/P2 podľa 50 Hz brožúry WEDA; pwnps uvádza príkon 2,1 kW."
+    },
+    {
+      "brand": "Atlas Copco",
+      "model": "WEDA D30N (400 V)",
+      "category_key": "cerpadla-400v",
+      "product_url": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 400 V, 3-fázový",
+      "weight_kg": 20,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Menovitý výkon P2",
+          "value": 2.0,
+          "unit": "kW"
+        },
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon P1",
+          "value": 2.5,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 822,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 22.5,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "75 (3\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 7,
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 3247.2,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.kolex.sk/ponorne-cerpadlo-atlas-copco-weda-d30n/",
+          "price": 3247.2,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (2 640 € bez DPH)"
+        },
+        {
+          "url": "https://www.manek.cz/elektricke-ponorne-kalove-cerpadlo-atlas-copco-weda-d30n-400v",
+          "price": 59130,
+          "currency": "CZK",
+          "vat_note": "CZ bez DPH (akcia, cenník 62 250 Kč) = 2909.2 € s 23 % DPH"
+        }
+      ],
+      "applications": "Stredne veľké 3\" odvodňovacie čerpadlo na 400 V s vysokým výtlakom na stavebné jamy, tunely a znižovanie hladiny podzemnej vody. Pre stavebné firmy a požičovne.",
+      "notes": "Výkon podľa oficiálneho 50 Hz datasheetu WEDA D30; prietok/výška z 50 Hz tabuľky WEDA (manek.cz uvádza 850 l/min / 22 m)."
+    },
+    {
+      "brand": "Atlas Copco",
+      "model": "WEDA D40N (400 V)",
+      "category_key": "cerpadla-400v",
+      "product_url": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 400 V, 3-fázový",
+      "weight_kg": 25,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Menovitý výkon P2",
+          "value": 3.0,
+          "unit": "kW"
+        },
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon P1",
+          "value": 3.4,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 1320,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 21,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "75 (3\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 7,
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 3264.91,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.manek.cz/elektricke-ponorne-kalove-cerpadlo-atlas-copco-weda-d40n",
+          "price": 66360,
+          "currency": "CZK",
+          "vat_note": "CZ bez DPH = 3264.91 € s 23 % DPH"
+        },
+        {
+          "url": "https://eshop.kolex.sk/weda-d40n/",
+          "price": 3603.9,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (2 930 € bez DPH) – verzia D40N FS s plavákovým spínačom"
+        }
+      ],
+      "applications": "Výkonné 3\" odvodňovacie čerpadlo do 1 300 l/min na 400 V na veľké výkopy, záplavy a priemyselné nádrže. Pre stavebné firmy a požičovne.",
+      "notes": "Príkon P1: 50 Hz tabuľka 3,4 kW, novšia brožúra 3,6 kW. SK predajca má iba verzie FS (s plavákom); trhová cena je pre verziu bez plaváka podľa CZ prepočtu."
+    },
+    {
+      "brand": "Atlas Copco",
+      "model": "WEDA D51N (400 V)",
+      "category_key": "cerpadla-400v",
+      "product_url": "https://www.atlascopco.com/sk-sk/construction-equipment/products/dewatering-pumps/electric-submersible-dewatering-pumps",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 400 V, 3-fázový",
+      "weight_kg": 59,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Menovitý výkon P2",
+          "value": 5.6,
+          "unit": "kW"
+        },
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon P1",
+          "value": 6.7,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok (približne)",
+          "value": 2200,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška (približne)",
+          "value": 28,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "100 (4\")",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 8,
+          "unit": "mm"
+        },
+        {
+          "key": "cable_m",
+          "label_sk": "Dĺžka kábla",
+          "value": 20,
+          "unit": "m"
+        }
+      ],
+      "market_price_eur_gross": 7515.3,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.kolex.sk/ponorne-cerpadlo-atlas-copco-weda-d50n-iso-g/",
+          "price": 7515.3,
+          "currency": "EUR",
+          "vat_note": "SK, s 23 % DPH (6 110 € bez DPH), verzia ISO-G"
+        }
+      ],
+      "applications": "Veľké 4\" odvodňovacie čerpadlo nástupcu radu D50 pre baníctvo, tunely a veľké stavebné jamy s trvalým odčerpávaním. Pre väčšie stavebné firmy a požičovne.",
+      "notes": "D51 nahrádza D50 (CZ predajcovia ešte uvádzajú D50N za 116 400 Kč). Prietok ~2 200 l/min a výška ~28 m sú približné údaje švédskeho predajcu (smtsweden.com); výkon a hmotnosť z 50 Hz brožúry WEDA. Iba jeden cenový zdroj."
+    },
+    {
+      "brand": "Grindex",
+      "model": "Mini (230 V)",
+      "category_key": "cerpadla-230v",
+      "product_url": "https://www.grindex.com/en/products/drainage-pumps/",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 230 V, 1-fázový",
+      "weight_kg": 12.5,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 0.97,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 360,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 16,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "50 (2\", spojka C52)",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 5,
+          "unit": "mm"
+        },
+        {
+          "key": "max_depth_m",
+          "label_sk": "Maximálna hĺbka ponoru",
+          "value": 5,
+          "unit": "m"
+        },
+        {
+          "key": "cable_m",
+          "label_sk": "Dĺžka kábla",
+          "value": 10,
+          "unit": "m"
+        }
+      ],
+      "market_price_eur_gross": 1463.72,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.e-cerpadla.cz/kalove-cerpadlo-grindex-mini-230-v-plovak-d-7056.html",
+          "price": 35998,
+          "currency": "CZK",
+          "vat_note": "CZ s 21 % DPH (29 750 Kč bez DPH), verzia s plavákom = 1463.72 € s 23 % DPH"
+        },
+        {
+          "url": "https://cerpadla.heureka.cz/grindex-mini-230-v-kalove-cerpadlo/",
+          "price": 30824,
+          "currency": "CZK",
+          "vat_note": "CZ, najnižšia ponuka na Heureka.cz (pravdepodobne s DPH) = 1253.34 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najmenšie profesionálne odvodňovacie čerpadlo Grindex na 230 V z nehrdzavejúcej ocele, odolné voči chodu nasucho. Pre inštalatérov, hasičov a údržbu objektov.",
+      "notes": "Max. hĺbka ponoru 5 m podľa e-cerpadla.cz – overiť v datasheete Grindex (pri profesionálnych čerpadlách býva vyššia)."
+    },
+    {
+      "brand": "Grindex",
+      "model": "Minex (230 V)",
+      "category_key": "cerpadla-230v",
+      "product_url": "https://www.grindex.com/en/products/drainage-pumps/",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 230 V, 1-fázový",
+      "weight_kg": 25,
+      "specs": [
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon",
+          "value": 1.7,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 696,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 18,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "50 (2\")",
+          "unit": "mm"
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP68",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (Ø × V)",
+          "value": "195 × 610",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2783.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.empl.at/pumpen-belueftungsgeraete/tauchpumpen/15576/tauchpumpe-grindex-minex",
+          "price": 3076.8,
+          "currency": "EUR",
+          "vat_note": "AT s 20 % DPH = 3153.72 € s 23 % DPH"
+        },
+        {
+          "url": "https://www.bst-hornstein.at/g237000-schmutzwasserpumpe-grindex-minex-230-v002c-50-hz002c-1002c7-kw-g2002c",
+          "price": 2353.75,
+          "currency": "EUR",
+          "vat_note": "AT s 20 % DPH, akcia (bežne 2 824,50 €) = 2412.59 € s 23 % DPH"
+        }
+      ],
+      "applications": "Klasické 2\" odvodňovacie čerpadlo Grindex na 230 V s neobmedzeným chodom nasucho vďaka vzduchovému ventilu. Pre stavby, tunely a požičovne.",
+      "notes": "Trhová cena je priemer dvoch AT zdrojov po prepočte (2 413–3 154 €). Hmotnosť: empl.at 25 kg, bst-hornstein 21/24 kg. Max. veľkosť častíc a hĺbka ponoru neboli overené. Grindex nemá SK distribútora (pozri supplier_notes)."
+    },
+    {
+      "brand": "Grindex",
+      "model": "Minette (230 V)",
+      "category_key": "cerpadla-230v",
+      "product_url": "https://www.grindex.com/en/products/drainage-pumps/",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 230 V, 1-fázový",
+      "weight_kg": 32,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon",
+          "value": 1.9,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "flow_at_5m_l_min",
+          "label_sk": "Prietok pri dopravnej výške 5 m",
+          "value": 1250,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 20,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Výtlačná spojka",
+          "value": "Storz B",
+          "unit": null
+        },
+        {
+          "key": "cable_m",
+          "label_sk": "Dĺžka kábla",
+          "value": 20,
+          "unit": "m"
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP68",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3830.0,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.bst-hornstein.at/g237100-schmutzwasserpumpe-grindex-minette-230-v002c-50-hz002c-1002c9-kw-g3002c",
+          "price": 3408.53,
+          "currency": "EUR",
+          "vat_note": "AT s 20 % DPH, akcia (bežne 4 090,24 €) = 3493.74 € s 23 % DPH"
+        },
+        {
+          "url": "https://jck-trade.nl/products/drainagepomp-minette-grindex",
+          "price": 4101.9,
+          "currency": "EUR",
+          "vat_note": "NL s 21 % DPH (údaj z výsledku vyhľadávania) = 4169.7 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najvýkonnejšie 1-fázové odvodňovacie čerpadlo Grindex pre miesta bez 400 V prípojky, napr. pivnice po povodni alebo menšie stavby. Pre hasičov a požičovne.",
+      "notes": "Trhová cena je zaokrúhlený priemer dvoch zdrojov. Max. prietok (pri nulovej výške) nebol nájdený, uvedený je prietok pri 5 m. Spojka Storz B zodpovedá 3\" (75 mm) – priemer výtlaku overiť v datasheete."
+    },
+    {
+      "brand": "Grindex",
+      "model": "Major N (400 V)",
+      "category_key": "cerpadla-400v",
+      "product_url": "https://www.grindex.com/en/products/drainage-pumps/",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 400 V, 3-fázový",
+      "weight_kg": 54,
+      "specs": [
+        {
+          "key": "power_input_kw",
+          "label_sk": "Príkon",
+          "value": 6.7,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 2310,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 28,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "100 (4\")",
+          "unit": "mm"
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP68",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (Ø × V)",
+          "value": "286 × 800",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 6827.73,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://eshop.empl.at/pumpen-belueftungsgeraete/tauchpumpen/15579/tauchpumpe-grindex-major-n",
+          "price": 6661.2,
+          "currency": "EUR",
+          "vat_note": "AT s 20 % DPH = 6827.73 € s 23 % DPH"
+        }
+      ],
+      "applications": "4\" odvodňovacie čerpadlo strednej triedy na 400 V pre stavebné jamy, tunely a lomy s vysokým prietokom aj výtlakom. Pre stavebné firmy, baníctvo a požičovne.",
+      "notes": "Hmotnosť: empl.at 54 kg, iný zdroj 45 kg. Iba jeden nový cenový zdroj. Verzia H (high head) existuje tiež."
+    },
+    {
+      "brand": "Grindex",
+      "model": "Master N (400 V)",
+      "category_key": "cerpadla-400v",
+      "product_url": "https://www.grindex.com/en/products/drainage-pumps/",
+      "image_urls": [],
+      "ean": null,
+      "engine": "elektromotor 400 V, 3-fázový",
+      "weight_kg": 80,
+      "specs": [
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 10,
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Počet fáz",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd",
+          "value": 21,
+          "unit": "A"
+        },
+        {
+          "key": "max_flow_l_min",
+          "label_sk": "Maximálny prietok",
+          "value": 3600,
+          "unit": "l/min"
+        },
+        {
+          "key": "max_head_m",
+          "label_sk": "Maximálna dopravná výška",
+          "value": 27,
+          "unit": "m"
+        },
+        {
+          "key": "discharge_mm",
+          "label_sk": "Priemer výtlaku",
+          "value": "150 (6\", spojka Storz)",
+          "unit": "mm"
+        },
+        {
+          "key": "max_solids_mm",
+          "label_sk": "Maximálna veľkosť pevných častíc",
+          "value": 10,
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 11134.21,
+      "price_is_estimate": true,
+      "price_sources": [
+        {
+          "url": "https://shop.probst-maveg.ch/product/grindex-pumpe-master-n",
+          "price": 8460.0,
+          "currency": "CHF",
+          "vat_note": "CH bez DPH (8,1 % MWST nie je zahrnutá); prepočet kurzom ~1.07 EUR/CHF + 23 % = 11134.21 €"
+        }
+      ],
+      "applications": "Veľké 6\" odvodňovacie čerpadlo na trvalé odčerpávanie veľkých objemov v baniach, tuneloch a na veľkých stavbách. Pre veľké stavebné firmy a požičovne.",
+      "notes": "Cena je odhad: jediný nájdený nový cenový zdroj je švajčiarsky (CHF bez DPH), prepočítaný kurzom 1,07 EUR/CHF (kurz overiť). Z EÚ shopov sa nepodarilo nájsť cenu. Zástrčka 32 A."
+    }
+  ]
+}

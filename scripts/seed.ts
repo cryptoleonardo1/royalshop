@@ -21,14 +21,21 @@ const db = createClient(url, key, { auth: { persistSession: false } });
 
 const DEMO_PASSWORD = process.env.SEED_PASSWORD ?? "RoyalDemo2026!";
 
+// Demo assortment strategy (2026-10): premium machines only, nothing below this retail price.
+const MIN_PRICE_EUR = 800;
+
 interface CatalogJson {
+  suppliers: {
+    slug: string; name: string; country: string; lead_time_days_min: number; lead_time_days_max: number;
+    default_margin_pct: number; is_eu_import: boolean; contact_email: string | null; note?: string;
+  }[];
   categories: { slug: string; name: string; parent_slug: string | null; description?: string; sort_order?: number }[];
   brands: { slug: string; name: string; manufacturer_name?: string; manufacturer_address?: string; manufacturer_email?: string; website?: string }[];
   products: {
     slug: string; name: string; brand_slug: string; supplier_slug: string; category_slug: string;
     sku: string; ean: string | null; short_description: string; description: string;
     price_gross_eur: number; compare_at_price_eur: number | null; purchase_price_net_eur: number;
-    vat_rate: number; weight_kg: number; shipping_class: string; battery_platform: string; is_kit: boolean;
+    vat_rate: number; weight_kg: number | null; shipping_class: string; battery_platform: string; is_kit: boolean;
     warranty_months: number; manufacturer_warranty_note: string | null; safety_info: string;
     is_featured: boolean; rental_url: string | null;
     specs: { key: string; label: string; value: string; unit: string | null; is_filterable: boolean }[];
@@ -88,13 +95,10 @@ async function seedSettings() {
 async function seedCatalog() {
   const catalog: CatalogJson = JSON.parse(readFileSync("supabase/seed-data/catalog.json", "utf8"));
 
-  const suppliers = must(
-    await db.from("suppliers").insert([
-      { slug: "makita", name: "Makita s.r.o.", country: "SK", lead_time_days_min: 2, lead_time_days_max: 2, default_margin_pct: 25, is_eu_import: false, contact_email: "objednavky@makita.test" },
-      { slug: "ntc", name: "NTC spol. s r.o.", country: "CZ", lead_time_days_min: 3, lead_time_days_max: 5, default_margin_pct: 22, is_eu_import: true, contact_email: "objednavky@ntc.test" },
-    ]).select("id, slug"),
-    "suppliers",
-  );
+  const tooCheap = catalog.products.filter((p) => p.price_gross_eur < MIN_PRICE_EUR);
+  if (tooCheap.length) throw new Error(`Below ${MIN_PRICE_EUR} EUR: ${tooCheap.map((p) => p.slug).join(", ")}`);
+
+  const suppliers = must(await db.from("suppliers").insert(catalog.suppliers).select("id, slug"), "suppliers");
   const supplierId = Object.fromEntries(suppliers.map((s) => [s.slug, s.id]));
 
   const brands = must(await db.from("brands").insert(catalog.brands).select("id, slug"), "brands");
@@ -194,14 +198,14 @@ interface DemoOrder {
 
 const ORDERS: DemoOrder[] = [
   { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "paid_authorized", createdDaysAgo: 0 },
-  { profileKey: "jana", items: [{ slug: "", qty: 1 }, { slug: "", qty: 2 }], method: "pickup_senec", status: "ordered_from_supplier", createdDaysAgo: 2 },
+  { profileKey: "jana", items: [{ slug: "", qty: 1 }, { slug: "", qty: 1 }], method: "pickup_senec", status: "ordered_from_supplier", createdDaysAgo: 2 },
   { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "delivered", createdDaysAgo: 8, deliveredDaysAgo: 3 },
   { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "completed", createdDaysAgo: 60, deliveredDaysAgo: 55 },
   { profileKey: "peter", items: [{ slug: "", qty: 1 }], method: "courier", status: "delivered", createdDaysAgo: 10, deliveredDaysAgo: 5 },
   { profileKey: "peter", items: [{ slug: "", qty: 1 }], method: "courier", status: "cancelled", createdDaysAgo: 20 },
-  { profileKey: "firma", items: [{ slug: "", qty: 2 }], method: "own_transport", status: "out_for_delivery", createdDaysAgo: 6 },
+  { profileKey: "firma", items: [{ slug: "", qty: 1 }], method: "own_transport", status: "out_for_delivery", createdDaysAgo: 6 },
   { profileKey: "firma", items: [{ slug: "", qty: 1 }, { slug: "", qty: 1 }], method: "pickup_senec", status: "ready_for_pickup", createdDaysAgo: 5 },
-  { profileKey: "firma", items: [{ slug: "", qty: 3 }], method: "courier", status: "tested", createdDaysAgo: 4 },
+  { profileKey: "firma", items: [{ slug: "", qty: 2 }], method: "courier", status: "tested", createdDaysAgo: 4 },
   { profileKey: "firma", items: [{ slug: "", qty: 1 }], method: "courier", status: "confirmed", createdDaysAgo: 1 },
 ];
 
@@ -431,9 +435,9 @@ async function seedReturnsAndClaims(ctx: Awaited<ReturnType<typeof seedPeopleAnd
   const c1 = must(
     await db.from("claims").insert({
       claim_number: claim1, order_id: janaOld.id, order_item_id: janaOld.itemIds[0], profile_id: people.jana.id,
-      description: "Po zhruba 6 týždňoch používania sa náradie pri zaťažení vypína a motor iskrí.",
+      description: "Po zhruba 6 týždňoch používania stroj pri zaťažení zhasína a motor nedrží otáčky.",
       requested_remedy: "repair", delivery_method: "courier_pickup", status: "at_supplier",
-      submitted_at: daysAgo(12).toISOString(), confirmation_sent_at: daysAgo(12).toISOString(), supplier_reference: "MAK-SRV-2026-0815",
+      submitted_at: daysAgo(12).toISOString(), confirmation_sent_at: daysAgo(12).toISOString(), supplier_reference: "SRV-2026-0815",
     }).select("id").single(),
     "claim 1",
   );

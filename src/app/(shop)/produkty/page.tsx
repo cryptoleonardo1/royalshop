@@ -7,7 +7,7 @@ import css from "@/components/shop/shop.module.css";
 
 export const metadata: Metadata = {
   title: "Všetky produkty",
-  description: "Celý sortiment profesionálneho náradia Makita a stavebných strojov NTC.",
+  description: "Celý sortiment stavebných strojov: vibračná technika, elektrocentrály, čerpadlá, rezacia technika, vibrátory, odvlhčovače a ohrievače.",
 };
 
 async function AllProductsListing({ searchParams }: Pick<PageProps<"/produkty">, "searchParams">) {
@@ -31,8 +31,8 @@ export default function AllProductsPage(props: PageProps<"/produkty">) {
         </nav>
         <h1 className={css.pageTitle}>Celý sortiment</h1>
         <p className={css.pageLede}>
-          Náradie a stroje, ktoré pred odoslaním zapneme a skontrolujeme. Filtrujte podľa značky, platformy, ceny alebo
-          dodacej lehoty.
+          Stavebné stroje, ktoré pred odoslaním naštartujeme a skontrolujeme. Filtrujte podľa značky, parametrov, ceny
+          alebo dodacej lehoty.
         </p>
       </header>
       <Suspense fallback={<ListingSkeleton />}>

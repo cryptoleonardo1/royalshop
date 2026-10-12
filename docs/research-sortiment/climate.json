@@ -1,0 +1,1395 @@
+{
+  "brands": [
+    {
+      "brand": "Master",
+      "manufacturer_name": "Dantherm S.p.A. (Master Climate Solutions je registrovaná značka skupiny Dantherm Group)",
+      "manufacturer_address": "Via Gardesana 11, 37010 Pastrengo (VR), Taliansko",
+      "manufacturer_email": "info.it@danthermgroup.com",
+      "website": "https://www.danthermgroup.com/uk/brands/master",
+      "eu_responsible_person": null,
+      "notes": "Adresa, e-mail a telefón +39 045 6770533 sú z oficiálneho návodu Master B 35–150CED DV (2023). Výrobca sídli v EÚ, osobitná zodpovedná osoba preto nie je potrebná. V Európe značka Master už nepatrí pod Pinnacle Climate Technologies (USA), patrí skupine Dantherm. Taliansky register uvádza aj „Dantherm Group S.p.A.“ (P. IVA 07526660969) na tej istej adrese, presný právny názov na typovom štítku treba overiť. Pôvodná doména masterclimatesolutions.com nefunguje (chyba SSL)."
+    }
+  ],
+  "supplier_notes": "SK: STEFO TRADE, s.r.o., Lučenecká cesta 6, Zvolen, e-shop master-ohrievace.sk (obchod@master-ohrievace.sk, 0948 077 327). Má najširší sortiment Master na Slovensku, status oficiálneho distribútora neuvádza. Ďalší SK predajcovia: hyriak.sk, hahn-profi.sk, eprofi.sk, ohrievace.eu, profiobkladac.sk, zvaracky-obchod.sk. KLIMAVEX GROUP (klimavex.eu) predáva výrobky Dantherm. CZ: MANEK stavební stroje spol. s r.o. (Olomouc, Brno), weby topidla-odvlhcovace-master.cz a manek.cz, autorizovaný predaj a servis Master. Ďalej PERFEKTUM Group s.r.o. (Praha) a master-topidla.cz. Doména mastersk.sk je deaktivovaná.",
+  "price_method": "market_price_eur_gross je priemer zo zdrojov po prepočte na EUR s 23 % SK DPH (CZK bez DPH: /25 × 1,23). SK ceny sú akciové (približne −15 % z bežnej ceny), stav k 10/2026.",
+  "products": [
+    {
+      "brand": "Master",
+      "model": "DH 26",
+      "category_key": "odvlhcovace",
+      "product_url": "https://www.danthermgroup.com/products/master-dh-26",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/29869/Master-DH-26_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8032601864998",
+      "engine": "elektrina 230 V (kompresorový kondenzačný odvlhčovač)",
+      "weight_kg": 30,
+      "specs": [
+        {
+          "key": "dehumidification_l_day",
+          "label_sk": "Odvlhčovací výkon (30 °C / 80 % RV)",
+          "value": "27",
+          "unit": "l/24 h"
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "350",
+          "unit": "m³/h"
+        },
+        {
+          "key": "working_temp_c",
+          "label_sk": "Pracovná teplota",
+          "value": "1–32",
+          "unit": "°C"
+        },
+        {
+          "key": "working_humidity_rh",
+          "label_sk": "Pracovná vlhkosť",
+          "value": "30–98",
+          "unit": "% RV"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": "0.52",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "refrigerant",
+          "label_sk": "Chladivo",
+          "value": "R1234yf",
+          "unit": null
+        },
+        {
+          "key": "has_pump",
+          "label_sk": "Čerpadlo kondenzátu",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "tank_l",
+          "label_sk": "Nádrž na kondenzát",
+          "value": "8",
+          "unit": "l"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hlučnosť",
+          "value": "46",
+          "unit": "dB(A)"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "450 × 470 × 890",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1497,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-dh26-profesionalny-odvlhcovac-vzduchu/121",
+          "price": 1429.2,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 1 681,41 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/odvlhcovac-vzduchu-master-dh-26",
+          "price": 31810,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 33 494 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 1565.05 € s 23 % DPH"
+        }
+      ],
+      "applications": "Kompaktný kondenzačný odvlhčovač na vysúšanie menších novostavieb, bytov po rekonštrukcii a priestorov po menšej vodnej škode. Kupujú ho stavebné firmy, remeselníci a požičovne.",
+      "notes": "Špecifikácie sú z oficiálnej stránky Dantherm (aktuálna verzia s chladivom R1234yf). SK predajca uvádza staršie údaje (R410A, iný príkon, pracovná teplota 3–35 °C), na trhu sa môžu vyskytovať obe verzie. Zabudované čerpadlo nemá, je to voliteľné príslušenstvo (Master water pump pre DH 26/44/62/92). EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "DH 44",
+      "category_key": "odvlhcovace",
+      "product_url": "https://www.danthermgroup.com/products/master-dh-44",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/29873/Master-DH-44_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/29874/Master-DH-44_House_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/146004/Master-DH-44-drying-walls_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670895058",
+      "engine": "elektrina 230 V (kompresorový kondenzačný odvlhčovač)",
+      "weight_kg": 43,
+      "specs": [
+        {
+          "key": "dehumidification_l_day",
+          "label_sk": "Odvlhčovací výkon (30 °C / 80 % RV)",
+          "value": "41",
+          "unit": "l/24 h"
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "480",
+          "unit": "m³/h"
+        },
+        {
+          "key": "working_temp_c",
+          "label_sk": "Pracovná teplota",
+          "value": "1–32",
+          "unit": "°C"
+        },
+        {
+          "key": "working_humidity_rh",
+          "label_sk": "Pracovná vlhkosť",
+          "value": "30–98",
+          "unit": "% RV"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": "0.61",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "refrigerant",
+          "label_sk": "Chladivo",
+          "value": "R1234yf",
+          "unit": null
+        },
+        {
+          "key": "has_pump",
+          "label_sk": "Čerpadlo kondenzátu",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "tank_l",
+          "label_sk": "Nádrž na kondenzát",
+          "value": "12",
+          "unit": "l"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hlučnosť",
+          "value": "53",
+          "unit": "dB(A)"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "600 × 580 × 850",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2031,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-dh44-profesionalny-odvlhcovac-vzduchu/122",
+          "price": 1938.36,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 2 280,42 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/odvlhcovac-vzduchu-master-dh-44",
+          "price": 43150,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 45 430 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 2122.98 € s 23 % DPH"
+        }
+      ],
+      "applications": "Robustný stavebný odvlhčovač v oceľovom plášti na vysúšanie omietok, poterov a priestorov po povodni. Typický stroj pre stavebné a sanačné firmy a požičovne.",
+      "notes": "Špecifikácie sú z oficiálnej stránky Dantherm (aktuálna verzia s chladivom R1234yf). SK predajca uvádza staršie údaje (R410A, iný príkon, pracovná teplota 3–35 °C), na trhu sa môžu vyskytovať obe verzie. Zabudované čerpadlo nemá, je to voliteľné príslušenstvo (Master water pump pre DH 26/44/62/92). EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "DH 62",
+      "category_key": "odvlhcovace",
+      "product_url": "https://www.danthermgroup.com/products/master-dh-62",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/84867/Master-DH-62_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8032601865513",
+      "engine": "elektrina 230 V (kompresorový kondenzačný odvlhčovač)",
+      "weight_kg": 47,
+      "specs": [
+        {
+          "key": "dehumidification_l_day",
+          "label_sk": "Odvlhčovací výkon (30 °C / 80 % RV)",
+          "value": "52",
+          "unit": "l/24 h"
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "480",
+          "unit": "m³/h"
+        },
+        {
+          "key": "working_temp_c",
+          "label_sk": "Pracovná teplota",
+          "value": "1–32",
+          "unit": "°C"
+        },
+        {
+          "key": "working_humidity_rh",
+          "label_sk": "Pracovná vlhkosť",
+          "value": "30–98",
+          "unit": "% RV"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": "0.89",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "refrigerant",
+          "label_sk": "Chladivo",
+          "value": "R1234yf",
+          "unit": null
+        },
+        {
+          "key": "has_pump",
+          "label_sk": "Čerpadlo kondenzátu",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "tank_l",
+          "label_sk": "Nádrž na kondenzát",
+          "value": "12",
+          "unit": "l"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hlučnosť",
+          "value": "53",
+          "unit": "dB(A)"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "600 × 580 × 850",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2163,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-dh62-profesionalny-odvlhcovac-vzduchu/123",
+          "price": 2048.13,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 2 409,57 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/odvlhcovac-vzduchu-master-dh-62",
+          "price": 45590,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 47 998 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 2243.03 € s 23 % DPH"
+        },
+        {
+          "url": "https://www.hyriak.sk/p/master-dh62-profesionalny-odvlhcovac-vzduchu/4688",
+          "price": 2198.01,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (1 787,00 € bez DPH); hyriak.sk"
+        }
+      ],
+      "applications": "Výkonný stavebný odvlhčovač na rýchle vysúšanie novostavieb, poterov a objektov po záplavách (približne do 780 m³). Kupujú ho stavebné a sanačné firmy a požičovne techniky.",
+      "notes": "Špecifikácie sú z oficiálnej stránky Dantherm (aktuálna verzia s chladivom R1234yf). SK predajca uvádza staršie údaje (R410A, iný príkon, pracovná teplota 3–35 °C), na trhu sa môžu vyskytovať obe verzie. Zabudované čerpadlo nemá, je to voliteľné príslušenstvo (Master water pump pre DH 26/44/62/92). EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "DH 92",
+      "category_key": "odvlhcovace",
+      "product_url": "https://www.danthermgroup.com/products/master-dh-92",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/4617157/Master-DH-92_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/108493/Master-DH-92-wine-barrels_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/108494/Master-DH-92-wine-production_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8032601864981",
+      "engine": "elektrina 230 V (kompresorový kondenzačný odvlhčovač)",
+      "weight_kg": 66,
+      "specs": [
+        {
+          "key": "dehumidification_l_day",
+          "label_sk": "Odvlhčovací výkon (30 °C / 80 % RV)",
+          "value": "80",
+          "unit": "l/24 h"
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "1000",
+          "unit": "m³/h"
+        },
+        {
+          "key": "working_temp_c",
+          "label_sk": "Pracovná teplota",
+          "value": "1–32 (1–45 pri 30–70 % RV)",
+          "unit": "°C"
+        },
+        {
+          "key": "working_humidity_rh",
+          "label_sk": "Pracovná vlhkosť",
+          "value": "30–98",
+          "unit": "% RV"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": "1.2",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "refrigerant",
+          "label_sk": "Chladivo",
+          "value": "R1234yf",
+          "unit": null
+        },
+        {
+          "key": "has_pump",
+          "label_sk": "Čerpadlo kondenzátu",
+          "value": "nie",
+          "unit": null
+        },
+        {
+          "key": "tank_l",
+          "label_sk": "Nádrž na kondenzát",
+          "value": "12",
+          "unit": "l"
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hlučnosť",
+          "value": "50",
+          "unit": "dB(A)"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "580 × 600 × 1035",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2889,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-dh92-profesionalny-odvlhcovac-vzduchu/124",
+          "price": 2758.03,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 3 244,74 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/odvlhcovac-vzduchu-master-dh-92",
+          "price": 61390,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 64 630 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 3020.39 € s 23 % DPH"
+        }
+      ],
+      "applications": "Najvýkonnejší model rady DH na vysúšanie veľkých stavieb, hál, skladov a rozsiahlych vodných škôd. Pre sanačné firmy, väčšie stavebné firmy a požičovne.",
+      "notes": "Oficiálna tabuľka uvádza príkon „1.2“ v stĺpci W, ide zrejme o 1,2 kW. SK predajca (staršia verzia s R410A) uvádza 1 600 W, hodnotu treba overiť. Špecifikácie sú z oficiálnej stránky Dantherm (aktuálna verzia s chladivom R1234yf). SK predajca uvádza staršie údaje (R410A, iný príkon, pracovná teplota 3–35 °C), na trhu sa môžu vyskytovať obe verzie. Zabudované čerpadlo nemá, je to voliteľné príslušenstvo (Master water pump pre DH 26/44/62/92). EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "DHP 55",
+      "category_key": "odvlhcovace",
+      "product_url": "https://www.danthermgroup.com/products/master-dhp-55",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/29018/Master-DHP-55-open_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/29019/Master-DHP-55-stackable_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/29020/Master-DHP-55-dehumidifier_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670895201",
+      "engine": "elektrina 230 V (kompresorový kondenzačný odvlhčovač)",
+      "weight_kg": 47,
+      "specs": [
+        {
+          "key": "dehumidification_l_day",
+          "label_sk": "Odvlhčovací výkon (30 °C / 80 % RV)",
+          "value": "45.9",
+          "unit": "l/24 h"
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "340",
+          "unit": "m³/h"
+        },
+        {
+          "key": "working_temp_c",
+          "label_sk": "Pracovná teplota",
+          "value": "5–35",
+          "unit": "°C"
+        },
+        {
+          "key": "working_humidity_rh",
+          "label_sk": "Pracovná vlhkosť",
+          "value": "20–90",
+          "unit": "% RV"
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Príkon",
+          "value": "0.79",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "refrigerant",
+          "label_sk": "Chladivo",
+          "value": "R290",
+          "unit": null
+        },
+        {
+          "key": "has_pump",
+          "label_sk": "Čerpadlo kondenzátu",
+          "value": "áno (výtlak 3 m)",
+          "unit": null
+        },
+        {
+          "key": "noise_db",
+          "label_sk": "Hlučnosť",
+          "value": "56",
+          "unit": "dB(A)"
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "600 × 450 × 880",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1762,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-dhp55-odvlhcovac-vzduchu-s-cerpadlom/170",
+          "price": 1682.21,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 1 979,07 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/odvlhcovac-vzduchu-master-dhp-55",
+          "price": 37440,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 39 418 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 1842.05 € s 23 % DPH"
+        }
+      ],
+      "applications": "Stohovateľný odvlhčovač so zabudovaným čerpadlom kondenzátu na nepretržitú prevádzku bez obsluhy. Určený pre požičovne, sanáciu vodných škôd a vysúšanie stavieb.",
+      "notes": "Prietok vzduchu je oficiálne 340 m³/h, SK predajca uvádza 400 m³/h. Nádrž 5 l je voliteľné príslušenstvo. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "BV 77 E",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-bv-77",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6697396/MASTER-BV-77-main-left-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6697421/MASTER-BV-77-front-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6697769/MASTER-BV-77-main-right-web_2024-12-18-154204_gfyw_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670890329",
+      "engine": "nafta + ventilátor 230 V",
+      "weight_kg": 33,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "21",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "nepriame",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "1550",
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "2.0",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "36",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "19",
+          "unit": "h"
+        },
+        {
+          "key": "flue_diameter_mm",
+          "label_sk": "Priemer dymovodu",
+          "value": "120",
+          "unit": "mm"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.3",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1130 × 380 × 660",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1318,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-bv-77e-ohrievac-na-naftu/28",
+          "price": 1257.74,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 1 479,69 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-topidlo-master-bv-77-e",
+          "price": 28000,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 29 484 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 1377.6 € s 23 % DPH"
+        }
+      ],
+      "applications": "Naftový ohrievač s nepriamym spaľovaním a odvodom spalín, ktorý dodáva čistý teplý vzduch do stanov, dielní, menších hál a na stavby s obmedzeným vetraním. Kupujú ho stavebné firmy, organizátori podujatí a požičovne.",
+      "notes": "Oficiálna stránka dnes uvádza model ako „BV 77“, SK/CZ predajcovia ako „BV 77 E“. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "BV 110 E",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-bv-110",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6710830/Master-BV-110-main-left-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6710843/Master-BV-110-front-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6710893/Master-BV-110-hero-web_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670890459",
+      "engine": "nafta + ventilátor 230 V",
+      "weight_kg": 60,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "34",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "nepriame",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "1800",
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "3.2",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "65",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "21",
+          "unit": "h"
+        },
+        {
+          "key": "flue_diameter_mm",
+          "label_sk": "Priemer dymovodu",
+          "value": "150",
+          "unit": "mm"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.8",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1235 × 575 × 1000",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2121,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-bv-110e-ohrievac-na-naftu/29",
+          "price": 2081.59,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 2 448,93 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-topidlo-master-bv-110-e",
+          "price": 46340,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 48 780 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 2279.93 € s 23 % DPH"
+        },
+        {
+          "url": "https://www.hyriak.sk/p/master-bv-110e-ohrievac-na-naftu/4738",
+          "price": 2001.21,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (1 627,00 € bez DPH); hyriak.sk"
+        }
+      ],
+      "applications": "Najpredávanejší nepriamy naftový ohrievač na vykurovanie stavieb, hál, stanov a skladov čistým vzduchom, k ohrievaču sa dá pripojiť flexibilné potrubie. Pre stavebné a eventové firmy a požičovne.",
+      "notes": "Oficiálna stránka dnes uvádza model ako „BV 110“, SK/CZ predajcovia ako „BV 110 E“. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "BV 170 E",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-bv-170",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6606281/Master-BV-170-main-left-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6606288/Master-BV-170-front-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6606315/Master-BV-170-hero-web_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670890015",
+      "engine": "nafta + ventilátor 230 V",
+      "weight_kg": 67,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "49",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "nepriame",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "1800",
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "4.7",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "65",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "14",
+          "unit": "h"
+        },
+        {
+          "key": "flue_diameter_mm",
+          "label_sk": "Priemer dymovodu",
+          "value": "150",
+          "unit": "mm"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.8",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1350 × 575 × 1000",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2400,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-bv-170e-ohrievac-na-naftu/30",
+          "price": 2290.69,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 2 694,93 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-topidlo-master-bv-170-e",
+          "price": 50990,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 53 682 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 2508.71 € s 23 % DPH"
+        }
+      ],
+      "applications": "Výkonnejší nepriamy naftový ohrievač na vykurovanie väčších hál, stavieb a stanov, spaliny odchádzajú mimo vykurovaný priestor. Pre stavebné firmy a požičovne.",
+      "notes": "Oficiálna stránka dnes uvádza model ako „BV 170“, SK/CZ predajcovia ako „BV 170 E“. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "BV 290 E",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-bv-290",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6611550/Master-BV-290-main-left-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6611556/Master-BV-290-front-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6611552/Master-BV-290-main-right-web_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670890336",
+      "engine": "nafta + ventilátor 230 V",
+      "weight_kg": 101,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "85",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "nepriame",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "3300",
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "8.1",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "105",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "13",
+          "unit": "h"
+        },
+        {
+          "key": "flue_diameter_mm",
+          "label_sk": "Priemer dymovodu",
+          "value": "150",
+          "unit": "mm"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "1.06",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1600 × 700 × 1150",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 3123,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-bv-290e-ohrievac-na-naftu/31",
+          "price": 2980.72,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 3 506,73 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-topidlo-master-bv-290-e",
+          "price": 66360,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 69 861 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 3264.91 € s 23 % DPH"
+        }
+      ],
+      "applications": "Veľký mobilný nepriamy ohrievač na vykurovanie výrobných a skladových hál, veľkých stanov a stavieb. Pre väčšie stavebné firmy, eventové firmy a požičovne.",
+      "notes": "Oficiálna stránka dnes uvádza model ako „BV 290“, SK/CZ predajcovia ako „BV 290 E“. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "B 150 CED",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-b-150",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6707912/MASTER-B-150-main-left-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6707919/MASTER-B-150-front-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6707914/MASTER-B-150-main-right-web_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8032601869153",
+      "engine": "nafta + ventilátor 230 V",
+      "weight_kg": 25,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "44",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "priame",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "900",
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "4.2",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "44",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "10",
+          "unit": "h"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.28",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1075 × 600 × 480",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 875,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-b150ced-priemyselny-naftovy-ohrievac-44-kw/23",
+          "price": 835.35,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 982,77 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-topidlo-master-b-150-ced",
+          "price": 18590,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 19 578 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 914.63 € s 23 % DPH"
+        }
+      ],
+      "applications": "Naftový ohrievač s priamym spaľovaním na rýchle vykúrenie otvorených a dobre vetraných priestorov, napríklad hrubých stavieb a rozostavaných hál, aj na vysúšanie. Pre stavebné firmy a dielne.",
+      "notes": "Cena je na hranici limitu: akciová cena v SK (835 €) je len tesne nad 800 €. Oficiálna stránka uvádza model ako „B 150“, návod ako „B 150CED DV“. Spotreba je podľa webu 4,2 l/h, podľa návodu 3,5 kg/h. Spaliny idú do vykurovaného priestoru, preto len do vetraných priestorov. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "B 230",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-b-230",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/22680/Master-B-230_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670890398",
+      "engine": "nafta + ventilátor 230 V",
+      "weight_kg": 57,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "65",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "priame",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "3000",
+          "unit": "m³/h"
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "6.2",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "65",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "10",
+          "unit": "h"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.8",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1235 × 575 × 790",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2137,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-b230-ohrievac-na-naftu-vysokotlakovy-65kw/26",
+          "price": 2039.77,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 2 399,73 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-topidlo-master-b-230",
+          "price": 45400,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 47 799 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 2233.68 € s 23 % DPH"
+        }
+      ],
+      "applications": "Vysokotlakový naftový ohrievač s priamym spaľovaním na rýchle vykurovanie veľkých otvorených a vetraných priestorov, napríklad hrubých stavieb a hál vo výstavbe. Pre stavebné firmy a požičovne.",
+      "notes": "Spaliny idú do vykurovaného priestoru, preto len do dobre vetraných priestorov. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "XL 61",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-xl-61",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6625320/Master-XL-61-main-left-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6625324/Master-XL-61-front-web_be94b31bb831faba59d6634e2199d861.webp",
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/6625322/Master-XL-61-main-right-web_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670892743",
+      "engine": "nafta + 230 V",
+      "weight_kg": 19,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "17",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "infračervené",
+          "unit": null
+        },
+        {
+          "key": "fuel_consumption_kg_h",
+          "label_sk": "Spotreba paliva",
+          "value": "1.35",
+          "unit": "kg/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "11",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "7",
+          "unit": "h"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.2",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "560 × 345 × 575",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1063,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-xl61-naftovy-infraziaric-17-kw/56",
+          "price": 1014.14,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 1 193,10 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-infracervene-topidlo-master-xl-61",
+          "price": 22580,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 23 777 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 1110.94 € s 23 % DPH"
+        }
+      ],
+      "applications": "Naftový infražiarič, ktorý ohrieva priamo osoby a predmety bez prúdenia vzduchu. Hodí sa na bezprašné vysúšanie stien a náterov, rozmrazovanie strojov a lokálne vykurovanie pracovísk. Pre stavebné firmy, dielne a sklady.",
+      "notes": "Výrobca ponúka aj variant 110 V. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "XL 91",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-xl-91",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/27373/Master-XL-91_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670892750",
+      "engine": "nafta + 230 V",
+      "weight_kg": 69,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "29 / 43",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "infračervené",
+          "unit": null
+        },
+        {
+          "key": "fuel_consumption_l_h",
+          "label_sk": "Spotreba paliva",
+          "value": "2,7 / 4,03",
+          "unit": "l/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": "60",
+          "unit": "l"
+        },
+        {
+          "key": "autonomy_h",
+          "label_sk": "Výdrž na jednu nádrž",
+          "value": "21 / 14",
+          "unit": "h"
+        },
+        {
+          "key": "electric_power_kw",
+          "label_sk": "Elektrický príkon",
+          "value": "0.19",
+          "unit": "kW"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "230",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "710 × 970 × 990",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 2728,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-xl91-naftovy-infraziaric-29-43-kw/57",
+          "price": 2604.34,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 3 063,93 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/naftove-infracervene-topidlo-master-xl-91",
+          "price": 57980,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 61 036 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 2852.62 € s 23 % DPH"
+        }
+      ],
+      "applications": "Dvojstupňový naftový infražiarič na vykurovanie veľkých, aj otvorených alebo prievanových priestorov (haly, stavby, rampy) bez víriaceho prachu. Pre stavebné firmy, logistiku a požičovne.",
+      "notes": "Výkon je dvojstupňový, 29 alebo 43 kW. Palivo podľa výrobcu: nafta, HVO 100 alebo petrolej. EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    },
+    {
+      "brand": "Master",
+      "model": "B 30 EPR",
+      "category_key": "ohrievace",
+      "product_url": "https://www.danthermgroup.com/products/master-b-30",
+      "image_urls": [
+        "https://danthermgroup-website.s3.eu-central-1.amazonaws.com/cache/media/products/27054/Master-B-18-30_be94b31bb831faba59d6634e2199d861.webp"
+      ],
+      "ean": "8053670891166",
+      "engine": "elektrina 400 V, 3-fázový",
+      "weight_kg": 53,
+      "specs": [
+        {
+          "key": "heat_output_kw",
+          "label_sk": "Tepelný výkon",
+          "value": "15 / 30",
+          "unit": "kW"
+        },
+        {
+          "key": "heating_type",
+          "label_sk": "Typ ohrevu",
+          "value": "elektrické",
+          "unit": null
+        },
+        {
+          "key": "airflow_m3_h",
+          "label_sk": "Prietok vzduchu",
+          "value": "3500",
+          "unit": "m³/h"
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": "400",
+          "unit": "V"
+        },
+        {
+          "key": "phases",
+          "label_sk": "Fázy",
+          "value": "3",
+          "unit": null
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd",
+          "value": "43.5",
+          "unit": "A"
+        },
+        {
+          "key": "plug",
+          "label_sk": "Zástrčka",
+          "value": "63 A / 5-pólová",
+          "unit": null
+        },
+        {
+          "key": "protection_ip",
+          "label_sk": "Krytie",
+          "value": "IP24",
+          "unit": null
+        },
+        {
+          "key": "dimensions_mm",
+          "label_sk": "Rozmery (d × š × v)",
+          "value": "1030 × 580 × 680",
+          "unit": "mm"
+        }
+      ],
+      "market_price_eur_gross": 1956,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.master-ohrievace.sk/p/master-b-30-epr-elektricky-ohrievac-vzduchu/16",
+          "price": 1975.93,
+          "currency": "EUR",
+          "vat_note": "SK, vrátane 23 % DPH (akciová cena; bežná cena 2 079,93 €); STEFO TRADE s.r.o., Zvolen"
+        },
+        {
+          "url": "https://www.topidla-odvlhcovace-master.cz/elektricke-topidlo-master-b-30-epr",
+          "price": 39350,
+          "currency": "CZK",
+          "vat_note": "CZ, bez DPH (akciová cena; cenníková 41 426 Kč bez DPH); MANEK stavební stroje. Prepočet: /25 × 1,23 = 1936.02 € s 23 % DPH"
+        }
+      ],
+      "applications": "Výkonný elektrický teplovzdušný ohrievač 400 V bez spalín a zápachu. Dá sa k nemu pripojiť potrubie a slúži na vykurovanie a vysúšanie hál, stavieb a uzavretých priestorov. Pre stavebné firmy a požičovne.",
+      "notes": "Oficiálna stránka uvádza model ako „B 30“, predajcovia ako „B 30 EPR“. Ohrievač potrebuje prípojku 63 A. Oficiálny obrázok je spoločný pre B 18 a B 30. Termostat je voliteľný (TH5). EAN je z master-ohrievace.sk, výrobca ho nepotvrdil."
+    }
+  ]
+}

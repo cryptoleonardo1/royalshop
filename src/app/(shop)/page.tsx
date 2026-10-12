@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import {
   getAllProducts,
+  getBrands,
   getFeaturedProducts,
-  getPlatformCounts,
   getSaleProducts,
   getShopSettings,
   getTopCategories,
@@ -15,19 +15,19 @@ import css from "@/components/shop/shop.module.css";
 
 const INSPECTION = [
   "Vybalené a vizuálne skontrolované",
-  "Skúšobný chod naprázdno · 60 s",
+  "Olej, palivo a filtre skontrolované",
+  "Skúšobný chod pod záťažou · 10 min",
   "Funkcie a príslušenstvo overené",
-  "Batérie nabité, nabíjačka OK",
-  "Zabalené späť s protokolom",
+  "Zabalené s protokolom a návodom",
 ];
 
 export default async function HomePage() {
-  const [settings, categories, featured, sale, platforms, all] = await Promise.all([
+  const [settings, categories, featured, sale, brands, all] = await Promise.all([
     getShopSettings(),
     getTopCategories(),
     getFeaturedProducts(6),
     getSaleProducts(3),
-    getPlatformCounts(),
+    getBrands(),
     getAllProducts(),
   ]);
 
@@ -42,7 +42,7 @@ export default async function HomePage() {
       text: "Ťažké stroje privezieme vlastnou technikou.",
     },
     { title: "Osobný odber v Senci", text: "Vyzdvihnete si ho na pobočke Royal Stroje." },
-    { title: "Autorizovaný predajca", text: "Originálny tovar s plnou zárukou výrobcu." },
+    { title: "Priamo od výrobcov", text: "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, s plnou zárukou." },
   ];
   const shownCategories = categories.filter((c) => c.productCount > 0);
 
@@ -52,11 +52,11 @@ export default async function HomePage() {
         <div className={`${css.wrap} ${css.heroGrid}`}>
           <div className={css.heroCopy}>
             <p className={`${css.tape} ${css.rise}`} style={delay(1)}>
-              Makita · NTC · autorizovaný predajca
+              Stavebné stroje · priamo od výrobcov
             </p>
             <h1 id="hero-title" className={css.heroTitle}>
               <span className={css.rise} style={delay(2)}>
-                Profesionálne náradie,
+                Stavebné stroje,
               </span>
               <span className={`${css.heroHi} ${css.rise}`} style={delay(3)}>
                 overené
@@ -66,12 +66,12 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className={`${css.heroLede} ${css.rise}`} style={delay(5)}>
-              Každý stroj vybalíme, zapneme a skontrolujeme ešte v Senci. Na stavbu vám príde náradie, ktoré už raz
-              bežalo — s podpísaným protokolom v krabici.
+              Vibračné dosky, elektrocentrály, čerpadlá aj rezačky od overených výrobcov. Každý stroj v Senci
+              naštartujeme a skontrolujeme. Na stavbu vám príde stroj, ktorý už raz bežal, s podpísaným protokolom.
             </p>
             <div className={`${css.heroCtas} ${css.rise}`} style={delay(6)}>
               <Link href="/produkty" className={css.btnPrimary}>
-                Nakupovať náradie <ArrowRight size={20} aria-hidden="true" />
+                Nakupovať stroje <ArrowRight size={20} aria-hidden="true" />
               </Link>
               <a href="#odporucane" className={css.btnGhost}>
                 Odporúčané stroje
@@ -133,66 +133,18 @@ export default async function HomePage() {
           <div className={css.cautionTrack}>
             {Array.from({ length: 2 }).map((_, k) => (
               <span key={k}>
-                Otestované pred odoslaním ✕ Autorizovaný predajca Makita ✕ Osobný odber Senec ✕ Ťažké stroje vlastnou
-                dopravou ✕{" "}
+                Otestované pred odoslaním ✕ Priamo od výrobcov ✕ Osobný odber Senec ✕ Ťažké stroje vlastnou dopravou
+                ✕{" "}
               </span>
             ))}
           </div>
         </div>
       </section>
 
-      <section className={css.section} aria-labelledby="platform-title">
-        <div className={css.wrap}>
-          <div className={css.sectionHead}>
-            <span className={css.tape}>01 / Batérie</span>
-            <h2 id="platform-title" className={css.h2}>
-              Máte batérie? <span>Vyberte platformu</span>
-            </h2>
-          </div>
-
-          <div className={css.platforms}>
-            <Link href="/produkty?platforma=lxt" className={`${css.platform} ${css.platformLxt} ${css.dark}`}>
-              <span className={css.platformVolt}>
-                18<small>V</small>
-              </span>
-              <span className={css.platformName}>LXT</span>
-              <span className={css.platformText}>
-                Najširší systém Makita. Stovky strojov — vŕtačky, brúsky, kladivá aj záhrada — na jednu batériu.
-              </span>
-              <span className={css.platformFoot}>
-                <span>{platforms.LXT_18V} v ponuke</span>
-                <span className={css.platformGo}>
-                  Náradie 18V LXT <ArrowRight size={18} aria-hidden="true" />
-                </span>
-              </span>
-            </Link>
-            <Link href="/produkty?platforma=xgt" className={`${css.platform} ${css.platformXgt}`}>
-              <span className={css.platformVolt}>
-                40<small>V</small>
-              </span>
-              <span className={css.platformName}>XGT</span>
-              <span className={css.platformText}>
-                Pre najťažšiu prácu: výkon sieťových strojov bez kábla. Uťahováky, píly a búracie kladivá.
-              </span>
-              <span className={css.platformFoot}>
-                <span>{platforms.XGT_40V} v ponuke</span>
-                <span className={css.platformGo}>
-                  Náradie 40V XGT <ArrowRight size={18} aria-hidden="true" />
-                </span>
-              </span>
-            </Link>
-          </div>
-          <p className={css.platformNote}>
-            <Zap size={16} aria-hidden="true" />
-            Batérie nemáte? Hľadajte označenie <strong>Sada s batériami</strong> — v balení je nabíjačka aj akumulátory.
-          </p>
-        </div>
-      </section>
-
       <section className={css.section} aria-labelledby="cat-title">
         <div className={css.wrap}>
           <div className={css.sectionHead}>
-            <span className={css.tape}>02 / Sortiment</span>
+            <span className={css.tape}>01 / Sortiment</span>
             <h2 id="cat-title" className={css.h2}>
               Kategórie
             </h2>
@@ -207,8 +159,34 @@ export default async function HomePage() {
                   <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={css.catName}>{c.name}</span>
                   <span className={css.catCount}>
-                    {c.productCount} {c.productCount === 1 ? "produkt" : c.productCount < 5 ? "produkty" : "produktov"}{" "}
+                    {c.productCount} {c.productCount === 1 ? "stroj" : c.productCount < 5 ? "stroje" : "strojov"}{" "}
                     <ArrowUpRight size={18} aria-hidden="true" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className={css.section} aria-labelledby="brand-title">
+        <div className={css.wrap}>
+          <div className={css.sectionHead}>
+            <span className={css.tape}>02 / Značky</span>
+            <h2 id="brand-title" className={css.h2}>
+              Značky, za ktorými <span>si stojíme</span>
+            </h2>
+          </div>
+          <ul className={css.brands}>
+            {brands.map((b, i) => (
+              <li key={b.slug} className={css.brandTile}>
+                <Link href={`/produkty?znacka=${b.slug}`}>
+                  <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
+                  <span className={css.brandName}>{b.name}</span>
+                  <span className={css.brandCats}>{b.categories.join(" · ")}</span>
+                  <span className={css.catCount}>
+                    {b.productCount} {b.productCount === 1 ? "stroj" : b.productCount < 5 ? "stroje" : "strojov"}{" "}
+                    <ArrowRight size={18} aria-hidden="true" />
                   </span>
                 </Link>
               </li>

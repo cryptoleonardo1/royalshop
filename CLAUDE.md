@@ -2,11 +2,12 @@
 
 # Royal Shop
 
-Slovak e-shop for premium power tools and construction machines (Makita, NTC). Sister project of royalstroje.sk (rental). Demo phase: mock data, Stripe test mode, `noindex`.
+Slovak e-shop for premium construction machines, minimum 800 € incl. VAT, no cordless tools (strategy since 2026-10-12): NTC, Bomag, Honda, Atlas Copco, Grindex, Gölz, Cedima, Enar, Master. Sister project of royalstroje.sk (rental). Demo phase: real models with indicative prices, Stripe test mode, `noindex`.
 
 Read before larger changes:
 - `docs/04-technicka-dokumentacia.md`: architecture, order flow, data model, screens (source of truth)
 - `docs/03-legislativa-research.md`: legal requirements (withdrawal § 20a, claims, GPSR, Omnibus)
+- `docs/05-sortiment-stroje.md`: assortment, suppliers, prices to confirm (catalog source: `supabase/seed-data/catalog.json`)
 
 ## Stack
 Next.js 16 App Router (Cache Components on, `proxy.ts` instead of middleware), React 19, TypeScript, Tailwind v4, Supabase (Postgres + Auth + Storage + RLS), Stripe Checkout (manual capture), Resend. Unit tests: Vitest (`npm test`).

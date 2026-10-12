@@ -265,11 +265,37 @@ export async function getSaleProducts(limit = 6): Promise<ProductSummary[]> {
     .slice(0, limit);
 }
 
-export async function getPlatformCounts(): Promise<Record<BatteryPlatform, number>> {
-  const all = await getAllProducts();
-  const counts: Record<BatteryPlatform, number> = { LXT_18V: 0, XGT_40V: 0, CXT_12V: 0, none: 0 };
-  all.forEach((p) => counts[p.batteryPlatform]++);
-  return counts;
+export interface BrandSummary {
+  slug: string;
+  name: string;
+  productCount: number;
+  // top-level categories the brand has products in, in category order
+  categories: string[];
+}
+
+export async function getBrands(): Promise<BrandSummary[]> {
+  const [all, categories] = await Promise.all([getAllProducts(), getCategories()]);
+  const rootOf = (slug: string): Category | undefined => {
+    let c = categories.find((x) => x.slug === slug);
+    while (c?.parentId) c = categories.find((x) => x.id === c!.parentId);
+    return c;
+  };
+  const brands = new Map<string, { name: string; count: number; roots: Set<Category> }>();
+  for (const p of all) {
+    const entry = brands.get(p.brand.slug) ?? { name: p.brand.name, count: 0, roots: new Set<Category>() };
+    entry.count++;
+    const root = rootOf(p.category.slug);
+    if (root) entry.roots.add(root);
+    brands.set(p.brand.slug, entry);
+  }
+  return [...brands]
+    .map(([slug, b]) => ({
+      slug,
+      name: b.name,
+      productCount: b.count,
+      categories: [...b.roots].sort((x, y) => x.sortOrder - y.sortOrder).map((c) => c.name),
+    }))
+    .sort((a, b) => b.productCount - a.productCount || a.name.localeCompare(b.name, "sk"));
 }
 
 export async function getProductSlugs(): Promise<string[]> {

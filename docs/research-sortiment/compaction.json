@@ -1,0 +1,3084 @@
+{
+  "generated": "2026-10-12",
+  "conversion": "CZK->EUR at 25 CZK/EUR; CZ prices incl. 21 % VAT were divided by 1.21, DE prices incl. 19 % by 1.19, then 23 % SK VAT was added. Slovak listings are taken as-is (incl. 23 %). market_price_eur_gross = Slovak street price where available, else the median or average of CZ/DE sources.",
+  "brands": [
+    {
+      "brand": "NTC",
+      "manufacturer_name": "NTC STAVEBNÍ TECHNIKA spol. s r.o. (IČ 63221152, DIČ CZ63221152)",
+      "manufacturer_address": "Jiřinková 120, 552 03 Česká Skalice, Czech Republic",
+      "manufacturer_email": "info@ntc.cz",
+      "website": "https://www.ntc.cz",
+      "eu_responsible_person": null
+    },
+    {
+      "brand": "Bomag",
+      "manufacturer_name": "BOMAG GmbH (HRB 7142 Koblenz, VAT DE811175971)",
+      "manufacturer_address": "Hellerwald, D-56154 Boppard, Germany",
+      "manufacturer_email": "info@bomag.com",
+      "website": "https://www.bomag.com",
+      "eu_responsible_person": null
+    }
+  ],
+  "supplier_notes": "UNICON OSTRAVA s.r.o. (IČO 48391824, DIČ CZ48391824), Halasova 2999/8A, 703 00 Ostrava-Vítkovice, CZ; tel. +420 596 614 746, info@unicon.cz, https://www.unicon.cz, Mon–Fri 6:30–15:00. Founded 1993. It sells, services and rents construction machinery (70+ machines in its rental fleet). It is NOT the NTC importer. NTC is a Czech manufacturer selling directly. NTC's official partner map (ntc.cz/distributori) lists Unicon as an authorized NTC 'Dealer + Servis'. On unicon.cz it says it represents sales of Atlas Copco, Honda, NTC, Bomag, Cedima, Husqvarna, Hycon and Grindex, plus Fassi, Charvát CTS, Zepro, Medved and Piab. NTC products it sells: one- and two-way plates, rollers, joint cutters and rammers. NTC generators are not in its NTC menu but could likely be ordered. Bomag products: one- and two-way plates, rammers and a padfoot roller. The Bomag page does not say whether it is an authorized Bomag dealer. Lead times: not published by Unicon. NTC's own shop (ntcshop.cz) shows most core models 'Skladem (>5 ks)' with 1-day transit in CZ, so stock items should take a few working days. naradiestroje.sk quotes 1–3 working days for the Bomag BT 65. For pricing context, NTC's CZ list prices are excl. VAT on ntcshop.cz, and CZ dealers typically sell 0–15 % below list. NTC has its own SK sales rep (Ing. Petr Ratsam, +420 602 246 833, ratsam@ntc.cz) and SK dealers listed on ntc.cz (e.g. CEG s.r.o. Zlaté Moravce, Ing. Ján Buchanec Technik Martin, ŠTYL-IVANOV Vranov n. T.).",
+  "products": [
+    {
+      "brand": "NTC",
+      "model": "NT 64P",
+      "category_key": "vibracne-pechy",
+      "product_url": "https://ntc.cz/rada-spark",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/63/images/2022-NT-64P-lev--p-edn--MOB.png"
+      ],
+      "ean": null,
+      "engine": "Honda GXR 120 benzín, 2,7 kW",
+      "weight_kg": 64,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 64,
+          "unit": "kg"
+        },
+        {
+          "key": "shoe_size_mm",
+          "label_sk": "Rozmer dupacej pätky",
+          "value": "250 × 350",
+          "unit": "mm"
+        },
+        {
+          "key": "impact_force_kn",
+          "label_sk": "Hutniaca (rázová) sila",
+          "value": 15,
+          "unit": "kN"
+        },
+        {
+          "key": "blows_per_min",
+          "label_sk": "Frekvencia úderov",
+          "value": 650,
+          "unit": "úderov/min"
+        },
+        {
+          "key": "stroke_mm",
+          "label_sk": "Zdvih (odskok)",
+          "value": 55,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 2.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        },
+        {
+          "key": "air_prefilter",
+          "label_sk": "Vzduchový predfilter",
+          "value": "áno",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2862,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/ntc-nt-64-p",
+          "price": 2861.59,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/vibracni-pech-nt-64p/",
+          "price": 57500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 69575 CZK) -> 2829.0 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/4592331127-vibracni-pech-nt-64p",
+          "price": 67372.2,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz) -> 2739.43 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov. Kupujú ho stavebné firmy, inštalatéri sietí a požičovne.",
+      "notes": "Specs: ntc.cz 'Řada Spark' page (the manufacturer has no per-model pages, so product_url is the series page). 'Hutnící síla' is NTC's impact-force figure. ntcshop.cz shows 'Na dotaz' (on request) availability. DEK.cz lists it as sold out."
+    },
+    {
+      "brand": "NTC",
+      "model": "NT 72P",
+      "category_key": "vibracne-pechy",
+      "product_url": "https://ntc.cz/rada-spark",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/64/images/2022-NT-72P-lev--p-edn--MOB.png"
+      ],
+      "ean": null,
+      "engine": "Honda GXR 120 benzín, 2,7 kW",
+      "weight_kg": 72,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 72,
+          "unit": "kg"
+        },
+        {
+          "key": "shoe_size_mm",
+          "label_sk": "Rozmer dupacej pätky",
+          "value": "285 × 340",
+          "unit": "mm"
+        },
+        {
+          "key": "impact_force_kn",
+          "label_sk": "Hutniaca (rázová) sila",
+          "value": 17,
+          "unit": "kN"
+        },
+        {
+          "key": "blows_per_min",
+          "label_sk": "Frekvencia úderov",
+          "value": 650,
+          "unit": "úderov/min"
+        },
+        {
+          "key": "stroke_mm",
+          "label_sk": "Zdvih (odskok)",
+          "value": 60,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 2.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        },
+        {
+          "key": "air_prefilter",
+          "label_sk": "Vzduchový predfilter",
+          "value": "áno",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3007,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/nt-72P",
+          "price": 3007.35,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/vibracni-pech-nt-72p/",
+          "price": 61500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 74415 CZK) -> 3025.8 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/4592331126-vibracni-pech-nt-72p",
+          "price": 71970.2,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz) -> 2926.39 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov. Kupujú ho stavebné firmy, inštalatéri sietí a požičovne.",
+      "notes": "Specs: ntc.cz 'Řada Spark' page (the manufacturer has no per-model pages, so product_url is the series page). 'Hutnící síla' is NTC's impact-force figure. In stock at ntcshop.cz (>5 pcs)."
+    },
+    {
+      "brand": "NTC",
+      "model": "NT 76P",
+      "category_key": "vibracne-pechy",
+      "product_url": "https://ntc.cz/rada-spark",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/66/images/2022-NT-76P---lev--p-edn-.png"
+      ],
+      "ean": null,
+      "engine": "Honda GXR 120 benzín, 2,7 kW",
+      "weight_kg": 76,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 76,
+          "unit": "kg"
+        },
+        {
+          "key": "shoe_size_mm",
+          "label_sk": "Rozmer dupacej pätky",
+          "value": "285 × 345",
+          "unit": "mm"
+        },
+        {
+          "key": "impact_force_kn",
+          "label_sk": "Hutniaca (rázová) sila",
+          "value": 18,
+          "unit": "kN"
+        },
+        {
+          "key": "blows_per_min",
+          "label_sk": "Frekvencia úderov",
+          "value": 650,
+          "unit": "úderov/min"
+        },
+        {
+          "key": "stroke_mm",
+          "label_sk": "Zdvih (odskok)",
+          "value": 70,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 2.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        },
+        {
+          "key": "air_prefilter",
+          "label_sk": "Vzduchový predfilter",
+          "value": "áno",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3343,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/nt-76P",
+          "price": 3342.56,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/vibracni-pech-nt-76p/",
+          "price": 49900,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 60379 CZK) -> 2455.08 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/4592331125-vibracni-pech-nt-76p",
+          "price": 58624.5,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz) -> 2383.74 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov. Kupujú ho stavebné firmy, inštalatéri sietí a požičovne.",
+      "notes": "Specs: ntc.cz 'Řada Spark' page (the manufacturer has no per-model pages, so product_url is the series page). 'Hutnící síla' is NTC's impact-force figure. Price anomaly: in CZ (ntcshop.cz 49,900 CZK excl. VAT, DEK) the NT 76P is cheaper than the NT 72P, while eprofi.sk prices it higher (3,342.56 EUR). The CZ price may be a promo or clearance. The market price uses the SK figure. Confirm with Unicon. A version without the air pre-filter ('NT 76') also exists."
+    },
+    {
+      "brand": "NTC",
+      "model": "VD 20P",
+      "category_key": "vibracne-dosky-jednosmerne",
+      "product_url": "https://ntc.cz/rada-practic",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/28/images/2022-VD-18-P-lev--p-edn-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5899_vd20p-cesta.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 105,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 105,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 20,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 100,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 25,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "jednosmerná",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu (kropenie)",
+          "value": 12,
+          "unit": "l"
+        },
+        {
+          "key": "product_line",
+          "label_sk": "Rad",
+          "value": "Practic",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2016,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/vibracna-doska-ntc-vd-20-p-practic",
+          "price": 2016.17,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/jednosmerna-vibracni-deska-vd-20p/",
+          "price": 41500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 50215 CZK) -> 2041.8 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách. Typický kupec: záhradní architekti, pokladači dlažby a menšie stavebné firmy.",
+      "notes": "Specs: ntc.cz series page. Practic line: the sprinkler kit, damping mat and wheel kit are options (ntcshop). The ntc.cz image is shared across the VD xxP family."
+    },
+    {
+      "brand": "NTC",
+      "model": "VD 24",
+      "category_key": "vibracne-dosky-jednosmerne",
+      "product_url": "https://ntc.cz/rada-elegant",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/35/images/2022-VD-18-lev--p-edn-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5878_vd24-1.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 110,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 110,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 24,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 100,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 25,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "jednosmerná",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu (kropenie)",
+          "value": 12,
+          "unit": "l"
+        },
+        {
+          "key": "product_line",
+          "label_sk": "Rad",
+          "value": "Elegant",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2279,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/vd-24-elegant",
+          "price": 2278.54,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/jednosmerna-vibracni-deska-vd-24/",
+          "price": 44500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 53845 CZK) -> 2189.4 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách. Typický kupec: záhradní architekti, pokladači dlažby a menšie stavebné firmy.",
+      "notes": "Specs: ntc.cz series page. Elegant line: sprinkler kit is standard. Weight is 110 kg on ntc.cz and 115 kg on ntcshop.cz. The ntc.cz value is used."
+    },
+    {
+      "brand": "NTC",
+      "model": "VD 450/20",
+      "category_key": "vibracne-dosky-jednosmerne",
+      "product_url": "https://ntc.cz/rada-klasik",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/23/images/2022-VD-450-20-p-edn--lev-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5863_vd450-20-2014-nadrzka.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 115,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 115,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 450,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 20,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 81,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 24,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "jednosmerná",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu (kropenie)",
+          "value": 5,
+          "unit": "l"
+        },
+        {
+          "key": "product_line",
+          "label_sk": "Rad",
+          "value": "Klasik",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2263,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.ntcshop.cz/zbozi/jednosmerna-vibracni-deska-vd-450-20/",
+          "price": 46000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 55660 CZK) -> 2263.2 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách. Typický kupec: záhradní architekti, pokladači dlažby a menšie stavebné firmy.",
+      "notes": "Specs: ntc.cz series page. Only one price source found (NTC factory e-shop). No Slovak listing found. Klasik line: heavier, lower-frequency plate. Sprinkler, mat and wheels are options."
+    },
+    {
+      "brand": "NTC",
+      "model": "VD 450/22",
+      "category_key": "vibracne-dosky-jednosmerne",
+      "product_url": "https://ntc.cz/rada-klasik",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/21/images/2022-VD-450-22-lev--p-edn-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5866_vd450-22-slozeny-2018.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 140,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 140,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 450,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 22,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 81,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 24,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "jednosmerná",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu (kropenie)",
+          "value": 5,
+          "unit": "l"
+        },
+        {
+          "key": "product_line",
+          "label_sk": "Rad",
+          "value": "Klasik",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2674,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/vd-450-22-klasik",
+          "price": 2674.3,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/jednosmerna-vibracni-deska-vd-450-22/",
+          "price": 55500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 67155 CZK) -> 2730.6 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách. Typický kupec: záhradní architekti, pokladači dlažby a menšie stavebné firmy.",
+      "notes": "Specs: ntc.cz series page. Heaviest NTC forward plate. ntcshop.cz shows 'Na dotaz' (on request) availability."
+    },
+    {
+      "brand": "NTC",
+      "model": "VDR 22",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://ntc.cz/rada-range-reverzni",
+      "image_urls": [
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5920_vdr-22-2017-2.jpg",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5920-1_vdr22-072009-2.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 120,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 120,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 400,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 22,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 100,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 24,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 4334,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/vdr-22",
+          "price": 4334.29,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/reverzni-vibracni-deska-vdr-22/",
+          "price": 92500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 111925 CZK) -> 4551.0 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.",
+      "notes": "Specs: ntc.cz series page. No VDR 22 image on ntc.cz, so the images are from ntcshop.cz (NTC's own shop)."
+    },
+    {
+      "brand": "NTC",
+      "model": "VDR 32",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://ntc.cz/rada-prim",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/41/images/2022-VDR-32-lev--p-edn-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5929_vdr-32-2017-1.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 200 benzín, 4,1 kW",
+      "weight_kg": 210,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 210,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 32,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 90,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 22,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 200",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 4.1,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 5583,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/vdr-32",
+          "price": 5583.24,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/reverzni-vibracni-deska-vdr-32/",
+          "price": 113000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 136730 CZK) -> 5559.6 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.",
+      "notes": "Specs: ntc.cz series page. "
+    },
+    {
+      "brand": "NTC",
+      "model": "VDR 32H",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://ntc.cz/rada-prim",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/42/images/2022-VDR-32-H---lev--p-edn-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/5932_vdr32h-2017-1.jpg"
+      ],
+      "ean": null,
+      "engine": "Hatz 1B20 diesel, 3,4 kW",
+      "weight_kg": 215,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 215,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 32,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 90,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 22,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Hatz 1B20",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.4,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "diesel",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 8154,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/reverzna-vibracna-doska-ntc-vdr-32-h",
+          "price": 8154.47,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/reverzni-vibracni-deska-vdr-32h/",
+          "price": 165500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 200255 CZK) -> 8142.6 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.",
+      "notes": "Specs: ntc.cz series page. "
+    },
+    {
+      "brand": "NTC",
+      "model": "VDR 52",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://ntc.cz/rada-duty-reverzni",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/44/images/2023-VDR-52-lev--p-edn-.png",
+        "https://ntc.cz/storage/originals/products/44/images/2023-VDR-52-lev--p-edn--sklopen-.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 270 benzín, 6,3 kW",
+      "weight_kg": 340,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 340,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 600,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 52,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 75,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 28,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 270",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 6.3,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 8630,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/reverzna-vibracna-doska-ntc-vdr-52",
+          "price": 8630.24,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/reverzni-vibracni-deska-vdr-52/",
+          "price": 154000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 186340 CZK) -> 7576.8 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Ťažká reverzná doska na hutnenie násypov, cestných a základových podkladov a zásypov vo veľkých hrúbkach vrstiev. Kupujú ju stavebné a cestné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. Weight is 340 kg on ntc.cz and 330 kg on ntcshop.cz. The eprofi.sk price (8,630 EUR) is about 14 % above NTC's own CZ list price (7,577 EUR incl. 23 %). Variants: VDR 52E (electric start), VDR 52H/52HE (Hatz 1B30 diesel)."
+    },
+    {
+      "brand": "NTC",
+      "model": "VDR 63HE",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://ntc.cz/rada-duty-reverzni",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/50/images/2022-VDR-63-HE-lev--p-edn-.png",
+        "https://ntc.cz/storage/originals/products/50/images/2022-VDR-63-HE-prav--p-edn--sklopen-.png"
+      ],
+      "ean": null,
+      "engine": "Hatz 1B50 diesel, 7,9 kW",
+      "weight_kg": 450,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 450,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 680,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 63,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 74,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 26,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Hatz 1B50",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 7.9,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "diesel",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "elektrický",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 11892,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/vdr-63he",
+          "price": 11891.79,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/reverzni-vibracni-deska-vdr-63he/",
+          "price": 248000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 300080 CZK) -> 12201.6 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Ťažká reverzná doska na hutnenie násypov, cestných a základových podkladov a zásypov vo veľkých hrúbkach vrstiev. Kupujú ju stavebné a cestné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. Weight is 450 kg on ntc.cz and 460 kg on ntcshop.cz. The heaviest NTC model, VDR 75HE (615 kg, 75 kN, Hatz 1D81), costs 322,000 CZK excl. VAT (about 15,840 EUR incl. 23 %) and could be added."
+    },
+    {
+      "brand": "NTC",
+      "model": "RZ 123",
+      "category_key": "rezacky-skar",
+      "product_url": "https://ntc.cz/rada-easy",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/72/images/2022-RZ-123-p-edn--lev-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6022_rz-123-2017-2.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 200 benzín, 4,1 kW",
+      "weight_kg": 68,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 68,
+          "unit": "kg"
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Priemer kotúča",
+          "value": 350,
+          "unit": "mm"
+        },
+        {
+          "key": "cutting_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 120,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_rpm",
+          "label_sk": "Max. otáčky kotúča",
+          "value": 3600,
+          "unit": "ot./min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 200",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 4.1,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "travel",
+          "label_sk": "Pojazd",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 12,
+          "unit": "l"
+        },
+        {
+          "key": "blade_included",
+          "label_sk": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 1996,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/rezac-spar-ntc-rz-123",
+          "price": 1996.33,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/rezac-spar-rz-123/",
+          "price": 39500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 47795 CZK) -> 1943.4 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete. Kupujú ju cestné a stavebné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. The diamond blade is not included. Water tank is 12 l on ntc.cz and 13 l on ntcshop.cz."
+    },
+    {
+      "brand": "NTC",
+      "model": "RZ 170",
+      "category_key": "rezacky-skar",
+      "product_url": "https://ntc.cz/rada-pro",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/75/images/2022-RZ-170---lev--p-edn---s-kotou-em.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6031_rz-170-2016-1.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 390 benzín, 8,7 kW",
+      "weight_kg": 110,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 110,
+          "unit": "kg"
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Priemer kotúča",
+          "value": 450,
+          "unit": "mm"
+        },
+        {
+          "key": "cutting_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": 170,
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_rpm",
+          "label_sk": "Max. otáčky kotúča",
+          "value": 2800,
+          "unit": "ot./min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 390",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 8.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "travel",
+          "label_sk": "Pojazd",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 20,
+          "unit": "l"
+        },
+        {
+          "key": "blade_included",
+          "label_sk": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2961,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/rz-170",
+          "price": 2961.48,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/rezac-spar-rz-170/",
+          "price": 56000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 67760 CZK) -> 2755.2 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete. Kupujú ju cestné a stavebné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. The diamond blade is not included. "
+    },
+    {
+      "brand": "NTC",
+      "model": "RZ 200",
+      "category_key": "rezacky-skar",
+      "product_url": "https://ntc.cz/rada-pro",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/82/images/2022-RZ-200---lev--p-edn-.png",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6043_rz-200-2015.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 390 benzín, 8,7 kW",
+      "weight_kg": 110,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 110,
+          "unit": "kg"
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Priemer kotúča",
+          "value": "500 (520)",
+          "unit": "mm"
+        },
+        {
+          "key": "cutting_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": "190 (200)",
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_rpm",
+          "label_sk": "Max. otáčky kotúča",
+          "value": 2500,
+          "unit": "ot./min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 390",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 8.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "travel",
+          "label_sk": "Pojazd",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 20,
+          "unit": "l"
+        },
+        {
+          "key": "blade_included",
+          "label_sk": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3079,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/rezac-spar-ntc-rz-200",
+          "price": 3079.44,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/rezac-spar-rz-200/",
+          "price": 57000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 68970 CZK) -> 2804.4 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete. Kupujú ju cestné a stavebné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. The diamond blade is not included. Max. depth is 190 mm with a 500 mm blade and 200 mm with a 520 mm blade."
+    },
+    {
+      "brand": "NTC",
+      "model": "RZ 202",
+      "category_key": "rezacky-skar",
+      "product_url": "https://ntc.cz/rada-exclusive",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/87/images/2022-RZ-202---lev--p-edn--rozd-lan-.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 390 benzín, 8,7 kW",
+      "weight_kg": 120,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 120,
+          "unit": "kg"
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label_sk": "Priemer kotúča",
+          "value": "500 (520)",
+          "unit": "mm"
+        },
+        {
+          "key": "cutting_depth_mm",
+          "label_sk": "Max. hĺbka rezu",
+          "value": "190 (200)",
+          "unit": "mm"
+        },
+        {
+          "key": "arbor_mm",
+          "label_sk": "Upínací otvor kotúča",
+          "value": 25.4,
+          "unit": "mm"
+        },
+        {
+          "key": "blade_rpm",
+          "label_sk": "Max. otáčky kotúča",
+          "value": 2500,
+          "unit": "ot./min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 390",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 8.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "travel",
+          "label_sk": "Pojazd",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "water_tank_l",
+          "label_sk": "Objem nádrže na vodu",
+          "value": 33,
+          "unit": "l"
+        },
+        {
+          "key": "blade_included",
+          "label_sk": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3512,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.eprofi.sk/produkt/rezac-spar-ntc-rz-202",
+          "price": 3512.27,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (eprofi.sk)"
+        },
+        {
+          "url": "https://www.ntcshop.cz/zbozi/rezac-spar-rz-202/",
+          "price": 72000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 87120 CZK) -> 3542.4 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete. Kupujú ju cestné a stavebné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. The diamond blade is not included. ntcshop price taken from its related-product listing (72,000 CZK excl. / 87,120 incl. VAT, 'Na dotaz'). Exclusive line has a larger 33 l water tank. A self-propelled version, RZ 202EP (185 kg), also exists."
+    },
+    {
+      "brand": "NTC",
+      "model": "TR 5 AVR",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://ntc.cz/rada-omni",
+      "image_urls": [
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6190_tr-5e-avr.gif",
+        "https://ntc.cz/storage/originals/products/105/images/2022-TR-5E-AVR---lev--p-edn-.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 270 benzín, 6,3 kW",
+      "weight_kg": 58,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 58,
+          "unit": "kg"
+        },
+        {
+          "key": "max_power_kva",
+          "label_sk": "Max. výkon",
+          "value": 5.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phase",
+          "label_sk": "Fázy",
+          "value": "1-fázová",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd",
+          "value": 21.7,
+          "unit": "A"
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "2 × 230 V",
+          "unit": null
+        },
+        {
+          "key": "regulation",
+          "label_sk": "Regulácia napätia",
+          "value": "AVR",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP 23",
+          "unit": null
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 270",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 6.3,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 50,
+          "unit": "Hz"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 1819,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.ntcshop.cz/zbozi/elektrocentrala-tr-5e-avr/",
+          "price": 38300,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 46343 CZK) -> 1884.36 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.stasan.cz/elektrocentraly-ntc/",
+          "price": 35625,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (stasan.cz, NTC dealer; incl. 21 % = 43106 CZK) -> 1752.75 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Rámová stavebná elektrocentrála s motorom Honda a AVR reguláciou napätia, vhodná aj pre citlivú elektroniku. Slúži na napájanie náradia, osvetlenia a stavebných strojov na stavbe.",
+      "notes": "Specs: ntc.cz series page. No Slovak price found, so the market price is the average of two CZ prices. ntcshop.cz calls it 'TR 5 AVR' or 'TR-5E AVR'. Stasan.cz calls it 'TR-5E AVR'."
+    },
+    {
+      "brand": "NTC",
+      "model": "TR 7 AVR",
+      "category_key": "elektrocentraly-1f",
+      "product_url": "https://ntc.cz/rada-omni",
+      "image_urls": [
+        "https://ntc.cz/storage/originals/products/106/images/2022-TR-5E-AVR---lev--p-edn-.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 390 benzín, 8,7 kW",
+      "weight_kg": 75,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 75,
+          "unit": "kg"
+        },
+        {
+          "key": "max_power_kva",
+          "label_sk": "Max. výkon",
+          "value": 7.0,
+          "unit": "kVA"
+        },
+        {
+          "key": "phase",
+          "label_sk": "Fázy",
+          "value": "1-fázová",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie",
+          "value": 230,
+          "unit": "V"
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd",
+          "value": 30.5,
+          "unit": "A"
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "1 × 230 V/16 A, 1 × 230 V/32 A",
+          "unit": null
+        },
+        {
+          "key": "regulation",
+          "label_sk": "Regulácia napätia",
+          "value": "AVR",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP 23",
+          "unit": null
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 390",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 8.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 50,
+          "unit": "Hz"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2205,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.ntcshop.cz/zbozi/elektrocentrala-tr-7e-avr/",
+          "price": 45000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 54450 CZK) -> 2214.0 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.stasan.cz/elektrocentraly-ntc/",
+          "price": 44650,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (stasan.cz, NTC dealer; incl. 21 % = 54026 CZK) -> 2196.78 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Rámová stavebná elektrocentrála s motorom Honda a AVR reguláciou napätia, vhodná aj pre citlivú elektroniku. Slúži na napájanie náradia, osvetlenia a stavebných strojov na stavbe.",
+      "notes": "Specs: ntc.cz series page. No Slovak price found, so the market price is the average of two CZ prices. ntc.cz reuses the TR 5 AVR photo (same frame), so a model-specific image needs confirming. ntcshop.cz has no photo."
+    },
+    {
+      "brand": "NTC",
+      "model": "TRT 6,5 AVR",
+      "category_key": "elektrocentraly-3f",
+      "product_url": "https://ntc.cz/rada-omni+",
+      "image_urls": [
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6214_trt-6-5-2015.jpg",
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6214-1_6214-1-elektrocentrala-trt-6-5-avr.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 390 benzín, 8,7 kW",
+      "weight_kg": 76,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 76,
+          "unit": "kg"
+        },
+        {
+          "key": "max_power_kva",
+          "label_sk": "Max. výkon 3f / 1f",
+          "value": "7,0 / 2,3",
+          "unit": "kVA"
+        },
+        {
+          "key": "phase",
+          "label_sk": "Fázy",
+          "value": "3-fázová",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie 3f / 1f",
+          "value": "400 / 230",
+          "unit": "V"
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd 3f / 1f",
+          "value": "9,4 / 18,0",
+          "unit": "A"
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "2 × 230 V, 1 × 400 V",
+          "unit": null
+        },
+        {
+          "key": "regulation",
+          "label_sk": "Regulácia napätia",
+          "value": "AVR",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP 23",
+          "unit": null
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 390",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 8.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 50,
+          "unit": "Hz"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2306,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.ntcshop.cz/zbozi/elektrocentrala-trt-6-5-avr/",
+          "price": 50500,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 61105 CZK) -> 2484.6 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.stasan.cz/elektrocentraly-ntc/",
+          "price": 43225,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (stasan.cz, NTC dealer; incl. 21 % = 52302 CZK) -> 2126.67 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Trojfázová rámová elektrocentrála s AVR pre stavby bez prípojky: napája 400 V stroje (miešačky, píly, ohrievače) aj 230 V náradie. Kupujú ju stavebné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. No Slovak price found, so the market price is the average of two CZ prices. 1-phase output is 2.3 kVA on ntc.cz and 4.0 kVA on ntcshop.cz. The manufacturer value is used."
+    },
+    {
+      "brand": "NTC",
+      "model": "TRT 15E AVR",
+      "category_key": "elektrocentraly-3f",
+      "product_url": "https://ntc.cz/rada-omni+",
+      "image_urls": [
+        "https://cdn.myshoptet.com/usr/www.ntcshop.cz/user/shop/big/6220_trt-15.png",
+        "https://ntc.cz/storage/originals/products/111/images/2022-TRT-15-AVR---p-edn--prav-.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 690 benzín, 16,5 kW",
+      "weight_kg": 128,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 128,
+          "unit": "kg"
+        },
+        {
+          "key": "max_power_kva",
+          "label_sk": "Max. výkon 3f / 1f",
+          "value": "15,0 / 5,0",
+          "unit": "kVA"
+        },
+        {
+          "key": "phase",
+          "label_sk": "Fázy",
+          "value": "3-fázová",
+          "unit": null
+        },
+        {
+          "key": "voltage_v",
+          "label_sk": "Napätie 3f / 1f",
+          "value": "400 / 230",
+          "unit": "V"
+        },
+        {
+          "key": "rated_current_a",
+          "label_sk": "Menovitý prúd 3f / 1f",
+          "value": "21,4 / 21,4",
+          "unit": "A"
+        },
+        {
+          "key": "sockets",
+          "label_sk": "Zásuvky",
+          "value": "3 × 230 V, 1 × 400 V",
+          "unit": null
+        },
+        {
+          "key": "regulation",
+          "label_sk": "Regulácia napätia",
+          "value": "AVR",
+          "unit": null
+        },
+        {
+          "key": "ip_rating",
+          "label_sk": "Krytie",
+          "value": "IP 23",
+          "unit": null
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 690",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 16.5,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "elektrický",
+          "unit": null
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 50,
+          "unit": "Hz"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 5908,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.ntcshop.cz/zbozi/elektrocentrala-trt-15-avr/",
+          "price": 120000,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (NTC factory e-shop list price; incl. 21 % CZ VAT = 145200 CZK) -> 5904.0 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.stasan.cz/elektrocentraly-ntc/",
+          "price": 120175,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (stasan.cz, NTC dealer; incl. 21 % = 145412 CZK) -> 5912.61 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Trojfázová rámová elektrocentrála s AVR pre stavby bez prípojky: napája 400 V stroje (miešačky, píly, ohrievače) aj 230 V náradie. Kupujú ju stavebné firmy a požičovne.",
+      "notes": "Specs: ntc.cz series page. No Slovak price found, so the market price is the average of two CZ prices. Output is 15.0/5.0 kVA and 128 kg on ntc.cz, but 14.0/4.6 kVA and 124 kg on ntcshop.cz (older data?). The manufacturer values are used."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BT 60",
+      "category_key": "vibracne-pechy",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/tampers/bt-60-54170/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/b/6/csm_BT_60_S_2983c6a6a2.png",
+        "https://www.bomag.com/dam/BOMAG/Light_Equipment/Tamper/BT_60/Images/595213298B_139616.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GXR 120 benzín, 2,8 kW",
+      "weight_kg": 58,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 58,
+          "unit": "kg"
+        },
+        {
+          "key": "shoe_size_mm",
+          "label_sk": "Rozmer dupacej pätky",
+          "value": "230 (šírka)",
+          "unit": "mm"
+        },
+        {
+          "key": "impact_force_kn",
+          "label_sk": "Hutniaca (rázová) sila",
+          "value": 15,
+          "unit": "kN"
+        },
+        {
+          "key": "blows_per_min",
+          "label_sk": "Frekvencia úderov",
+          "value": "600–708 (10–11,8 Hz)",
+          "unit": "úderov/min"
+        },
+        {
+          "key": "stroke_mm",
+          "label_sk": "Zdvih (odskok)",
+          "value": 70,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 2.8,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. pracovná rýchlosť",
+          "value": 20,
+          "unit": "m/min"
+        },
+        {
+          "key": "area_performance_m2_h",
+          "label_sk": "Plošný výkon",
+          "value": 276,
+          "unit": "m²/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 3.0,
+          "unit": "l"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 2622,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.elvaprofi.cz/bomag/stavebni-technika/vibracni-pechy/bomag_bt-60.html",
+          "price": 76960,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (elvaprofi.cz; incl. 21 % = 93,122 CZK) -> 3786.43 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.baumaschinen-taron.de/p/stampfer-bomag-bt60-58kg-neu",
+          "price": 2537.0,
+          "currency": "EUR",
+          "vat_note": "incl. 19 % DE VAT -> 2622.28 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.baushop-express.com/bomag-stampfer-bt-60.html",
+          "price": 1969.0,
+          "currency": "EUR",
+          "vat_note": "incl. 19 % DE VAT, promo (list 3,141.01) -> 2035.18 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Ľahký vibračný pech na hutnenie zemín v úzkych výkopoch, pri potrubiach a základoch. Hodí sa pre inštalatérov sietí a požičovne.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). Frequency is 10–11.8 Hz on the datasheet, shown here as blows/min. No Slovak price found and the sources spread widely (2,035–3,786 EUR), so the market price is the median (taron.de). The datasheet's printed column alignment is garbled. The values were assigned by position (impact force 15/17 kN, jump height 70 mm)."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BT 65",
+      "category_key": "vibracne-pechy",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/tampers/bt-65-54155/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/2/6/csm_BT_65_S_96fad290db.png",
+        "https://www.bomag.com/dam/BOMAG/Light_Equipment/Tamper/BT_65/Images/749545021B_140956.png"
+      ],
+      "ean": null,
+      "engine": "Honda GXR 120 benzín, 2,8 kW",
+      "weight_kg": 68,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 68,
+          "unit": "kg"
+        },
+        {
+          "key": "shoe_size_mm",
+          "label_sk": "Rozmer dupacej pätky",
+          "value": "280 (šírka)",
+          "unit": "mm"
+        },
+        {
+          "key": "impact_force_kn",
+          "label_sk": "Hutniaca (rázová) sila",
+          "value": 17,
+          "unit": "kN"
+        },
+        {
+          "key": "blows_per_min",
+          "label_sk": "Frekvencia úderov",
+          "value": "600–708 (10–11,8 Hz)",
+          "unit": "úderov/min"
+        },
+        {
+          "key": "stroke_mm",
+          "label_sk": "Zdvih (odskok)",
+          "value": 70,
+          "unit": "mm"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 2.8,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. pracovná rýchlosť",
+          "value": 20,
+          "unit": "m/min"
+        },
+        {
+          "key": "area_performance_m2_h",
+          "label_sk": "Plošný výkon",
+          "value": 336,
+          "unit": "m²/h"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 3.0,
+          "unit": "l"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3941,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/vibracne-dusadla/679-bt-65-bomag-vibracne-dusadlo-s-motorom-honda-gxr-120.html",
+          "price": 3940.74,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (naradiestroje.sk, 7 % off list 4,237.35)"
+        },
+        {
+          "url": "https://www.elvaprofi.cz/stavebni-technika/vibracni-pechy/bomag_bt-65.html",
+          "price": 73390,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (elvaprofi.cz; incl. 21 % = 88,802 CZK) -> 3610.79 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010006-bt-65-vibracni-pech-s-patkou-290mm-21650007",
+          "price": 85020.65,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz, 'BT 65 X24') -> 3457.04 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Univerzálny vibračný pech so širšou pätkou na hutnenie zásypov výkopov, kanalizácií a základov. Kupujú ho stavebné firmy a požičovne.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). The DEK listing names a 290 mm foot ('X24' variant). The standard foot is 280 mm."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BP 20/45",
+      "category_key": "vibracne-dosky-jednosmerne",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/single-direction-vibratory-plates/bp-2045-83496/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/3/b/csm_BP_20-45_S_010040dc22.png",
+        "https://www.bomag.com/dam/BOMAG/Light_Equipment/Single_Direction_Vibratory_Plates/BP_20_45/Images/2225_BP_Serie_Neubaugebiet_010.jpg"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 92,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 92,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 450,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 20,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 90,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 30,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "jednosmerná",
+          "unit": null
+        },
+        {
+          "key": "amplitude_mm",
+          "label_sk": "Amplitúda",
+          "value": 2.0,
+          "unit": "mm"
+        },
+        {
+          "key": "gradeability_pct",
+          "label_sk": "Max. stúpavosť",
+          "value": 30,
+          "unit": "%"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 3.1,
+          "unit": "l"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 1870,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010017-bomag-jednosmerna-vibracni-deska-bp-20-45-new-22184601",
+          "price": 51865.44,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz) -> 2108.91 EUR incl. 23 %"
+        },
+        {
+          "url": "https://kurt-koenig.com/de/produkt/bomag-ruettelplatte-bp-20-45--77b64015-ed81-4d46-a38b-93d0484a03b9",
+          "price": 1520.0,
+          "currency": "EUR",
+          "vat_note": "excl. VAT (net, kurt-koenig.com; per search snippet, not opened) -> 1869.6 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.baushop-express.com/de_de/bomag-bp-20-45-vorwaertslaufende-ruettelplatte.html",
+          "price": 1549.0,
+          "currency": "EUR",
+          "vat_note": "incl. 19 % DE VAT, promo (per search snippet) -> 1601.07 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Kompaktná jednosmerná doska so sklopným vodidlom (zmestí sa do kufra auta) na hutnenie dlažby, štrkových podkladov a asfaltu pri menších prácach.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). Two BP 20/45 pages exist on bomag.com (63033 and 83496, the 2025 datasheet). The 83496 one is used. No Slovak price found. Market price = median. naradiestroje.sk sells an older 'BP 20/50' (2,591.36 EUR)."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BP 25/50",
+      "category_key": "vibracne-dosky-jednosmerne",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/single-direction-vibratory-plates/bp-2550-83497/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/d/3/csm_BP_25-50_S_70d4f3cef3.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 110,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 110,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 25,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 90,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 30,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "jednosmerná",
+          "unit": null
+        },
+        {
+          "key": "amplitude_mm",
+          "label_sk": "Amplitúda",
+          "value": 2.0,
+          "unit": "mm"
+        },
+        {
+          "key": "gradeability_pct",
+          "label_sk": "Max. stúpavosť",
+          "value": 30,
+          "unit": "%"
+        },
+        {
+          "key": "fuel_tank_l",
+          "label_sk": "Objem palivovej nádrže",
+          "value": 3.1,
+          "unit": "l"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 3232,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/jednosmerne-vibracne-dosky/1438-bp-25-50-bomag-jednosmerna-vibracna-doska.html",
+          "price": 3232.44,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (naradiestroje.sk, 10 % off list 3,591.60)"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010531-jednosmerna-vibracni-deska-bp-25-50-22255001",
+          "price": 91276.35,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz) -> 3711.4 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Výkonnejšia jednosmerná doska na hutnenie podkladových vrstiev, dlažby a asfaltu pri chodníkoch a parkoviskách.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). naradiestroje.sk lists older-generation data (108 kg, 92 Hz). The 2025 datasheet says 110 kg, 90 Hz. A diesel BP 25/50 D also exists (elvaprofi.cz 107,751 CZK incl. VAT)."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BPR 25/50",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/reversible-vibratory-plates/bpr-2550-69582/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/4/1/csm_BPR_25_50_S_6bcffe0cef.png",
+        "https://www.bomag.com/dam/BOMAG/Light_Equipment/Reversible_Vibratory_Plates/BPR_25_50_D/Images/BPR_25_50D_001.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 140,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 140,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 500,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 25,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 87,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 25,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "amplitude_mm",
+          "label_sk": "Amplitúda",
+          "value": 1.27,
+          "unit": "mm"
+        },
+        {
+          "key": "gradeability_pct",
+          "label_sk": "Max. stúpavosť",
+          "value": 30,
+          "unit": "%"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 6378,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://www.elvaprofi.cz/stavebni-technika/vibracni-desky/bomag_bpr-25-50.html",
+          "price": 133650,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (elvaprofi.cz; incl. 21 % = 161,717 CZK) -> 6575.58 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010030-bpr-25-50-reverzni-vibracni-deska-23255001",
+          "price": 152013.51,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz) -> 6181.05 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Ľahká reverzná doska na hutnenie zásypov, chodníkov a zámkovej dlažby, aj v stiesnených priestoroch.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). Elvaprofi shows '133 65…' excl. VAT (truncated). The figure was computed as 161,717 / 1.21 = 133,650. No Slovak price found. Market price = average of the CZ prices."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BPR 35/60",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/reversible-vibratory-plates/bpr-3560-69588/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/4/d/csm_BPR_35_60_S_1ab39edafd.png",
+        "https://www.bomag.com/dam/BOMAG/Light_Equipment/Reversible_Vibratory_Plates/BPR_35_60_D/Images/BPR_35_60D_096.png"
+      ],
+      "ean": null,
+      "engine": "Honda GX 160 benzín, 3,6 kW",
+      "weight_kg": 205,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 205,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 600,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 35,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 80,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 27,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Honda GX 160",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.6,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "benzín",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "amplitude_mm",
+          "label_sk": "Amplitúda",
+          "value": 1.3,
+          "unit": "mm"
+        },
+        {
+          "key": "gradeability_pct",
+          "label_sk": "Max. stúpavosť",
+          "value": 32,
+          "unit": "%"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 6790,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/reverzne-vibracne-dosky/1801-bpr-35-60-bomag-reverzna-vibracna-doska-s-motorom-honda-gx160.html",
+          "price": 6789.6,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (naradiestroje.sk, 4 % off list 7,072.50)"
+        },
+        {
+          "url": "https://www.elvaprofi.cz/stavebni-technika/vibracni-desky/bomag_bpr-35-60.html",
+          "price": 143470,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (elvaprofi.cz; incl. 21 % = 173,599 CZK) -> 7058.72 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010041-bpr-35-60-az4-reverzni-vibracni-deska-23356002",
+          "price": 165582.69,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz, 'AZ4' variant) -> 6732.78 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Všestranná reverzná doska na zemné práce, asfalt a dlažbu (s voliteľnou STONEGUARD platňou). Obľúbená u pokladačov dlažby a v požičovniach.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). Elvaprofi excl.-VAT figure computed from 173,599 / 1.21. A diesel BPR 35/60 D (Hatz 1B20, 225 kg) also exists."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BPR 40/60 D",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/reversible-vibratory-plates/bpr-4060-d-69549/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/c/b/csm_BPR_40_60_D_S_1647315c4a.png",
+        "https://www.bomag.com/dam/BOMAG/Light_Equipment/Reversible_Vibratory_Plates/BPR_40_60_D/Images/134275419B_171223.png"
+      ],
+      "ean": null,
+      "engine": "Hatz 1B20 diesel, 3,1 kW",
+      "weight_kg": 260,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 260,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 600,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 40,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 80,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 27,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Hatz 1B20",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 3.1,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "diesel",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný (elektrický voliteľne)",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "amplitude_mm",
+          "label_sk": "Amplitúda",
+          "value": 1.4,
+          "unit": "mm"
+        },
+        {
+          "key": "gradeability_pct",
+          "label_sk": "Max. stúpavosť",
+          "value": 32,
+          "unit": "%"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 9962,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/reverzne-vibracne-dosky/1800-bpr-40-60d-bomag-reverzna-vibracna-doska-diesel.html",
+          "price": 9961.77,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (naradiestroje.sk)"
+        },
+        {
+          "url": "https://www.elvaprofi.cz/stavebni-technika/vibracni-desky/bomag_bpr-40-60-d.html",
+          "price": 199470,
+          "currency": "CZK",
+          "vat_note": "excl. VAT (elvaprofi.cz; incl. 21 % = 241,359 CZK) -> 9813.92 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010048-bpr-40-60-de-reverzni-vibracni-deska-23406002",
+          "price": 247464.12,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz, 'DE' = electric start) -> 10062.18 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Dieselová reverzná doska strednej triedy na hutnenie zásypov, podkladov a dlažby. Je vhodná pre firmy, ktoré preferujú naftu kvôli spotrebe a životnosti.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). Chosen instead of BPR 45/55 D because it has SK and CZ prices (BPR 45/55 D had no price source). Electric start is the 'DE' version."
+    },
+    {
+      "brand": "Bomag",
+      "model": "BPR 60/65 D",
+      "category_key": "vibracne-dosky-reverzne",
+      "product_url": "https://www.bomag.com/ww-en/machinery/categories/light-equipment/reversible-vibratory-plates/bpr-6065-d-69575/",
+      "image_urls": [
+        "https://www.bomag.com/fileadmin/_processed_/d/3/csm_BPR_60_65_D_S_072eaf3407.png"
+      ],
+      "ean": null,
+      "engine": "Hatz 1B40 diesel, 6,7 kW",
+      "weight_kg": 460,
+      "specs": [
+        {
+          "key": "weight",
+          "label_sk": "Prevádzková hmotnosť",
+          "value": 460,
+          "unit": "kg"
+        },
+        {
+          "key": "plate_width_mm",
+          "label_sk": "Šírka hutniacej dosky",
+          "value": 650,
+          "unit": "mm"
+        },
+        {
+          "key": "centrifugal_force_kn",
+          "label_sk": "Odstredivá sila",
+          "value": 60,
+          "unit": "kN"
+        },
+        {
+          "key": "frequency_hz",
+          "label_sk": "Frekvencia",
+          "value": 68,
+          "unit": "Hz"
+        },
+        {
+          "key": "speed_m_min",
+          "label_sk": "Max. rýchlosť pojazdu",
+          "value": 28,
+          "unit": "m/min"
+        },
+        {
+          "key": "engine",
+          "label_sk": "Motor",
+          "value": "Hatz 1B40",
+          "unit": null
+        },
+        {
+          "key": "power_kw",
+          "label_sk": "Výkon motora",
+          "value": 6.7,
+          "unit": "kW"
+        },
+        {
+          "key": "fuel",
+          "label_sk": "Palivo",
+          "value": "diesel",
+          "unit": null
+        },
+        {
+          "key": "start",
+          "label_sk": "Štartovanie",
+          "value": "ručný (elektrický vo verzii DE)",
+          "unit": null
+        },
+        {
+          "key": "direction",
+          "label_sk": "Smer pojazdu",
+          "value": "reverzná",
+          "unit": null
+        },
+        {
+          "key": "amplitude_mm",
+          "label_sk": "Amplitúda",
+          "value": 1.96,
+          "unit": "mm"
+        },
+        {
+          "key": "emission_stage",
+          "label_sk": "Emisná norma",
+          "value": "EU Stage V",
+          "unit": null
+        }
+      ],
+      "market_price_eur_gross": 14291,
+      "price_is_estimate": false,
+      "price_sources": [
+        {
+          "url": "https://naradiestroje.sk/reverzne-vibracne-dosky/2130-bpr-6065-d-bomag-reverzna-vibracna-doska-s-motorom-hatz.html",
+          "price": 14290.63,
+          "currency": "EUR",
+          "vat_note": "incl. 23 % SK VAT (naradiestroje.sk)"
+        },
+        {
+          "url": "https://www.dek.cz/produkty/detail/3335010058-bpr-60-65-de-reverzni-vibracni-deska-23606502",
+          "price": 313501.56,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (DEK.cz, 'DE' version) -> 12747.34 EUR incl. 23 %"
+        },
+        {
+          "url": "https://www.elvaprofi.cz/stavebni-technika/vibracni-desky/bomag_bpr-60-65-d.html",
+          "price": 367525,
+          "currency": "CZK",
+          "vat_note": "incl. 21 % CZ VAT (elvaprofi.cz, 'BPR 60/65 DE (VM20)' = with compaction meter) -> 14943.99 EUR incl. 23 %"
+        }
+      ],
+      "applications": "Ťažká dieselová reverzná doska na hutnenie násypov, cestných podkladov a zásypov vo vysokých vrstvách. Kupujú ju cestné a stavebné firmy a požičovne.",
+      "notes": "Specs from the official BOMAG datasheet (PDF linked on the product page). Weight 460 kg = CECE operating weight with the 650 mm plate. The datasheet's column layout was partly garbled. The values were checked against the bomag.com page (460 kg, 6.7 kW, 650 mm). The naradiestroje.sk listing doesn't say if it is the recoil or electric-start version. The BPR 55/65 D (Kohler, 55 kN) is available at naradiestroje.sk for 13,104.25 EUR as an alternative."
+    }
+  ]
+}

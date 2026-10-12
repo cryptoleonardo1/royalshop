@@ -120,12 +120,11 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
     { label: "Značka", value: p.brand.name },
     ...(p.sku ? [{ label: "Kód výrobcu", value: p.sku }] : []),
     ...(p.ean ? [{ label: "EAN", value: p.ean }] : []),
-    {
-      label: "Napájanie",
-      value: p.batteryPlatform === "none" ? "Sieťové / motorové" : `Akumulátor ${PLATFORM_LABEL[p.batteryPlatform]}`,
-    },
     ...(p.batteryPlatform !== "none"
-      ? [{ label: "Výbava", value: p.isKit ? "Sada s batériami a nabíjačkou" : "Bez batérie a nabíjačky (solo)" }]
+      ? [
+          { label: "Napájanie", value: `Akumulátor ${PLATFORM_LABEL[p.batteryPlatform]}` },
+          { label: "Výbava", value: p.isKit ? "Sada s batériami a nabíjačkou" : "Bez batérie a nabíjačky (solo)" },
+        ]
       : []),
     ...p.specs.map((s) => ({ label: s.label, value: formatSpecValue(s.value, s.unit) })),
     ...(p.weightKg ? [{ label: "Hmotnosť balenia", value: formatSpecValue(String(p.weightKg), "kg") }] : []),

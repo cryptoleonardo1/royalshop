@@ -21,7 +21,7 @@ Cieľom je overiť celý proces od zákazníka po admina na realistických (uká
 
 **Mimo demo verzie:**
 - platba prevodom,
-- reálne napojenie na dodávateľov (Makita, NTC),
+- reálne napojenie na dodávateľov (Unicon Ostrava, Honda, Atlas Copco, Gölz, Cedima, Enar, Master),
 - reálny kuriér,
 - automatizované WhatsApp správy,
 - Heureka a Google feed,
@@ -33,7 +33,7 @@ Cieľom je overiť celý proces od zákazníka po admina na realistických (uká
 | Téma | Rozhodnutie |
 |---|---|
 | Model nákupu | Zákazník zaplatí → my kúpime od dodávateľa → tovar príde na pobočku v Senci → otestujeme, zabalíme, vypíšeme záručný list → odošleme kuriérom, rozvezieme sami, alebo si ho zákazník vyzdvihne |
-| Dodávatelia | Makita s.r.o. (do 48 h na pobočku), ntc.cz (3–5 dní). Zameranie na drahšie náradie a stroje. |
+| Dodávatelia | Pôvodne Makita s.r.o. a ntc.cz. **Zmena 12. 10. 2026:** žiadne aku náradie ani Makita; len prémiové stavebné stroje od 800 € s DPH od značiek, s ktorými má founder priamy kontakt: NTC (cez Unicon Ostrava), Bomag, Honda, Atlas Copco, Grindex, Gölz, Cedima, Enar, Master. Sortiment a dodávatelia: `docs/05-sortiment-stroje.md`. |
 | Zákazníci | Súkromné osoby (B2C) aj firmy (B2B). Predaj len na Slovensku. |
 | Ceny | Predajná cena sa zadáva ručne. Nákupná cena a marža (15–35 %) sa evidujú v admine len pre prehľad. |
 | Doprava | Kuriér pre menšie položky (zmluva zatiaľ nie je), ťažké stroje vlastnou technikou, osobný odber na pobočke Royal Stroje v Senci. Doprava zdarma od 2 000 €. |
@@ -126,7 +126,7 @@ pending_payment ──(Stripe: autorizované)──► paid_authorized
                                                  ▼
                                              confirmed           (platba strhnutá, faktúra vystavená)
                                                  ▼
-                                          ordered_from_supplier  (objednané u Makita/NTC)
+                                          ordered_from_supplier  (objednané u dodávateľa)
                                                  ▼
                                           received_at_branch     (prišlo na pobočku Senec)
                                                  ▼
@@ -144,7 +144,7 @@ pending_payment ──(Stripe: autorizované)──► paid_authorized
 
 - **Platba (`payment_status`)** sa sleduje samostatne: `unpaid`, `authorized`, `paid`, `partially_refunded`, `refunded`, `failed`, `cancelled`.
 - **Každá zmena stavu** sa zapíše do `order_status_history` (kto, kedy, poznámka) a podľa šablóny odíde e-mail zákazníkovi.
-- **Predpokladaný dátum doručenia** sa ráta pri objednávke: najpomalší dodávateľ v košíku + 1 deň na test + doprava (napríklad Makita 2 + 1 + 1 = 4 pracovné dni). Zobrazuje sa pri produkte, v košíku aj v portáli.
+- **Predpokladaný dátum doručenia** sa ráta pri objednávke: najpomalší dodávateľ v košíku + 1 deň na test + doprava (napríklad Unicon 4 + 1 + 1 = 6 pracovných dní). Zobrazuje sa pri produkte, v košíku aj v portáli.
 
 ### 4.3 Odstúpenie od zmluvy do 14 dní (`returns`)
 
@@ -242,7 +242,7 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 ### 6.1 E-shop (verejná časť)
 | Stránka | Obsah |
 |---|---|
-| **Domov** | Hero s výberom, kategórie, výber podľa batériovej platformy (18V LXT / 40V XGT), odporúčané produkty, výhody („Každý stroj otestovaný pred odoslaním“, „Doprava zdarma od 2 000 €“, „Osobný odber v Senci“, „Autorizovaný predajca“), značky |
+| **Domov** | Hero s výberom, kategórie, značky s počtom strojov a kategóriami, odporúčané produkty, akcie, výhody („Otestované pred odoslaním“, „Doprava zdarma od 2 000 €“, „Osobný odber v Senci“, „Priamo od výrobcov“) |
 | **Kategória** | Filtre podľa značky, ceny, platformy, sady alebo samotného náradia, dostupnosti (dodacia doba) a parametrov (napätie, výkon, hmotnosť). Triedenie, stránkovanie, prepínač zobrazenia cien s DPH alebo bez DPH pre firmy. |
 | **Produkt** | Galéria, cena s DPH aj bez DPH, najnižšia cena za 30 dní pri zľave, predpokladaný dátum doručenia, tlačidlo „Do košíka“, tabuľka parametrov, popis, dokumenty, informácie o bezpečnosti a výrobcovi (GPSR), záruka a záručný list, príslušenstvo a kompatibilné batérie, „Požičaj si v Royal Stroje“, kontakt cez WhatsApp |
 | **Vyhľadávanie** | Fulltext v Postgrese (`tsvector` so slovenskou podporou bez diakritiky): názov, kód, EAN. Napovedá už počas písania. |
@@ -363,10 +363,8 @@ Ak sú v košíku produkty s rôznou dodacou dobou, objednávka sa odošle celá
 
 ## 10. Ukážkové dáta (seed)
 
-- **40–60 produktov:**
-  - Makita (~35–45): AKU náradie LXT/XGT, kladivá, píly, brúsky, záhradná technika
-  - NTC (~10–15): stroje, napríklad vibračné dosky, miešačky, rezačky
-- Kategórie, značky, 2 dodávatelia, parametre, ceny (predajná, nákupná, marža), niekoľko produktov v zľave s históriou cien.
+- **78 strojov od 800 € s DPH** (od 12. 10. 2026, predtým Makita/NTC): vibračná technika (NTC, Bomag), elektrocentrály (Honda, NTC), čerpadlá (Atlas Copco, Grindex, Honda), rezacia technika (NTC, Gölz, Cedima), vibrátory do betónu (Enar), odvlhčovače a ohrievače (Master). Reálne modely, parametre z webov výrobcov, ceny orientačne z trhu −5 % (prehľad: `docs/05-sortiment-stroje.md`).
+- 19 kategórií, 9 značiek, 7 dodávateľov (v `catalog.json`), parametre, ceny (predajná, nákupná, marža), tri produkty v zľave s históriou cien.
 - **Obrázky** z existujúcich podkladov Royal Stroje a verejných produktových fotiek. Licenciu treba overiť pred ostrým spustením; demo je neindexované.
 - **Testovací zákazníci:** súkromná osoba a firma. **Objednávky** vo všetkých stavoch, 1–2 reklamácie a 1 odstúpenie, aby bol admin naplnený hneď po spustení.
 - **Admin účty:** ty a founder.
