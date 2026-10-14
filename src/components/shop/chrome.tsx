@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Form from "next/form";
-import { ArrowRight, Clock, Phone, Search, Store, Truck, Undo2, User } from "lucide-react";
+import { ArrowRight, Clock, Mail, Phone, Search, Store, Truck, Undo2, User } from "lucide-react";
 import { getShopSettings, getTopCategories } from "@/lib/catalog";
 import { formatEur } from "@/lib/money";
 import { fontVariables } from "./fonts";
@@ -94,6 +94,31 @@ export async function ShopShell({ children }: { children: ReactNode }) {
       </header>
 
       <main id="obsah">{children}</main>
+
+      {(settings.phone || settings.email) && (
+        <section className={css.ask} aria-labelledby="ask-title">
+          <div className={`${css.wrap} ${css.askGrid}`}>
+            <div>
+              <h2 id="ask-title" className={css.askTitle}>
+                Nenašli ste stroj, ktorý hľadáte?
+              </h2>
+              <p className={css.askText}>Zavolajte nám a dohodneme sa. Stroj vám radi zoháňame aj mimo ponuky e-shopu.</p>
+            </div>
+            <div className={css.askActions}>
+              {settings.phone && (
+                <a href={`tel:${tel}`} className={css.askCall}>
+                  <Phone size={22} aria-hidden="true" /> {settings.phone}
+                </a>
+              )}
+              {settings.email && (
+                <a href={`mailto:${settings.email}`} className={css.askMail}>
+                  <Mail size={18} aria-hidden="true" /> {settings.email}
+                </a>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <footer className={`${css.footer} ${css.dark}`}>
         <div className={css.wrap}>

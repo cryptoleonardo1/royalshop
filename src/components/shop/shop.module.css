@@ -1196,6 +1196,76 @@
   color: var(--hivis-deep);
 }
 
+/* ---------- ask (pre-footer call to action) ---------- */
+
+.ask {
+  margin-top: clamp(64px, 9vw, 120px);
+  padding-block: clamp(36px, 5vw, 56px);
+  background: var(--hivis);
+  border-top: 10px solid transparent;
+  border-image: var(--hazard) 10;
+}
+/* Home page ends with the dark USP band, which already carries the hazard stripe. */
+main:has(> .usps:last-child) + .ask {
+  margin-top: 0;
+  border-top: 0;
+}
+.askGrid {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.askTitle {
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 72;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.askText {
+  margin-top: 10px;
+  max-width: 52ch;
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+.askActions {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+.askCall {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--ink);
+  color: var(--paper) !important;
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 48;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 6px 6px 0 var(--paper);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+.askCall svg {
+  color: var(--hivis);
+}
+.askMail {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
 /* ---------- USP ---------- */
 
 .usps {
@@ -1907,6 +1977,10 @@
   .brandTile a:hover .catCount svg {
     transform: translateX(5px);
   }
+  .askCall:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 var(--paper);
+  }
   .rental:hover .rentalGo svg,
   .withdraw:hover .withdrawInner svg:last-child {
     transform: translateX(5px);
@@ -2096,6 +2170,13 @@
   }
   .services {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .askGrid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+  }
+  .askActions {
+    justify-items: end;
   }
   .pdpGrid {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);

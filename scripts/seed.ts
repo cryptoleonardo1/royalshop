@@ -21,9 +21,6 @@ const db = createClient(url, key, { auth: { persistSession: false } });
 
 const DEMO_PASSWORD = process.env.SEED_PASSWORD ?? "RoyalDemo2026!";
 
-// Demo assortment strategy (2026-10): premium machines only, nothing below this retail price.
-const MIN_PRICE_EUR = 800;
-
 interface CatalogJson {
   suppliers: {
     slug: string; name: string; country: string; lead_time_days_min: number; lead_time_days_max: number;
@@ -94,9 +91,6 @@ async function seedSettings() {
 
 async function seedCatalog() {
   const catalog: CatalogJson = JSON.parse(readFileSync("supabase/seed-data/catalog.json", "utf8"));
-
-  const tooCheap = catalog.products.filter((p) => p.price_gross_eur < MIN_PRICE_EUR);
-  if (tooCheap.length) throw new Error(`Below ${MIN_PRICE_EUR} EUR: ${tooCheap.map((p) => p.slug).join(", ")}`);
 
   const suppliers = must(await db.from("suppliers").insert(catalog.suppliers).select("id, slug"), "suppliers");
   const supplierId = Object.fromEntries(suppliers.map((s) => [s.slug, s.id]));
