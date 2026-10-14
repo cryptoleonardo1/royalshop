@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, GraduationCap, MessageSquareText, Wrench } from "lucide-react";
 import {
   getAllProducts,
   getBrands,
@@ -19,6 +19,24 @@ const INSPECTION = [
   "Skúšobný chod pod záťažou · 10 min",
   "Funkcie a príslušenstvo overené",
   "Zabalené s protokolom a návodom",
+];
+
+const SERVICES = [
+  {
+    icon: MessageSquareText,
+    title: "Vysvetlenie produktu",
+    text: "Stroj vám ukážeme naživo, porovnáme modely a poradíme, ktorý sa hodí na vašu prácu.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Zaškolenie na obsluhu",
+    text: "Naučíme vás stroj naštartovať, nastaviť, bezpečne s ním pracovať a starať sa oň.",
+  },
+  {
+    icon: Wrench,
+    title: "Odskúšanie v predajni",
+    text: "Pred kúpou si stroj vyskúšate na vlastné ruky priamo v našej predajni v Senci.",
+  },
 ];
 
 export default async function HomePage() {
@@ -133,7 +151,7 @@ export default async function HomePage() {
           <div className={css.cautionTrack}>
             {Array.from({ length: 2 }).map((_, k) => (
               <span key={k}>
-                Otestované pred odoslaním ✕ Priamo od výrobcov ✕ Osobný odber Senec ✕ Ťažké stroje vlastnou dopravou
+                Otestované pred odoslaním ✕ Priamo od výrobcov ✕ Zaškolenie zadarmo ✕ Osobný odber Senec ✕ Ťažké stroje vlastnou dopravou
                 ✕{" "}
               </span>
             ))}
@@ -210,11 +228,37 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className={css.section} aria-labelledby="services-title">
+        <div className={css.wrap}>
+          <div className={css.sectionHead}>
+            <span className={css.tape}>04 / Služby</span>
+            <h2 id="services-title" className={css.h2}>
+              Služby v predajni <span>zadarmo</span>
+            </h2>
+          </div>
+          <ul className={css.services}>
+            {SERVICES.map(({ icon: Icon, title, text }) => (
+              <li key={title} className={css.service}>
+                <span className={css.serviceIcon}>
+                  <Icon size={26} aria-hidden="true" />
+                </span>
+                <span className={css.serviceFree}>Zadarmo</span>
+                <h3 className={css.serviceTitle}>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ul>
+          <p className={css.servicesNote}>
+            Royal Stroje, Senec · ku každému stroju z nášho sortimentu, pri kúpe aj pred ňou.
+          </p>
+        </div>
+      </section>
+
       {sale.length > 0 && (
         <section className={css.section} aria-labelledby="sale-title">
           <div className={css.wrap}>
             <div className={css.sectionHead}>
-              <span className={css.tapeHi}>04 / Akcia</span>
+              <span className={css.tapeHi}>05 / Akcia</span>
               <h2 id="sale-title" className={css.h2}>
                 Zľavnené stroje
               </h2>

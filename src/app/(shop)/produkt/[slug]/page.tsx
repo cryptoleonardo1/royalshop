@@ -247,6 +247,19 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                 </div>
               </div>
 
+              <div className={css.pdpServices}>
+                <p className={css.pdpServicesTitle}>
+                  <Store size={18} aria-hidden="true" /> Zadarmo v predajni Senec
+                </p>
+                <ul>
+                  {["Vysvetlenie stroja a poradenstvo", "Zaškolenie na obsluhu", "Odskúšanie pred kúpou"].map((service) => (
+                    <li key={service}>
+                      <Check size={16} strokeWidth={3} aria-hidden="true" /> {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               {p.rentalUrl && (
                 <a href={p.rentalUrl} className={css.rental} target="_blank" rel="noopener">
                   <span className={css.rentalEyebrow}>Royal Stroje · požičovňa</span>
