@@ -44,3 +44,6 @@ next-env.d.ts
 # supabase local
 supabase/.temp
 supabase/.branches
+
+# Supplier price lists and the derived workbook: confidential, repo is public
+docs/cenniky/
