@@ -1,5 +1,13 @@
 # Handoff Archive (do not read on /start)
 
+## What Was Done (Session 4) -- Free services, Unicon assortment, supplier price workbook (2026-10-14 / 2026-10-21)
+
+- Web: "Služby v predajni zadarmo" (home section 04 + PDP box), pre-footer "Nenašli ste stroj?" CTA in `ShopShell` (phone/email from `company_settings`, still demo values +421 900 000 000 / info@royalshop.test).
+- Price workbook: `python scripts/cennik.py` builds `docs/cenniky/Cennik-dodavatelov.xlsx` from `docs/cenniky/data/*.csv` + `zdroje.json` (rate ČNB 24.260, per-brand rabat cell D3). Recalc/verify with Excel COM via PowerShell (LibreOffice recalc fails on Windows).
+- `docs/cenniky/` is git-ignored: repo is PUBLIC, supplier CZK/purchase prices must never be committed (only EUR retail prices that the site shows anyway).
+- All supplier lists are recommended retail excl. VAT, not purchase prices; real rabat per brand still unknown (D3 = 0 %).
+- Shipping discussion (not decided): free shipping >= 2000 EUR also covers heavy own transport (200-300 EUR to Košice). Proposal: courier free for light machines, flat SR price for heavy via pallet carrier (59/89 EUR placeholders), free pickup in Senec; founder to collect pallet carrier quotes.
+
 ## What Was Done (Session 3) -- Hosted infra, Stripe live test, machine assortment (2026-10-10 / 2026-10-12)
 
 - Hosted Supabase + Vercel + Stripe test mode live (details in Current State). Live 4242 payment verified: order `paid_authorized`, PI `requires_capture`, webhook stored.
