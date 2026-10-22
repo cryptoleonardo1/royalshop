@@ -8,6 +8,7 @@ Stav k 14. 10. 2026. Sortiment = zoznam strojov od dodávateľa UNICON OSTRAVA s
 - **Nákupná cena:** zatiaľ predajná cena bez DPH × 0,8 (predvolená marža Unicon 20 %).
 - Minimálna cena 800 € už neplatí (motory Honda GX a Enar Dingo sú lacnejšie).
 - Demo akcie: Honda EU32i, NTC RZ 170, Bomag BP 25/50.
+- **Gölz (od 22. 10. 2026, 12 strojov, dodávateľ priamo Gölz GmbH):** predajné ceny sú skutočné ceny bez DPH z golzgroup.com od foundera, s DPH 23 % presne dopočítané (bez zaokrúhlenia na …9). Nákupná cena je odhad: cena bez DPH × 0,78 (marža 22 %), kým nebude známy rabat od Gölz. Fotky a parametre sú z golzgroup.com.
 
 ## Produkty
 
@@ -41,13 +42,25 @@ Stav k 14. 10. 2026. Sortiment = zoznam strojov od dodávateľa UNICON OSTRAVA s
 | Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D30N Ponorné odvodňovacie čerpadlo 230 V, 820 l/min | 3 149 € | 2 048 € | áno |
 | Čerpadlá › Motorové čerpadlá | Honda WT20 Motorové kalové čerpadlo 2", 710 l/min | 1 459 € | 949 € | áno |
 | Čerpadlá › Motorové čerpadlá | Honda WT30 Motorové kalové čerpadlo 3", 1 210 l/min | 1 859 € | 1 209 € | áno |
+| Rezacia technika › Rezače škár | Gölz FS125 Rezač škár, kotúč 350 mm (Honda GX 200) | 2 693,70 € | 1 708 € | áno |
 | Rezacia technika › Rezače škár | NTC RZ 170 Rezač škár, kotúč 450 mm (Honda GX 390) | 2 809 € | 1 827 € | áno |
 | Rezacia technika › Rezače škár | NTC RZ 200 Rezač škár, kotúč 500 mm (Honda GX 390) | 2 929 € | 1 905 € | áno |
-| Rezacia technika › Stolové píly | Cedima CTS-57 G Stolová píla, kotúč 400 mm, 230 V | 1 649 € | 1 073 € | áno |
-| Rezacia technika › Stolové píly | Cedima CTS-265.2 Píla na murovacie bloky, kotúč 650 mm, 400 V | 4 179 € | 2 718 € | áno |
+| Rezacia technika › Rezače škár | Gölz FS170 Rezač škár, kotúč 500 mm (Honda GX 390) | 3 622,35 € | 2 297 € | áno |
+| Rezacia technika › Stolové a blokové píly | Gölz MS400 Stolová píla na murivo, kotúč 400 mm, 230 V | 1 537,50 € | 975 € | áno |
+| Rezacia technika › Stolové a blokové píly | Gölz TS250 Stolová píla na obklady a dlažbu, kotúč 250 mm, 230 V | 1 592,85 € | 1 010 € | áno |
+| Rezacia technika › Stolové a blokové píly | Cedima CTS-57 G Stolová píla, kotúč 400 mm, 230 V | 1 649 € | 1 073 € | áno |
+| Rezacia technika › Stolové a blokové píly | Gölz TS250A Stolová píla na obklady a dlažbu s hliníkovým rámom, kotúč 250 mm, 230 V | 2 324,70 € | 1 474 € | áno |
+| Rezacia technika › Stolové a blokové píly | Cedima CTS-265.2 Píla na murovacie bloky, kotúč 650 mm, 400 V | 4 179 € | 2 718 € | áno |
+| Rezacia technika › Stolové a blokové píly | Gölz BS650 Bloková píla, kotúč 650 mm, 400 V | 5 817,90 € | 3 689 € | áno |
+| Rezacia technika › Stolové a blokové píly | Gölz BS900/1000 Bloková píla, kotúč 900/1 000 mm, 400 V | 6 396 € | 4 056 € | áno |
+| Rezacia technika › Stolové a blokové píly | Gölz TS250A-330 Stolová píla na veľkoformátové obklady, dĺžka rezu 3 300 mm, 230 V | 6 629,70 € | 4 204 € | áno |
+| Rezacia technika › Elektrické rozbrusovačky | Gölz HS350 Elektrická rozbrusovačka, kotúč 350 mm, 230 V | 1 260,75 € | 800 € | áno |
+| Rezacia technika › Elektrické rozbrusovačky | Gölz HS400F Elektrická rozbrusovačka na rezy pri stene, kotúč 400 mm, 230 V | 1 765,05 € | 1 119 € | áno |
 | Betonárska technika | Enar DINGO 230 V Elektrický vibrátor do betónu, hriadeľ 3 m, hlavica Ø 58 mm | 779 € | 507 € | áno |
 | Betonárska technika | Enar DINGO 230 V Elektrický vibrátor do betónu, hriadeľ 5 m, hlavica Ø 58 mm | 819 € | 533 € | áno |
 | Betonárska technika | Husqvarna BV 20 G Benzínová vibračná lišta na betón 2 m | 1 699 € | 1 105 € | áno |
+| Brúsky na betón | Gölz SM250 Brúska na betón, Ø 250 mm, 230 V | 2 699,85 € | 1 712 € | áno |
+| Brúsky na betón | Gölz SM280 Brúska na betón, Ø 280 mm, 230 V | 4 305 € | 2 730 € | áno |
 | Motory | Honda GX 120 Benzínový motor 3,2 HP | 479 € | 312 € | áno |
 | Motory | Honda GX 160 Benzínový motor 4,8 HP | 559 € | 364 € | áno |
 | Motory | Honda GX 200 Benzínový motor 5,8 HP | 619 € | 403 € | áno |
@@ -63,6 +76,7 @@ Stav k 14. 10. 2026. Sortiment = zoznam strojov od dodávateľa UNICON OSTRAVA s
 - **Enar Dingo:** zvolená hlavica AX 58 (alternatíva AX 48 je o ~20 € lacnejšia); overiť, akú zostavu Unicon dodáva.
 - **Motory Honda GX:** predpokladaný hriadeľ typu Q (s perom); overiť variant (QX, SX, VX…).
 - **NTC NT 76** vs. NT 76P: líšia sa len predfiltrom vzduchu; cena NT 76 je odhad.
+- **Gölz:** skutočný rabat a dodacia lehota do Senca. FS170 je vo verzii s motorom Honda GX 390 (existuje aj Kohler CH440). MS400: stránka uvádza dĺžku rezu 800 mm v hlavičke a 700 mm v tabuľke, v e-shope je 700 mm. TS250 sa dodáva s kotúčom SLF10 a SM250 s brúsnym tanierom CG250-M, ostatné bez nástrojov.
 - Husqvarna BV 20 G: hmotnosť sa v zdrojoch líši (14,8 vs. 20 kg), preto nie je v parametroch.
 - Fotky: Atlas Copco WEDA D10N nemá fotku; fotky čerpadiel Atlas Copco a Enar Dingo sú od predajcov. Použitie fotiek výrobcov treba potvrdiť.
 - Detailná rešerš pôvodného sortimentu (12. 10.) je v `docs/research-sortiment/`.

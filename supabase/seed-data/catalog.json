@@ -10,6 +10,17 @@
       "is_eu_import": true,
       "contact_email": "objednavky@unicon.test",
       "note": "Hlavný dodávateľ celého sortimentu (zoznam od foundera 14. 10. 2026). Halasova 2999/8A, 703 00 Ostrava-Vítkovice, unicon.cz."
+    },
+    {
+      "slug": "golz",
+      "name": "Gölz GmbH",
+      "country": "DE",
+      "lead_time_days_min": 5,
+      "lead_time_days_max": 8,
+      "default_margin_pct": 22,
+      "is_eu_import": true,
+      "contact_email": "objednavky@goelz.test",
+      "note": "Priamo od výrobcu. Dommersbach 51, 53940 Hellenthal, Nemecko. Ceny bez DPH podľa golzgroup.com, nákupná cena je zatiaľ odhad (marža 22 %)."
     }
   ],
   "brands": [
@@ -68,6 +79,14 @@
       "manufacturer_address": "561 82 Huskvarna, Švédsko",
       "manufacturer_email": null,
       "website": "https://www.husqvarnaconstruction.com"
+    },
+    {
+      "slug": "golz",
+      "name": "Gölz",
+      "manufacturer_name": "Gölz GmbH",
+      "manufacturer_address": "Dommersbach 51, 53940 Hellenthal, Nemecko",
+      "manufacturer_email": "info@goelz.de",
+      "website": "https://www.golzgroup.com"
     }
   ],
   "categories": [
@@ -145,7 +164,7 @@
       "slug": "rezacia-technika",
       "name": "Rezacia technika",
       "parent_slug": null,
-      "description": "Rezače škár NTC a stolové píly Cedima na rezanie betónu, asfaltu, dlažby a muriva.",
+      "description": "Rezače škár NTC a Gölz, stolové a blokové píly Gölz a Cedima a elektrické rozbrusovačky Gölz na rezanie betónu, asfaltu, dlažby a muriva.",
       "sort_order": 4
     },
     {
@@ -157,10 +176,17 @@
     },
     {
       "slug": "stolove-pily",
-      "name": "Stolové píly",
+      "name": "Stolové a blokové píly",
       "parent_slug": "rezacia-technika",
-      "description": "Stolové píly s vodným chladením na dlažbu, obklady, tehly, tvárnice a prírodný kameň.",
+      "description": "Stolové píly s vodným chladením na obklady, dlažbu, tehly a prírodný kameň a blokové píly na veľkoformátové murovacie bloky.",
       "sort_order": 2
+    },
+    {
+      "slug": "rozbrusovacky",
+      "name": "Elektrické rozbrusovačky",
+      "parent_slug": "rezacia-technika",
+      "description": "Elektrické ručné rozbrusovačky s mokrým rezaním na otvory a deliace rezy v betóne a murive, aj v interiéri.",
+      "sort_order": 3
     },
     {
       "slug": "betonarska-technika",
@@ -170,11 +196,18 @@
       "sort_order": 5
     },
     {
+      "slug": "brusky-na-beton",
+      "name": "Brúsky na betón",
+      "parent_slug": null,
+      "description": "Brúsky Gölz na brúsenie a leštenie betónu, poterov a kameňa a na odstraňovanie lepidiel a náterov.",
+      "sort_order": 6
+    },
+    {
       "slug": "motory",
       "name": "Motory",
       "parent_slug": null,
       "description": "Benzínové motory Honda GX na pohon a remotorizáciu stavebných strojov, čerpadiel a dosiek.",
-      "sort_order": 6
+      "sort_order": 7
     }
   ],
   "products": [
@@ -4487,6 +4520,1331 @@
       ],
       "images": [
         "/demo-products/enar-dingo-230v.webp"
+      ]
+    },
+    {
+      "slug": "golz-ts250",
+      "name": "Gölz TS250 Stolová píla na obklady a dlažbu, kotúč 250 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "stolove-pily",
+      "sku": "TS250",
+      "ean": null,
+      "short_description": "Profesionálna stolová píla na obklady a dlažbu s dĺžkou rezu 1 140 mm a nakláňacou hlavou na pokosové rezy do 45° (jolly).",
+      "description": "**Gölz TS250** – Profesionálna stolová píla na obklady a dlažbu s dĺžkou rezu 1 140 mm a nakláňacou hlavou na pokosové rezy do 45° (jolly).\n\nKľúčové parametre: max. priemer kotúča 250 mm, max. hĺbka rezu 65 mm, max. dĺžka rezu 1 140 mm, príkon 1,3 kW.\n\nStolová píla s vodným chladením reže dlažbu, obklady, tehly, tvárnice aj prírodný kameň presne a bez prachu priamo na stavbe. V balení je diamantový kotúč SLF10 Ø 250 mm na keramiku a obklady a malý bočný stôl.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1592.85,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1010.1,
+      "vat_rate": 23,
+      "weight_kg": 72,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "250",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "65",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_length_mm",
+          "label": "Max. dĺžka rezu",
+          "value": "1140",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "1.3",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa",
+          "value": "2800",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "miter_cut",
+          "label": "Pokosový rez",
+          "value": "do 45° (nakláňacia rezacia hlava)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "water_pump",
+          "label": "Čerpadlo chladiacej vody",
+          "value": "elektrické, 55 W",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_table_mm",
+          "label": "Rezací stôl (D × Š)",
+          "value": "1140 × 480",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "blade_included",
+          "label": "Diamantový kotúč v balení",
+          "value": "áno (SLF10 Ø 250 mm)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "1390 × 500 × 1299",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "72",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-ts250.webp"
+      ]
+    },
+    {
+      "slug": "golz-ts250a",
+      "name": "Gölz TS250A Stolová píla na obklady a dlažbu s hliníkovým rámom, kotúč 250 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "stolove-pily",
+      "sku": "TS250A",
+      "ean": null,
+      "short_description": "Stolová píla na obklady a dlažbu s hliníkovým rámom, laserovým ukazovateľom rezu a dĺžkou rezu 1 300 mm.",
+      "description": "**Gölz TS250A** – Stolová píla na obklady a dlažbu s hliníkovým rámom, laserovým ukazovateľom rezu a dĺžkou rezu 1 300 mm.\n\nKľúčové parametre: max. priemer kotúča 250 mm, max. hĺbka rezu 65 mm, max. dĺžka rezu 1 300 mm, príkon 1,3 kW.\n\nStolová píla s vodným chladením reže dlažbu, obklady, tehly, tvárnice aj prírodný kameň presne a bez prachu priamo na stavbe. Rezacia hlava je uložená na guľôčkových ložiskách, dá sa naklopiť do 45° a bez náradia zaistiť na prepravu. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 2324.7,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1474.2,
+      "vat_rate": 23,
+      "weight_kg": 72,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "250",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "65",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_length_mm",
+          "label": "Max. dĺžka rezu",
+          "value": "1300",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "1.3",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa",
+          "value": "2800",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "miter_cut",
+          "label": "Pokosový rez",
+          "value": "do 45° (nakláňacia rezacia hlava)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "laser",
+          "label": "Laserový ukazovateľ rezu",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "water_pump",
+          "label": "Čerpadlo chladiacej vody",
+          "value": "elektrické, 55 W",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_table_mm",
+          "label": "Rezací stôl (D × Š)",
+          "value": "1300 × 490",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "1640 × 540 × 1299",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "72",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-ts250a.webp",
+        "/demo-products/golz-ts250a-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-ts250a-330",
+      "name": "Gölz TS250A-330 Stolová píla na veľkoformátové obklady, dĺžka rezu 3 300 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "stolove-pily",
+      "sku": "TS250A-330",
+      "ean": null,
+      "short_description": "Extra dlhá hliníková píla na veľkoformátové obklady a keramické dosky s dĺžkou rezu až 3 300 mm.",
+      "description": "**Gölz TS250A-330** – Extra dlhá hliníková píla na veľkoformátové obklady a keramické dosky s dĺžkou rezu až 3 300 mm.\n\nKľúčové parametre: max. priemer kotúča 250 mm, max. hĺbka rezu 50 mm, max. dĺžka rezu 3 300 mm, príkon 2,2 kW.\n\nStolová píla s vodným chladením reže dlažbu, obklady, tehly, tvárnice aj prírodný kameň presne a bez prachu priamo na stavbe. Stôl sa dá rozšíriť až o osem bočných podpier (príslušenstvo) a obklady sa na ňom zaistia systémom T-Lock. Laserový ukazovateľ rezu a pokosové rezy do 45° sú samozrejmosťou. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 6629.7,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 4204.2,
+      "vat_rate": 23,
+      "weight_kg": 280,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "250",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "50",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_length_mm",
+          "label": "Max. dĺžka rezu",
+          "value": "3300",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.2",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa",
+          "value": "2800",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "miter_cut",
+          "label": "Pokosový rez",
+          "value": "do 45° (nakláňacia rezacia hlava)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "laser",
+          "label": "Laserový ukazovateľ rezu",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "water_pump",
+          "label": "Čerpadlo chladiacej vody",
+          "value": "elektrické, 55 W",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_table_mm",
+          "label": "Rezací stôl (D × Š)",
+          "value": "3300 × 600",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "3900 × 740 × 1350",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "280",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-ts250a-330.webp",
+        "/demo-products/golz-ts250a-330-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-ms400",
+      "name": "Gölz MS400 Stolová píla na murivo, kotúč 400 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "stolove-pily",
+      "sku": "MS400",
+      "ean": null,
+      "short_description": "Kompaktná a univerzálna stolová píla na tehly, tvárnice, dlažbu a kameň s nakláňacou hlavou do 45° a veľkým rezacím stolom.",
+      "description": "**Gölz MS400** – Kompaktná a univerzálna stolová píla na tehly, tvárnice, dlažbu a kameň s nakláňacou hlavou do 45° a veľkým rezacím stolom.\n\nKľúčové parametre: max. priemer kotúča 400 mm, max. hĺbka rezu 137 mm, max. dĺžka rezu 700 mm, príkon 2,2 kW.\n\nStolová píla s vodným chladením reže dlažbu, obklady, tehly, tvárnice aj prírodný kameň presne a bez prachu priamo na stavbe. Sklopné nohy a prepravné koleso uľahčia presun po stavbe. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1537.5,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 975.0,
+      "vat_rate": 23,
+      "weight_kg": 66,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "400",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "137",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_length_mm",
+          "label": "Max. dĺžka rezu",
+          "value": "700",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.2",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa",
+          "value": "2800",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "miter_cut",
+          "label": "Pokosový rez",
+          "value": "do 45° (nakláňacia rezacia hlava)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "water_pump",
+          "label": "Čerpadlo chladiacej vody",
+          "value": "elektrické, 55 W",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_table_mm",
+          "label": "Rezací stôl (D × Š)",
+          "value": "600 × 530",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "1100 × 720 × 1290",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "66",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-ms400.webp",
+        "/demo-products/golz-ms400-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-bs650",
+      "name": "Gölz BS650 Bloková píla, kotúč 650 mm, 400 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "stolove-pily",
+      "sku": "BS650",
+      "ean": null,
+      "short_description": "Výkonná bloková píla na dlhodobé nasadenie na stavbe – murovacie bloky, betónové prvky a kameň do hĺbky rezu 260 mm.",
+      "description": "**Gölz BS650** – Výkonná bloková píla na dlhodobé nasadenie na stavbe – murovacie bloky, betónové prvky a kameň do hĺbky rezu 260 mm.\n\nKľúčové parametre: max. priemer kotúča 650 mm, max. hĺbka rezu 260 mm, max. dĺžka rezu 500 mm, výkon motora 5,5 kW.\n\nBloková píla s vodným chladením reže veľkoformátové murovacie bloky, betónové prvky a kameň priamo na stavbe. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu. Pozinkovaný rám so 4 závesnými okami nehrdzavie, 4 prepravné kolesá majú 2 parkovacie brzdy a vodná vaňa sa dá vybrať.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 5817.9,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 3689.4,
+      "vat_rate": 23,
+      "weight_kg": 230,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "650",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "260",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_length_mm",
+          "label": "Max. dĺžka rezu",
+          "value": "500",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "5.5",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "400",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "3",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "fuse_a",
+          "label": "Istenie",
+          "value": "16",
+          "unit": "A",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa",
+          "value": "1020",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "water_pump",
+          "label": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_table_mm",
+          "label": "Rezací stôl (D × Š)",
+          "value": "610 × 670",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "1600 × 800 × 1500",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "230",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-bs650.webp",
+        "/demo-products/golz-bs650-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-bs900-1000",
+      "name": "Gölz BS900/1000 Bloková píla, kotúč 900/1 000 mm, 400 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "stolove-pily",
+      "sku": "BS900/1000",
+      "ean": null,
+      "short_description": "Najväčšia bloková píla Gölz s kotúčom 900 alebo 1 000 mm na hrubé murovacie bloky, betónové prvky a kameň do hĺbky rezu 420 mm.",
+      "description": "**Gölz BS900/1000** – Najväčšia bloková píla Gölz s kotúčom 900 alebo 1 000 mm na hrubé murovacie bloky, betónové prvky a kameň do hĺbky rezu 420 mm.\n\nKľúčové parametre: max. priemer kotúča 900/1 000 mm, max. hĺbka rezu 370/420 mm, max. dĺžka rezu 600 mm, výkon motora 7,5 kW.\n\nBloková píla s vodným chladením reže veľkoformátové murovacie bloky, betónové prvky a kameň priamo na stavbe. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu. Rezacia hlava sa posúva ručným kolesom, pozinkovaný rám so 4 závesnými okami nehrdzavie a 4 prepravné kolesá majú 2 parkovacie brzdy.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 6396.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 4056.0,
+      "vat_rate": 23,
+      "weight_kg": 280,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "1000",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "370 / 420",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cut_length_mm",
+          "label": "Max. dĺžka rezu",
+          "value": "600",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "7.5",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "400",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "3",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "fuse_a",
+          "label": "Istenie",
+          "value": "16",
+          "unit": "A",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa",
+          "value": "990",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "water_pump",
+          "label": "Čerpadlo chladiacej vody",
+          "value": "elektrické",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_table_mm",
+          "label": "Rezací stôl (D × Š)",
+          "value": "610 × 840",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "2000 × 1100 × 1550",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "280",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-bs900-1000.webp",
+        "/demo-products/golz-bs900-1000-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-hs350",
+      "name": "Gölz HS350 Elektrická rozbrusovačka, kotúč 350 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "rozbrusovacky",
+      "sku": "HS350",
+      "ean": null,
+      "short_description": "Kompaktná elektrická rozbrusovačka s kotúčom 350 mm na rezanie betónu, muriva, obrubníkov a dlažby bez výfukových plynov.",
+      "description": "**Gölz HS350** – Kompaktná elektrická rozbrusovačka s kotúčom 350 mm na rezanie betónu, muriva, obrubníkov a dlažby bez výfukových plynov.\n\nKľúčové parametre: max. priemer kotúča 350 mm, max. hĺbka rezu 125 mm, príkon 2,5 kW, hmotnosť 10 kg.\n\nElektrická rozbrusovačka nemá výfukové plyny, preto s ňou môžete rezať aj v interiéri. Mokré rezanie cez prípojku Gardena viaže prach. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu. Tepelná ochrana proti preťaženiu, prúdový chránič PRCD v kábli a otočný plný kryt kotúča.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1260.75,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 799.5,
+      "vat_rate": 23,
+      "weight_kg": 10,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a nástroj meňte len pri odpojenom stroji. Pri mokrom rezaní dbajte na to, aby sa voda nedostala k elektrickým častiam.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "350",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "125",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.5",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky",
+          "value": "4500",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "arbor_mm",
+          "label": "Upínací otvor",
+          "value": "25,4",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_mode",
+          "label": "Spôsob rezania",
+          "value": "mokré (prípojka Gardena s ventilom)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "blade_guard",
+          "label": "Kryt kotúča",
+          "value": "otočný plný kryt",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "10",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-hs350.webp",
+        "/demo-products/golz-hs350-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-hs400f",
+      "name": "Gölz HS400F Elektrická rozbrusovačka na rezy pri stene, kotúč 400 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "rozbrusovacky",
+      "sku": "HS400F",
+      "ean": null,
+      "short_description": "Elektrická rozbrusovačka s krytom na rezanie tesne pri stene a hrane – okenné a dverné otvory, deliace rezy v podlahách a stenách.",
+      "description": "**Gölz HS400F** – Elektrická rozbrusovačka s krytom na rezanie tesne pri stene a hrane – okenné a dverné otvory, deliace rezy v podlahách a stenách.\n\nKľúčové parametre: max. priemer kotúča 400 mm, max. hĺbka rezu 160 mm, príkon 3,3 kW, hmotnosť 11,1 kg.\n\nElektrická rozbrusovačka nemá výfukové plyny, preto s ňou môžete rezať aj v interiéri. Mokré rezanie cez prípojku Gardena viaže prach. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu. Kotúč sa na rozdiel od väčšiny rozbrusovačiek otáča dopredu, takže sa stroj lepšie vedie. Mäkký rozbeh, LED ukazovateľ zaťaženia, elektronická ochrana proti preťaženiu a prúdový chránič PRCD v kábli.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1765.05,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1119.3,
+      "vat_rate": 23,
+      "weight_kg": 11.1,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a nástroj meňte len pri odpojenom stroji. Pri mokrom rezaní dbajte na to, aby sa voda nedostala k elektrickým častiam.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "400",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "160",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "3.3",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky",
+          "value": "4000",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "arbor_mm",
+          "label": "Upínací otvor",
+          "value": "25,4 (TK60 6 × M6)",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "cutting_mode",
+          "label": "Spôsob rezania",
+          "value": "mokré (prípojka Gardena)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "blade_guard",
+          "label": "Kryt kotúča",
+          "value": "otočný kryt na rezy pri stene",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "11.1",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-hs400f.webp",
+        "/demo-products/golz-hs400f-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-sm250",
+      "name": "Gölz SM250 Brúska na betón, Ø 250 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "brusky-na-beton",
+      "sku": "SM250",
+      "ean": null,
+      "short_description": "Ľahká a kompaktná jednokotúčová brúska na menšie plochy do cca 200 m² – odstraňovanie lepidiel, náterov a nerovností z betónu.",
+      "description": "**Gölz SM250** – Ľahká a kompaktná jednokotúčová brúska na menšie plochy do cca 200 m² – odstraňovanie lepidiel, náterov a nerovností z betónu.\n\nKľúčové parametre: priemer brúsenia 250 mm, príkon 2,2 kW, otáčky 1 440 min⁻¹, hmotnosť 60 kg.\n\nBrúska na betón odstraňuje lepidlá, nátery a nerovnosti, zdrsňuje povrch pred ďalšou vrstvou a brúsi či leští betón a kameň. Brúsi na sucho aj na mokro, pri suchom brúsení ju pripojte k priemyselnému vysávaču. Sklopný rám uľahčí prepravu. V balení je diamantový brúsny tanier CG250-M (stredný).\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 2699.85,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1712.1,
+      "vat_rate": 23,
+      "weight_kg": 60,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest, pri suchom brúsení vždy s pripojeným priemyselným vysávačom. Stroj pripájajte len do zásuvky s prúdovým chráničom a brúsne nástroje meňte len pri odpojenom stroji.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "grinding_diameter_mm",
+          "label": "Priemer brúsenia",
+          "value": "250",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.2",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky",
+          "value": "1440",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "tools",
+          "label": "Počet nástrojov",
+          "value": "1 × Ø 250 mm",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "grinding_mode",
+          "label": "Spôsob brúsenia",
+          "value": "suché aj mokré",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dust_port",
+          "label": "Prípojka odsávania",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "tool_included",
+          "label": "Brúsny nástroj v balení",
+          "value": "áno (CG250-M)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "60",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-sm250.webp",
+        "/demo-products/golz-sm250-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-sm280",
+      "name": "Gölz SM280 Brúska na betón, Ø 280 mm, 230 V",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "brusky-na-beton",
+      "sku": "SM280",
+      "ean": null,
+      "short_description": "Univerzálna brúska na betón, poter a kameň so 6 nástrojmi na brúsenie aj leštenie, aj tesne pri stene.",
+      "description": "**Gölz SM280** – Univerzálna brúska na betón, poter a kameň so 6 nástrojmi na brúsenie aj leštenie, aj tesne pri stene.\n\nKľúčové parametre: priemer brúsenia 280 mm, príkon 2,2 kW, otáčky 1 380 min⁻¹, hmotnosť 81 kg.\n\nBrúska na betón odstraňuje lepidlá, nátery a nerovnosti, zdrsňuje povrch pred ďalšou vrstvou a brúsi či leští betón a kameň. Brúsi na sucho aj na mokro, pri suchom brúsení ju pripojte k priemyselnému vysávaču. Sklopný rám a rozoberateľné diely uľahčia prepravu, rukoväť sa dá nastaviť. Nádrž na vodu 25 l je príslušenstvo. Brúsne a leštiace nástroje nie sú súčasťou balenia, vhodné vám odporučíme podľa povrchu.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 4305.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2730.0,
+      "vat_rate": 23,
+      "weight_kg": 81,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest, pri suchom brúsení vždy s pripojeným priemyselným vysávačom. Stroj pripájajte len do zásuvky s prúdovým chráničom a brúsne nástroje meňte len pri odpojenom stroji.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "grinding_diameter_mm",
+          "label": "Priemer brúsenia",
+          "value": "280",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.2",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky",
+          "value": "1380",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "tools",
+          "label": "Počet nástrojov",
+          "value": "1 × 6",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "grinding_mode",
+          "label": "Spôsob brúsenia",
+          "value": "suché aj mokré",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dust_port",
+          "label": "Prípojka odsávania",
+          "value": "áno",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "81",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/golz-sm280.webp",
+        "/demo-products/golz-sm280-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-fs170",
+      "name": "Gölz FS170 Rezač škár, kotúč 500 mm (Honda GX 390)",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "rezace-skar",
+      "sku": "FS170",
+      "ean": null,
+      "short_description": "Univerzálny benzínový rezač škár pre betón a asfalt – dilatačné škáry v podlahách, cestách a parkoviskách, ryhy pre inžinierske siete.",
+      "description": "**Gölz FS170** – Univerzálny benzínový rezač škár pre betón a asfalt – dilatačné škáry v podlahách, cestách a parkoviskách, ryhy pre inžinierske siete.\n\nKľúčové parametre: max. priemer kotúča 500 mm, max. hĺbka rezu 190 mm, výkon motora 9,5 kW, objem nádrže na vodu 25 l.\n\nRezač škár reže dilatačné škáry, opravy a otvory v betóne a asfalte. Rez sa chladí vodou, ktorá znižuje prašnosť a predlžuje životnosť diamantového kotúča. Kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu. Hĺbka rezu sa nastavuje nožným pedálom s plynovou pružinou, žiarovo pozinkovaný rám nepotrebuje údržbu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 3622.35,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2297.1,
+      "vat_rate": 23,
+      "weight_kg": 120,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "500",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "190",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 390",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "9.5",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank_l",
+          "label": "Objem nádrže na vodu",
+          "value": "25",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "feed",
+          "label": "Posuv",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "depth_adjustment",
+          "label": "Nastavenie hĺbky rezu",
+          "value": "nožným pedálom a plynovou pružinou",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "vibration_ms2",
+          "label": "Vibrácie na rukoväti",
+          "value": "4.5",
+          "unit": "m/s²",
+          "is_filterable": false
+        },
+        {
+          "key": "blade_included",
+          "label": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "960 × 610 × 1170",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "120",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/golz-fs170.webp",
+        "/demo-products/golz-fs170-2.webp"
+      ]
+    },
+    {
+      "slug": "golz-fs125",
+      "name": "Gölz FS125 Rezač škár, kotúč 350 mm (Honda GX 200)",
+      "brand_slug": "golz",
+      "supplier_slug": "golz",
+      "category_slug": "rezace-skar",
+      "sku": "FS125",
+      "ean": null,
+      "short_description": "Kompaktný a tichý benzínový rezač škár na menšie opravy ciest a ryhy pre potrubia – alternatíva k rozbrusovačke na vozíku.",
+      "description": "**Gölz FS125** – Kompaktný a tichý benzínový rezač škár na menšie opravy ciest a ryhy pre potrubia – alternatíva k rozbrusovačke na vozíku.\n\nKľúčové parametre: max. priemer kotúča 350 mm, max. hĺbka rezu 120 mm, výkon motora 4,8 kW, objem nádrže na vodu 25 l.\n\nRezač škár reže dilatačné škáry, opravy a otvory v betóne a asfalte. Rez sa chladí vodou, ktorá znižuje prašnosť a predlžuje životnosť diamantového kotúča. Kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu. Hĺbka rezu sa nastavuje ručným kolesom s ukazovateľom, rukoväte s tlmením vibrácií sú nastaviteľné.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 2693.7,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1708.2,
+      "vat_rate": 23,
+      "weight_kg": 77,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "350",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "120",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 200",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "4.8",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank_l",
+          "label": "Objem nádrže na vodu",
+          "value": "25",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "feed",
+          "label": "Posuv",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "depth_adjustment",
+          "label": "Nastavenie hĺbky rezu",
+          "value": "ručným kolesom",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "vibration_ms2",
+          "label": "Vibrácie na rukoväti",
+          "value": "4.5",
+          "unit": "m/s²",
+          "is_filterable": false
+        },
+        {
+          "key": "blade_included",
+          "label": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "950 × 460 × 940",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "77",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        }
+      ],
+      "images": [
+        "/demo-products/golz-fs125.webp",
+        "/demo-products/golz-fs125-2.webp"
       ]
     }
   ]

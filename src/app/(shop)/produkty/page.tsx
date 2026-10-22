@@ -7,7 +7,7 @@ import css from "@/components/shop/shop.module.css";
 
 export const metadata: Metadata = {
   title: "Všetky produkty",
-  description: "Celý sortiment stavebných strojov: vibračná technika, elektrocentrály, čerpadlá, rezacia technika, vibrátory, lišty do betónu a motory.",
+  description: "Celý sortiment stavebných strojov: vibračná technika, elektrocentrály, čerpadlá, rezacia technika, vibrátory, lišty do betónu, brúsky na betón a motory.",
 };
 
 async function AllProductsListing({ searchParams }: Pick<PageProps<"/produkty">, "searchParams">) {
