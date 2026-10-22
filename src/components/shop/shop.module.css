@@ -1015,6 +1015,21 @@
   background: var(--hivis);
   color: var(--ink);
 }
+a.addBtn {
+  color: var(--paper);
+  text-decoration: none;
+}
+a.addBtn:hover {
+  color: var(--ink);
+}
+/* "Cena na požiadanie" instead of a price */
+.priceAsk {
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 72;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+}
 
 /* ---------- placeholder plate ---------- */
 
@@ -1637,6 +1652,37 @@ main:has(> .usps:last-child) + .ask {
 .addBig[data-added] {
   background: var(--ink);
   color: var(--hivis);
+}
+a.addBig,
+a.askPrice {
+  color: var(--ink);
+  text-decoration: none;
+}
+.pdpPriceAsk {
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 72;
+  font-weight: 900;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 0.95;
+}
+.askPrice {
+  flex: 1 1 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  padding-inline: 20px;
+  background: #fff;
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  font-weight: 800;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.askPrice:hover {
+  background: var(--hivis);
 }
 .buyTotal {
   font-size: 0.9375rem;

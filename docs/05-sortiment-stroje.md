@@ -1,11 +1,11 @@
 # Sortiment stavebných strojov (demo)
 
-Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riadky v zošite „Royal Shop Cenniky.xlsx“ od foundera (cenníky dodávateľa Unicon Ostrava) + doplnky podľa foundera (Bomag BPR 45/55 DE a 60/65 DE, motory Honda GX, Enar Dingo v súpravách). Atlas Copco, Cedima a Husqvarna zostávajú z pôvodného zoznamu Unicon. Katalóg v e-shope sa generuje zo `supabase/seed-data/catalog.json` (zdroj pravdy).
+Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riadky v zošite „Royal Shop Cenniky.xlsx“ od foundera (cenníky dodávateľa Unicon Ostrava) + doplnky podľa foundera (Bomag BPR 45/55 DE a 60/65 DE, motory Honda GX, Enar Dingo v súpravách). Atlas Copco zostáva z pôvodného zoznamu Unicon; Cedima a Husqvarna boli 22. 10. odstránené. Katalóg v e-shope sa generuje zo `supabase/seed-data/catalog.json` (zdroj pravdy).
 
 ## Ako sú ceny nastavené
 
 - **NTC, Bomag, Honda, Enar:** predajná cena = odporúčaná koncová cena z cenníka (CZK ÷ 24,26 = EUR bez DPH, zaokrúhlené na centy, × 1,23), presne ako stĺpec „Cena s DPH 23 % (EUR)“ v zošite. Súprava Enar Dingo = súčet pohonnej jednotky DINGO a hriadeľa TAX-TDX 3/AX58 resp. 5/AX58.
-- **Atlas Copco, Cedima, Husqvarna:** ceny sú stále fiktívne (odhad trhovej ceny, zaokrúhlené na …9 €).
+- **Atlas Copco:** „cena na požiadanie“ (príznak `price_on_request`), kým nepríde cenník. Fiktívna cena ostáva v katalógu, ale nezobrazuje sa a produkt sa nedá kúpiť online. Po doplnení cien stačí v `catalog.json` zmazať `price_on_request` a nastaviť cenu.
 - **Nákupná cena:** zatiaľ cena bez DPH × 0,8 (predvolená marža Unicon 20 %), lebo rabat v zošite je 0 %. Po dohodnutí rabatu treba prepočítať.
 - Demo akcie (preškrtnuté ceny) boli 22. 10. zrušené.
 - **Motory Honda GX** v konkrétnom variante z cenníka: GX120T3-QX-4E-OH, GX160H2-QX-3-OH, GX200H2-QX-3-OH, GX270T2-QH-B1-OH, GX390T2-QH-B1-OH (GX270/390 v type QX v cenníku nie sú).
@@ -38,10 +38,10 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 | Elektrocentrály › Trojfázové elektrocentrály | Honda ECT 7000G Trojfázová elektrocentrála 7,0 kVA | 2 262,27 € | 1 471 € | áno |
 | Elektrocentrály › Trojfázové elektrocentrály | Honda ECT 7000G AVR Trojfázová elektrocentrála 7,0 kVA s AVR | 2 597,45 € | 1 689 € | áno |
 | Elektrocentrály › Trojfázové elektrocentrály | Honda TP 15 HP AVR Trojfázová elektrocentrála 15,0 kVA s podvozkom | 7 248,54 € | 4 714 € | áno |
-| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D04BN Ponorné čerpadlo na zvyškovú vodu 230 V, 225 l/min | 849 € | 552 € | áno |
-| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA S08N Ponorné kalové čerpadlo 230 V, 317 l/min | 879 € | 572 € | áno |
-| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D10N Ponorné odvodňovacie čerpadlo 230 V, 483 l/min | 1 889 € | 1 229 € | nie |
-| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D30N Ponorné odvodňovacie čerpadlo 230 V, 820 l/min | 3 149 € | 2 048 € | áno |
+| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D04BN Ponorné čerpadlo na zvyškovú vodu 230 V, 225 l/min | na požiadanie | – | áno |
+| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA S08N Ponorné kalové čerpadlo 230 V, 317 l/min | na požiadanie | – | áno |
+| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D10N Ponorné odvodňovacie čerpadlo 230 V, 483 l/min | na požiadanie | – | nie |
+| Čerpadlá › Ponorné čerpadlá 230 V | Atlas Copco WEDA D30N Ponorné odvodňovacie čerpadlo 230 V, 820 l/min | na požiadanie | – | áno |
 | Čerpadlá › Motorové čerpadlá | Honda WT20 Motorové kalové čerpadlo 2", 710 l/min | 1 495,67 € | 973 € | áno |
 | Čerpadlá › Motorové čerpadlá | Honda WT30 Motorové kalové čerpadlo 3", 1 210 l/min | 2 104,07 € | 1 368 € | áno |
 | Rezacia technika › Rezače škár | NTC RZ 120 Rezač škár, kotúč 350 mm (Honda GX 270) | 2 636,44 € | 1 715 € | áno |
@@ -51,9 +51,7 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 | Rezacia technika › Rezače škár | Gölz FS170 Rezač škár, kotúč 500 mm (Honda GX 390) | 3 622,35 € | 2 297 € | áno |
 | Rezacia technika › Stolové a blokové píly | Gölz MS400 Stolová píla na murivo, kotúč 400 mm, 230 V | 1 537,50 € | 975 € | áno |
 | Rezacia technika › Stolové a blokové píly | Gölz TS250 Stolová píla na obklady a dlažbu, kotúč 250 mm, 230 V | 1 592,85 € | 1 010 € | áno |
-| Rezacia technika › Stolové a blokové píly | Cedima CTS-57 G Stolová píla, kotúč 400 mm, 230 V | 1 649 € | 1 073 € | áno |
 | Rezacia technika › Stolové a blokové píly | Gölz TS250A Stolová píla na obklady a dlažbu s hliníkovým rámom, kotúč 250 mm, 230 V | 2 324,70 € | 1 474 € | áno |
-| Rezacia technika › Stolové a blokové píly | Cedima CTS-265.2 Píla na murovacie bloky, kotúč 650 mm, 400 V | 4 179 € | 2 718 € | áno |
 | Rezacia technika › Stolové a blokové píly | Gölz BS650 Bloková píla, kotúč 650 mm, 400 V | 5 817,90 € | 3 689 € | áno |
 | Rezacia technika › Stolové a blokové píly | Gölz BS900/1000 Bloková píla, kotúč 900/1 000 mm, 400 V | 6 396 € | 4 056 € | áno |
 | Rezacia technika › Stolové a blokové píly | Gölz TS250A-330 Stolová píla na veľkoformátové obklady, dĺžka rezu 3 300 mm, 230 V | 6 629,70 € | 4 204 € | áno |
@@ -68,7 +66,6 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 | Betonárska technika | Enar DINGO 230 V Elektrický vibrátor do betónu, hriadeľ 3 m, hlavica Ø 58 mm | 843,97 € | 549 € | áno |
 | Betonárska technika | Enar DINGO 230 V Elektrický vibrátor do betónu, hriadeľ 5 m, hlavica Ø 58 mm | 892,64 € | 581 € | áno |
 | Betonárska technika | Enar QZH Plávajúca vibračná lišta (Honda GX25) | 1 020,30 € | 664 € | áno |
-| Betonárska technika | Husqvarna BV 20 G Benzínová vibračná lišta na betón 2 m | 1 699 € | 1 105 € | áno |
 | Brúsky na betón | Gölz SM250 Brúska na betón, Ø 250 mm, 230 V | 2 699,85 € | 1 712 € | áno |
 | Brúsky na betón | Gölz SM280 Brúska na betón, Ø 280 mm, 230 V | 4 305 € | 2 730 € | áno |
 | Motory | Honda GX 160 Benzínový motor 4,8 HP | 553,45 € | 360 € | áno |
@@ -91,6 +88,5 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 - **Enar QZH:** hliníkový profil QZ (2 / 3 / 4 m) nie je v ponuke; zvážiť jeho doplnenie, bez neho lišta nefunguje.
 - **NTC tlmiaca doska VD 450:** pre stroje od v. č. 3000 môže existovať iný diel; **podvozok VD 350/450** (kód 30165A) nemá vlastnú fotku, použitá je fotka dielu 31930C (podvozok VD 450/20 a 450/22).
 - **Gölz:** skutočný rabat a dodacia lehota do Senca. FS170 je vo verzii s motorom Honda GX 390 (existuje aj Kohler CH440). MS400: stránka uvádza dĺžku rezu 800 mm v hlavičke a 700 mm v tabuľke, v e-shope je 700 mm. TS250 sa dodáva s kotúčom SLF10 a SM250 s brúsnym tanierom CG250-M, ostatné bez nástrojov.
-- Husqvarna BV 20 G: hmotnosť sa v zdrojoch líši (14,8 vs. 20 kg), preto nie je v parametroch.
 - Fotky: Atlas Copco WEDA D10N nemá fotku; fotky čerpadiel Atlas Copco a Enar Dingo sú od predajcov. Použitie fotiek výrobcov treba potvrdiť.
 - Detailná rešerš pôvodného sortimentu (12. 10.) je v `docs/research-sortiment/`.

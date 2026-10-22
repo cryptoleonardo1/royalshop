@@ -105,6 +105,7 @@ export async function markPaymentAbandoned(db: Db, checkoutSessionId: string, no
 }
 
 // Current prices straight from the database (not the page cache): this is what an order is charged.
+// Price-on-request products are left out, so a cart line for one is reported as no longer sold.
 export async function fetchPricedProducts(
   db: Db,
   slugs: string[],
@@ -120,7 +121,8 @@ export async function fetchPricedProducts(
        cost:product_costs(purchase_price_net_cents)`,
     )
     .in("slug", slugs.slice(0, 100))
-    .eq("status", "active");
+    .eq("status", "active")
+    .eq("price_on_request", false);
   if (error) throw new Error(`Pricing failed: ${error.message}`);
   /* eslint-disable @typescript-eslint/no-explicit-any */
   for (const r of data as any[]) {

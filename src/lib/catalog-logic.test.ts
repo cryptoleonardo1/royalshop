@@ -11,6 +11,7 @@ function product(over: Partial<ProductSummary> & { slug: string }): ProductSumma
     sku: null,
     priceGrossCents: 10000,
     compareAtPriceCents: null,
+    priceOnRequest: false,
     lowestPrice30dCents: null,
     vatRate: 23,
     batteryPlatform: "none",
@@ -138,6 +139,14 @@ describe("listing", () => {
 
   it("sorts by price", () => {
     expect(buildListing(products, { zoradit: "cena-desc" }, 1).items.map((p) => p.slug)).toEqual(["c", "b", "a"]);
+  });
+
+  it("keeps price-on-request products out of price filters and last in price sorts", () => {
+    const withAsk = [...products, product({ slug: "d", priceGrossCents: 100, priceOnRequest: true })];
+    expect(buildListing(withAsk, { zoradit: "cena-asc" }, 1).items.map((p) => p.slug)).toEqual(["a", "b", "c", "d"]);
+    expect(buildListing(withAsk, { zoradit: "cena-desc" }, 1).items.map((p) => p.slug)).toEqual(["c", "b", "a", "d"]);
+    expect(buildListing(withAsk, { cena_do: "1000" }, 1).items.map((p) => p.slug)).toEqual(["a", "b"]);
+    expect(buildListing(withAsk, {}, 1).price).toEqual({ min: 500, max: 4000 });
   });
 
   it("builds and strips filter URLs", () => {

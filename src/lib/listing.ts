@@ -83,7 +83,9 @@ function matches(p: ProductSummary, f: Filters, handlingDays: number, skip?: Gro
     return false;
   if (skip !== "kit" && f.kit && (f.kit === "sada") !== p.isKit) return false;
   if (skip !== "sale" && f.sale && discountPct(p) === 0) return false;
-  if (skip !== "price") {
+  if (skip !== "price" && (f.priceMin != null || f.priceMax != null)) {
+    // A price filter can't place a product without a public price.
+    if (p.priceOnRequest) return false;
     if (f.priceMin != null && p.priceGrossCents < f.priceMin * 100) return false;
     if (f.priceMax != null && p.priceGrossCents > f.priceMax * 100) return false;
   }
@@ -258,7 +260,7 @@ export function buildListing(products: ProductSummary[], sp: SearchParams, handl
   const sorted = sortProducts(filtered, f.sort);
   const pageCount = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const page = Math.min(f.page, pageCount);
-  const prices = products.map((p) => p.priceGrossCents);
+  const prices = products.filter((p) => !p.priceOnRequest).map((p) => p.priceGrossCents);
 
   const activeCount =
     f.brands.length +
@@ -291,10 +293,11 @@ function stripParens(label: string): string {
 function sortProducts(items: ProductSummary[], sort: Sort): ProductSummary[] {
   const out = [...items];
   switch (sort) {
+    // Price-on-request products go last in both price orders.
     case "cena-asc":
-      return out.sort((a, b) => a.priceGrossCents - b.priceGrossCents);
+      return out.sort((a, b) => Number(a.priceOnRequest) - Number(b.priceOnRequest) || a.priceGrossCents - b.priceGrossCents);
     case "cena-desc":
-      return out.sort((a, b) => b.priceGrossCents - a.priceGrossCents);
+      return out.sort((a, b) => Number(a.priceOnRequest) - Number(b.priceOnRequest) || b.priceGrossCents - a.priceGrossCents);
     case "zlava":
       return out.sort((a, b) => discountPct(b) - discountPct(a) || a.priceGrossCents - b.priceGrossCents);
     case "nazov":

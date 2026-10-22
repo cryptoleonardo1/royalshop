@@ -37,6 +37,8 @@ export interface ProductSummary {
   sku: string | null;
   priceGrossCents: number;
   compareAtPriceCents: number | null;
+  // "Cena na požiadanie": price is hidden and the product cannot be bought online.
+  priceOnRequest: boolean;
   vatRate: number;
   batteryPlatform: BatteryPlatform;
   isKit: boolean;
@@ -89,7 +91,7 @@ export interface ShopSettings {
 }
 
 const SUMMARY_SELECT = `
-  id, slug, name, sku, price_gross_cents, compare_at_price_cents, vat_rate, battery_platform, is_kit,
+  id, slug, name, sku, price_gross_cents, compare_at_price_cents, price_on_request, vat_rate, battery_platform, is_kit,
   shipping_class, is_featured, created_at,
   brand:brands(slug, name),
   category:categories(slug, name),
@@ -121,6 +123,7 @@ function toSummary(r: Row, lowestPrice30dCents: number | null = null): ProductSu
     sku: r.sku,
     priceGrossCents: r.price_gross_cents,
     compareAtPriceCents: r.compare_at_price_cents,
+    priceOnRequest: r.price_on_request ?? false,
     vatRate: Number(r.vat_rate),
     batteryPlatform: r.battery_platform,
     isKit: r.is_kit,

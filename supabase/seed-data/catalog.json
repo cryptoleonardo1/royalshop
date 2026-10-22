@@ -57,28 +57,12 @@
       "website": "https://www.atlascopco.com/sk-sk"
     },
     {
-      "slug": "cedima",
-      "name": "Cedima",
-      "manufacturer_name": "CEDIMA Diamantwerkzeug- und Maschinenbaugesellschaft mbH",
-      "manufacturer_address": "Siedemeierkamp 5, 29227 Celle, Nemecko",
-      "manufacturer_email": "info@cedima.com",
-      "website": "https://www.cedima.com"
-    },
-    {
       "slug": "enar",
       "name": "Enar",
       "manufacturer_name": "ENARCO S.A.",
       "manufacturer_address": "C/ Burtina 16, Polígono Industrial Plaza, 50197 Zaragoza, Španielsko",
       "manufacturer_email": null,
       "website": "https://www.enargroup.com"
-    },
-    {
-      "slug": "husqvarna",
-      "name": "Husqvarna",
-      "manufacturer_name": "Husqvarna AB (divízia Husqvarna Construction)",
-      "manufacturer_address": "561 82 Huskvarna, Švédsko",
-      "manufacturer_email": null,
-      "website": "https://www.husqvarnaconstruction.com"
     },
     {
       "slug": "golz",
@@ -164,7 +148,7 @@
       "slug": "rezacia-technika",
       "name": "Rezacia technika",
       "parent_slug": null,
-      "description": "Rezače škár NTC a Gölz, stolové a blokové píly Gölz a Cedima a elektrické rozbrusovačky Gölz na rezanie betónu, asfaltu, dlažby a muriva.",
+      "description": "Rezače škár NTC a Gölz, stolové a blokové píly Gölz a elektrické rozbrusovačky Gölz na rezanie betónu, asfaltu, dlažby a muriva.",
       "sort_order": 4
     },
     {
@@ -192,7 +176,7 @@
       "slug": "betonarska-technika",
       "name": "Betonárska technika",
       "parent_slug": null,
-      "description": "Ponorné vibrátory, pohonné jednotky a hriadele Enar a vibračné lišty Enar a Husqvarna na zhutnenie a stiahnutie čerstvého betónu.",
+      "description": "Ponorné vibrátory, pohonné jednotky a hriadele Enar a vibračné lišty Enar na zhutnenie a stiahnutie čerstvého betónu.",
       "sort_order": 5
     },
     {
@@ -2349,226 +2333,8 @@
           "is_filterable": false
         }
       ],
-      "images": []
-    },
-    {
-      "slug": "cedima-cts-57-g",
-      "name": "Cedima CTS-57 G Stolová píla, kotúč 400 mm, 230 V",
-      "brand_slug": "cedima",
-      "supplier_slug": "unicon",
-      "category_slug": "stolove-pily",
-      "sku": "CTS-57 G",
-      "ean": null,
-      "short_description": "Stavebná stolová píla s nakláňacou hlavou na pokosové rezy do 45° – obklady, klinker, dlažba, prírodný kameň.",
-      "description": "**Cedima CTS-57 G** – Stavebná stolová píla s nakláňacou hlavou na pokosové rezy do 45° – obklady, klinker, dlažba, prírodný kameň.\n\nKľúčové parametre: max. priemer kotúča 400 mm, min. priemer kotúča 350 mm, max. hĺbka rezu 105 mm, max. dĺžka rezu 615 mm.\n\nStolová píla s vodným chladením reže dlažbu, obklady, tehly, tvárnice aj prírodný kameň presne a bez prachu priamo na stavbe. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1649,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1072.52,
-      "vat_rate": 23,
-      "weight_kg": 74,
-      "shipping_class": "own_transport",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
-      "is_featured": true,
-      "rental_url": null,
-      "specs": [
-        {
-          "key": "blade_diameter_mm",
-          "label": "Max. priemer kotúča",
-          "value": "400",
-          "unit": "mm",
-          "is_filterable": true
-        },
-        {
-          "key": "blade_min_diameter_mm",
-          "label": "Min. priemer kotúča",
-          "value": "350",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "cut_depth_mm",
-          "label": "Max. hĺbka rezu",
-          "value": "105",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "cut_length_mm",
-          "label": "Max. dĺžka rezu",
-          "value": "615",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "power_kw",
-          "label": "Výkon motora (netto)",
-          "value": "2.2",
-          "unit": "kW",
-          "is_filterable": false
-        },
-        {
-          "key": "voltage_v",
-          "label": "Napätie",
-          "value": "230",
-          "unit": "V",
-          "is_filterable": true
-        },
-        {
-          "key": "phases",
-          "label": "Počet fáz",
-          "value": "1",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "water_pump",
-          "label": "Čerpadlo chladiacej vody",
-          "value": "elektrické",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "water_tank_l",
-          "label": "Objem vodnej vane",
-          "value": "35",
-          "unit": "l",
-          "is_filterable": false
-        },
-        {
-          "key": "dimensions_mm",
-          "label": "Rozmery pri preprave (D × Š × V)",
-          "value": "1160 × 620 × 580",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "weight",
-          "label": "Prevádzková hmotnosť",
-          "value": "74",
-          "unit": "kg",
-          "is_filterable": false
-        },
-        {
-          "key": "miter_cut",
-          "label": "Pokosový rez",
-          "value": "do 45° (nakláňacia rezacia hlava)",
-          "unit": null,
-          "is_filterable": false
-        }
-      ],
-      "images": [
-        "/demo-products/cedima-cts-57-g.webp"
-      ]
-    },
-    {
-      "slug": "cedima-cts-265-2",
-      "name": "Cedima CTS-265.2 Píla na murovacie bloky, kotúč 650 mm, 400 V",
-      "brand_slug": "cedima",
-      "supplier_slug": "unicon",
-      "category_slug": "stolove-pily",
-      "sku": "CTS-265.2",
-      "ean": null,
-      "short_description": "Píla na veľkoformátové murovacie bloky (Poroton, vápenopiesok, betón) s kotúčom až Ø 650 mm a výkyvným rezacím ramenom.",
-      "description": "**Cedima CTS-265.2** – Píla na veľkoformátové murovacie bloky (Poroton, vápenopiesok, betón) s kotúčom až Ø 650 mm a výkyvným rezacím ramenom.\n\nKľúčové parametre: max. priemer kotúča 650 mm, min. priemer kotúča 500 mm, max. hĺbka rezu 265 mm, max. dĺžka rezu 700 mm.\n\nStolová píla s vodným chladením reže dlažbu, obklady, tehly, tvárnice aj prírodný kameň presne a bez prachu priamo na stavbe. Diamantový kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 4179,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 2718.05,
-      "vat_rate": 23,
-      "weight_kg": 240,
-      "shipping_class": "own_transport",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Pracujte s ochranou zraku, sluchu a dýchacích ciest. Stroj pripájajte len do zásuvky s prúdovým chráničom a kotúč meňte len pri odpojenom stroji. Nikdy nerežte bez ochranného krytu kotúča.",
-      "is_featured": false,
-      "rental_url": null,
-      "specs": [
-        {
-          "key": "blade_diameter_mm",
-          "label": "Max. priemer kotúča",
-          "value": "650",
-          "unit": "mm",
-          "is_filterable": true
-        },
-        {
-          "key": "blade_min_diameter_mm",
-          "label": "Min. priemer kotúča",
-          "value": "500",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "cut_depth_mm",
-          "label": "Max. hĺbka rezu",
-          "value": "265",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "cut_length_mm",
-          "label": "Max. dĺžka rezu",
-          "value": "700",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "power_kw",
-          "label": "Výkon motora (netto)",
-          "value": "5.5",
-          "unit": "kW",
-          "is_filterable": false
-        },
-        {
-          "key": "voltage_v",
-          "label": "Napätie",
-          "value": "400",
-          "unit": "V",
-          "is_filterable": true
-        },
-        {
-          "key": "phases",
-          "label": "Počet fáz",
-          "value": "3",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "water_pump",
-          "label": "Čerpadlo chladiacej vody",
-          "value": "elektrické",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "water_tank_l",
-          "label": "Objem vodnej vane",
-          "value": "50",
-          "unit": "l",
-          "is_filterable": false
-        },
-        {
-          "key": "dimensions_mm",
-          "label": "Rozmery pri preprave (D × Š × V)",
-          "value": "1750 × 900 × 1530",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "weight",
-          "label": "Prevádzková hmotnosť",
-          "value": "240",
-          "unit": "kg",
-          "is_filterable": false
-        }
-      ],
-      "images": [
-        "/demo-products/cedima-cts-265-2.webp"
-      ]
+      "images": [],
+      "price_on_request": true
     },
     {
       "slug": "ntc-vd-12p",
@@ -3193,7 +2959,8 @@
       ],
       "images": [
         "/demo-products/atlas-copco-weda-d04bn.webp"
-      ]
+      ],
+      "price_on_request": true
     },
     {
       "slug": "atlas-copco-weda-s08n",
@@ -3285,7 +3052,8 @@
       ],
       "images": [
         "/demo-products/atlas-copco-weda-s08n.webp"
-      ]
+      ],
+      "price_on_request": true
     },
     {
       "slug": "atlas-copco-weda-d30n-230v",
@@ -3377,7 +3145,8 @@
       ],
       "images": [
         "/demo-products/atlas-copco-weda-d30n-230v.webp"
-      ]
+      ],
+      "price_on_request": true
     },
     {
       "slug": "honda-ect-7000g",
@@ -4451,84 +4220,6 @@
       ],
       "images": [
         "/demo-products/honda-gx390.webp"
-      ]
-    },
-    {
-      "slug": "husqvarna-bv-20-g",
-      "name": "Husqvarna BV 20 G Benzínová vibračná lišta na betón 2 m",
-      "brand_slug": "husqvarna",
-      "supplier_slug": "unicon",
-      "category_slug": "betonarska-technika",
-      "sku": "BV 20 G",
-      "ean": null,
-      "short_description": "Ľahká benzínová vibračná lišta s motorom Honda GX 25 a 2 m hliníkovým profilom na zhutnenie a zarovnanie betónových dosiek a podláh do hrúbky 150 mm.",
-      "description": "**Husqvarna BV 20 G** – Ľahká benzínová vibračná lišta s motorom Honda GX 25 a 2 m hliníkovým profilom na zhutnenie a zarovnanie betónových dosiek a podláh do hrúbky 150 mm.\n\nKľúčové parametre: pracovná šírka 200 cm, výkon motora 0,72 kW, objem palivovej nádrže 0,58 l, vibrácie na rukoväti 3,2 m/s².\n\nVibračná lišta v jednom kroku zhutní a zarovná povrch čerstvého betónu, takže podlahy, dosky a spevnené plochy majú rovný a hutný povrch bez ručného sťahovania latou.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1699,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1105.04,
-      "vat_rate": 23,
-      "weight_kg": 20,
-      "shipping_class": "own_transport",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, rukavice a gumenú bezpečnostnú obuv, čerstvý betón dráždi pokožku. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
-      "is_featured": false,
-      "rental_url": "https://royalstroje.sk",
-      "specs": [
-        {
-          "key": "engine",
-          "label": "Motor",
-          "value": "Honda GX 25",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "power_kw",
-          "label": "Výkon motora",
-          "value": "0.72",
-          "unit": "kW",
-          "is_filterable": false
-        },
-        {
-          "key": "working_width_cm",
-          "label": "Pracovná šírka",
-          "value": "200",
-          "unit": "cm",
-          "is_filterable": false
-        },
-        {
-          "key": "screed_profile_mm",
-          "label": "Rozmery lišty",
-          "value": "2000 × 170",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel_tank_l",
-          "label": "Objem palivovej nádrže",
-          "value": "0.58",
-          "unit": "l",
-          "is_filterable": false
-        },
-        {
-          "key": "vibration_ms2",
-          "label": "Vibrácie na rukoväti",
-          "value": "3.2",
-          "unit": "m/s²",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel",
-          "label": "Palivo",
-          "value": "benzín",
-          "unit": null,
-          "is_filterable": true
-        }
-      ],
-      "images": [
-        "/demo-products/husqvarna-bv-20-g.webp"
       ]
     },
     {

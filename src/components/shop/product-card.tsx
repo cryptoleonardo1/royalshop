@@ -103,27 +103,41 @@ export function ProductCard({
           {workDaysText(days.min, days.max)}
         </p>
 
-        <div className={css.cardPrice}>
-          {ref && (
-            <p className={css.was}>
-              <s>{formatEur(ref)}</s> <span className={css.wasNote}>najnižšia cena za 30 dní</span>
-            </p>
-          )}
-          <p className={css.priceBig}>
-            {formatEur(p.priceGrossCents)} <span className={css.vat}>s DPH</span>
-          </p>
-          <p className={css.priceNet}>{formatEur(netFromGross(p.priceGrossCents, p.vatRate))} bez DPH</p>
-        </div>
+        {p.priceOnRequest ? (
+          <>
+            <div className={css.cardPrice}>
+              <p className={css.priceAsk}>Na požiadanie</p>
+              <p className={css.priceNet}>cenu vám povieme telefonicky alebo e-mailom</p>
+            </div>
+            <Link href={href} className={css.addBtn}>
+              Zistiť cenu <span className={css.srOnly}>: {p.name}</span>
+            </Link>
+          </>
+        ) : (
+          <>
+            <div className={css.cardPrice}>
+              {ref && (
+                <p className={css.was}>
+                  <s>{formatEur(ref)}</s> <span className={css.wasNote}>najnižšia cena za 30 dní</span>
+                </p>
+              )}
+              <p className={css.priceBig}>
+                {formatEur(p.priceGrossCents)} <span className={css.vat}>s DPH</span>
+              </p>
+              <p className={css.priceNet}>{formatEur(netFromGross(p.priceGrossCents, p.vatRate))} bez DPH</p>
+            </div>
 
-        <AddToCartButton
-          item={{
-            slug: p.slug,
-            name: p.name,
-            sku: p.sku,
-            priceGrossCents: p.priceGrossCents,
-            image: p.image?.path ?? null,
-          }}
-        />
+            <AddToCartButton
+              item={{
+                slug: p.slug,
+                name: p.name,
+                sku: p.sku,
+                priceGrossCents: p.priceGrossCents,
+                image: p.image?.path ?? null,
+              }}
+            />
+          </>
+        )}
       </div>
     </article>
   );

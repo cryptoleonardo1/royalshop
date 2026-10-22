@@ -31,7 +31,7 @@ interface CatalogJson {
   products: {
     slug: string; name: string; brand_slug: string; supplier_slug: string; category_slug: string;
     sku: string; ean: string | null; short_description: string; description: string;
-    price_gross_eur: number; compare_at_price_eur: number | null; purchase_price_net_eur: number;
+    price_gross_eur: number; compare_at_price_eur: number | null; purchase_price_net_eur: number; price_on_request?: boolean;
     vat_rate: number; weight_kg: number | null; shipping_class: string; battery_platform: string; is_kit: boolean;
     warranty_months: number; manufacturer_warranty_note: string | null; safety_info: string;
     is_featured: boolean; rental_url: string | null;
@@ -128,6 +128,7 @@ async function seedCatalog() {
         weight_kg: p.weight_kg, shipping_class: p.shipping_class, battery_platform: p.battery_platform, is_kit: p.is_kit,
         warranty_months: p.warranty_months, manufacturer_warranty_note: p.manufacturer_warranty_note,
         safety_info: p.safety_info, status: "active", is_featured: p.is_featured, rental_url: p.rental_url,
+        price_on_request: p.price_on_request ?? false,
       }).select("id").single(),
       `product ${p.slug}`,
     );
@@ -237,7 +238,8 @@ async function seedPeopleAndOrders(ctx: Awaited<ReturnType<typeof seedCatalog>>)
   }
 
   // Pick products deterministically: courier items for courier orders, heavy for own transport.
-  const products = ctx.catalog.products;
+  // Price-on-request products cannot be ordered online, so they never appear in demo orders.
+  const products = ctx.catalog.products.filter((p) => !p.price_on_request);
   const courierItems = products.filter((p) => p.shipping_class === "courier");
   const heavyItems = products.filter((p) => p.shipping_class === "own_transport");
   let ci = 0;

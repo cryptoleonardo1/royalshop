@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { connection } from "next/server";
-import { ArrowUpRight, BatteryCharging, Check, Factory, FileText, ShieldCheck, Store, Truck } from "lucide-react";
+import { ArrowUpRight, BatteryCharging, Check, Factory, FileText, Mail, Phone, ShieldCheck, Store, Truck } from "lucide-react";
 import { getCategoryContext, getProduct, getProductSlugs, getShopSettings, type ProductDetail } from "@/lib/catalog";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
 import { formatEur, netFromGross } from "@/lib/money";
@@ -97,6 +97,28 @@ function DeliveryFallback({ product, handlingDays }: { product: ProductDetail; h
         </span>
       </li>
     </ul>
+  );
+}
+
+// Replaces the buy box for "cena na požiadanie" products: the customer calls or writes instead.
+function PriceRequest({ product, phone, email }: { product: ProductDetail; phone: string | null; email: string | null }) {
+  const subject = encodeURIComponent(`Cena: ${product.name}${product.sku ? ` (${product.sku})` : ""}`);
+  return (
+    <div className={css.buyBox}>
+      <div className={css.buyRow}>
+        {phone && (
+          <a href={`tel:${phone.replace(/\s+/g, "")}`} className={css.addBig}>
+            <Phone size={22} aria-hidden="true" /> Zavolať
+          </a>
+        )}
+        {email && (
+          <a href={`mailto:${email}?subject=${subject}`} className={css.askPrice}>
+            <Mail size={20} aria-hidden="true" /> Napísať e-mail
+          </a>
+        )}
+      </div>
+      {phone && <p className={css.buyTotal}>{phone}{email && <span> · {email}</span>}</p>}
+    </div>
   );
 }
 
@@ -198,25 +220,38 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                 </ul>
               )}
 
-              <div className={css.priceBox}>
-                <p className={css.pdpPrice}>
-                  {formatEur(p.priceGrossCents)} <span className={css.vat}>s DPH</span>
-                </p>
-                <p className={css.pdpNet}>
-                  {formatEur(netFromGross(p.priceGrossCents, p.vatRate))} <span>bez DPH · cena za 1 ks</span>
-                </p>
-                {ref && (
-                  <p className={css.omnibus}>
-                    Najnižšia cena za posledných 30 dní pred zľavou: <strong>{formatEur(ref)}</strong> · zľava {off} %
+              {p.priceOnRequest ? (
+                <div className={css.priceBox}>
+                  <p className={css.pdpPriceAsk}>Cena na požiadanie</p>
+                  <p className={css.pdpNet}>
+                    <span>Aktuálnu cenu a dostupnosť vám radi povieme telefonicky alebo e-mailom.</span>
                   </p>
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className={css.priceBox}>
+                  <p className={css.pdpPrice}>
+                    {formatEur(p.priceGrossCents)} <span className={css.vat}>s DPH</span>
+                  </p>
+                  <p className={css.pdpNet}>
+                    {formatEur(netFromGross(p.priceGrossCents, p.vatRate))} <span>bez DPH · cena za 1 ks</span>
+                  </p>
+                  {ref && (
+                    <p className={css.omnibus}>
+                      Najnižšia cena za posledných 30 dní pred zľavou: <strong>{formatEur(ref)}</strong> · zľava {off} %
+                    </p>
+                  )}
+                </div>
+              )}
 
               <Suspense fallback={<DeliveryFallback product={p} handlingDays={settings.handlingDays} />}>
                 <DeliveryEstimate product={p} handlingDays={settings.handlingDays} />
               </Suspense>
 
-              <BuyBox item={cartItem} />
+              {p.priceOnRequest ? (
+                <PriceRequest product={p} phone={settings.phone} email={settings.email} />
+              ) : (
+                <BuyBox item={cartItem} />
+              )}
 
               <div className={`${css.testNote} ${css.dark}`}>
                 <span className={css.testStamp} aria-hidden="true">
