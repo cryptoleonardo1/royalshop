@@ -26,7 +26,7 @@ export async function ShopShell({ children }: { children: ReactNode }) {
               <Truck size={14} aria-hidden="true" /> Doprava zdarma od {formatEur(settings.freeShippingThresholdCents)}
             </li>
             <li>
-              <Store size={14} aria-hidden="true" /> Osobný odber Senec
+              <Store size={14} aria-hidden="true" /> Osobný odber Boldog pri Senci
             </li>
             {settings.phone && (
               <li>

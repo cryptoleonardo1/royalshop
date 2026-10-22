@@ -67,7 +67,7 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
                   {line.sku && <span className={css.cartLineSku}>Kód {line.sku}</span>}
                   {p?.product.shippingClass === "own_transport" && (
                     <span className={css.cartLineNote}>
-                      <Truck size={14} aria-hidden="true" /> Ťažký stroj – vlastný rozvoz alebo odber v Senci
+                      <Truck size={14} aria-hidden="true" /> Ťažký stroj – vlastný rozvoz alebo odber v predajni
                     </span>
                   )}
                   <span className={css.cartLineUnit}>{formatEur(unit)} / ks</span>
@@ -146,7 +146,7 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
             </dd>
           </div>
           <div>
-            <dt>Osobný odber Senec</dt>
+            <dt>Osobný odber v predajni</dt>
             <dd>zdarma</dd>
           </div>
         </dl>

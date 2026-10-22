@@ -65,7 +65,7 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
   if (quote.method !== input.shippingMethod) {
     return { errors: { shippingMethod: "Tento spôsob dopravy nie je pre váš košík dostupný." } };
   }
-  if (quote.shippingCents == null) return { errors: { zoneId: "Vyberte vzdialenosť od Senca" } };
+  if (quote.shippingCents == null) return { errors: { zoneId: "Vyberte vzdialenosť od predajne" } };
 
   const db = createAdminClient();
   const [{ data: orderNumber, error: numberError }, terms] = await Promise.all([

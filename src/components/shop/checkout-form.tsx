@@ -14,7 +14,7 @@ import css from "./shop.module.css";
 const METHOD_LABEL: Record<ShippingMethod, string> = {
   courier: "Kuriér na adresu",
   own_transport: "Vlastný rozvoz",
-  pickup_senec: "Osobný odber Senec",
+  pickup_senec: "Osobný odber v predajni",
 };
 
 const dateLabel = (iso: string) => formatDeliveryDate(new Date(`${iso}T12:00:00Z`));
@@ -197,7 +197,7 @@ export function CheckoutForm({
           {heavyOnly && (
             <p className={css.notice}>
               <Truck size={18} aria-hidden="true" /> V košíku je ťažký stroj, kuriér ho neprevezie. Privezieme ho
-              vlastnou dopravou alebo si ho vyzdvihnete v Senci.
+              vlastnou dopravou alebo si ho vyzdvihnete v našej predajni v Boldogu pri Senci.
             </p>
           )}
           <div className={css.choiceStack}>
@@ -220,7 +220,7 @@ export function CheckoutForm({
                     <strong>{METHOD_LABEL[o.method]}</strong>
                     <span>
                       {o.method === "pickup_senec"
-                        ? `Pripravené ${dateLabel(o.estimatedDelivery)} · ${pickupAddress ?? "Senec"}${pickupHours ? ` · ${pickupHours}` : ""}`
+                        ? `Pripravené ${dateLabel(o.estimatedDelivery)} · ${pickupAddress ?? "predajňa Royal Stroje"}${pickupHours ? ` · ${pickupHours}` : ""}`
                         : `Doručenie predpokladane ${dateLabel(o.estimatedDelivery)}`}
                     </span>
                   </span>
@@ -234,7 +234,7 @@ export function CheckoutForm({
           {errors.shippingMethod && <p className={css.fieldError}>{errors.shippingMethod}</p>}
 
           {chosen === "own_transport" && (
-            <Field name="zoneId" label="Vzdialenosť miesta doručenia od Senca" error={errors.zoneId}>
+            <Field name="zoneId" label="Vzdialenosť miesta doručenia od predajne" error={errors.zoneId}>
               {(p) => (
                 <select {...p} value={zoneId} onChange={(e) => setZoneId(e.target.value)} required>
                   <option value="">Vyberte zónu</option>

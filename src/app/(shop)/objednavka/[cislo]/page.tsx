@@ -18,7 +18,7 @@ export const metadata: Metadata = { title: "Objednávka", robots: { index: false
 const METHOD_LABEL: Record<ShippingMethod, string> = {
   courier: "Kuriér na adresu",
   own_transport: "Vlastný rozvoz",
-  pickup_senec: "Osobný odber Senec",
+  pickup_senec: "Osobný odber v predajni",
 };
 
 interface Address {

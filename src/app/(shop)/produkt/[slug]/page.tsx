@@ -77,7 +77,7 @@ async function DeliveryEstimate({ product, handlingDays }: { product: ProductDet
       <li>
         <Store size={20} aria-hidden="true" />
         <span>
-          <strong>Osobný odber Senec — {pickup}</strong>
+          <strong>Osobný odber v predajni — {pickup}</strong>
           zdarma, po otestovaní pripravíme na pobočke
         </span>
       </li>
@@ -284,7 +284,7 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
 
               <div className={css.pdpServices}>
                 <p className={css.pdpServicesTitle}>
-                  <Store size={18} aria-hidden="true" /> Zadarmo v predajni Senec
+                  <Store size={18} aria-hidden="true" /> Zadarmo v predajni pri Senci
                 </p>
                 <ul>
                   {["Vysvetlenie stroja a poradenstvo", "Zaškolenie na obsluhu", "Odskúšanie pred kúpou"].map((service) => (
@@ -299,7 +299,7 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                 <a href={p.rentalUrl} className={css.rental} target="_blank" rel="noopener">
                   <span className={css.rentalEyebrow}>Royal Stroje · požičovňa</span>
                   <span className={css.rentalTitle}>Najprv vyskúšať?</span>
-                  <span className={css.rentalText}>Tento stroj si môžete požičať v Royal Stroje v Senci.</span>
+                  <span className={css.rentalText}>Tento stroj si môžete požičať v Royal Stroje v Boldogu pri Senci.</span>
                   <span className={css.rentalGo}>
                     Pozrieť prenájom <ArrowUpRight size={18} aria-hidden="true" />
                     <span className={css.srOnly}> (otvorí sa v novom okne)</span>

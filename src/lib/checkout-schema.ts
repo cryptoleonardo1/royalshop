@@ -71,7 +71,7 @@ export const checkoutSchema = z
         ctx.addIssue({ code: "custom", path: ["shipZip"], message: "PSČ má 5 číslic" });
     }
     if (v.shippingMethod === "own_transport" && !v.zoneId)
-      ctx.addIssue({ code: "custom", path: ["zoneId"], message: "Vyberte vzdialenosť od Senca" });
+      ctx.addIssue({ code: "custom", path: ["zoneId"], message: "Vyberte vzdialenosť od predajne" });
   });
 
 export type CheckoutInput = z.infer<typeof checkoutSchema>;

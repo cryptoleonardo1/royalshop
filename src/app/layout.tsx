@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "Royal Shop – profesionálne stavebné stroje",
     template: "%s | Royal Shop",
   },
-  description: "Profesionálne stavebné stroje od overených výrobcov, otestované pred odoslaním. Osobný odber v Senci.",
+  description: "Profesionálne stavebné stroje od overených výrobcov, otestované pred odoslaním. Osobný odber v Boldogu pri Senci.",
   // Demo phase: keep the whole site out of search engines until launch.
   robots: { index: false, follow: false },
 };

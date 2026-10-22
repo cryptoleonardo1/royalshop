@@ -35,7 +35,7 @@ const SERVICES = [
   {
     icon: Wrench,
     title: "Odskúšanie v predajni",
-    text: "Pred kúpou si stroj vyskúšate na vlastné ruky priamo v našej predajni v Senci.",
+    text: "Pred kúpou si stroj vyskúšate na vlastné ruky priamo v našej predajni v Boldogu pri Senci.",
   },
 ];
 
@@ -66,7 +66,7 @@ export default async function HomePage() {
       title: `Doprava zdarma od ${formatEur(settings.freeShippingThresholdCents)}`,
       text: "Ťažké stroje privezieme vlastnou technikou.",
     },
-    { title: "Osobný odber v Senci", text: "Vyzdvihnete si ho na pobočke Royal Stroje." },
+    { title: "Osobný odber pri Senci", text: "Vyzdvihnete si ho v predajni Royal Stroje v Boldogu." },
     { title: "Priamo od výrobcov", text: "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, s plnou zárukou." },
   ];
   const shownCategories = categories.filter((c) => c.productCount > 0);
@@ -91,7 +91,7 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className={`${css.heroLede} ${css.rise}`} style={delay(5)}>
-              Vibračné dosky, elektrocentrály, čerpadlá aj rezačky od overených výrobcov. Každý stroj v Senci
+              Vibračné dosky, elektrocentrály, čerpadlá aj rezačky od overených výrobcov. Každý stroj v našej predajni
               naštartujeme a skontrolujeme. Na stavbu vám príde stroj, ktorý už raz bežal, s podpísaným protokolom.
             </p>
             <div className={`${css.heroCtas} ${css.rise}`} style={delay(6)}>
@@ -113,7 +113,7 @@ export default async function HomePage() {
                 <strong>{formatEur(settings.freeShippingThresholdCents)}</strong> doprava zdarma
               </li>
               <li>
-                <strong>Senec</strong> osobný odber
+                <strong>Boldog</strong> osobný odber pri Senci
               </li>
             </ul>
           </div>
@@ -144,7 +144,7 @@ export default async function HomePage() {
               </ol>
               <p className={css.ticketFoot}>
                 <span>Technik: M. K.</span>
-                <span>Senec</span>
+                <span>Boldog</span>
               </p>
               <span className={css.stamp} aria-hidden="true">
                 <span>OK</span>
@@ -158,7 +158,7 @@ export default async function HomePage() {
           <div className={css.cautionTrack}>
             {Array.from({ length: 2 }).map((_, k) => (
               <span key={k}>
-                Otestované pred odoslaním ✕ Priamo od výrobcov ✕ Zaškolenie zadarmo ✕ Osobný odber Senec ✕ Ťažké stroje vlastnou dopravou
+                Otestované pred odoslaním ✕ Priamo od výrobcov ✕ Zaškolenie zadarmo ✕ Osobný odber pri Senci ✕ Ťažké stroje vlastnou dopravou
                 ✕{" "}
               </span>
             ))}
@@ -256,7 +256,7 @@ export default async function HomePage() {
             ))}
           </ul>
           <p className={css.servicesNote}>
-            Royal Stroje, Senec · ku každému stroju z nášho sortimentu, pri kúpe aj pred ňou.
+            Royal Stroje, Recká cesta 182, Boldog pri Senci · ku každému stroju z nášho sortimentu, pri kúpe aj pred ňou.
           </p>
         </div>
       </section>
