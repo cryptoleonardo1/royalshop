@@ -4,7 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategories, getCategoryContext, getCategoryProducts, getShopSettings } from "@/lib/catalog";
 import { ListingSkeleton, ListingView } from "@/components/shop/listing-view";
+import { HondaEnginePriceList } from "@/components/shop/honda-engine-pricelist";
 import css from "@/components/shop/shop.module.css";
+
+// The engines category also lists every Honda GX variant from the official price list.
+const ENGINE_CATEGORY = "motory";
 
 export async function generateStaticParams() {
   const categories = await getCategories();
@@ -65,12 +69,21 @@ async function CategoryListing({ params, searchParams }: PageProps<"/kategoria/[
   const [{ slug }, sp] = await Promise.all([params, searchParams]);
   const [products, settings] = await Promise.all([getCategoryProducts(slug), getShopSettings()]);
   return (
-    <ListingView
-      products={products}
-      searchParams={sp}
-      basePath={`/kategoria/${slug}`}
-      handlingDays={settings.handlingDays}
-    />
+    <>
+      <ListingView
+        products={products}
+        searchParams={sp}
+        basePath={`/kategoria/${slug}`}
+        handlingDays={settings.handlingDays}
+      />
+      {slug === ENGINE_CATEGORY && (
+        <HondaEnginePriceList
+          offered={new Map(products.filter((p) => p.sku).map((p) => [p.sku!, p.slug]))}
+          email={settings.email}
+          phone={settings.phone}
+        />
+      )}
+    </>
   );
 }
 

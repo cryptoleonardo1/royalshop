@@ -76,6 +76,12 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 | Príslušenstvo | NTC Tlmiaca doska pre vibračné dosky VD 450 | 182,52 € | 119 € | áno |
 | Príslušenstvo | NTC Podvozok pre vibračné dosky VD 350 a VD 450 | 184,55 € | 120 € | áno |
 
+
+## Kompletný cenník motorov Honda (stránka Motory)
+
+- Pod produktmi v kategórii Motory je tabuľka všetkých 181 variantov z cenníka motorov Honda (platí 1. 10. – 31. 12. 2026), cena = odporúčaná koncová cena s DPH (rovnaký prepočet ako zošit). Varianty mimo ponuky sa dopytujú e-mailom, 5 variantov v ponuke odkazuje na produkt.
+- Dáta: `python scripts/honda-engines.py` z git-ignorovaného `docs/cenniky/data/honda-motory.csv` do `src/data/honda-engines.json` (len EUR ceny s DPH). **Nový cenník od 1. 1. 2027:** aktualizovať CSV, skript spustiť znova a upraviť `validFrom` / `validTo` v skripte.
+- Vysvetlivka kódov (`src/components/shop/honda-engine-codes.tsx`): overené je len prvé písmeno typu = hriadeľ (Honda shop manual GX120/160/200 UT2 https://www.honda-engines-eu.com/files/files/shop-manual-gx120-160-200-ut2-en.pdf, technické listy https://www.honda-engines-eu.com/files/files/technical-sheet-gx160.pdf). Druhé písmeno (X = olejový snímač, H = bez), verzia „E…“ = elektrický štart, farba OH červená / SD čierna a T/H v modeli = závod Thajsko/Čína sú odvodené z oficiálnych dokumentov, Honda ich priamo nevysvetľuje, preto sú na webe formulované „zvyčajne“. Farba „9S“ (GX270UT2X-RH-Q6) je pravdepodobne chyba v cenníku.
 ## Na overenie s Unicon / founderom
 
 - Skutočné nákupné ceny, dodacie lehoty do Senca, EAN kódy.
