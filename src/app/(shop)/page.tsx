@@ -39,6 +39,13 @@ const SERVICES = [
   },
 ];
 
+// Our main partner brand leads the brand grid (highlighted tile); the rest keep the product-count order.
+const PRIMARY_BRAND = "golz";
+const brandsFirst = <T extends { slug: string }>(brands: T[]) => [
+  ...brands.filter((b) => b.slug === PRIMARY_BRAND),
+  ...brands.filter((b) => b.slug !== PRIMARY_BRAND),
+];
+
 export default async function HomePage() {
   const [settings, categories, featured, sale, brands, all] = await Promise.all([
     getShopSettings(),
@@ -196,8 +203,8 @@ export default async function HomePage() {
             </h2>
           </div>
           <ul className={css.brands}>
-            {brands.map((b, i) => (
-              <li key={b.slug} className={css.brandTile}>
+            {brandsFirst(brands).map((b, i) => (
+              <li key={b.slug} className={b.slug === PRIMARY_BRAND ? `${css.brandTile} ${css.brandHot}` : css.brandTile}>
                 <Link href={`/produkty?znacka=${b.slug}`}>
                   <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={css.brandName}>{b.name}</span>

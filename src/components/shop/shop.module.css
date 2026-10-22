@@ -696,15 +696,17 @@
 .brandTile .catCount svg {
   transition: transform 0.2s var(--ease);
 }
-.brandTile:first-child a {
+/* Primary partner brand: dark tile like the lead category; on hover it turns orange like the categories,
+   so it never looks the same as a hovered regular brand (which turns dark). */
+.brandHot a {
   background: var(--ink);
   color: var(--paper);
 }
-.brandTile:first-child .brandName,
-.brandTile:first-child .catIdx {
+.brandHot .brandName,
+.brandHot .catIdx {
   color: var(--hivis);
 }
-.brandTile:first-child .brandCats {
+.brandHot .brandCats {
   color: var(--mute-dark);
 }
 
@@ -996,8 +998,8 @@
   gap: 10px;
   min-height: 54px;
   width: 100%;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--hivis);
+  color: var(--ink);
   font-family: var(--f-display);
   font-variation-settings: "opsz" 48;
   font-weight: 800;
@@ -1007,20 +1009,27 @@
   cursor: pointer;
   border: 3px solid var(--ink);
   transition:
+    transform 0.15s var(--ease),
+    box-shadow 0.15s var(--ease),
     background 0.2s,
     color 0.2s;
 }
-.addBtn:hover,
+/* Same language as the product page button: orange, lifts on a black offset shadow, presses in. */
+.addBtn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.addBtn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--ink);
+}
 .addBtn[data-added] {
-  background: var(--hivis);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--hivis);
 }
 a.addBtn {
-  color: var(--paper);
-  text-decoration: none;
-}
-a.addBtn:hover {
   color: var(--ink);
+  text-decoration: none;
 }
 /* "Cena na požiadanie" instead of a price */
 .priceAsk {
@@ -2036,9 +2045,22 @@ a.askPrice {
   font-size: 0.875rem;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    transform 0.15s var(--ease),
+    box-shadow 0.15s var(--ease),
+    background 0.2s,
+    color 0.2s;
 }
-.engineAction:hover,
+.engineAction:hover {
+  background: var(--hivis);
+  color: var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.engineAction:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 var(--ink);
+}
 .engineAction[data-added] {
   background: var(--hivis);
   color: var(--ink);
@@ -2272,6 +2294,16 @@ a.engineCodeLink:hover {
   }
   .brandTile a:hover .catCount svg {
     transform: translateX(5px);
+  }
+  .brandHot a:hover {
+    background: var(--hivis);
+    color: var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .brandHot a:hover .brandName,
+  .brandHot a:hover .catIdx,
+  .brandHot a:hover .brandCats {
+    color: var(--ink);
   }
   .askCall:hover {
     transform: translate(-3px, -3px);
