@@ -192,7 +192,7 @@
       "slug": "betonarska-technika",
       "name": "Betonárska technika",
       "parent_slug": null,
-      "description": "Ponorné vibrátory Enar a vibračné lišty Husqvarna na zhutnenie a stiahnutie čerstvého betónu.",
+      "description": "Ponorné vibrátory, pohonné jednotky a hriadele Enar a vibračné lišty Enar a Husqvarna na zhutnenie a stiahnutie čerstvého betónu.",
       "sort_order": 5
     },
     {
@@ -208,101 +208,16 @@
       "parent_slug": null,
       "description": "Benzínové motory Honda GX na pohon a remotorizáciu stavebných strojov, čerpadiel a dosiek.",
       "sort_order": 7
+    },
+    {
+      "slug": "prislusenstvo",
+      "name": "Príslušenstvo",
+      "parent_slug": null,
+      "description": "Tlmiace podložky, podvozky a ďalšie príslušenstvo k strojom z našej ponuky.",
+      "sort_order": 8
     }
   ],
   "products": [
-    {
-      "slug": "ntc-nt-76p",
-      "name": "NTC NT 76P Vibračný pech 76 kg (Honda GXR 120)",
-      "brand_slug": "ntc",
-      "supplier_slug": "unicon",
-      "category_slug": "vibracne-pechy",
-      "sku": "NT 76P",
-      "ean": null,
-      "short_description": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.",
-      "description": "**NTC NT 76P** – Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.\n\nKľúčové parametre: rozmer dupacej pätky 285 × 345 mm, hutniaca (rázová) sila 18 kN, frekvencia úderov 650 úderov/min, zdvih (odskok) 70 mm.\n\nVibračný pech (vibračná noha) hutní vysokými údermi úzkej pätky do hĺbky. Je to správna voľba pre súdržné a ílovité zeminy, ryhy pre inžinierske siete a priestor okolo šácht a základov, kam sa doska nedostane.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 3179,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 2067.64,
-      "vat_rate": 23,
-      "weight_kg": 76,
-      "shipping_class": "own_transport",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
-      "is_featured": false,
-      "rental_url": "https://royalstroje.sk",
-      "specs": [
-        {
-          "key": "weight",
-          "label": "Prevádzková hmotnosť",
-          "value": "76",
-          "unit": "kg",
-          "is_filterable": false
-        },
-        {
-          "key": "shoe_size_mm",
-          "label": "Rozmer dupacej pätky",
-          "value": "285 × 345",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "impact_force_kn",
-          "label": "Hutniaca (rázová) sila",
-          "value": "18",
-          "unit": "kN",
-          "is_filterable": false
-        },
-        {
-          "key": "blows_per_min",
-          "label": "Frekvencia úderov",
-          "value": "650",
-          "unit": "úderov/min",
-          "is_filterable": false
-        },
-        {
-          "key": "stroke_mm",
-          "label": "Zdvih (odskok)",
-          "value": "70",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "engine",
-          "label": "Motor",
-          "value": "Honda GXR 120",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "power_kw",
-          "label": "Výkon motora",
-          "value": "2.7",
-          "unit": "kW",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel",
-          "label": "Palivo",
-          "value": "benzín",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "start",
-          "label": "Štartovanie",
-          "value": "ručný",
-          "unit": null,
-          "is_filterable": false
-        }
-      ],
-      "images": [
-        "/demo-products/ntc-nt-76p.webp"
-      ]
-    },
     {
       "slug": "ntc-vd-24",
       "name": "NTC VD 24 Jednosmerná vibračná doska 110 kg (Honda GX 160)",
@@ -313,9 +228,9 @@
       "ean": null,
       "short_description": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.",
       "description": "**NTC VD 24** – Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.\n\nKľúčové parametre: šírka hutniacej dosky 500 mm, odstredivá sila 24 kN, frekvencia 100 Hz, max. rýchlosť pojazdu 25 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 2169,
+      "price_gross_eur": 2256.19,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1410.73,
+      "purchase_price_net_eur": 1467.44,
       "vat_rate": 23,
       "weight_kg": 110,
       "shipping_class": "own_transport",
@@ -419,9 +334,9 @@
       "ean": null,
       "short_description": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.",
       "description": "**NTC VD 450/22** – Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.\n\nKľúčové parametre: šírka hutniacej dosky 450 mm, odstredivá sila 22 kN, frekvencia 81 Hz, max. rýchlosť pojazdu 24 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 2539,
+      "price_gross_eur": 2813.9,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1651.38,
+      "purchase_price_net_eur": 1830.18,
       "vat_rate": 23,
       "weight_kg": 140,
       "shipping_class": "own_transport",
@@ -525,9 +440,9 @@
       "ean": null,
       "short_description": "Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.",
       "description": "**NTC VDR 32** – Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.\n\nKľúčové parametre: šírka hutniacej dosky 500 mm, odstredivá sila 32 kN, frekvencia 90 Hz, max. rýchlosť pojazdu 22 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 5299,
+      "price_gross_eur": 5729.18,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 3446.5,
+      "purchase_price_net_eur": 3726.3,
       "vat_rate": 23,
       "weight_kg": 210,
       "shipping_class": "own_transport",
@@ -624,9 +539,9 @@
       "ean": null,
       "short_description": "Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete.",
       "description": "**NTC RZ 170** – Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete.\n\nKľúčové parametre: max. priemer kotúča 450 mm, max. hĺbka rezu 170 mm, výkon motora 8,7 kW, pojazd ručný.\n\nRezač škár reže dilatačné škáry, opravy a otvory v betóne a asfalte. Rez sa chladí vodou, ktorá znižuje prašnosť a predlžuje životnosť diamantového kotúča. Kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 2809,
-      "compare_at_price_eur": 3190,
-      "purchase_price_net_eur": 1826.99,
+      "price_gross_eur": 2839.25,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1846.66,
       "vat_rate": 23,
       "weight_kg": 110,
       "shipping_class": "own_transport",
@@ -724,9 +639,9 @@
       "ean": null,
       "short_description": "Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete.",
       "description": "**NTC RZ 200** – Rezačka škár na mokré rezanie dilatačných škár v betóne a asfalte, opravy vozoviek a výkopy pre siete.\n\nKľúčové parametre: max. priemer kotúča 500 mm, max. hĺbka rezu 190 (200) mm, výkon motora 8,7 kW, pojazd ručný.\n\nRezač škár reže dilatačné škáry, opravy a otvory v betóne a asfalte. Rez sa chladí vodou, ktorá znižuje prašnosť a predlžuje životnosť diamantového kotúča. Kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 2929,
+      "price_gross_eur": 2889.95,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1905.04,
+      "purchase_price_net_eur": 1879.64,
       "vat_rate": 23,
       "weight_kg": 110,
       "shipping_class": "own_transport",
@@ -815,6 +730,325 @@
       ]
     },
     {
+      "slug": "ntc-rz-120",
+      "name": "NTC RZ 120 Rezač škár, kotúč 350 mm (Honda GX 270)",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "rezace-skar",
+      "sku": "RZ 120",
+      "ean": null,
+      "short_description": "Benzínový rezač škár z radu PRO na rezanie dilatačných škár a rýh v betóne a asfalte pred výkopmi a pri opravách vozoviek.",
+      "description": "**NTC RZ 120** – Benzínový rezač škár z radu PRO na rezanie dilatačných škár a rýh v betóne a asfalte pred výkopmi a pri opravách vozoviek.\n\nKľúčové parametre: max. priemer kotúča 350 mm (voliteľne 400 mm), max. hĺbka rezu 120 mm (140 mm s kotúčom 400 mm), výkon motora 6,3 kW, objem nádrže na vodu 20 l.\n\nRezač škár reže dilatačné škáry, opravy a otvory v betóne a asfalte. Rez sa chladí vodou z odnímateľnej 20 l nádrže alebo z externej prípojky, čo znižuje prašnosť a predlžuje životnosť diamantového kotúča. Pohon troma klinovými remeňmi chráni stroj pri preťažení. Kotúč nie je súčasťou balenia, vhodný vám odporučíme podľa materiálu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 2636.44,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1714.76,
+      "vat_rate": 23,
+      "weight_kg": 100,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "100",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "blade_diameter_mm",
+          "label": "Max. priemer kotúča",
+          "value": "350",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "cut_depth_mm",
+          "label": "Max. hĺbka rezu",
+          "value": "120 (140 s kotúčom 400 mm)",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 270",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "6.3",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "start",
+          "label": "Štartovanie",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "travel",
+          "label": "Pojazd",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "water_tank_l",
+          "label": "Objem nádrže na vodu",
+          "value": "20",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hriadeľa kotúča",
+          "value": "3400",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel_tank_l",
+          "label": "Objem palivovej nádrže",
+          "value": "5.3",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "vibration_ms2",
+          "label": "Vibrácie na rukoväti",
+          "value": "10.42",
+          "unit": "m/s²",
+          "is_filterable": false
+        },
+        {
+          "key": "noise_db",
+          "label": "Hladina akustického výkonu LwA",
+          "value": "99",
+          "unit": "dB(A)",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "1100 × 540 × 950–1250",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "blade_included",
+          "label": "Diamantový kotúč v balení",
+          "value": "nie",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-rz-120.webp",
+        "/demo-products/ntc-rz-120-2.webp"
+      ]
+    },
+    {
+      "slug": "ntc-nt-64p",
+      "name": "NTC NT 64P Vibračný pech 64 kg (Honda GXR 120)",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "vibracne-pechy",
+      "sku": "NT 64P",
+      "ean": null,
+      "short_description": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.",
+      "description": "**NTC NT 64P** – Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.\n\nKľúčové parametre: rozmer dupacej pätky 250 × 350 mm, hutniaca (rázová) sila 15 kN, frekvencia úderov 650 úderov/min, zdvih (odskok) 55 mm.\n\nVibračný pech (vibračná noha) hutní vysokými údermi úzkej pätky do hĺbky. Je to správna voľba pre súdržné a ílovité zeminy, ryhy pre inžinierske siete a priestor okolo šácht a základov, kam sa doska nedostane.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 2915.3,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 1896.13,
+      "vat_rate": 23,
+      "weight_kg": 64,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "64",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "shoe_size_mm",
+          "label": "Rozmer dupacej pätky",
+          "value": "250 × 350",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "impact_force_kn",
+          "label": "Hutniaca (rázová) sila",
+          "value": "15",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "blows_per_min",
+          "label": "Frekvencia úderov",
+          "value": "650",
+          "unit": "úderov/min",
+          "is_filterable": false
+        },
+        {
+          "key": "stroke_mm",
+          "label": "Zdvih (odskok)",
+          "value": "55",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "2.7",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "start",
+          "label": "Štartovanie",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-nt-64p.webp"
+      ]
+    },
+    {
+      "slug": "ntc-nt-72p",
+      "name": "NTC NT 72P Vibračný pech 72 kg (Honda GXR 120)",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "vibracne-pechy",
+      "sku": "NT 72P",
+      "ean": null,
+      "short_description": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.",
+      "description": "**NTC NT 72P** – Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.\n\nKľúčové parametre: rozmer dupacej pätky 285 × 340 mm, hutniaca (rázová) sila 17 kN, frekvencia úderov 650 úderov/min, zdvih (odskok) 60 mm.\n\nVibračný pech (vibračná noha) hutní vysokými údermi úzkej pätky do hĺbky. Je to správna voľba pre súdržné a ílovité zeminy, ryhy pre inžinierske siete a priestor okolo šácht a základov, kam sa doska nedostane.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 3118.1,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2028.03,
+      "vat_rate": 23,
+      "weight_kg": 72,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "72",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "shoe_size_mm",
+          "label": "Rozmer dupacej pätky",
+          "value": "285 × 340",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "impact_force_kn",
+          "label": "Hutniaca (rázová) sila",
+          "value": "17",
+          "unit": "kN",
+          "is_filterable": false
+        },
+        {
+          "key": "blows_per_min",
+          "label": "Frekvencia úderov",
+          "value": "650",
+          "unit": "úderov/min",
+          "is_filterable": false
+        },
+        {
+          "key": "stroke_mm",
+          "label": "Zdvih (odskok)",
+          "value": "60",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GXR 120",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "2.7",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "start",
+          "label": "Štartovanie",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-nt-72p.webp"
+      ]
+    },
+    {
       "slug": "bomag-bt-65",
       "name": "Bomag BT 65 Vibračný pech 68 kg (Honda GXR 120)",
       "brand_slug": "bomag",
@@ -824,9 +1058,9 @@
       "ean": null,
       "short_description": "Univerzálny vibračný pech so širšou pätkou na hutnenie zásypov výkopov, kanalizácií a základov.",
       "description": "**Bomag BT 65** – Univerzálny vibračný pech so širšou pätkou na hutnenie zásypov výkopov, kanalizácií a základov.\n\nKľúčové parametre: rozmer dupacej pätky 280 (šírka) mm, hutniaca (rázová) sila 17 kN, frekvencia úderov 600–708 (10–11,8 Hz) úderov/min, zdvih (odskok) 70 mm.\n\nVibračný pech (vibračná noha) hutní vysokými údermi úzkej pätky do hĺbky. Je to správna voľba pre súdržné a ílovité zeminy, ryhy pre inžinierske siete a priestor okolo šácht a základov, kam sa doska nedostane.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 3739,
+      "price_gross_eur": 3720.92,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 2431.87,
+      "purchase_price_net_eur": 2420.11,
       "vat_rate": 23,
       "weight_kg": 68,
       "shipping_class": "own_transport",
@@ -938,9 +1172,9 @@
       "ean": null,
       "short_description": "Kompaktná jednosmerná doska so sklopným vodidlom (zmestí sa do kufra auta) na hutnenie dlažby, štrkových podkladov a asfaltu pri menších prácach.",
       "description": "**Bomag BP 20/45** – Kompaktná jednosmerná doska so sklopným vodidlom (zmestí sa do kufra auta) na hutnenie dlažby, štrkových podkladov a asfaltu pri menších prácach.\n\nKľúčové parametre: šírka hutniacej dosky 450 mm, odstredivá sila 20 kN, frekvencia 90 Hz, max. rýchlosť pojazdu 30 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1779,
+      "price_gross_eur": 2311.96,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1157.07,
+      "purchase_price_net_eur": 1503.71,
       "vat_rate": 23,
       "weight_kg": 92,
       "shipping_class": "own_transport",
@@ -1059,9 +1293,9 @@
       "ean": null,
       "short_description": "Výkonnejšia jednosmerná doska na hutnenie podkladových vrstiev, dlažby a asfaltu pri chodníkoch a parkoviskách.",
       "description": "**Bomag BP 25/50** – Výkonnejšia jednosmerná doska na hutnenie podkladových vrstiev, dlažby a asfaltu pri chodníkoch a parkoviskách.\n\nKľúčové parametre: šírka hutniacej dosky 500 mm, odstredivá sila 25 kN, frekvencia 90 Hz, max. rýchlosť pojazdu 30 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 3069,
-      "compare_at_price_eur": 3390,
-      "purchase_price_net_eur": 1996.1,
+      "price_gross_eur": 3135.33,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2039.24,
       "vat_rate": 23,
       "weight_kg": 110,
       "shipping_class": "own_transport",
@@ -1179,9 +1413,9 @@
       "ean": null,
       "short_description": "Ľahká reverzná doska na hutnenie zásypov, chodníkov a zámkovej dlažby, aj v stiesnených priestoroch.",
       "description": "**Bomag BPR 25/50** – Ľahká reverzná doska na hutnenie zásypov, chodníkov a zámkovej dlažby, aj v stiesnených priestoroch.\n\nKľúčové parametre: šírka hutniacej dosky 500 mm, odstredivá sila 25 kN, frekvencia 87 Hz, max. rýchlosť pojazdu 25 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 6059,
+      "price_gross_eur": 6776.16,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 3940.81,
+      "purchase_price_net_eur": 4407.26,
       "vat_rate": 23,
       "weight_kg": 140,
       "shipping_class": "own_transport",
@@ -1293,9 +1527,9 @@
       "ean": null,
       "short_description": "Všestranná reverzná doska na zemné práce, asfalt a dlažbu (s voliteľnou STONEGUARD platňou).",
       "description": "**Bomag BPR 35/60** – Všestranná reverzná doska na zemné práce, asfalt a dlažbu (s voliteľnou STONEGUARD platňou).\n\nKľúčové parametre: šírka hutniacej dosky 600 mm, odstredivá sila 35 kN, frekvencia 80 Hz, max. rýchlosť pojazdu 27 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 6449,
+      "price_gross_eur": 7274.04,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 4194.47,
+      "purchase_price_net_eur": 4731.08,
       "vat_rate": 23,
       "weight_kg": 205,
       "shipping_class": "own_transport",
@@ -1399,17 +1633,17 @@
     },
     {
       "slug": "bomag-bpr-60-65-d",
-      "name": "Bomag BPR 60/65 D Reverzná vibračná doska 460 kg (Hatz 1B40, diesel)",
+      "name": "Bomag BPR 60/65 DE Reverzná vibračná doska 460 kg (Hatz 1B40, diesel)",
       "brand_slug": "bomag",
       "supplier_slug": "unicon",
       "category_slug": "reverzne-vibracne-dosky",
-      "sku": "BPR 60/65 D",
+      "sku": "BPR 60/65 DE",
       "ean": null,
-      "short_description": "Ťažká dieselová reverzná doska na hutnenie násypov, cestných podkladov a zásypov vo vysokých vrstvách.",
-      "description": "**Bomag BPR 60/65 D** – Ťažká dieselová reverzná doska na hutnenie násypov, cestných podkladov a zásypov vo vysokých vrstvách.\n\nKľúčové parametre: šírka hutniacej dosky 650 mm, odstredivá sila 60 kN, frekvencia 68 Hz, max. rýchlosť pojazdu 28 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 13579,
+      "short_description": "Ťažká dieselová reverzná doska s elektrickým štartom na hutnenie násypov, cestných podkladov a zásypov vo vysokých vrstvách.",
+      "description": "**Bomag BPR 60/65 DE** – Ťažká dieselová reverzná doska s elektrickým štartom na hutnenie násypov, cestných podkladov a zásypov vo vysokých vrstvách.\n\nKľúčové parametre: šírka hutniacej dosky 650 mm, odstredivá sila 60 kN, frekvencia 68 Hz, max. rýchlosť pojazdu 28 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 13973.64,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 8831.87,
+      "purchase_price_net_eur": 9088.54,
       "vat_rate": 23,
       "weight_kg": 460,
       "shipping_class": "own_transport",
@@ -1480,7 +1714,7 @@
         {
           "key": "start",
           "label": "Štartovanie",
-          "value": "ručný (elektrický vo verzii DE)",
+          "value": "elektrický + ručný",
           "unit": null,
           "is_filterable": false
         },
@@ -1513,9 +1747,9 @@
       "ean": null,
       "short_description": "Najvýkonnejšia kufríková invertorová elektrocentrála Hondy (3,2 kVA) s aplikáciou na diaľkové sledovanie.",
       "description": "**Honda EU32i** – Najvýkonnejšia kufríková invertorová elektrocentrála Hondy (3,2 kVA) s aplikáciou na diaľkové sledovanie.\n\nKľúčové parametre: maximálny výkon 3,2 kVA, menovitý výkon 2,6 kVA, napätie 230 V, objem palivovej nádrže 4,6 l.\n\nJednofázová elektrocentrála napája ručné náradie, osvetlenie, čerpadlá a elektroniku na stavbe aj tam, kde nie je prípojka. Invertorové modely a modely s AVR dodávajú stabilné napätie vhodné aj pre citlivú elektroniku.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 3309,
-      "compare_at_price_eur": 3680,
-      "purchase_price_net_eur": 2152.2,
+      "price_gross_eur": 3351.68,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 2179.95,
       "vat_rate": 23,
       "weight_kg": 26.7,
       "shipping_class": "courier",
@@ -1624,6 +1858,290 @@
       ]
     },
     {
+      "slug": "honda-ec3000g",
+      "name": "Honda EC 3000G Jednofázová elektrocentrála 3,0 kVA",
+      "brand_slug": "honda",
+      "supplier_slug": "unicon",
+      "category_slug": "jednofazove-elektrocentraly",
+      "sku": "EC3000G",
+      "ean": null,
+      "short_description": "Rámová jednofázová elektrocentrála s motorom Honda GX 200 a dvomi zásuvkami 230 V na náradie, osvetlenie a stavebné stroje.",
+      "description": "**Honda EC3000G** – Rámová jednofázová elektrocentrála s motorom Honda GX 200 a dvomi zásuvkami 230 V na náradie, osvetlenie a stavebné stroje.\n\nKľúčové parametre: max. výkon 3,0 kVA, menovitý výkon 2,5 kVA, napätie 230 V, zásuvky 2 × 230 V.\n\nElektrocentrála je v robustnom oceľovom rúrkovom ráme, motor a alternátor sú uložené na gumených silentblokoch. Výrobcom je litovská spoločnosť GENERGA (Kaunas), motor je originálny Honda GX 200. Napätie reguluje kondenzátor; na citlivú elektroniku odporúčame verziu EC 3000G AVR alebo invertorovú elektrocentrálu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1130.94,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 735.57,
+      "vat_rate": 23,
+      "weight_kg": 41,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý. Pripojenie elektrocentrály k elektroinštalácii budovy smie vykonať len elektrikár s oprávnením.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "41",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "max_power_kva",
+          "label": "Max. výkon",
+          "value": "3,0",
+          "unit": "kVA",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_power_kva",
+          "label": "Menovitý výkon",
+          "value": "2,5",
+          "unit": "kVA",
+          "is_filterable": false
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "50",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "sockets",
+          "label": "Zásuvky",
+          "value": "2 × 230 V / 16 A",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "avr",
+          "label": "Regulácia napätia",
+          "value": "kondenzátorová (bez AVR)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "ip_rating",
+          "label": "Krytie",
+          "value": "IP 23",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 200",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "start",
+          "label": "Štartovanie",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "fuel_tank_l",
+          "label": "Objem palivovej nádrže",
+          "value": "3.1",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "runtime_h",
+          "label": "Prevádzka pri menovitom zaťažení",
+          "value": "3",
+          "unit": "h",
+          "is_filterable": false
+        },
+        {
+          "key": "noise_db",
+          "label": "Garantovaná hladina akustického výkonu LwA",
+          "value": "96",
+          "unit": "dB(A)",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "600 × 450 × 450",
+          "unit": "mm",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/honda-ec3000g.webp",
+        "/demo-products/honda-ec3000g-2.webp"
+      ]
+    },
+    {
+      "slug": "honda-ec3000g-avr",
+      "name": "Honda EC 3000G AVR Jednofázová elektrocentrála 3,0 kVA s AVR",
+      "brand_slug": "honda",
+      "supplier_slug": "unicon",
+      "category_slug": "jednofazove-elektrocentraly",
+      "sku": "EC3000G AVR",
+      "ean": null,
+      "short_description": "Rámová jednofázová elektrocentrála s motorom Honda GX 200 a elektronickou reguláciou napätia AVR pre náradie aj citlivejšie spotrebiče.",
+      "description": "**Honda EC3000G AVR** – Rámová jednofázová elektrocentrála s motorom Honda GX 200 a elektronickou reguláciou napätia AVR pre náradie aj citlivejšie spotrebiče.\n\nKľúčové parametre: max. výkon 3,0 kVA, menovitý výkon 2,5 kVA, napätie 230 V, zásuvky 2 × 230 V.\n\nElektrocentrála je v robustnom oceľovom rúrkovom ráme, motor a alternátor sú uložené na gumených silentblokoch. Výrobcom je litovská spoločnosť GENERGA (Kaunas), motor je originálny Honda GX 200. Elektronická regulácia AVR drží stabilné napätie aj pri meniacej sa záťaži.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1361.36,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 885.44,
+      "vat_rate": 23,
+      "weight_kg": 41,
+      "shipping_class": "own_transport",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý. Pripojenie elektrocentrály k elektroinštalácii budovy smie vykonať len elektrikár s oprávnením.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "41",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "max_power_kva",
+          "label": "Max. výkon",
+          "value": "3,0",
+          "unit": "kVA",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_power_kva",
+          "label": "Menovitý výkon",
+          "value": "2,5",
+          "unit": "kVA",
+          "is_filterable": false
+        },
+        {
+          "key": "phases",
+          "label": "Počet fáz",
+          "value": "1",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "frequency_hz",
+          "label": "Frekvencia",
+          "value": "50",
+          "unit": "Hz",
+          "is_filterable": false
+        },
+        {
+          "key": "sockets",
+          "label": "Zásuvky",
+          "value": "2 × 230 V / 16 A",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "avr",
+          "label": "Regulácia napätia",
+          "value": "elektronická AVR",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "ip_rating",
+          "label": "Krytie",
+          "value": "IP 23",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX 200",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "start",
+          "label": "Štartovanie",
+          "value": "ručný",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "fuel_tank_l",
+          "label": "Objem palivovej nádrže",
+          "value": "3.1",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "runtime_h",
+          "label": "Prevádzka pri menovitom zaťažení",
+          "value": "3",
+          "unit": "h",
+          "is_filterable": false
+        },
+        {
+          "key": "noise_db",
+          "label": "Garantovaná hladina akustického výkonu LwA",
+          "value": "96",
+          "unit": "dB(A)",
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "600 × 450 × 450",
+          "unit": "mm",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/honda-ec3000g-avr.webp",
+        "/demo-products/honda-ec3000g-avr-2.webp"
+      ]
+    },
+    {
       "slug": "honda-wt30",
       "name": "Honda WT30 Motorové kalové čerpadlo 3\", 1 210 l/min",
       "brand_slug": "honda",
@@ -1633,9 +2151,9 @@
       "ean": null,
       "short_description": "3\" kalové čerpadlo na odvodňovanie výkopov a zatopených priestorov, prečerpáva vodu s pieskom a štrkom do 28 mm.",
       "description": "**Honda WT30** – 3\" kalové čerpadlo na odvodňovanie výkopov a zatopených priestorov, prečerpáva vodu s pieskom a štrkom do 28 mm.\n\nKľúčové parametre: maximálny prietok 1 210 l/min, maximálna dopravná výška 27 m, maximálna sacia výška 8 m, priemer sania / výtlaku 80 / 80 mm.\n\nMotorové čerpadlo nepotrebuje elektrinu, stačí benzín. Je to istota pri povodniach, na odľahlých stavbách a všade, kde nie je prípojka.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1859,
+      "price_gross_eur": 2104.07,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1209.11,
+      "purchase_price_net_eur": 1368.5,
       "vat_rate": 23,
       "weight_kg": 60,
       "shipping_class": "own_transport",
@@ -2062,9 +2580,9 @@
       "ean": null,
       "short_description": "Ľahká a kompaktná jednosmerná vibračná doska na hutnenie piesku, štrkových podsypov a zámkovej dlažby pri menších prácach a opravách.",
       "description": "**NTC VD 12P** – Ľahká a kompaktná jednosmerná vibračná doska na hutnenie piesku, štrkových podsypov a zámkovej dlažby pri menších prácach a opravách.\n\nKľúčové parametre: šírka hutniacej dosky 330 mm, odstredivá sila 12 kN, frekvencia 100 Hz, max. rýchlosť pojazdu 25 m/min.\n\nNajmenšiu dosku NTC z radu Mini vďaka hmotnosti 60 kg a šírke dosky 330 mm ľahko preveziete aj ovládate v úzkych priestoroch, napríklad pri obrubníkoch, chodníkoch a záhradných cestičkách. Sadu kropenia (nádrž 5 l), gumovú podložku na dlažbu a prepravný podvozok je možné dokúpiť.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1699,
+      "price_gross_eur": 1875.92,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1105.04,
+      "purchase_price_net_eur": 1220.11,
       "vat_rate": 23,
       "weight_kg": 60,
       "shipping_class": "own_transport",
@@ -2162,9 +2680,9 @@
       "ean": null,
       "short_description": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.",
       "description": "**NTC VD 15** – Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.\n\nKľúčové parametre: šírka hutniacej dosky 400 mm, odstredivá sila 15 kN, frekvencia 100 Hz, max. rýchlosť pojazdu 25 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa. Model z radu Elegant má sadu kropenia s 12-litrovou nádržou v základnej výbave, takže zvládne aj hutnenie asfaltu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1839,
+      "price_gross_eur": 2104.07,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1196.1,
+      "purchase_price_net_eur": 1368.5,
       "vat_rate": 23,
       "weight_kg": 85,
       "shipping_class": "own_transport",
@@ -2268,9 +2786,9 @@
       "ean": null,
       "short_description": "Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.",
       "description": "**NTC VD 18** – Jednosmerná vibračná doska na hutnenie štrkových podkladov, pieskov a zámkovej dlažby pri chodníkoch, príjazdoch a terénnych úpravách.\n\nKľúčové parametre: šírka hutniacej dosky 450 mm, odstredivá sila 18 kN, frekvencia 100 Hz, max. rýchlosť pojazdu 25 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa. Model z radu Elegant má sadu kropenia s 12-litrovou nádržou v základnej výbave, takže zvládne aj hutnenie asfaltu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1939,
+      "price_gross_eur": 2129.43,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1261.14,
+      "purchase_price_net_eur": 1384.99,
       "vat_rate": 23,
       "weight_kg": 95,
       "shipping_class": "own_transport",
@@ -2375,9 +2893,9 @@
       "ean": null,
       "short_description": "Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.",
       "description": "**NTC VDR 26** – Reverzná vibračná doska s plynulou zmenou smeru na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby, aj v obmedzenom priestore.\n\nKľúčové parametre: šírka hutniacej dosky 450 mm, odstredivá sila 26 kN, frekvencia 95 Hz, max. rýchlosť pojazdu 22 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja. Sadu kropenia, gumovú podložku na dlažbu a prepravný podvozok je možné dokúpiť.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 4929,
+      "price_gross_eur": 5196.82,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 3205.85,
+      "purchase_price_net_eur": 3380.05,
       "vat_rate": 23,
       "weight_kg": 160,
       "shipping_class": "own_transport",
@@ -2466,230 +2984,18 @@
       ]
     },
     {
-      "slug": "ntc-nt-76",
-      "name": "NTC NT 76 Vibračný pech 76 kg (Honda GXR 120)",
-      "brand_slug": "ntc",
-      "supplier_slug": "unicon",
-      "category_slug": "vibracne-pechy",
-      "sku": "NT 76",
-      "ean": null,
-      "short_description": "Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.",
-      "description": "**NTC NT 76** – Vibračný pech na hutnenie súdržných aj nesúdržných zemín v úzkych výkopoch, okolo potrubí, šácht a základov.\n\nKľúčové parametre: rozmer dupacej pätky 285 × 345 mm, hutniaca (rázová) sila 18 kN, frekvencia úderov 650 úderov/min, zdvih (odskok) 70 mm.\n\nVibračný pech (vibračná noha) hutní vysokými údermi úzkej pätky do hĺbky. Je to správna voľba pre súdržné a ílovité zeminy, ryhy pre inžinierske siete a priestor okolo šácht a základov, kam sa doska nedostane. NT 76 má rovnaký motor Honda GXR 120 aj rovnaké hutniace parametre ako model NT 76P. Líši sa len tým, že nemá vzduchový predfilter, preto na prácu vo veľmi prašnom prostredí odporúčame NT 76P.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 3099,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 2015.61,
-      "vat_rate": 23,
-      "weight_kg": 76,
-      "shipping_class": "own_transport",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
-      "is_featured": false,
-      "rental_url": "https://royalstroje.sk",
-      "specs": [
-        {
-          "key": "weight",
-          "label": "Prevádzková hmotnosť",
-          "value": "76",
-          "unit": "kg",
-          "is_filterable": false
-        },
-        {
-          "key": "shoe_size_mm",
-          "label": "Rozmer dupacej pätky",
-          "value": "285 × 345",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "impact_force_kn",
-          "label": "Hutniaca (rázová) sila",
-          "value": "18",
-          "unit": "kN",
-          "is_filterable": false
-        },
-        {
-          "key": "blows_per_min",
-          "label": "Frekvencia úderov",
-          "value": "650",
-          "unit": "úderov/min",
-          "is_filterable": false
-        },
-        {
-          "key": "stroke_mm",
-          "label": "Zdvih (odskok)",
-          "value": "70",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "engine",
-          "label": "Motor",
-          "value": "Honda GXR 120",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "power_kw",
-          "label": "Výkon motora",
-          "value": "2.7",
-          "unit": "kW",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel",
-          "label": "Palivo",
-          "value": "benzín",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "start",
-          "label": "Štartovanie",
-          "value": "ručný",
-          "unit": null,
-          "is_filterable": false
-        }
-      ],
-      "images": [
-        "/demo-products/ntc-nt-76.webp"
-      ]
-    },
-    {
-      "slug": "bomag-bp-12-35",
-      "name": "Bomag BP 12/35 Jednosmerná vibračná doska 67 kg (Honda GX 120)",
-      "brand_slug": "bomag",
-      "supplier_slug": "unicon",
-      "category_slug": "jednosmerne-vibracne-dosky",
-      "sku": "BP 12/35",
-      "ean": null,
-      "short_description": "Ľahká jednosmerná doska so sklopným vodidlom (zmestí sa do kufra auta) na hutnenie piesku, štrku a dlažby pri drobných opravách, v rohoch a pri stenách.",
-      "description": "**Bomag BP 12/35** – Ľahká jednosmerná doska so sklopným vodidlom (zmestí sa do kufra auta) na hutnenie piesku, štrku a dlažby pri drobných opravách, v rohoch a pri stenách.\n\nKľúčové parametre: šírka hutniacej dosky 350 mm, odstredivá sila 12 kN, frekvencia 92 Hz, max. rýchlosť pojazdu 25 m/min.\n\nJednosmerná doska je najrýchlejší spôsob, ako zhutniť štrkový podsyp, piesok a zámkovú dlažbu na voľnej ploche. Pri hutnení dlažby odporúčame gumovú podložku, ktorá chráni povrch kameňa. Kropenie (nádrž 7 l), prepravné kolesá a podložku z Vulcolanu je možné kedykoľvek doplniť ako dodatočnú výbavu.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1649,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1072.52,
-      "vat_rate": 23,
-      "weight_kg": 67,
-      "shipping_class": "own_transport",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
-      "is_featured": false,
-      "rental_url": "https://royalstroje.sk",
-      "specs": [
-        {
-          "key": "weight",
-          "label": "Prevádzková hmotnosť",
-          "value": "67",
-          "unit": "kg",
-          "is_filterable": false
-        },
-        {
-          "key": "plate_width_mm",
-          "label": "Šírka hutniacej dosky",
-          "value": "350",
-          "unit": "mm",
-          "is_filterable": true
-        },
-        {
-          "key": "centrifugal_force_kn",
-          "label": "Odstredivá sila",
-          "value": "12",
-          "unit": "kN",
-          "is_filterable": false
-        },
-        {
-          "key": "frequency_hz",
-          "label": "Frekvencia",
-          "value": "92",
-          "unit": "Hz",
-          "is_filterable": false
-        },
-        {
-          "key": "speed_m_min",
-          "label": "Max. rýchlosť pojazdu",
-          "value": "25",
-          "unit": "m/min",
-          "is_filterable": false
-        },
-        {
-          "key": "engine",
-          "label": "Motor",
-          "value": "Honda GX 120",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "power_kw",
-          "label": "Výkon motora",
-          "value": "2.4",
-          "unit": "kW",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel",
-          "label": "Palivo",
-          "value": "benzín",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "start",
-          "label": "Štartovanie",
-          "value": "ručný",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "direction",
-          "label": "Smer pojazdu",
-          "value": "jednosmerná",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "amplitude_mm",
-          "label": "Amplitúda",
-          "value": "1.75",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "gradeability_pct",
-          "label": "Max. stúpavosť",
-          "value": "30",
-          "unit": "%",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel_tank_l",
-          "label": "Objem palivovej nádrže",
-          "value": "2.0",
-          "unit": "l",
-          "is_filterable": false
-        }
-      ],
-      "images": [
-        "/demo-products/bomag-bp-12-35.webp"
-      ]
-    },
-    {
       "slug": "bomag-bpr-45-55-d",
-      "name": "Bomag BPR 45/55 D Reverzná vibračná doska 400 kg (Kohler KD 15 440, diesel)",
+      "name": "Bomag BPR 45/55 DE Reverzná vibračná doska 400 kg (Kohler KD 15 440, diesel)",
       "brand_slug": "bomag",
       "supplier_slug": "unicon",
       "category_slug": "reverzne-vibracne-dosky",
-      "sku": "BPR 45/55 D",
+      "sku": "BPR 45/55 DE",
       "ean": null,
       "short_description": "Dieselová reverzná doska strednej triedy s elektrickým štartom na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby.",
-      "description": "**Bomag BPR 45/55 D** – Dieselová reverzná doska strednej triedy s elektrickým štartom na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby.\n\nKľúčové parametre: šírka hutniacej dosky 550 mm, odstredivá sila 45 kN, frekvencia 69 Hz, max. rýchlosť pojazdu 28 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja. Rozširovacie platne na šírku 550 mm sú v základnej výbave (bez nich má doska šírku 450 mm), voliteľne je k dispozícii ukazovateľ zhutnenia ECONOMIZER.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 9889,
+      "description": "**Bomag BPR 45/55 DE** – Dieselová reverzná doska strednej triedy s elektrickým štartom na hutnenie zásypov, podkladových vrstiev a zámkovej dlažby.\n\nKľúčové parametre: šírka hutniacej dosky 550 mm, odstredivá sila 45 kN, frekvencia 69 Hz, max. rýchlosť pojazdu 28 m/min.\n\nReverzná doska sa ovláda plynulým chodom vpred aj vzad a na mieste, takže zvládne hrubšie vrstvy, väčšie plochy aj stiesnené miesta pri stenách a v rohoch bez otáčania stroja. Rozširovacie platne na šírku 550 mm sú v základnej výbave (bez nich má doska šírku 450 mm), voliteľne je k dispozícii ukazovateľ zhutnenia ECONOMIZER.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 14079.6,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 6431.87,
+      "purchase_price_net_eur": 9157.46,
       "vat_rate": 23,
       "weight_kg": 400,
       "shipping_class": "own_transport",
@@ -2760,7 +3066,7 @@
         {
           "key": "start",
           "label": "Štartovanie",
-          "value": "elektrický",
+          "value": "elektrický + ručný",
           "unit": null,
           "is_filterable": false
         },
@@ -3074,133 +3380,6 @@
       ]
     },
     {
-      "slug": "honda-em30",
-      "name": "Honda EM30 Jednofázová elektrocentrála 3,0 kVA",
-      "brand_slug": "honda",
-      "supplier_slug": "unicon",
-      "category_slug": "jednofazove-elektrocentraly",
-      "sku": "EM30",
-      "ean": null,
-      "short_description": "Kompaktná rámová elektrocentrála 3 kVA s cyklokonvertorom pre čisté napätie, vhodná na náradie, osvetlenie aj citlivejšie spotrebiče.",
-      "description": "**Honda EM30** – Kompaktná rámová elektrocentrála 3 kVA s cyklokonvertorom pre čisté napätie, vhodná na náradie, osvetlenie aj citlivejšie spotrebiče.\n\nKľúčové parametre: maximálny výkon 3,0 kVA, menovitý výkon 2,6 kVA, napätie 230 V, regulácia napätia cyklokonvertor.\n\nJednofázová elektrocentrála napája ručné náradie, osvetlenie, čerpadlá a elektroniku na stavbe aj tam, kde nie je prípojka. Invertorové modely a modely s AVR dodávajú stabilné napätie vhodné aj pre citlivú elektroniku.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1529,
-      "compare_at_price_eur": null,
-      "purchase_price_net_eur": 994.47,
-      "vat_rate": 23,
-      "weight_kg": 32,
-      "shipping_class": "courier",
-      "battery_platform": "none",
-      "is_kit": false,
-      "warranty_months": 24,
-      "manufacturer_warranty_note": null,
-      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý. Pripojenie elektrocentrály k elektroinštalácii budovy smie vykonať len elektrikár s oprávnením.",
-      "is_featured": false,
-      "rental_url": "https://royalstroje.sk",
-      "specs": [
-        {
-          "key": "engine",
-          "label": "Motor",
-          "value": "Honda GX 200",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "max_power_kva",
-          "label": "Maximálny výkon",
-          "value": "3.0",
-          "unit": "kVA",
-          "is_filterable": false
-        },
-        {
-          "key": "rated_power_kva",
-          "label": "Menovitý výkon",
-          "value": "2.6",
-          "unit": "kVA",
-          "is_filterable": false
-        },
-        {
-          "key": "phases",
-          "label": "Počet fáz",
-          "value": "1",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "voltage_v",
-          "label": "Napätie",
-          "value": "230",
-          "unit": "V",
-          "is_filterable": true
-        },
-        {
-          "key": "inverter",
-          "label": "Invertor",
-          "value": "nie",
-          "unit": null,
-          "is_filterable": true
-        },
-        {
-          "key": "avr",
-          "label": "Regulácia napätia",
-          "value": "cyklokonvertor",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "fuel_tank_l",
-          "label": "Objem palivovej nádrže",
-          "value": "9.7",
-          "unit": "l",
-          "is_filterable": false
-        },
-        {
-          "key": "runtime_h",
-          "label": "Prevádzka pri menovitom zaťažení",
-          "value": "6",
-          "unit": "h",
-          "is_filterable": false
-        },
-        {
-          "key": "noise_db",
-          "label": "Garantovaná hladina akustického výkonu LwA",
-          "value": "96",
-          "unit": "dB(A)",
-          "is_filterable": false
-        },
-        {
-          "key": "start",
-          "label": "Štartovanie",
-          "value": "ručný",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "dc_output",
-          "label": "Jednosmerný výstup",
-          "value": "12 V / 12 A",
-          "unit": null,
-          "is_filterable": false
-        },
-        {
-          "key": "dimensions_mm",
-          "label": "Rozmery (D × Š × V)",
-          "value": "445 × 402 × 480",
-          "unit": "mm",
-          "is_filterable": false
-        },
-        {
-          "key": "fuel",
-          "label": "Palivo",
-          "value": "benzín",
-          "unit": null,
-          "is_filterable": true
-        }
-      ],
-      "images": [
-        "/demo-products/honda-em30.webp"
-      ]
-    },
-    {
       "slug": "honda-ect-7000g",
       "name": "Honda ECT 7000G Trojfázová elektrocentrála 7,0 kVA",
       "brand_slug": "honda",
@@ -3210,9 +3389,9 @@
       "ean": null,
       "short_description": "Robustná rámová trojfázová elektrocentrála s motorom Honda GX 390 pre stavby bez prípojky: napája 400 V stroje aj 230 V náradie.",
       "description": "**Honda ECT 7000G** – Robustná rámová trojfázová elektrocentrála s motorom Honda GX 390 pre stavby bez prípojky: napája 400 V stroje aj 230 V náradie.\n\nKľúčové parametre: max. výkon 3f / 1f 7,0 / 4,0 kVA, menovitý výkon 3f / 1f 6,5 / 4,0 kVA, napätie 3f / 1f 400 / 230 V, zásuvky 1 × 230 V, 1 × 400 V.\n\nTrojfázová elektrocentrála poháňa stroje na 400 V, napríklad miešačky, píly, čerpadlá či elektrické ohrievače, a cez 230 V zásuvky zároveň napája bežné náradie.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 2249,
+      "price_gross_eur": 2262.27,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1462.76,
+      "purchase_price_net_eur": 1471.39,
       "vat_rate": 23,
       "weight_kg": 79,
       "shipping_class": "own_transport",
@@ -3365,9 +3544,9 @@
       "ean": null,
       "short_description": "Rámová trojfázová elektrocentrála s automatickou reguláciou napätia (AVR) a motorom Honda GX 390 na 400 V stroje aj citlivejšie 230 V spotrebiče.",
       "description": "**Honda ECT 7000G AVR** – Rámová trojfázová elektrocentrála s automatickou reguláciou napätia (AVR) a motorom Honda GX 390 na 400 V stroje aj citlivejšie 230 V spotrebiče.\n\nKľúčové parametre: max. výkon 3f / 1f 7,0 / 4,0 kVA, menovitý výkon 3f / 1f 6,5 / 4,0 kVA, napätie 3f / 1f 400 / 230 V, regulácia napätia AVR.\n\nTrojfázová elektrocentrála poháňa stroje na 400 V, napríklad miešačky, píly, čerpadlá či elektrické ohrievače, a cez 230 V zásuvky zároveň napája bežné náradie.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 2549,
+      "price_gross_eur": 2597.45,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 1657.89,
+      "purchase_price_net_eur": 1689.4,
       "vat_rate": 23,
       "weight_kg": 79,
       "shipping_class": "own_transport",
@@ -3520,9 +3699,9 @@
       "ean": null,
       "short_description": "Veľká trojfázová elektrocentrála 15 kVA s dvojvalcom Honda GX 690, elektrickým štartom, AVR a transportným podvozkom na celodenné napájanie stavby.",
       "description": "**Honda TP 15 HP AVR s podvozkom** – Veľká trojfázová elektrocentrála 15 kVA s dvojvalcom Honda GX 690, elektrickým štartom, AVR a transportným podvozkom na celodenné napájanie stavby.\n\nKľúčové parametre: max. výkon 3f / 1f 15,0 / 8,0 kVA, menovitý výkon 3f / 1f 14,0 / 7,2 kVA, napätie 3f / 1f 400 / 230 V, zásuvky 3 × 230 V, 2 × 400 V.\n\nTrojfázová elektrocentrála poháňa stroje na 400 V, napríklad miešačky, píly, čerpadlá či elektrické ohrievače, a cez 230 V zásuvky zároveň napája bežné náradie.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 6989,
+      "price_gross_eur": 7248.54,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 4545.69,
+      "purchase_price_net_eur": 4714.5,
       "vat_rate": 23,
       "weight_kg": 146,
       "shipping_class": "own_transport",
@@ -3676,9 +3855,9 @@
       "ean": null,
       "short_description": "2\" kalové čerpadlo s motorom Honda GX 160 na odvodňovanie výkopov a zatopených priestorov, prečerpáva vodu s pieskom a štrkom do 24 mm.",
       "description": "**Honda WT20** – 2\" kalové čerpadlo s motorom Honda GX 160 na odvodňovanie výkopov a zatopených priestorov, prečerpáva vodu s pieskom a štrkom do 24 mm.\n\nKľúčové parametre: maximálny prietok 710 l/min, maximálna dopravná výška 30 m, maximálna sacia výška 8 m, priemer sania / výtlaku 50 / 50 mm.\n\nMotorové čerpadlo nepotrebuje elektrinu, stačí benzín. Je to istota pri povodniach, na odľahlých stavbách a všade, kde nie je prípojka.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Kvôli hmotnosti ho doručujeme vlastnou dopravou alebo si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1459,
+      "price_gross_eur": 1495.67,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 948.94,
+      "purchase_price_net_eur": 972.79,
       "vat_rate": 23,
       "weight_kg": 47,
       "shipping_class": "own_transport",
@@ -3785,13 +3964,13 @@
       "brand_slug": "honda",
       "supplier_slug": "unicon",
       "category_slug": "motory",
-      "sku": "GX120",
+      "sku": "GX120T3-QX-4E-OH",
       "ean": null,
       "short_description": "Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 2,4 kW (3,2 HP) pre ľahké stroje, ako sú malé čerpadlá, kultivátory a dopravníky.",
-      "description": "**Honda GX 120** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 2,4 kW (3,2 HP) pre ľahké stroje, ako sú malé čerpadlá, kultivátory a dopravníky.\n\nKľúčové parametre: zdvihový objem 122 cm³, výkon motora 2,4 kW (3,2 HP), maximálny krútiaci moment 7,5 Nm, objem palivovej nádrže 2,0 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 479,
+      "description": "**Honda GX 120** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 2,4 kW (3,2 HP) pre ľahké stroje, ako sú malé čerpadlá, kultivátory a dopravníky.\n\nKľúčové parametre: zdvihový objem 122 cm³, výkon motora 2,4 kW (3,2 HP), maximálny krútiaci moment 7,5 Nm, objem palivovej nádrže 2,0 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nDodávame variant GX120T3-QX-4E-OH (hriadeľ s perom, typ Q).\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 591.93,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 311.54,
+      "purchase_price_net_eur": 384.99,
       "vat_rate": 23,
       "weight_kg": 13.2,
       "shipping_class": "courier",
@@ -3884,13 +4063,13 @@
       "brand_slug": "honda",
       "supplier_slug": "unicon",
       "category_slug": "motory",
-      "sku": "GX160",
+      "sku": "GX160H2-QX-3-OH",
       "ean": null,
       "short_description": "Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 3,6 kW (4,8 HP) pre vibračné dosky, čerpadlá, miešačky a malé elektrocentrály.",
-      "description": "**Honda GX 160** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 3,6 kW (4,8 HP) pre vibračné dosky, čerpadlá, miešačky a malé elektrocentrály.\n\nKľúčové parametre: zdvihový objem 163 cm³, výkon motora 3,6 kW (4,8 HP), maximálny krútiaci moment 10,3 Nm, objem palivovej nádrže 3,1 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 559,
+      "description": "**Honda GX 160** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 3,6 kW (4,8 HP) pre vibračné dosky, čerpadlá, miešačky a malé elektrocentrály.\n\nKľúčové parametre: zdvihový objem 163 cm³, výkon motora 3,6 kW (4,8 HP), maximálny krútiaci moment 10,3 Nm, objem palivovej nádrže 3,1 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nDodávame variant GX160H2-QX-3-OH (hriadeľ s perom, typ Q).\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 553.45,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 363.58,
+      "purchase_price_net_eur": 359.97,
       "vat_rate": 23,
       "weight_kg": 15.1,
       "shipping_class": "courier",
@@ -3983,13 +4162,13 @@
       "brand_slug": "honda",
       "supplier_slug": "unicon",
       "category_slug": "motory",
-      "sku": "GX200",
+      "sku": "GX200H2-QX-3-OH",
       "ean": null,
       "short_description": "Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 4,3 kW (5,8 HP) pre vibračné dosky, rezače škár, čerpadlá a elektrocentrály do 3 kVA.",
-      "description": "**Honda GX 200** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 4,3 kW (5,8 HP) pre vibračné dosky, rezače škár, čerpadlá a elektrocentrály do 3 kVA.\n\nKľúčové parametre: zdvihový objem 196 cm³, výkon motora 4,3 kW (5,8 HP), maximálny krútiaci moment 12,4 Nm, objem palivovej nádrže 3,1 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 619,
+      "description": "**Honda GX 200** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 4,3 kW (5,8 HP) pre vibračné dosky, rezače škár, čerpadlá a elektrocentrály do 3 kVA.\n\nKľúčové parametre: zdvihový objem 196 cm³, výkon motora 4,3 kW (5,8 HP), maximálny krútiaci moment 12,4 Nm, objem palivovej nádrže 3,1 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nDodávame variant GX200H2-QX-3-OH (hriadeľ s perom, typ Q).\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 592.39,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 402.6,
+      "purchase_price_net_eur": 385.3,
       "vat_rate": 23,
       "weight_kg": 16.1,
       "shipping_class": "courier",
@@ -4082,13 +4261,13 @@
       "brand_slug": "honda",
       "supplier_slug": "unicon",
       "category_slug": "motory",
-      "sku": "GX270",
+      "sku": "GX270T2-QH-B1-OH",
       "ean": null,
       "short_description": "Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 6,3 kW (8,4 HP) pre reverzné vibračné dosky, kalové čerpadlá 3\" a minidumpery.",
-      "description": "**Honda GX 270** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 6,3 kW (8,4 HP) pre reverzné vibračné dosky, kalové čerpadlá 3\" a minidumpery.\n\nKľúčové parametre: zdvihový objem 270 cm³, výkon motora 6,3 kW (8,4 HP), maximálny krútiaci moment 19,1 Nm, objem palivovej nádrže 5,3 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 889,
+      "description": "**Honda GX 270** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 6,3 kW (8,4 HP) pre reverzné vibračné dosky, kalové čerpadlá 3\" a minidumpery.\n\nKľúčové parametre: zdvihový objem 270 cm³, výkon motora 6,3 kW (8,4 HP), maximálny krútiaci moment 19,1 Nm, objem palivovej nádrže 5,3 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nDodávame variant GX270T2-QH-B1-OH (hriadeľ s perom, typ Q).\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 799.09,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 578.21,
+      "purchase_price_net_eur": 519.74,
       "vat_rate": 23,
       "weight_kg": 25.8,
       "shipping_class": "courier",
@@ -4181,13 +4360,13 @@
       "brand_slug": "honda",
       "supplier_slug": "unicon",
       "category_slug": "motory",
-      "sku": "GX390",
+      "sku": "GX390T2-QH-B1-OH",
       "ean": null,
       "short_description": "Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 8,7 kW (11,7 HP) pre ťažké vibračné dosky, rezače škár, elektrocentrály 5 – 7 kVA a kalové čerpadlá 4\".",
-      "description": "**Honda GX 390** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 8,7 kW (11,7 HP) pre ťažké vibračné dosky, rezače škár, elektrocentrály 5 – 7 kVA a kalové čerpadlá 4\".\n\nKľúčové parametre: zdvihový objem 389 cm³, výkon motora 8,7 kW (11,7 HP), maximálny krútiaci moment 26,5 Nm, objem palivovej nádrže 6,1 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 1149,
+      "description": "**Honda GX 390** – Profesionálny štvortaktný motor Honda s horizontálnym hriadeľom a výkonom 8,7 kW (11,7 HP) pre ťažké vibračné dosky, rezače škár, elektrocentrály 5 – 7 kVA a kalové čerpadlá 4\".\n\nKľúčové parametre: zdvihový objem 389 cm³, výkon motora 8,7 kW (11,7 HP), maximálny krútiaci moment 26,5 Nm, objem palivovej nádrže 6,1 l.\n\nHonda GX je priemyselný benzínový motor s horizontálnym hriadeľom, ktorý poháňa vibračné dosky, rezače škár, čerpadlá, elektrocentrály, miešačky a ďalšie stroje. Hodí sa ako náhrada opotrebovaného motora aj na stavbu vlastného stroja.\n\nDodávame variant GX390T2-QH-B1-OH (hriadeľ s perom, typ Q).\n\nPred odoslaním motor v Senci skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1079.42,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 747.32,
+      "purchase_price_net_eur": 702.06,
       "vat_rate": 23,
       "weight_kg": 31.7,
       "shipping_class": "courier",
@@ -4362,9 +4541,9 @@
       "ean": null,
       "short_description": "Súprava ponorného vibrátora: pohonná jednotka DINGO 2 300 W do zásuvky 230 V, ohybný hriadeľ TDX 3 m a hlavica AX 58 na základy, steny, stĺpy a stropné dosky.",
       "description": "**Enar DINGO 230 V + TDX 3 m + AX 58** – Súprava ponorného vibrátora: pohonná jednotka DINGO 2 300 W do zásuvky 230 V, ohybný hriadeľ TDX 3 m a hlavica AX 58 na základy, steny, stĺpy a stropné dosky.\n\nKľúčové parametre: príkon 2,3 kW, napätie 230 V, priemer hlavice 58 mm, dĺžka ohybného hriadeľa 3 m.\n\nPonorný vibrátor vytlačí z čerstvého betónu vzduchové bubliny, takže konštrukcia je hutná, pevná a má hladký povrch bez kaverien.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 779,
+      "price_gross_eur": 843.97,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 506.67,
+      "purchase_price_net_eur": 548.92,
       "vat_rate": 23,
       "weight_kg": 15.3,
       "shipping_class": "courier",
@@ -4447,9 +4626,9 @@
       "ean": null,
       "short_description": "Súprava ponorného vibrátora: pohonná jednotka DINGO 2 300 W do zásuvky 230 V, ohybný hriadeľ TDX 5 m a hlavica AX 58 na základy, steny, stĺpy a stropné dosky.",
       "description": "**Enar DINGO 230 V + TDX 5 m + AX 58** – Súprava ponorného vibrátora: pohonná jednotka DINGO 2 300 W do zásuvky 230 V, ohybný hriadeľ TDX 5 m a hlavica AX 58 na základy, steny, stĺpy a stropné dosky.\n\nKľúčové parametre: príkon 2,3 kW, napätie 230 V, priemer hlavice 58 mm, dĺžka ohybného hriadeľa 5 m.\n\nPonorný vibrátor vytlačí z čerstvého betónu vzduchové bubliny, takže konštrukcia je hutná, pevná a má hladký povrch bez kaverien.\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
-      "price_gross_eur": 819,
+      "price_gross_eur": 892.64,
       "compare_at_price_eur": null,
-      "purchase_price_net_eur": 532.68,
+      "purchase_price_net_eur": 580.57,
       "vat_rate": 23,
       "weight_kg": 17.3,
       "shipping_class": "courier",
@@ -4520,6 +4699,594 @@
       ],
       "images": [
         "/demo-products/enar-dingo-230v.webp"
+      ]
+    },
+    {
+      "slug": "enar-dingo",
+      "name": "Enar DINGO Pohonná jednotka pre ponorné vibrátory, 2 300 W, 230 V",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "DINGO",
+      "ean": null,
+      "short_description": "Odolná elektrická pohonná jednotka pre ponorné vibrátory s ohybným hriadeľom, chránená oceľovým rámom s tromi rukoväťami.",
+      "description": "**Enar DINGO** – Odolná elektrická pohonná jednotka pre ponorné vibrátory s ohybným hriadeľom, chránená oceľovým rámom s tromi rukoväťami.\n\nKľúčové parametre: príkon 2,3 kW, napätie 230 V, otáčky naprázdno 18 000 min⁻¹, hmotnosť 5,8 kg.\n\nUniverzálny motor s dvojitou izoláciou (IP44) je v kryte zo sklolaminátového polyamidu a ochrannom ráme, vodotesný vypínač a nastaviteľný popruh. Pasuje na hriadele Enar TDX/TDXE. Na jednotku pripojíte ohybný hriadeľ s hlavicou podľa betónovaného prvku (hriadele a hlavice predávame samostatne aj v súpravách).\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 435.52,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 283.26,
+      "vat_rate": 23,
+      "weight_kg": 5.8,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.3",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky naprázdno / pri zaťažení",
+          "value": "18 000 / 12 000",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "ip_rating",
+          "label": "Krytie",
+          "value": "IP 44, dvojitá izolácia",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "compatible",
+          "label": "Ohybné hriadele",
+          "value": "Enar TDX / TDXE",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "345 × 244 × 229",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "5.8",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-dingo.webp",
+        "/demo-products/enar-dingo-2.webp"
+      ]
+    },
+    {
+      "slug": "enar-avmu",
+      "name": "Enar AVMU Pohonná jednotka pre ponorné vibrátory, 2 300 W, 230 V",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "AVMU",
+      "ean": null,
+      "short_description": "Kompaktná a ľahká (5 kg) elektrická pohonná jednotka pre ponorné vibrátory s ohybným hriadeľom, do bežnej zásuvky 230 V.",
+      "description": "**Enar AVMU** – Kompaktná a ľahká (5 kg) elektrická pohonná jednotka pre ponorné vibrátory s ohybným hriadeľom, do bežnej zásuvky 230 V.\n\nKľúčové parametre: príkon 2,3 kW, napätie 230 V, otáčky naprázdno 18 000 min⁻¹, hmotnosť 5 kg.\n\nUniverzálny motor s dvojitou izoláciou (IP44), vypínač v rukoväti, vzduchový filter a uhlíky vymeniteľné zvonku. Pasuje na hriadele Enar TAX/TAXE. Na jednotku pripojíte ohybný hriadeľ s hlavicou podľa betónovaného prvku (hriadele a hlavice predávame samostatne aj v súpravách).\n\nPred odoslaním stroj v Senci zapojíme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 384.1,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 249.82,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "power_kw",
+          "label": "Príkon",
+          "value": "2.3",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "voltage_v",
+          "label": "Napätie",
+          "value": "230",
+          "unit": "V",
+          "is_filterable": true
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky naprázdno / pri zaťažení",
+          "value": "18 000 / 12 000",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "ip_rating",
+          "label": "Krytie",
+          "value": "IP 44, dvojitá izolácia",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "compatible",
+          "label": "Ohybné hriadele",
+          "value": "Enar TAX / TAXE",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "dimensions_mm",
+          "label": "Rozmery (D × Š × V)",
+          "value": "354 × 150 × 205",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "5",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-avmu.webp",
+        "/demo-products/enar-avmu-2.webp"
+      ]
+    },
+    {
+      "slug": "enar-taxe-tdxe-3-ax25",
+      "name": "Enar TAXE-TDXE 3/AX25 Ohybný hriadeľ 3 m s hlavicou Ø 25 mm",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "TAXE-TDXE 3/AX25",
+      "ean": null,
+      "short_description": "Ohybný hriadeľ 3 m s vibračnou hlavicou AX25 (Ø 25 mm) na zhutňovanie betónu – tenké steny, husto vystužené prvky a malé dielce. Pre pohonné jednotky Enar AVMU a DINGO.",
+      "description": "**Enar TAXE-TDXE 3/AX25** – Ohybný hriadeľ 3 m s vibračnou hlavicou AX25 (Ø 25 mm) na zhutňovanie betónu – tenké steny, husto vystužené prvky a malé dielce. Pre pohonné jednotky Enar AVMU a DINGO.\n\nKľúčové parametre: priemer hlavice 25 mm, dĺžka hlavice 285 mm, dĺžka hriadeľa 3 m, výkonnosť zhutňovania do 10 m³/h.\n\nOhybný hriadeľ s vibračnou hlavicou sa pripája k elektrickej pohonnej jednotke Enar. Dodávame ho vo verzii TAXE/TAX pre jednotku AVMU alebo TDXE/TDX pre jednotku DINGO (líšia sa koncovkou hriadeľa, nie sú zameniteľné). Verziu potvrdíme pri objednávke, uveďte ju prosím v poznámke. Hlavica má predimenzovaný excenter, kalenú oceľovú špičku a dvojité tesnenie proti vode.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 376.0,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 244.55,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "needle_diameter_mm",
+          "label": "Priemer hlavice",
+          "value": "25",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "needle_length_mm",
+          "label": "Dĺžka hlavice",
+          "value": "285",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "needle_weight_kg",
+          "label": "Hmotnosť hlavice",
+          "value": "0.8",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hlavice",
+          "value": "14000",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "capacity_m3h",
+          "label": "Výkonnosť zhutňovania",
+          "value": "10",
+          "unit": "m³/h",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_length_m",
+          "label": "Dĺžka ohybného hriadeľa",
+          "value": "3",
+          "unit": "m",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_weight_kg",
+          "label": "Hmotnosť hriadeľa",
+          "value": "5",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "compatible",
+          "label": "Pohonná jednotka",
+          "value": "Enar AVMU (TAXE/TAX) alebo DINGO (TDXE/TDX)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-hriadel-tdxe.webp",
+        "/demo-products/enar-hlavice-ax.webp"
+      ]
+    },
+    {
+      "slug": "enar-taxe-tdxe-5-ax25",
+      "name": "Enar TAXE-TDXE 5/AX25 Ohybný hriadeľ 5 m s hlavicou Ø 25 mm",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "TAXE-TDXE 5/AX25",
+      "ean": null,
+      "short_description": "Ohybný hriadeľ 5 m s vibračnou hlavicou AX25 (Ø 25 mm) na zhutňovanie betónu – tenké steny, husto vystužené prvky a malé dielce. Pre pohonné jednotky Enar AVMU a DINGO.",
+      "description": "**Enar TAXE-TDXE 5/AX25** – Ohybný hriadeľ 5 m s vibračnou hlavicou AX25 (Ø 25 mm) na zhutňovanie betónu – tenké steny, husto vystužené prvky a malé dielce. Pre pohonné jednotky Enar AVMU a DINGO.\n\nKľúčové parametre: priemer hlavice 25 mm, dĺžka hlavice 285 mm, dĺžka hriadeľa 5 m, výkonnosť zhutňovania do 10 m³/h.\n\nOhybný hriadeľ s vibračnou hlavicou sa pripája k elektrickej pohonnej jednotke Enar. Dodávame ho vo verzii TAXE/TAX pre jednotku AVMU alebo TDXE/TDX pre jednotku DINGO (líšia sa koncovkou hriadeľa, nie sú zameniteľné). Verziu potvrdíme pri objednávke, uveďte ju prosím v poznámke. Hlavica má predimenzovaný excenter, kalenú oceľovú špičku a dvojité tesnenie proti vode.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 424.67,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 276.21,
+      "vat_rate": 23,
+      "weight_kg": 7,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "needle_diameter_mm",
+          "label": "Priemer hlavice",
+          "value": "25",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "needle_length_mm",
+          "label": "Dĺžka hlavice",
+          "value": "285",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "needle_weight_kg",
+          "label": "Hmotnosť hlavice",
+          "value": "0.8",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hlavice",
+          "value": "14000",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "capacity_m3h",
+          "label": "Výkonnosť zhutňovania",
+          "value": "10",
+          "unit": "m³/h",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_length_m",
+          "label": "Dĺžka ohybného hriadeľa",
+          "value": "5",
+          "unit": "m",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_weight_kg",
+          "label": "Hmotnosť hriadeľa",
+          "value": "7",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "compatible",
+          "label": "Pohonná jednotka",
+          "value": "Enar AVMU (TAXE/TAX) alebo DINGO (TDXE/TDX)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-hriadel-tdxe.webp",
+        "/demo-products/enar-hlavice-ax.webp"
+      ]
+    },
+    {
+      "slug": "enar-tax-tdx-3-ax40",
+      "name": "Enar TAX-TDX 3/AX40 Ohybný hriadeľ 3 m s hlavicou Ø 40 mm",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "TAX-TDX 3/AX40",
+      "ean": null,
+      "short_description": "Ohybný hriadeľ 3 m s vibračnou hlavicou AX40 (Ø 40 mm) na zhutňovanie betónu – stropné dosky, základy a steny. Pre pohonné jednotky Enar AVMU a DINGO.",
+      "description": "**Enar TAX-TDX 3/AX40** – Ohybný hriadeľ 3 m s vibračnou hlavicou AX40 (Ø 40 mm) na zhutňovanie betónu – stropné dosky, základy a steny. Pre pohonné jednotky Enar AVMU a DINGO.\n\nKľúčové parametre: priemer hlavice 40 mm, dĺžka hlavice 335 mm, dĺžka hriadeľa 3 m, výkonnosť zhutňovania do 17 m³/h.\n\nOhybný hriadeľ s vibračnou hlavicou sa pripája k elektrickej pohonnej jednotke Enar. Dodávame ho vo verzii TAXE/TAX pre jednotku AVMU alebo TDXE/TDX pre jednotku DINGO (líšia sa koncovkou hriadeľa, nie sú zameniteľné). Verziu potvrdíme pri objednávke, uveďte ju prosím v poznámke. Hlavica má predimenzovaný excenter, kalenú oceľovú špičku a dvojité tesnenie proti vode.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 377.36,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 245.44,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "needle_diameter_mm",
+          "label": "Priemer hlavice",
+          "value": "40",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "needle_length_mm",
+          "label": "Dĺžka hlavice",
+          "value": "335",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "needle_weight_kg",
+          "label": "Hmotnosť hlavice",
+          "value": "2.2",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hlavice",
+          "value": "13500",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "capacity_m3h",
+          "label": "Výkonnosť zhutňovania",
+          "value": "17",
+          "unit": "m³/h",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_length_m",
+          "label": "Dĺžka ohybného hriadeľa",
+          "value": "3",
+          "unit": "m",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_weight_kg",
+          "label": "Hmotnosť hriadeľa",
+          "value": "5",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "compatible",
+          "label": "Pohonná jednotka",
+          "value": "Enar AVMU (TAXE/TAX) alebo DINGO (TDXE/TDX)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-hriadel-tax.webp",
+        "/demo-products/enar-hlavice-ax.webp"
+      ]
+    },
+    {
+      "slug": "enar-tax-tdx-5-ax40",
+      "name": "Enar TAX-TDX 5/AX40 Ohybný hriadeľ 5 m s hlavicou Ø 40 mm",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "TAX-TDX 5/AX40",
+      "ean": null,
+      "short_description": "Ohybný hriadeľ 5 m s vibračnou hlavicou AX40 (Ø 40 mm) na zhutňovanie betónu – stropné dosky, základy a steny. Pre pohonné jednotky Enar AVMU a DINGO.",
+      "description": "**Enar TAX-TDX 5/AX40** – Ohybný hriadeľ 5 m s vibračnou hlavicou AX40 (Ø 40 mm) na zhutňovanie betónu – stropné dosky, základy a steny. Pre pohonné jednotky Enar AVMU a DINGO.\n\nKľúčové parametre: priemer hlavice 40 mm, dĺžka hlavice 335 mm, dĺžka hriadeľa 5 m, výkonnosť zhutňovania do 17 m³/h.\n\nOhybný hriadeľ s vibračnou hlavicou sa pripája k elektrickej pohonnej jednotke Enar. Dodávame ho vo verzii TAXE/TAX pre jednotku AVMU alebo TDXE/TDX pre jednotku DINGO (líšia sa koncovkou hriadeľa, nie sú zameniteľné). Verziu potvrdíme pri objednávke, uveďte ju prosím v poznámke. Hlavica má predimenzovaný excenter, kalenú oceľovú špičku a dvojité tesnenie proti vode.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 426.04,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 277.1,
+      "vat_rate": 23,
+      "weight_kg": 7,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "needle_diameter_mm",
+          "label": "Priemer hlavice",
+          "value": "40",
+          "unit": "mm",
+          "is_filterable": true
+        },
+        {
+          "key": "needle_length_mm",
+          "label": "Dĺžka hlavice",
+          "value": "335",
+          "unit": "mm",
+          "is_filterable": false
+        },
+        {
+          "key": "needle_weight_kg",
+          "label": "Hmotnosť hlavice",
+          "value": "2.2",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "rated_rpm",
+          "label": "Otáčky hlavice",
+          "value": "13500",
+          "unit": "min⁻¹",
+          "is_filterable": false
+        },
+        {
+          "key": "capacity_m3h",
+          "label": "Výkonnosť zhutňovania",
+          "value": "17",
+          "unit": "m³/h",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_length_m",
+          "label": "Dĺžka ohybného hriadeľa",
+          "value": "5",
+          "unit": "m",
+          "is_filterable": false
+        },
+        {
+          "key": "shaft_weight_kg",
+          "label": "Hmotnosť hriadeľa",
+          "value": "7",
+          "unit": "kg",
+          "is_filterable": false
+        },
+        {
+          "key": "compatible",
+          "label": "Pohonná jednotka",
+          "value": "Enar AVMU (TAXE/TAX) alebo DINGO (TDXE/TDX)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-hriadel-tax.webp",
+        "/demo-products/enar-hlavice-ax.webp"
+      ]
+    },
+    {
+      "slug": "enar-qzh",
+      "name": "Enar QZH Plávajúca vibračná lišta (Honda GX25)",
+      "brand_slug": "enar",
+      "supplier_slug": "unicon",
+      "category_slug": "betonarska-technika",
+      "sku": "QZH",
+      "ean": null,
+      "short_description": "Ľahká plávajúca vibračná lišta pre jedného pracovníka na stiahnutie a zhutnenie betónových podláh, bez koľajníc, až k stenám a stĺpom.",
+      "description": "**Enar QZH** – Ľahká plávajúca vibračná lišta pre jedného pracovníka na stiahnutie a zhutnenie betónových podláh, bez koľajníc, až k stenám a stĺpom.\n\nKľúčové parametre: motor Honda GX25, vibrácie do 9 000 kmitov/min, odstredivá sila 1 500 N, hmotnosť jednotky 12,5 kg.\n\nNatočením rukoväte sa profil nakloní a zmení smer práce, takže lišta pracuje oboma smermi a dosiahne až k stenám a stĺpom. Vibrácie sa regulujú plynovou páčkou. Hliníkový profil QZ (2, 3 alebo 4 m) nie je súčasťou balenia, dodáme ho na objednávku.\n\nPred odoslaním stroj v Senci naštartujeme a skontrolujeme. Posielame ho kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 1020.3,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 663.61,
+      "vat_rate": 23,
+      "weight_kg": 12.5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
+      "is_featured": false,
+      "rental_url": "https://royalstroje.sk",
+      "specs": [
+        {
+          "key": "engine",
+          "label": "Motor",
+          "value": "Honda GX25",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "power_kw",
+          "label": "Výkon motora",
+          "value": "0.8",
+          "unit": "kW",
+          "is_filterable": false
+        },
+        {
+          "key": "fuel",
+          "label": "Palivo",
+          "value": "benzín",
+          "unit": null,
+          "is_filterable": true
+        },
+        {
+          "key": "frequency_vpm",
+          "label": "Frekvencia vibrácií",
+          "value": "do 9000",
+          "unit": "kmitov/min",
+          "is_filterable": false
+        },
+        {
+          "key": "centrifugal_force_n",
+          "label": "Odstredivá sila",
+          "value": "1500",
+          "unit": "N",
+          "is_filterable": false
+        },
+        {
+          "key": "profile",
+          "label": "Profil",
+          "value": "hliníkový QZ 2 / 3 / 4 m (nie je v balení)",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "fuel_tank_l",
+          "label": "Objem palivovej nádrže",
+          "value": "0.55",
+          "unit": "l",
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "12.5",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/enar-qzh.webp",
+        "/demo-products/enar-qzh-2.webp"
       ]
     },
     {
@@ -5845,6 +6612,92 @@
       "images": [
         "/demo-products/golz-fs125.webp",
         "/demo-products/golz-fs125-2.webp"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vd-450",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VD 450",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VD 450",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VD 450/20 a VD 450/22 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VD 450** – Pružná podložka pod hutniacu dosku NTC VD 450/20 a VD 450/22 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 182.52,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 118.71,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodná pre",
+          "value": "NTC VD 450/20, VD 450/22",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "5",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vd-450.webp"
+      ]
+    },
+    {
+      "slug": "ntc-podvozok-vd-450",
+      "name": "NTC Podvozok pre vibračné dosky VD 350 a VD 450",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Podvozek VD 350, 450",
+      "ean": null,
+      "short_description": "Odnímateľný dvojkolesový podvozok, s ktorým jeden človek presunie vibračnú dosku NTC VD 350 alebo VD 450 po stavbe bez dvíhania.",
+      "description": "**NTC podvozok VD 350/450** – Odnímateľný dvojkolesový podvozok, s ktorým jeden človek presunie vibračnú dosku NTC VD 350 alebo VD 450 po stavbe bez dvíhania.\n\nPodvozok tvorí oceľová os s dvomi plnogumovými kolesami a pozinkovaný držiak, ktorý sa nasadí na dosku. Dosku naň nakloníte a odveziete ako fúrik.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 184.55,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 120.03,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodný pre",
+          "value": "NTC VD 350, VD 450/20, VD 450/22",
+          "unit": null,
+          "is_filterable": false
+        },
+        {
+          "key": "weight",
+          "label": "Prevádzková hmotnosť",
+          "value": "6",
+          "unit": "kg",
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-podvozok-vd-450.webp"
       ]
     }
   ]
