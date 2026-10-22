@@ -4243,7 +4243,7 @@
       "warranty_months": 24,
       "manufacturer_warranty_note": null,
       "safety_info": "Pri práci používajte gumené rukavice a obuv. Elektrické vibrátory pripájajte len do zásuvky s prúdovým chráničom. Hlavicu nenechávajte bežať na vzduchu dlhšie, ako je nevyhnutné. Benzínové modely nepoužívajte v uzavretých priestoroch.",
-      "is_featured": false,
+      "is_featured": true,
       "rental_url": "https://royalstroje.sk",
       "specs": [
         {
@@ -6098,7 +6098,7 @@
       "warranty_months": 24,
       "manufacturer_warranty_note": null,
       "safety_info": "Stroj smie obsluhovať len poučená osoba staršia ako 18 rokov. Používajte chrániče sluchu, bezpečnostnú obuv a rukavice. Palivo dopĺňajte len pri vypnutom a vychladnutom motore. Nikdy nepracujte v uzavretých priestoroch, výfukové plyny obsahujú jedovatý oxid uhoľnatý.",
-      "is_featured": false,
+      "is_featured": true,
       "rental_url": "https://royalstroje.sk",
       "specs": [
         {

@@ -2195,7 +2195,7 @@ a.engineCodeLink:hover {
 /* ---------- footer ---------- */
 
 .footer {
-  padding-block: clamp(40px, 6vw, 72px) 96px;
+  padding-block: clamp(40px, 6vw, 72px) 28px;
   background: var(--ink);
   color: #d6d6cf;
 }
@@ -2464,17 +2464,19 @@ a.engineCodeLink:hover {
   .brands {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  /* A last tile left alone in its row becomes a full-width strip, so the grid never ends with a hole.
+     Two columns: the first tile spans the row, so the last one is alone when its index is even. */
   .cat:first-child,
-  .cat:last-child {
+  .cat:last-child:nth-child(even) {
     grid-column: 1 / -1;
   }
-  .cat:last-child a {
+  .cat:last-child:nth-child(even) a {
     min-height: 0;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
   }
-  .cat:last-child .catCount {
+  .cat:last-child:nth-child(even) .catCount {
     border-top: 0;
     padding-top: 0;
     gap: 12px;
@@ -2541,6 +2543,37 @@ a.engineCodeLink:hover {
   }
   .cat:first-child a {
     min-height: 330px;
+  }
+  /* Three columns: the first tile spans two rows next to tiles 2-5, then rows of three from tile 6.
+     Reset the two-column strip, then: alone in its row (6, 9, ...) -> strip, two in the row (7, 10, ...) -> span 2. */
+  .cat:last-child:nth-child(even) {
+    grid-column: auto;
+  }
+  .cat:last-child:nth-child(even) a {
+    min-height: 150px;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+  .cat:last-child:nth-child(even) .catCount {
+    border-top: 1px solid currentColor;
+    padding-top: 10px;
+  }
+  .cat:last-child:nth-child(3n + 6) {
+    grid-column: 1 / -1;
+  }
+  .cat:last-child:nth-child(3n + 6) a {
+    min-height: 0;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cat:last-child:nth-child(3n + 6) .catCount {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .cat:last-child:nth-child(3n + 7) {
+    grid-column: span 2;
   }
   .uspGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
