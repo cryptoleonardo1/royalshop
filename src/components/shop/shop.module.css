@@ -2022,31 +2022,35 @@ a.askPrice {
   color: var(--mute);
   white-space: nowrap;
 }
-a.engineAction {
+.engineAction {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   min-height: 40px;
   padding: 6px 12px;
   border: 2px solid var(--ink);
-  background: #fff;
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
   font-weight: 700;
   font-size: 0.875rem;
   white-space: nowrap;
-  text-decoration: none;
-  transition: background 0.2s;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
-a.engineAction:hover {
-  background: var(--hivis);
-}
-.engineTable tr[data-offered] a.engineAction {
-  background: var(--ink);
-  color: var(--paper);
-}
-.engineTable tr[data-offered] a.engineAction:hover {
+.engineAction:hover,
+.engineAction[data-added] {
   background: var(--hivis);
   color: var(--ink);
+}
+a.engineCodeLink {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a.engineCodeLink:hover {
+  text-decoration-thickness: 2px;
 }
 .engineNote {
   margin-top: 14px;
@@ -2063,7 +2067,7 @@ a.engineAction:hover {
   .engineNet {
     white-space: normal;
   }
-  a.engineAction svg {
+  .engineAction svg {
     display: none;
   }
   .engineTable thead th:nth-child(2),
@@ -2074,7 +2078,7 @@ a.engineAction:hover {
   .engineTable td {
     padding: 10px 8px;
   }
-  a.engineAction {
+  .engineAction {
     padding: 6px 8px;
   }
 }

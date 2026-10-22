@@ -170,7 +170,7 @@ export async function getCategories(): Promise<Category[]> {
   const db = createPublicClient();
   const [cats, prods] = await Promise.all([
     db.from("categories").select("id, parent_id, slug, name, description, sort_order").order("sort_order"),
-    db.from("products").select("category_id").eq("status", "active"),
+    db.from("products").select("category_id").eq("status", "active").eq("is_listed", true),
   ]);
   if (cats.error) fail("categories", cats.error);
   if (prods.error) fail("category counts", prods.error);
@@ -232,7 +232,12 @@ export async function getAllProducts(): Promise<ProductSummary[]> {
   "use cache";
   tagCatalog();
   const db = createPublicClient();
-  const { data, error } = await db.from("products").select(SUMMARY_SELECT).eq("status", "active").order("name");
+  const { data, error } = await db
+    .from("products")
+    .select(SUMMARY_SELECT)
+    .eq("status", "active")
+    .eq("is_listed", true)
+    .order("name");
   if (error) fail("products", error);
   const rows = data as Row[];
   const lowest = new Map(
@@ -321,6 +326,7 @@ export async function searchProducts(query: string, limit = 48): Promise<Product
     .from("products")
     .select(SUMMARY_SELECT)
     .eq("status", "active")
+    .eq("is_listed", true)
     .textSearch("search_vector", words.map((w) => `${w}:*`).join(" & "), { config: "simple" })
     .order("is_featured", { ascending: false })
     .order("name")
@@ -332,6 +338,8 @@ export async function searchProducts(query: string, limit = 48): Promise<Product
 
 // ───────────────────────────── Product detail ─────────────────────────────
 
+// Unlisted products (is_listed = false, e.g. Honda engine variants from the price list) keep their page:
+// the cart links to it.
 export async function getProduct(slug: string): Promise<ProductDetail | null> {
   "use cache";
   tagCatalog();

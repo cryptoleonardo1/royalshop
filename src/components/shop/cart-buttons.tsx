@@ -56,3 +56,28 @@ export function AddToCartButton({ item }: { item: Omit<CartLine, "quantity"> }) 
     </>
   );
 }
+
+// Compact variant for the Honda engine price list table.
+export function EngineAddButton({ item }: { item: Omit<CartLine, "quantity"> }) {
+  const [added, flash] = useAddedFlash();
+  return (
+    <>
+      <button
+        type="button"
+        className={css.engineAction}
+        data-added={added || undefined}
+        onClick={() => {
+          addToCart(item, 1);
+          flash();
+        }}
+      >
+        {added ? <Check size={16} aria-hidden="true" /> : <ShoppingCart size={16} aria-hidden="true" />}
+        {added ? "Pridané" : "Do košíka"}
+        <span className={css.srOnly}>: {item.sku ?? item.name}</span>
+      </button>
+      <span className={css.srOnly} aria-live="polite">
+        {added ? `${item.name} pridané do košíka.` : ""}
+      </span>
+    </>
+  );
+}

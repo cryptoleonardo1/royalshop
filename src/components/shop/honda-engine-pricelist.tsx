@@ -1,26 +1,28 @@
 import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
-import pricelist from "@/data/honda-engines.json";
-import { formatEur, netFromGross, type VatRate } from "@/lib/money";
-import { CodeLegend, shaftLabel } from "./honda-engine-codes";
+import { formatEur, netFromGross } from "@/lib/money";
+import {
+  family,
+  hondaEngineName,
+  hondaEngineSlug,
+  hondaEngines as engines,
+  hondaPriceList as pricelist,
+  hondaVatRate as vatRate,
+  shaftLabel,
+} from "@/lib/honda-engines";
+import { EngineAddButton } from "./cart-buttons";
+import { CodeLegend } from "./honda-engine-codes";
 import css from "./shop.module.css";
 
 // Full Honda GX engine price list under the "Motory" category: every variant Honda sells through our
-// supplier, not only the five engines we stock. Variants outside the catalog are ordered on request.
+// supplier, not only the five engines we stock. Every row can go to the cart: stocked variants are
+// catalog products, the rest are unlisted products seeded from the same price list.
 
-interface Engine {
-  code: string;
-  model: string;
-  type: string;
-  version: string | null;
-  colour: string;
-  priceGrossCents: number;
+export interface OfferedEngine {
+  slug: string;
+  name: string;
+  image: string | null;
 }
 
-const engines = pricelist.engines as Engine[];
-const vatRate = pricelist.vatRate as VatRate;
-
-const family = (model: string) => model.match(/^GX\d+/)?.[0] ?? model;
 const familyNumber = (f: string) => Number(f.replace(/\D/g, ""));
 const dateSk = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
@@ -29,11 +31,9 @@ const dateSk = (iso: string) => {
 
 export function HondaEnginePriceList({
   offered,
-  email,
   phone,
 }: {
-  offered: Map<string, string>; // engine code -> product slug of the variants we stock
-  email: string | null;
+  offered: Map<string, OfferedEngine>; // engine code -> catalog product of the variants we stock
   phone: string | null;
 }) {
   const families = [...Map.groupBy(engines, (e) => family(e.model))].sort(
@@ -49,8 +49,8 @@ export function HondaEnginePriceList({
         </h2>
       </div>
       <p className={css.engineLede}>
-        Okrem motorov vyššie vám dodáme ktorýkoľvek typ z oficiálneho cenníka Honda. Ceny sú odporúčané koncové ceny
-        s DPH. Motory mimo ponuky objednávame na požiadanie, termín dodania vám potvrdíme
+        Okrem motorov vyššie vám dodáme ktorýkoľvek typ z oficiálneho cenníka Honda a objednáte ho priamo cez košík.
+        Ceny sú odporúčané koncové ceny s DPH. Motory mimo ponuky objednávame u dodávateľa, termín dodania vám potvrdíme
         {phone ? (
           <>
             {" "}
@@ -88,12 +88,14 @@ export function HondaEnginePriceList({
                 </thead>
                 <tbody>
                   {items.map((e) => {
-                    const slug = offered.get(e.code);
-                    const subject = encodeURIComponent(`Dopyt: motor Honda ${e.code}`);
+                    const stocked = offered.get(e.code);
+                    const slug = stocked?.slug ?? hondaEngineSlug(e.code);
                     return (
-                      <tr key={e.code} data-offered={slug ? "" : undefined}>
+                      <tr key={e.code}>
                         <th scope="row">
-                          <span className={css.engineCode}>{e.code}</span>
+                          <Link href={`/produkt/${slug}`} className={`${css.engineCode} ${css.engineCodeLink}`}>
+                            {e.code}
+                          </Link>
                           <span className={css.engineShaft}>{shaftLabel(e)}</span>
                         </th>
                         <td>
@@ -101,16 +103,15 @@ export function HondaEnginePriceList({
                           <span className={css.engineNet}>{formatEur(netFromGross(e.priceGrossCents, vatRate))} bez DPH</span>
                         </td>
                         <td>
-                          {slug ? (
-                            <Link href={`/produkt/${slug}`} className={css.engineAction}>
-                              V ponuke <ArrowRight size={16} aria-hidden="true" />
-                            </Link>
-                          ) : email ? (
-                            <a href={`mailto:${email}?subject=${subject}`} className={css.engineAction}>
-                              <Mail size={16} aria-hidden="true" /> Dopytovať
-                              <span className={css.srOnly}> {e.code}</span>
-                            </a>
-                          ) : null}
+                          <EngineAddButton
+                            item={{
+                              slug,
+                              name: stocked?.name ?? hondaEngineName(e.code),
+                              sku: e.code,
+                              priceGrossCents: e.priceGrossCents,
+                              image: stocked?.image ?? null,
+                            }}
+                          />
                         </td>
                       </tr>
                     );

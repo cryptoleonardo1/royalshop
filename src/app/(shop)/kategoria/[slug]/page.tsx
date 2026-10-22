@@ -78,8 +78,13 @@ async function CategoryListing({ params, searchParams }: PageProps<"/kategoria/[
       />
       {slug === ENGINE_CATEGORY && (
         <HondaEnginePriceList
-          offered={new Map(products.filter((p) => p.sku).map((p) => [p.sku!, p.slug]))}
-          email={settings.email}
+          offered={
+            new Map(
+              products
+                .filter((p) => p.sku)
+                .map((p) => [p.sku!, { slug: p.slug, name: p.name, image: p.image?.path ?? null }]),
+            )
+          }
           phone={settings.phone}
         />
       )}

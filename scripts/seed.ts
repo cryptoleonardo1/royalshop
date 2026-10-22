@@ -8,7 +8,8 @@
 import { config } from "dotenv";
 import { readFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
-import { computeLine, computeTotals, eurToCents } from "../src/lib/money";
+import { computeLine, computeTotals, eurToCents, netFromGross } from "../src/lib/money";
+import { hondaEngineName, hondaEngineSlug, hondaEngines, hondaVatRate, shaftLabel } from "../src/lib/honda-engines";
 import { timelineFor, type OrderStatus, type ShippingMethod } from "../src/lib/order-state";
 
 config({ path: ".env.local" });
@@ -165,7 +166,42 @@ async function seedCatalog() {
   );
   if (related.length) must(await db.from("related_products").insert(related), "related");
 
-  console.log(`catalog: ${catalog.products.length} products, ${catalog.categories.length} categories`);
+  // Every other Honda GX variant from the engine price list: unlisted products, bought from the table on
+  // /kategoria/motory. Variants we stock are already catalog products (matched by SKU).
+  const stocked = new Set(catalog.products.map((p) => p.sku));
+  const engineTemplate = catalog.products.find((p) => p.category_slug === "motory" && p.brand_slug === "honda");
+  if (!engineTemplate) throw new Error("No Honda engine in catalog.json to copy safety info from");
+  const variants = hondaEngines.filter((e) => !stocked.has(e.code));
+  const variantRows = must(
+    await db.from("products").insert(
+      variants.map((e) => ({
+        slug: hondaEngineSlug(e.code), name: hondaEngineName(e.code), brand_id: brandId.honda,
+        supplier_id: supplierId[engineTemplate.supplier_slug], category_id: categoryId.motory, sku: e.code, ean: null,
+        short_description: `Benzínový motor Honda ${e.model}, ${shaftLabel(e)}. Typ z oficiálneho cenníka Honda, objednávame u dodávateľa.`,
+        description:
+          `Štvortaktný benzínový motor Honda **${e.code}** z oficiálneho cenníka motorov Honda. Motor objednávame u dodávateľa, termín dodania vám potvrdíme po objednávke.\n\n` +
+          "Pred objednaním porovnajte kód s typovým štítkom na starom motore (typ je vyrazený vedľa výrobného čísla). Ak si nie ste istí, pošlite nám fotku štítku a správny typ overíme.",
+        price_gross_cents: e.priceGrossCents, vat_rate: hondaVatRate, weight_kg: null, shipping_class: "courier",
+        battery_platform: "none", is_kit: false, warranty_months: engineTemplate.warranty_months,
+        manufacturer_warranty_note: null, safety_info: engineTemplate.safety_info, status: "active", is_featured: false,
+        rental_url: null, is_listed: false,
+      })),
+    ).select("id, sku"),
+    "engine variants",
+  );
+  const variantPrice = new Map(variants.map((e) => [e.code, e.priceGrossCents]));
+  must(
+    await db.from("product_costs").insert(
+      // Placeholder until the real rabat is known: net list price x 0.8, as for the catalog engines.
+      variantRows.map((r) => ({
+        product_id: r.id,
+        purchase_price_net_cents: Math.round(netFromGross(variantPrice.get(r.sku!)!, hondaVatRate) * 0.8),
+      })),
+    ),
+    "engine variant costs",
+  );
+
+  console.log(`catalog: ${catalog.products.length} products + ${variantRows.length} unlisted engine variants, ${catalog.categories.length} categories`);
   return { catalog, productIds, supplierId };
 }
 
