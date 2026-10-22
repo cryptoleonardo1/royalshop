@@ -6,6 +6,7 @@ import { getShopSettings, getTopCategories } from "@/lib/catalog";
 import { formatEur } from "@/lib/money";
 import { fontVariables } from "./fonts";
 import { CartLink } from "./cart-buttons";
+import { StickyHeader } from "./sticky-header";
 import css from "./shop.module.css";
 
 export async function ShopShell({ children }: { children: ReactNode }) {
@@ -41,7 +42,7 @@ export async function ShopShell({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      <header className={css.header}>
+      <StickyHeader>
         <div className={`${css.wrap} ${css.headerGrid}`}>
           <Link href="/" className={css.logo} aria-label="Royal Shop – úvod">
             <span className={css.logoRoyal}>Royal</span>
@@ -91,7 +92,7 @@ export async function ShopShell({ children }: { children: ReactNode }) {
             </li>
           </ul>
         </nav>
-      </header>
+      </StickyHeader>
 
       <main id="obsah">{children}</main>
 

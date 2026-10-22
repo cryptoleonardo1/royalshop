@@ -23,6 +23,7 @@
   --f-body: var(--font-body), "Helvetica Neue", sans-serif;
   --f-mono: var(--font-mono), ui-monospace, monospace;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --header-h: 0px; /* sticky header height; set from 800px up, on phones the header hides on scroll */
 
   position: relative;
   width: 100%;
@@ -169,9 +170,17 @@
 
 /* ---------- header ---------- */
 
+/* Sticky: logo, search, cart and the category nav stay on screen; the dark contact bar above scrolls away. */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   background: var(--paper);
   border-bottom: 3px solid var(--ink);
+  transition: transform 0.3s var(--ease);
+}
+.header[data-hidden] {
+  transform: translateY(-100%);
 }
 .headerGrid {
   display: grid;
@@ -196,6 +205,9 @@
   text-transform: uppercase;
   text-decoration: none;
   border: 3px solid var(--ink);
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
 }
 .logoRoyal {
   padding: 6px 8px 4px 10px;
@@ -205,6 +217,9 @@
 .logoShop {
   padding: 6px 10px 4px 8px;
   color: var(--ink);
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .search {
   grid-area: search;
@@ -276,13 +291,23 @@
 .userNav a:hover {
   border-color: var(--ink);
 }
-.cartLink {
+/* Cart = the shop's main action colour, same lift-and-shadow language as "Do košíka". */
+.userNav a.cartLink {
   position: relative;
-  background: var(--ink);
-  color: var(--paper) !important;
+  background: var(--hivis);
+  color: var(--ink);
+  border-color: var(--ink);
+  transition:
+    transform 0.15s var(--ease),
+    box-shadow 0.15s var(--ease);
 }
-.cartLink:hover {
-  background: var(--ink-3);
+.userNav a.cartLink:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.userNav a.cartLink:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 var(--ink);
 }
 .cartCount {
   display: inline-grid !important;
@@ -290,8 +315,8 @@
   min-width: 22px;
   height: 22px;
   padding-inline: 5px;
-  background: var(--hivis);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--hivis);
   font-family: var(--f-mono);
   font-size: 0.75rem;
   font-weight: 700;
@@ -313,6 +338,7 @@
   flex-shrink: 0;
 }
 .catNav a {
+  position: relative;
   display: block;
   padding: 12px 14px;
   font-family: var(--f-display);
@@ -323,16 +349,29 @@
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: inset 0 0 0 var(--ink);
-  transition:
-    box-shadow 0.25s var(--ease),
-    background 0.2s;
+  transition: background 0.2s;
+}
+/* Orange underline drawn from the left, like the footer links. */
+.catNav a:not(.catNavHot)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 3px;
+  background: var(--hivis);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease);
 }
 .catNav li:first-child a {
   padding-left: 0;
 }
-.catNav a:hover {
-  box-shadow: inset 0 -5px 0 var(--ink);
+.catNav li:first-child a::after {
+  left: 0;
+}
+.catNav a:not(.catNavHot):hover::after {
+  transform: scaleX(1);
 }
 .catNav .catNavHot {
   margin-block: 6px;
@@ -341,7 +380,6 @@
   border: 2px solid var(--ink);
 }
 .catNav .catNavHot:hover {
-  box-shadow: none;
   background: var(--ink);
   color: var(--hivis);
 }
@@ -2270,6 +2308,14 @@ a.engineCodeLink:hover {
 /* ---------- hover (pointer devices only) ---------- */
 
 @media (hover: hover) {
+  .logo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--hivis);
+  }
+  .logo:hover .logoShop {
+    background: var(--ink);
+    color: var(--paper);
+  }
   .card:hover {
     transform: translate(-4px, -4px);
     box-shadow: 8px 8px 0 var(--ink);
@@ -2448,6 +2494,9 @@ a.engineCodeLink:hover {
 }
 
 @media (min-width: 800px) {
+  .root {
+    --header-h: 146px;
+  }
   .headerGrid {
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "logo search user";
@@ -2513,7 +2562,7 @@ a.engineCodeLink:hover {
   }
   .gallery {
     position: sticky;
-    top: 20px;
+    top: calc(var(--header-h) + 20px);
   }
   .pdpLower {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
@@ -3100,10 +3149,10 @@ a.engineCodeLink:hover {
   .filters,
   .filters[data-open] {
     position: sticky;
-    top: 16px;
     inset: auto;
+    top: calc(var(--header-h) + 16px);
     z-index: auto;
-    max-height: calc(100vh - 32px);
+    max-height: calc(100vh - var(--header-h) - 32px);
     border: 3px solid var(--ink);
     transform: none;
     visibility: visible;
@@ -3697,6 +3746,6 @@ a.engineCodeLink:hover {
   }
   .summary {
     position: sticky;
-    top: 16px;
+    top: calc(var(--header-h) + 16px);
   }
 }
