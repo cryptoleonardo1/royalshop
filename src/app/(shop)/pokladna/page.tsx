@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getShippingZones, getShopSettings } from "@/lib/catalog";
+import { getShopSettings } from "@/lib/catalog";
 import { isDemoPayments } from "@/lib/stripe";
 import { CheckoutForm } from "@/components/shop/checkout-form";
 import css from "@/components/shop/shop.module.css";
@@ -8,7 +8,7 @@ import css from "@/components/shop/shop.module.css";
 export const metadata: Metadata = { title: "Pokladňa" };
 
 export default async function CheckoutPage() {
-  const [zones, settings] = await Promise.all([getShippingZones(), getShopSettings()]);
+  const settings = await getShopSettings();
   return (
     <div className={`${css.wrap} ${css.page}`}>
       <header className={css.pageHead}>
@@ -26,7 +26,6 @@ export default async function CheckoutPage() {
         <h1 className={css.pageTitle}>Pokladňa</h1>
       </header>
       <CheckoutForm
-        zones={zones}
         pickupAddress={settings.pickupAddress}
         pickupHours={settings.pickupHours}
         demoPayments={isDemoPayments}

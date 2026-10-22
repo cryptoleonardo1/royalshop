@@ -4,11 +4,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { connection } from "next/server";
 import { ArrowUpRight, BatteryCharging, Check, Factory, FileText, Mail, Phone, ShieldCheck, Store, Truck } from "lucide-react";
-import { getCategoryContext, getProduct, getProductSlugs, getShopSettings, type ProductDetail } from "@/lib/catalog";
+import {
+  getCategoryContext,
+  getProduct,
+  getProductSlugs,
+  getShopSettings,
+  type ProductDetail,
+  type ShopSettings,
+} from "@/lib/catalog";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
 import { formatEur, netFromGross } from "@/lib/money";
 import { discountPct, referencePrice } from "@/lib/pricing";
-import { estimateDelivery } from "@/lib/shipping";
+import { estimateDelivery, rateFor, shippingPrice } from "@/lib/shipping";
 import { Gallery } from "@/components/shop/gallery";
 import { BuyBox } from "@/components/shop/buy-box";
 import { ProductGrid } from "@/components/shop/product-card";
@@ -52,25 +59,27 @@ function RichText({ text }: { text: string }) {
 }
 
 // Depends on today's date, so it renders per request inside its own Suspense boundary.
-async function DeliveryEstimate({ product, handlingDays }: { product: ProductDetail; handlingDays: number }) {
+async function DeliveryEstimate({ product, settings }: { product: ProductDetail; settings: ShopSettings }) {
   await connection();
+  const { handlingDays } = settings;
   const lead = [product.leadDays.max];
   const pickup = formatDeliveryDate(estimateDelivery(lead, handlingDays, "pickup_senec"));
-  const heavy = product.shippingClass === "own_transport";
-  const delivered = formatDeliveryDate(
-    estimateDelivery(lead, handlingDays, heavy ? "own_transport" : "courier"),
-    "acc",
-  );
+  const delivered = formatDeliveryDate(estimateDelivery(lead, handlingDays, "courier"), "acc");
+  // Price for this product alone; in the cart the band follows the weight of the whole order.
+  const rate = rateFor(product.weightKg, settings.shippingRates);
+  const shipping = shippingPrice("courier", product.priceGrossCents, product.weightKg, {
+    rates: settings.shippingRates,
+    freeShippingThresholdCents: settings.freeShippingThresholdCents,
+  });
   return (
     <ul className={css.delivery}>
       {product.shippingClass !== "pickup_only" && (
         <li>
           <Truck size={20} aria-hidden="true" />
           <span>
-            <strong>
-              {heavy ? "Privezieme vlastnou dopravou" : "Doručíme kuriérom"} predpokladane v {delivered}
-            </strong>
-            pri objednávke dnes · vrátane testu pred odoslaním
+            <strong>Doručíme na adresu predpokladane v {delivered}</strong>
+            doprava {shipping === 0 ? "zdarma" : formatEur(shipping)} ({rate.name}) · pri objednávke dnes, vrátane testu
+            pred odoslaním
           </span>
         </li>
       )}
@@ -244,7 +253,7 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
               )}
 
               <Suspense fallback={<DeliveryFallback product={p} handlingDays={settings.handlingDays} />}>
-                <DeliveryEstimate product={p} handlingDays={settings.handlingDays} />
+                <DeliveryEstimate product={p} settings={settings} />
               </Suspense>
 
               {p.priceOnRequest ? (

@@ -3366,6 +3366,11 @@ a.engineCodeLink:hover {
   gap: 12px;
   font-size: 0.9375rem;
 }
+.summaryHint {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--mute);
+}
 .summaryRows dd {
   font-family: var(--f-mono);
   font-weight: 700;

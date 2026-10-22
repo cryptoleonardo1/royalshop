@@ -18,18 +18,18 @@ export function useHydrated(): boolean {
 }
 
 // Server-priced view of the browser cart. Products that are no longer sold drop out of the cart.
-export function useQuote(method?: ShippingMethod | null, zoneId?: string | null) {
+export function useQuote(method?: ShippingMethod | null) {
   const lines = useCart();
   const [result, setResult] = useState<{ key: string; quote: Quote | null } | null>(null);
   const [removed, setRemoved] = useState<string[]>([]);
-  const key = JSON.stringify([lines.map((l) => [l.slug, l.quantity]), method ?? null, zoneId ?? null]);
+  const key = JSON.stringify([lines.map((l) => [l.slug, l.quantity]), method ?? null]);
 
   useEffect(() => {
     const current: Pick<CartLine, "slug" | "quantity">[] = lines.map((l) => ({ slug: l.slug, quantity: l.quantity }));
     if (current.length === 0) return;
     let cancelled = false;
     const t = window.setTimeout(() => {
-      quoteCart(current, method ?? null, zoneId ?? null).then((q) => {
+      quoteCart(current, method ?? null).then((q) => {
         if (cancelled) return;
         setResult({ key, quote: q });
         if (q?.missing.length) {
@@ -43,7 +43,7 @@ export function useQuote(method?: ShippingMethod | null, zoneId?: string | null)
       cancelled = true;
       window.clearTimeout(t);
     };
-    // `key` captures lines, method and zone by value; the arrays themselves change identity often
+    // `key` captures lines and method by value; the arrays themselves change identity often
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
 

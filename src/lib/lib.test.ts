@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { computeLine, computeTotals, formatEur, marginStats, netFromGross } from "./money";
 import { allowedNextStatuses, canTransition, canWithdraw, withdrawalDeadline } from "./order-state";
-import { addBusinessDays, availableMethods, estimateDelivery, shippingPrice } from "./shipping";
+import { addBusinessDays, availableMethods, estimateDelivery, orderWeightKg, rateFor, shippingPrice } from "./shipping";
 
 describe("money", () => {
   it("derives net from gross with half-away-from-zero rounding", () => {
@@ -60,17 +60,30 @@ describe("order state", () => {
 });
 
 describe("shipping", () => {
-  const settings = { courier_price_cents: 690, free_shipping_threshold_cents: 200000 };
+  const rates = [
+    { name: "balík do 40 kg", maxKg: 40, priceCents: 990 },
+    { name: "paleta do 100 kg", maxKg: 100, priceCents: 4900 },
+    { name: "paleta nad 100 kg", maxKg: null, priceCents: 8900 },
+  ];
 
-  it("forces own transport for heavy items", () => {
-    expect(availableMethods(["courier", "own_transport"])).toEqual(["own_transport", "pickup_senec"]);
-    expect(availableMethods(["courier"])).toEqual(["courier", "pickup_senec"]);
+  it("offers delivery for everything except pickup-only items", () => {
+    expect(availableMethods(["courier", "own_transport"])).toEqual(["courier", "pickup_senec"]);
+    expect(availableMethods(["courier", "pickup_only"])).toEqual(["pickup_senec"]);
   });
 
-  it("is free from 2000 €", () => {
-    expect(shippingPrice("courier", 199999, settings)).toBe(690);
-    expect(shippingPrice("courier", 200000, settings)).toBe(0);
-    expect(shippingPrice("own_transport", 50000, settings, { id: "z", name: "do 30 km", max_km: 30, price_cents: 3000 })).toBe(3000);
+  it("picks the band by weight, band limits inclusive", () => {
+    expect(rateFor(40, rates).priceCents).toBe(990);
+    expect(rateFor(40.1, rates).priceCents).toBe(4900);
+    expect(rateFor(500, rates).priceCents).toBe(8900);
+    expect(rateFor(null, rates).priceCents).toBe(8900);
+    expect(orderWeightKg([{ weightKg: 13.2, quantity: 2 }, { weightKg: 5, quantity: 1 }])).toBe(31.4);
+    expect(orderWeightKg([{ weightKg: null, quantity: 1 }])).toBeNull();
+  });
+
+  it("is free only above a configured threshold, pickup always", () => {
+    expect(shippingPrice("courier", 999999, 10, { rates, freeShippingThresholdCents: null })).toBe(990);
+    expect(shippingPrice("courier", 200000, 10, { rates, freeShippingThresholdCents: 200000 })).toBe(0);
+    expect(shippingPrice("pickup_senec", 100, 500, { rates, freeShippingThresholdCents: null })).toBe(0);
   });
 
   it("skips weekends", () => {

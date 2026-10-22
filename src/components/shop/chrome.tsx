@@ -4,6 +4,7 @@ import Form from "next/form";
 import { ArrowRight, Clock, Mail, Phone, Search, Store, Truck, Undo2, User } from "lucide-react";
 import { getShopSettings, getTopCategories } from "@/lib/catalog";
 import { formatEur } from "@/lib/money";
+import { cheapestRateCents } from "@/lib/shipping";
 import { fontVariables } from "./fonts";
 import { CartLink } from "./cart-buttons";
 import { StickyHeader } from "./sticky-header";
@@ -23,7 +24,10 @@ export async function ShopShell({ children }: { children: ReactNode }) {
         <div className={css.wrap}>
           <ul className={css.topList}>
             <li>
-              <Truck size={14} aria-hidden="true" /> Doprava zdarma od {formatEur(settings.freeShippingThresholdCents)}
+              <Truck size={14} aria-hidden="true" />{" "}
+              {settings.freeShippingThresholdCents != null
+                ? `Doprava zdarma od ${formatEur(settings.freeShippingThresholdCents)}`
+                : `Doprava po SR od ${formatEur(cheapestRateCents(settings.shippingRates))}`}
             </li>
             <li>
               <Store size={14} aria-hidden="true" /> Osobný odber Boldog pri Senci

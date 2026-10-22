@@ -9,7 +9,8 @@ import { config } from "dotenv";
 import { readFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
 import { computeLine, computeTotals, eurToCents, netFromGross } from "../src/lib/money";
-import { hondaEngineName, hondaEngineSlug, hondaEngines, hondaVatRate, shaftLabel } from "../src/lib/honda-engines";
+import { family, hondaEngineName, hondaEngineSlug, hondaEngines, hondaVatRate, shaftLabel } from "../src/lib/honda-engines";
+import { DEFAULT_SHIPPING_RATES } from "../src/lib/shipping";
 import { timelineFor, type OrderStatus, type ShippingMethod } from "../src/lib/order-state";
 
 config({ path: ".env.local" });
@@ -73,7 +74,8 @@ async function seedSettings() {
       is_demo: true, // seed_reset() refuses to run once this is false
       is_vat_payer: true,
       courier_price_cents: 690,
-      free_shipping_threshold_cents: 200000,
+      free_shipping_threshold_cents: null, // no free shipping; delivery priced by order weight
+      shipping_rates: DEFAULT_SHIPPING_RATES,
       pickup_address: "Predajňa Royal Stroje, Recká cesta 182, 925 26 Boldog (pri Senci)",
       pickup_hours: "Po–Pi 7:00–16:00",
       handling_days: 1,
@@ -174,6 +176,11 @@ async function seedCatalog() {
   const engineTemplate = catalog.products.find((p) => p.category_slug === "motory" && p.brand_slug === "honda");
   if (!engineTemplate) throw new Error("No Honda engine in catalog.json to copy safety info from");
   const variants = hondaEngines.filter((e) => !stocked.has(e.code));
+  // Shipping weight of a variant = the stocked engine of the same family (GX25/GX240 are not stocked).
+  const familyWeight: Record<string, number> = { GX25: 4, GX240: 25 };
+  for (const p of catalog.products) {
+    if (p.category_slug === "motory" && p.weight_kg != null && p.sku) familyWeight[family(p.sku)] = p.weight_kg;
+  }
   const variantRows = must(
     await db.from("products").insert(
       variants.map((e) => ({
@@ -183,7 +190,7 @@ async function seedCatalog() {
         description:
           `Štvortaktný benzínový motor Honda **${e.code}** z oficiálneho cenníka motorov Honda. Motor objednávame u dodávateľa, termín dodania vám potvrdíme po objednávke.\n\n` +
           "Pred objednaním porovnajte kód s typovým štítkom na starom motore (typ je vyrazený vedľa výrobného čísla). Ak si nie ste istí, pošlite nám fotku štítku a správny typ overíme.",
-        price_gross_cents: e.priceGrossCents, vat_rate: hondaVatRate, weight_kg: null, shipping_class: "courier",
+        price_gross_cents: e.priceGrossCents, vat_rate: hondaVatRate, weight_kg: familyWeight[family(e.model)] ?? null, shipping_class: "courier",
         battery_platform: "none", is_kit: false, warranty_months: engineTemplate.warranty_months,
         manufacturer_warranty_note: null, safety_info: engineTemplate.safety_info, status: "active", is_featured: false,
         rental_url: null, is_listed: false,

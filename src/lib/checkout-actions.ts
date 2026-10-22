@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { getShippingZones, getShopSettings } from "@/lib/catalog";
+import { getShopSettings } from "@/lib/catalog";
 import { buildQuote, type Quote } from "@/lib/cart-pricing";
 import { cartLinesSchema, orderSnapshots, parseCheckout, type FieldErrors } from "@/lib/checkout-schema";
 import type { ShippingMethod } from "@/lib/order-state";
@@ -22,32 +22,23 @@ async function siteUrl(): Promise<string> {
   return `${proto}://${host}`;
 }
 
-async function quoteFor(
-  lines: { slug: string; quantity: number }[],
-  method?: ShippingMethod | null,
-  zoneId?: string | null,
-) {
+async function quoteFor(lines: { slug: string; quantity: number }[], method?: ShippingMethod | null) {
   const db = createAdminClient();
-  const [products, settings, zones] = await Promise.all([
+  const [products, settings] = await Promise.all([
     fetchPricedProducts(
       db,
       lines.map((l) => l.slug),
     ),
     getShopSettings(),
-    getShippingZones(),
   ]);
-  return { quote: buildQuote({ lines, products, settings, zones, method, zoneId }), products };
+  return { quote: buildQuote({ lines, products, settings, method }), products };
 }
 
 // Read-only: prices the browser cart for the cart page and the checkout summary.
-export async function quoteCart(
-  rawLines: unknown,
-  method?: ShippingMethod | null,
-  zoneId?: string | null,
-): Promise<Quote | null> {
+export async function quoteCart(rawLines: unknown, method?: ShippingMethod | null): Promise<Quote | null> {
   const parsed = cartLinesSchema.safeParse(rawLines);
   if (!parsed.success) return null;
-  const { quote } = await quoteFor(parsed.data, method, zoneId);
+  const { quote } = await quoteFor(parsed.data, method);
   return quote;
 }
 
@@ -58,14 +49,13 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
   if (!parsed.ok) return { errors: parsed.errors, message: "Skontrolujte zvýraznené polia." };
   const input = parsed.data;
 
-  const { quote, products } = await quoteFor(input.lines, input.shippingMethod, input.zoneId || null);
+  const { quote, products } = await quoteFor(input.lines, input.shippingMethod);
   if (quote.missing.length > 0 || quote.lines.length === 0) {
     return { message: "Niektoré produkty v košíku už nepredávame. Vráťte sa do košíka a skontrolujte ho." };
   }
   if (quote.method !== input.shippingMethod) {
     return { errors: { shippingMethod: "Tento spôsob dopravy nie je pre váš košík dostupný." } };
   }
-  if (quote.shippingCents == null) return { errors: { zoneId: "Vyberte vzdialenosť od predajne" } };
 
   const db = createAdminClient();
   const [{ data: orderNumber, error: numberError }, terms] = await Promise.all([
@@ -93,7 +83,6 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
       shipping_address: shipping,
       company,
       shipping_method: quote.method,
-      shipping_zone_id: quote.method === "own_transport" ? quote.zoneId : null,
       shipping_price_cents: quote.shippingCents,
       subtotal_gross_cents: quote.subtotalGrossCents,
       total_net_cents: quote.totals.netCents,
@@ -172,7 +161,7 @@ async function startPayment(orderId: string): Promise<string> {
         currency: "eur",
         unit_amount: order.shipping_price_cents,
         product_data: {
-          name: order.shipping_method === "own_transport" ? "Doprava vlastným rozvozom" : "Doprava kuriérom",
+          name: "Doprava na adresu",
         },
       },
     });

@@ -115,7 +115,7 @@ export async function fetchPricedProducts(
   const { data, error } = await db
     .from("products")
     .select(
-      `id, slug, name, sku, ean, price_gross_cents, vat_rate, shipping_class, supplier_id,
+      `id, slug, name, sku, ean, price_gross_cents, vat_rate, shipping_class, weight_kg, supplier_id,
        supplier:suppliers(lead_time_days_max),
        images:product_images(path, sort_order),
        cost:product_costs(purchase_price_net_cents)`,
@@ -137,6 +137,7 @@ export async function fetchPricedProducts(
       priceGrossCents: r.price_gross_cents,
       vatRate: Number(r.vat_rate),
       shippingClass: r.shipping_class,
+      weightKg: r.weight_kg == null ? null : Number(r.weight_kg),
       leadDaysMax: r.supplier?.lead_time_days_max ?? 2,
       supplierId: r.supplier_id,
       image: images[0]?.path ?? null,

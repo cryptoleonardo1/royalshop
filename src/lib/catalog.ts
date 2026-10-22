@@ -3,7 +3,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { createPublicClient } from "@/lib/supabase/admin";
 import { foldText } from "@/lib/format";
 import { discountPct } from "@/lib/pricing";
-import type { ShippingZone } from "@/lib/shipping";
+import { DEFAULT_SHIPPING_RATES, type ShippingRate } from "@/lib/shipping";
 
 // Public catalog reads. Everything here goes through the anon key (RLS: active products only)
 // and is cached under the "catalog" tag, so admin edits can call revalidateTag("catalog").
@@ -83,8 +83,8 @@ export interface ShopSettings {
   registerInfo: string | null;
   email: string | null;
   phone: string | null;
-  courierPriceCents: number;
-  freeShippingThresholdCents: number;
+  shippingRates: ShippingRate[]; // delivery price by order weight
+  freeShippingThresholdCents: number | null; // null = no free shipping
   pickupAddress: string | null;
   pickupHours: string | null;
   handlingDays: number;
@@ -406,21 +406,10 @@ export async function getShopSettings(): Promise<ShopSettings> {
     registerInfo: s.register_info ?? null,
     email: s.email ?? null,
     phone: s.phone ?? null,
-    courierPriceCents: s.courier_price_cents ?? 690,
-    freeShippingThresholdCents: s.free_shipping_threshold_cents ?? 200000,
+    shippingRates: Array.isArray(s.shipping_rates) && s.shipping_rates.length ? s.shipping_rates : DEFAULT_SHIPPING_RATES,
+    freeShippingThresholdCents: s.free_shipping_threshold_cents ?? null,
     pickupAddress: s.pickup_address ?? null,
     pickupHours: s.pickup_hours ?? null,
     handlingDays: s.handling_days ?? 1,
   };
-}
-
-export async function getShippingZones(): Promise<ShippingZone[]> {
-  "use cache";
-  tagCatalog();
-  const { data, error } = await createPublicClient()
-    .from("shipping_zones")
-    .select("id, name, max_km, price_cents")
-    .order("sort_order");
-  if (error) fail("shipping zones", error);
-  return data as ShippingZone[];
 }

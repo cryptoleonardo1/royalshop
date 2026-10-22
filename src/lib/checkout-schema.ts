@@ -40,8 +40,7 @@ export const checkoutSchema = z
     shipStreet: text(120).optional(),
     shipCity: text(80).optional(),
     shipZip: z.string().optional(),
-    shippingMethod: z.enum(["courier", "own_transport", "pickup_senec"], { error: "Vyberte spôsob dopravy" }),
-    zoneId: z.uuid().optional().or(z.literal("")),
+    shippingMethod: z.enum(["courier", "pickup_senec"], { error: "Vyberte spôsob dopravy" }),
     note: text(1000).optional(),
     terms: z.literal("on", { error: "Bez súhlasu s obchodnými podmienkami objednávku neodošleme" }),
     lines: z.string({ error: "Košík je prázdny" }).transform((raw, ctx) => {
@@ -70,8 +69,6 @@ export const checkoutSchema = z
       if (!/^\d{5}$/.test(v.shipZip?.replace(/\s+/g, "") ?? ""))
         ctx.addIssue({ code: "custom", path: ["shipZip"], message: "PSČ má 5 číslic" });
     }
-    if (v.shippingMethod === "own_transport" && !v.zoneId)
-      ctx.addIssue({ code: "custom", path: ["zoneId"], message: "Vyberte vzdialenosť od predajne" });
   });
 
 export type CheckoutInput = z.infer<typeof checkoutSchema>;

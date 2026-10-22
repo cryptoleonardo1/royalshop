@@ -99,7 +99,7 @@ export function ProductCard({
 
         <p className={css.lead}>
           <Truck size={16} aria-hidden="true" />
-          {p.shippingClass === "own_transport" ? "Vlastná doprava · " : "Doručenie "}
+          {p.shippingClass === "pickup_only" ? "Osobný odber · " : "Doručenie "}
           {workDaysText(days.min, days.max)}
         </p>
 

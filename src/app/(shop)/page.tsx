@@ -10,6 +10,7 @@ import {
 } from "@/lib/catalog";
 import { deliveryDays } from "@/lib/format";
 import { formatEur } from "@/lib/money";
+import { cheapestRateCents } from "@/lib/shipping";
 import { delay, ProductGrid } from "@/components/shop/product-card";
 import css from "@/components/shop/shop.module.css";
 
@@ -62,10 +63,15 @@ export default async function HomePage() {
   const slowest = Math.max(...spans.map((d) => d.max));
   const usps = [
     { title: "Otestované pred odoslaním", text: "Každý stroj zapneme, skontrolujeme a až potom zabalíme." },
-    {
-      title: `Doprava zdarma od ${formatEur(settings.freeShippingThresholdCents)}`,
-      text: "Ťažké stroje privezieme vlastnou technikou.",
-    },
+    settings.freeShippingThresholdCents != null
+      ? {
+          title: `Doprava zdarma od ${formatEur(settings.freeShippingThresholdCents)}`,
+          text: "Aj ťažké stroje na palete privezieme až k vám.",
+        }
+      : {
+          title: `Doprava po SR od ${formatEur(cheapestRateCents(settings.shippingRates))}`,
+          text: "Cena podľa hmotnosti, rovnaká na celom Slovensku. Ťažké stroje vozíme na palete.",
+        },
     { title: "Osobný odber pri Senci", text: "Vyzdvihnete si ho v predajni Royal Stroje v Boldogu." },
     { title: "Priamo od výrobcov", text: "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, s plnou zárukou." },
   ];
@@ -110,7 +116,15 @@ export default async function HomePage() {
                 doručenie vrátane testu
               </li>
               <li>
-                <strong>{formatEur(settings.freeShippingThresholdCents)}</strong> doprava zdarma
+                {settings.freeShippingThresholdCents != null ? (
+                  <>
+                    <strong>{formatEur(settings.freeShippingThresholdCents)}</strong> doprava zdarma
+                  </>
+                ) : (
+                  <>
+                    <strong>od {formatEur(cheapestRateCents(settings.shippingRates))}</strong> doprava po celom Slovensku
+                  </>
+                )}
               </li>
               <li>
                 <strong>Boldog</strong> osobný odber pri Senci

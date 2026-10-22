@@ -2,11 +2,13 @@ import { describe, expect, it } from "vitest";
 import { buildQuote, type PricedProduct } from "./cart-pricing";
 import { orderSnapshots, parseCheckout } from "./checkout-schema";
 
-const settings = { courierPriceCents: 690, freeShippingThresholdCents: 200000, handlingDays: 1 };
-const zones = [
-  { id: "00000000-0000-4000-8000-000000000030", name: "Do 30 km", max_km: 30, price_cents: 3900 },
-  { id: "00000000-0000-4000-8000-000000000080", name: "Do 80 km", max_km: 80, price_cents: 7900 },
+const shippingRates = [
+  { name: "balík do 40 kg", maxKg: 40, priceCents: 990 },
+  { name: "paleta do 100 kg", maxKg: 100, priceCents: 4900 },
+  { name: "paleta do 300 kg", maxKg: 300, priceCents: 8900 },
+  { name: "paleta nad 300 kg", maxKg: null, priceCents: 14900 },
 ];
+const settings = { shippingRates, freeShippingThresholdCents: null, handlingDays: 1 };
 
 function priced(slug: string, over: Partial<PricedProduct> = {}): PricedProduct {
   return {
@@ -17,6 +19,7 @@ function priced(slug: string, over: Partial<PricedProduct> = {}): PricedProduct 
     priceGrossCents: 12300,
     vatRate: 23,
     shippingClass: "courier",
+    weightKg: 15,
     leadDaysMax: 2,
     image: null,
     ...over,
@@ -25,20 +28,21 @@ function priced(slug: string, over: Partial<PricedProduct> = {}): PricedProduct 
 
 const products = new Map([
   ["drill", priced("drill")],
-  ["plate", priced("plate", { priceGrossCents: 150000, shippingClass: "own_transport", leadDaysMax: 5 })],
+  ["plate", priced("plate", { priceGrossCents: 150000, shippingClass: "own_transport", weightKg: 90, leadDaysMax: 5 })],
+  ["unweighed", priced("unweighed", { weightKg: null })],
+  ["saw", priced("saw", { shippingClass: "pickup_only" })],
 ]);
 // Monday 12 Oct 2026, noon in Bratislava
 const now = new Date("2026-10-12T10:00:00Z");
 
 describe("buildQuote", () => {
   it("prices a courier cart with VAT recap including shipping", () => {
-    const q = buildQuote({ lines: [{ slug: "drill", quantity: 2 }], products, settings, zones, now });
+    const q = buildQuote({ lines: [{ slug: "drill", quantity: 2 }], products, settings, now });
     expect(q.subtotalGrossCents).toBe(24600);
     expect(q.method).toBe("courier");
-    expect(q.shippingCents).toBe(690);
-    expect(q.totals.grossCents).toBe(24600 + 690);
+    expect(q.shippingCents).toBe(990);
+    expect(q.totals.grossCents).toBe(24600 + 990);
     expect(q.totals.netCents + q.totals.vatCents).toBe(q.totals.grossCents);
-    expect(q.remainingForFreeShippingCents).toBe(200000 - 24600);
     // 2 days supplier + 1 test + 1 courier = Friday
     expect(q.estimatedDelivery).toBe("2026-10-16");
   });
@@ -52,7 +56,6 @@ describe("buildQuote", () => {
       ],
       products,
       settings,
-      zones,
       now,
     });
     expect(q.lines).toHaveLength(1);
@@ -60,33 +63,52 @@ describe("buildQuote", () => {
     expect(q.missing).toEqual(["gone"]);
   });
 
-  it("forces own transport for heavy machines and needs a zone for the price", () => {
-    const lines = [{ slug: "plate", quantity: 1 }];
-    const noZone = buildQuote({ lines, products, settings, zones, method: "courier", now });
-    expect(noZone.options.map((o) => o.method)).toEqual(["own_transport", "pickup_senec"]);
-    expect(noZone.method).toBe("own_transport");
-    expect(noZone.shippingCents).toBeNull();
-    const zoned = buildQuote({ lines, products, settings, zones, method: "own_transport", zoneId: zones[1].id, now });
-    expect(zoned.shippingCents).toBe(7900);
-  });
-
-  it("ships free over the threshold and pickup is always free", () => {
-    const big = buildQuote({ lines: [{ slug: "plate", quantity: 2 }], products, settings, zones, now });
-    expect(big.shippingCents).toBe(0);
-    const pickup = buildQuote({
-      lines: [{ slug: "drill", quantity: 1 }],
+  it("prices delivery by the weight of the whole order", () => {
+    const parcel = buildQuote({ lines: [{ slug: "drill", quantity: 2 }], products, settings, now }); // 30 kg
+    expect(parcel.shippingCents).toBe(990);
+    expect(parcel.deliveryRate.name).toBe("balík do 40 kg");
+    const pallet = buildQuote({ lines: [{ slug: "drill", quantity: 3 }], products, settings, now }); // 45 kg
+    expect(pallet.shippingCents).toBe(4900);
+    const heavy = buildQuote({
+      lines: [
+        { slug: "plate", quantity: 1 },
+        { slug: "drill", quantity: 1 },
+      ],
       products,
       settings,
-      zones,
-      method: "pickup_senec",
+      now,
+    }); // 105 kg
+    expect(heavy.weightKg).toBe(105);
+    expect(heavy.options.map((o) => o.method)).toEqual(["courier", "pickup_senec"]);
+    expect(heavy.shippingCents).toBe(8900);
+  });
+
+  it("prices a product without a weight in the heaviest band", () => {
+    const q = buildQuote({ lines: [{ slug: "unweighed", quantity: 1 }], products, settings, now });
+    expect(q.weightKg).toBeNull();
+    expect(q.shippingCents).toBe(14900);
+  });
+
+  it("has no free shipping unless a threshold is set; pickup is always free", () => {
+    const big = buildQuote({ lines: [{ slug: "plate", quantity: 2 }], products, settings, now });
+    expect(big.shippingCents).toBe(8900);
+    expect(big.remainingForFreeShippingCents).toBeNull();
+    const free = buildQuote({
+      lines: [{ slug: "plate", quantity: 2 }],
+      products,
+      settings: { ...settings, freeShippingThresholdCents: 200000 },
       now,
     });
+    expect(free.shippingCents).toBe(0);
+    const pickup = buildQuote({ lines: [{ slug: "drill", quantity: 1 }], products, settings, method: "pickup_senec", now });
     expect(pickup.shippingCents).toBe(0);
+    const pickupOnly = buildQuote({ lines: [{ slug: "saw", quantity: 1 }], products, settings, now });
+    expect(pickupOnly.options.map((o) => o.method)).toEqual(["pickup_senec"]);
   });
 
   it("never exposes extra product fields such as purchase price", () => {
     const withCost = new Map([["drill", { ...priced("drill"), purchaseNetCents: 5000 }]]);
-    const q = buildQuote({ lines: [{ slug: "drill", quantity: 1 }], products: withCost, settings, zones, now });
+    const q = buildQuote({ lines: [{ slug: "drill", quantity: 1 }], products: withCost, settings, now });
     expect(JSON.stringify(q)).not.toContain("purchase");
   });
 });
@@ -141,10 +163,10 @@ describe("checkout validation", () => {
     }
   });
 
-  it("requires a zone for own transport and drops the address for pickup", () => {
+  it("no longer accepts the retired own transport and drops the address for pickup", () => {
     const own = parseCheckout(form({ ...valid, shippingMethod: "own_transport" }));
     expect(own.ok).toBe(false);
-    if (!own.ok) expect(own.errors.zoneId).toBeTruthy();
+    if (!own.ok) expect(own.errors.shippingMethod).toBeTruthy();
     const pickup = parseCheckout(form({ ...valid, shippingMethod: "pickup_senec" }));
     expect(pickup.ok && orderSnapshots(pickup.data).shipping).toBeNull();
   });

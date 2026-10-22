@@ -5,15 +5,14 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight, Building2, CreditCard, Lock, Store, Truck, User } from "lucide-react";
 import { placeOrder, type PlaceOrderState } from "@/lib/checkout-actions";
 import type { ShippingMethod } from "@/lib/order-state";
-import type { ShippingZone } from "@/lib/shipping";
 import { formatEur } from "@/lib/money";
 import { formatDeliveryDate } from "@/lib/format";
 import { useHydrated, useQuote } from "./use-quote";
 import css from "./shop.module.css";
 
 const METHOD_LABEL: Record<ShippingMethod, string> = {
-  courier: "Kuriér na adresu",
-  own_transport: "Vlastný rozvoz",
+  courier: "Doručenie na adresu",
+  own_transport: "Doručenie na adresu",
   pickup_senec: "Osobný odber v predajni",
 };
 
@@ -53,12 +52,10 @@ function Field({
 }
 
 export function CheckoutForm({
-  zones,
   pickupAddress,
   pickupHours,
   demoPayments,
 }: {
-  zones: ShippingZone[];
   pickupAddress: string | null;
   pickupHours: string | null;
   demoPayments: boolean;
@@ -66,9 +63,8 @@ export function CheckoutForm({
   const hydrated = useHydrated();
   const [customerType, setCustomerType] = useState<"person" | "company">("person");
   const [method, setMethod] = useState<ShippingMethod | null>(null);
-  const [zoneId, setZoneId] = useState("");
   const [shipDifferent, setShipDifferent] = useState(false);
-  const { lines, quote, loading } = useQuote(method, zoneId || null);
+  const { lines, quote, loading } = useQuote(method);
   const [state, dispatch] = useActionState<PlaceOrderState, FormData>(placeOrder, undefined);
   const [submitting, startSubmit] = useTransition();
   const errors = state?.errors ?? {};
@@ -86,7 +82,7 @@ export function CheckoutForm({
   }
 
   const chosen = quote?.method ?? method ?? "courier";
-  const heavyOnly = quote && !quote.options.some((o) => o.method === "courier");
+  const pickupOnly = quote && !quote.options.some((o) => o.method === "courier");
 
   // Submitted via the action dispatcher (not <form action>) so React keeps the typed values on errors.
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -194,10 +190,10 @@ export function CheckoutForm({
           <legend className={css.coLegend}>
             <span>04</span> Doprava
           </legend>
-          {heavyOnly && (
+          {pickupOnly && (
             <p className={css.notice}>
-              <Truck size={18} aria-hidden="true" /> V košíku je ťažký stroj, kuriér ho neprevezie. Privezieme ho
-              vlastnou dopravou alebo si ho vyzdvihnete v našej predajni v Boldogu pri Senci.
+              <Store size={18} aria-hidden="true" /> Niektorý stroj v košíku si treba vyzdvihnúť osobne v našej predajni
+              v Boldogu pri Senci.
             </p>
           )}
           <div className={css.choiceStack}>
@@ -221,33 +217,17 @@ export function CheckoutForm({
                     <span>
                       {o.method === "pickup_senec"
                         ? `Pripravené ${dateLabel(o.estimatedDelivery)} · ${pickupAddress ?? "predajňa Royal Stroje"}${pickupHours ? ` · ${pickupHours}` : ""}`
-                        : `Doručenie predpokladane ${dateLabel(o.estimatedDelivery)}`}
+                        : `${quote ? `${quote.deliveryRate.name} · ` : ""}doručenie predpokladane ${dateLabel(o.estimatedDelivery)}`}
                     </span>
                   </span>
                   <span className={css.choicePrice}>
-                    {o.priceCents == null ? "podľa zóny" : o.priceCents === 0 ? "zdarma" : formatEur(o.priceCents)}
+                    {o.priceCents === 0 ? "zdarma" : formatEur(o.priceCents)}
                   </span>
                 </span>
               </label>
             ))}
           </div>
           {errors.shippingMethod && <p className={css.fieldError}>{errors.shippingMethod}</p>}
-
-          {chosen === "own_transport" && (
-            <Field name="zoneId" label="Vzdialenosť miesta doručenia od predajne" error={errors.zoneId}>
-              {(p) => (
-                <select {...p} value={zoneId} onChange={(e) => setZoneId(e.target.value)} required>
-                  <option value="">Vyberte zónu</option>
-                  {zones.map((z) => (
-                    <option key={z.id} value={z.id}>
-                      {z.name} ·{" "}
-                      {quote && quote.remainingForFreeShippingCents === 0 ? "zdarma" : formatEur(z.price_cents)}
-                    </option>
-                  ))}
-                </select>
-              )}
-            </Field>
-          )}
 
           {chosen !== "pickup_senec" && (
             <>
@@ -308,11 +288,7 @@ export function CheckoutForm({
           <div>
             <dt>{METHOD_LABEL[chosen]}</dt>
             <dd>
-              {quote?.shippingCents == null
-                ? "vyberte zónu"
-                : quote.shippingCents === 0
-                  ? "zdarma"
-                  : formatEur(quote.shippingCents)}
+              {!quote ? "…" : quote.shippingCents === 0 ? "zdarma" : formatEur(quote.shippingCents)}
             </dd>
           </div>
           {quote?.totals.recap.map((r) => (

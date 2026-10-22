@@ -335,11 +335,20 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 
 ## 8. Doprava (logika)
 
-| Spôsob | Kedy | Cena v deme |
-|---|---|---|
-| Kuriér | Všetky produkty so `shipping_class = courier` (do ~31,5 kg na balík) | Paušál (napr. 6,90 €), od 2 000 € zdarma. Kuriér bude „podľa zmluvy“. |
-| Vlastný rozvoz | Ak je v košíku čo i len jeden produkt `own_transport` | Podľa zóny (napr. do 30 km od Senca, do 100 km, celé SR). **Na doplnenie od foundera.** |
-| Osobný odber Senec | Vždy možný | Zadarmo. Dostupné od stavu `ready_for_pickup` s otváracími hodinami pobočky. |
+Od 2026-10-22: cena dopravy na adresu podľa **celkovej hmotnosti objednávky** (súčet `weight_kg` × množstvo), jedna cena pre celé Slovensko, bez dopravy zdarma. Pásma sú v `company_settings.shipping_rates` (JSON), výpočet v `src/lib/shipping.ts`.
+
+| Pásmo | Cena s DPH (placeholder do ponúk dopravcov) |
+|---|---|
+| balík do 40 kg | 9,90 € |
+| paleta do 100 kg | 49 € |
+| paleta do 300 kg | 89 € |
+| paleta nad 300 kg | 149 € |
+| Osobný odber v predajni (Recká cesta 182, Boldog) | zadarmo |
+
+- Produkt bez hmotnosti sa počíta v najťažšom pásme.
+- `shipping_class = pickup_only` dovolí len osobný odber; `own_transport` už cenu nemení (zostáva pre staré objednávky).
+- Doprava zdarma: `company_settings.free_shipping_threshold_cents` (null = vypnutá). Vypnutá preto, lebo pri strojoch od 800 € by hranica 2 000 € robila zadarmo práve najťažšie a najdrahšie zásielky.
+- Zóny podľa vzdialenosti (`shipping_zones`) sa už nepoužívajú.
 
 Ak sú v košíku produkty s rôznou dodacou dobou, objednávka sa odošle celá, keď je pripravená posledná položka. Delené dodanie zatiaľ nepodporujeme.
 

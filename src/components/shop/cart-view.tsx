@@ -11,7 +11,7 @@ import css from "./shop.module.css";
 
 const plural = (n: number) => (n === 1 ? "kus" : n >= 2 && n <= 4 ? "kusy" : "kusov");
 
-export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | null }) {
+export function CartView() {
   const hydrated = useHydrated();
   const { lines, quote, loading, removed } = useQuote();
 
@@ -33,10 +33,8 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
   const priced = new Map(quote?.lines.map((l) => [l.product.slug, l]));
   const count = lines.reduce((s, l) => s + l.quantity, 0);
   const courier = quote?.options.find((o) => o.method === "courier");
-  const ownTransport = quote?.options.find((o) => o.method === "own_transport");
-  const progress = quote
-    ? Math.min(100, Math.round((quote.subtotalGrossCents / quote.freeShippingThresholdCents) * 100))
-    : 0;
+  const threshold = quote?.freeShippingThresholdCents ?? null;
+  const progress = quote && threshold ? Math.min(100, Math.round((quote.subtotalGrossCents / threshold) * 100)) : 0;
 
   return (
     <div className={css.cartLayout} data-loading={loading || undefined}>
@@ -65,11 +63,6 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
                     {p?.product.name ?? line.name}
                   </Link>
                   {line.sku && <span className={css.cartLineSku}>Kód {line.sku}</span>}
-                  {p?.product.shippingClass === "own_transport" && (
-                    <span className={css.cartLineNote}>
-                      <Truck size={14} aria-hidden="true" /> Ťažký stroj – vlastný rozvoz alebo odber v predajni
-                    </span>
-                  )}
                   <span className={css.cartLineUnit}>{formatEur(unit)} / ks</span>
                 </div>
                 <div className={css.stepper} role="group" aria-label={`Množstvo: ${line.name}`}>
@@ -132,18 +125,11 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
             <dd>{quote ? formatEur(quote.subtotalGrossCents) : "…"}</dd>
           </div>
           <div>
-            <dt>Doprava</dt>
-            <dd>
-              {!quote
-                ? "…"
-                : quote.remainingForFreeShippingCents === 0
-                  ? "zdarma"
-                  : courier
-                    ? `kuriér ${formatEur(courier.priceCents ?? 0)}`
-                    : ownTransport && cheapestZoneCents != null
-                      ? `rozvoz od ${formatEur(cheapestZoneCents)}`
-                      : "podľa výberu"}
-            </dd>
+            <dt>
+              Doprava na adresu
+              {quote && courier && <span className={css.summaryHint}>{quote.deliveryRate.name}</span>}
+            </dt>
+            <dd>{!quote ? "…" : courier ? (courier.priceCents === 0 ? "zdarma" : formatEur(courier.priceCents)) : "len odber"}</dd>
           </div>
           <div>
             <dt>Osobný odber v predajni</dt>
@@ -151,7 +137,7 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
           </div>
         </dl>
 
-        {quote && quote.remainingForFreeShippingCents > 0 && (
+        {quote && quote.remainingForFreeShippingCents != null && quote.remainingForFreeShippingCents > 0 && (
           <div className={css.freeShip}>
             <p>
               Do dopravy zdarma zostáva <strong>{formatEur(quote.remainingForFreeShippingCents)}</strong>
@@ -169,7 +155,7 @@ export function CartView({ cheapestZoneCents }: { cheapestZoneCents: number | nu
               <strong>{formatEur(quote.subtotalGrossCents)}</strong>
             </p>
             <p className={css.summaryNote}>
-              z toho DPH {formatEur(quote.lines.reduce((s, l) => s + l.lineVatCents, 0))} · doprava sa vyberá v pokladni
+              z toho DPH {formatEur(quote.lines.reduce((s, l) => s + l.lineVatCents, 0))} · dopravu vyberiete v pokladni
             </p>
             <p className={css.summaryDelivery}>
               <Truck size={18} aria-hidden="true" />

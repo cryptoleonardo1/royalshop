@@ -1,6 +1,14 @@
 import { computeLine, computeTotals, type Totals } from "./money";
 import type { ShippingMethod } from "./order-state";
-import { availableMethods, estimateDelivery, shippingPrice, type ShippingClass, type ShippingZone } from "./shipping";
+import {
+  availableMethods,
+  estimateDelivery,
+  orderWeightKg,
+  rateFor,
+  shippingPrice,
+  type ShippingClass,
+  type ShippingRate,
+} from "./shipping";
 
 // Authoritative cart maths: the same function prices the cart page, the checkout summary and the
 // order that gets written, so what the customer sees is exactly what Stripe charges.
@@ -17,6 +25,7 @@ export interface PricedProduct {
   priceGrossCents: number;
   vatRate: number;
   shippingClass: ShippingClass;
+  weightKg: number | null;
   leadDaysMax: number;
   supplierId?: string | null;
   image: string | null;
@@ -32,7 +41,7 @@ export interface QuoteLine {
 
 export interface ShippingOption {
   method: ShippingMethod;
-  priceCents: number | null; // null = own transport before a zone is chosen
+  priceCents: number;
   estimatedDelivery: string; // ISO date (yyyy-mm-dd)
 }
 
@@ -41,22 +50,21 @@ export interface Quote {
   missing: string[]; // slugs no longer sold
   subtotalGrossCents: number;
   method: ShippingMethod;
-  zoneId: string | null;
-  shippingCents: number | null;
+  shippingCents: number;
+  weightKg: number | null; // null = a product without a weight (priced in the heaviest band)
+  deliveryRate: ShippingRate; // weight band used for delivery to an address
   options: ShippingOption[];
-  freeShippingThresholdCents: number;
-  remainingForFreeShippingCents: number;
-  totals: Totals; // goods + shipping (shipping counted as 0 until known)
+  freeShippingThresholdCents: number | null;
+  remainingForFreeShippingCents: number | null; // null = no free shipping
+  totals: Totals; // goods + shipping
   estimatedDelivery: string;
 }
 
 export interface QuoteInput {
   lines: { slug: string; quantity: number }[];
   products: Map<string, PricedProduct>;
-  settings: { courierPriceCents: number; freeShippingThresholdCents: number; handlingDays: number };
-  zones: ShippingZone[];
+  settings: { shippingRates: ShippingRate[]; freeShippingThresholdCents: number | null; handlingDays: number };
   method?: ShippingMethod | null;
-  zoneId?: string | null;
   now?: Date;
 }
 
@@ -74,6 +82,7 @@ function publicFields(p: PricedProduct): PricedProduct {
     priceGrossCents: p.priceGrossCents,
     vatRate: p.vatRate,
     shippingClass: p.shippingClass,
+    weightKg: p.weightKg,
     leadDaysMax: p.leadDaysMax,
     supplierId: p.supplierId ?? null,
     image: p.image,
@@ -88,7 +97,7 @@ const isoDate = (d: Date) =>
     day: "2-digit",
   }).format(d);
 
-export function buildQuote({ lines, products, settings, zones, method, zoneId, now = new Date() }: QuoteInput): Quote {
+export function buildQuote({ lines, products, settings, method, now = new Date() }: QuoteInput): Quote {
   const merged = new Map<string, number>();
   for (const l of lines) {
     if (!Number.isInteger(l.quantity) || l.quantity < 1) continue;
@@ -110,18 +119,12 @@ export function buildQuote({ lines, products, settings, zones, method, zoneId, n
   const subtotal = quoteLines.reduce((s, l) => s + l.lineGrossCents, 0);
   const methods = availableMethods(quoteLines.map((l) => l.product.shippingClass));
   const chosen: ShippingMethod = method && methods.includes(method) ? method : methods[0];
-  const zone = zones.find((z) => z.id === zoneId) ?? null;
   const leadMax = quoteLines.map((l) => l.product.leadDaysMax);
 
-  const shippingSettings = {
-    courier_price_cents: settings.courierPriceCents,
-    free_shipping_threshold_cents: settings.freeShippingThresholdCents,
-  };
-  // Own transport is priced by zone; until one is picked the price is unknown (null), unless free.
-  const priceFor = (m: ShippingMethod): number | null => {
-    if (m === "own_transport" && !zone) return subtotal >= settings.freeShippingThresholdCents ? 0 : null;
-    return shippingPrice(m, subtotal, shippingSettings, zone);
-  };
+  // Delivery is priced by the weight of the whole order.
+  const weightKg = orderWeightKg(quoteLines.map((l) => ({ weightKg: l.product.weightKg, quantity: l.quantity })));
+  const shippingSettings = { rates: settings.shippingRates, freeShippingThresholdCents: settings.freeShippingThresholdCents };
+  const priceFor = (m: ShippingMethod): number => shippingPrice(m, subtotal, weightKg, shippingSettings);
   const options: ShippingOption[] = methods.map((m) => ({
     method: m,
     priceCents: priceFor(m),
@@ -145,11 +148,13 @@ export function buildQuote({ lines, products, settings, zones, method, zoneId, n
     missing,
     subtotalGrossCents: subtotal,
     method: chosen,
-    zoneId: zone?.id ?? null,
     shippingCents,
+    weightKg,
+    deliveryRate: rateFor(weightKg, settings.shippingRates),
     options,
     freeShippingThresholdCents: settings.freeShippingThresholdCents,
-    remainingForFreeShippingCents: Math.max(0, settings.freeShippingThresholdCents - subtotal),
+    remainingForFreeShippingCents:
+      settings.freeShippingThresholdCents == null ? null : Math.max(0, settings.freeShippingThresholdCents - subtotal),
     totals: computeTotals([...goods, ...shippingLine]),
     estimatedDelivery: options.find((o) => o.method === chosen)?.estimatedDelivery ?? isoDate(now),
   };
