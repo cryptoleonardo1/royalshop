@@ -311,7 +311,7 @@ export function CheckoutForm({
             <Truck size={18} aria-hidden="true" />
             <span>
               Predpokladané doručenie <strong>{dateLabel(quote.estimatedDelivery)}</strong> · každý stroj pred odoslaním
-              otestujeme.
+              otestujeme. Ak by dodanie výnimočne trvalo dlhšie, budeme vás kontaktovať.
             </span>
           </p>
         )}

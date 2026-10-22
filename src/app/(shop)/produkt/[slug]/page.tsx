@@ -65,6 +65,7 @@ async function DeliveryEstimate({ product, settings }: { product: ProductDetail;
   const lead = [product.leadDays.max];
   const pickup = formatDeliveryDate(estimateDelivery(lead, handlingDays, "pickup_senec"));
   const delivered = formatDeliveryDate(estimateDelivery(lead, handlingDays, "courier"), "acc");
+  const days = deliveryDays(product.leadDays, handlingDays);
   // Price for this product alone; in the cart the band follows the weight of the whole order.
   const rate = rateFor(product.weightKg, settings.shippingRates);
   const shipping = shippingPrice("courier", product.priceGrossCents, product.weightKg, {
@@ -78,8 +79,9 @@ async function DeliveryEstimate({ product, settings }: { product: ProductDetail;
           <Truck size={20} aria-hidden="true" />
           <span>
             <strong>Doručíme na adresu predpokladane v {delivered}</strong>
-            doprava {shipping === 0 ? "zdarma" : formatEur(shipping)} ({rate.name}) · pri objednávke dnes, vrátane testu
-            pred odoslaním
+            doprava {shipping === 0 ? "zdarma" : formatEur(shipping)} ({rate.name}) · zvyčajne{" "}
+            {workDaysText(days.min, days.max)} vrátane testu pred odoslaním. Ak by dodanie výnimočne trvalo dlhšie,
+            ozveme sa vám.
           </span>
         </li>
       )}
@@ -101,8 +103,8 @@ function DeliveryFallback({ product, handlingDays }: { product: ProductDetail; h
       <li>
         <Truck size={20} aria-hidden="true" />
         <span>
-          <strong>Doručenie {workDaysText(days.min, days.max)}</strong>
-          vrátane testu pred odoslaním
+          <strong>Doručenie zvyčajne {workDaysText(days.min, days.max)}</strong>
+          vrátane testu pred odoslaním. Ak by dodanie výnimočne trvalo dlhšie, ozveme sa vám.
         </span>
       </li>
     </ul>

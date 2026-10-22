@@ -6,12 +6,13 @@
 
 - **Phase:** Demo build -- storefront live on https://royalshop.vercel.app with 59 listed products + 176 unlisted Honda GX engine variants, 6 brands (NTC, Bomag, Honda, Enar, Gölz, Atlas Copco; Gölz = primary brand tile). Real operator data (Royal stroje s. r. o., Boldog), delivery priced by weight. Hosted Supabase + Stripe test mode, Next 16.4.2. No emails, no admin.
 - **Session count:** 6
-- **Admin decision (2026-10-21):** e-shop admin will most likely live in RCC, the Royal Stroje CRM (already has invoicing + DB), not in this repo's planned `/admin`. Confirm before building any admin here.
+- **Decisions (2026-10-22):** admin lives in RCC (Royal Stroje CRM, has invoicing + DB, may serve as the shop DB too) -- do not build `/admin` here. Weight shipping bands (9,90 / 49 / 89 / 149) are accepted as-is until the founder says otherwise. 800 EUR minimum is only a guideline, not a rule (CLAUDE.md line is fine).
 - **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy.
 - **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby). Env vars set: 3 Supabase + `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET`. Repo MUST stay public: on 2026-10-22 it was private again and every deploy failed with "Git author bugiiiii11 must have access to the project on Vercel"; fixed by owner making it public + an empty commit (a blocked commit stays blocked on redeploy). Check with `gh api repos/cryptoleonardo1/royalshop/commits/<sha>/statuses --jq '.[0]'`. Local Vercel CLI and Supabase CLI are different accounts -- use web UIs.
 - **Hosted Supabase:** project `royalshop1`, ref `vzytkquuljtoopgfcfak`, Frankfurt. Keys + DB URL in `.env.hosted.local` (gitignored). Migrations: `npx supabase db push --db-url "$SUPABASE_DB_URL"` (session pooler; `supabase link` fails). Seed: `set -a; . ./.env.hosted.local; set +a; npx tsx scripts/seed.ts` (shell env beats `.env.local`). Last migrated 2026-10-22 (through 20261022000004); the user runs `db push` / seed themselves -- the auto-mode classifier blocks them for the agent (dry-run is allowed). Push code only after the migration it needs is applied.
 - **Stripe:** test mode, webhook `https://royalshop.vercel.app/api/webhooks/stripe` (completed + expired).
 - **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Visual checks run `PORT=3123 npm run dev` with the hosted env instead (no Docker needed) + Playwright from Python. `npm run build` also needs the hosted env (`.env.local` points at the local DB).
+- **Delivery time (2026-10-22):** 3-5 working days for all products = supplier lead 1-3 (hosted + `catalog.json`) + handling 1 + transport 1; longer cases -> we contact the customer (PDP/checkout copy). A new supplier needs lead 1-3 or the promise breaks.
 - **Seed guard:** `seed_reset()` now checks `company_settings.is_demo` (company name is real). Set `is_demo = false` before real orders.
 
 ## What Was Done (Session 5) -- Gölz back, workbook list prices, price on request, Honda engine list (2026-10-22)
@@ -37,14 +38,13 @@
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Shipping bands are placeholders: once the founder has pallet carrier quotes, update `company_settings.shipping_rates` (SQL update on hosted, plus `DEFAULT_SHIPPING_RATES` in `src/lib/shipping.ts` and the seed). Also confirm the 40 kg parcel limit with the chosen courier. |
-| 2 | High | Company IBAN (+ SWIFT) for invoices: still demo in `company_settings` and `scripts/seed.ts`. CLAUDE.md strategy line is stale ("minimum 800 EUR, 9 brands"; now 6 brands, no minimum) -- ask the user before editing. |
-| 3 | High | Rabat per brand (NTC/Bomag/Honda/Enar via Unicon, Gölz direct): recompute `purchase_price_net_eur` (now net x 0.8 / x 0.78 placeholders) in `catalog.json`, reseed hosted. Atlas Copco price list: set prices, drop `price_on_request`, reseed. |
-| 4 | High | Emails (Resend + React Email): order received, contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice; price-on-request enquiries could become a form instead of mailto. |
-| 5 | Med | Open product questions (docs/05 "Na overenie"): Enar shaft version (AVMU vs DINGO end, now chosen via order note), QZ profile missing for QZH, GX variant availability, VD 450 mat serial >= 3000, EC 3000G rated output. |
-| 6 | Med | Honda engine price list valid only until 2026-12-31: new list -> update `docs/cenniky/data/honda-motory.csv`, bump `validFrom/validTo` in `scripts/honda-engines.py`, run it, then reseed hosted (variant products carry the price; table and cart must match), push. |
-| 7 | Med | Admin/back-office in RCC: order capture (manual capture -> `confirmed` + invoice), product/price editing, `product_costs`. Webhook still lacks `payment_intent.canceled` / `charge.refunded`. |
-| 8 | Med | Auth + `/ucet`; info pages linked from footer still 404 (VOP, reklamačný poriadok, GDPR, doprava a platba -- now weight bands, kontakt, odstúpenie). |
+| 1 | High | Company IBAN (+ SWIFT): founder will send them; then update `company_settings` (hosted SQL) and `scripts/seed.ts`. |
+| 2 | High | Rabat per brand (NTC/Bomag/Honda/Enar via Unicon, Gölz direct): recompute `purchase_price_net_eur` (now net x 0.8 / x 0.78 placeholders) in `catalog.json`, reseed hosted. Atlas Copco price list: set prices, drop `price_on_request`, reseed. |
+| 3 | Blocked | Emails (Resend): wait until the shop@royalstroje.sk mailbox exists. Then order received, contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice. |
+| 4 | Med | Open product questions (docs/05 "Na overenie"): Enar shaft version (AVMU vs DINGO end, now chosen via order note), QZ profile missing for QZH, GX variant availability, VD 450 mat serial >= 3000, EC 3000G rated output. |
+| 5 | Med | Honda engine price list valid only until 2026-12-31: new list -> update `docs/cenniky/data/honda-motory.csv`, bump `validFrom/validTo` in `scripts/honda-engines.py`, run it, then reseed hosted (variant products carry the price; table and cart must match), push. |
+| 6 | Later | Admin/back-office in RCC (decided 2026-10-22: RCC will manage the whole shop and its DB may be shared; scope later): order capture (manual capture -> `confirmed` + invoice), product/price editing, `product_costs`. Webhook still lacks `payment_intent.canceled` / `charge.refunded`. |
+| 7 | Med | Auth + `/ucet`; info pages linked from footer still 404 (VOP, reklamačný poriadok, GDPR, doprava a platba -- now weight bands, kontakt, odstúpenie). |
 
 ## Key Files
 
