@@ -1,6 +1,6 @@
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { markOrderPaid, markPaymentAbandoned } from "@/lib/orders";
+import { markOrderPaid, markPaymentAbandoned, recordRefund } from "@/lib/orders";
 import { stripe } from "@/lib/stripe";
 
 // Stripe → order state. Every event is stored once in payment_events (idempotency); handlers are
@@ -50,8 +50,10 @@ export async function POST(request: Request) {
       case "checkout.session.expired":
         await markPaymentAbandoned(db, event.data.object.id, "Stripe: platobná relácia vypršala");
         break;
+      case "charge.refunded":
+        await recordRefund(db, event.data.object);
+        break;
       default:
-        // charge.refunded… is handled once the admin refund action exists (RCC)
         break;
     }
   } catch (err) {

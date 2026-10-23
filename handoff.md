@@ -4,26 +4,17 @@
 
 ## Current State
 
-- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app with 59 listed products + 176 unlisted Honda GX engine variants, 6 brands (NTC, Bomag, Honda, Enar, Gölz, Atlas Copco; Gölz = primary brand tile). Real operator data (Royal stroje s. r. o., Boldog), weight-based shipping, delivery "zvyčajne 3-5, najneskôr 10 pracovných dní", 3 products on sale, `/kontakt` and all 6 legal pages live. Stripe charges immediately (test mode). Hosted Supabase, Next 16.4.2. No emails, no admin, no § 20a online withdrawal form yet.
-- **Session count:** 8
-- **Decisions (2026-10-22):** admin lives in RCC (Royal Stroje CRM, has invoicing + DB, may serve as the shop DB too) -- do not build `/admin` here. Weight shipping bands (9,90 / 49 / 89 / 149) are accepted as-is until the founder says otherwise. 800 EUR minimum is only a guideline, not a rule (CLAUDE.md line is fine).
+- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app (admin console at `/admin` since session 9) with 59 listed products + 176 unlisted Honda GX engine variants, 6 brands (NTC, Bomag, Honda, Enar, Gölz, Atlas Copco; Gölz = primary brand tile). Real operator data (Royal stroje s. r. o., Boldog), weight-based shipping, delivery "zvyčajne 3-5, najneskôr 10 pracovných dní", 3 products on sale, `/kontakt` and all 6 legal pages live. Stripe charges immediately (test mode). Hosted Supabase, Next 16.4.2. No emails, no invoices, no § 20a online withdrawal form yet.
+- **Session count:** 9
+- **Decisions:** (2026-10-23, replaces the 10-22 "admin in RCC" decision) the admin console lives in THIS repo at `/admin`, fully separate from RCC. crm_core is not reused as an instance (rental schema, Vite SPA without server, roles in app_metadata, table collisions); only its invoice PDF/PAY by square, layout and reports get ported. Domains: shop `shop.royalstroje.sk`, admin `admin.shop.royalstroje.sk` (`ADMIN_HOST` env, proxy redirects its root to /admin), RCC stays `app.royalstroje.sk`. Plan: `docs/07-admin-konzola-plan.md`. (2026-10-22) Weight shipping bands (9,90 / 49 / 89 / 149) are accepted as-is until the founder says otherwise. 800 EUR minimum is only a guideline, not a rule (CLAUDE.md line is fine).
 - **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy.
 - **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby; Pro needed before go-live for the DPA). Env vars set: 3 Supabase + `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET`. Repo MUST stay public: on 2026-10-22 it was private again and every deploy failed with "Git author bugiiiii11 must have access to the project on Vercel"; fixed by owner making it public + an empty commit (a blocked commit stays blocked on redeploy). Check with `gh api repos/cryptoleonardo1/royalshop/commits/<sha>/statuses --jq '.[0]'`. Local Vercel CLI and Supabase CLI are different accounts -- use web UIs.
-- **Hosted Supabase:** project `royalshop1`, ref `vzytkquuljtoopgfcfak`, Frankfurt. Keys + DB URL in `.env.hosted.local` (gitignored). Migrations: `npx supabase db push --db-url "$SUPABASE_DB_URL"` (session pooler; `supabase link` fails). Seed: `set -a; . ./.env.hosted.local; set +a; npx tsx scripts/seed.ts` (shell env beats `.env.local`). The user runs `db push` / seed / SQL themselves -- the auto-mode classifier blocks them for the agent (dry-run and anon reads are allowed). Push code only after the migration it needs is applied. 20261023000001 was applied via the SQL editor, so it is missing from the remote migration history (idempotent if `db push` reruns it).
-- **Stripe:** test mode, webhook `https://royalshop.vercel.app/api/webhooks/stripe` (completed + expired). Immediate charge since 2026-10-23 (no manual capture).
+- **Hosted Supabase:** project `royalshop1`, ref `vzytkquuljtoopgfcfak`, Frankfurt. Keys + DB URL in `.env.hosted.local` (gitignored). Migrations: `npx supabase db push --db-url "$SUPABASE_DB_URL"` (session pooler; `supabase link` fails). Seed: `set -a; . ./.env.hosted.local; set +a; npx tsx scripts/seed.ts` (shell env beats `.env.local`). The user runs `db push` / seed / SQL themselves -- the auto-mode classifier blocks them for the agent (dry-run and anon reads are allowed). Push code only after the migration it needs is applied. SQL-editor migrations are not recorded in the remote history: afterwards run `npx supabase migration repair --status applied <version> --db-url "$SUPABASE_DB_URL"` (done for 20261023000001 on 2026-10-23; remote is up to date).
+- **Stripe:** test mode, webhook `https://royalshop.vercel.app/api/webhooks/stripe` (completed + expired + charge.refunded). Immediate charge since 2026-10-23 (no manual capture).
 - **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Visual checks run `PORT=3123 npm run dev` with the hosted env instead (no Docker needed) + Playwright from Python. `npm run build` also needs the hosted env (`.env.local` points at the local DB).
 - **Delivery time (2026-10-23):** shown as "zvyčajne 3-5" (supplier lead 1-3 + handling 1 + transport 1) and **binding "najneskôr do 10 pracovných dní od zaplatenia"** (`DELIVERY_MAX_WORKDAYS` in `src/lib/legal.ts`). SOI fined a shop for missing its stated upper bound (P/0047/2025), so keep it real; slower machines need their own lead time on the product.
 - **Legal (2026-10-23):** research + decisions in `docs/06-pravne-stranky.md` (newer than docs/03; appendices `docs/pravne/A-E`). Page texts live in code (`src/app/(shop)/<slug>/page.tsx`, frame `legal-page.tsx`, constants `src/lib/legal.ts`); bump `LEGAL_VERSION` on any wording change (stored on every order). Not reviewed by a lawyer yet.
 - **Seed guard:** `seed_reset()` checks `company_settings.is_demo` (company name is real). Set `is_demo = false` before real orders.
-
-## What Was Done (Session 7) -- Delivery 3-5 days, home polish, sale, contact page, new motto (2026-10-22/23)
-
-- Founder decisions: weight shipping bands stay as they are; 800 EUR minimum is only a guideline; Resend waits for the shop@royalstroje.sk mailbox; IBAN/SWIFT coming from the founder; admin will live in RCC (scope later).
-- Hosted data changes: the auto-mode classifier blocks every agent write to hosted (even a supabase-js update), so the user runs SQL in the Supabase SQL editor of `royalshop1` (a different Supabase account than RCC's "Royal Stroje" project, eu-west-3, never run shop SQL there). Read access works with the anon key from `.env.hosted.local`; verify after each SQL. Catalog reads are `cacheLife("hours")`, so redeploy (empty commit) after a data change. Keep `catalog.json` in sync with every hosted edit.
-- Home: the last category tile spans the full row only when it would sit alone (`nth-child` rules for 2 and 3 columns), so 8 categories make a clean 3x3. 6 featured (+ Gölz FS170, Enar DINGO 230 V 3 m). Footer bottom padding 28 px.
-- Sale: 5 % on Bomag BPR 25/50, Gölz TS250A, Honda ECT 7000G (compare_at = old price, Omnibus 30-day price correct). To end: `update products set price_gross_cents = compare_at_price_cents, compare_at_price_cents = null where slug in (...)` + revert `catalog.json`.
-- `/kontakt`: cards, pickup point, rental yard photo, Google Maps pin 48.224467,17.418349 (same as royalstroje.sk), map iframe only after a click (GDPR), gallery. Photos come from the RoyalStroje project (`public/kontakt/`) and will be replaced later; two interior shots show cordless Makita/Ryobi.
-- Hero motto A "Prémiové stroje od výrobcov, za férové ceny." + service USPs. Claims rule: "od výrobcov a ich oficiálnych zastúpení", never "priamo" (only Gölz is direct, the rest via Unicon), no "najlepšie/najnižšie ceny"; claims: we are liable, "vybavíme s výrobcom" is how we handle it.
 
 ## What Was Done (Session 8) -- Legal research, legal pages, immediate payment (2026-10-23)
 
@@ -33,33 +24,42 @@
 - Stripe manual capture removed; status `paid_authorized` -> `paid` (migration 20261023000001). Return-cost estimate per weight band on PDP and in checkout (`RETURN_COST_ESTIMATES`, placeholders until the carrier price list).
 - No cookie banner needed today (shop sets no cookies; cart = localStorage); it is needed before GA4/Meta. Rejected: keeping manual capture (cheaper refunds, but 7-day hold expiry and founder wants to order right away).
 
+## What Was Done (Session 9) -- Admin console phase 1a: orders, withdrawal-window tracking (2026-10-23)
+
+- Login (`/admin/prihlasenie`, Supabase password, `profiles.role = 'admin'` checked by `requireAdmin()` in every page/action; `src/proxy.ts` only refreshes the session and bounces signed-out visitors). Admins: the user + test account `claude@royalshop.test` (creds as `ADMIN_TEST_EMAIL/PASSWORD` in `.env.hosted.local`, used for Playwright checks).
+- Prehľad (unconfirmed > 1 working day, open withdrawal windows + EUR at risk, consumers before delivery, binding 10-day delivery limit, month revenue/margin), Objednávky list with search/status filter + withdrawal-window chips, detail with margin, payments, history, next-step forms, cancel + refund, internal note. Live updates via Realtime on `orders` (migration 20261023000002, applied) + 60 s poll fallback.
+- Withdrawal logic in `src/lib/withdrawal.ts` + `src/lib/sk-calendar.ts`: 14 days from delivery (Bratislava day), last day shifted past weekends/holidays (§ 122 OZ; holiday list deliberately conservative), 5-day "grace" for notices posted on the last day. Consumers may withdraw before delivery too, so paid + undelivered consumer orders count as risk. "Vybavené" is blocked until grace ends. `withdrawal_deadline` is now set on "Doručené".
+- Stripe: cancel refunds captured payments (idempotency key) / expires open sessions; `charge.refunded` webhook mirrors refunds (event added in the Stripe test dashboard). Legacy manual-capture orders (OBJ26-00010/11, payments `authorized`) are captured on "Potvrdená" and released on cancel.
+- Gotchas: under Cache Components the Supabase auth client reads the clock -> `await connection()` in `getAdmin()`; `usePathname()` in the panel layout needs a Suspense boundary (fallback `NavList pathname=""`); CSS `composes` avoided in `admin.module.css`.
+- NOT verified: write actions (status change, cancel/refund, note) -- agent writes to hosted are blocked; the user tests them on the deploy.
+
 ## What To Do Next
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Founder review of legal pages (2026-10-24). Writer doubts to confirm: order valid 5 working days before confirmation (VOP art. 3), protocol states if oil/fuel left in the machine (art. 8), B2B diagnosis fee "per price list" (no list exists), battery take-back without purchase (doprava page). Deeper look at consumer withdrawal of used/damaged machines (docs/06 §1.4). Then lawyer review before go-live. |
-| 2 | High | § 20a online withdrawal form at `/odstupenie-od-zmluvy#formular`: required only name + order no. + e-mail, 2nd step "Potvrdiť odstúpenie od zmluvy", store with timestamp, instant confirmation e-mail with content + date/time (needs Resend, #4). Consumers only, no login. |
-| 3 | High | Company IBAN (+ SWIFT): founder will send them; then update `company_settings` (user runs SQL on hosted) and `scripts/seed.ts`. |
-| 4 | Blocked | Emails (Resend) once shop@royalstroje.sk exists: "Prijali sme objednávku a platbu" (must say it is NOT acceptance), "Potvrdenie objednávky" (= contract, PDFs of VOP/RP/poučenie/form), unavailability offer, withdrawal + claim confirmations, admin notice. |
-| 5 | High | Pre-launch compliance (docs/06 §4): EPR registration (EEE/batteries/packaging) + OZV contracts, SK manuals for Gölz/Unicon goods, živnostenský úrad notice of pickup point + e-shop, Vercel Pro (DPA), EU harmonised legal-guarantee notice graphic on PDP/checkout, GPSR manufacturer fields per product. |
-| 6 | High | Rabat per brand (Unicon brands, Gölz direct): recompute `purchase_price_net_eur` in `catalog.json`, reseed hosted. Atlas Copco price list: set prices, drop `price_on_request`, reseed. |
-| 7 | Med | Open product questions for Unicon (docs/05 "Na overenie"); Honda price list valid until 2026-12-31 (update `docs/cenniky/data/honda-motory.csv`, `scripts/honda-engines.py`, reseed). Carrier price list -> shipping bands + `RETURN_COST_ESTIMATES`. |
-| 8 | Later | Admin in RCC: confirm paid order (-> `confirmed` + invoice), cancel + Stripe refund within 2 working days, webhook `charge.refunded`, alert for `paid` orders unconfirmed > 1 working day. Auth + `/ucet` order tracking. Replace `/kontakt` photos when the founder sends them. |
+| 1 | High | User tests admin on https://royalshop.vercel.app/admin with Stripe test card 4242 4242 4242 4242: new paid order appears live with sound; walk it to "Doručené" with a back-dated delivery date and watch the window chips; cancel another (refund visible in Stripe + admin). Fix what breaks (actions: `src/lib/admin/order-actions.ts`). |
+| 2 | High | Admin phase 1b (docs/07 §2): invoices -- issue on "Potvrdená" via `issue_invoice()` (service role), server-side PDF ported from crm_core `src/lib/generateInvoicePdf.js` (card paid: no QR, "Uhradené platobnou kartou dňa"), `documents` bucket + signed URL, credit note on cancel (cancel currently REFUSES when an issued invoice exists). Fix first (docs/07 §3): credit-note VS collides with invoice VS, `tax_point_date` = payment date, lock cancelled invoices. Then settings page (company data, IBAN -- replaces hand SQL) and customers list. |
+| 3 | High | Founder review of legal pages. Open: order valid 5 working days before confirmation (VOP art. 3), protocol notes oil/fuel (art. 8), B2B diagnosis fee "per price list" (none exists), battery take-back (doprava page), withdrawal of used/damaged machines (docs/06 §1.4). Then lawyer review. |
+| 4 | High | Admin phase 2 (docs/07 §2): withdrawals module (refund within 14 days, manual entry) wired to the § 20a public form at `/odstupenie-od-zmluvy#formular`; claims with 30-day countdown; exit/inbound test protocols + pickup training record (needs `test_reports` columns); cron (unconfirmed alert, pending > 24 h cancel, delivered + grace -> completed). |
+| 5 | High | Company IBAN (+ SWIFT) from the founder -> `company_settings` (user runs SQL until the settings page exists) + `scripts/seed.ts`. |
+| 6 | Blocked | Emails (Resend) once shop@royalstroje.sk exists: "Prijali sme objednávku a platbu" (NOT acceptance), "Potvrdenie objednávky" (= contract, PDFs of VOP/RP/poučenie/form), unavailability, withdrawal + claim confirmations, admin notice. Without the poučenie on a durable medium the withdrawal window can extend by 12 months -- required before real sales. |
+| 7 | High | Pre-launch compliance (docs/06 §4): EPR + OZV, SK manuals, živnostenský úrad notice, Vercel Pro (DPA), EU legal-guarantee notice, GPSR fields. Domains: point `shop.` and `admin.shop.royalstroje.sk` at Vercel, set `ADMIN_HOST`. |
+| 8 | Med | Rabat per brand + Atlas Copco prices (reseed); Unicon questions (docs/05); Honda price list to 2026-12-31; carrier price list -> shipping bands + `RETURN_COST_ESTIMATES`; replace `/kontakt` photos when sent. |
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
+| `docs/07-admin-konzola-plan.md` | Admin console plan: phases, DB fixes needed, open questions |
 | `docs/04-technicka-dokumentacia.md` | Source of truth: architecture, order states, data model, screens |
 | `docs/06-pravne-stranky.md` | Legal decisions, page skeletons, founder/lawyer questions (details in `docs/pravne/`) |
-| `docs/05-sortiment-stroje.md` | Assortment, price rules, open questions, Honda code sources |
+| `src/lib/admin/order-actions.ts` | Admin writes: next step, cancel + Stripe refund/capture, note |
+| `src/lib/admin/orders-data.ts` | Admin reads (RLS as admin): list rows, dashboard stats, detail |
+| `src/lib/withdrawal.ts` / `src/lib/sk-calendar.ts` | Withdrawal window + deadline, SK working days/holidays |
+| `src/lib/order-state.ts` / `src/lib/orders.ts` | Order transitions; `markOrderPaid`, `recordRefund` |
+| `src/components/admin/admin.module.css` | All admin styles |
 | `supabase/seed-data/catalog.json` | Catalog source of truth (reseed hosted after edits) |
-| `src/lib/legal.ts` | LEGAL_VERSION, delivery max, refund days, return-cost estimates, SOI/ÚOOÚ |
-| `src/components/shop/legal-page.tsx` | Frame for the legal pages (`src/app/(shop)/<slug>/page.tsx`) |
-| `src/lib/order-state.ts` / `src/lib/orders.ts` | Order transitions; `markOrderPaid` |
-| `src/lib/shipping.ts` | Weight bands, `rateFor`, `shippingPrice` |
-| `src/components/shop/shop.module.css` | All storefront styles (design C tokens) |
-| `src/lib/honda-engines.ts` | Engine list, variant slug/name (seed + engine table) |
+| `src/lib/legal.ts` | LEGAL_VERSION, delivery max, refund days, return-cost estimates |
 
 ## Session Summary
 
@@ -73,3 +73,4 @@
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
+| 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |

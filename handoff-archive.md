@@ -1,5 +1,14 @@
 # Handoff Archive (do not read on /start)
 
+## What Was Done (Session 7) -- Delivery 3-5 days, home polish, sale, contact page, new motto (2026-10-22/23)
+
+- Founder decisions: weight shipping bands stay as they are; 800 EUR minimum is only a guideline; Resend waits for the shop@royalstroje.sk mailbox; IBAN/SWIFT coming from the founder; admin will live in RCC (scope later).
+- Hosted data changes: the auto-mode classifier blocks every agent write to hosted (even a supabase-js update), so the user runs SQL in the Supabase SQL editor of `royalshop1` (a different Supabase account than RCC's "Royal Stroje" project, eu-west-3, never run shop SQL there). Read access works with the anon key from `.env.hosted.local`; verify after each SQL. Catalog reads are `cacheLife("hours")`, so redeploy (empty commit) after a data change. Keep `catalog.json` in sync with every hosted edit.
+- Home: the last category tile spans the full row only when it would sit alone (`nth-child` rules for 2 and 3 columns), so 8 categories make a clean 3x3. 6 featured (+ Gölz FS170, Enar DINGO 230 V 3 m). Footer bottom padding 28 px.
+- Sale: 5 % on Bomag BPR 25/50, Gölz TS250A, Honda ECT 7000G (compare_at = old price, Omnibus 30-day price correct). To end: `update products set price_gross_cents = compare_at_price_cents, compare_at_price_cents = null where slug in (...)` + revert `catalog.json`.
+- `/kontakt`: cards, pickup point, rental yard photo, Google Maps pin 48.224467,17.418349 (same as royalstroje.sk), map iframe only after a click (GDPR), gallery. Photos come from the RoyalStroje project (`public/kontakt/`) and will be replaced later; two interior shots show cordless Makita/Ryobi.
+- Hero motto A "Prémiové stroje od výrobcov, za férové ceny." + service USPs. Claims rule: "od výrobcov a ich oficiálnych zastúpení", never "priamo" (only Gölz is direct, the rest via Unicon), no "najlepšie/najnižšie ceny"; claims: we are liable, "vybavíme s výrobcom" is how we handle it.
+
 ## What Was Done (Session 6) -- Engines to cart, hovers, sticky header, real contacts, weight shipping (2026-10-22)
 
 - Every Honda GX variant in the `/kategoria/motory` table has "Do košíka": non-stocked variants are seeded as products with `is_listed = false` (cart/checkout/PDP work; hidden from listings, counts, search). Slug/name helpers in `src/lib/honda-engines.ts` shared by seed and table. Variant weight = stocked engine of the same family.

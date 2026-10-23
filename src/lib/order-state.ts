@@ -1,6 +1,10 @@
 // Order lifecycle. The only place that decides which status may follow which.
 // See docs/04-technicka-dokumentacia.md §4.2.
 
+import { withdrawalDeadline } from "./withdrawal";
+
+export { WITHDRAWAL_DAYS, withdrawalDeadline } from "./withdrawal";
+
 export const ORDER_STATUSES = [
   "pending_payment",
   "paid",
@@ -79,16 +83,7 @@ export function timelineFor(method: ShippingMethod): OrderStatus[] {
   return ["paid", "confirmed", "ordered_from_supplier", "received_at_branch", "tested", dispatchStatus(method), "delivered"];
 }
 
-export const WITHDRAWAL_DAYS = 14;
-
-// Consumers only (founder decision: companies get no withdrawal option).
-export function withdrawalDeadline(deliveredAt: Date): Date {
-  const d = new Date(deliveredAt);
-  d.setDate(d.getDate() + WITHDRAWAL_DAYS);
-  d.setHours(23, 59, 59, 999);
-  return d;
-}
-
+// Consumers only (founder decision: companies get no withdrawal option). Deadline rules: withdrawal.ts.
 export function canWithdraw(
   order: { customer_type: "person" | "company"; status: OrderStatus; delivered_at: string | null },
   now = new Date(),

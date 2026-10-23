@@ -104,6 +104,30 @@ export async function markPaymentAbandoned(db: Db, checkoutSessionId: string, no
   await transitionOrder(db, order, "cancelled", { note, patch: { payment_status: "cancelled" } });
 }
 
+// charge.refunded: mirror the refunded amount (admin refund or one made directly in the Stripe dashboard).
+// Money state only; the order status is changed by the admin action (cancel, withdrawal), never here.
+export async function recordRefund(
+  db: Db,
+  charge: { payment_intent: string | { id: string } | null; amount: number; amount_refunded: number },
+): Promise<void> {
+  const pi = typeof charge.payment_intent === "string" ? charge.payment_intent : charge.payment_intent?.id;
+  if (!pi) return;
+  const full = charge.amount_refunded >= charge.amount;
+  const { data: payment, error } = await db
+    .from("payments")
+    .update({ refunded_cents: charge.amount_refunded, status: full ? "refunded" : "partially_refunded" })
+    .eq("stripe_payment_intent_id", pi)
+    .select("order_id")
+    .maybeSingle();
+  if (error) throw new Error(`Payment ${pi}: refund update failed: ${error.message}`);
+  if (!payment) return;
+  const upd = await db
+    .from("orders")
+    .update({ payment_status: full ? "refunded" : "partially_refunded" })
+    .eq("id", payment.order_id);
+  if (upd.error) throw new Error(`Order ${payment.order_id}: refund status failed: ${upd.error.message}`);
+}
+
 // Current prices straight from the database (not the page cache): this is what an order is charged.
 // Price-on-request products are left out, so a cart line for one is reported as no longer sold.
 export async function fetchPricedProducts(
