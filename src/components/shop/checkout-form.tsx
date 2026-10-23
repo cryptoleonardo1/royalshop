@@ -7,6 +7,7 @@ import { placeOrder, type PlaceOrderState } from "@/lib/checkout-actions";
 import type { ShippingMethod } from "@/lib/order-state";
 import { formatEur } from "@/lib/money";
 import { formatDeliveryDate } from "@/lib/format";
+import { DELIVERY_MAX_WORKDAYS, returnCostEstimate, UNAVAILABLE_REFUND_WORKDAYS } from "@/lib/legal";
 import { useHydrated, useQuote } from "./use-quote";
 import css from "./shop.module.css";
 
@@ -310,8 +311,9 @@ export function CheckoutForm({
           <p className={css.summaryDelivery}>
             <Truck size={18} aria-hidden="true" />
             <span>
-              Predpokladané doručenie <strong>{dateLabel(quote.estimatedDelivery)}</strong> · každý stroj pred odoslaním
-              otestujeme. Ak by dodanie výnimočne trvalo dlhšie, budeme vás kontaktovať.
+              Predpokladané doručenie <strong>{dateLabel(quote.estimatedDelivery)}</strong>, najneskôr do{" "}
+              {DELIVERY_MAX_WORKDAYS} pracovných dní od zaplatenia. Každý stroj pred odoslaním otestujeme. Ak by sa
+              dodanie zdržalo, ozveme sa vám.
             </span>
           </p>
         )}
@@ -319,8 +321,9 @@ export function CheckoutForm({
         <div className={css.payInfo}>
           <CreditCard size={20} aria-hidden="true" />
           <p>
-            Platba kartou, Apple Pay alebo Google Pay cez Stripe. Sumu na karte <strong>len zablokujeme</strong> a
-            strhneme ju, keď dodávateľ potvrdí dostupnosť. Ak tovar nebude dostupný, blokáciu uvoľníme.
+            Celú sumu zaplatíte <strong>vopred</strong> kartou, Apple Pay alebo Google Pay cez Stripe. Objednávku
+            potvrdíme e-mailom, keď dodávateľ potvrdí dostupnosť. Ak stroj nebude dostupný, vrátime vám celú sumu do{" "}
+            {UNAVAILABLE_REFUND_WORKDAYS} pracovných dní. <Link href="/doprava-a-platba">Doprava a platba</Link>
             {demoPayments && <em> Demo: platobná brána nie je pripojená, platbu len nasimulujeme.</em>}
           </p>
         </div>
@@ -330,7 +333,14 @@ export function CheckoutForm({
           <span className={css.facetBox} aria-hidden="true" />
           <span>
             Súhlasím s <Link href="/obchodne-podmienky">obchodnými podmienkami</Link> a{" "}
-            <Link href="/reklamacny-poriadok">reklamačným poriadkom</Link>.
+            <Link href="/reklamacny-poriadok">reklamačným poriadkom</Link>
+            {customerType === "person" && (
+              <>
+                {" "}
+                a oboznámil(a) som sa s <Link href="/odstupenie-od-zmluvy">poučením o odstúpení od zmluvy</Link>
+              </>
+            )}
+            .
           </span>
         </label>
         {errors.terms && (
@@ -340,7 +350,7 @@ export function CheckoutForm({
         )}
         <p className={css.legalNote}>
           {customerType === "person"
-            ? "Ako spotrebiteľ máte právo odstúpiť od zmluvy do 14 dní od prevzatia tovaru bez udania dôvodu."
+            ? `Ako spotrebiteľ máte právo odstúpiť od zmluvy do 14 dní od prevzatia tovaru bez udania dôvodu. Priame náklady na vrátenie tovaru znášate vy${quote ? `, predpokladaný odhad je najviac ${formatEur(returnCostEstimate(quote.weightKg).maxCents)}` : ""}.`
             : "Pri nákupe na firmu (IČO) sa zákonné právo na odstúpenie do 14 dní neuplatňuje."}{" "}
           Osobné údaje spracúvame podľa <Link href="/ochrana-osobnych-udajov">zásad ochrany osobných údajov</Link>.
         </p>

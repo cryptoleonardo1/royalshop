@@ -7,7 +7,7 @@ import { getShopSettings } from "@/lib/catalog";
 import { buildQuote, type Quote } from "@/lib/cart-pricing";
 import { cartLinesSchema, orderSnapshots, parseCheckout, type FieldErrors } from "@/lib/checkout-schema";
 import type { ShippingMethod } from "@/lib/order-state";
-import { fetchPricedProducts, markPaymentAuthorized } from "@/lib/orders";
+import { fetchPricedProducts, markOrderPaid } from "@/lib/orders";
 import { isDemoPayments, stripe } from "@/lib/stripe";
 
 // Every write here touches money or order state, so it runs server-side with the service role.
@@ -128,7 +128,7 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
   redirect(url);
 }
 
-// Creates a Stripe Checkout session (manual capture) for a pending order and returns where to send
+// Creates a Stripe Checkout session (charged immediately) for a pending order and returns where to send
 // the customer. In demo payment mode it returns the order page, which offers a simulated payment.
 async function startPayment(orderId: string): Promise<string> {
   const db = createAdminClient();
@@ -178,7 +178,6 @@ async function startPayment(orderId: string): Promise<string> {
     client_reference_id: order.id,
     metadata: { order_id: order.id, order_number: order.order_number },
     payment_intent_data: {
-      capture_method: "manual",
       metadata: { order_id: order.id, order_number: order.order_number },
       description: `Objednávka ${order.order_number}`,
     },
@@ -209,7 +208,7 @@ async function loadOrderByToken(orderNumber: string, token: string) {
   return data;
 }
 
-// "Zaplatiť" on the order page: a fresh Stripe session, or the simulated authorization in demo mode.
+// "Zaplatiť" on the order page: a fresh Stripe session, or the simulated payment in demo mode.
 export async function payOrder(form: FormData): Promise<void> {
   const number = String(form.get("number") ?? "");
   const token = String(form.get("token") ?? "");
@@ -229,7 +228,7 @@ export async function payOrder(form: FormData): Promise<void> {
       status: "pending",
     });
     if (pay.error) throw new Error(`Demo payment insert failed: ${pay.error.message}`);
-    await markPaymentAuthorized(
+    await markOrderPaid(
       db,
       order.id,
       { checkoutSessionId: sessionId, paymentIntentId: null },

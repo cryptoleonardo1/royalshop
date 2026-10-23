@@ -2,7 +2,7 @@ import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { canTransition, type OrderStatus, type ShippingMethod } from "./order-state";
 import type { PricedProduct } from "./cart-pricing";
-import { AUTHORIZATION_DAYS, stripe } from "./stripe";
+import { stripe } from "./stripe";
 
 // Server-side order writes (service role). Status changes go through transitionOrder so the
 // order-state rules and the status history can never be skipped.
@@ -51,23 +51,23 @@ async function loadOrderRef(db: Db, orderId: string): Promise<OrderRef | null> {
   return data as OrderRef | null;
 }
 
-// Card authorized (Stripe checkout.session.completed with manual capture, or the demo payment).
+// Paid (Stripe checkout.session.completed with payment_status "paid", or the demo payment). The card is
+// charged at checkout (docs/06 §1.1); the contract is concluded later by "Potvrdenie objednávky".
 // Idempotent: replays of the same event leave the order untouched.
-export async function markPaymentAuthorized(
+export async function markOrderPaid(
   db: Db,
   orderId: string,
   payment: { checkoutSessionId: string; paymentIntentId: string | null },
   note: string,
 ): Promise<void> {
-  const now = new Date();
-  const expires = new Date(now.getTime() + AUTHORIZATION_DAYS * 24 * 3600 * 1000);
+  const now = new Date().toISOString();
   const upd = await db
     .from("payments")
     .update({
-      status: "authorized",
+      status: "captured",
       stripe_payment_intent_id: payment.paymentIntentId,
-      authorized_at: now.toISOString(),
-      authorization_expires_at: expires.toISOString(),
+      authorized_at: now,
+      captured_at: now,
     })
     .eq("stripe_checkout_session_id", payment.checkoutSessionId)
     .eq("status", "pending");
@@ -75,7 +75,7 @@ export async function markPaymentAuthorized(
 
   const order = await loadOrderRef(db, orderId);
   if (!order || order.status !== "pending_payment") return;
-  await transitionOrder(db, order, "paid_authorized", { note, patch: { payment_status: "authorized" } });
+  await transitionOrder(db, order, "paid", { note, patch: { payment_status: "paid" } });
 }
 
 // A checkout session expired or its payment intent was cancelled. The order is cancelled only if
@@ -153,13 +153,13 @@ export async function fetchPricedProducts(
 export async function confirmCheckoutReturn(db: Db, orderId: string, sessionId: string): Promise<void> {
   if (!stripe || !sessionId.startsWith("cs_")) return;
   const session = await stripe.checkout.sessions.retrieve(sessionId);
-  if (session.metadata?.order_id !== orderId || session.status !== "complete") return;
+  if (session.metadata?.order_id !== orderId || session.status !== "complete" || session.payment_status !== "paid") return;
   const paymentIntentId =
     typeof session.payment_intent === "string" ? session.payment_intent : (session.payment_intent?.id ?? null);
-  await markPaymentAuthorized(
+  await markOrderPaid(
     db,
     orderId,
     { checkoutSessionId: session.id, paymentIntentId },
-    "Stripe: platba autorizovaná (návrat z Checkout)",
+    "Stripe: zaplatené (návrat z Checkout)",
   );
 }

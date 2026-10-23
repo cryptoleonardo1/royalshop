@@ -107,8 +107,8 @@ async function OrderView({ params, searchParams }: PageProps<"/objednavka/[cislo
                 <CreditCard size={24} aria-hidden="true" /> Čaká na platbu
               </h2>
               <p>
-                Suma <strong>{formatEur(order.total_gross_cents)}</strong> sa na karte len zablokuje. Strhneme ju, keď
-                dodávateľ potvrdí dostupnosť tovaru.
+                Celú sumu <strong>{formatEur(order.total_gross_cents)}</strong> zaplatíte vopred. Objednávku potvrdíme
+                e-mailom, keď dodávateľ potvrdí dostupnosť. Ak stroj nebude dostupný, peniaze vám vrátime.
               </p>
               <form action={payOrder}>
                 <input type="hidden" name="number" value={order.order_number} />
@@ -126,16 +126,17 @@ async function OrderView({ params, searchParams }: PageProps<"/objednavka/[cislo
             </section>
           )}
 
-          {status === "paid_authorized" && (
+          {status === "paid" && (
             <section className={`${css.testNote} ${css.dark}`} aria-label="Platba">
               <span className={css.testStamp} aria-hidden="true">
                 <Check size={26} strokeWidth={3} />
               </span>
               <div>
-                <p className={css.testTitle}>Platba autorizovaná</p>
+                <p className={css.testTitle}>Zaplatené</p>
                 <p>
-                  {formatEur(order.total_gross_cents)} máme na karte zablokovaných. Teraz overíme dostupnosť u
-                  dodávateľa (zvyčajne do 1 pracovného dňa), potom platbu strhneme a pošleme faktúru.
+                  Platbu {formatEur(order.total_gross_cents)} sme prijali. Teraz overíme dostupnosť u dodávateľa
+                  (zvyčajne do 1 pracovného dňa) a pošleme vám potvrdenie objednávky. Ak stroj nebude dostupný,
+                  celú sumu vám vrátime.
                 </p>
               </div>
             </section>
@@ -143,8 +144,8 @@ async function OrderView({ params, searchParams }: PageProps<"/objednavka/[cislo
 
           {status === "cancelled" && (
             <p className={css.notice}>
-              <AlertTriangle size={18} aria-hidden="true" /> Objednávka bola zrušená. Ak bola suma na karte zablokovaná,
-              banka ju uvoľní.
+              <AlertTriangle size={18} aria-hidden="true" /> Objednávka bola zrušená. Ak ste už zaplatili, celú sumu
+              vám vrátime na kartu, z ktorej ste platili.
             </p>
           )}
 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { connection } from "next/server";
-import { ArrowUpRight, BatteryCharging, Check, Factory, FileText, Mail, Phone, ShieldCheck, Store, Truck } from "lucide-react";
+import { ArrowUpRight, BatteryCharging, Check, Factory, FileText, Mail, Phone, ShieldCheck, Store, Truck, Undo2 } from "lucide-react";
 import {
   getCategoryContext,
   getProduct,
@@ -13,6 +13,7 @@ import {
   type ShopSettings,
 } from "@/lib/catalog";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
+import { DELIVERY_MAX_WORKDAYS, returnCostEstimate } from "@/lib/legal";
 import { formatEur, netFromGross } from "@/lib/money";
 import { discountPct, referencePrice } from "@/lib/pricing";
 import { estimateDelivery, rateFor, shippingPrice } from "@/lib/shipping";
@@ -80,8 +81,8 @@ async function DeliveryEstimate({ product, settings }: { product: ProductDetail;
           <span>
             <strong>Doručíme na adresu predpokladane v {delivered}</strong>
             doprava {shipping === 0 ? "zdarma" : formatEur(shipping)} ({rate.name}) · zvyčajne{" "}
-            {workDaysText(days.min, days.max)} vrátane testu pred odoslaním. Ak by dodanie výnimočne trvalo dlhšie,
-            ozveme sa vám.
+            {workDaysText(days.min, days.max)} vrátane testu pred odoslaním, najneskôr do {DELIVERY_MAX_WORKDAYS}{" "}
+            pracovných dní od zaplatenia. Ak by sa dodanie zdržalo, ozveme sa vám.
           </span>
         </li>
       )}
@@ -92,6 +93,7 @@ async function DeliveryEstimate({ product, settings }: { product: ProductDetail;
           zdarma, po otestovaní pripravíme na pobočke
         </span>
       </li>
+      <ReturnCostNote weightKg={product.weightKg} />
     </ul>
   );
 }
@@ -104,10 +106,27 @@ function DeliveryFallback({ product, handlingDays }: { product: ProductDetail; h
         <Truck size={20} aria-hidden="true" />
         <span>
           <strong>Doručenie zvyčajne {workDaysText(days.min, days.max)}</strong>
-          vrátane testu pred odoslaním. Ak by dodanie výnimočne trvalo dlhšie, ozveme sa vám.
+          vrátane testu pred odoslaním, najneskôr do {DELIVERY_MAX_WORKDAYS} pracovných dní od zaplatenia. Ak by sa
+          dodanie zdržalo, ozveme sa vám.
         </span>
       </li>
+      <ReturnCostNote weightKg={product.weightKg} />
     </ul>
+  );
+}
+
+// Consumers bear the direct cost of returning goods after withdrawal only if told before the order
+// (§ 15 ods. 1 písm. g) ZOS); heavy machines cannot go back by post, so we show an estimate.
+function ReturnCostNote({ weightKg }: { weightKg: number | null }) {
+  return (
+    <li>
+      <Undo2 size={20} aria-hidden="true" />
+      <span>
+        <strong>Odstúpenie do 14 dní od prevzatia</strong>
+        náklady na vrátenie znášate vy, odhad najviac {formatEur(returnCostEstimate(weightKg).maxCents)} ·{" "}
+        <Link href="/odstupenie-od-zmluvy">podmienky</Link>
+      </span>
+    </li>
   );
 }
 

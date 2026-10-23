@@ -77,7 +77,7 @@ async function seedSettings() {
       free_shipping_threshold_cents: null, // no free shipping; delivery priced by order weight
       shipping_rates: DEFAULT_SHIPPING_RATES,
       pickup_address: "Predajňa Royal Stroje, Recká cesta 182, 925 26 Boldog (pri Senci)",
-      pickup_hours: "Po–Pi 7:00–16:00",
+      pickup_hours: "Po–Pi 8:00–15:00",
       handling_days: 1,
       invoice_due_days: 14,
     }),
@@ -237,7 +237,7 @@ interface DemoOrder {
 }
 
 const ORDERS: DemoOrder[] = [
-  { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "paid_authorized", createdDaysAgo: 0 },
+  { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "paid", createdDaysAgo: 0 },
   { profileKey: "jana", items: [{ slug: "", qty: 1 }, { slug: "", qty: 1 }], method: "pickup_senec", status: "ordered_from_supplier", createdDaysAgo: 2 },
   { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "delivered", createdDaysAgo: 8, deliveredDaysAgo: 3 },
   { profileKey: "jana", items: [{ slug: "", qty: 1 }], method: "courier", status: "completed", createdDaysAgo: 60, deliveredDaysAgo: 55 },
@@ -321,7 +321,8 @@ async function seedPeopleAndOrders(ctx: Awaited<ReturnType<typeof seedCatalog>>)
     const number = must(await db.rpc("next_document_number", { p_kind: "order", p_date: createdAt.toISOString().slice(0, 10) }), "order number") as string;
 
     const paid = !["pending_payment", "cancelled"].includes(demo.status);
-    const captured = paid && demo.status !== "paid_authorized";
+    // charged at checkout (docs/06 §1.1): every paid order is captured
+    const captured = paid;
     const order = must(
       await db.from("orders").insert({
         order_number: number, profile_id: person.id, customer_type: person.type, email: person.email, phone: person.phone,
@@ -329,7 +330,7 @@ async function seedPeopleAndOrders(ctx: Awaited<ReturnType<typeof seedCatalog>>)
         shipping_method: demo.method, shipping_zone_id: zone?.id ?? null, shipping_price_cents: shipping,
         subtotal_gross_cents: subtotal, total_net_cents: totals.netCents, total_vat_cents: totals.vatCents, total_gross_cents: totals.grossCents,
         status: demo.status,
-        payment_status: demo.status === "cancelled" ? "cancelled" : captured ? "paid" : paid ? "authorized" : "unpaid",
+        payment_status: demo.status === "cancelled" ? "cancelled" : captured ? "paid" : "unpaid",
         estimated_delivery_date: new Date(createdAt.getTime() + 5 * 86_400_000).toISOString().slice(0, 10),
         delivered_at: deliveredAt?.toISOString() ?? null,
         withdrawal_deadline: withdrawalDeadline?.toISOString() ?? null,
@@ -367,9 +368,9 @@ async function seedPeopleAndOrders(ctx: Awaited<ReturnType<typeof seedCatalog>>)
       must(
         await db.from("payments").insert({
           order_id: order.id, provider: "stripe", stripe_payment_intent_id: `pi_demo_${number}`, amount_cents: totals.grossCents,
-          status: demo.status === "cancelled" ? "cancelled" : captured ? "captured" : "authorized",
-          authorized_at: createdAt.toISOString(), authorization_expires_at: new Date(createdAt.getTime() + 7 * 86_400_000).toISOString(),
-          captured_at: captured ? new Date(createdAt.getTime() + 6 * 3_600_000).toISOString() : null,
+          status: demo.status === "cancelled" ? "cancelled" : "captured",
+          authorized_at: createdAt.toISOString(),
+          captured_at: demo.status === "cancelled" ? null : createdAt.toISOString(),
         }),
         "payment",
       );
@@ -377,7 +378,7 @@ async function seedPeopleAndOrders(ctx: Awaited<ReturnType<typeof seedCatalog>>)
 
     if (captured) {
       const supplierSlugs = [...new Set(lines.map((l) => l.product.supplier_slug))];
-      if (!["confirmed"].includes(demo.status)) {
+      if (!["paid", "confirmed"].includes(demo.status)) {
         must(
           await db.from("supplier_orders").insert(
             supplierSlugs.map((s) => ({
@@ -413,7 +414,7 @@ async function seedInvoices(created: Awaited<ReturnType<typeof seedPeopleAndOrde
 
   // Oldest first so invoice numbers follow order dates.
   const captured = created
-    .filter((c) => !["pending_payment", "paid_authorized", "cancelled"].includes(c.demo.status))
+    .filter((c) => !["pending_payment", "paid", "cancelled"].includes(c.demo.status))
     .sort((a, b) => b.demo.createdDaysAgo - a.demo.createdDaysAgo);
 
   for (const c of captured) {

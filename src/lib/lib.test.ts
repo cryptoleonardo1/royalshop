@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { computeLine, computeTotals, formatEur, marginStats, netFromGross } from "./money";
 import { allowedNextStatuses, canTransition, canWithdraw, withdrawalDeadline } from "./order-state";
+import { returnCostEstimate } from "./legal";
 import { addBusinessDays, availableMethods, estimateDelivery, orderWeightKg, rateFor, shippingPrice } from "./shipping";
 
 describe("money", () => {
@@ -43,6 +44,11 @@ describe("order state", () => {
     expect(allowedNextStatuses("tested", "courier")).toEqual(["shipped"]);
     expect(allowedNextStatuses("tested", "pickup_senec")).toEqual(["ready_for_pickup"]);
     expect(canTransition("tested", "shipped", "pickup_senec")).toBe(false);
+  });
+
+  it("goes from payment straight to paid, then confirmed or cancelled (refund)", () => {
+    expect(allowedNextStatuses("pending_payment", "courier")).toEqual(["paid", "cancelled"]);
+    expect(allowedNextStatuses("paid", "courier")).toEqual(["confirmed", "cancelled"]);
   });
 
   it("cannot cancel after goods arrived", () => {
@@ -91,5 +97,16 @@ describe("shipping", () => {
     expect(addBusinessDays(fri, 1).getDay()).toBe(1);
     // Makita 2 days + 1 test + 1 courier from Friday → Thursday
     expect(estimateDelivery([2], 1, "courier", fri).getDate()).toBe(15);
+  });
+});
+
+describe("legal", () => {
+  it("estimates return cost by the delivery weight band", () => {
+    expect(returnCostEstimate(35).maxCents).toBe(2000);
+    expect(returnCostEstimate(40).maxCents).toBe(2000);
+    expect(returnCostEstimate(92).maxCents).toBe(7000);
+    expect(returnCostEstimate(205).maxCents).toBe(12000);
+    expect(returnCostEstimate(460).maxCents).toBe(20000);
+    expect(returnCostEstimate(null).maxCents).toBe(20000);
   });
 });

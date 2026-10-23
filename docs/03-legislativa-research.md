@@ -1,5 +1,7 @@
 # 03 – Legislatívny research pre e-shop (SK, stav k 9. 10. 2026)
 
+> **Aktualizované 23. 10. 2026:** novší výskum pre súčasný model (Unicon CZ, Gölz DE, výdaj v Boldogu, bez akumulátorového náradia) a podklady k právnym stránkam sú v `docs/06-pravne-stranky.md`. Kde sa líšia, platí 06.
+
 > **Účel:** podklad na zostavenie VOP, reklamačného poriadku, zásad ochrany osobných údajov a cookies a na technickú implementáciu. **Nejde o právne poradenstvo.** Všetko treba nechať skontrolovať advokátom. Miesta s neistotou sú označené **[NEISTÉ]**.
 >
 > **Metodika:** Kľúčové ustanovenia som overil priamo v **znení zo Zbierky zákonov (PDF zo Slov-Lexu)**: zákon 108/2024 Z. z. v konsolidovanom znení účinnom od 27. 9. 2026, zákony 310/2025 a 311/2025 Z. z., 384/2025 Z. z., 222/2004 Z. z. (znenia z 1. 1. 2026 a z 1. 1. 2027) a 79/2015 Z. z. (znenie z 1. 1. 2026). Ostatné body pochádzajú zo sekundárnych zdrojov a sú tak aj označené.

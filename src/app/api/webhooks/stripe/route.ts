@@ -1,6 +1,6 @@
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { markPaymentAbandoned, markPaymentAuthorized } from "@/lib/orders";
+import { markOrderPaid, markPaymentAbandoned } from "@/lib/orders";
 import { stripe } from "@/lib/stripe";
 
 // Stripe → order state. Every event is stored once in payment_events (idempotency); handlers are
@@ -34,14 +34,15 @@ export async function POST(request: Request) {
       case "checkout.session.completed": {
         const session = event.data.object;
         const orderId = session.metadata?.order_id;
-        if (orderId) {
+        // card payments are "paid" here; anything else (delayed methods) is not enabled in Checkout
+        if (orderId && session.payment_status === "paid") {
           const pi =
             typeof session.payment_intent === "string" ? session.payment_intent : (session.payment_intent?.id ?? null);
-          await markPaymentAuthorized(
+          await markOrderPaid(
             db,
             orderId,
             { checkoutSessionId: session.id, paymentIntentId: pi },
-            "Stripe: platba autorizovaná",
+            "Stripe: zaplatené",
           );
         }
         break;
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
         await markPaymentAbandoned(db, event.data.object.id, "Stripe: platobná relácia vypršala");
         break;
       default:
-        // payment_intent.canceled, charge.refunded… are handled once admin capture/refund exists
+        // charge.refunded… is handled once the admin refund action exists (RCC)
         break;
     }
   } catch (err) {

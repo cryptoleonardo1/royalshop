@@ -105,26 +105,24 @@ Cieľom je overiť celý proces od zákazníka po admina na realistických (uká
 
 ## 4. Proces objednávky a stavy
 
-### 4.1 Platba: autorizácia a capture (odporúčanie)
+### 4.1 Platba: okamžité stiahnutie (rozhodnutie z 23. 10. 2026)
 
-Peniaze chceme mať istoty skôr, než tovar kúpime, a zároveň nechceme platiť poplatky za vrátenie peňazí, keď tovar nebude dostupný. Preto v Stripe použijeme **manuálny capture**:
+Pôvodný návrh s manuálnym capture (blokácia sumy) founder 23. 10. 2026 zrušil. Zdôvodnenie a právny rámec sú v `docs/06-pravne-stranky.md` §1.1.
 
-1. Pri pokladni Stripe peniaze **zablokuje** na karte zákazníka (autorizácia). Objednávka má stav `paid_authorized`.
-2. Admin overí dostupnosť u dodávateľa a klikne **„Potvrdiť a strhnúť platbu“**. Stripe peniaze naozaj strhne (capture), stav sa zmení na `confirmed` a vystaví sa faktúra. Až potom objednávame u dodávateľa.
-3. Ak tovar nie je dostupný, admin autorizáciu **zruší**. Peniaze sa uvoľnia a nič nás to nestojí.
+1. Pri pokladni Stripe sumu **hneď stiahne**. Objednávka má stav `paid` (zaplatená, overujeme dostupnosť) a zákazníkovi príde e-mail „Prijali sme vašu objednávku a platbu“. **Tento e-mail ešte nie je prijatím objednávky.**
+2. Admin overí dostupnosť u dodávateľa (cieľ: do 1 pracovného dňa) a objednávku potvrdí. Stav sa zmení na `confirmed`, odíde e-mail „Potvrdenie objednávky“ s PDF VOP, reklamačného poriadku a poučenia o odstúpení. **Týmto e-mailom vzniká kúpna zmluva.** Potom vystavíme faktúru a stroj objednáme u dodávateľa.
+3. Ak stroj nie je dostupný, admin objednávku zruší a **refunduje celú sumu vrátane dopravy do 2 pracovných dní** (záväzok vo VOP). Stripe si pri refundácii nechá poplatok z pôvodnej platby. Náhradný stroj dodáme len s výslovným súhlasom zákazníka.
 
-Autorizácia platí 7 dní. Ak admin do 5 dní nerozhodne, cron pošle upozornenie a na 6. deň platbu automaticky strhne alebo zruší (podľa nastavenia). Peniaze pred nákupom od dodávateľa teda máme vždy.
-
-Či sa autorizácia a strhnutie zhodujú s momentom uzavretia zmluvy podľa obchodných podmienok, je bod pre právnika (legislatívny research, kap. 11, bod 1).
+Daňová povinnosť z DPH vzniká dňom prijatia platby. Firme treba vystaviť faktúru k prijatej platbe do 15 dní (zvyčajne ju pokryje faktúra pri potvrdení).
 
 ### 4.2 Stav objednávky (`orders.status`)
 
 ```
-pending_payment ──(Stripe: autorizované)──► paid_authorized
+pending_payment ──(Stripe: zaplatené)──► paid
       │                                          │
-      └─(expirácia 24 h)─► cancelled             ├─(admin zruší)─► cancelled (autorizácia uvoľnená)
+      └─(expirácia 24 h)─► cancelled      ├─(nedostupné)─► cancelled (refundácia do 2 prac. dní)
                                                  ▼
-                                             confirmed           (platba strhnutá, faktúra vystavená)
+                                             confirmed           (Potvrdenie objednávky = zmluva, faktúra)
                                                  ▼
                                           ordered_from_supplier  (objednané u dodávateľa)
                                                  ▼
@@ -262,7 +260,7 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 ### 6.3 Admin konzola (`/admin`)
 | Modul | Obsah |
 |---|---|
-| **Dashboard** | Tržby, hrubá marža, počet objednávok podľa stavu, upozornenia (autorizácie pred expiráciou, reklamácie blízko 30-dňovej lehoty, nevybavené odstúpenia) |
+| **Dashboard** | Tržby, hrubá marža, počet objednávok podľa stavu, upozornenia (nepotvrdené zaplatené objednávky, reklamácie blízko 30-dňovej lehoty, nevybavené odstúpenia) |
 | **Objednávky** | Tabuľka s filtrami podľa stavu, platby, dodávateľa a dopravy. Detail: klient, položky s nákupnou cenou a maržou, tlačidlá ďalšieho kroku (potvrdiť a strhnúť platbu, objednané u dodávateľa, prijaté, protokol z testu a sériové číslo, odoslané s číslom zásielky, doručené), história stavov, poznámky, faktúra |
 | **Produkty** | Zoznam, formulár (ceny, nákupná cena a marža, parametre, obrázky, dokumenty, GPSR, odkaz na požičovňu), hromadné úpravy, import z CSV |
 | **Kategórie / značky / dodávatelia** | Správa číselníkov, dodacie lehoty a predvolené marže dodávateľov |
@@ -279,12 +277,12 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 
 ### 7.1 Stripe (testovací režim)
 - **Stripe Checkout (hosted):** karta, Apple Pay a Google Pay fungujú bez overovania domény. Jazyk SK, mena EUR.
-- Pri vytvorení objednávky sa pošle `payment_intent_data.capture_method = manual` a `metadata.order_id`.
+- Platba sa stiahne hneď (bez `capture_method = manual`), pri vytvorení sa posiela `metadata.order_id`.
 - Webhooky:
-  - `checkout.session.completed` → stav `paid_authorized`
-  - `payment_intent.canceled` / `checkout.session.expired` → stav `cancelled`
+  - `checkout.session.completed` s `payment_status = paid` → stav `paid`
+  - `checkout.session.expired` → stav `cancelled`
   - `charge.refunded` → aktualizácia refundácie
-- Akcie admina „Potvrdiť a strhnúť“, „Zrušiť autorizáciu“ a „Refundovať“ volajú Stripe API zo serverovej akcie.
+- Akcie admina „Potvrdiť objednávku“ a „Zrušiť a refundovať“ volajú Stripe API zo serverovej akcie (admin bude v RCC).
 - V deme sa platí testovacími kartami (4242 4242 4242 4242 a pod.). Pri spustení sa len prepnú kľúče a v Stripe sa pripojí firemný účet v Slovenskej sporiteľni.
 
 ### 7.2 E-maily (Resend + React Email)
@@ -325,7 +323,7 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 ### 7.5 Plánované úlohy (Vercel Cron)
 | Úloha | Frekvencia |
 |---|---|
-| Autorizácie, ktorým o menej ako 48 h vyprší platnosť → upozornenie, prípadne automatický capture alebo zrušenie | každú hodinu |
+| Zaplatené objednávky (`paid`) nepotvrdené dlhšie ako 1 pracovný deň → upozornenie adminovi | každú hodinu |
 | Objednávky `delivered` staršie ako 14 dní bez odstúpenia → `completed` | denne |
 | Reklamácie blízko 30-dňovej lehoty → upozornenie adminovi | denne |
 | Odstúpenia blízko 14-dňovej lehoty na refundáciu → upozornenie | denne |
@@ -431,7 +429,7 @@ royal-shop/
 | 3 | **Katalóg** | Domov, kategórie s filtrami, detail produktu, vyhľadávanie |
 | 4 | **Košík a pokladňa** | Košík, pokladňa súkromná osoba / firma, doprava, Stripe Checkout a webhook |
 | 5 | **Klientsky portál** | Profil, adresy, objednávky s časovou osou, faktúry |
-| 6 | **Admin – objednávky** | Dashboard, objednávky so všetkými stavmi, capture a zrušenie, dodávateľ, protokol z testu, odoslanie |
+| 6 | **Admin – objednávky** | Dashboard, objednávky so všetkými stavmi, potvrdenie a zrušenie s refundáciou, dodávateľ, protokol z testu, odoslanie |
 | 7 | **Admin – katalóg a zákazníci** | Produkty (CRUD, obrázky, ceny a marže), číselníky, zákazníci |
 | 8 | **Odstúpenia a reklamácie** | Portál (s verejným formulárom), admin, lehoty, PDF potvrdenia |
 | 9 | **Faktúry a e-maily** | PDF faktúr a dobropisov, Pay by Square, všetky e-maily, export |

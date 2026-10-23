@@ -172,7 +172,13 @@ export async function ShopShell({ children }: { children: ReactNode }) {
                   <Link href="/ochrana-osobnych-udajov">Ochrana osobných údajov</Link>
                 </li>
                 <li>
+                  <Link href="/odstupenie-od-zmluvy">Odstúpenie od zmluvy</Link>
+                </li>
+                <li>
                   <Link href="/doprava-a-platba">Doprava a platba</Link>
+                </li>
+                <li>
+                  <Link href="/cookies">Cookies</Link>
                 </li>
                 <li>
                   <Link href="/kontakt">Kontakt</Link>
@@ -181,7 +187,7 @@ export async function ShopShell({ children }: { children: ReactNode }) {
             </nav>
 
             <div className={css.footCol}>
-              <Link href="/odstupenie" className={css.withdraw}>
+              <Link href="/odstupenie-od-zmluvy#formular" className={css.withdraw}>
                 <span className={css.withdrawInner}>
                   <Undo2 size={22} aria-hidden="true" />
                   <span>

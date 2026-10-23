@@ -118,7 +118,7 @@ export default async function HomePage() {
                 <strong>
                   {fastest}–{slowest} dní
                 </strong>{" "}
-                doručenie vrátane testu
+                zvyčajné doručenie vrátane testu
               </li>
               <li>
                 {settings.freeShippingThresholdCents != null ? (

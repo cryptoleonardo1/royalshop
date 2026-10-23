@@ -3,7 +3,7 @@
 
 export const ORDER_STATUSES = [
   "pending_payment",
-  "paid_authorized",
+  "paid",
   "confirmed",
   "ordered_from_supplier",
   "received_at_branch",
@@ -21,7 +21,7 @@ export type ShippingMethod = "courier" | "own_transport" | "pickup_senec";
 
 export const ORDER_STATUS_LABELS: Record<OrderStatus, string> = {
   pending_payment: "Čaká na platbu",
-  paid_authorized: "Platba autorizovaná",
+  paid: "Zaplatená",
   confirmed: "Potvrdená",
   ordered_from_supplier: "Objednané u dodávateľa",
   received_at_branch: "Prijaté na pobočke",
@@ -47,8 +47,8 @@ export function dispatchStatus(method: ShippingMethod): OrderStatus {
 export function allowedNextStatuses(current: OrderStatus, method: ShippingMethod): OrderStatus[] {
   switch (current) {
     case "pending_payment":
-      return ["paid_authorized", "cancelled"];
-    case "paid_authorized":
+      return ["paid", "cancelled"];
+    case "paid":
       return ["confirmed", "cancelled"];
     case "confirmed":
       return ["ordered_from_supplier", "cancelled"];
@@ -76,7 +76,7 @@ export function canTransition(from: OrderStatus, to: OrderStatus, method: Shippi
 
 // Customer-facing timeline (what the portal shows as steps).
 export function timelineFor(method: ShippingMethod): OrderStatus[] {
-  return ["paid_authorized", "confirmed", "ordered_from_supplier", "received_at_branch", "tested", dispatchStatus(method), "delivered"];
+  return ["paid", "confirmed", "ordered_from_supplier", "received_at_branch", "tested", dispatchStatus(method), "delivered"];
 }
 
 export const WITHDRAWAL_DAYS = 14;
