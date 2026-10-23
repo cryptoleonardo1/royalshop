@@ -62,18 +62,22 @@ export default async function HomePage() {
   const fastest = Math.min(...spans.map((d) => d.min));
   const slowest = Math.max(...spans.map((d) => d.max));
   const usps = [
-    { title: "Otestované pred odoslaním", text: "Každý stroj zapneme, skontrolujeme a až potom zabalíme." },
-    settings.freeShippingThresholdCents != null
-      ? {
-          title: `Doprava zdarma od ${formatEur(settings.freeShippingThresholdCents)}`,
-          text: "Aj ťažké stroje na palete privezieme až k vám.",
-        }
-      : {
-          title: `Doprava po SR od ${formatEur(cheapestRateCents(settings.shippingRates))}`,
-          text: "Cena podľa hmotnosti, rovnaká na celom Slovensku. Ťažké stroje vozíme na palete.",
-        },
-    { title: "Osobný odber pri Senci", text: "Vyzdvihnete si ho v predajni Royal Stroje v Boldogu." },
-    { title: "Priamo od výrobcov", text: "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, s plnou zárukou." },
+    {
+      title: "Od výrobcov",
+      text: "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, preto máme dobré ceny a plnú záruku.",
+    },
+    {
+      title: "Odskúšané pred odoslaním",
+      text: "Každý stroj naštartujeme a skontrolujeme. Do balenia dáme podpísaný protokol.",
+    },
+    {
+      title: "Zaškolenie pri odbere",
+      text: "Pri osobnom odbere v Boldogu vám stroj ukážeme, poradíme so starostlivosťou a povieme, na čo si dať pozor.",
+    },
+    {
+      title: "Vždy poradíme",
+      text: "Otázky k stroju aj reklamácie riešime telefonicky alebo e-mailom. Reklamáciu vybavíme priamo s výrobcom.",
+    },
   ];
   const shownCategories = categories.filter((c) => c.productCount > 0);
 
@@ -83,22 +87,23 @@ export default async function HomePage() {
         <div className={`${css.wrap} ${css.heroGrid}`}>
           <div className={css.heroCopy}>
             <p className={`${css.tape} ${css.rise}`} style={delay(1)}>
-              Stavebné stroje · priamo od výrobcov
+              Prémiové stavebné stroje
             </p>
             <h1 id="hero-title" className={css.heroTitle}>
               <span className={css.rise} style={delay(2)}>
-                Stavebné stroje,
+                Prémiové stroje
               </span>
               <span className={`${css.heroHi} ${css.rise}`} style={delay(3)}>
-                overené
+                od výrobcov,
               </span>
               <span className={css.rise} style={delay(4)}>
-                pred odoslaním.
+                za férové ceny.
               </span>
             </h1>
             <p className={`${css.heroLede} ${css.rise}`} style={delay(5)}>
-              Vibračné dosky, elektrocentrály, čerpadlá aj rezačky od overených výrobcov. Každý stroj v našej predajni
-              naštartujeme a skontrolujeme. Na stavbu vám príde stroj, ktorý už raz bežal, s podpísaným protokolom.
+              NTC, Bomag, Honda, Gölz, Enar a Atlas Copco od výrobcov a ich oficiálnych zastúpení. Každý stroj pred
+              odoslaním odskúšame, pri osobnom odbere vás naň zaškolíme a prípadnú reklamáciu riešime priamo s
+              výrobcom. A keď si nebudete vedieť rady, stačí zavolať alebo napísať.
             </p>
             <div className={`${css.heroCtas} ${css.rise}`} style={delay(6)}>
               <Link href="/produkty" className={css.btnPrimary}>
@@ -172,7 +177,7 @@ export default async function HomePage() {
           <div className={css.cautionTrack}>
             {Array.from({ length: 2 }).map((_, k) => (
               <span key={k}>
-                Otestované pred odoslaním ✕ Priamo od výrobcov ✕ Zaškolenie zadarmo ✕ Osobný odber pri Senci ✕ Ťažké stroje vlastnou dopravou
+                Odskúšané pred odoslaním ✕ Od výrobcov ✕ Zaškolenie zadarmo ✕ Osobný odber pri Senci ✕ Ťažké stroje na palete po celom Slovensku
                 ✕{" "}
               </span>
             ))}
