@@ -31,8 +31,8 @@ export default function AllProductsPage(props: PageProps<"/produkty">) {
         </nav>
         <h1 className={css.pageTitle}>Celý sortiment</h1>
         <p className={css.pageLede}>
-          Stavebné stroje, ktoré pred odoslaním naštartujeme a skontrolujeme. Filtrujte podľa značky, parametrov, ceny
-          alebo dodacej lehoty.
+          Stavebné stroje, ktoré pred odoslaním naštartujeme a skontrolujeme. Filtrujte podľa značky, parametrov alebo
+          ceny.
         </p>
       </header>
       <Suspense fallback={<ListingSkeleton />}>

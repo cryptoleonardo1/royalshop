@@ -3152,6 +3152,243 @@ a.engineCodeLink:hover {
   flex-shrink: 0;
 }
 
+/* ---------- contact page ---------- */
+
+.contactGrid {
+  display: grid;
+  gap: clamp(20px, 3vw, 32px);
+  align-items: start;
+}
+.contactCards {
+  display: grid;
+  gap: 14px;
+}
+.contactCard {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  line-height: 1.5;
+}
+.contactCard > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--hivis-deep);
+}
+.contactCard p + p,
+.contactCard a + p {
+  margin-top: 4px;
+}
+.contactCardHot {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 6px 6px 0 var(--hivis);
+}
+.contactCardHot > svg,
+.contactCardHot .contactLabel {
+  color: var(--hivis);
+}
+.contactLabel {
+  margin-bottom: 6px;
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+a.contactBig {
+  display: inline-block;
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 48;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.05;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  background: linear-gradient(var(--hivis), var(--hivis)) 0 100% / 0 3px no-repeat;
+  transition: background-size 0.25s var(--ease);
+}
+a.contactBig:hover {
+  background-size: 100% 3px;
+}
+.contactStrong {
+  font-weight: 700;
+  font-size: 1.0625rem;
+}
+.contactHours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.contactAddress {
+  font-style: normal;
+  font-size: 0.9375rem;
+}
+.contactPhoto {
+  border: 3px solid var(--ink);
+  background: var(--ink);
+  box-shadow: var(--shadow);
+}
+.contactPhoto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.contactPhoto figcaption {
+  padding: 10px 14px;
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+.contactSection {
+  margin-top: clamp(48px, 7vw, 96px);
+}
+.mapGrid {
+  display: grid;
+  gap: clamp(20px, 3vw, 32px);
+}
+.mapFrame,
+.mapFacade {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 3px solid var(--ink);
+}
+.mapFrame {
+  background: var(--concrete-2);
+}
+.mapFacade {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  background:
+    linear-gradient(rgb(15 15 14 / 0.06) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgb(15 15 14 / 0.06) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--paper);
+  font-size: 0.875rem;
+  color: var(--mute);
+}
+.mapFacade > svg {
+  color: var(--hivis);
+}
+.mapLoad {
+  padding: 14px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 48;
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+.mapLoad:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--hivis);
+}
+.mapInfo {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  line-height: 1.5;
+}
+.mapAddress {
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 64;
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.mapActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 8px;
+}
+a.mapBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding-inline: 22px;
+  background: var(--hivis);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+a.mapBtn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow);
+}
+a.mapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.gallery {
+  display: grid;
+  gap: 14px;
+}
+.gallery li {
+  border: 3px solid var(--ink);
+  background: var(--ink);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  }
+  .contactPhoto {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+  }
+  .mapGrid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    align-items: start;
+  }
+  .mapFrame,
+  .mapFacade {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 /* ---------- 404 ---------- */
 
 .notFound {
