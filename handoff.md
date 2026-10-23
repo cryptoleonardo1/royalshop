@@ -4,8 +4,8 @@
 
 ## Current State
 
-- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app with 59 listed products + 176 unlisted Honda GX engine variants, 6 brands (NTC, Bomag, Honda, Enar, Gölz, Atlas Copco; Gölz = primary brand tile). Real operator data (Royal stroje s. r. o., Boldog), delivery priced by weight. Hosted Supabase + Stripe test mode, Next 16.4.2. No emails, no admin.
-- **Session count:** 6
+- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app with 59 listed products + 176 unlisted Honda GX engine variants, 6 brands (NTC, Bomag, Honda, Enar, Gölz, Atlas Copco; Gölz = primary brand tile). Real operator data (Royal stroje s. r. o., Boldog), weight-based shipping, 3-5 day delivery, 3 products on sale, `/kontakt` live. Hosted Supabase + Stripe test mode, Next 16.4.2. No emails, no admin, other footer info pages still 404.
+- **Session count:** 7
 - **Decisions (2026-10-22):** admin lives in RCC (Royal Stroje CRM, has invoicing + DB, may serve as the shop DB too) -- do not build `/admin` here. Weight shipping bands (9,90 / 49 / 89 / 149) are accepted as-is until the founder says otherwise. 800 EUR minimum is only a guideline, not a rule (CLAUDE.md line is fine).
 - **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy.
 - **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby). Env vars set: 3 Supabase + `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET`. Repo MUST stay public: on 2026-10-22 it was private again and every deploy failed with "Git author bugiiiii11 must have access to the project on Vercel"; fixed by owner making it public + an empty commit (a blocked commit stays blocked on redeploy). Check with `gh api repos/cryptoleonardo1/royalshop/commits/<sha>/statuses --jq '.[0]'`. Local Vercel CLI and Supabase CLI are different accounts -- use web UIs.
@@ -14,16 +14,6 @@
 - **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Visual checks run `PORT=3123 npm run dev` with the hosted env instead (no Docker needed) + Playwright from Python. `npm run build` also needs the hosted env (`.env.local` points at the local DB).
 - **Delivery time (2026-10-22):** 3-5 working days for all products = supplier lead 1-3 (hosted + `catalog.json`) + handling 1 + transport 1; longer cases -> we contact the customer (PDP/checkout copy). A new supplier needs lead 1-3 or the promise breaks.
 - **Seed guard:** `seed_reset()` now checks `company_settings.is_demo` (company name is real). Set `is_demo = false` before real orders.
-
-## What Was Done (Session 5) -- Gölz back, workbook list prices, price on request, Honda engine list (2026-10-22)
-
-- Gölz re-added: 12 machines, founder's net prices x 1.23 exact to the cent (no ...9 rounding), photos/specs from golzgroup.com (server-rendered, curl works). New categories `rozbrusovacky`, `brusky-na-beton`; `stolove-pily` renamed "Stolové a blokové píly". Supplier `golz`, purchase placeholder net x 0.78.
-- Assortment = green rows of founder's `Royal Shop Cenniky.xlsx` (read fills with openpyxl; CSV export loses colours). Price = workbook column F exactly: round(CZK/24.26, 2) x 1.23 (net rounded first, else 1-cent drift). Purchase placeholder net x 0.8. Demo sale prices dropped. Dingo kits = sum of DINGO + TAX-TDX 3|5/AX58 list prices.
-- Removed NT 76/76P, BP 12/35, EM30, Cedima, Husqvarna. Added NT 64P/72P (restored from git 31645c1 incl. photos), RZ 120, VD 450 damping mat + wheel kit (category `prislusenstvo`), Honda EC 3000G (+AVR, made by GENERGA, Kaunas), Enar AVMU, DINGO, 4 shafts, QZH. Bomag BPR 45/55 and 60/65 = existing D machines renamed DE (electric start is standard).
-- Honda GX engines pinned to price-list variants: GX120T3-QX-4E-OH, GX160H2-QX-3-OH, GX200H2-QX-3-OH, GX270T2-QH-B1-OH, GX390T2-QH-B1-OH (no QX type for 270/390 T2).
-- `products.price_on_request` (migration 20261022000001): card "Na požiadanie" + "Zistiť cenu", PDP call/e-mail buttons, excluded from price filter/bounds, last in price sort; `fetchPricedProducts` filters it out so it can never reach a quote/order/Stripe. Atlas Copco uses it; to restore a price delete the flag in `catalog.json` and reseed.
-- `/kategoria/motory` shows all 181 Honda GX variants (`src/data/honda-engines.json` from `scripts/honda-engines.py`, EUR only) with "V ponuke" links / mailto enquiry and a code legend. Only the shaft letter is Honda-documented; X/H, E-version, OH/SD colours, T/H plant are inferred and worded "zvyčajne". Sources in docs/05.
-- Gotcha: `.root a { color: inherit }` beats single-class button styles on `<a>`; use `a.className` selectors for link buttons.
 
 ## What Was Done (Session 6) -- Engines to cart, hovers, sticky header, real contacts, weight shipping (2026-10-22)
 
@@ -34,17 +24,28 @@
 - Shipping by total order weight, one SR price, no free shipping (threshold made the heaviest orders free): 40 kg parcel 9,90 / 100 kg 49 / 300 kg 89 / over 149 € (placeholders) in `company_settings.shipping_rates`; null weight = heaviest band. Distance zones and own transport dropped from cart/checkout (enum kept for old orders). PDP shows the product's delivery price.
 - Next.js 16.4.0 -> 16.4.2 (critical RCE GHSA-2464-fhr4-w9xw). `next dev` can stop on an upgrade notice addressed to agents; just rerun it.
 
+## What Was Done (Session 7) -- Delivery 3-5 days, home polish, sale, contact page, new motto (2026-10-22/23)
+
+- Founder decisions: weight shipping bands stay as they are; 800 EUR minimum is only a guideline; Resend waits for the shop@royalstroje.sk mailbox; IBAN/SWIFT coming from the founder; admin will live in RCC (scope later).
+- Hosted data changes: the auto-mode classifier blocks every agent write to hosted (even a supabase-js update), so the user runs SQL in the Supabase SQL editor of `royalshop1` (a different Supabase account than RCC's "Royal Stroje" project, eu-west-3, never run shop SQL there). Read access works with the anon key from `.env.hosted.local`; verify after each SQL. Catalog reads are `cacheLife("hours")`, so redeploy (empty commit) after a data change. Keep `catalog.json` in sync with every hosted edit.
+- Delivery 3-5 working days everywhere = supplier lead 1-3 + handling 1 + transport 1 (a new supplier needs lead 1-3). Copy says longer = we contact the customer. The delivery-time filter disappears, since every product now has the same lead.
+- Home: the last category tile spans the full row only when it would sit alone (`nth-child` rules for 2 and 3 columns), so 8 categories make a clean 3x3. 6 featured (+ Gölz FS170, Enar DINGO 230 V 3 m). Footer bottom padding 28 px.
+- Sale: 5 % on Bomag BPR 25/50, Gölz TS250A, Honda ECT 7000G (compare_at = old price, Omnibus 30-day price correct). To end: `update products set price_gross_cents = compare_at_price_cents, compare_at_price_cents = null where slug in (...)` + revert `catalog.json`.
+- `/kontakt`: cards, pickup point, rental yard photo, Google Maps pin 48.224467,17.418349 (same as royalstroje.sk), map iframe only after a click (GDPR), gallery. Photos come from the RoyalStroje project (`public/kontakt/`) and will be replaced later; two interior shots show cordless Makita/Ryobi.
+- Hero motto A "Prémiové stroje od výrobcov, za férové ceny." + service USPs (from manufacturers, tested, training at pickup, always help). Claims rule: "od výrobcov a ich oficiálnych zastúpení", never "priamo" (only Gölz is direct, the rest via Unicon), no "najlepšie/najnižšie ceny"; claims: we are liable, "vybavíme s výrobcom" is how we handle it.
+
 ## What To Do Next
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Company IBAN (+ SWIFT): founder will send them; then update `company_settings` (hosted SQL) and `scripts/seed.ts`. |
-| 2 | High | Rabat per brand (NTC/Bomag/Honda/Enar via Unicon, Gölz direct): recompute `purchase_price_net_eur` (now net x 0.8 / x 0.78 placeholders) in `catalog.json`, reseed hosted. Atlas Copco price list: set prices, drop `price_on_request`, reseed. |
-| 3 | Blocked | Emails (Resend): wait until the shop@royalstroje.sk mailbox exists. Then order received, contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice. |
-| 4 | Med | Open product questions (docs/05 "Na overenie"): Enar shaft version (AVMU vs DINGO end, now chosen via order note), QZ profile missing for QZH, GX variant availability, VD 450 mat serial >= 3000, EC 3000G rated output. |
-| 5 | Med | Honda engine price list valid only until 2026-12-31: new list -> update `docs/cenniky/data/honda-motory.csv`, bump `validFrom/validTo` in `scripts/honda-engines.py`, run it, then reseed hosted (variant products carry the price; table and cart must match), push. |
-| 6 | Later | Admin/back-office in RCC (decided 2026-10-22: RCC will manage the whole shop and its DB may be shared; scope later): order capture (manual capture -> `confirmed` + invoice), product/price editing, `product_costs`. Webhook still lacks `payment_intent.canceled` / `charge.refunded`. |
-| 7 | Med | Auth + `/ucet`; info pages linked from footer still 404 (VOP, reklamačný poriadok, GDPR, doprava a platba -- now weight bands, kontakt, odstúpenie). |
+| 1 | High | Company IBAN (+ SWIFT): founder will send them; then update `company_settings` (user runs SQL on hosted) and `scripts/seed.ts`. |
+| 2 | High | Footer info pages still 404: VOP (obchodné podmienky), reklamačný poriadok, ochrana osobných údajov, doprava a platba (weight bands, 3-5 days, pickup Boldog), odstúpenie form. Legal basis in `docs/03-legislativa-research.md`; build like `src/app/(shop)/kontakt/page.tsx`. |
+| 3 | High | Rabat per brand (NTC/Bomag/Honda/Enar via Unicon, Gölz direct): recompute `purchase_price_net_eur` (now net x 0.8 / x 0.78 placeholders) in `catalog.json`, reseed hosted. Atlas Copco price list: set prices, drop `price_on_request`, reseed. Confirm Unicon is the official importer (backs the "od výrobcov a ich oficiálnych zastúpení" claim). |
+| 4 | Blocked | Emails (Resend): wait until the shop@royalstroje.sk mailbox exists. Then order received, contract confirmation (VOP PDF, withdrawal info + form), admin new-order notice. |
+| 5 | Med | Open product questions for Unicon (docs/05 "Na overenie", explained to founder 2026-10-22): Enar shaft version (AVMU vs DINGO end), QZ profile missing for QZH, GX variant availability, VD 450 mat serial >= 3000, EC 3000G rated output. |
+| 6 | Med | Honda engine price list valid only until 2026-12-31: new list -> update `docs/cenniky/data/honda-motory.csv`, bump `validFrom/validTo` in `scripts/honda-engines.py`, run it, reseed hosted (variant products carry the price), push. |
+| 7 | Low | Replace `/kontakt` photos when the founder sends new ones (`public/kontakt/*.webp`, max 1600 px webp; sizes are in `GALLERY` in the page). |
+| 8 | Later | Admin/back-office in RCC (RCC will manage the whole shop, its DB may be shared): order capture (manual capture -> `confirmed` + invoice), product/price editing, `product_costs`. Webhook still lacks `payment_intent.canceled` / `charge.refunded`. Auth + `/ucet` also open. |
 
 ## Key Files
 
@@ -70,3 +71,4 @@
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
+| 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
