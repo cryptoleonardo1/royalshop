@@ -63,3 +63,22 @@ export function formatDeliveryDate(date: Date, grammaticalCase: "nom" | "acc" = 
   const names = grammaticalCase === "acc" ? WEEKDAY_ACC : WEEKDAY_NOM;
   return `${names[day]} ${dayMonth.format(date).replace(/\s+/g, " ")}`;
 }
+
+// wa.me chat link with a prefilled message. The shop's WhatsApp runs on its main phone number.
+export function whatsappUrl(phone: string, text?: string): string {
+  const digits = phone.replace(/\D/g, "").replace(/^00/, "");
+  return `https://wa.me/${digits}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+}
+
+// "2. 11. 2026, 14:05" in Bratislava time
+const dateTime = new Intl.DateTimeFormat("sk-SK", {
+  timeZone: "Europe/Bratislava",
+  day: "numeric",
+  month: "numeric",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+});
+export function formatDateTime(iso: string): string {
+  return dateTime.format(new Date(iso)).replace(/\s+/g, " ");
+}

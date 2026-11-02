@@ -3787,6 +3787,7 @@ a.mapLink {
 }
 .field {
   display: grid;
+  align-content: start;
   gap: 5px;
   min-width: 0;
 }
@@ -4203,4 +4204,304 @@ a.mapLink {
     max-height: calc(100vh - var(--header-h) - 32px);
     overflow-y: auto;
   }
+}
+
+/* =====================================================================
+   Customer account (/ucet) and shared order detail extras
+   ===================================================================== */
+
+.timelineAt {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.timeline li > span:not(.timelineDot) {
+  padding-block: 6px;
+}
+.shipments {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+.shipments li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font-weight: 600;
+}
+.shipments a {
+  margin-left: auto;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 16px 16px;
+  padding: 12px 14px;
+  min-height: 56px;
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--ink);
+  font-weight: 700;
+  transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+.whatsapp span {
+  color: var(--paper);
+}
+.whatsapp svg {
+  flex-shrink: 0;
+  color: var(--hivis);
+}
+.whatsapp small {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--mute-dark);
+}
+.whatsapp:hover {
+  background: var(--hivis);
+  color: var(--ink);
+}
+.whatsapp:hover span,
+.whatsapp:hover svg,
+.whatsapp:hover small {
+  color: var(--ink);
+}
+.claimBox {
+  margin: 0 16px 16px;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.claimBox a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.claimBox button {
+  width: 100%;
+}
+.helpBody .whatsapp {
+  margin-top: 16px;
+}
+.helpBody .gpsrList dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.helpBody a:not(.whatsapp) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.authLayout,
+.accountLayout {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+.authForm {
+  display: grid;
+  gap: 14px;
+}
+.authForm .addBig {
+  width: 100%;
+}
+.authSwitch {
+  padding-top: 14px;
+  border-top: 1px solid rgb(15 15 14 / 0.3);
+  font-weight: 600;
+}
+.authSwitch a,
+.authHint a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.authHint {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 2px dashed var(--ink);
+  font-weight: 600;
+}
+.perks {
+  display: grid;
+  gap: 12px;
+  padding: 18px 16px;
+}
+.perks li {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.perks svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--hivis-deep);
+}
+.okMsg {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  border-left: 10px solid var(--hivis);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+.okMsg svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--hivis);
+}
+.dangerZone {
+  border-style: dashed;
+}
+.dangerZone > p {
+  max-width: 64ch;
+  font-weight: 500;
+}
+
+.accountNav {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.accountNav ul {
+  display: grid;
+  gap: 8px;
+}
+.accountNav a,
+.accountNav button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.accountNav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: inset 8px 0 0 var(--hivis);
+}
+.accountNav a:hover,
+.accountNav button:hover {
+  background: var(--hivis);
+  color: var(--ink);
+}
+.accountNav button {
+  background: transparent;
+  border-style: dashed;
+}
+
+.orderList {
+  display: grid;
+  gap: 12px;
+}
+.orderRow {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.orderRow:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow);
+}
+.orderRowHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  font-family: var(--f-mono);
+  font-size: 0.8125rem;
+}
+.orderRowHead strong {
+  font-size: 1rem;
+}
+.orderRowItems {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+}
+.orderRowFoot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.orderRowFoot strong {
+  margin-left: auto;
+  font-family: var(--f-mono);
+}
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 10px;
+  background: var(--hivis);
+  border: 2px solid var(--ink);
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.statusChip[data-done] {
+  background: var(--concrete);
+}
+
+@media (min-width: 800px) {
+  .authLayout {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .authLayout > .coStep {
+    max-width: 640px;
+  }
+}
+@media (min-width: 900px) {
+  .accountLayout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .accountLayout > aside {
+    grid-column: 2;
+  }
+}
+@media (min-width: 1200px) {
+  .accountLayout:not([data-wide]) {
+    grid-template-columns: 240px minmax(0, 1fr) 320px;
+  }
+  .accountLayout:not([data-wide]) > aside {
+    grid-column: auto;
+  }
+}
+
+.accountHello {
+  margin-bottom: 20px;
 }

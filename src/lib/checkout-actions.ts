@@ -9,6 +9,7 @@ import { cartLinesSchema, orderSnapshots, parseCheckout, type FieldErrors } from
 import type { ShippingMethod } from "@/lib/order-state";
 import { fetchPricedProducts, markOrderPaid } from "@/lib/orders";
 import { isDemoPayments, stripe } from "@/lib/stripe";
+import { getCustomer } from "@/lib/account/auth";
 
 // Every write here touches money or order state, so it runs server-side with the service role.
 
@@ -58,6 +59,8 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
   }
 
   const db = createAdminClient();
+  // signed in: the order joins the customer's account (the session is verified server-side)
+  const customer = await getCustomer();
   const [{ data: orderNumber, error: numberError }, terms] = await Promise.all([
     db.rpc("next_document_number", { p_kind: "order" }),
     db
@@ -76,6 +79,7 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
     .from("orders")
     .insert({
       order_number: orderNumber,
+      profile_id: customer?.id ?? null,
       customer_type: input.customerType,
       email: input.email,
       phone: input.phone,

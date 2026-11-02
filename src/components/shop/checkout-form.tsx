@@ -52,17 +52,35 @@ function Field({
   );
 }
 
+// Signed-in customers get their profile prefilled (src/app/(shop)/pokladna/page.tsx).
+export interface CheckoutPrefill {
+  customerType: "person" | "company";
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  companyName: string;
+  ico: string;
+  dic: string;
+  icDph: string;
+  street: string;
+  city: string;
+  zip: string;
+}
+
 export function CheckoutForm({
   pickupAddress,
   pickupHours,
   demoPayments,
+  prefill,
 }: {
   pickupAddress: string | null;
   pickupHours: string | null;
   demoPayments: boolean;
+  prefill?: CheckoutPrefill;
 }) {
   const hydrated = useHydrated();
-  const [customerType, setCustomerType] = useState<"person" | "company">("person");
+  const [customerType, setCustomerType] = useState<"person" | "company">(prefill?.customerType ?? "person");
   const [method, setMethod] = useState<ShippingMethod | null>(null);
   const [shipDifferent, setShipDifferent] = useState(false);
   const { lines, quote, loading } = useQuote(method);
@@ -136,16 +154,16 @@ export function CheckoutForm({
           </legend>
           <div className={css.fieldGrid}>
             <Field name="firstName" label="Meno" error={errors.firstName}>
-              {(p) => <input {...p} autoComplete="given-name" required />}
+              {(p) => <input {...p} defaultValue={prefill?.firstName} autoComplete="given-name" required />}
             </Field>
             <Field name="lastName" label="Priezvisko" error={errors.lastName}>
-              {(p) => <input {...p} autoComplete="family-name" required />}
+              {(p) => <input {...p} defaultValue={prefill?.lastName} autoComplete="family-name" required />}
             </Field>
             <Field name="email" label="E-mail" error={errors.email} hint="Pošleme naň potvrdenie a stav objednávky.">
-              {(p) => <input {...p} type="email" autoComplete="email" inputMode="email" required />}
+              {(p) => <input {...p} defaultValue={prefill?.email} type="email" autoComplete="email" inputMode="email" required />}
             </Field>
             <Field name="phone" label="Telefón" error={errors.phone} hint="Pre kuriéra alebo pri doručení stroja.">
-              {(p) => <input {...p} type="tel" autoComplete="tel" inputMode="tel" placeholder="+421" required />}
+              {(p) => <input {...p} defaultValue={prefill?.phone} type="tel" autoComplete="tel" inputMode="tel" placeholder="+421" required />}
             </Field>
           </div>
         </fieldset>
@@ -157,28 +175,28 @@ export function CheckoutForm({
           {customerType === "company" && (
             <div className={css.fieldGrid}>
               <Field name="companyName" label="Obchodné meno" error={errors.companyName}>
-                {(p) => <input {...p} autoComplete="organization" required />}
+                {(p) => <input {...p} defaultValue={prefill?.companyName} autoComplete="organization" required />}
               </Field>
               <Field name="ico" label="IČO" error={errors.ico}>
-                {(p) => <input {...p} inputMode="numeric" required />}
+                {(p) => <input {...p} defaultValue={prefill?.ico} inputMode="numeric" required />}
               </Field>
               <Field name="dic" label="DIČ" error={errors.dic}>
-                {(p) => <input {...p} inputMode="numeric" required />}
+                {(p) => <input {...p} defaultValue={prefill?.dic} inputMode="numeric" required />}
               </Field>
               <Field name="icDph" label="IČ DPH (ak ste platiteľ)" error={errors.icDph}>
-                {(p) => <input {...p} placeholder="SK" />}
+                {(p) => <input {...p} defaultValue={prefill?.icDph} placeholder="SK" />}
               </Field>
             </div>
           )}
           <div className={css.fieldGrid}>
             <Field name="street" label="Ulica a číslo" error={errors.street}>
-              {(p) => <input {...p} autoComplete="address-line1" required />}
+              {(p) => <input {...p} defaultValue={prefill?.street} autoComplete="address-line1" required />}
             </Field>
             <Field name="city" label="Mesto" error={errors.city}>
-              {(p) => <input {...p} autoComplete="address-level2" required />}
+              {(p) => <input {...p} defaultValue={prefill?.city} autoComplete="address-level2" required />}
             </Field>
             <Field name="zip" label="PSČ" error={errors.zip}>
-              {(p) => <input {...p} autoComplete="postal-code" inputMode="numeric" required />}
+              {(p) => <input {...p} defaultValue={prefill?.zip} autoComplete="postal-code" inputMode="numeric" required />}
             </Field>
             <div className={css.field}>
               <span className={css.fieldStatic}>Krajina</span>
