@@ -3,10 +3,12 @@ import { cacheLife, cacheTag } from "next/cache";
 import { createPublicClient } from "@/lib/supabase/admin";
 import { foldText } from "@/lib/format";
 import { discountPct } from "@/lib/pricing";
+import { isShopBrand } from "@/lib/shop-brands";
 import { DEFAULT_SHIPPING_RATES, type ShippingRate } from "@/lib/shipping";
 
 // Public catalog reads. Everything here goes through the anon key (RLS: active products only)
 // and is cached under the "catalog" tag, so admin edits can call revalidateTag("catalog").
+// Only brands in SHOP_BRANDS are shown; the rest act as if they were not in the database.
 
 export type BatteryPlatform = "LXT_18V" | "XGT_40V" | "CXT_12V" | "none";
 export type ShippingClass = "courier" | "own_transport" | "pickup_only";
@@ -170,13 +172,15 @@ export async function getCategories(): Promise<Category[]> {
   const db = createPublicClient();
   const [cats, prods] = await Promise.all([
     db.from("categories").select("id, parent_id, slug, name, description, sort_order").order("sort_order"),
-    db.from("products").select("category_id").eq("status", "active").eq("is_listed", true),
+    db.from("products").select("category_id, brand:brands(slug)").eq("status", "active").eq("is_listed", true),
   ]);
   if (cats.error) fail("categories", cats.error);
   if (prods.error) fail("category counts", prods.error);
 
   const direct = new Map<string, number>();
-  for (const p of prods.data) direct.set(p.category_id, (direct.get(p.category_id) ?? 0) + 1);
+  for (const p of prods.data as Row[]) {
+    if (isShopBrand(p.brand?.slug)) direct.set(p.category_id, (direct.get(p.category_id) ?? 0) + 1);
+  }
 
   const rows = cats.data as Row[];
   const childrenOf = (id: string) => rows.filter((c) => c.parent_id === id);
@@ -239,7 +243,7 @@ export async function getAllProducts(): Promise<ProductSummary[]> {
     .eq("is_listed", true)
     .order("name");
   if (error) fail("products", error);
-  const rows = data as Row[];
+  const rows = (data as Row[]).filter((r) => isShopBrand(r.brand?.slug));
   const lowest = new Map(
     await Promise.all(rows.filter(isMarkedDown).map(async (r) => [r.id, await lowestPrice30d(db, r.id)] as const)),
   );
@@ -333,7 +337,7 @@ export async function searchProducts(query: string, limit = 48): Promise<Product
     .limit(limit);
   if (error) fail("search", error);
   const lowest = new Map((await getAllProducts()).map((p) => [p.id, p.lowestPrice30dCents]));
-  return (data as Row[]).map((r) => toSummary(r, lowest.get(r.id) ?? null));
+  return (data as Row[]).filter((r) => isShopBrand(r.brand?.slug)).map((r) => toSummary(r, lowest.get(r.id) ?? null));
 }
 
 // ───────────────────────────── Product detail ─────────────────────────────
@@ -353,6 +357,7 @@ export async function getProduct(slug: string): Promise<ProductDetail | null> {
   if (error) fail("product", error);
   if (!data) return null;
   const r = data as Row;
+  if (!isShopBrand(r.brand?.slug)) return null;
 
   const [lowest, related] = await Promise.all([
     isMarkedDown(r) ? lowestPrice30d(db, r.id) : null,

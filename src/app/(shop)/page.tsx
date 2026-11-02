@@ -101,7 +101,7 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className={`${css.heroLede} ${css.rise}`} style={delay(5)}>
-              NTC, Bomag, Honda, Gölz, Enar a Atlas Copco od výrobcov a ich oficiálnych zastúpení. Každý stroj pred
+              Stroje Gölz a Honda od výrobcov a ich oficiálnych zastúpení. Každý stroj pred
               odoslaním odskúšame, pri osobnom odbere vás naň zaškolíme a prípadnú reklamáciu riešime priamo s
               výrobcom. A keď si nebudete vedieť rady, stačí zavolať alebo napísať.
             </p>

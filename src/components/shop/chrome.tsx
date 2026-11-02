@@ -204,6 +204,11 @@ export async function ShopShell({ children }: { children: ReactNode }) {
             <span>© 2026 {settings.companyName}</span>
             <span>Ceny vrátane DPH · demo verzia</span>
           </p>
+          {/* Required by the Gölz trademark guideline (point 2): the brand owner is not the shop operator. */}
+          <p className={css.footNote}>
+            GÖLZ® je registrovaná ochranná známka spoločnosti Gölz GmbH. Honda je ochranná známka spoločnosti Honda
+            Motor Co., Ltd. Prevádzkovateľom e-shopu je {settings.companyName}, nie výrobcovia uvedených značiek.
+          </p>
         </div>
       </footer>
     </div>

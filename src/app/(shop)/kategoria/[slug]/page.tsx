@@ -18,14 +18,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/kategoria/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const ctx = await getCategoryContext(slug);
-  if (!ctx) return { title: "Kategória nenájdená" };
+  if (!ctx || ctx.category.productCount === 0) return { title: "Kategória nenájdená" };
   return { title: ctx.category.name, description: ctx.category.description ?? undefined };
 }
 
 async function CategoryHeader({ params }: Pick<PageProps<"/kategoria/[slug]">, "params">) {
   const { slug } = await params;
   const ctx = await getCategoryContext(slug);
-  if (!ctx) notFound();
+  // empty categories (e.g. only hidden brands) are not linked anywhere, so their URL is gone too
+  if (!ctx || ctx.category.productCount === 0) notFound();
   const { category, ancestors, children, siblings } = ctx;
   const subnav = children.length > 0 ? children : siblings;
 

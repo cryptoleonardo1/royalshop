@@ -127,7 +127,7 @@
       "slug": "cerpadla",
       "name": "Čerpadlá",
       "parent_slug": null,
-      "description": "Ponorné odvodňovacie čerpadlá Atlas Copco WEDA a motorové čerpadlá Honda na výkopy, stavebné jamy a povodne.",
+      "description": "Motorové čerpadlá Honda na odvodnenie výkopov, stavebných jám a zatopených priestorov.",
       "sort_order": 3
     },
     {
@@ -148,7 +148,7 @@
       "slug": "rezacia-technika",
       "name": "Rezacia technika",
       "parent_slug": null,
-      "description": "Rezače škár NTC a Gölz, stolové a blokové píly Gölz a elektrické rozbrusovačky Gölz na rezanie betónu, asfaltu, dlažby a muriva.",
+      "description": "Rezače škár, stolové a blokové píly a elektrické rozbrusovačky Gölz na rezanie betónu, asfaltu, dlažby a muriva.",
       "sort_order": 4
     },
     {

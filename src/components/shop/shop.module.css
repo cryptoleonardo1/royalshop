@@ -2305,6 +2305,14 @@ a.engineCodeLink:hover {
   color: var(--mute-dark);
 }
 
+.footNote {
+  margin-top: 12px;
+  max-width: 72ch;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--mute-dark);
+}
+
 /* ---------- hover (pointer devices only) ---------- */
 
 @media (hover: hover) {

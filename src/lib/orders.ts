@@ -2,6 +2,7 @@ import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { canTransition, type OrderStatus, type ShippingMethod } from "./order-state";
 import type { PricedProduct } from "./cart-pricing";
+import { isShopBrand } from "./shop-brands";
 import { stripe } from "./stripe";
 
 // Server-side order writes (service role). Status changes go through transitionOrder so the
@@ -129,7 +130,7 @@ export async function recordRefund(
 }
 
 // Current prices straight from the database (not the page cache): this is what an order is charged.
-// Price-on-request products are left out, so a cart line for one is reported as no longer sold.
+// Price-on-request products and hidden brands are left out, so a cart line for one is reported as no longer sold.
 export async function fetchPricedProducts(
   db: Db,
   slugs: string[],
@@ -141,6 +142,7 @@ export async function fetchPricedProducts(
     .select(
       `id, slug, name, sku, ean, price_gross_cents, vat_rate, shipping_class, weight_kg, supplier_id,
        supplier:suppliers(lead_time_days_max),
+       brand:brands(slug),
        images:product_images(path, sort_order),
        cost:product_costs(purchase_price_net_cents)`,
     )
@@ -150,6 +152,7 @@ export async function fetchPricedProducts(
   if (error) throw new Error(`Pricing failed: ${error.message}`);
   /* eslint-disable @typescript-eslint/no-explicit-any */
   for (const r of data as any[]) {
+    if (!isShopBrand(r.brand?.slug)) continue;
     const images = [...(r.images ?? [])].sort((a: any, b: any) => a.sort_order - b.sort_order);
     const cost = Array.isArray(r.cost) ? r.cost[0] : r.cost;
     map.set(r.slug, {
