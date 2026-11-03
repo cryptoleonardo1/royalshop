@@ -75,6 +75,9 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
   if (numberError || !orderNumber) throw new Error(`Order number failed: ${numberError?.message}`);
 
   const { billing, company, shipping } = orderSnapshots(input);
+  // Persons send a non-binding reservation: no payment, we call them before ordering from the supplier
+  // (docs/08). Companies pay at checkout.
+  const reservation = input.customerType === "person";
   const { data: order, error: orderError } = await db
     .from("orders")
     .insert({
@@ -96,6 +99,7 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
       terms_version: terms.data?.version ?? TERMS_FALLBACK_VERSION,
       terms_accepted_at: new Date().toISOString(),
       customer_note: input.note ?? null,
+      ...(reservation ? { status: "reserved", reserved_at: new Date().toISOString() } : {}),
     })
     .select("id, order_number, access_token")
     .single();
@@ -126,8 +130,14 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
   }
   await db
     .from("order_status_history")
-    .insert({ order_id: order.id, from_status: null, to_status: "pending_payment", note: "Objednávka vytvorená" });
+    .insert({
+      order_id: order.id,
+      from_status: null,
+      to_status: reservation ? "reserved" : "pending_payment",
+      note: reservation ? "Nezáväzná rezervácia" : "Objednávka vytvorená",
+    });
 
+  // a reservation goes straight to its order page (startPayment returns it for any non-pending order)
   const url = await startPayment(order.id);
   redirect(url);
 }

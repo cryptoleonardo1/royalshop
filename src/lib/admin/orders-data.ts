@@ -78,6 +78,7 @@ function toRow(o: any, now: Date): OrderRow {
         status,
         delivered_at: o.delivered_at,
         withdrawal_deadline: o.withdrawal_deadline,
+        contract_place: o.contract_place,
         hasWithdrawal: (o.returns ?? []).some((r: any) => r.status !== "rejected"),
       },
       now,
@@ -87,7 +88,7 @@ function toRow(o: any, now: Date): OrderRow {
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 const LIST_SELECT = `id, order_number, created_at, email, customer_type, billing, company, status, payment_status,
-  shipping_method, total_gross_cents, delivered_at, withdrawal_deadline,
+  shipping_method, total_gross_cents, delivered_at, withdrawal_deadline, contract_place,
   payments(captured_at, authorized_at), returns(status), items:order_items(quantity, line_net_cents, purchase_price_net_cents)`;
 
 // PostgREST or-filter values must not contain its syntax characters.
@@ -114,6 +115,8 @@ export async function listOrders(filters: OrderFilters): Promise<{ rows: OrderRo
 }
 
 export interface DashboardStats {
+  reservations: OrderRow[]; // non-binding reservations waiting for our call
+  reservationsOverdue: number; // older than 1 working day
   unconfirmed: OrderRow[]; // paid, waiting for our confirmation
   unconfirmedOverdue: number; // paid more than 1 working day ago (docs/06: confirm within 1 working day)
   deliveryAtRisk: OrderRow[]; // binding delivery limit within 2 working days or missed
@@ -136,7 +139,10 @@ export async function dashboardStats(): Promise<DashboardStats> {
   const byStatus: Partial<Record<OrderStatus, number>> = {};
   rows.forEach((r) => (byStatus[r.status] = (byStatus[r.status] ?? 0) + 1));
   const unconfirmed = rows.filter((r) => r.status === "paid");
+  const reservations = rows.filter((r) => r.status === "reserved");
   return {
+    reservations,
+    reservationsOverdue: reservations.filter((r) => endOfBratislavaDay(addWorkingDays(new Date(r.createdAt), 1)) < now).length,
     unconfirmed,
     unconfirmedOverdue: unconfirmed.filter((r) => r.paidAt && endOfBratislavaDay(addWorkingDays(new Date(r.paidAt), 1)) < now)
       .length,

@@ -51,6 +51,11 @@ describe("order state", () => {
     expect(allowedNextStatuses("paid", "courier")).toEqual(["confirmed", "cancelled"]);
   });
 
+  it("turns a reservation into a payment link, a sale in the shop, or a cancellation", () => {
+    expect(allowedNextStatuses("reserved", "pickup_senec")).toEqual(["pending_payment", "paid", "cancelled"]);
+    expect(canTransition("reserved", "confirmed", "pickup_senec")).toBe(false);
+  });
+
   it("cannot cancel after goods arrived", () => {
     expect(canTransition("received_at_branch", "cancelled", "courier")).toBe(false);
   });

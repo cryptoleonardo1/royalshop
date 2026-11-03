@@ -199,12 +199,14 @@ export async function createManualReturn(_prev: ReturnActionState, form: FormDat
       status: order.status,
       delivered_at: order.deliveredAt,
       withdrawal_deadline: order.withdrawalDeadline,
+      contract_place: order.contractPlace,
     },
     sent,
   );
   if (!eligibility.allowed) {
     const why: Record<string, string> = {
       company: "Objednávka je na firmu, zákonné odstúpenie sa nevzťahuje.",
+      on_premises: "Zmluva bola uzavretá na predajni, zákonné odstúpenie sa nevzťahuje.",
       unpaid: "Objednávka nie je zaplatená, zmluva nevznikla.",
       cancelled: "Objednávka je zrušená.",
       expired: "Odstúpenie bolo odoslané po lehote. Nezapisuje sa, zákazníkovi odpíšte, že lehota uplynula.",

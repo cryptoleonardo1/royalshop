@@ -150,14 +150,38 @@ export default async function TermsPage() {
             objednávka kupujúceho.
           </li>
           <li>
-            Postup objednávky: vložíte tovar do košíka, v pokladni zvolíte, či nakupujete ako súkromná osoba alebo ako
+            Postup v pokladni: vložíte tovar do košíka, v pokladni zvolíte, či nakupujete ako súkromná osoba alebo ako
             firma či živnostník, vyplníte kontaktné a dodacie údaje, zvolíte doručenie alebo osobný odber a
-            skontrolujete súhrn objednávky s hlavnými vlastnosťami tovaru a celkovou cenou vrátane dopravy. Až do
-            odoslania môžete údaje opraviť a obsah košíka zmeniť. Objednávku odošlete tlačidlom{" "}
-            <strong>„Objednávka s povinnosťou platby“</strong> a následne zaplatíte cez platobnú bránu.
+            skontrolujete súhrn s hlavnými vlastnosťami tovaru a celkovou cenou vrátane dopravy. Až do odoslania môžete
+            údaje opraviť a obsah košíka zmeniť.
           </li>
           <li>
-            Odoslaním objednávky kupujúci potvrdzuje, že sa oboznámil s týmito VOP, s{" "}
+            <strong>Súkromná osoba (spotrebiteľ)</strong> odosiela tlačidlom{" "}
+            <strong>„Odoslať nezáväznú rezerváciu“</strong> nezáväznú rezerváciu tovaru. Rezervácia nie je návrhom na
+            uzavretie zmluvy, nič sa pri nej neplatí a pre kupujúceho ani pre nás nevyplývajú z nej žiadne povinnosti.
+            Do 1 pracovného dňa kupujúceho kontaktujeme telefonicky, overíme dostupnosť a dohodneme ďalší postup:
+            <ul>
+              <li>
+                <strong>kúpa v predajni:</strong> kupujúci príde na výdajné miesto {pickup}, stroj si pozrie a vyskúša a
+                kúpnu zmluvu uzavrie a zaplatí osobne na mieste. Takto uzavretá zmluva nie je zmluvou uzavretou na
+                diaľku a zákonné právo odstúpiť od nej do 14 dní sa na ňu nevzťahuje (článok 9),
+              </li>
+              <li>
+                <strong>kúpa na diaľku:</strong> na stránke objednávky sprístupníme platbu kartou. Zaplatením kupujúci
+                odosiela záväznú objednávku a ďalej sa postupuje podľa bodov 5 až 11. Spotrebiteľ má pri tejto kúpe
+                právo odstúpiť od zmluvy do 14 dní (článok 9).
+              </li>
+            </ul>
+            Rezerváciu môže kupujúci kedykoľvek bezplatne zrušiť telefonicky alebo e-mailom. Ak sa do 10 pracovných
+            dní od rezervácie nedohodneme na kúpe, rezervácia zaniká.
+          </li>
+          <li>
+            <strong>Firma alebo živnostník</strong> odosiela objednávku tlačidlom{" "}
+            <strong>„Objednávka s povinnosťou platby“</strong> a následne zaplatí cez platobnú bránu. Aj v tomto prípade
+            vás pred objednaním stroja u dodávateľa môžeme kontaktovať telefonicky.
+          </li>
+          <li>
+            Odoslaním rezervácie alebo objednávky kupujúci potvrdzuje, že sa oboznámil s týmito VOP, s{" "}
             <Link href="/reklamacny-poriadok">reklamačným poriadkom</Link> a, ak je spotrebiteľom, s{" "}
             <Link href="/odstupenie-od-zmluvy">poučením o odstúpení od zmluvy</Link>.
           </li>
@@ -189,13 +213,14 @@ export default async function TermsPage() {
           <li>
             Ak je k dispozícii porovnateľný stroj, môžeme vám ho ponúknuť. Iný tovar dodáme{" "}
             <strong>len s vaším výslovným súhlasom</strong> (odpoveďou na náš e-mail). Bez súhlasu vám peniaze vrátime
-            podľa bodu 8.
+            podľa bodu 10.
           </li>
         </ol>
         <LegalNote>
           <p>
-            <strong>Čo to znamená pre vás:</strong> pri objednávke zaplatíte hneď, ale zmluva vzniká až naším e-mailom
-            „Potvrdenie objednávky“, keď máme istotu, že stroj dodávateľ dodá. Ak stroj dostupný nie je, nič nekupujete
+            <strong>Čo to znamená pre vás:</strong> ako súkromná osoba najprv len nezáväzne rezervujete a my vám
+            zavoláme. Firma pri objednávke zaplatí hneď. Pri platbe online vzniká zmluva až naším e-mailom „Potvrdenie
+            objednávky“, keď máme istotu, že stroj dodávateľ dodá. Ak stroj dostupný nie je, nič nekupujete
             a celú sumu vrátane dopravy vám vrátime do {UNAVAILABLE_REFUND_WORKDAYS} pracovných dní. Iný stroj vám bez
             vášho súhlasu nepošleme.
           </p>
@@ -205,15 +230,19 @@ export default async function TermsPage() {
       <LegalSection id="platba" title="4. Platba">
         <ol>
           <li>
-            Kúpnu cenu vrátane ceny dopravy platí kupujúci <strong>vopred, v plnej výške</strong>, pri odoslaní
-            objednávky. Platiť môžete platobnou kartou, cez Apple Pay alebo Google Pay na zabezpečenej stránke
-            platobnej brány Stripe.
+            Pri kúpe na diaľku platí kupujúci kúpnu cenu vrátane ceny dopravy <strong>vopred, v plnej výške</strong>:
+            firma pri odoslaní objednávky, súkromná osoba po dohode s nami na stránke objednávky. Platiť môžete
+            platobnou kartou, cez Apple Pay alebo Google Pay na zabezpečenej stránke platobnej brány Stripe, prípadne
+            po dohode bankovým prevodom.
+          </li>
+          <li>
+            Pri kúpe v predajni platíte na mieste platobnou kartou alebo v hotovosti. Dostanete pokladničný doklad.
           </li>
           <li>
             Suma sa z karty odpíše hneď po zaplatení. Ak zmluva nevznikne alebo sa zruší, vrátime ju v lehotách podľa
             článkov 3 a 5, rovnakým platobným prostriedkom a bez poplatkov.
           </li>
-          <li>Pri osobnom odbere sa na mieste neplatí. Všetky platby prebiehajú online vopred.</li>
+          <li>Ak ste už zaplatili online, pri osobnom odbere sa na mieste neplatí.</li>
           <li>Faktúru (daňový doklad) vám pošleme e-mailom.</li>
         </ol>
       </LegalSection>
@@ -356,6 +385,11 @@ export default async function TermsPage() {
             vznikne zaobchádzaním nad tento rámec (napríklad použitím na reálnu prácu), zodpovedáte. Náhradu takého
             zníženia hodnoty si od vrátenej sumy neodpočítavame, uplatňujeme ju samostatne. Odstúpenie tým nie je
             dotknuté.
+          </li>
+          <li>
+            Právo podľa tohto článku sa vzťahuje na zmluvy uzavreté na diaľku. Ak spotrebiteľ kúpnu zmluvu uzavrie a
+            zaplatí <strong>osobne v našej predajni</strong> (článok 3 bod 3), nejde o zmluvu uzavretú na diaľku a
+            zákonné právo na odstúpenie do 14 dní nemá. Práva zo zodpovednosti za vady tým nie sú dotknuté.
           </li>
           <li>Kupujúci, ktorý nakupuje ako podnikateľ, zákonné právo na odstúpenie nemá. Pre neho platí článok 13.</li>
         </ol>

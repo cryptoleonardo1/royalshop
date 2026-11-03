@@ -80,7 +80,8 @@ export async function markOrderPaid(
 }
 
 // A checkout session expired or its payment intent was cancelled. The order is cancelled only if
-// no other payment attempt for it is still open (the customer may have retried).
+// no other payment attempt for it is still open (the customer may have retried). A former reservation stays
+// open: we agreed the purchase by phone, the customer can pay again from the order page.
 export async function markPaymentAbandoned(db: Db, checkoutSessionId: string, note: string): Promise<void> {
   const { data: payment, error } = await db
     .from("payments")
@@ -100,9 +101,14 @@ export async function markPaymentAbandoned(db: Db, checkoutSessionId: string, no
   if (open.error) throw new Error(`Order ${payment.order_id}: payment check failed: ${open.error.message}`);
   if ((open.count ?? 0) > 0) return;
 
-  const order = await loadOrderRef(db, payment.order_id);
-  if (!order || order.status !== "pending_payment") return;
-  await transitionOrder(db, order, "cancelled", { note, patch: { payment_status: "cancelled" } });
+  const { data: order, error: loadError } = await db
+    .from("orders")
+    .select("id, status, shipping_method, reserved_at")
+    .eq("id", payment.order_id)
+    .maybeSingle();
+  if (loadError) throw new Error(`Order ${payment.order_id}: load failed: ${loadError.message}`);
+  if (!order || order.status !== "pending_payment" || order.reserved_at) return;
+  await transitionOrder(db, order as OrderRef, "cancelled", { note, patch: { payment_status: "cancelled" } });
 }
 
 // charge.refunded: mirror the refunded amount (admin refund or one made directly in the Stripe dashboard).

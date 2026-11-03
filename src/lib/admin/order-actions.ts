@@ -2,7 +2,7 @@
 
 import { refresh } from "next/cache";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { canTransition, ORDER_STATUS_LABELS, type OrderStatus, type ShippingMethod } from "@/lib/order-state";
+import { canTransition, ORDER_STATUS_LABELS, type ContractPlace, type OrderStatus, type ShippingMethod } from "@/lib/order-state";
 import { transitionOrder } from "@/lib/orders";
 import { isDemoPayments, stripe } from "@/lib/stripe";
 import { refundCaptured } from "./refunds";
@@ -26,12 +26,16 @@ interface LoadedOrder {
   payment_status: string;
   delivered_at: string | null;
   withdrawal_deadline: string | null;
+  contract_place: ContractPlace;
+  total_gross_cents: number;
 }
 
 async function loadOrder(db: ReturnType<typeof createAdminClient>, id: string): Promise<LoadedOrder | null> {
   const { data, error } = await db
     .from("orders")
-    .select("id, order_number, status, shipping_method, customer_type, payment_status, delivered_at, withdrawal_deadline")
+    .select(
+      "id, order_number, status, shipping_method, customer_type, payment_status, delivered_at, withdrawal_deadline, contract_place, total_gross_cents",
+    )
     .eq("id", id)
     .maybeSingle();
   if (error) throw new Error(`Order ${id}: load failed: ${error.message}`);
@@ -67,12 +71,20 @@ export async function advanceOrder(_prev: ActionState, form: FormData): Promise<
     if (deliveredAt.getTime() > now.getTime()) return { message: "Dátum doručenia nemôže byť v budúcnosti." };
     patch.delivered_at = deliveredAt.toISOString();
     patch.withdrawal_deadline =
-      order.customer_type === "person" ? withdrawalDeadline(deliveredAt).toISOString() : null;
+      order.customer_type === "person" && order.contract_place === "distance"
+        ? withdrawalDeadline(deliveredAt).toISOString()
+        : null;
   }
   if (to === "completed" && !canCompleteOrder(order, now)) {
     return { message: "Spotrebiteľovi ešte plynie lehota na odstúpenie (vrátane rezervy na poštu)." };
   }
   if (to === "shipped" && !text(form, "carrier")) return { message: "Zadajte dopravcu." };
+  if (to === "paid") {
+    // paid outside Stripe: in the shop (cash, card terminal) or by bank transfer
+    const sale = await recordManualPayment(db, order, form);
+    if (typeof sale === "string") return { message: sale };
+    Object.assign(patch, sale);
+  }
   if (to === "confirmed") {
     const captured = await captureHeldPayments(db, order);
     if (captured !== true) return { message: captured };
@@ -86,6 +98,42 @@ export async function advanceOrder(_prev: ActionState, form: FormData): Promise<
   const side = await recordStepDetails(db, order, to, form, patch.delivered_at as string | undefined);
   refresh();
   return side ? { ok: true, message: side } : { ok: true };
+}
+
+const MANUAL_PROVIDERS = ["cash", "card_terminal", "bank_transfer"] as const;
+
+// A reservation (or an unpaid order) paid outside Stripe. "onPremises" = the customer signed and paid in our
+// shop: not a distance contract (§ 14 ods. 1 ZOS), so no statutory withdrawal (docs/08). Open Stripe sessions
+// are expired first so the customer cannot pay twice.
+async function recordManualPayment(
+  db: ReturnType<typeof createAdminClient>,
+  order: LoadedOrder,
+  form: FormData,
+): Promise<Record<string, unknown> | string> {
+  const provider = text(form, "provider") as (typeof MANUAL_PROVIDERS)[number];
+  if (!MANUAL_PROVIDERS.includes(provider)) return "Vyberte spôsob platby.";
+  const onPremises = form.get("onPremises") === "on";
+  if (onPremises && order.customer_type !== "person") return "Predaj na predajni sa eviduje len pri spotrebiteľovi.";
+
+  const { data: open, error } = await db
+    .from("payments")
+    .select("id, stripe_checkout_session_id")
+    .eq("order_id", order.id)
+    .eq("status", "pending");
+  if (error) return `Platby sa nepodarilo načítať: ${error.message}`;
+  for (const p of open ?? []) {
+    if (stripe && p.stripe_checkout_session_id?.startsWith("cs_")) {
+      try {
+        await stripe.checkout.sessions.expire(p.stripe_checkout_session_id);
+      } catch {
+        // already expired, or completed: then the order is paid and the transition below backs off
+      }
+    }
+    await db.from("payments").update({ status: "cancelled" }).eq("id", p.id).eq("status", "pending");
+  }
+
+  // the payments row itself is written after the transition (recordStepDetails)
+  return { payment_status: "paid", ...(onPremises ? { contract_place: "on_premises" } : {}) };
 }
 
 // Orders paid before 2026-10-23 hold the money on the card (manual capture). Confirming such an order
@@ -126,6 +174,16 @@ async function recordStepDetails(
   const fail = (what: string, err: { message: string } | null) =>
     err ? `Stav je uložený, ale ${what} sa nepodarilo uložiť: ${err.message}` : undefined;
 
+  if (to === "paid") {
+    const { error } = await db.from("payments").insert({
+      order_id: order.id,
+      provider: text(form, "provider"),
+      amount_cents: order.total_gross_cents,
+      status: "captured",
+      captured_at: new Date().toISOString(),
+    });
+    return fail("platbu", error);
+  }
   if (to === "ordered_from_supplier") {
     const { data: items } = await db.from("order_items").select("supplier_id").eq("order_id", order.id);
     const suppliers = [...new Set((items ?? []).map((i) => i.supplier_id).filter(Boolean))] as string[];

@@ -19,7 +19,9 @@ export async function refundableCents(db: SupabaseClient, orderId: string): Prom
     .reduce((sum, p) => sum + p.amount_cents - (p.refunded_cents ?? 0), 0);
 }
 
-// Refunds `amountCents` (null = everything still refundable) across the order's captured payments.
+// Refunds `amountCents` (null = everything still refundable) across the order's captured payments. Payments
+// taken outside Stripe (cash, card terminal, bank transfer) are only recorded: the admin pays them back by
+// hand, the UI says so before the click.
 export async function refundCaptured(
   db: SupabaseClient,
   order: { id: string; order_number: string },
@@ -28,7 +30,7 @@ export async function refundCaptured(
 ): Promise<{ ok: true; refundedCents: number } | { ok: false; message: string; refundedCents: number }> {
   const { data: payments, error } = await db
     .from("payments")
-    .select("id, status, amount_cents, refunded_cents, stripe_payment_intent_id")
+    .select("id, provider, status, amount_cents, refunded_cents, stripe_payment_intent_id")
     .eq("order_id", order.id)
     .in("status", REFUNDABLE)
     .order("created_at");
@@ -41,7 +43,9 @@ export async function refundCaptured(
     const remaining = p.amount_cents - (p.refunded_cents ?? 0);
     const take = Math.min(remaining, left);
     if (take <= 0) continue;
-    if (p.stripe_payment_intent_id?.startsWith("pi_") && stripe) {
+    if (p.provider !== "stripe") {
+      // manual refund, recorded below
+    } else if (p.stripe_payment_intent_id?.startsWith("pi_") && stripe) {
       try {
         await stripe.refunds.create(
           {

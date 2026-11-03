@@ -1,7 +1,7 @@
 import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { ShopSettings } from "./catalog";
-import type { OrderStatus } from "./order-state";
+import type { ContractPlace, OrderStatus } from "./order-state";
 import type { ExistingReturn, OrderLine, ReturnChannel, ReturnItem, ReturnStatus } from "./returns";
 
 // Withdrawal reads and the insert, with the service role after the caller's own access check (order number +
@@ -18,13 +18,14 @@ export interface WithdrawalOrder {
   createdAt: string;
   deliveredAt: string | null;
   withdrawalDeadline: string | null;
+  contractPlace: ContractPlace;
   billingName: string;
   lines: OrderLine[];
   returns: ExistingReturn[];
 }
 
 const SELECT = `id, order_number, access_token, profile_id, email, customer_type, status, created_at, delivered_at,
-  withdrawal_deadline, billing, items:order_items(id, name, sku, quantity, line_gross_cents), returns(status, items)`;
+  withdrawal_deadline, contract_place, billing, items:order_items(id, name, sku, quantity, line_gross_cents), returns(status, items)`;
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 function toWithdrawalOrder(o: any): WithdrawalOrder {
@@ -39,6 +40,7 @@ function toWithdrawalOrder(o: any): WithdrawalOrder {
     createdAt: o.created_at,
     deliveredAt: o.delivered_at,
     withdrawalDeadline: o.withdrawal_deadline,
+    contractPlace: o.contract_place,
     billingName: o.billing?.name ?? "",
     lines: (o.items ?? []).map((i: any) => ({
       id: i.id,

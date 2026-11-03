@@ -140,6 +140,19 @@ pending_payment ──(Stripe: zaplatené)──► paid
                                              completed           (automaticky po 14 dňoch bez odstúpenia)
 ```
 
+**Rezervácia pre súkromné osoby (rozhodnutie z 3. 11. 2026, `docs/08-rizika-vratenia-reklamacie.md`):** spotrebiteľ v pokladni neplatí. Objednávka vznikne v stave `reserved` (`reserved_at`), admin zákazníkovi zavolá ešte pred objednaním u dodávateľa a potom:
+
+```
+reserved ──(odkaz na platbu kartou)──► pending_payment ──(Stripe)──► paid   zmluva na diaľku, odstúpenie platí
+    ├──(kúpa a platba v predajni)──────────────────────────────────► paid   contract_place = on_premises, bez odstúpenia
+    └──(zákazník nechce)───────────────► cancelled
+```
+
+- `contract_place = 'on_premises'` nastaví admin len vtedy, keď zákazník zmluvu podpísal a zaplatil osobne v predajni (zaškrtávacie pole pri kroku „Zaplatená“). Dohoda len telefonicky alebo e-mailom je stále zmluva na diaľku.
+- Platby mimo Stripe (`payments.provider` = `cash`, `card_terminal`, `bank_transfer`) eviduje admin. Pri zrušení ich vracia ručne, systém vrátenie len zapíše.
+- Expirovaná platba Stripe bývalú rezerváciu nezruší (zostane `pending_payment`, zákazník môže zaplatiť znova).
+- Firmy platia v pokladni ako doteraz.
+
 - **Platba (`payment_status`)** sa sleduje samostatne: `unpaid`, `authorized`, `paid`, `partially_refunded`, `refunded`, `failed`, `cancelled`.
 - **Každá zmena stavu** sa zapíše do `order_status_history` (kto, kedy, poznámka) a podľa šablóny odíde e-mail zákazníkovi.
 - **Predpokladaný dátum doručenia** sa ráta pri objednávke: najpomalší dodávateľ v košíku + 1 deň na test + doprava (napríklad Unicon 4 + 1 + 1 = 6 pracovných dní). Zobrazuje sa pri produkte, v košíku aj v portáli.

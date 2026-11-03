@@ -8,7 +8,7 @@ import { LegalNote, LegalPage, LegalSection } from "@/components/shop/legal-page
 export const metadata: Metadata = {
   title: "Doprava a platba",
   description:
-    "Doručenie stavebných strojov po celom Slovensku podľa hmotnosti objednávky, osobný odber v Boldogu zdarma, dodacia lehota a platba vopred kartou, Apple Pay alebo Google Pay.",
+    "Doručenie stavebných strojov po celom Slovensku podľa hmotnosti objednávky, osobný odber v Boldogu zdarma, dodacia lehota, nezáväzná rezervácia a platba kartou online alebo v predajni.",
 };
 
 const TOC = [
@@ -129,7 +129,10 @@ export default async function ShippingPaymentPage() {
             Pri odbere s vami urobíme skúšobný chod a bezplatne vás zaškolíme na obsluhu stroja. Zaškolenie potvrdíte
             podpisom.
           </li>
-          <li>Na mieste sa nič neplatí. Objednávka je vždy uhradená vopred online.</li>
+          <li>
+            Ak ste zaplatili online, na mieste sa nič neplatí. Ak ste stroj len rezervovali, môžete ho na mieste
+            kúpiť a zaplatiť kartou alebo v hotovosti.
+          </li>
           <li>Na odvoz ťažkého stroja si zabezpečte vozidlo s dostatočnou nosnosťou a upevnenie nákladu.</li>
         </ul>
       </LegalSection>
@@ -175,15 +178,22 @@ export default async function ShippingPaymentPage() {
       </LegalSection>
 
       <LegalSection id="platba" title="6. Platba">
+        <h3>Súkromné osoby: najprv nezáväzná rezervácia</h3>
         <p>
-          Platíte online cez zabezpečenú platobnú bránu Stripe: <strong>platobnou kartou</strong> (Visa, Mastercard),
+          Ako súkromná osoba v pokladni nič neplatíte, odošlete <strong>nezáväznú rezerváciu</strong>. Do 1 pracovného
+          dňa vám zavoláme, overíme dostupnosť a dohodneme sa, či stroj kúpite osobne v predajni (platba kartou alebo v
+          hotovosti na mieste) alebo na diaľku (platba kartou cez odkaz na stránke objednávky). Rezerváciu môžete
+          kedykoľvek bezplatne zrušiť.
+        </p>
+        <h3>Platba online vopred</h3>
+        <p>
+          Online platíte cez zabezpečenú platobnú bránu Stripe: <strong>platobnou kartou</strong> (Visa, Mastercard),
           cez <strong>Apple Pay</strong> alebo <strong>Google Pay</strong>. Údaje o vašej karte nevidíme ani neukladáme.
         </p>
-        <h3>Platba vopred</h3>
         <p>
-          Kúpnu cenu vrátane ceny dopravy platíte <strong>vopred, v plnej výške</strong>, pri odoslaní objednávky. Suma
-          sa z vášho účtu <strong>odpíše hneď</strong> po zaplatení. Na mieste pri odbere ani pri doručení sa už nič
-          neplatí.
+          Kúpnu cenu vrátane ceny dopravy platíte <strong>vopred, v plnej výške</strong>: firmy pri odoslaní
+          objednávky, súkromné osoby po dohode s nami. Suma sa z vášho účtu <strong>odpíše hneď</strong> po zaplatení.
+          Na mieste pri odbere ani pri doručení sa už nič neplatí.
         </p>
         <p>
           Hneď po zaplatení vám príde automatický e-mail „Prijali sme vašu objednávku a platbu“. Ešte nejde o prijatie

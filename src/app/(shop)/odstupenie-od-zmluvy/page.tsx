@@ -85,8 +85,15 @@ export default async function WithdrawalPage({ searchParams }: PageProps<"/odstu
         <p>
           Právo odstúpiť od zmluvy bez uvedenia dôvodu má kupujúci, ktorý je <strong>spotrebiteľom</strong>, teda
           fyzická osoba, ktorá pri kúpe nekoná v rámci svojej podnikateľskej činnosti alebo povolania (§ 19 a nasl.
-          zákona č. 108/2024 Z. z. o ochrane spotrebiteľa). Platí to aj vtedy, ak ste si stroj objednaný v e-shope
-          vyzdvihli osobne na výdajnom mieste.
+          zákona č. 108/2024 Z. z. o ochrane spotrebiteľa) a uzavrel zmluvu <strong>na diaľku</strong>, napríklad
+          zaplatením cez odkaz na stránke objednávky. Platí to aj vtedy, ak ste si takto kúpený stroj vyzdvihli osobne
+          na výdajnom mieste.
+        </p>
+        <p>
+          Ak ste stroj po nezáväznej rezervácii <strong>kúpili osobne v našej predajni</strong> (kúpnu zmluvu ste
+          podpísali a zaplatili na mieste), nejde o zmluvu uzavretú na diaľku a zákonné právo na odstúpenie do 14 dní
+          sa na ňu nevzťahuje. Pred kúpou si stroj môžete v predajni pozrieť a vyskúšať. Práva pri vade stroja
+          (reklamácia) máte v oboch prípadoch rovnaké.
         </p>
         <p>
           Kupujúci, ktorý nakupuje ako <strong>podnikateľ</strong> (najmä obchodná spoločnosť alebo živnostník na IČO

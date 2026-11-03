@@ -37,6 +37,13 @@ async function Dashboard() {
   return (
     <>
       <div className={css.kpis}>
+        <Link href="/admin/objednavky?stav=reserved" className={css.kpi} data-tone={s.reservationsOverdue ? "red" : s.reservations.length ? "amber" : undefined}>
+          <div className={css.kpiLabel}>Rezervácie na zavolanie</div>
+          <div className={css.kpiValue}>{s.reservations.length}</div>
+          <div className={css.kpiNote}>
+            {s.reservationsOverdue ? `${s.reservationsOverdue} čaká dlhšie ako 1 pracovný deň` : "zavolať pred objednaním u dodávateľa"}
+          </div>
+        </Link>
         <Link href="/admin/objednavky?stav=paid" className={css.kpi} data-tone={s.unconfirmedOverdue ? "red" : s.unconfirmed.length ? "amber" : undefined}>
           <div className={css.kpiLabel}>Na potvrdenie</div>
           <div className={css.kpiValue}>{s.unconfirmed.length}</div>

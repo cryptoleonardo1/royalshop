@@ -53,10 +53,13 @@ const NOT_FOUND =
   "Objednávku s týmto číslom a e-mailom sme nenašli. Skontrolujte číslo objednávky (napríklad OBJ26-00012) a e-mail, ktorý ste zadali pri objednávke.";
 
 const BLOCKED: Record<string, (deadline: string | null) => string> = {
-  unpaid: () => "Objednávka ešte nie je zaplatená, zmluva nevznikla. Ak ju nechcete, stačí ju nezaplatiť.",
+  unpaid: () =>
+    "Objednávka ešte nie je zaplatená, zmluva nevznikla. Ak ju nechcete, stačí ju nezaplatiť alebo nám dať vedieť, že rezerváciu rušíte.",
   cancelled: () => "Táto objednávka je zrušená. Ak ste ju zaplatili, peniaze vám vrátime bez odstúpenia.",
   company: () =>
     "Objednávka je vystavená na firmu. Zákonné právo odstúpiť od zmluvy má len spotrebiteľ. Ak chcete nepoužitý stroj vrátiť, ozvite sa nám, posúdime to podľa obchodných podmienok.",
+  on_premises: () =>
+    "Kúpnu zmluvu ste uzavreli osobne v našej predajni. Zákonné právo odstúpiť do 14 dní platí len pri nákupe na diaľku (e-shop, telefón, e-mail). Ak má stroj vadu, môžete ho reklamovať podľa reklamačného poriadku.",
   expired: (d) =>
     `Lehota na odstúpenie od zmluvy uplynula${d ? ` dňa ${formatDate(d)}` : ""}. Ak má stroj vadu, môžete ho reklamovať podľa reklamačného poriadku.`,
 };
@@ -90,6 +93,7 @@ export async function withdrawalStep(_prev: WithdrawalFormState, form: FormData)
     status: order.status,
     delivered_at: order.deliveredAt,
     withdrawal_deadline: order.withdrawalDeadline,
+    contract_place: order.contractPlace,
   });
   if (!eligibility.allowed) return identify(BLOCKED[eligibility.block!](eligibility.deadline?.toISOString() ?? null));
 

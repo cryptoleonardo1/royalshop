@@ -7,6 +7,9 @@ import css from "./admin.module.css";
 
 // What each next step means for the person clicking it.
 const STEP_HINT: Partial<Record<OrderStatus, string>> = {
+  pending_payment:
+    "Dohodli ste sa so zákazníkom na platbe kartou na diaľku. Pošlite mu odkaz na objednávku (vyššie v tomto paneli), zaplatí na nej. Spotrebiteľ potom môže odstúpiť do 14 dní.",
+  paid: "Zákazník zaplatil mimo platobnej brány (v predajni alebo prevodom).",
   confirmed: "Dodávateľ potvrdil dostupnosť. Tým vzniká zmluva (neskôr aj e-mail „Potvrdenie objednávky“ a faktúra).",
   ordered_from_supplier: "Stroj je objednaný u dodávateľa.",
   received_at_branch: "Stroj dorazil k nám do Boldogu.",
@@ -30,7 +33,19 @@ function Message({ state }: { state: ActionState }) {
 const todayBratislava = () =>
   new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Bratislava", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 
-function StepForm({ orderId, from, to, blocked }: { orderId: string; from: OrderStatus; to: OrderStatus; blocked?: string }) {
+function StepForm({
+  orderId,
+  from,
+  to,
+  blocked,
+  person,
+}: {
+  orderId: string;
+  from: OrderStatus;
+  to: OrderStatus;
+  blocked?: string;
+  person: boolean;
+}) {
   const [state, action, pending] = useActionState(advanceOrder, undefined);
   return (
     <form action={action} className={css.form}>
@@ -40,6 +55,30 @@ function StepForm({ orderId, from, to, blocked }: { orderId: string; from: Order
       <p className={`${css.small} ${css.muted}`} style={{ margin: 0 }}>
         {STEP_HINT[to]}
       </p>
+      {to === "paid" && (
+        <>
+          <label className={css.field}>
+            Spôsob platby
+            <select className={css.input} name="provider" required defaultValue="">
+              <option value="" disabled>
+                Vyberte…
+              </option>
+              <option value="card_terminal">Karta v predajni (terminál)</option>
+              <option value="cash">Hotovosť v predajni</option>
+              <option value="bank_transfer">Bankový prevod</option>
+            </select>
+          </label>
+          {person && (
+            <label className={css.check}>
+              <input type="checkbox" name="onPremises" />
+              <span>
+                Kúpnu zmluvu zákazník uzavrel osobne v predajni (podpísal ju tu). Zákonné odstúpenie do 14 dní sa potom
+                nevzťahuje. Nezaškrtávajte, ak sa kúpa dohodla len telefonicky alebo e-mailom.
+              </span>
+            </label>
+          )}
+        </>
+      )}
       {to === "ordered_from_supplier" && (
         <div className={css.formRow}>
           <label className={css.field}>
@@ -92,18 +131,27 @@ export function NextSteps({
   status,
   next,
   completeBlocked,
+  person,
 }: {
   orderId: string;
   status: OrderStatus;
   next: OrderStatus[];
   completeBlocked?: string;
+  person: boolean;
 }) {
   const steps = next.filter((s) => s !== "cancelled");
   if (steps.length === 0) return <p className={`${css.muted} ${css.small}`} style={{ margin: 0 }}>Žiadny ďalší krok.</p>;
   return (
     <div className={css.stack}>
       {steps.map((to) => (
-        <StepForm key={to} orderId={orderId} from={status} to={to} blocked={to === "completed" ? completeBlocked : undefined} />
+        <StepForm
+          key={to}
+          orderId={orderId}
+          from={status}
+          to={to}
+          person={person}
+          blocked={to === "completed" ? completeBlocked : undefined}
+        />
       ))}
     </div>
   );

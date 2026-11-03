@@ -1,6 +1,6 @@
 import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { OrderStatus, ShippingMethod } from "./order-state";
+import type { ContractPlace, OrderStatus, ShippingMethod } from "./order-state";
 import type { ReturnStatus } from "./returns";
 
 // One order as the customer sees it: the guest page (/objednavka/<number>?t=<token>) and the account
@@ -11,6 +11,7 @@ export const ORDER_DETAIL_SELECT = `
   id, order_number, access_token, profile_id, status, payment_status, customer_type, email, phone, billing,
   shipping_address, company, shipping_method, shipping_price_cents, subtotal_gross_cents, total_net_cents,
   total_vat_cents, total_gross_cents, estimated_delivery_date, delivered_at, withdrawal_deadline, created_at,
+  reserved_at, contract_place,
   items:order_items(name, sku, quantity, unit_price_gross_cents, line_gross_cents),
   returns(return_number, status, items, submitted_at, access_token, refund_cents, refunded_at),
   history:order_status_history(to_status, created_at),
@@ -45,6 +46,11 @@ export interface OrderDetail {
   deliveredAt: string | null;
   withdrawalDeadline: string | null;
   createdAt: string;
+  // started as a non-binding reservation (persons)
+  reservedAt: string | null;
+  contractPlace: ContractPlace;
+  // money was received at some point (refunds included)
+  paid: boolean;
   items: { name: string; sku: string | null; quantity: number; lineGrossCents: number }[];
   // latest time the order reached each status
   reachedAt: Partial<Record<OrderStatus, string>>;
@@ -88,6 +94,9 @@ export function toOrderDetail(r: any): OrderDetail {
     deliveredAt: r.delivered_at,
     withdrawalDeadline: r.withdrawal_deadline,
     createdAt: r.created_at,
+    reservedAt: r.reserved_at,
+    contractPlace: r.contract_place,
+    paid: !["unpaid", "cancelled", "failed"].includes(r.payment_status),
     items: (r.items ?? []).map((i: any) => ({
       name: i.name,
       sku: i.sku,

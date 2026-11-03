@@ -2,7 +2,7 @@
 
 import { useActionState, useState, useTransition, type FormEvent, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, Building2, CreditCard, Lock, Store, Truck, User } from "lucide-react";
+import { AlertTriangle, ArrowRight, Building2, CreditCard, Lock, Phone, Store, Truck, User } from "lucide-react";
 import { placeOrder, type PlaceOrderState } from "@/lib/checkout-actions";
 import type { ShippingMethod } from "@/lib/order-state";
 import { formatEur } from "@/lib/money";
@@ -322,7 +322,7 @@ export function CheckoutForm({
           ))}
         </dl>
         <p className={css.summaryTotal}>
-          <span>Celkom k úhrade</span>
+          <span>{customerType === "person" ? "Celkom s DPH" : "Celkom k úhrade"}</span>
           <strong>{quote ? formatEur(quote.totals.grossCents) : "…"}</strong>
         </p>
         {quote && (
@@ -336,15 +336,27 @@ export function CheckoutForm({
           </p>
         )}
 
-        <div className={css.payInfo}>
-          <CreditCard size={20} aria-hidden="true" />
-          <p>
-            Celú sumu zaplatíte <strong>vopred</strong> kartou, Apple Pay alebo Google Pay cez Stripe. Objednávku
-            potvrdíme e-mailom, keď dodávateľ potvrdí dostupnosť. Ak stroj nebude dostupný, vrátime vám celú sumu do{" "}
-            {UNAVAILABLE_REFUND_WORKDAYS} pracovných dní. <Link href="/doprava-a-platba">Doprava a platba</Link>
-            {demoPayments && <em> Demo: platobná brána nie je pripojená, platbu len nasimulujeme.</em>}
-          </p>
-        </div>
+        {customerType === "person" ? (
+          <div className={css.payInfo}>
+            <Phone size={20} aria-hidden="true" />
+            <p>
+              Odosielate <strong>nezáväznú rezerváciu</strong>, teraz nič neplatíte. Do 1 pracovného dňa vám zavoláme,
+              overíme dostupnosť a dohodneme ďalší postup. Stroj si môžete pozrieť, vyskúšať a kúpiť osobne v našej
+              predajni v Boldogu pri Senci, alebo vám pošleme odkaz na platbu kartou.{" "}
+              <Link href="/doprava-a-platba">Doprava a platba</Link>
+            </p>
+          </div>
+        ) : (
+          <div className={css.payInfo}>
+            <CreditCard size={20} aria-hidden="true" />
+            <p>
+              Celú sumu zaplatíte <strong>vopred</strong> kartou, Apple Pay alebo Google Pay cez Stripe. Objednávku
+              potvrdíme e-mailom, keď dodávateľ potvrdí dostupnosť. Ak stroj nebude dostupný, vrátime vám celú sumu do{" "}
+              {UNAVAILABLE_REFUND_WORKDAYS} pracovných dní. <Link href="/doprava-a-platba">Doprava a platba</Link>
+              {demoPayments && <em> Demo: platobná brána nie je pripojená, platbu len nasimulujeme.</em>}
+            </p>
+          </div>
+        )}
 
         <label className={css.checkRow} data-invalid={errors.terms ? true : undefined}>
           <input type="checkbox" name="terms" value="on" aria-describedby={errors.terms ? "co-terms-err" : undefined} />
@@ -368,14 +380,18 @@ export function CheckoutForm({
         )}
         <p className={css.legalNote}>
           {customerType === "person"
-            ? `Ako spotrebiteľ máte právo odstúpiť od zmluvy do 14 dní od prevzatia tovaru bez udania dôvodu. Priame náklady na vrátenie tovaru znášate vy${quote ? `, predpokladaný odhad je najviac ${formatEur(returnCostEstimate(quote.weightKg).maxCents)}` : ""}.`
+            ? `Rezervácia nie je kúpna zmluva. Ak stroj kúpite na diaľku (platba cez odkaz), máte ako spotrebiteľ právo odstúpiť od zmluvy do 14 dní od prevzatia bez udania dôvodu a priame náklady na vrátenie znášate vy${quote ? ` (odhad najviac ${formatEur(returnCostEstimate(quote.weightKg).maxCents)})` : ""}. Pri kúpe osobne v našej predajni sa zákonné právo na odstúpenie nevzťahuje.`
             : "Pri nákupe na firmu (IČO) sa zákonné právo na odstúpenie do 14 dní neuplatňuje."}{" "}
           Osobné údaje spracúvame podľa <Link href="/ochrana-osobnych-udajov">zásad ochrany osobných údajov</Link>.
         </p>
 
         <button type="submit" className={css.addBig} disabled={submitting || !quote}>
           <Lock size={20} aria-hidden="true" />
-          {submitting ? "Odosielam…" : "Objednávka s povinnosťou platby"}
+          {submitting
+            ? "Odosielam…"
+            : customerType === "person"
+              ? "Odoslať nezáväznú rezerváciu"
+              : "Objednávka s povinnosťou platby"}
         </button>
       </aside>
     </form>

@@ -59,17 +59,25 @@ async function OrderView({ params, searchParams }: PageProps<"/objednavka/[cislo
       </p>
     ) : null;
 
+  const reservation = order.status === "reserved";
+
   return (
     <>
       {isNew && <ClearCart />}
       <header className={css.pageHead}>
         <p className={css.tape}>Objednávka {order.orderNumber}</p>
         <h1 className={css.pageTitle}>
-          {isNew && order.status !== "cancelled" ? "Ďakujeme za objednávku" : "Stav objednávky"}
+          {isNew && order.status !== "cancelled"
+            ? reservation
+              ? "Ďakujeme za rezerváciu"
+              : "Ďakujeme za objednávku"
+            : reservation
+              ? "Stav rezervácie"
+              : "Stav objednávky"}
         </h1>
         <p className={css.pageLede}>
-          Objednávka je zaevidovaná na <strong>{order.email}</strong>. Odkaz na túto stránku si uložte, stav objednávky
-          na nej uvidíte aj neskôr.
+          {reservation ? "Rezervácia" : "Objednávka"} je zaevidovaná na <strong>{order.email}</strong>. Odkaz na túto
+          stránku si uložte, stav na nej uvidíte aj neskôr.
         </p>
       </header>
       <OrderDetailView

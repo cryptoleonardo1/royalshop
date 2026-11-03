@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, Check, CreditCard, Lock, MessageCircle, Package, Store, Truck, Undo2 } from "lucide-react";
+import { AlertTriangle, Check, CreditCard, Lock, MessageCircle, Package, Phone, Store, Truck, Undo2 } from "lucide-react";
 import { payOrder } from "@/lib/checkout-actions";
 import { isDemoPayments } from "@/lib/stripe";
 import { formatEur } from "@/lib/money";
@@ -45,6 +45,23 @@ export function OrderDetailView({
   return (
     <div className={css.orderLayout}>
       <div className={css.orderMain}>
+        {status === "reserved" && (
+          <section className={`${css.testNote} ${css.dark}`} aria-label="Rezervácia">
+            <span className={css.testStamp} aria-hidden="true">
+              <Phone size={24} strokeWidth={2.5} />
+            </span>
+            <div>
+              <p className={css.testTitle}>Rezervácia prijatá</p>
+              <p>
+                Ďakujeme. Rezervácia je nezáväzná a zatiaľ nič neplatíte. Do 1 pracovného dňa vám zavoláme na{" "}
+                {order.phone ?? "vaše telefónne číslo"}, overíme dostupnosť stroja a dohodneme ďalší postup: kúpu
+                osobne v našej predajni v Boldogu pri Senci (s vyskúšaním a zaškolením), alebo platbu kartou cez
+                odkaz. Ak si to rozmyslíte, stačí nám dať vedieť.
+              </p>
+            </div>
+          </section>
+        )}
+
         {status === "pending_payment" && (
           <section className={css.payBox} aria-labelledby="pay-title">
             {paymentCancelled && (
@@ -59,6 +76,14 @@ export function OrderDetailView({
               Celú sumu <strong>{formatEur(order.totalGrossCents)}</strong> zaplatíte vopred. Objednávku potvrdíme
               e-mailom, keď dodávateľ potvrdí dostupnosť. Ak stroj nebude dostupný, peniaze vám vrátime.
             </p>
+            {order.customerType === "person" && (
+              <p className={css.legalNote}>
+                Platbou uzatvárate kúpnu zmluvu na diaľku podľa{" "}
+                <Link href="/obchodne-podmienky">obchodných podmienok</Link>. Ako spotrebiteľ môžete od nej odstúpiť
+                do 14 dní od prevzatia stroja bez udania dôvodu, pozrite si{" "}
+                <Link href="/odstupenie-od-zmluvy">poučenie o odstúpení od zmluvy</Link>.
+              </p>
+            )}
             <form action={payOrder}>
               <input type="hidden" name="number" value={order.orderNumber} />
               <input type="hidden" name="token" value={order.accessToken} />
@@ -93,8 +118,10 @@ export function OrderDetailView({
 
         {status === "cancelled" && (
           <p className={css.notice}>
-            <AlertTriangle size={18} aria-hidden="true" /> Objednávka bola zrušená. Ak ste už zaplatili, celú sumu vám
-            vrátime na kartu, z ktorej ste platili.
+            <AlertTriangle size={18} aria-hidden="true" />{" "}
+            {order.reservedAt && !order.paid
+              ? "Rezervácia bola zrušená."
+              : "Objednávka bola zrušená. Ak ste už zaplatili, celú sumu vám vrátime tým istým spôsobom, akým ste platili."}
           </p>
         )}
 
@@ -279,6 +306,7 @@ function WithdrawalPanel({ order }: { order: OrderDetail }) {
     status: order.status,
     delivered_at: order.deliveredAt,
     withdrawal_deadline: order.withdrawalDeadline,
+    contract_place: order.contractPlace,
   });
   const wholeDone = order.returns.some((r) => r.status !== "rejected" && r.wholeOrder);
   const offer = e.allowed && !wholeDone;

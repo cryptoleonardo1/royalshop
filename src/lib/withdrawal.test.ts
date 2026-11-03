@@ -55,6 +55,21 @@ describe("withdrawal window", () => {
     expect(withdrawalInfo({ ...person, delivered_at: delivered, hasWithdrawal: true }).window).toBe("withdrawn");
   });
 
+  it("gives no withdrawal for a reservation or a sale concluded in the shop", () => {
+    const delivered = "2026-10-01T10:00:00Z";
+    expect(withdrawalInfo({ ...person, status: "reserved", delivered_at: null }).window).toBe("none");
+    expect(withdrawalInfo({ ...person, status: "confirmed", delivered_at: null, contract_place: "on_premises" }).window).toBe(
+      "on_premises",
+    );
+    const shop = { ...person, delivered_at: delivered, contract_place: "on_premises" as const };
+    expect(withdrawalInfo(shop, new Date("2026-10-02T08:00:00Z")).window).toBe("on_premises");
+    expect(canCompleteOrder(shop, new Date("2026-10-02T08:00:00Z"))).toBe(true);
+    // a payment link is a distance contract: the regular window applies
+    expect(withdrawalInfo({ ...person, delivered_at: delivered, contract_place: "distance" }, new Date("2026-10-02T08:00:00Z")).window).toBe(
+      "open",
+    );
+  });
+
   it("allows completing a consumer order only after the grace period", () => {
     const order = { ...person, delivered_at: "2026-10-01T10:00:00Z" };
     expect(canCompleteOrder(order, new Date("2026-10-16T08:00:00Z"))).toBe(false);

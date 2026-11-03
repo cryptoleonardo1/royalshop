@@ -19,6 +19,7 @@ export const fmtDate = (v: string | Date | null | undefined) => (v ? dateFmt.for
 export const fmtDateTime = (v: string | Date | null | undefined) => (v ? dateTimeFmt.format(new Date(v)) : "–");
 
 const STATUS_TONE: Partial<Record<OrderStatus, Tone>> = {
+  reserved: "amber",
   pending_payment: undefined,
   paid: "accent",
   confirmed: "blue",
@@ -67,6 +68,7 @@ export const WINDOW_TONE: Record<WithdrawalWindow, Tone> = {
   withdrawn: "red",
   closed: "green",
   company: undefined,
+  on_premises: undefined,
   none: undefined,
 };
 

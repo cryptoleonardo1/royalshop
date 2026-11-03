@@ -98,6 +98,8 @@ describe("customer eligibility", () => {
     expect(withdrawalEligibility({ ...person, customer_type: "company" }).block).toBe("company");
     expect(withdrawalEligibility({ ...person, status: "pending_payment", delivered_at: null }).block).toBe("unpaid");
     expect(withdrawalEligibility({ ...person, status: "cancelled", delivered_at: null }).block).toBe("cancelled");
+    expect(withdrawalEligibility({ ...person, status: "reserved", delivered_at: null }).block).toBe("unpaid");
+    expect(withdrawalEligibility({ ...person, contract_place: "on_premises" }).block).toBe("on_premises");
   });
 
   it("keeps the order open while a filed withdrawal is unsettled", () => {

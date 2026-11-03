@@ -40,6 +40,13 @@ const PAYMENT_STATUS: Record<string, string> = {
   refunded: "vrátená",
 };
 
+const PROVIDER_LABEL: Record<string, string> = {
+  stripe: "Karta (Stripe)",
+  card_terminal: "Karta v predajni",
+  cash: "Hotovosť",
+  bank_transfer: "Bankový prevod",
+};
+
 const stripeDashboard = (pi: string) =>
   `https://dashboard.stripe.com/${process.env.STRIPE_SECRET_KEY?.startsWith("sk_live") ? "" : "test/"}payments/${pi}`;
 
@@ -65,7 +72,7 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
     a.submitted_at.localeCompare(b.submitted_at),
   );
   const withdrawalPending = returns.some((r) => !RETURN_DONE.includes(r.status));
-  const completeBlocked = canCompleteOrder({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline, withdrawalPending })
+  const completeBlocked = canCompleteOrder({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline, contract_place: o.contract_place, withdrawalPending })
     ? undefined
     : withdrawalPending
       ? "Najprv vybavte odstúpenie (vrátenie peňazí alebo zamietnutie)."
@@ -78,21 +85,32 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
   const manualOpen =
     o.customer_type === "person" &&
     manualLines.length > 0 &&
-    !["company", "unpaid", "cancelled"].includes(
-      withdrawalEligibility({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline }).block ?? "",
+    !["company", "on_premises", "unpaid", "cancelled"].includes(
+      withdrawalEligibility({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline, contract_place: o.contract_place }).block ?? "",
     );
   const paidCents = payments.filter((p) => ["captured", "partially_refunded"].includes(p.status)).reduce((s, p) => s + p.amount_cents - (p.refunded_cents ?? 0), 0);
   const heldCents = payments.filter((p) => p.status === "authorized").reduce((s, p) => s + p.amount_cents, 0);
+  const manualPaid = payments.some((p) => p.provider !== "stripe" && ["captured", "partially_refunded"].includes(p.status));
   const refundText =
     heldCents > 0
       ? `Blokácia ${formatEur(heldCents)} na karte zákazníka sa uvoľní, nič sa nestiahne.`
+      : paidCents > 0 && manualPaid
+      ? `Zákazník platil v predajni alebo prevodom: ${formatEur(paidCents)} mu vrátite ručne (hotovosť, terminál alebo prevod), systém vrátenie len zaeviduje. Podľa VOP do 2 pracovných dní.`
       : paidCents > 0
       ? `Zákazníkovi sa hneď vráti ${formatEur(paidCents)} na kartu (celá suma vrátane dopravy). Podľa VOP do 2 pracovných dní.`
+      : status === "reserved"
+      ? "Rezervácia sa zruší, nič sa nevracia."
       : "Objednávka nie je zaplatená, nič sa nevracia. Otvorená platba sa zruší.";
 
   const riskText: Record<string, string> = {
-    none: status === "cancelled" ? "Objednávka je zrušená." : "Objednávka ešte nie je zaplatená, zmluva nevznikla.",
+    none:
+      status === "cancelled"
+        ? "Objednávka je zrušená."
+        : status === "reserved"
+        ? "Nezáväzná rezervácia: zavolajte zákazníkovi. Kúpa podpísaná a zaplatená v predajni = bez odstúpenia; platba cez odkaz = zmluva na diaľku, odstúpenie do 14 dní platí."
+        : "Objednávka ešte nie je zaplatená, zmluva nevznikla.",
     company: "Firemný zákazník: zákonné odstúpenie do 14 dní sa nevzťahuje.",
+    on_premises: "Spotrebiteľ kúpil osobne v predajni (zmluva nie je na diaľku): zákonné odstúpenie do 14 dní sa nevzťahuje, ostávajú reklamácie.",
     before_delivery: "Spotrebiteľ môže odstúpiť už teraz. 14-dňová lehota sa začne dňom prevzatia stroja.",
     open: `Spotrebiteľ môže odstúpiť do ${fmtDateTime(w.deadline)} (${w.daysLeft === 0 ? "dnes je posledný deň" : `ešte ${daysText(w.daysLeft ?? 0)}`}). Stačí, ak odstúpenie v lehote odošle.`,
     grace: `Lehota uplynula ${fmtDateTime(w.deadline)}. Odstúpenie odoslané poštou v posledný deň môže ešte prísť, preto ${WITHDRAWAL_POST_GRACE_DAYS} dní rezerva.`,
@@ -280,7 +298,7 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
                   )}
                   {payments.map((p) => (
                     <div key={p.id} style={{ display: "contents" }}>
-                      <dt>{p.provider === "stripe" ? "Karta (Stripe)" : p.provider}</dt>
+                      <dt>{PROVIDER_LABEL[p.provider] ?? p.provider}</dt>
                       <dd>
                         {formatEur(p.amount_cents)} · {PAYMENT_STATUS[p.status] ?? p.status}
                         {p.refunded_cents > 0 && ` · vrátené ${formatEur(p.refunded_cents)}`}
@@ -370,7 +388,16 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
               <h2 className={css.panelTitle}>Ďalší krok</h2>
             </div>
             <div className={css.panelBody}>
-              <NextSteps orderId={o.id} status={status} next={next} completeBlocked={completeBlocked} />
+              {(status === "reserved" || status === "pending_payment") && o.customer_type === "person" && (
+                <p className={`${css.small} ${css.muted}`} style={{ marginTop: 0 }}>
+                  Odkaz pre zákazníka (stav a platba):{" "}
+                  <a href={`${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/objednavka/${encodeURIComponent(o.order_number)}?t=${o.access_token}`} target="_blank" rel="noreferrer">
+                    /objednavka/{o.order_number}?t=…
+                  </a>{" "}
+                  · tel. {o.phone ?? "–"}
+                </p>
+              )}
+              <NextSteps orderId={o.id} status={status} next={next} completeBlocked={completeBlocked} person={o.customer_type === "person"} />
               {next.includes("cancelled") && <CancelOrder orderId={o.id} status={status} refundText={refundText} />}
             </div>
           </section>
