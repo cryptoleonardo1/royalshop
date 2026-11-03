@@ -1,5 +1,13 @@
 # Handoff Archive (do not read on /start)
 
+## What Was Done (Session 8) -- Legal research, legal pages, immediate payment (2026-10-23)
+
+- 5-agent legal research (Slov-Lex consolidated texts, Oct 2026) -> `docs/06-pravne-stranky.md` + `docs/pravne/`. Key findings: consumers may withdraw even with a used/damaged machine (we may only claim diminished value, separately, no set-off § 22 ods. 8 ZOS); misuse is not a defect but WE must prove it for 2 years (§ 620 OZ), so the test protocol (photos, serial, engine hours) + signed training record are the defence; return costs are chargeable only if shown before the order.
+- Founder decisions: charge immediately (contract = our "Potvrdenie objednávky" e-mail, refund within 2 working days if unavailable, substitute only with consent); delivery "3-5 usual, 10 max"; pickup hours Po-Pi 8:00-15:00 (yard is 7-16); keep shipping bands. Founder is checking Honda/Bomag/Gölz warranties and SK manuals, and sees withdrawal of damaged machines as a big risk -> revisit.
+- Six legal pages (VOP incl. B2B article, reklamačný poriadok A/B, odstúpenie with príloha 2/3 verified verbatim against the PDF, doprava a platba, GDPR, cookies). Footer links; "Odstúpiť od zmluvy tu" -> `/odstupenie-od-zmluvy#formular` (e-mail fallback until the § 20a form exists).
+- Stripe manual capture removed; status `paid_authorized` -> `paid` (migration 20261023000001). Return-cost estimate per weight band on PDP and in checkout (`RETURN_COST_ESTIMATES`, placeholders until the carrier price list).
+- No cookie banner needed today (shop sets no cookies; cart = localStorage); it is needed before GA4/Meta. Rejected: keeping manual capture (cheaper refunds, but 7-day hold expiry and founder wants to order right away).
+
 ## What Was Done (Session 7) -- Delivery 3-5 days, home polish, sale, contact page, new motto (2026-10-22/23)
 
 - Founder decisions: weight shipping bands stay as they are; 800 EUR minimum is only a guideline; Resend waits for the shop@royalstroje.sk mailbox; IBAN/SWIFT coming from the founder; admin will live in RCC (scope later).
