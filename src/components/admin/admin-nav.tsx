@@ -2,16 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ShoppingCart } from "lucide-react";
+import { LayoutDashboard, ShoppingCart, Undo2 } from "lucide-react";
 import css from "./admin.module.css";
 
 const LINKS = [
   { href: "/admin", label: "Prehľad", icon: LayoutDashboard, exact: true },
   { href: "/admin/objednavky", label: "Objednávky", icon: ShoppingCart, exact: false },
+  { href: "/admin/odstupenia", label: "Odstúpenia", icon: Undo2, exact: false },
 ];
 
 // Planned modules (docs/07-admin-konzola-plan.md), shown so the team knows what is coming.
-const SOON = ["Faktúry", "Odstúpenia", "Reklamácie", "Produkty", "Nastavenia"];
+const SOON = ["Faktúry", "Reklamácie", "Produkty", "Nastavenia"];
 
 // Pathname is request data: the layout renders <NavList pathname=""> as the Suspense fallback.
 export function AdminNav() {

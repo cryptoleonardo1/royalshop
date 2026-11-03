@@ -1,12 +1,14 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, Check, CreditCard, Lock, MessageCircle, Package, Store, Truck } from "lucide-react";
+import { AlertTriangle, Check, CreditCard, Lock, MessageCircle, Package, Store, Truck, Undo2 } from "lucide-react";
 import { payOrder } from "@/lib/checkout-actions";
 import { isDemoPayments } from "@/lib/stripe";
 import { formatEur } from "@/lib/money";
-import { formatDateTime, formatDeliveryDate, whatsappUrl } from "@/lib/format";
+import { formatDate, formatDateTime, formatDeliveryDate, whatsappUrl } from "@/lib/format";
 import { ORDER_STATUS_LABELS, timelineFor, type ShippingMethod } from "@/lib/order-state";
 import type { OrderDetail } from "@/lib/order-detail";
+import { RETURN_STATUS_CUSTOMER } from "@/lib/returns";
+import { withdrawalEligibility } from "@/lib/withdrawal";
 import css from "./shop.module.css";
 
 // Order body shared by the guest order page and the account portal: payment box, timeline with dates,
@@ -145,6 +147,8 @@ export function OrderDetailView({
           </section>
         )}
 
+        <WithdrawalPanel order={order} />
+
         {children}
 
         <table className={css.specTable}>
@@ -261,5 +265,71 @@ export function OrderDetailView({
         </Link>
       </aside>
     </div>
+  );
+}
+
+// Slovak plural: 1 deň, 2–4 dni, 5+ dní
+const daysText = (n: number) => `${n} ${n === 1 ? "deň" : n >= 2 && n <= 4 ? "dni" : "dní"}`;
+
+// Withdrawal (docs/04 §4.3): filed withdrawals with their status, and while the consumer may still withdraw
+// the "Odstúpiť od zmluvy tu" button with the countdown; after the deadline the date it ended.
+function WithdrawalPanel({ order }: { order: OrderDetail }) {
+  const e = withdrawalEligibility({
+    customer_type: order.customerType,
+    status: order.status,
+    delivered_at: order.deliveredAt,
+    withdrawal_deadline: order.withdrawalDeadline,
+  });
+  const wholeDone = order.returns.some((r) => r.status !== "rejected" && r.wholeOrder);
+  const offer = e.allowed && !wholeDone;
+  const expired = e.block === "expired" && order.returns.length === 0;
+  if (order.returns.length === 0 && !offer && !expired) return null;
+  const formHref = `/odstupenie-od-zmluvy?objednavka=${encodeURIComponent(order.orderNumber)}&t=${order.accessToken}#formular`;
+
+  return (
+    <section aria-labelledby="withdraw-title">
+      <h2 id="withdraw-title" className={css.proseTitle}>
+        Odstúpenie od zmluvy
+      </h2>
+      <div className={css.withdrawPanel}>
+        {order.returns.length > 0 && (
+          <ul>
+            {order.returns.map((r) => (
+              <li key={r.returnNumber}>
+                <strong>{r.returnNumber}</strong>
+                <span>odoslané {formatDateTime(r.submittedAt)}</span>
+                <span>· {RETURN_STATUS_CUSTOMER[r.status]}</span>
+                {r.refundedAt && r.refundCents != null && (
+                  <span>
+                    · vrátené {formatEur(r.refundCents)} dňa {formatDate(r.refundedAt)}
+                  </span>
+                )}
+                <Link href={`/odstupenie-od-zmluvy/potvrdenie/${encodeURIComponent(r.returnNumber)}?t=${r.accessToken}`}>
+                  Potvrdenie
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+        {offer && (
+          <>
+            <p>
+              {e.deadline
+                ? `Od zmluvy môžete odstúpiť bez udania dôvodu do ${formatDate(e.deadline.toISOString())} (${
+                    e.daysLeft === 0 ? "dnes je posledný deň" : `ešte ${daysText(e.daysLeft ?? 0)}`
+                  }).`
+                : "Od zmluvy môžete odstúpiť už teraz, bez udania dôvodu. 14-dňová lehota sa začne dňom prevzatia stroja."}
+              {order.returns.length > 0 && " Formulár ponúkne tovar, od ktorého ste ešte neodstúpili."}
+            </p>
+            <Link href={formHref} className={css.btnGhost}>
+              <Undo2 size={18} aria-hidden="true" /> Odstúpiť od zmluvy tu
+            </Link>
+          </>
+        )}
+        {e.block === "expired" && e.deadline && (
+          <p>Lehota na odstúpenie od zmluvy uplynula dňa {formatDate(e.deadline.toISOString())}.</p>
+        )}
+      </div>
+    </section>
   );
 }

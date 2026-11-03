@@ -53,6 +53,7 @@ export interface WithdrawalInput {
   delivered_at: string | null;
   withdrawal_deadline?: string | null;
   hasWithdrawal?: boolean;
+  withdrawalPending?: boolean; // a withdrawal is filed and not yet refunded or rejected
 }
 
 export interface WithdrawalInfo {
@@ -77,8 +78,37 @@ export function withdrawalInfo(order: WithdrawalInput, now = new Date()): Withdr
   return { window: now <= graceEnd ? "grace" : "closed", deadline, daysLeft: null };
 }
 
-// An order may be closed as "Vybavené" only once no withdrawal can still reach us.
+// An order may be closed as "Vybavené" only once no withdrawal can still reach us and every filed one is
+// settled. A partial withdrawal leaves the other items open, so the regular window applies either way.
 export function canCompleteOrder(order: WithdrawalInput, now = new Date()): boolean {
-  const { window } = withdrawalInfo(order, now);
+  if (order.withdrawalPending) return false;
+  const { window } = withdrawalInfo({ ...order, hasWithdrawal: false }, now);
   return window === "closed" || window === "company";
+}
+
+// What the customer may do (form, portal): withdraw before delivery (§ 20 ods. 5 ZOS) or until the deadline.
+// The admin's post grace period does not extend the customer's deadline.
+export type WithdrawalBlock = "unpaid" | "cancelled" | "company" | "expired";
+
+export interface WithdrawalEligibility {
+  allowed: boolean;
+  block?: WithdrawalBlock;
+  deadline: Date | null;
+  daysLeft: number | null;
+}
+
+export function withdrawalEligibility(order: WithdrawalInput, now = new Date()): WithdrawalEligibility {
+  const info = withdrawalInfo({ ...order, hasWithdrawal: false }, now);
+  const { deadline, daysLeft } = info;
+  switch (info.window) {
+    case "before_delivery":
+    case "open":
+      return { allowed: true, deadline, daysLeft };
+    case "company":
+      return { allowed: false, block: "company", deadline: null, daysLeft: null };
+    case "none":
+      return { allowed: false, block: order.status === "cancelled" ? "cancelled" : "unpaid", deadline: null, daysLeft: null };
+    default:
+      return { allowed: false, block: "expired", deadline, daysLeft: null };
+  }
 }

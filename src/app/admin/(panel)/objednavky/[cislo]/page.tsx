@@ -5,10 +5,12 @@ import { notFound } from "next/navigation";
 import { getOrderDetail } from "@/lib/admin/orders-data";
 import { formatEur } from "@/lib/money";
 import { allowedNextStatuses, ORDER_STATUS_LABELS, type OrderStatus, type ShippingMethod } from "@/lib/order-state";
-import { canCompleteOrder, WITHDRAWAL_POST_GRACE_DAYS } from "@/lib/withdrawal";
+import { canCompleteOrder, withdrawalEligibility, WITHDRAWAL_POST_GRACE_DAYS } from "@/lib/withdrawal";
+import { RETURN_DONE, remainingLines, type ReturnItem, type ReturnStatus } from "@/lib/returns";
 import { LiveOrders } from "@/components/admin/live-orders";
 import { AdminNote, CancelOrder, NextSteps } from "@/components/admin/order-actions";
-import { daysText, fmtDate, fmtDateTime, PaymentBadge, StatusBadge, WINDOW_TONE, WindowBadge } from "@/components/admin/badges";
+import { ManualReturnForm } from "@/components/admin/return-actions";
+import { daysText, fmtDate, fmtDateTime, PaymentBadge, ReturnBadge, StatusBadge, WINDOW_TONE, WindowBadge } from "@/components/admin/badges";
 import css from "@/components/admin/admin.module.css";
 
 export const metadata: Metadata = { title: "Objednávka" };
@@ -59,9 +61,26 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
 
   const purchaseKnown = items.every((i) => i.purchase_price_net_cents != null);
   const next = allowedNextStatuses(status, method);
-  const completeBlocked = canCompleteOrder({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline, hasWithdrawal: w.window === "withdrawn" })
+  const returns = (o.returns as { return_number: string; status: ReturnStatus; items: ReturnItem[] | null; submitted_at: string }[]).sort((a, b) =>
+    a.submitted_at.localeCompare(b.submitted_at),
+  );
+  const withdrawalPending = returns.some((r) => !RETURN_DONE.includes(r.status));
+  const completeBlocked = canCompleteOrder({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline, withdrawalPending })
     ? undefined
-    : `Uzavrieť sa dá až po lehote na odstúpenie a ${WITHDRAWAL_POST_GRACE_DAYS} dňoch rezervy na poštu.`;
+    : withdrawalPending
+      ? "Najprv vybavte odstúpenie (vrátenie peňazí alebo zamietnutie)."
+      : `Uzavrieť sa dá až po lehote na odstúpenie a ${WITHDRAWAL_POST_GRACE_DAYS} dňoch rezervy na poštu.`;
+  // manual entry: a consumer order the customer may still withdraw from (judged by the sending date in the action)
+  const manualLines = remainingLines(
+    items.map((i) => ({ id: i.id, name: i.name, sku: i.sku, quantity: i.quantity, lineGrossCents: i.line_gross_cents })),
+    returns,
+  );
+  const manualOpen =
+    o.customer_type === "person" &&
+    manualLines.length > 0 &&
+    !["company", "unpaid", "cancelled"].includes(
+      withdrawalEligibility({ customer_type: o.customer_type, status, delivered_at: o.delivered_at, withdrawal_deadline: o.withdrawal_deadline }).block ?? "",
+    );
   const paidCents = payments.filter((p) => ["captured", "partially_refunded"].includes(p.status)).reduce((s, p) => s + p.amount_cents - (p.refunded_cents ?? 0), 0);
   const heldCents = payments.filter((p) => p.status === "authorized").reduce((s, p) => s + p.amount_cents, 0);
   const refundText =
@@ -78,7 +97,7 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
     open: `Spotrebiteľ môže odstúpiť do ${fmtDateTime(w.deadline)} (${w.daysLeft === 0 ? "dnes je posledný deň" : `ešte ${daysText(w.daysLeft ?? 0)}`}). Stačí, ak odstúpenie v lehote odošle.`,
     grace: `Lehota uplynula ${fmtDateTime(w.deadline)}. Odstúpenie odoslané poštou v posledný deň môže ešte prísť, preto ${WITHDRAWAL_POST_GRACE_DAYS} dní rezerva.`,
     closed: `Lehota uplynula ${fmtDateTime(w.deadline)}. Odstúpenie už nie je možné, ostávajú iba reklamácie.`,
-    withdrawn: "Zákazník od zmluvy odstúpil. Vybavenie bude v module Odstúpenia.",
+    withdrawn: "Zákazník od zmluvy odstúpil. Vybavenie (prevzatie stroja, vrátenie peňazí) je v module Odstúpenia.",
   };
 
   return (
@@ -105,6 +124,21 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
               Odstúpenie: <WindowBadge info={w} />
             </p>
             <p className={css.riskText}>{riskText[w.window]}</p>
+            {returns.length > 0 && (
+              <ul className={css.riskText} style={{ marginTop: 6, paddingLeft: 18 }}>
+                {returns.map((r) => (
+                  <li key={r.return_number}>
+                    <Link href={`/admin/odstupenia/${encodeURIComponent(r.return_number)}`}>{r.return_number}</Link> · {fmtDateTime(r.submitted_at)} ·{" "}
+                    {r.items == null ? "celá objednávka" : "časť objednávky"} <ReturnBadge status={r.status} />
+                  </li>
+                ))}
+              </ul>
+            )}
+            {manualOpen && (
+              <div style={{ marginTop: 10 }}>
+                <ManualReturnForm orderId={o.id} name={billing.name} email={o.email} lines={manualLines} />
+              </div>
+            )}
             {row.deliveryLimit && (
               <p className={css.riskText} style={{ marginTop: 6 }}>
                 Záväzná dodacia lehota: doručiť najneskôr <strong>{fmtDate(row.deliveryLimit)}</strong> (10 pracovných dní od zaplatenia).

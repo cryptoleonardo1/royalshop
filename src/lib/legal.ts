@@ -2,8 +2,8 @@
 // their archive. Bump LEGAL_VERSION whenever the wording changes: every order stores the version it accepted.
 // Research and sources: docs/06-pravne-stranky.md.
 
-export const LEGAL_VERSION = "2026-10-23";
-export const LEGAL_VALID_FROM = "23. 10. 2026";
+export const LEGAL_VERSION = "2026-11-03";
+export const LEGAL_VALID_FROM = "3. 11. 2026";
 
 // Binding delivery promise (docs/06 §1.2): "zvyčajne X, najneskôr do 10 pracovných dní od zaplatenia".
 // SOI treats the upper bound as binding, so keep it realistic.

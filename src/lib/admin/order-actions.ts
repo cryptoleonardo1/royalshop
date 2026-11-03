@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { canTransition, ORDER_STATUS_LABELS, type OrderStatus, type ShippingMethod } from "@/lib/order-state";
 import { transitionOrder } from "@/lib/orders";
 import { isDemoPayments, stripe } from "@/lib/stripe";
+import { refundCaptured } from "./refunds";
 import { canCompleteOrder, withdrawalDeadline } from "@/lib/withdrawal";
 import { bratislavaDay, bratislavaMidnight } from "@/lib/sk-calendar";
 import { requireAdmin } from "./auth";
@@ -192,11 +193,12 @@ export async function cancelOrder(_prev: ActionState, form: FormData): Promise<A
 
   const { data: payments, error } = await db
     .from("payments")
-    .select("id, status, amount_cents, refunded_cents, stripe_checkout_session_id, stripe_payment_intent_id")
-    .eq("order_id", order.id);
+    .select("id, status, stripe_checkout_session_id, stripe_payment_intent_id")
+    .eq("order_id", order.id)
+    .in("status", ["pending", "authorized"]);
   if (error) return { message: `Platby sa nepodarilo načítať: ${error.message}` };
 
-  let refundedCents = 0;
+  // open checkout sessions and legacy holds first, then refund what was charged
   for (const p of payments ?? []) {
     if (p.status === "pending" && stripe && p.stripe_checkout_session_id?.startsWith("cs_")) {
       try {
@@ -220,35 +222,12 @@ export async function cancelOrder(_prev: ActionState, form: FormData): Promise<A
         }
       }
       await db.from("payments").update({ status: "cancelled" }).eq("id", p.id);
-      continue;
     }
-    if (p.status !== "captured" && p.status !== "partially_refunded") continue;
-    const remaining = p.amount_cents - (p.refunded_cents ?? 0);
-    if (remaining <= 0) continue;
-    if (p.stripe_payment_intent_id?.startsWith("pi_") && stripe) {
-      try {
-        await stripe.refunds.create(
-          {
-            payment_intent: p.stripe_payment_intent_id,
-            amount: remaining,
-            reason: "requested_by_customer",
-            metadata: { order_id: order.id, order_number: order.order_number, cancelled_by: admin.email },
-          },
-          { idempotencyKey: `order-cancel-${p.id}-${remaining}` },
-        );
-      } catch (err) {
-        return { message: `Stripe refund zlyhal, objednávka zostáva nezmenená: ${(err as Error).message}` };
-      }
-    } else if (!isDemoPayments) {
-      return { message: "Platbu nemožno vrátiť automaticky (chýba Stripe platba). Riešte ručne v Stripe." };
-    }
-    const upd = await db
-      .from("payments")
-      .update({ status: "refunded", refunded_cents: p.amount_cents })
-      .eq("id", p.id);
-    if (upd.error) return { message: `Refund prebehol, no platbu sa nepodarilo uložiť: ${upd.error.message}` };
-    refundedCents += remaining;
   }
+
+  const refund = await refundCaptured(db, order, null, { keyPrefix: "order-cancel", metadata: { cancelled_by: admin.email } });
+  if (!refund.ok) return { message: refund.message };
+  const refundedCents = refund.refundedCents;
 
   const moved = await transitionOrder(db, order, "cancelled", {
     note: `Zrušené: ${reason}${refundedCents > 0 ? ` (vrátené ${(refundedCents / 100).toFixed(2)} €)` : ""}`,

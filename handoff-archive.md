@@ -1,5 +1,14 @@
 # Handoff Archive (do not read on /start)
 
+## What Was Done (Session 9) -- Admin console phase 1a: orders, withdrawal-window tracking (2026-10-23)
+
+- Login (`/admin/prihlasenie`, Supabase password, `profiles.role = 'admin'` checked by `requireAdmin()` in every page/action; `src/proxy.ts` only refreshes the session and bounces signed-out visitors). Admins: the user + test account `claude@royalshop.test` (creds as `ADMIN_TEST_EMAIL/PASSWORD` in `.env.hosted.local`, used for Playwright checks).
+- Prehľad (unconfirmed > 1 working day, open withdrawal windows + EUR at risk, consumers before delivery, binding 10-day delivery limit, month revenue/margin), Objednávky list with search/status filter + withdrawal-window chips, detail with margin, payments, history, next-step forms, cancel + refund, internal note. Live updates via Realtime on `orders` (migration 20261023000002, applied) + 60 s poll fallback.
+- Withdrawal logic in `src/lib/withdrawal.ts` + `src/lib/sk-calendar.ts`: 14 days from delivery (Bratislava day), last day shifted past weekends/holidays (§ 122 OZ; holiday list deliberately conservative), 5-day "grace" for notices posted on the last day. Consumers may withdraw before delivery too, so paid + undelivered consumer orders count as risk. "Vybavené" is blocked until grace ends. `withdrawal_deadline` is now set on "Doručené".
+- Stripe: cancel refunds captured payments (idempotency key) / expires open sessions; `charge.refunded` webhook mirrors refunds (event added in the Stripe test dashboard). Legacy manual-capture orders (OBJ26-00010/11, payments `authorized`) are captured on "Potvrdená" and released on cancel.
+- Gotchas: under Cache Components the Supabase auth client reads the clock -> `await connection()` in `getAdmin()`; `usePathname()` in the panel layout needs a Suspense boundary (fallback `NavList pathname=""`); CSS `composes` avoided in `admin.module.css`.
+- NOT verified: write actions (status change, cancel/refund, note) -- agent writes to hosted are blocked; the user tests them on the deploy.
+
 ## What Was Done (Session 8) -- Legal research, legal pages, immediate payment (2026-10-23)
 
 - 5-agent legal research (Slov-Lex consolidated texts, Oct 2026) -> `docs/06-pravne-stranky.md` + `docs/pravne/`. Key findings: consumers may withdraw even with a used/damaged machine (we may only claim diminished value, separately, no set-off § 22 ods. 8 ZOS); misuse is not a defect but WE must prove it for 2 years (§ 620 OZ), so the test protocol (photos, serial, engine hours) + signed training record are the defence; return costs are chargeable only if shown before the order.
@@ -71,3 +80,9 @@
 - Next 16.4 scaffold, Supabase migrations, seed (`npx tsx scripts/seed.ts`, password `RoyalDemo2026!`), libs money/order-state/shipping.
 - Gotchas: Windows excludes ports 54775-55351 -> 564xx. Postgres rejects `timestamptz + interval` in generated columns (deadlines via trigger). Turbopack Tailwind rule must exclude `*.module.css`.
 - Decisions: one Next app (shop + /ucet + /admin); Stripe Checkout hosted, manual capture; invoices at capture; withdrawal persons only; guest checkout; numbers `OBJ26-00001`, `RK26-0001`, `OD26-0001`, credit notes `D2026NNNNN` (confirm with accountant).
+
+## Session Summary (archived rows)
+
+| Session | Date | Title |
+|---------|------|-------|
+| 1 | 2026-10-09 | Research, spec, foundation, design directions |

@@ -2,6 +2,7 @@ import { Suspense, type ReactNode } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { dashboardStats, type OrderRow } from "@/lib/admin/orders-data";
+import { returnsDashboard } from "@/lib/admin/returns-data";
 import { formatEur } from "@/lib/money";
 import { LiveOrders } from "@/components/admin/live-orders";
 import { fmtDate, fmtDateTime, StatusBadge, WindowBadge } from "@/components/admin/badges";
@@ -32,7 +33,7 @@ function OrderList({ rows, empty, extra }: { rows: OrderRow[]; empty: string; ex
 }
 
 async function Dashboard() {
-  const s = await dashboardStats();
+  const [s, ret] = await Promise.all([dashboardStats(), returnsDashboard()]);
   return (
     <>
       <div className={css.kpis}>
@@ -41,6 +42,13 @@ async function Dashboard() {
           <div className={css.kpiValue}>{s.unconfirmed.length}</div>
           <div className={css.kpiNote}>
             {s.unconfirmedOverdue ? `${s.unconfirmedOverdue} čaká dlhšie ako 1 pracovný deň` : "zaplatené, čakajú na overenie dostupnosti"}
+          </div>
+        </Link>
+        <Link href="/admin/odstupenia" className={css.kpi} data-tone={ret.refundDue.length ? "red" : ret.open.length ? "amber" : undefined}>
+          <div className={css.kpiLabel}>Odstúpenia na vybavenie</div>
+          <div className={css.kpiValue}>{ret.open.length}</div>
+          <div className={css.kpiNote}>
+            {ret.refundDue.length ? `${ret.refundDue.length} treba vrátiť do 3 dní alebo po lehote` : "peniaze vrátiť do 14 dní od oznámenia"}
           </div>
         </Link>
         <Link href="/admin/objednavky?lehota=open" className={css.kpi} data-tone={s.withdrawalOpen.length ? "red" : undefined}>

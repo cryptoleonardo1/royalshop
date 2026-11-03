@@ -1,5 +1,6 @@
 import { ORDER_STATUS_LABELS, type OrderStatus } from "@/lib/order-state";
 import { WITHDRAWAL_WINDOW_LABELS, type WithdrawalInfo, type WithdrawalWindow } from "@/lib/withdrawal";
+import { RETURN_STATUS_LABELS, type ReturnStatus } from "@/lib/returns";
 import css from "./admin.module.css";
 
 type Tone = "red" | "amber" | "green" | "blue" | "accent" | undefined;
@@ -79,6 +80,36 @@ export function WindowBadge({ info }: { info: WithdrawalInfo }) {
   }
   return (
     <span className={css.badge} data-tone={WINDOW_TONE[info.window]} title={info.deadline ? `Lehota do ${fmtDateTime(info.deadline)}` : undefined}>
+      {label}
+    </span>
+  );
+}
+
+const RETURN_TONE: Record<ReturnStatus, Tone> = {
+  requested: "red",
+  awaiting_goods: "amber",
+  goods_received: "amber",
+  inspected: "amber",
+  refunded: "green",
+  refunded_partially: "green",
+  rejected: undefined,
+};
+
+export function ReturnBadge({ status }: { status: ReturnStatus }) {
+  return (
+    <span className={css.badge} data-tone={RETURN_TONE[status]}>
+      {RETURN_STATUS_LABELS[status] ?? status}
+    </span>
+  );
+}
+
+// 14 days to refund from the withdrawal notice (§ 22 ods. 1 ZOS); red from 3 days left.
+export function RefundDeadline({ deadline, days, done }: { deadline: string; days: number; done: boolean }) {
+  if (done) return <span className={css.muted}>–</span>;
+  const tone: Tone = days < 0 ? "red" : days <= 3 ? "red" : days <= 7 ? "amber" : undefined;
+  const label = days < 0 ? `po lehote ${daysText(-days)}` : days === 0 ? "dnes" : `ešte ${daysText(days)}`;
+  return (
+    <span className={css.badge} data-tone={tone} title={`Vrátiť peniaze do ${fmtDateTime(deadline)}`}>
       {label}
     </span>
   );

@@ -163,7 +163,7 @@ export async function getOrderDetail(number: string) {
        payments(id, provider, status, amount_cents, refunded_cents, captured_at, authorized_at, stripe_payment_intent_id, stripe_checkout_session_id, created_at),
        shipments(carrier, tracking_number, tracking_url, shipped_at, delivered_at),
        supplier_orders(reference, ordered_at, expected_at, received_at, supplier:suppliers(name)),
-       returns(return_number, status, submitted_at),
+       returns(return_number, status, items, submitted_at),
        invoices(invoice_number, type, status, issue_date, total_gross_cents)`,
     )
     .eq("order_number", number)

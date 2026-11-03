@@ -3,8 +3,9 @@ import { createServerClient } from "@supabase/ssr";
 
 // 1. Admin host (ADMIN_HOST, e.g. admin.shop.royalstroje.sk): its root redirects to /admin. The storefront
 //    host keeps /admin reachable too until the domains are set up.
-// 2. Pages that read the signed-in user (/admin, /ucet, the order page and checkout) refresh the Supabase
-//    session cookie here: Server Components cannot write cookies, so a rotated refresh token would be lost.
+// 2. Pages that read the signed-in user (/admin, /ucet, the order page, checkout and the withdrawal form
+//    prefill) refresh the Supabase session cookie here: Server Components cannot write cookies, so a rotated
+//    refresh token would be lost.
 //    Authorization itself is checked in every page and server action (src/lib/admin/auth.ts,
 //    src/lib/account/auth.ts), never only here.
 
@@ -51,5 +52,5 @@ export async function proxy(request: NextRequest) {
 
 // The rest of the storefront stays proxy-free (no extra hop); "/" catches the admin host's root.
 export const config = {
-  matcher: ["/", "/admin/:path*", "/ucet/:path*", "/objednavka/:path*", "/pokladna"],
+  matcher: ["/", "/admin/:path*", "/ucet/:path*", "/objednavka/:path*", "/pokladna", "/odstupenie-od-zmluvy"],
 };

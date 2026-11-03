@@ -4505,3 +4505,98 @@ a.mapLink {
 .accountHello {
   margin-bottom: 20px;
 }
+
+/* ───────── Withdrawal form (§ 20a), portal panel and confirmation ───────── */
+.withdrawForm {
+  margin-top: 16px;
+  padding: clamp(16px, 3vw, 24px);
+  background: #fff;
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow);
+}
+.withdrawStep {
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.withdrawItems {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.withdrawItems legend {
+  margin-bottom: 8px;
+  padding: 0;
+}
+.withdrawPrice {
+  display: block;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--mute);
+}
+.withdrawPreview {
+  margin-top: 6px;
+  padding: 14px 16px;
+  background: var(--paper);
+  border-left: 6px solid var(--ink);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.withdrawActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.withdrawActions .addBig {
+  flex: 1 1 280px;
+}
+.withdrawPanel {
+  display: grid;
+  gap: 12px;
+  padding: 16px 18px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-left: 10px solid var(--hivis);
+}
+.withdrawPanel p {
+  font-weight: 600;
+  line-height: 1.45;
+}
+.withdrawPanel ul {
+  display: grid;
+  gap: 8px;
+}
+.withdrawPanel li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: baseline;
+}
+.withdrawPanel a:not(.btnGhost) {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.withdrawPanel .btnGhost {
+  justify-self: start;
+}
+.confirmActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+@media print {
+  .confirmActions {
+    display: none;
+  }
+}

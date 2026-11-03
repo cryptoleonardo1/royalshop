@@ -82,3 +82,14 @@ const dateTime = new Intl.DateTimeFormat("sk-SK", {
 export function formatDateTime(iso: string): string {
   return dateTime.format(new Date(iso)).replace(/\s+/g, " ");
 }
+
+// "2. 11. 2026" (Bratislava calendar day)
+const dateOnly = new Intl.DateTimeFormat("sk-SK", {
+  timeZone: "Europe/Bratislava",
+  day: "numeric",
+  month: "numeric",
+  year: "numeric",
+});
+export function formatDate(iso: string): string {
+  return dateOnly.format(new Date(iso)).replace(/\s+/g, " ");
+}

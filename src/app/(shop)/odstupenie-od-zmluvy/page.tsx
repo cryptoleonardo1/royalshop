@@ -1,9 +1,15 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getShopSettings } from "@/lib/catalog";
 import { RETURN_COST_ESTIMATES } from "@/lib/legal";
 import { formatEur } from "@/lib/money";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { getCustomer } from "@/lib/account/auth";
+import { getProfile } from "@/lib/account/data";
+import { prefillFromToken } from "@/lib/returns-server";
 import { LegalNote, LegalPage, LegalSection } from "@/components/shop/legal-page";
+import { WithdrawalForm } from "@/components/shop/withdrawal-form";
 
 export const metadata: Metadata = {
   title: "Odstúpenie od zmluvy",
@@ -21,7 +27,7 @@ const TOC = [
   { id: "znizenie-hodnoty", label: "4. Zníženie hodnoty stroja" },
   { id: "vratenie-stroja", label: "5. Ako stroj vrátiť" },
   { id: "vratenie-penazi", label: "6. Vrátenie peňazí" },
-  { id: "formular", label: "7. Online formulár na odstúpenie" },
+  { id: "formular", label: "7. Odstúpiť od zmluvy tu" },
   { id: "vzorovy-formular", label: "8. Vzorový formulár" },
 ];
 
@@ -45,7 +51,23 @@ const TEST_BEYOND = [
   "zmeny nastavení, demontáž, zásahy do motora alebo konštrukcie, odstránenie plomb",
 ];
 
-export default async function WithdrawalPage() {
+const first = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
+
+// Prefill: the order's secret link (?objednavka=…&t=… from the order page or the portal), else the signed-in
+// customer's name and e-mail. Request data, so it streams in under Suspense; the rest of the page is static.
+async function PrefilledWithdrawalForm({ searchParams }: { searchParams: PageProps<"/odstupenie-od-zmluvy">["searchParams"] }) {
+  const sp = await searchParams;
+  const number = first(sp.objednavka).slice(0, 30);
+  const token = first(sp.t);
+  const fromOrder = number && token ? await prefillFromToken(createAdminClient(), number, token) : null;
+  if (fromOrder) return <WithdrawalForm initial={fromOrder} />;
+  const customer = await getCustomer();
+  const profile = customer ? await getProfile(customer.id) : null;
+  const name = profile ? [profile.firstName, profile.lastName].filter(Boolean).join(" ") : "";
+  return <WithdrawalForm initial={{ orderNumber: number, name, email: profile?.email ?? "" }} />;
+}
+
+export default async function WithdrawalPage({ searchParams }: PageProps<"/odstupenie-od-zmluvy">) {
   const s = await getShopSettings();
   const sellerAddress = [s.street, [s.zip, s.city].filter(Boolean).join(" ")].filter(Boolean).join(", ");
   const returnAddress = s.pickupAddress ?? sellerAddress;
@@ -112,8 +134,8 @@ export default async function WithdrawalPage() {
         </p>
         <p>
           Právo na odstúpenie od zmluvy môžete uplatniť aj online na adrese{" "}
-          <Link href={`${WITHDRAWAL_PATH}#formular`}>{WITHDRAWAL_PATH}#formular</Link> (časť „Online formulár na
-          odstúpenie“ na tejto stránke e-shopu). Ak využijete túto možnosť, potvrdenie o doručení odstúpenia od
+          <Link href={`${WITHDRAWAL_PATH}#formular`}>{WITHDRAWAL_PATH}#formular</Link> (časť „Odstúpiť od zmluvy
+          tu“ na tejto stránke e-shopu, odkaz nájdete v pätičke každej stránky a pri objednávke vo Vašom účte). Ak využijete túto možnosť, potvrdenie o doručení odstúpenia od
           zmluvy vrátane jeho obsahu, dátumu a času jeho odoslania Vám bezodkladne poskytneme na trvanlivom médiu
           (napríklad e-mailom).
         </p>
@@ -299,11 +321,19 @@ export default async function WithdrawalPage() {
         </ul>
       </LegalSection>
 
-      <LegalSection id="formular" title="7. Online formulár na odstúpenie">
+      <LegalSection id="formular" title="7. Odstúpiť od zmluvy tu">
         <p>
-          Online funkciu „Odstúpiť od zmluvy tu“ práve spúšťame. Kým bude k dispozícii, pošlite nám vyplnený{" "}
-          <a href="#vzorovy-formular">vzorový formulár</a> alebo akékoľvek jednoznačné vyhlásenie, že od zmluvy
-          odstupujete:
+          Od zmluvy môžete odstúpiť priamo tu, aj bez prihlásenia. Vyplňte meno a priezvisko, číslo objednávky
+          a e-mail, ktorý ste zadali pri objednávke. Dôvod uvádzať nemusíte. V druhom kroku uvidíte presné znenie
+          odstúpenia a odošlete ho tlačidlom „Potvrdiť odstúpenie od zmluvy“. Hneď potom zobrazíme potvrdenie
+          s obsahom odstúpenia, dátumom a časom odoslania, ktoré si môžete uložiť alebo vytlačiť.
+        </p>
+        <Suspense fallback={<WithdrawalForm />}>
+          <PrefilledWithdrawalForm searchParams={searchParams} />
+        </Suspense>
+        <p>
+          Odstúpiť môžete aj inak, vyplneným <a href="#vzorovy-formular">vzorovým formulárom</a> alebo akýmkoľvek
+          jednoznačným vyhlásením, že od zmluvy odstupujete:
         </p>
         <ul>
           <li>
@@ -314,7 +344,6 @@ export default async function WithdrawalPage() {
             listom na adresu {s.companyName}, {sellerAddress}.
           </li>
         </ul>
-        <p>Uveďte meno a priezvisko, číslo objednávky a e-mail. Dôvod uvádzať nemusíte. Prijatie vám potvrdíme e-mailom.</p>
       </LegalSection>
 
       <LegalSection id="vzorovy-formular" title="8. Vzorový formulár na odstúpenie od zmluvy">
