@@ -107,7 +107,7 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
       status === "cancelled"
         ? "Objednávka je zrušená."
         : status === "reserved"
-        ? "Nezáväzná rezervácia: zavolajte zákazníkovi. Kúpa podpísaná a zaplatená v predajni = bez odstúpenia; platba cez odkaz = zmluva na diaľku, odstúpenie do 14 dní platí."
+        ? "Nezáväzná rezervácia: zavolajte zákazníkovi. Kúpa podpísaná a zaplatená v predajni = bez odstúpenia; platba cez odkaz = zmluva na diaľku, odstúpenie do 14 dní platí. Telefonicky kúpu neuzatvárať, len dohodnúť návštevu. U dodávateľa objednať až po podpise a zálohe v predajni."
         : "Objednávka ešte nie je zaplatená, zmluva nevznikla.",
     company: "Firemný zákazník: zákonné odstúpenie do 14 dní sa nevzťahuje.",
     on_premises: "Spotrebiteľ kúpil osobne v predajni (zmluva nie je na diaľku): zákonné odstúpenie do 14 dní sa nevzťahuje, ostávajú reklamácie.",
