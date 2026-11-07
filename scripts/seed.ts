@@ -39,6 +39,8 @@ interface CatalogJson {
     is_featured: boolean; rental_url: string | null;
     specs: { key: string; label: string; value: string; unit: string | null; is_filterable: boolean }[];
     images: string[];
+    // machine slugs this accessory fits (diamond blades); seeded as related_products type 'accessory'
+    accessory_for?: string[];
   }[];
 }
 
@@ -168,6 +170,13 @@ async function seedCatalog() {
           product_id: productIds[p.slug], related_id: productIds[b.slug], type: "battery",
         })),
   );
+  // Accessories (diamond blades) list the machines they fit in "accessory_for"; offered on those machine pages.
+  for (const a of catalog.products) {
+    for (const machine of a.accessory_for ?? []) {
+      if (!productIds[machine]) throw new Error(`${a.slug}: accessory_for points to unknown product ${machine}`);
+      related.push({ product_id: productIds[machine], related_id: productIds[a.slug], type: "accessory" });
+    }
+  }
   if (related.length) must(await db.from("related_products").insert(related), "related");
 
   // Every other Honda GX variant from the engine price list: unlisted products, bought from the table on

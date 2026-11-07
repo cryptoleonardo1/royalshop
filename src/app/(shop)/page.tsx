@@ -5,9 +5,10 @@ import {
   getBrands,
   getFeaturedProducts,
   getSaleProducts,
+  getNavCategories,
   getShopSettings,
-  getTopCategories,
 } from "@/lib/catalog";
+import { BLADE_CATEGORY, isAccessory } from "@/lib/accessories";
 import { deliveryDays } from "@/lib/format";
 import { formatEur } from "@/lib/money";
 import { cheapestRateCents } from "@/lib/shipping";
@@ -40,6 +41,24 @@ const SERVICES = [
   },
 ];
 
+// With one brand, a brand grid of one tile says nothing: the home shows the manufacturer and every machine.
+const MAKER_FACTS = [
+  {
+    title: "Priamo od výrobcu",
+    text: "Stroje odoberáme priamo od výrobcu z Nemecka, bez ďalších sprostredkovateľov.",
+  },
+  {
+    title: "Reklamácie za vás",
+    text: "Reklamáciu vybavíme s výrobcom my. Stroj prinesiete alebo pošlete k nám do Boldogu.",
+  },
+  {
+    title: "Kotúče k strojom",
+    text: "Ku každej píle, rozbrusovačke a rezaču škár vám ponúkneme vhodný diamantový kotúč podľa materiálu.",
+  },
+];
+
+const count = (n: number, one: string, few: string, many: string) => `${n} ${n === 1 ? one : n < 5 ? few : many}`;
+
 // Our main partner brand leads the brand grid (highlighted tile); the rest keep the product-count order.
 const PRIMARY_BRAND = "golz";
 const brandsFirst = <T extends { slug: string }>(brands: T[]) => [
@@ -50,13 +69,19 @@ const brandsFirst = <T extends { slug: string }>(brands: T[]) => [
 export default async function HomePage() {
   const [settings, categories, featured, sale, brands, all] = await Promise.all([
     getShopSettings(),
-    getTopCategories(),
+    getNavCategories(),
     getFeaturedProducts(6),
     getSaleProducts(3),
     getBrands(),
     getAllProducts(),
   ]);
 
+  const singleBrand = brands.length === 1 ? brands[0] : null;
+  // in menu order, so the grid reads like the category tiles above it
+  const navIndex = (slug: string) => categories.findIndex((c) => c.slug === slug);
+  const machines = all
+    .filter((p) => !isAccessory(p))
+    .sort((a, b) => navIndex(a.category.slug) - navIndex(b.category.slug));
   const ticketProduct = featured.find((p) => p.sku) ?? all[0];
   const spans = all.map((p) => deliveryDays(p.leadDays, settings.handlingDays));
   const fastest = Math.min(...spans.map((d) => d.min));
@@ -64,7 +89,9 @@ export default async function HomePage() {
   const usps = [
     {
       title: "Od výrobcov",
-      text: "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, preto máme dobré ceny a plnú záruku.",
+      text: singleBrand
+        ? "Stroje odoberáme priamo od výrobcu, preto máme dobré ceny a plnú záruku."
+        : "Stroje odoberáme od výrobcov a ich oficiálnych zastúpení, preto máme dobré ceny a plnú záruku.",
     },
     {
       title: "Odskúšané pred odoslaním",
@@ -79,7 +106,9 @@ export default async function HomePage() {
       text: "Otázky k stroju aj reklamácie riešime telefonicky alebo e-mailom. Reklamáciu vybavíme priamo s výrobcom.",
     },
   ];
-  const shownCategories = categories.filter((c) => c.productCount > 0);
+  const brandLine = singleBrand
+    ? `Stroje ${singleBrand.name} priamo od výrobcu.`
+    : `Stroje ${brands.map((b) => b.name).join(", ").replace(/, ([^,]*)$/, " a $1")} od výrobcov a ich oficiálnych zastúpení.`;
 
   return (
     <>
@@ -101,8 +130,7 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className={`${css.heroLede} ${css.rise}`} style={delay(5)}>
-              Stroje Gölz a Honda od výrobcov a ich oficiálnych zastúpení. Každý stroj pred
-              odoslaním odskúšame, pri osobnom odbere vás naň zaškolíme a prípadnú reklamáciu riešime priamo s
+              {brandLine} Každý stroj pred odoslaním odskúšame, pri osobnom odbere vás naň zaškolíme a prípadnú reklamáciu riešime priamo s
               výrobcom. A keď si nebudete vedieť rady, stačí zavolať alebo napísať.
             </p>
             <div className={`${css.heroCtas} ${css.rise}`} style={delay(6)}>
@@ -110,7 +138,7 @@ export default async function HomePage() {
                 Nakupovať stroje <ArrowRight size={20} aria-hidden="true" />
               </Link>
               <a href="#odporucane" className={css.btnGhost}>
-                Odporúčané stroje
+                {singleBrand ? "Všetky stroje" : "Odporúčané stroje"}
               </a>
             </div>
             <ul className={`${css.heroFacts} ${css.rise}`} style={delay(7)}>
@@ -197,13 +225,15 @@ export default async function HomePage() {
             </Link>
           </div>
           <ul className={css.cats}>
-            {shownCategories.map((c, i) => (
+            {categories.map((c, i) => (
               <li key={c.slug} className={css.cat}>
                 <Link href={`/kategoria/${c.slug}`}>
                   <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={css.catName}>{c.name}</span>
                   <span className={css.catCount}>
-                    {c.productCount} {c.productCount === 1 ? "stroj" : c.productCount < 5 ? "stroje" : "strojov"}{" "}
+                    {c.slug === BLADE_CATEGORY
+                      ? count(c.productCount, "kotúč", "kotúče", "kotúčov")
+                      : count(c.productCount, "stroj", "stroje", "strojov")}{" "}
                     <ArrowUpRight size={18} aria-hidden="true" />
                   </span>
                 </Link>
@@ -213,44 +243,76 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className={css.section} aria-labelledby="brand-title">
-        <div className={css.wrap}>
-          <div className={css.sectionHead}>
-            <span className={css.tape}>02 / Značky</span>
-            <h2 id="brand-title" className={css.h2}>
-              Značky, za ktorými <span>si stojíme</span>
-            </h2>
-          </div>
-          <ul className={css.brands}>
-            {brandsFirst(brands).map((b, i) => (
-              <li key={b.slug} className={b.slug === PRIMARY_BRAND ? `${css.brandTile} ${css.brandHot}` : css.brandTile}>
-                <Link href={`/produkty?znacka=${b.slug}`}>
-                  <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={css.brandName}>{b.name}</span>
-                  <span className={css.brandCats}>{b.categories.join(" · ")}</span>
+      {singleBrand ? (
+        <section className={css.section} aria-labelledby="brand-title">
+          <div className={css.wrap}>
+            <div className={css.sectionHead}>
+              <span className={css.tape}>02 / Výrobca</span>
+              <h2 id="brand-title" className={css.h2}>
+                Jeden výrobca, <span>poriadne zázemie</span>
+              </h2>
+            </div>
+            <ul className={`${css.brands} ${css.brandsMaker}`}>
+              <li className={`${css.brandTile} ${css.brandHot}`}>
+                <Link href={`/produkty?znacka=${singleBrand.slug}`}>
+                  <span className={css.catIdx}>01</span>
+                  <span className={css.brandName}>{singleBrand.name}</span>
+                  <span className={css.brandCats}>{singleBrand.categories.join(" · ")}</span>
                   <span className={css.catCount}>
-                    {b.productCount} {b.productCount === 1 ? "stroj" : b.productCount < 5 ? "stroje" : "strojov"}{" "}
-                    <ArrowRight size={18} aria-hidden="true" />
+                    {count(machines.length, "stroj", "stroje", "strojov")} <ArrowRight size={18} aria-hidden="true" />
                   </span>
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+              {MAKER_FACTS.map((f, i) => (
+                <li key={f.title} className={css.brandFact}>
+                  <span className={css.catIdx}>{String(i + 2).padStart(2, "0")}</span>
+                  <h3 className={css.brandFactTitle}>{f.title}</h3>
+                  <p className={css.brandCats}>{f.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : (
+        <section className={css.section} aria-labelledby="brand-title">
+          <div className={css.wrap}>
+            <div className={css.sectionHead}>
+              <span className={css.tape}>02 / Značky</span>
+              <h2 id="brand-title" className={css.h2}>
+                Značky, za ktorými <span>si stojíme</span>
+              </h2>
+            </div>
+            <ul className={css.brands}>
+              {brandsFirst(brands).map((b, i) => (
+                <li key={b.slug} className={b.slug === PRIMARY_BRAND ? `${css.brandTile} ${css.brandHot}` : css.brandTile}>
+                  <Link href={`/produkty?znacka=${b.slug}`}>
+                    <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className={css.brandName}>{b.name}</span>
+                    <span className={css.brandCats}>{b.categories.join(" · ")}</span>
+                    <span className={css.catCount}>
+                      {b.productCount} {b.productCount === 1 ? "stroj" : b.productCount < 5 ? "stroje" : "strojov"}{" "}
+                      <ArrowRight size={18} aria-hidden="true" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <section className={css.section} aria-labelledby="featured-title" id="odporucane">
         <div className={css.wrap}>
           <div className={css.sectionHead}>
             <span className={css.tape}>03 / Výber</span>
             <h2 id="featured-title" className={css.h2}>
-              Odporúčané stroje
+              {singleBrand ? "Všetky stroje" : "Odporúčané stroje"}
             </h2>
             <Link href="/produkty" className={css.headLink}>
               Všetky produkty <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
-          <ProductGrid products={featured} handlingDays={settings.handlingDays} />
+          <ProductGrid products={singleBrand ? machines : featured} handlingDays={settings.handlingDays} />
         </div>
       </section>
 

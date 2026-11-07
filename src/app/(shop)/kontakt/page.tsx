@@ -164,7 +164,7 @@ export default async function ContactPage() {
             Požičovňa a predajňa
           </h2>
         </div>
-        <ul className={css.gallery}>
+        <ul className={css.storePhotos}>
           {GALLERY.map((g) => (
             <li key={g.src}>
               <Image src={g.src} alt={g.alt} width={g.width} height={g.height} sizes="(max-width: 639px) 100vw, 50vw" />

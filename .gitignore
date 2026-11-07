@@ -47,3 +47,6 @@ supabase/.branches
 
 # Supplier price lists and the derived workbook: confidential, repo is public
 docs/cenniky/
+
+# original supplier photos (large, not served)
+/originals/

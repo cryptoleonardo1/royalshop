@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Form from "next/form";
 import { ArrowRight, Clock, Mail, Phone, Search, Store, Truck, Undo2, User } from "lucide-react";
-import { getSaleProducts, getShopSettings, getTopCategories } from "@/lib/catalog";
+import { getNavCategories, getSaleProducts, getShopSettings } from "@/lib/catalog";
 import { formatEur } from "@/lib/money";
 import { cheapestRateCents } from "@/lib/shipping";
 import { fontVariables } from "./fonts";
@@ -11,7 +11,7 @@ import { StickyHeader } from "./sticky-header";
 import css from "./shop.module.css";
 
 export async function ShopShell({ children }: { children: ReactNode }) {
-  const [settings, categories, sale] = await Promise.all([getShopSettings(), getTopCategories(), getSaleProducts(1)]);
+  const [settings, categories, sale] = await Promise.all([getShopSettings(), getNavCategories(), getSaleProducts(1)]);
   const hasSale = sale.length > 0;
   const tel = settings.phone?.replace(/\s+/g, "");
 
@@ -83,13 +83,11 @@ export async function ShopShell({ children }: { children: ReactNode }) {
 
         <nav aria-label="Kategórie" className={css.catNav}>
           <ul className={css.wrap}>
-            {categories
-              .filter((c) => c.productCount > 0)
-              .map((c) => (
-                <li key={c.slug}>
-                  <Link href={`/kategoria/${c.slug}`}>{c.name}</Link>
-                </li>
-              ))}
+            {categories.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/kategoria/${c.slug}`}>{c.name}</Link>
+              </li>
+            ))}
             {hasSale && (
               <li>
                 <Link href="/produkty?akcia=1" className={css.catNavHot}>

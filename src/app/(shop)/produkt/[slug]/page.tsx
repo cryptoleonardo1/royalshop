@@ -12,12 +12,14 @@ import {
   type ProductDetail,
   type ShopSettings,
 } from "@/lib/catalog";
+import { isAccessory } from "@/lib/accessories";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
 import { DELIVERY_MAX_WORKDAYS, returnCostEstimate } from "@/lib/legal";
 import { formatEur, netFromGross } from "@/lib/money";
 import { discountPct, referencePrice } from "@/lib/pricing";
 import { estimateDelivery, rateFor, shippingPrice } from "@/lib/shipping";
 import { Gallery } from "@/components/shop/gallery";
+import { AccessoryPicker } from "@/components/shop/accessory-picker";
 import { BuyBox } from "@/components/shop/buy-box";
 import { ProductGrid } from "@/components/shop/product-card";
 import css from "@/components/shop/shop.module.css";
@@ -131,6 +133,16 @@ function ReturnCostNote({ weightKg }: { weightKg: number | null }) {
 }
 
 // Replaces the buy box for "cena na požiadanie" products: the customer calls or writes instead.
+// Picker note: some machines ship with a blade (spec "blade_included", e.g. "áno (SLF10 Ø 250 mm)").
+function bladeNote(p: ProductDetail): string {
+  const included = p.specs.find((s) => s.key === "blade_included")?.value;
+  if (included?.startsWith("áno")) {
+    const which = included.match(/\((.+)\)/)?.[1];
+    return `V balení je kotúč${which ? ` ${which}` : ""}. Na iný materiál alebo do zásoby si vyberte ďalší.`;
+  }
+  return "Kotúč nie je súčasťou balenia. Vyberte ho podľa materiálu, ktorý budete rezať.";
+}
+
 function PriceRequest({ product, phone, email }: { product: ProductDetail; phone: string | null; email: string | null }) {
   const subject = encodeURIComponent(`Cena: ${product.name}${product.sku ? ` (${product.sku})` : ""}`);
   return (
@@ -283,6 +295,9 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                 <BuyBox item={cartItem} />
               )}
 
+              {p.accessories.length > 0 && <AccessoryPicker items={p.accessories} note={bladeNote(p)} />}
+
+              {!isAccessory(p) && (
               <div className={`${css.testNote} ${css.dark}`}>
                 <span className={css.testStamp} aria-hidden="true">
                   <Check size={26} strokeWidth={3} />
@@ -295,6 +310,7 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                   </p>
                 </div>
               </div>
+              )}
 
               <div className={css.warranty}>
                 <ShieldCheck size={22} aria-hidden="true" />

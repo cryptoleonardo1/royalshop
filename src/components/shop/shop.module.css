@@ -3356,17 +3356,18 @@ a.mapLink {
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-.gallery {
+/* Contact page photos of the shop (not the product gallery above, which owns .gallery). */
+.storePhotos {
   display: grid;
   gap: 14px;
 }
-.gallery li {
+.storePhotos li {
   border: 3px solid var(--ink);
   background: var(--ink);
   aspect-ratio: 4 / 3;
   overflow: hidden;
 }
-.gallery img {
+.storePhotos img {
   display: block;
   width: 100%;
   height: 100%;
@@ -3374,7 +3375,7 @@ a.mapLink {
 }
 
 @media (min-width: 640px) {
-  .gallery {
+  .storePhotos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -4599,4 +4600,102 @@ a.mapLink {
   .confirmActions {
     display: none;
   }
+}
+
+/* Single-brand home: facts about the manufacturer next to its tile (not links). */
+.brandFact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 20px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+}
+.brandFactTitle {
+  margin-top: 6px;
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 64;
+  font-weight: 800;
+  font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .brandsMaker {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------- accessory picker (blades next to the buy box) ---------- */
+
+.picker {
+  padding: 16px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+}
+.pickerTitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pickerNote {
+  margin-top: 4px;
+  font-size: 0.9375rem;
+  color: var(--mute);
+}
+.pickerList {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.pickerItem {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px 12px;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--ink);
+}
+.pickerMedia {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  background: var(--concrete-2);
+  border: 2px solid var(--ink);
+  overflow: hidden;
+}
+.pickerMedia .productImg {
+  padding: 8%;
+}
+.pickerName {
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+.pickerName:hover {
+  text-decoration: underline;
+}
+.pickerSpecs {
+  margin-top: 2px;
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.pickerBuy {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+.pickerPrice {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+.pickerBuy .addBtn {
+  min-height: 44px;
+  font-size: 1rem;
 }

@@ -1,0 +1,18 @@
+{
+  "srcDir": "originals/golz-photos",
+  "outDir": "public/demo-products",
+  "files": {
+    "TS250.jpg": "golz-ts250",
+    "TS250A.jpg": "golz-ts250a",
+    "a61ed1afebdc4e7231f913d0fe2983be.png": "golz-ts250a-330",
+    "MS400.jpg": "golz-ms400",
+    "BS650_2023_mit Blatt.jpg": "golz-bs650",
+    "BS900_1000.jpg": "golz-bs900-1000",
+    "HS350_main01.jpg": "golz-hs350",
+    "HS400F_back.jpg": "golz-hs400f",
+    "SM250.jpg": "golz-sm250",
+    "SM280.jpg": "golz-sm280",
+    "FS170 Honda.jpg": "golz-fs170",
+    "FS125.jpg": "golz-fs125"
+  }
+}

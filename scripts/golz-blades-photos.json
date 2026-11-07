@@ -1,0 +1,12 @@
+{
+  "srcDir": "originals/golz-blades",
+  "outDir": "public/demo-products",
+  "files": {
+    "golz-slf10.png": "golz-kotuc-slf10",
+    "golz-rx1s.png": "golz-kotuc-rx1s",
+    "golz-bs30.png": "golz-kotuc-bs30",
+    "golz-lca65.png": "golz-kotuc-lca65",
+    "golz-ts40gx.png": "golz-kotuc-ts40gx",
+    "golz-lb20.png": "golz-kotuc-lb20"
+  }
+}

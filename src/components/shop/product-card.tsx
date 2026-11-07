@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BatteryCharging, Check, Truck } from "lucide-react";
+import { isAccessory } from "@/lib/accessories";
 import type { ProductSummary } from "@/lib/catalog";
 import { discountPct, referencePrice } from "@/lib/pricing";
 import { formatEur, netFromGross } from "@/lib/money";
@@ -57,9 +58,11 @@ export function ProductCard({
             <span className={css.tapeHi}>Odporúčame</span>
           ) : null}
         </span>
-        <span className={css.qcMark} title="Otestované pred odoslaním">
-          <Check size={14} strokeWidth={3} aria-hidden="true" /> QC
-        </span>
+        {!isAccessory(p) && (
+          <span className={css.qcMark} title="Otestované pred odoslaním">
+            <Check size={14} strokeWidth={3} aria-hidden="true" /> QC
+          </span>
+        )}
       </Link>
 
       <div className={css.cardBody}>

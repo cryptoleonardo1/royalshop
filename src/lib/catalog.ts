@@ -72,6 +72,8 @@ export interface ProductDetail extends ProductSummary {
   documents: { type: string; title: string; path: string }[];
   manufacturer: { name: string | null; address: string | null; email: string | null; website: string | null };
   batteries: ProductSummary[];
+  // add-ons offered next to the buy box (e.g. diamond blades that fit this machine)
+  accessories: ProductSummary[];
 }
 
 export interface ShopSettings {
@@ -200,6 +202,21 @@ export async function getCategories(): Promise<Category[]> {
 export async function getTopCategories(): Promise<Category[]> {
   const all = await getCategories();
   return all.filter((c) => !c.parentId);
+}
+
+// Categories for the header menu and the home grid. With a small assortment (one brand) only one or two
+// top-level categories have products, so each of them is replaced by its non-empty subcategories.
+// As soon as more brands fill more top-level categories, this returns the top level again.
+const MIN_NAV_CATEGORIES = 3;
+
+export async function getNavCategories(): Promise<Category[]> {
+  const all = await getCategories();
+  const top = all.filter((c) => !c.parentId && c.productCount > 0);
+  if (top.length >= MIN_NAV_CATEGORIES) return top;
+  return top.flatMap((t) => {
+    const children = all.filter((c) => c.parentId === t.id && c.productCount > 0);
+    return children.length > 1 ? children : [t];
+  });
 }
 
 export interface CategoryContext {
@@ -365,8 +382,12 @@ export async function getProduct(slug: string): Promise<ProductDetail | null> {
   ]);
   if (related.error) fail("related products", related.error);
 
-  const relatedIds = new Set((related.data as Row[]).filter((x) => x.type === "battery").map((x) => x.related_id));
-  const batteries = relatedIds.size ? (await getAllProducts()).filter((p) => relatedIds.has(p.id)) : [];
+  const relatedOf = (type: string) => new Set((related.data as Row[]).filter((x) => x.type === type).map((x) => x.related_id));
+  const batteryIds = relatedOf("battery");
+  const accessoryIds = relatedOf("accessory");
+  const listed = batteryIds.size || accessoryIds.size ? await getAllProducts() : [];
+  const batteries = listed.filter((p) => batteryIds.has(p.id));
+  const accessories = listed.filter((p) => accessoryIds.has(p.id));
 
   return {
     ...toSummary(r, lowest),
@@ -389,6 +410,7 @@ export async function getProduct(slug: string): Promise<ProductDetail | null> {
       website: r.brand_gpsr?.website ?? null,
     },
     batteries,
+    accessories,
   };
 }
 
