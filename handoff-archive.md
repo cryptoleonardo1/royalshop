@@ -1,5 +1,11 @@
 # Handoff Archive (do not read on /start)
 
+## What Was Done (Session 11) -- Withdrawal (§ 20a): online form, portal panel, admin module (2026-11-03)
+
+- Public two-step form in section 7 of `/odstupenie-od-zmluvy` (works without login), confirmation page `/odstupenie-od-zmluvy/potvrdenie/<OD>?t=<return token>` with the notice text and print/PDF. Before-delivery and partial withdrawal supported.
+- Order pages (guest + portal) show a withdrawal panel; admin `/admin/odstupenia` list + detail (reject, Stripe refund, note), dashboard KPI, manual entry for e-mail/letter withdrawals. Order cancel uses the shared `src/lib/admin/refunds.ts`.
+- Gotchas: reseeding regenerates order access tokens; seeded payments are fake `pi_demo_*`, run local dev with `STRIPE_SECRET_KEY=`; first `supabase db reset` after Docker start can fail on a container race, rerun.
+
 ## What Was Done (Session 10) -- Gölz + Honda only, trademark guideline, customer portal (2026-11-02/03)
 
 - Gölz e-mails drafted and sent (process explanation, signed guideline + meta-tag question, photo request for FS125, FS170, MS400, TS250, TS250A, TS250A-330, BS650, BS900/1000, HS350, HS400F, SM250, SM280). Rules saved to agent memory (`golz-trademark-rules`).
@@ -95,5 +101,6 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 3 | 2026-10-12 | Hosted infra, Stripe live test, premium machine assortment |
 | 2 | 2026-10-10 | Design C storefront, cart and checkout |
 | 1 | 2026-10-09 | Research, spec, foundation, design directions |

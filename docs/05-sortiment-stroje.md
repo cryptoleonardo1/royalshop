@@ -2,6 +2,8 @@
 
 Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riadky v zošite „Royal Shop Cenniky.xlsx“ od foundera (cenníky dodávateľa Unicon Ostrava) + doplnky podľa foundera (Bomag BPR 45/55 DE a 60/65 DE, motory Honda GX, Enar Dingo v súpravách). Atlas Copco zostáva z pôvodného zoznamu Unicon; Cedima a Husqvarna boli 22. 10. odstránené. Katalóg v e-shope sa generuje zo `supabase/seed-data/catalog.json` (zdroj pravdy).
 
+**Od 7. 11. 2026 e-shop zobrazuje len Gölz** (`SHOP_BRANDS` v `src/lib/shop-brands.ts`): 12 strojov + 9 diamantových kotúčov. Honda je skrytá, kým Honda nepotvrdí spoluprácu; ostatné značky ostávajú v databáze skryté. Pri jednej značke menu ukazuje podkategórie a úvod sekciu „Výrobca“ so všetkými strojmi; po zapnutí ďalších značiek sa web sám vráti k pôvodnému rozloženiu. Fotky strojov sú od Gölz (Klaus Schlör, 7. 11.), prevedené skriptom `scripts/convert-product-photos.mjs`, originály v git-ignorovanom `originals/`.
+
 ## Ako sú ceny nastavené
 
 - **NTC, Bomag, Honda, Enar:** predajná cena = odporúčaná koncová cena z cenníka (CZK ÷ 24,26 = EUR bez DPH, zaokrúhlené na centy, × 1,23), presne ako stĺpec „Cena s DPH 23 % (EUR)“ v zošite. Súprava Enar Dingo = súčet pohonnej jednotky DINGO a hriadeľa TAX-TDX 3/AX58 resp. 5/AX58.
@@ -11,6 +13,8 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 - **Motory Honda GX** v konkrétnom variante z cenníka: GX120T3-QX-4E-OH, GX160H2-QX-3-OH, GX200H2-QX-3-OH, GX270T2-QH-B1-OH, GX390T2-QH-B1-OH (GX270/390 v type QX v cenníku nie sú).
 - Odstránené 22. 10.: NTC NT 76 a NT 76P (nahradené NT 64P a NT 72P), Bomag BP 12/35, Honda EM30.
 - **Gölz (od 22. 10. 2026, 12 strojov, dodávateľ priamo Gölz GmbH):** predajné ceny sú skutočné ceny bez DPH z golzgroup.com od foundera, s DPH 23 % presne dopočítané (bez zaokrúhlenia na …9). Nákupná cena je odhad: cena bez DPH × 0,78 (marža 22 %), kým nebude známy rabat od Gölz. Fotky a parametre sú z golzgroup.com.
+
+- **Diamantové kotúče Gölz (od 7. 11. 2026):** cena = cena na ferrotech.sk s DPH + 5 %. Ferrotech má v našich priemeroch len LB20 400, TS40GX 400 a LCA65 500; ostatných 6 priemerov je **odhad** z cien nemeckých predajcov Gölz (goelz-shop.com má SLF10 230 za 56,00 €, ferrotech za 55,51 €, teda rovnaká úroveň), tiež + 5 %. Pôvod ceny je pri každom kotúči v `catalog.json` (`price_source`). Nákupná cena je odhad ako pri strojoch (bez DPH × 0,78). Kotúč je priradený strojom cez `accessory_for` (v DB `related_products` typ `accessory`) a ponúka sa vo výbere „Vyberte si diamantový kotúč“ na stránke stroja. SQL pre hostovanú DB: `supabase/snippets/2026-11-07-golz-diamond-blades.sql` (spustené 7. 11.).
 
 ## Produkty
 
@@ -66,6 +70,15 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 | Betonárska technika | Enar DINGO 230 V Elektrický vibrátor do betónu, hriadeľ 3 m, hlavica Ø 58 mm | 843,97 € | 549 € | áno |
 | Betonárska technika | Enar DINGO 230 V Elektrický vibrátor do betónu, hriadeľ 5 m, hlavica Ø 58 mm | 892,64 € | 581 € | áno |
 | Betonárska technika | Enar QZH Plávajúca vibračná lišta (Honda GX25) | 1 020,30 € | 664 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz SLF10 Ø 250 × 25,4 mm, obklady a dlažba (TS250, TS250A, TS250A-330) | 60,38 € (odhad) | 38 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz RX1S Ø 400 × 25,4 mm, murivo a kameň (MS400) | 187,95 € (odhad) | 119 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz LB20 Ø 400 × 25,4 mm, betón a železobetón (MS400) | 115,33 € | 73 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz BS30 Ø 650 × 60 mm, murivo a kameň (BS650) | 282,45 € (odhad) | 179 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz BS30 Ø 900 × 60 mm, murivo a kameň (BS900/1000) | 376,95 € (odhad) | 239 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz BS30 Ø 1 000 × 60 mm, murivo a kameň (BS900/1000) | 670,95 € (odhad) | 425 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz LCA65 Ø 350 × 25,4 mm, betón a asfalt (FS125, HS350) | 141,75 € (odhad) | 90 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz LCA65 Ø 500 × 25,4 mm, betón a asfalt (FS170) | 247,84 € | 157 € | áno |
+| Rezacia technika › Diamantové kotúče | Gölz TS40GX Ø 400 × 25,4 mm so zapusteným upínaním, rezy pri stene (HS400F) | 206,13 € | 131 € | áno |
 | Brúsky na betón | Gölz SM250 Brúska na betón, Ø 250 mm, 230 V | 2 699,85 € | 1 712 € | áno |
 | Brúsky na betón | Gölz SM280 Brúska na betón, Ø 280 mm, 230 V | 4 305 € | 2 730 € | áno |
 | Motory | Honda GX 160 Benzínový motor 4,8 HP | 553,45 € | 360 € | áno |
@@ -94,5 +107,6 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 - **Enar QZH:** hliníkový profil QZ (2 / 3 / 4 m) nie je v ponuke; zvážiť jeho doplnenie, bez neho lišta nefunguje.
 - **NTC tlmiaca doska VD 450:** pre stroje od v. č. 3000 môže existovať iný diel; **podvozok VD 350/450** (kód 30165A) nemá vlastnú fotku, použitá je fotka dielu 31930C (podvozok VD 450/20 a 450/22).
 - **Gölz:** skutočný rabat a dodacia lehota do Senca. FS170 je vo verzii s motorom Honda GX 390 (existuje aj Kohler CH440). MS400: stránka uvádza dĺžku rezu 800 mm v hlavičke a 700 mm v tabuľke, v e-shope je 700 mm. TS250 sa dodáva s kotúčom SLF10 a SM250 s brúsnym tanierom CG250-M, ostatné bez nástrojov.
+- **Kotúče Gölz:** skutočné ceny 6 odhadovaných priemerov; či ferrotech kód TS40GX401A je verzia so zapusteným upínaním (TK60, 6 × M6) pre HS400F; či blokové píly BS650 a BS900/1000 majú upínací otvor 60 mm (Gölz ich odporúča len s otvorom 60 mm); max. obvodová rýchlosť RX1S (štítok na fotke ~63 m/s, MS400 beží 58,6 m/s). Elektrické rozbrusovačky HS350/HS400F bežia ~83 m/s, preto k nim patria len kotúče na 100 m/s (LCA65, TS40GX, LB20). Brúsne nástroje k SM250/SM280 zatiaľ nie sú v ponuke. Fotka TS250A-330 má len 624 px. Podklady rešerše: ferrotech.sk `/eshop/diamantove-kotuce`, golzgroup.com (stránky strojov uvádzajú odporúčané kotúče).
 - Fotky: Atlas Copco WEDA D10N nemá fotku; fotky čerpadiel Atlas Copco a Enar Dingo sú od predajcov. Použitie fotiek výrobcov treba potvrdiť.
 - Detailná rešerš pôvodného sortimentu (12. 10.) je v `docs/research-sortiment/`.
