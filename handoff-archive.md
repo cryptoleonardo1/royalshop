@@ -1,5 +1,15 @@
 # Handoff Archive (do not read on /start)
 
+## What Was Done (Session 10) -- Gölz + Honda only, trademark guideline, customer portal (2026-11-02/03)
+
+- Gölz e-mails drafted and sent (process explanation, signed guideline + meta-tag question, photo request for FS125, FS170, MS400, TS250, TS250A, TS250A-330, BS650, BS900/1000, HS350, HS400F, SM250, SM280). Rules saved to agent memory (`golz-trademark-rules`).
+- Shop shows only Gölz + Honda: filter in catalog reads, search, category counts and `fetchPricedProducts` (checkout refuses hidden brands from old carts); empty categories return not-found. Descriptions of `cerpadla` + `rezacia-technika` changed in `catalog.json` and on hosted (user ran SQL).
+- Customer portal step 1: `/ucet` (orders), `/ucet/objednavky/[cislo]` (dated timeline, shipment tracking, WhatsApp wa.me link on the shop phone with the order number), `/ucet/profil` (person/company, billing address, password, GDPR delete), `/ucet/prihlasenie`, `/ucet/registracia`. Order body shared with the guest page (`order-detail.tsx` + `src/lib/order-detail.ts`).
+- Linking: `profile_id` set at checkout when signed in (profile prefilled) or via "Uložiť do môjho účtu" on the guest order page (secret token). Never by e-mail alone: registration uses `auth.admin.createUser({ email_confirm: true })` because Supabase's default SMTP only mails team members, so e-mails are NOT verified. Switch to `signUp` with confirmation once Resend works; only then e-mail auto-linking.
+- `proxy.ts` refreshes the session on `/ucet`, `/objednavka`, `/pokladna` (Server Components cannot persist a rotated refresh token).
+- Verified with Playwright against hosted: register/login/logout, profile, wrong password, checkout prefill + linked order (test account `claude-zakaznik-1793624915@royalshop.test` / `TestHeslo123`, unpaid OBJ26-00013), foreign order 404, mobile no horizontal scroll.
+- Gotchas: `pkill` does not stop `next start` on Windows (kill the port owner via PowerShell `Get-NetTCPConnection -LocalPort 3123`). React 19 resets forms after an action, so actions return the submitted `values` (see `updateProfile`). New routes need `npx next typegen` before `tsc`.
+
 ## What Was Done (Session 9) -- Admin console phase 1a: orders, withdrawal-window tracking (2026-10-23)
 
 - Login (`/admin/prihlasenie`, Supabase password, `profiles.role = 'admin'` checked by `requireAdmin()` in every page/action; `src/proxy.ts` only refreshes the session and bounces signed-out visitors). Admins: the user + test account `claude@royalshop.test` (creds as `ADMIN_TEST_EMAIL/PASSWORD` in `.env.hosted.local`, used for Playwright checks).
@@ -85,4 +95,5 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 2 | 2026-10-10 | Design C storefront, cart and checkout |
 | 1 | 2026-10-09 | Research, spec, foundation, design directions |
