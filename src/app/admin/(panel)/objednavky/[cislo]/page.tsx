@@ -8,7 +8,7 @@ import { allowedNextStatuses, ORDER_STATUS_LABELS, type OrderStatus, type Shippi
 import { canCompleteOrder, withdrawalEligibility, WITHDRAWAL_POST_GRACE_DAYS } from "@/lib/withdrawal";
 import { RETURN_DONE, remainingLines, type ReturnItem, type ReturnStatus } from "@/lib/returns";
 import { LiveOrders } from "@/components/admin/live-orders";
-import { AdminNote, CancelOrder, NextSteps } from "@/components/admin/order-actions";
+import { AdminNote, CancelOrder, IssueInvoice, NextSteps, RetryInvoicePdf } from "@/components/admin/order-actions";
 import { ManualReturnForm } from "@/components/admin/return-actions";
 import { daysText, fmtDate, fmtDateTime, PaymentBadge, ReturnBadge, StatusBadge, WINDOW_TONE, WindowBadge } from "@/components/admin/badges";
 import css from "@/components/admin/admin.module.css";
@@ -436,17 +436,47 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
               </div>
             </section>
           )}
-          {(o.invoices as any[]).length > 0 && (
+          {((o.invoices as any[]).length > 0 || !["reserved", "pending_payment", "cancelled"].includes(status)) && (
             <section className={css.panel}>
               <div className={css.panelHead}>
-                <h2 className={css.panelTitle}>Doklady</h2>
+                <h2 className={css.panelTitle}>Faktúry a dobropisy</h2>
               </div>
               <div className={css.panelBody}>
-                {(o.invoices as any[]).map((inv) => (
-                  <div key={inv.invoice_number ?? inv.issue_date}>
-                    {inv.type === "credit_note" ? "Dobropis" : "Faktúra"} {inv.invoice_number ?? "(koncept)"} · {formatEur(inv.total_gross_cents)}
-                  </div>
-                ))}
+                {(o.invoices as any[])
+                  .filter((inv) => inv.status !== "draft")
+                  .sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)))
+                  .map((inv) => (
+                    <div key={inv.id} className={css.small} style={{ marginBottom: 8 }}>
+                      {inv.type === "credit_note" ? "Dobropis" : "Faktúra"} {inv.invoice_number} · {fmtDate(inv.issue_date)} ·{" "}
+                      {formatEur(inv.total_gross_cents)}
+                      {inv.status === "cancelled" && " · stornovaná"}
+                      {inv.pdf_path && (
+                        <>
+                          {" · "}
+                          <a href={`/admin/doklady/${inv.id}`} target="_blank" rel="noreferrer" style={{ fontWeight: 600, textDecoration: "underline" }}>
+                            PDF
+                          </a>
+                        </>
+                      )}
+                      {!inv.pdf_path && (
+                        <div style={{ marginTop: 4 }}>
+                          <RetryInvoicePdf invoiceId={inv.id} />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                {!(o.invoices as any[]).some((inv) => inv.type === "invoice" && inv.status === "issued") &&
+                  !["reserved", "pending_payment", "cancelled", "paid"].includes(status) && (
+                    <>
+                      <p className={`${css.small} ${css.muted}`}>K objednávke ešte nie je faktúra.</p>
+                      <IssueInvoice orderId={o.id} />
+                    </>
+                  )}
+                {status === "paid" && !(o.invoices as any[]).length && (
+                  <p className={`${css.small} ${css.muted}`} style={{ margin: 0 }}>
+                    Faktúra sa vystaví pri potvrdení objednávky.
+                  </p>
+                )}
               </div>
             </section>
           )}

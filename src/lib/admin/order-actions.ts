@@ -9,6 +9,7 @@ import { refundCaptured } from "./refunds";
 import { canCompleteOrder, withdrawalDeadline } from "@/lib/withdrawal";
 import { bratislavaDay, bratislavaMidnight } from "@/lib/sk-calendar";
 import { requireAdmin } from "./auth";
+import { ensureInvoicePdf, issueCreditNote, issueOrderInvoice } from "@/lib/invoices/issue";
 
 // Admin order writes. Each action authorizes itself, then writes with the service role; status changes
 // only through transitionOrder (order-state rules + status history).
@@ -96,8 +97,41 @@ export async function advanceOrder(_prev: ActionState, form: FormData): Promise<
 
   // Side records of the step (best effort: the status change itself is already saved).
   const side = await recordStepDetails(db, order, to, form, patch.delivered_at as string | undefined);
+  // Confirmed = the contract stands and the order is paid in full: the invoice goes out now (docs/04 §7.4).
+  const invoice = to === "confirmed" ? invoiceMessage(await issueOrderInvoice(db, order.id)) : undefined;
   refresh();
-  return side ? { ok: true, message: side } : { ok: true };
+  const message = [side, invoice].filter(Boolean).join(" ");
+  return message ? { ok: true, message } : { ok: true };
+}
+
+function invoiceMessage(
+  r: Awaited<ReturnType<typeof issueOrderInvoice>> | null,
+  retry = "Vystavte ju tlačidlom v paneli Doklady.",
+): string | undefined {
+  if (!r) return undefined;
+  if (!r.ok) return `${r.message} ${retry}`;
+  return r.pdf ? `Doklad ${r.number} vystavený.` : `Doklad ${r.number} vystavený, PDF chýba: ${r.message}`;
+}
+
+// Invoice by hand: when the automatic one at "Potvrdená" failed, or for an order confirmed before invoices.
+export async function issueInvoiceNow(_prev: ActionState, form: FormData): Promise<ActionState> {
+  await requireAdmin();
+  const db = createAdminClient();
+  const order = await loadOrder(db, text(form, "orderId"));
+  if (!order) return { message: "Objednávka neexistuje." };
+  if (["reserved", "pending_payment", "cancelled"].includes(order.status)) {
+    return { message: "Faktúra sa vystavuje až k zaplatenej objednávke." };
+  }
+  const r = await issueOrderInvoice(db, order.id);
+  refresh();
+  return r.ok ? { ok: true, message: invoiceMessage(r) } : { message: r.message };
+}
+
+export async function renderInvoicePdfAgain(_prev: ActionState, form: FormData): Promise<ActionState> {
+  await requireAdmin();
+  const r = await ensureInvoicePdf(createAdminClient(), text(form, "invoiceId"));
+  refresh();
+  return r === true ? { ok: true, message: "PDF je pripravené." } : { message: r };
 }
 
 const MANUAL_PROVIDERS = ["cash", "card_terminal", "bank_transfer"] as const;
@@ -249,13 +283,6 @@ export async function cancelOrder(_prev: ActionState, form: FormData): Promise<A
   if (!reason) return { message: "Uveďte dôvod zrušenia." };
   if (form.get("confirm") !== "on") return { message: "Potvrďte, že rozumiete dôsledkom zrušenia." };
 
-  const { count: invoices } = await db
-    .from("invoices")
-    .select("id", { count: "exact", head: true })
-    .eq("order_id", order.id)
-    .eq("status", "issued");
-  if ((invoices ?? 0) > 0) return { message: "K objednávke je vystavená faktúra. Zrušenie s dobropisom príde s modulom faktúr." };
-
   const { data: payments, error } = await db
     .from("payments")
     .select("id, status, stripe_checkout_session_id, stripe_payment_intent_id")
@@ -300,8 +327,13 @@ export async function cancelOrder(_prev: ActionState, form: FormData): Promise<A
     patch: { payment_status: refundedCents > 0 || order.payment_status === "paid" ? "refunded" : "cancelled" },
   });
   if (!moved) return { message: STALE };
+  // an issued invoice is corrected by a credit note for what went back (none issued: nothing to correct)
+  const credit = invoiceMessage(
+    await issueCreditNote(db, order.id, refundedCents, `Zrušenie objednávky ${order.order_number}`),
+    "Dobropis nevznikol, vystavte ho v účtovníctve a dajte vedieť vývoju.",
+  );
   refresh();
-  return { ok: true };
+  return credit ? { ok: true, message: credit } : { ok: true };
 }
 
 export async function saveAdminNote(_prev: ActionState, form: FormData): Promise<ActionState> {

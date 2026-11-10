@@ -125,11 +125,8 @@ Z „spustenia novej inštancie“ by zostal iba vzhľad a logika by bola duplic
 
 Každá zmena je nová migrácia v `supabase/migrations/`. Ty ju spustíš cez `db push` alebo cez SQL editor + `migration repair`.
 
-- **`issue_invoice`:**
-  - variabilný symbol dobropisu sa dnes zhoduje s faktúrou (`D202600001` → `202600001`), treba ho rozlíšiť,
-  - `tax_point_date` = dátum platby,
-  - kontrola, že faktúra má riadky a súčty sedia.
-- **`invoice_guard`:** zrušená faktúra je dnes znova editovateľná. Treba ju zamknúť.
+- ~~**`issue_invoice`:** VS dobropisu, `tax_point_date` = dátum platby, kontrola riadkov a súčtov~~ – hotové v migrácii `20261110000001_invoices.sql` (VS dobropisu = VS opravovanej faktúry).
+- ~~**`invoice_guard`:** zamknúť zrušenú faktúru~~ – hotové v tej istej migrácii.
 - **`test_reports`:** motohodiny, video, stav dosky alebo kotúča, palivo a olej, CE kontrola, typ (výstup / vstup).
 - **Nová tabuľka** pre záznam o zaškolení (podpis zákazníka).
 - **`returns`, `claims`:** cesty k PDF potvrdení a vybavenia.

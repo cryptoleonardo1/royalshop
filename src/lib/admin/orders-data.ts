@@ -181,7 +181,7 @@ export async function getOrderDetail(number: string) {
        shipments(carrier, tracking_number, tracking_url, shipped_at, delivered_at),
        supplier_orders(reference, ordered_at, expected_at, received_at, supplier:suppliers(name)),
        returns(return_number, status, items, submitted_at),
-       invoices(invoice_number, type, status, issue_date, total_gross_cents)`,
+       invoices(id, invoice_number, type, status, issue_date, total_gross_cents, pdf_path, created_at)`,
     )
     .eq("order_number", number)
     .maybeSingle();

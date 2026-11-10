@@ -24,6 +24,7 @@ import { bratislavaMidnight } from "@/lib/sk-calendar";
 import { withdrawalEligibility } from "@/lib/withdrawal";
 import { requireAdmin } from "./auth";
 import { refundCaptured, refundableCents, syncOrderPaymentStatus } from "./refunds";
+import { issueCreditNote } from "@/lib/invoices/issue";
 
 // Admin withdrawal writes. Each action authorizes itself, then writes with the service role. Status changes
 // use an optimistic lock on the current status; money moves only in refundReturn.
@@ -154,8 +155,10 @@ export async function refundReturn(_prev: ReturnActionState, form: FormData): Pr
       changedBy: admin.id,
     });
   }
+  const credit = await issueCreditNote(db, order.id, refund.refundedCents, `Odstúpenie od zmluvy ${ret.return_number}`);
   refresh();
-  return { ok: true, message: `Vrátené ${formatEur(refund.refundedCents)}.` };
+  const note = !credit ? "" : credit.ok ? ` Dobropis ${credit.number}.` : ` Dobropis nevznikol: ${credit.message}`;
+  return { ok: true, message: `Vrátené ${formatEur(refund.refundedCents)}.${note}` };
 }
 
 export async function saveReturnNote(_prev: ReturnActionState, form: FormData): Promise<ReturnActionState> {

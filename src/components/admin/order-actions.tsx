@@ -2,7 +2,14 @@
 
 import { useActionState } from "react";
 import { ORDER_STATUS_LABELS, type OrderStatus } from "@/lib/order-state";
-import { advanceOrder, cancelOrder, saveAdminNote, type ActionState } from "@/lib/admin/order-actions";
+import {
+  advanceOrder,
+  cancelOrder,
+  issueInvoiceNow,
+  renderInvoicePdfAgain,
+  saveAdminNote,
+  type ActionState,
+} from "@/lib/admin/order-actions";
 import css from "./admin.module.css";
 
 // What each next step means for the person clicking it.
@@ -10,7 +17,7 @@ const STEP_HINT: Partial<Record<OrderStatus, string>> = {
   pending_payment:
     "Dohodli ste sa so zákazníkom na platbe kartou na diaľku. Pošlite mu odkaz na objednávku (vyššie v tomto paneli), zaplatí na nej. Spotrebiteľ potom môže odstúpiť do 14 dní.",
   paid: "Zákazník zaplatil celú sumu mimo platobnej brány (v predajni alebo prevodom). Pri predaji v predajni vytlačte kúpnu zmluvu (Doklady na tlač) a dajte ju podpísať.",
-  confirmed: "Dodávateľ potvrdil dostupnosť. Tým vzniká zmluva (neskôr aj e-mail „Potvrdenie objednávky“ a faktúra).",
+  confirmed: "Dodávateľ potvrdil dostupnosť. Tým vzniká zmluva a vystaví sa faktúra (neskôr aj e-mail „Potvrdenie objednávky“).",
   ordered_from_supplier: "Stroj je objednaný u dodávateľa.",
   received_at_branch: "Stroj dorazil k nám do Boldogu.",
   tested: "Stroj je otestovaný a zabalený (protokol pribudne vo fáze 2).",
@@ -196,6 +203,32 @@ export function AdminNote({ orderId, note }: { orderId: string; note: string | n
       <button type="submit" className={`${css.btn} ${css.btnGhost}`} disabled={pending}>
         {pending ? "Ukladám…" : "Uložiť poznámku"}
       </button>
+    </form>
+  );
+}
+
+export function IssueInvoice({ orderId }: { orderId: string }) {
+  const [state, action, pending] = useActionState(issueInvoiceNow, undefined);
+  return (
+    <form action={action} className={css.form}>
+      <input type="hidden" name="orderId" value={orderId} />
+      <Message state={state} />
+      <button type="submit" className={`${css.btn} ${css.btnGhost}`} disabled={pending}>
+        {pending ? "Vystavujem…" : "Vystaviť faktúru"}
+      </button>
+    </form>
+  );
+}
+
+export function RetryInvoicePdf({ invoiceId }: { invoiceId: string }) {
+  const [state, action, pending] = useActionState(renderInvoicePdfAgain, undefined);
+  return (
+    <form action={action} style={{ display: "inline" }}>
+      <input type="hidden" name="invoiceId" value={invoiceId} />
+      <button type="submit" className={`${css.btn} ${css.btnGhost}`} disabled={pending}>
+        {pending ? "Vytváram…" : "Vytvoriť PDF"}
+      </button>
+      <Message state={state} />
     </form>
   );
 }

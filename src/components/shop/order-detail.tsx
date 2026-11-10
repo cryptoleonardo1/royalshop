@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, Check, CreditCard, Lock, MessageCircle, Package, Phone, Store, Truck, Undo2 } from "lucide-react";
+import { AlertTriangle, Check, CreditCard, FileText, Lock, MessageCircle, Package, Phone, Store, Truck, Undo2 } from "lucide-react";
 import { payOrder } from "@/lib/checkout-actions";
 import { isDemoPayments } from "@/lib/stripe";
 import { formatEur } from "@/lib/money";
@@ -168,6 +168,31 @@ export function OrderDetailView({
                       Sledovať zásielku
                     </a>
                   )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {order.documents.length > 0 && (
+          <section aria-labelledby="documents-title">
+            <h2 id="documents-title" className={css.proseTitle}>
+              Faktúry
+            </h2>
+            <ul className={css.shipments}>
+              {order.documents.map((d) => (
+                <li key={d.id}>
+                  <FileText size={18} aria-hidden="true" />
+                  <span>
+                    {d.creditNote ? "Dobropis" : "Faktúra"} {d.number} · {formatEur(d.totalGrossCents)}
+                  </span>
+                  <a
+                    href={`/objednavka/${encodeURIComponent(order.orderNumber)}/doklad/${d.id}?t=${order.accessToken}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Stiahnuť PDF
+                  </a>
                 </li>
               ))}
             </ul>

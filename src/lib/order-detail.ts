@@ -15,7 +15,8 @@ export const ORDER_DETAIL_SELECT = `
   items:order_items(name, sku, quantity, unit_price_gross_cents, line_gross_cents),
   returns(return_number, status, items, submitted_at, access_token, refund_cents, refunded_at),
   history:order_status_history(to_status, created_at),
-  shipments(carrier, tracking_number, tracking_url, shipped_at)
+  shipments(carrier, tracking_number, tracking_url, shipped_at),
+  invoices(id, invoice_number, type, status, issue_date, total_gross_cents, pdf_path, created_at)
 `;
 
 export interface OrderAddress {
@@ -55,6 +56,8 @@ export interface OrderDetail {
   // latest time the order reached each status
   reachedAt: Partial<Record<OrderStatus, string>>;
   shipments: { carrier: string; trackingNumber: string | null; trackingUrl: string | null }[];
+  // issued invoices and credit notes with a PDF (download: /objednavka/<number>/doklad/<id>?t=<token>)
+  documents: { id: string; number: string; creditNote: boolean; issueDate: string; totalGrossCents: number }[];
   // withdrawals filed for this order; accessToken opens its confirmation page
   returns: {
     returnNumber: string;
@@ -107,6 +110,16 @@ export function toOrderDetail(r: any): OrderDetail {
     shipments: [...(r.shipments ?? [])]
       .sort((a: any, b: any) => (a.shipped_at < b.shipped_at ? 1 : -1))
       .map((s: any) => ({ carrier: s.carrier, trackingNumber: s.tracking_number, trackingUrl: s.tracking_url })),
+    documents: [...(r.invoices ?? [])]
+      .filter((d: any) => d.status !== "draft" && d.pdf_path)
+      .sort((a: any, b: any) => (a.created_at < b.created_at ? -1 : 1))
+      .map((d: any) => ({
+        id: d.id,
+        number: d.invoice_number,
+        creditNote: d.type === "credit_note",
+        issueDate: d.issue_date,
+        totalGrossCents: d.total_gross_cents,
+      })),
     returns: [...(r.returns ?? [])]
       .sort((a: any, b: any) => (a.submitted_at < b.submitted_at ? -1 : 1))
       .map((x: any) => ({

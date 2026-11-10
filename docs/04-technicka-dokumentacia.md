@@ -323,12 +323,15 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 - **Neskôr:** WhatsApp Cloud API (Meta) na upozornenia o stave objednávky. Vyžaduje overenú firmu a schválené šablóny správ a platí sa za správu. Pri zákazníkoch len so súhlasom.
 
 ### 7.4 Faktúry
-- Generátor podľa vzoru MDN TECH:
-  - logo, dodávateľ a odberateľ, platobné údaje, dátumy
-  - tabuľka položiek bez DPH, s DPH a so sumou DPH
-  - rekapitulácia DPH
-  - QR kód Pay by Square, ktorý pri faktúre zaplatenej kartou nebude, alebo bude s poznámkou „Uhradené kartou“
-- **Moment vystavenia:** pri strhnutí platby. Dátum dodania (DUZP) je deň prijatia platby a v poznámke bude „Uhradené platobnou kartou dňa …“. Pri refundácii sa vystaví dobropis.
+- **Postavené (10. 11. 2026):** generátor prenesený z crm_core (jsPDF na serveri, `src/lib/invoices/`):
+  - dodávateľ a odberateľ (snapshoty v čase vystavenia), platobné údaje, dátumy,
+  - tabuľka položiek bez DPH, s DPH a so sumou DPH, rekapitulácia DPH podľa sadzieb,
+  - **bez QR PAY by square:** faktúra sa vystavuje až po úplnej platbe, QR by zvádzal zaplatiť druhýkrát. IBAN sa tlačí len platný (kontrola mod 97).
+- **Moment vystavenia:** pri kroku „Potvrdená“ (objednávka je vtedy vždy celá zaplatená). DUZP = deň prijatia platby (Bratislava), splatnosť = deň vystavenia, poznámka „Uhradené … dňa …“; pri hotovosti aj odkaz na pokladničný doklad eKasa. Ak vystavenie zlyhá, admin má v detaile objednávky tlačidlo „Vystaviť faktúru“, pri chýbajúcom PDF „Vytvoriť PDF“.
+- **Dobropis** (`D` + rok + poradie) vzniká automaticky pri zrušení objednávky s vrátením peňazí a pri vrátení peňazí po odstúpení. Celá suma = zrkadlo riadkov faktúry, časť = jeden riadok na sadzbu DPH. VS dobropisu = VS opravovanej faktúry. DUZP = deň vrátenia.
+- **Uloženie:** PDF v súkromnom buckete `documents` (`invoices/RRRR/<číslo>.pdf`, `credit-notes/…`), sťahuje sa cez podpísanú URL na 60 s: admin `/admin/doklady/<id>`, zákazník `/objednavka/<číslo>/doklad/<id>?t=<token>` (stránka objednávky aj portál). Zoznam a mesačné súčty: `/admin/faktury`.
+- **Nemennosť:** vystavená aj stornovaná faktúra sa nedá meniť (okrem PDF a exportu), stornovaná sa nedá vrátiť na vystavenú; `issue_invoice()` odmietne faktúru bez riadkov alebo s nesediacimi súčtami. Jedna platná faktúra na objednávku.
+- **Refund priamo v Stripe dashboarde** dobropis nevystaví (webhook iba zapíše refund). Refundy robte z adminu.
 - **Na overenie s účtovníčkou:**
   - či stačí jedna faktúra pri platbe, alebo treba doklad k prijatej platbe a potom zúčtovaciu faktúru po doručení,
   - číselný rad e-shopu,

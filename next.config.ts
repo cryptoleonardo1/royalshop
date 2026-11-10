@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
+  // invoice PDFs are rendered in admin server actions (src/lib/invoices/pdf.ts reads the fonts from disk)
+  outputFileTracingIncludes: {
+    "/admin/**": ["./src/lib/invoices/fonts/*.ttf"],
+  },
   partialPrefetching: true,
   turbopack: {
     rules: {
