@@ -4,7 +4,17 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 13) -- Gölz only, new photos, diamond blades with a picker (2026-11-07)
+
+- Honda off. Single-brand layout is data-driven, not a flag: `getNavCategories()` shows subcategories when fewer than 3 top-level categories have products; the home swaps the brand grid for a "Výrobca" section and shows all machines when `getBrands()` returns one brand. Turning brands back on restores the old layout with no code change.
+- 12 Gölz photos (CMYK, 47 MB) converted to webp under the old file names, so no DB change was needed. Fixed a CSS clash: the contact page's `.gallery` squeezed the product gallery (renamed to `.storePhotos`).
+- 9 blades in category `diamantove-kotuce` (3 types: tiles SLF10; masonry RX1S/BS30; concrete LCA65/LB20/TS40GX). Linked via `accessory_for` in catalog.json -> `related_products` type `accessory`; `AccessoryPicker` next to the buy box; `isAccessory()` hides the test-run note and QC badge. Prices = ferrotech +5 %, but ferrotech has only 3 of our sizes; 6 are estimates from German Gölz dealers (`price_source` per product, docs/05). Cut-off saws (~83 m/s) only get 100 m/s blades.
+- Decided (user): blades ordered from Gölz together with the machine at first, stock later; blade alone = standard 3-5 days (already shown). No new živnosť: ORSR lists maloobchod + veľkoobchod for Royal stroje. The s.r.o. has eKasa. Domain is the last step (Peter).
+- Launch questions for Peter (bank account + why, shop@ e-mail, OZV registration) and the Klaus e-mail are in the vault note above. EPR/OZV: electric Gölz machines + packaging (pallets exceed 100 kg/yr), not FS125/FS170 or blades; quotes from SEWA + ENVIDOM; cost est. hundreds EUR/yr, registration time unverified.
+- Deployed 655888b (verified live). Gotchas: start Docker Desktop before `npx supabase start`; long heredocs with quotes fail in the Bash tool -> write a script file instead.
 
 ## What Was Done (Session 12) -- No discounts, ferrotech comparison, return risks, consumer reservations (2026-11-03..07)
 
