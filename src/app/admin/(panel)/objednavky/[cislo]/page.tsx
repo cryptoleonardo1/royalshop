@@ -7,6 +7,7 @@ import { formatEur } from "@/lib/money";
 import { allowedNextStatuses, ORDER_STATUS_LABELS, type OrderStatus, type ShippingMethod } from "@/lib/order-state";
 import { canCompleteOrder, withdrawalEligibility, WITHDRAWAL_POST_GRACE_DAYS } from "@/lib/withdrawal";
 import { RETURN_DONE, remainingLines, type ReturnItem, type ReturnStatus } from "@/lib/returns";
+import { RESERVATION_WORKDAYS, reservationExpiresAt } from "@/lib/reservation";
 import { LiveOrders } from "@/components/admin/live-orders";
 import { AdminNote, CancelOrder, IssueInvoice, NextSteps, RetryInvoicePdf } from "@/components/admin/order-actions";
 import { ManualReturnForm } from "@/components/admin/return-actions";
@@ -395,6 +396,12 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
                     /objednavka/{o.order_number}?t=…
                   </a>{" "}
                   · tel. {o.phone ?? "–"}
+                </p>
+              )}
+              {status === "reserved" && o.reserved_at && (
+                <p className={`${css.small} ${css.muted}`} style={{ marginTop: 0 }}>
+                  Ak sa nedohodnete na kúpe, rezervácia automaticky zanikne po {fmtDateTime(reservationExpiresAt(o.reserved_at))}{" "}
+                  ({RESERVATION_WORKDAYS} pracovných dní, VOP čl. 3).
                 </p>
               )}
               <NextSteps orderId={o.id} status={status} next={next} completeBlocked={completeBlocked} person={o.customer_type === "person"} />

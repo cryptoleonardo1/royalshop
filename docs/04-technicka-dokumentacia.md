@@ -339,8 +339,11 @@ Peniaze ukladáme v **centoch (integer)** a sadzbu DPH v percentách. Pri každe
 - **Od 1. 1. 2027:** B2B faktúry v štruktúrovanom formáte Peppol. Dátový model to zvládne, napojenie príde neskôr.
 
 ### 7.5 Plánované úlohy (Vercel Cron)
+Hotové: `vercel.json` → `/api/cron/rezervacie`, denne o 5:00 UTC. Route vyžaduje `CRON_SECRET` (Vercel ho posiela v hlavičke `Authorization`); bez neho vráti 503.
+
 | Úloha | Frekvencia |
 |---|---|
+| **Hotové (10. 11. 2026):** rezervácia (`reserved`) bez dohody o kúpe do 10 pracovných dní od `reserved_at` → `cancelled` (VOP čl. 3, `src/lib/reservation.ts`). Lehota končí o polnoci posledného pracovného dňa; admin ju vidí v detaile objednávky. | denne |
 | Zaplatené objednávky (`paid`) nepotvrdené dlhšie ako 1 pracovný deň → upozornenie adminovi | každú hodinu |
 | Objednávky `delivered` staršie ako 14 dní bez odstúpenia → `completed` | denne |
 | Reklamácie blízko 30-dňovej lehoty → upozornenie adminovi | denne |

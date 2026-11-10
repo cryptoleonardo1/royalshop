@@ -41,12 +41,12 @@ export interface PdfLine {
   line_gross_cents: number;
 }
 
-const FONT_DIR = path.join(process.cwd(), "src/lib/invoices/fonts");
+// Full literal paths, as in the Next docs (opengraph-image fonts), so the file tracer can resolve them.
 let fonts: Promise<{ regular: string; bold: string }> | null = null;
 function loadFonts() {
   fonts ??= Promise.all([
-    readFile(path.join(FONT_DIR, "Inter-Regular.ttf")),
-    readFile(path.join(FONT_DIR, "Inter-Bold.ttf")),
+    readFile(path.join(process.cwd(), "src/lib/invoices/fonts/Inter-Regular.ttf")),
+    readFile(path.join(process.cwd(), "src/lib/invoices/fonts/Inter-Bold.ttf")),
   ]).then(([r, b]) => ({ regular: r.toString("base64"), bold: b.toString("base64") }));
   return fonts;
 }
