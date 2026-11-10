@@ -9,7 +9,7 @@ import css from "./admin.module.css";
 const STEP_HINT: Partial<Record<OrderStatus, string>> = {
   pending_payment:
     "Dohodli ste sa so zákazníkom na platbe kartou na diaľku. Pošlite mu odkaz na objednávku (vyššie v tomto paneli), zaplatí na nej. Spotrebiteľ potom môže odstúpiť do 14 dní.",
-  paid: "Zákazník zaplatil mimo platobnej brány (v predajni alebo prevodom).",
+  paid: "Zákazník zaplatil celú sumu mimo platobnej brány (v predajni alebo prevodom). Pri predaji v predajni vytlačte kúpnu zmluvu (Doklady na tlač) a dajte ju podpísať.",
   confirmed: "Dodávateľ potvrdil dostupnosť. Tým vzniká zmluva (neskôr aj e-mail „Potvrdenie objednávky“ a faktúra).",
   ordered_from_supplier: "Stroj je objednaný u dodávateľa.",
   received_at_branch: "Stroj dorazil k nám do Boldogu.",
@@ -77,6 +77,10 @@ function StepForm({
               </span>
             </label>
           )}
+          <label className={css.field}>
+            Dohodnutý termín odovzdania (ak stroj nie je skladom)
+            <input className={css.input} type="date" name="handoverDate" min={todayBratislava()} />
+          </label>
         </>
       )}
       {to === "ordered_from_supplier" && (

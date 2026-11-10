@@ -114,6 +114,9 @@ async function recordManualPayment(
   if (!MANUAL_PROVIDERS.includes(provider)) return "Vyberte spôsob platby.";
   const onPremises = form.get("onPremises") === "on";
   if (onPremises && order.customer_type !== "person") return "Predaj na predajni sa eviduje len pri spotrebiteľovi.";
+  // machine not in stock: the handover date agreed in the shop goes onto the printed contract
+  const handover = text(form, "handoverDate");
+  if (handover && !/^\d{4}-\d{2}-\d{2}$/.test(handover)) return "Neplatný termín odovzdania.";
 
   const { data: open, error } = await db
     .from("payments")
@@ -133,7 +136,11 @@ async function recordManualPayment(
   }
 
   // the payments row itself is written after the transition (recordStepDetails)
-  return { payment_status: "paid", ...(onPremises ? { contract_place: "on_premises" } : {}) };
+  return {
+    payment_status: "paid",
+    ...(onPremises ? { contract_place: "on_premises" } : {}),
+    ...(handover ? { estimated_delivery_date: handover } : {}),
+  };
 }
 
 // Orders paid before 2026-10-23 hold the money on the card (manual capture). Confirming such an order

@@ -159,7 +159,7 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
             )}
             {row.deliveryLimit && (
               <p className={css.riskText} style={{ marginTop: 6 }}>
-                Záväzná dodacia lehota: doručiť najneskôr <strong>{fmtDate(row.deliveryLimit)}</strong> (10 pracovných dní od zaplatenia).
+                Záväzná dodacia lehota: doručiť najneskôr <strong>{fmtDate(row.deliveryLimit)}</strong> {o.contract_place === "on_premises" && o.estimated_delivery_date ? "(termín odovzdania z kúpnej zmluvy)" : "(10 pracovných dní od zaplatenia)"}.
               </p>
             )}
           </div>
@@ -409,6 +409,33 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
               <AdminNote orderId={o.id} note={o.admin_note} />
             </div>
           </section>
+          {status !== "cancelled" && (
+            <section className={css.panel}>
+              <div className={css.panelHead}>
+                <h2 className={css.panelTitle}>Doklady na tlač</h2>
+              </div>
+              <div className={css.panelBody}>
+                <ul className={css.small} style={{ margin: 0, paddingLeft: 18 }}>
+                  {o.customer_type === "person" && (status === "reserved" || o.contract_place === "on_premises") && (
+                    <li>
+                      <Link href={`/admin/tlac/${encodeURIComponent(o.order_number)}/zmluva`} target="_blank">
+                        Kúpna zmluva (predaj v predajni)
+                      </Link>
+                    </li>
+                  )}
+                  <li>
+                    <Link href={`/admin/tlac/${encodeURIComponent(o.order_number)}/protokol`} target="_blank">
+                      Preberací protokol a záznam o zaškolení
+                    </Link>
+                  </li>
+                </ul>
+                <p className={`${css.small} ${css.muted}`} style={{ marginBottom: 0 }}>
+                  Tlačte 2× (zákazník + my). Podpísanú zmluvu a protokol odložte, sú dôkazom predaja v predajni a
+                  zaškolenia pri reklamácii.
+                </p>
+              </div>
+            </section>
+          )}
           {(o.invoices as any[]).length > 0 && (
             <section className={css.panel}>
               <div className={css.panelHead}>

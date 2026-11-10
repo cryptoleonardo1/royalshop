@@ -21,7 +21,8 @@ export interface OrderRow {
   totalGrossCents: number;
   marginNetCents: number | null; // null when a purchase price is missing
   paidAt: string | null;
-  deliveryLimit: Date | null; // binding "najneskôr do 10 pracovných dní od zaplatenia"
+  // binding "najneskôr do 10 pracovných dní od zaplatenia"; a sale in the shop: the handover date in the contract
+  deliveryLimit: Date | null;
   deliveredAt: string | null;
   withdrawal: WithdrawalInfo;
 }
@@ -44,6 +45,12 @@ export const ACTIVE_STATUSES: OrderStatus[] = [
 ];
 
 const LIST_LIMIT = 500;
+
+// "2026-11-20" (a date column) as a calendar day
+const calendarDay = (iso: string) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return { y, m, d };
+};
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 function toRow(o: any, now: Date): OrderRow {
@@ -70,7 +77,11 @@ function toRow(o: any, now: Date): OrderRow {
     totalGrossCents: o.total_gross_cents,
     marginNetCents: margin,
     paidAt: captured ?? null,
-    deliveryLimit: captured && !finished ? endOfBratislavaDay(addWorkingDays(new Date(captured), DELIVERY_MAX_WORKDAYS)) : null,
+    deliveryLimit: !captured || finished
+      ? null
+      : o.contract_place === "on_premises" && o.estimated_delivery_date
+        ? endOfBratislavaDay(calendarDay(o.estimated_delivery_date))
+        : endOfBratislavaDay(addWorkingDays(new Date(captured), DELIVERY_MAX_WORKDAYS)),
     deliveredAt: o.delivered_at,
     withdrawal: withdrawalInfo(
       {
@@ -88,7 +99,7 @@ function toRow(o: any, now: Date): OrderRow {
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 const LIST_SELECT = `id, order_number, created_at, email, customer_type, billing, company, status, payment_status,
-  shipping_method, total_gross_cents, delivered_at, withdrawal_deadline, contract_place,
+  shipping_method, total_gross_cents, delivered_at, withdrawal_deadline, contract_place, estimated_delivery_date,
   payments(captured_at, authorized_at), returns(status), items:order_items(quantity, line_net_cents, purchase_price_net_cents)`;
 
 // PostgREST or-filter values must not contain its syntax characters.

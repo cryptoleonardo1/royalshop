@@ -152,6 +152,8 @@ reserved ──(odkaz na platbu kartou)──► pending_payment ──(Stripe)�
 - Platby mimo Stripe (`payments.provider` = `cash`, `card_terminal`, `bank_transfer`) eviduje admin. Pri zrušení ich vracia ručne, systém vrátenie len zapíše.
 - Expirovaná platba Stripe bývalú rezerváciu nezruší (zostane `pending_payment`, zákazník môže zaplatiť znova).
 - Firmy platia v pokladni ako doteraz.
+- **Bez záloh (rozhodnutie 10. 11. 2026):** v predajni zákazník platí pri podpise vždy celú sumu. Ak stroj nie je skladom, admin pri kroku „Zaplatená“ zadá dohodnutý termín odovzdania do `estimated_delivery_date`. Vytlačí sa v zmluve a pri `on_premises` sa z neho ráta záväzná lehota v admine namiesto 10 pracovných dní.
+- **Doklady na tlač:** `/admin/tlac/<číslo>/zmluva` (kúpna zmluva pre predaj v predajni, len rezervácia alebo `on_premises`) a `/admin/tlac/<číslo>/protokol` (preberací protokol a záznam o zaškolení). Neznáme údaje (platba pred zápisom, výrobné číslo, motohodiny) sa vyplnia ručne. Text zmluvy ešte nevidel advokát.
 
 - **Platba (`payment_status`)** sa sleduje samostatne: `unpaid`, `authorized`, `paid`, `partially_refunded`, `refunded`, `failed`, `cancelled`.
 - **Každá zmena stavu** sa zapíše do `order_status_history` (kto, kedy, poznámka) a podľa šablóny odíde e-mail zákazníkovi.

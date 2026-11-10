@@ -1,5 +1,19 @@
 # Handoff Archive (do not read on /start)
 
+## Session Summary (archived rows)
+
+| Session | Date | Title |
+|---------|------|-------|
+| 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 12) -- No discounts, ferrotech comparison, return risks, consumer reservations (2026-11-03..07)
+
+- Discounts removed: TS250A, Honda ECT 7000G, Bomag BPR 25/50 back at list price (catalog.json + hosted SQL run by the user); "Akcie" nav link and home sale section render only while a discounted product exists.
+- ferrotech.sk research (subagent): generic, partly outdated terms (ODR link, no § 20a function, pre-31.7.2026 OZ), Gölz prices = list -5 %. Our legal pages are ahead; two small ideas parked (row 4).
+- `docs/08` risk ranking (R1 consumer withdrawal after the Gölz order = top risk). Benji confirmed the shop-sale route and added `docs/09` phone script + admin hint (commit d9c4c72).
+- Reservations built (migration 20261104000001: status `reserved`, `orders.reserved_at`, `orders.contract_place`, `payments_provider_check`). Checkout, order page, admin step forms (payment method + on-premises checkbox), dashboard KPI "Rezervácie na zavolanie", customer link in admin, manual refunds, VOP art. 3/4/9, withdrawal page, delivery/payment page, docs/04 §4.2. 61 unit tests; Playwright on the local DB: shop sale (no withdrawal, form refuses), payment link (withdrawal offered), company checkout, mobile. Deployed d9c4c72 (VOP version 2026-11-04 live).
+- Gotchas: do not run prettier on the repo (no config, reformats whole files); Playwright: the terms label contains links (click the input via JS), many headings are CSS-uppercased (compare lowercase), the footer has a global "Odstúpiť od zmluvy tu" link (check `id="withdraw-title"` instead of text).
+
 ## What Was Done (Session 11) -- Withdrawal (§ 20a): online form, portal panel, admin module (2026-11-03)
 
 - Public two-step form in section 7 of `/odstupenie-od-zmluvy` (works without login), confirmation page `/odstupenie-od-zmluvy/potvrdenie/<OD>?t=<return token>` with the notice text and print/PDF. Before-delivery and partial withdrawal supported.

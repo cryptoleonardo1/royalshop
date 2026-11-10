@@ -1,0 +1,185 @@
+/* Printed shop documents (A4): purchase contract and handover protocol. */
+
+.page {
+  min-height: 100vh;
+  background: #e9e8e3;
+  padding: 24px 16px 48px;
+  color: #161614;
+}
+
+.toolbar {
+  max-width: 210mm;
+  margin: 0 auto 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.toolbar a {
+  color: inherit;
+}
+
+.printBtn {
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #161614;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sheet {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: #fff;
+  padding: 18mm 16mm;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.12);
+}
+
+.title {
+  font-size: 16pt;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 2px 0 14px;
+  color: #3d3d38;
+}
+
+.h2 {
+  font-size: 11pt;
+  margin: 14px 0 4px;
+}
+
+.parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.parties p,
+.sheet p {
+  margin: 0 0 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4px 0;
+}
+
+.table th,
+.table td {
+  border: 1px solid #b9b8b1;
+  padding: 4px 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  background: #f1f0eb;
+  font-weight: 600;
+}
+
+.num {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 34mm;
+  border-bottom: 1px solid #161614;
+}
+
+.blankWide {
+  display: block;
+  height: 7mm;
+  border-bottom: 1px solid #161614;
+}
+
+.list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checks li {
+  margin: 0 0 4px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #161614;
+}
+
+.signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.signatures div {
+  border-top: 1px solid #161614;
+  padding-top: 4px;
+  min-height: 18mm;
+}
+
+.small {
+  font-size: 9pt;
+  color: #3d3d38;
+}
+
+@media (max-width: 640px) {
+  .sheet {
+    padding: 16px;
+  }
+  .parties,
+  .signatures {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  .page {
+    background: #fff;
+    padding: 0;
+  }
+  .toolbar {
+    display: none;
+  }
+  .sheet {
+    max-width: none;
+    padding: 0;
+    box-shadow: none;
+  }
+  .keep {
+    break-inside: avoid;
+  }
+}
