@@ -4,7 +4,8 @@ import { transitionOrder } from "./orders";
 import { isReservationExpired, RESERVATION_WORKDAYS } from "./reservation";
 import type { ShippingMethod } from "./order-state";
 
-// Cancels reservations nobody agreed on within 10 working days (VOP čl. 3). Run daily by the cron route.
+// Cancels reservations nobody agreed on within 10 working days (VOP čl. 3). Prepared for a daily cron, NOT
+// scheduled yet (2026-11-10 decision: reservations are cancelled by hand for now; add vercel.json crons later).
 // A reservation carries no payment, so nothing is refunded. Concurrent admin steps win (optimistic lock).
 
 export async function expireReservations(db: SupabaseClient, now = new Date()): Promise<{ cancelled: string[] }> {

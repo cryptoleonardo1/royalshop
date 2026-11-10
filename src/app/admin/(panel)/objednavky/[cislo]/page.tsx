@@ -400,8 +400,8 @@ async function OrderDetail({ params }: PageProps<"/admin/objednavky/[cislo]">) {
               )}
               {status === "reserved" && o.reserved_at && (
                 <p className={`${css.small} ${css.muted}`} style={{ marginTop: 0 }}>
-                  Ak sa nedohodnete na kúpe, rezervácia automaticky zanikne po {fmtDateTime(reservationExpiresAt(o.reserved_at))}{" "}
-                  ({RESERVATION_WORKDAYS} pracovných dní, VOP čl. 3).
+                  Podľa VOP čl. 3 rezervácia zaniká po {fmtDateTime(reservationExpiresAt(o.reserved_at))} ({RESERVATION_WORKDAYS}{" "}
+                  pracovných dní). Ak sa dovtedy nedohodnete na kúpe, zrušte ju ručne (Zrušiť objednávku).
                 </p>
               )}
               <NextSteps orderId={o.id} status={status} next={next} completeBlocked={completeBlocked} person={o.customer_type === "person"} />
