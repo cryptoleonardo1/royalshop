@@ -1,3 +1,4 @@
+import { useId } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ProductSummary } from "@/lib/catalog";
@@ -10,12 +11,21 @@ import css from "./shop.module.css";
 // Spec keys a blade uses to tell the customer what it cuts and whether it fits.
 const PICK_SPECS = ["material", "diameter_mm", "bore_mm"];
 
-// Add-ons next to the buy box: the customer picks the blade for the material they cut.
-export function AccessoryPicker({ items, note }: { items: ProductSummary[]; note: string }) {
+// Add-ons next to the buy box (and as the cart reminder): the customer picks the blade for the material they cut.
+export function AccessoryPicker({
+  items,
+  note,
+  title = "Vyberte si diamantový kotúč",
+}: {
+  items: ProductSummary[];
+  note: string;
+  title?: string;
+}) {
+  const titleId = useId();
   return (
-    <section className={css.picker} aria-labelledby="picker-title">
-      <h2 id="picker-title" className={css.pickerTitle}>
-        Vyberte si diamantový kotúč
+    <section className={css.picker} aria-labelledby={titleId}>
+      <h2 id={titleId} className={css.pickerTitle}>
+        {title}
       </h2>
       <p className={css.pickerNote}>{note}</p>
       <ul className={css.pickerList}>

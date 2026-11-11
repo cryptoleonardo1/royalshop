@@ -5,6 +5,7 @@ import { foldText } from "@/lib/format";
 import { discountPct } from "@/lib/pricing";
 import { isShopBrand } from "@/lib/shop-brands";
 import { DEFAULT_SHIPPING_RATES, type ShippingRate } from "@/lib/shipping";
+import { BLADE_CATEGORY, bladeIncluded, type MachineBlades } from "@/lib/accessories";
 
 // Public catalog reads. Everything here goes through the anon key (RLS: active products only)
 // and is cached under the "catalog" tag, so admin edits can call revalidateTag("catalog").
@@ -265,6 +266,34 @@ export async function getAllProducts(): Promise<ProductSummary[]> {
     await Promise.all(rows.filter(isMarkedDown).map(async (r) => [r.id, await lowestPrice30d(db, r.id)] as const)),
   );
   return rows.map((r) => toSummary(r, lowest.get(r.id) ?? null));
+}
+
+// Every listed machine with the diamond blades that fit it (related_products type 'accessory'),
+// for the cart reminder.
+export async function getMachineBlades(): Promise<MachineBlades<ProductSummary>[]> {
+  "use cache";
+  tagCatalog();
+  const [all, related] = await Promise.all([
+    getAllProducts(),
+    createPublicClient().from("related_products").select("product_id, related_id").eq("type", "accessory"),
+  ]);
+  if (related.error) fail("machine blades", related.error);
+  const byId = new Map(all.map((p) => [p.id, p]));
+  const fits = new Map<string, MachineBlades<ProductSummary>>();
+  for (const r of related.data as Row[]) {
+    const machine = byId.get(r.product_id);
+    const blade = byId.get(r.related_id);
+    if (!machine || !blade || blade.category.slug !== BLADE_CATEGORY || blade.priceOnRequest) continue;
+    const entry = fits.get(machine.slug) ?? {
+      slug: machine.slug,
+      name: machine.name,
+      bladeIncluded: bladeIncluded(machine.specs),
+      blades: [],
+    };
+    entry.blades.push(blade);
+    fits.set(machine.slug, entry);
+  }
+  return [...fits.values()];
 }
 
 export async function getCategoryProducts(slug: string): Promise<ProductSummary[]> {

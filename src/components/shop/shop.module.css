@@ -4699,3 +4699,19 @@ a.mapLink {
   min-height: 44px;
   font-size: 1rem;
 }
+.bladeReminders {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+.bladeReminders .picker {
+  border-left: 10px solid var(--hivis);
+}
+@media (min-width: 640px) {
+  .bladeReminders .pickerItem {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+  }
+  .bladeReminders .pickerBuy {
+    grid-column: auto;
+  }
+}

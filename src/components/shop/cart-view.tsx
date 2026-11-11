@@ -6,6 +6,7 @@ import { AlertTriangle, ArrowRight, Minus, Plus, ShoppingCart, Trash2, Truck } f
 import { MAX_QTY, removeFromCart, setQuantity } from "@/lib/cart-store";
 import { formatEur } from "@/lib/money";
 import { formatDeliveryDate } from "@/lib/format";
+import { BladeReminder } from "./blade-reminder";
 import { useHydrated, useQuote } from "./use-quote";
 import css from "./shop.module.css";
 
@@ -111,6 +112,7 @@ export function CartView() {
             );
           })}
         </ul>
+        <BladeReminder slugs={lines.map((l) => l.slug)} />
       </section>
 
       <aside className={css.summary} aria-labelledby="cart-summary-title">
