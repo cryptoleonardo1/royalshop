@@ -4,6 +4,7 @@ import type { ProductSummary } from "@/lib/catalog";
 import { buildListing, listingHref, listingHrefWithout, pagerPages, type SearchParams } from "@/lib/listing";
 import { ProductGrid } from "./product-card";
 import { FilterPanel, SortSelect } from "./filters";
+import { PageLink } from "./listing-nav";
 import css from "./shop.module.css";
 
 const plural = (n: number) => (n === 1 ? "produkt" : n >= 2 && n <= 4 ? "produkty" : "produktov");
@@ -52,9 +53,13 @@ export function ListingView({
     });
   }
   const clearHref = listingHref(basePath, {}, keepParams);
+  // page links go through PageLink: the view lands on the top of the listing, not on the top of the page
+  const pageHref = (n: number) => listingHref(basePath, searchParams, { strana: n > 1 ? String(n) : null });
+  const prevHref = filters.page > 1 ? pageHref(filters.page - 1) : null;
+  const nextHref = filters.page < pageCount ? pageHref(filters.page + 1) : null;
 
   return (
-    <div className={css.listing}>
+    <div className={css.listing} data-listing>
       <FilterPanel
         basePath={basePath}
         facets={facets}
@@ -71,6 +76,32 @@ export function ListingView({
           <p className={css.resultCount} aria-live="polite">
             <strong>{total}</strong> {plural(total)}
           </p>
+          {pageCount > 1 && (
+            <nav className={css.pagerTop} aria-label="Stránkovanie hore">
+              {prevHref ? (
+                <PageLink href={prevHref} aria-label="Predchádzajúca strana">
+                  <ArrowLeft size={18} aria-hidden="true" />
+                </PageLink>
+              ) : (
+                <span aria-hidden="true">
+                  <ArrowLeft size={18} />
+                </span>
+              )}
+              <p>
+                <span className={css.srOnly}>Strana </span>
+                <strong>{filters.page}</strong> / {pageCount}
+              </p>
+              {nextHref ? (
+                <PageLink href={nextHref} aria-label="Ďalšia strana">
+                  <ArrowRight size={18} aria-hidden="true" />
+                </PageLink>
+              ) : (
+                <span aria-hidden="true">
+                  <ArrowRight size={18} />
+                </span>
+              )}
+            </nav>
+          )}
           <SortSelect value={filters.sort} params={allParams} />
         </div>
 
@@ -112,14 +143,10 @@ export function ListingView({
 
         {pageCount > 1 && (
           <nav className={css.pager} aria-label="Stránkovanie">
-            {filters.page > 1 ? (
-              <Link
-                href={listingHref(basePath, searchParams, {
-                  strana: filters.page > 2 ? String(filters.page - 1) : null,
-                })}
-              >
+            {prevHref ? (
+              <PageLink href={prevHref}>
                 <ArrowLeft size={18} aria-hidden="true" /> Predchádzajúca
-              </Link>
+              </PageLink>
             ) : (
               <span />
             )}
@@ -131,21 +158,21 @@ export function ListingView({
                   </li>
                 ) : (
                   <li key={n}>
-                    <Link
-                      href={listingHref(basePath, searchParams, { strana: n > 1 ? String(n) : null })}
+                    <PageLink
+                      href={pageHref(n)}
                       aria-current={n === filters.page ? "page" : undefined}
                       aria-label={`Strana ${n}`}
                     >
                       {n}
-                    </Link>
+                    </PageLink>
                   </li>
                 ),
               )}
             </ol>
-            {filters.page < pageCount ? (
-              <Link href={listingHref(basePath, searchParams, { strana: String(filters.page + 1) })}>
+            {nextHref ? (
+              <PageLink href={nextHref}>
                 Ďalšia <ArrowRight size={18} aria-hidden="true" />
-              </Link>
+              </PageLink>
             ) : (
               <span />
             )}

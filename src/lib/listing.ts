@@ -17,7 +17,8 @@ export const SORTS = [
 ] as const;
 export type Sort = (typeof SORTS)[number]["value"];
 
-export const PAGE_SIZE = 24;
+// 12 = four rows of three (half the scrolling of 24) and full rows in the two-column layout too
+export const PAGE_SIZE = 12;
 
 const PLATFORM_SLUG: Record<BatteryPlatform, string> = {
   LXT_18V: "lxt",

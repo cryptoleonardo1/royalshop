@@ -2,7 +2,14 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCategories, getCategoryContext, getCategoryProducts, getShopSettings } from "@/lib/catalog";
+import {
+  getCategories,
+  getCategoryContext,
+  getCategoryProducts,
+  getNavCategories,
+  getShopSettings,
+} from "@/lib/catalog";
+import { CategoryZone } from "@/components/shop/category-zone";
 import { ListingSkeleton, ListingView } from "@/components/shop/listing-view";
 import { HondaEnginePriceList } from "@/components/shop/honda-engine-pricelist";
 import css from "@/components/shop/shop.module.css";
@@ -24,14 +31,16 @@ export async function generateMetadata({ params }: PageProps<"/kategoria/[slug]"
 
 async function CategoryHeader({ params }: Pick<PageProps<"/kategoria/[slug]">, "params">) {
   const { slug } = await params;
-  const ctx = await getCategoryContext(slug);
+  const [ctx, nav] = await Promise.all([getCategoryContext(slug), getNavCategories()]);
   // empty categories (e.g. only hidden brands) are not linked anywhere, so their URL is gone too
   if (!ctx || ctx.category.productCount === 0) notFound();
   const { category, ancestors, children, siblings } = ctx;
   const subnav = children.length > 0 ? children : siblings;
+  const rootSlug = ancestors[0]?.slug ?? category.slug;
 
   return (
     <header className={css.pageHead}>
+      <CategoryZone rootSlug={rootSlug} index={nav.findIndex((c) => c.slug === rootSlug) + 1} count={nav.length} />
       <nav aria-label="Omrvinky">
         <ol className={css.crumbs}>
           <li>
@@ -51,8 +60,10 @@ async function CategoryHeader({ params }: Pick<PageProps<"/kategoria/[slug]">, "
         <ul className={css.subcats} aria-label={children.length > 0 ? "Podkategórie" : "Súvisiace kategórie"}>
           {subnav.map((c) => (
             <li key={c.slug}>
+              {/* prefetch: the next subcategory is loaded ahead of the click, so switching shows no skeleton */}
               <Link
                 href={`/kategoria/${c.slug}`}
+                prefetch
                 className={css.subcat}
                 aria-current={c.slug === category.slug ? "page" : undefined}
               >

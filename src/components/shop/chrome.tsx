@@ -81,11 +81,13 @@ export async function ShopShell({ children }: { children: ReactNode }) {
           </nav>
         </div>
 
-        <nav aria-label="Kategórie" className={css.catNav}>
+        <nav aria-label="Kategórie" className={css.catNav} data-cat-nav>
           <ul className={css.wrap}>
             {categories.map((c) => (
               <li key={c.slug}>
-                <Link href={`/kategoria/${c.slug}`}>{c.name}</Link>
+                <Link href={`/kategoria/${c.slug}`} prefetch>
+                  {c.name}
+                </Link>
               </li>
             ))}
             {hasSale && (

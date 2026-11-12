@@ -380,6 +380,8 @@
 .catNav li:first-child a::after {
   left: 0;
 }
+/* [data-current]: the section of the page on screen (set by ActiveSection) */
+.catNav a[data-current]::after,
 .catNav a:not(.catNavHot):hover::after {
   transform: scaleX(1);
 }
@@ -2711,6 +2713,53 @@ a.engineCodeLink:hover {
   padding-bottom: clamp(20px, 3vw, 28px);
   border-bottom: 6px solid var(--ink);
 }
+/* category backdrop (CategoryZone): blueprint grid fading in from the right + a faint mark of the section */
+.pageHead:has(.zone) {
+  position: relative;
+  isolation: isolate;
+}
+.zone {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: min(52%, 560px);
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    linear-gradient(rgb(15 15 14 / 0.09) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgb(15 15 14 / 0.09) 1px, transparent 1px) 100% 0 / 24px 24px;
+  -webkit-mask-image: linear-gradient(to left, #000 20%, transparent);
+  mask-image: linear-gradient(to left, #000 20%, transparent);
+}
+.zoneIcon {
+  position: absolute;
+  right: clamp(12px, 3vw, 40px);
+  bottom: clamp(16px, 2.5vw, 28px);
+  width: clamp(110px, 17vw, 220px);
+  height: auto;
+  color: var(--ink);
+  opacity: 0.16;
+}
+.zoneTag {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  padding: 3px 7px 2px;
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border: 1px solid rgb(15 15 14 / 0.45);
+}
+@media (max-width: 639px) {
+  /* phones: the grid alone; the mark would sit behind the subcategory buttons */
+  .zoneTag,
+  .zoneIcon {
+    display: none;
+  }
+}
 .pageTitle {
   font-family: var(--f-display);
   font-variation-settings: "opsz" 72;
@@ -2773,6 +2822,10 @@ a.engineCodeLink:hover {
   display: grid;
   gap: 18px;
   align-items: start;
+}
+/* pager jumps here; the sticky header is already covered by scroll-padding-top in globals.css */
+.listing[data-listing] {
+  scroll-margin-top: 4px;
 }
 .listingMain {
   display: grid;
@@ -3116,6 +3169,34 @@ a.engineCodeLink:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+}
+.pagerTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  font-family: var(--f-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+}
+.pagerTop strong {
+  font-weight: 700;
+}
+.pagerTop a,
+.pagerTop > span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+}
+.pagerTop > span {
+  opacity: 0.3;
+}
+.pagerTop a:hover {
+  background: var(--ink);
+  color: var(--hivis);
 }
 .pagerGap {
   display: grid;
