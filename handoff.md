@@ -5,7 +5,7 @@
 ## Current State
 
 - **Phase:** Demo build -- storefront live on https://royalshop.vercel.app, admin at `/admin`, customer portal at `/ucet`. **Strategy changed 2026-11-12: full-range shop (1000+ items) instead of "premium machines >= 800 EUR, no cordless".** Shown brands (`SHOP_BRANDS` in `src/lib/shop-brands.ts`): Gölz (12 machines + 9 blades) and Makita (888 machines, 754 in stock) = 909 products. Consumers send a non-binding reservation (no payment), companies pay at checkout; no discounts. Stripe test mode. No emails yet. Invoices + credit notes live since session 15.
-- **Session count:** 16
+- **Session count:** 17
 - **Decisions:** (2026-10-23) admin console lives in THIS repo at `/admin`, separate from RCC; only crm_core's invoice PDF/PAY by square, layout and reports get ported. Domains: shop `shop.royalstroje.sk`, admin `admin.shop.royalstroje.sk` (`ADMIN_HOST`). Plan: `docs/07-admin-konzola-plan.md`. Weight shipping bands (9,90 / 49 / 89 / 149) accepted until the founder says otherwise. 800 EUR minimum is a guideline only. (2026-11-03) No discounts at launch: prices exactly as the Gölz catalogue (ferrotech.sk sells the same Gölz saws at list -5 %; matching is the founder's call, depends on our real purchase price).
 - **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy. Benji (Mind Palace vault) also commits here (e.g. d9c4c72) -- fetch before work.
 - **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby; Pro needed before go-live for the DPA). Repo MUST stay public (private = every deploy fails "Git author must have access"). Check with `gh api repos/cryptoleonardo1/royalshop/commits/<sha>/statuses --jq '.[0]'`. Local Vercel CLI and Supabase CLI are different accounts -- use web UIs.
@@ -29,14 +29,6 @@
 - **Entity question (open):** shop under Royal stroje s. r. o. or a new s.r.o. (Royal stroje has a 49 % investor not involved in the shop). Agent recommended a new s.r.o. if owners differ (a separate bank account separates neither profit nor liability; SEO is not tied to the entity; Makita authorisation and VAT registration need checking). User discusses with Peter.
 - **Seed guard:** `seed_reset()` checks `company_settings.is_demo`. Set `is_demo = false` before real orders.
 
-## What Was Done (Session 15) -- Invoices + credit notes, reservation expiry prepared (2026-11-10)
-
-- Printed contract/protocol reviewed by the user, pushed (ca728dc). Invoices module (dev task 12) built, migration applied by the user, deployed 0d45129; user tested it on prod: works.
-- Migration 20261110000001: cancelled invoices locked, issue checks lines/totals, DUZP from paid_at, credit-note VS = invoice VS, `hotovost` method, one live invoice per order.
-- Admin: "Faktúry a dobropisy" panel on order detail (PDF link, manual "Vystaviť faktúru", "Vytvoriť PDF" retry), `/admin/faktury` month list with totals. Customer: PDF links on order page/portal via `/objednavka/<nr>/doklad/<id>?t=<token>`.
-- Dev task 13: reservation expiry (10 working days, sk-calendar keeps 1. 9. / 17. 11. as holidays = conservative) built and tested, then user decided manual cancel for now -> cron left unscheduled (0bc20d5).
-- 74 unit tests, tsc + eslint clean. Gotchas: after `npm run build` the local dev server looped on reload -> delete `.next` and restart dev; Docker Desktop had stopped (restart it); "⚠ ./" dev warnings are the Big Shoulders font, harmless; Playwright on Windows needs PYTHONIOENCODING=utf-8 for Slovak output.
-
 ## What Was Done (Session 16) -- Cart blade reminder, strategy change, 888 Makita machines live (2026-11-10/12)
 
 - Dev task 14 shipped (4420b87): blade picker under the cart lines when a saw has no fitting blade in the cart (not for machines with a blade in the box). User tested sessions 14-15 on prod end to end: no bugs.
@@ -46,15 +38,25 @@
 - Task 15 (switch brands per supplier answers) not done: no answers from Unicon / Honda yet.
 - Gotchas: after a Docker Desktop restart Windows reserved ports 56327-56426 (local Supabase 5642x) -> `supabase start` fails with "ports are not available"; fix = admin shell `net stop winnat; net start winnat` or reboot (this session ran the stack temporarily on 5542x, reverted). Do not run `prettier --write` with defaults (repo is formatted at 120 columns, no config). File IO was very slow while Docker was starting.
 
+## What Was Done (Session 17) -- Catalog UX: 12 per page, instant category switching, section backdrop, Makita featured (2026-11-12)
+
+- Listing: 3 cards per row at 1920 px again (root cause: a pager listing every page widened the grid track; now `minmax(0, 1fr)` + short pager `pagerPages()`), 12 per page (`PAGE_SIZE`), small pager on top, card title hover = hi-vis rule under the title. Deployed 306cefb, 7d670d8.
+- Category switching without the skeleton: `<Link prefetch>` on menu + subcategory links (Cache Components + `partialPrefetching`). Only visible in a production build (`npm run build` + `npx next start -p 3123` with `.env.hosted.local` sourced), not in dev.
+- `CategoryZone` (blueprint grid + line icon + "Sekcia NN / NN") in the category page head; icons per root slug in `ZONE_ICONS`. Current menu item underlined via `ActiveSection` (effect sets `data-current`).
+- Featured = TW001GU201, DUC254Z, DHG180ZK (17bd16d). The list lives in TWO places: `FEATURED` in `scripts/import-makita.ts` (the import overwrites `is_featured` for Makita) and `is_featured` in `catalog.json` for the rest. Hosted flags switched by the agent with the user's OK (`supabase/snippets/2026-11-12-featured-makita.sql`). Five hidden-brand machines (NTC, Bomag, 2x Honda, Enar) are still featured and reappear when their brands are switched on.
+- Product page links a royalstroje.sk article per product: `src/lib/product-articles.ts`. The TW001G review covers set TW001GM201 (not in our catalog) and says 2050 Nm; our description says 2000 Nm -- verify with Makita data.
+- Last commit (NOT pushed): header menu rows start flush with the logo when the menu wraps (gap moved to the right of each link); `/produkty` lede no longer claims a test run.
+- Gotchas: Next keeps visited pages hidden in the DOM (Activity) -> a page-rendered `<style>` or a duplicate `id` from a hidden page still applies; use effects (cleaned up when hidden) and no ids. Global `scroll-padding-top: 160px` adds to any `scroll-margin-top`. `npm test` fails in every file from a lower-case `c:\` cwd -> run from `C:\...` (agent memory). A stopped `next start` can leave node on port 3123 -> `netstat -ano`, `taskkill /PID <pid> /T /F`. The agent's first hosted update also un-featured the 5 hidden machines (restored at once): scope hosted SQL by slug.
+
 ## What To Do Next
 
 | # | Priority | Task |
 |---|----------|------|
 | 1 | High | Peter (user): before the CEG meeting 2026-11-20 ask CEG for the API key/docs, a sample export, our price list, reseller terms, importer per brand. Decide the entity (Royal stroje vs new s.r.o.) before signing with CEG. Still open: sales mode, Gölz e-mail, IBAN+SWIFT, shop@royalstroje.sk, lawyer, accountant. |
 | 2 | High | Makita, ask Peter/Makita: consent to use makita.sk photos and texts (they are live on the demo now), regular dealer price list or discount from MOC (then fill `product_costs`), weights, where the daily export comes from (URL/login -> automate the stock + price sync; today it is a manual 3-step run). |
-| 3 | High | Storefront copy no longer fits the full range: home hero ("Prémiové stroje", "každý stroj odskúšame"), delivery texts "vrátane testu pred odoslaním" on product page/cart, "Odskúšanie pred kúpou" box. Card QC mark and the test note are already off for Makita (`isTestedBeforeDispatch`). Rework the home page for a multi-brand tool shop. |
+| 3 | High | Storefront copy no longer fits the full range: home hero ("Prémiové stroje", "každý stroj odskúšame"), delivery texts "vrátane testu pred odoslaním" on product page/cart, "Odskúšanie pred kúpou" box. Card QC mark and the test note are already off for Makita (`isTestedBeforeDispatch`). Rework the home page for a multi-brand tool shop (the home "Odskúšané pred odoslaním" tile in `src/app/(shop)/page.tsx` is a business claim: ask Peter what stays true for boxed tools). |
 | 4 | High | Checkout for cheap items: consumers should pay online at once for boxed tools (reservation + phone call only makes sense for machines); add Packeta/Z-BOX. Needs a rule per product or price, and the VOP/legal texts updated (`LEGAL_VERSION`). |
-| 5 | Medium | Catalog UX for 900+ products: "len skladom" filter, sort by stock, 68 machines without weight are priced in the heaviest shipping band (149 EUR), 18 machines have no photo (no makita.sk page), a few odd categories (TW0350/TW1000 impact wrenches sit in "Skrutkovače"). Then Makita accessories (5 025) with machine links, spare parts later. |
+| 5 | Medium | Push the last local commit (menu alignment + lede) when the user says so. Catalog UX for 900+ products (offered in session 17, not requested yet): "len skladom" filter, sort by stock, lower cards, collapse long/empty filter groups, section mark on the product page; 68 machines without weight are priced in the heaviest shipping band (149 EUR), 18 machines have no photo (no makita.sk page), a few odd categories (TW0350/TW1000 impact wrenches sit in "Skrutkovače"). Then Makita accessories (5 025) with machine links, spare parts later. |
 | 6 | Medium | Resend once shop@ exists: order/reservation e-mails (poučenie on a durable medium), invoice PDF, withdrawal confirmation, Supabase Auth SMTP. Dev task 15 when supplier answers arrive. |
 | 7 | High | Pre-launch: Vercel Pro (DPA + image optimization quota: ~1 900 remote photos now go through next/image), reset `document_counters` + demo data (`is_demo = false`), GPSR data per product (the Makita brand row lists Makita s. r. o. SK as the manufacturer contact: verify), SK manuals, accountant, domain + `ADMIN_HOST` last. |
 
@@ -66,10 +68,10 @@
 | `docs/05-sortiment-stroje.md` | Assortment and suppliers; Makita import pipeline and what is missing |
 | `scripts/makita-catalog.py` / `scripts/import-makita.ts` | Makita export + makita.sk -> `supabase/seed-data/makita.json` -> database + Storage |
 | `src/lib/catalog.ts` / `src/lib/product-image.ts` | Public catalog reads (paged, cached), nav categories, photo URLs |
+| `src/components/shop/listing-view.tsx` / `listing-nav.tsx` / `category-zone.tsx` | Listing + pagers, scroll-to-listing links, section backdrop + current menu item |
 | `src/lib/shop-brands.ts` / `src/lib/accessories.ts` | Brands shown; accessory rules, blade reminder, `isTestedBeforeDispatch` |
 | `src/lib/checkout-actions.ts` / `src/lib/orders.ts` | Reservation vs payment at checkout; server pricing (drops out-of-stock) |
 | `docs/08-rizika-vratenia-reklamacie.md` / `docs/06-pravne-stranky.md` | Return/claim risks + reservation rules; legal decisions |
-| `src/lib/order-state.ts` / `src/lib/admin/order-actions.ts` | Order transitions; admin steps incl. on-premises payment |
 | `src/lib/invoices/` | Invoice/credit-note build, PDF render, issue + storage |
 | `supabase/seed-data/catalog.json` | Catalog source for Gölz etc. + the category tree, Makita brand/supplier rows |
 
@@ -77,7 +79,6 @@
 
 | Session | Date | Title |
 |---------|------|-------|
-| 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
 | 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |
 | 10 | 2026-11-03 | Gölz + Honda only, trademark guideline, customer portal |
@@ -87,3 +88,4 @@
 | 14 | 2026-11-10 | Peter tasklist, OZV research, supplier strategy, printed shop documents |
 | 15 | 2026-11-10 | Invoices + credit notes (PDF), reservation expiry prepared (manual cancel) |
 | 16 | 2026-11-12 | Cart blade reminder, strategy change to full range, 888 Makita machines live |
+| 17 | 2026-11-12 | Catalog UX: 12 per page, instant category switching, section backdrop, Makita featured |

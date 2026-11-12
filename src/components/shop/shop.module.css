@@ -350,7 +350,8 @@
 .catNav a {
   position: relative;
   display: block;
-  padding: 12px 14px;
+  /* the gap sits on the right only, so every wrapped row starts flush with the logo */
+  padding: 12px 28px 12px 0;
   font-family: var(--f-display);
   font-variation-settings: "opsz" 36;
   font-weight: 700;
@@ -365,20 +366,14 @@
 .catNav a:not(.catNavHot)::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
+  left: 0;
+  right: 28px;
   bottom: 6px;
   height: 3px;
   background: var(--hivis);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s var(--ease);
-}
-.catNav li:first-child a {
-  padding-left: 0;
-}
-.catNav li:first-child a::after {
-  left: 0;
 }
 /* [data-current]: the section of the page on screen (set by ActiveSection) */
 .catNav a[data-current]::after,
@@ -387,7 +382,7 @@
 }
 .catNav .catNavHot {
   margin-block: 6px;
-  padding-block: 6px;
+  padding: 6px 14px;
   background: var(--hivis);
   border: 2px solid var(--ink);
 }

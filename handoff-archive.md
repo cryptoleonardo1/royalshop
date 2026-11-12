@@ -4,9 +4,18 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 15) -- Invoices + credit notes, reservation expiry prepared (2026-11-10)
+
+- Printed contract/protocol reviewed by the user, pushed (ca728dc). Invoices module (dev task 12) built, migration applied by the user, deployed 0d45129; user tested it on prod: works.
+- Migration 20261110000001: cancelled invoices locked, issue checks lines/totals, DUZP from paid_at, credit-note VS = invoice VS, `hotovost` method, one live invoice per order.
+- Admin: "Faktúry a dobropisy" panel on order detail (PDF link, manual "Vystaviť faktúru", "Vytvoriť PDF" retry), `/admin/faktury` month list with totals. Customer: PDF links on order page/portal via `/objednavka/<nr>/doklad/<id>?t=<token>`.
+- Dev task 13: reservation expiry (10 working days, sk-calendar keeps 1. 9. / 17. 11. as holidays = conservative) built and tested, then user decided manual cancel for now -> cron left unscheduled (0bc20d5).
+- 74 unit tests, tsc + eslint clean. Gotchas: after `npm run build` the local dev server looped on reload -> delete `.next` and restart dev; Docker Desktop had stopped (restart it); "⚠ ./" dev warnings are the Big Shoulders font, harmless; Playwright on Windows needs PYTHONIOENCODING=utf-8 for Slovak output.
 
 ## What Was Done (Session 14) -- Peter tasklist, OZV research, supplier strategy, printed shop documents (2026-11-09/10)
 
