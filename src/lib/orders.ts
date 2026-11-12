@@ -2,6 +2,7 @@ import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { canTransition, type OrderStatus, type ShippingMethod } from "./order-state";
 import type { PricedProduct } from "./cart-pricing";
+import { productImageUrl } from "./product-image";
 import { isShopBrand } from "./shop-brands";
 import { stripe } from "./stripe";
 
@@ -136,7 +137,8 @@ export async function recordRefund(
 }
 
 // Current prices straight from the database (not the page cache): this is what an order is charged.
-// Price-on-request products and hidden brands are left out, so a cart line for one is reported as no longer sold.
+// Price-on-request products, hidden brands and products out of stock at the supplier are left out, so a cart
+// line for one is reported as no longer available.
 export async function fetchPricedProducts(
   db: Db,
   slugs: string[],
@@ -154,7 +156,9 @@ export async function fetchPricedProducts(
     )
     .in("slug", slugs.slice(0, 100))
     .eq("status", "active")
-    .eq("price_on_request", false);
+    .eq("price_on_request", false)
+    // not in stock at the supplier = cannot be ordered (null: the supplier does not report stock)
+    .or("in_stock.is.null,in_stock.eq.true");
   if (error) throw new Error(`Pricing failed: ${error.message}`);
   /* eslint-disable @typescript-eslint/no-explicit-any */
   for (const r of data as any[]) {
@@ -173,7 +177,7 @@ export async function fetchPricedProducts(
       weightKg: r.weight_kg == null ? null : Number(r.weight_kg),
       leadDaysMax: r.supplier?.lead_time_days_max ?? 2,
       supplierId: r.supplier_id,
-      image: images[0]?.path ?? null,
+      image: images[0] ? productImageUrl(images[0].path) : null,
       purchaseNetCents: cost?.purchase_price_net_cents ?? null,
     });
   }

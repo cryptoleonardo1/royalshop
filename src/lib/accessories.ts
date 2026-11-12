@@ -5,6 +5,12 @@ const ACCESSORY_CATEGORIES = new Set([BLADE_CATEGORY, "prislusenstvo"]);
 
 export const isAccessory = (p: { category: { slug: string } }): boolean => ACCESSORY_CATEGORIES.has(p.category.slug);
 
+// Brands sold as sealed boxed tools: we do not run them before dispatch, so they carry no "otestované" promise.
+const BOXED_BRANDS = new Set(["makita"]);
+
+export const isTestedBeforeDispatch = (p: { category: { slug: string }; brand: { slug: string } }): boolean =>
+  !isAccessory(p) && !BOXED_BRANDS.has(p.brand.slug);
+
 // Blades that fit one machine (related_products type 'accessory'), for the cart reminder.
 export interface MachineBlades<T extends { slug: string }> {
   slug: string;

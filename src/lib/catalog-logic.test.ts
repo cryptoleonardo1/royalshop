@@ -12,6 +12,7 @@ function product(over: Partial<ProductSummary> & { slug: string }): ProductSumma
     priceGrossCents: 10000,
     compareAtPriceCents: null,
     priceOnRequest: false,
+    inStock: null,
     lowestPrice30dCents: null,
     vatRate: 23,
     batteryPlatform: "none",

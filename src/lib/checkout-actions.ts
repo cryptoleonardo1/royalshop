@@ -52,7 +52,7 @@ export async function placeOrder(_prev: PlaceOrderState, form: FormData): Promis
 
   const { quote, products } = await quoteFor(input.lines, input.shippingMethod);
   if (quote.missing.length > 0 || quote.lines.length === 0) {
-    return { message: "Niektoré produkty v košíku už nepredávame. Vráťte sa do košíka a skontrolujte ho." };
+    return { message: "Niektoré produkty v košíku už nepredávame alebo nie sú skladom. Vráťte sa do košíka a skontrolujte ho." };
   }
   if (quote.method !== input.shippingMethod) {
     return { errors: { shippingMethod: "Tento spôsob dopravy nie je pre váš košík dostupný." } };

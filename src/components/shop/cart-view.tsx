@@ -23,7 +23,7 @@ export function CartView() {
       <div className={css.empty}>
         <ShoppingCart size={40} aria-hidden="true" />
         <p className={css.emptyTitle}>Košík je prázdny</p>
-        {removed.length > 0 && <p>Odstránili sme produkty, ktoré už nepredávame: {removed.join(", ")}.</p>}
+        {removed.length > 0 && <p>Odstránili sme produkty, ktoré už nepredávame alebo nie sú skladom: {removed.join(", ")}.</p>}
         <Link href="/produkty" className={css.btnPrimary}>
           Prezrieť sortiment <ArrowRight size={20} aria-hidden="true" />
         </Link>
@@ -45,7 +45,7 @@ export function CartView() {
         </h2>
         {removed.length > 0 && (
           <p className={css.notice}>
-            <AlertTriangle size={18} aria-hidden="true" /> Odstránili sme produkty, ktoré už nepredávame:{" "}
+            <AlertTriangle size={18} aria-hidden="true" /> Odstránili sme produkty, ktoré už nepredávame alebo nie sú skladom:{" "}
             {removed.join(", ")}.
           </p>
         )}

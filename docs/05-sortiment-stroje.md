@@ -90,6 +90,16 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 | Príslušenstvo | NTC Podvozok pre vibračné dosky VD 350 a VD 450 | 184,55 € | 120 € | áno |
 
 
+## Makita (od 12. 11. 2026)
+
+Royal stroje je autorizovaný predajca Makita a tovar berie priamo. Stroje sa neudržiavajú ručne v `catalog.json`, ale importujú sa:
+
+1. `docs/cenniky/MakitaTovary.xlsx` (denný export Makity, v gite nie je): kód, EAN, názov, odporúčaná cena s DPH, skladom áno/nie, skupina (M = stroje, A = príslušenstvo, P = náhradné diely).
+2. `python scripts/makita-catalog.py`: vyberie živé stroje (M, okrem „Nevyrába sa“), spáruje ich podľa kódu so stránkami makita.sk a doplní fotky, parametre, popis, hmotnosť a návod. Výstup: `supabase/seed-data/makita.json` a fotky v `originals/makita/img`.
+3. `npx tsx scripts/import-makita.ts`: zapíše produkty do databázy a fotky do úložiska `product-images` (dá sa spúšťať opakovane; produkty, ktoré z exportu vypadli, archivuje).
+
+Stav 12. 11. 2026: 888 strojov, z toho 870 spárovaných s makita.sk, 754 skladom. Predajná cena = odporúčaná cena Makity. Chýba: nákupné ceny (zľava z odporúčanej ceny), súhlas Makity s použitím fotiek a textov, 18 strojov bez stránky na makita.sk (bez fotky), 68 bez hmotnosti (doprava sa im počíta v najvyššom pásme). Príslušenstvo (5 025) a náhradné diely (24 225) zatiaľ importované nie sú.
+
 ## Kompletný cenník motorov Honda (stránka Motory)
 
 - Pod produktmi v kategórii Motory je tabuľka všetkých 181 variantov z cenníka motorov Honda (platí 1. 10. – 31. 12. 2026), cena = odporúčaná koncová cena s DPH (rovnaký prepočet ako zošit). Varianty mimo ponuky sa dopytujú e-mailom, 5 variantov v ponuke odkazuje na produkt.

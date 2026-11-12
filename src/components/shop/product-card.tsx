@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BatteryCharging, Check, Truck } from "lucide-react";
-import { isAccessory } from "@/lib/accessories";
+import { isTestedBeforeDispatch } from "@/lib/accessories";
 import type { ProductSummary } from "@/lib/catalog";
 import { discountPct, referencePrice } from "@/lib/pricing";
 import { formatEur, netFromGross } from "@/lib/money";
@@ -58,7 +58,7 @@ export function ProductCard({
             <span className={css.tapeHi}>Odporúčame</span>
           ) : null}
         </span>
-        {!isAccessory(p) && (
+        {isTestedBeforeDispatch(p) && (
           <span className={css.qcMark} title="Otestované pred odoslaním">
             <Check size={14} strokeWidth={3} aria-hidden="true" /> QC
           </span>
@@ -100,11 +100,18 @@ export function ProductCard({
           </dl>
         )}
 
-        <p className={css.lead}>
-          <Truck size={16} aria-hidden="true" />
-          {p.shippingClass === "pickup_only" ? "Osobný odber · " : "Doručenie "}
-          {workDaysText(days.min, days.max)}
-        </p>
+        {p.inStock != null && (
+          <p className={css.stock} data-out={!p.inStock || undefined}>
+            {p.inStock ? "Skladom" : "Nie je skladom"}
+          </p>
+        )}
+        {p.inStock !== false && (
+          <p className={css.lead}>
+            <Truck size={16} aria-hidden="true" />
+            {p.shippingClass === "pickup_only" ? "Osobný odber · " : "Doručenie "}
+            {workDaysText(days.min, days.max)}
+          </p>
+        )}
 
         {p.priceOnRequest ? (
           <>
@@ -130,15 +137,21 @@ export function ProductCard({
               <p className={css.priceNet}>{formatEur(netFromGross(p.priceGrossCents, p.vatRate))} bez DPH</p>
             </div>
 
-            <AddToCartButton
-              item={{
-                slug: p.slug,
-                name: p.name,
-                sku: p.sku,
-                priceGrossCents: p.priceGrossCents,
-                image: p.image?.path ?? null,
-              }}
-            />
+            {p.inStock === false ? (
+              <Link href={href} className={css.addBtn} data-quiet>
+                Zobraziť detail <span className={css.srOnly}>: {p.name}</span>
+              </Link>
+            ) : (
+              <AddToCartButton
+                item={{
+                  slug: p.slug,
+                  name: p.name,
+                  sku: p.sku,
+                  priceGrossCents: p.priceGrossCents,
+                  image: p.image?.path ?? null,
+                }}
+              />
+            )}
           </>
         )}
       </div>

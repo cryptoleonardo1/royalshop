@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { bladeIncluded, bladeReminders, type MachineBlades } from "./accessories";
+import { bladeIncluded, bladeReminders, isTestedBeforeDispatch, type MachineBlades } from "./accessories";
+import { productImageUrl } from "./product-image";
 
 const fits: MachineBlades<{ slug: string }>[] = [
   { slug: "ms400", name: "MS400", bladeIncluded: false, blades: [{ slug: "rx1s" }, { slug: "lb20" }] },
@@ -33,5 +34,23 @@ describe("bladeIncluded", () => {
     expect(bladeIncluded([{ key: "blade_included", value: "áno (SLF10 Ø 250 mm)" }])).toBe(true);
     expect(bladeIncluded([{ key: "blade_included", value: "nie" }])).toBe(false);
     expect(bladeIncluded([])).toBe(false);
+  });
+});
+
+describe("isTestedBeforeDispatch", () => {
+  const p = (category: string, brand: string) => ({ category: { slug: category }, brand: { slug: brand } });
+  it("machines are tested, accessories and boxed tool brands are not", () => {
+    expect(isTestedBeforeDispatch(p("stolove-pily", "golz"))).toBe(true);
+    expect(isTestedBeforeDispatch(p("diamantove-kotuce", "golz"))).toBe(false);
+    expect(isTestedBeforeDispatch(p("kladiva", "makita"))).toBe(false);
+  });
+});
+
+describe("productImageUrl", () => {
+  it("keeps public files and absolute URLs, resolves bucket paths", () => {
+    process.env.NEXT_PUBLIC_SUPABASE_URL = "https://x.supabase.co";
+    expect(productImageUrl("/demo-products/a.webp")).toBe("/demo-products/a.webp");
+    expect(productImageUrl("https://cdn.test/a.webp")).toBe("https://cdn.test/a.webp");
+    expect(productImageUrl("makita/a-1.webp")).toBe("https://x.supabase.co/storage/v1/object/public/product-images/makita/a-1.webp");
   });
 });

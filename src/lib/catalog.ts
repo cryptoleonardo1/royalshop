@@ -3,6 +3,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { createPublicClient } from "@/lib/supabase/admin";
 import { foldText } from "@/lib/format";
 import { discountPct } from "@/lib/pricing";
+import { productImageUrl } from "@/lib/product-image";
 import { isShopBrand } from "@/lib/shop-brands";
 import { DEFAULT_SHIPPING_RATES, type ShippingRate } from "@/lib/shipping";
 import { BLADE_CATEGORY, bladeIncluded, type MachineBlades } from "@/lib/accessories";
@@ -42,6 +43,8 @@ export interface ProductSummary {
   compareAtPriceCents: number | null;
   // "Cena na požiadanie": price is hidden and the product cannot be bought online.
   priceOnRequest: boolean;
+  // Supplier stock: false = not in stock, cannot be ordered; null = the supplier does not report stock.
+  inStock: boolean | null;
   vatRate: number;
   batteryPlatform: BatteryPlatform;
   isKit: boolean;
@@ -71,7 +74,12 @@ export interface ProductDetail extends ProductSummary {
   seoDescription: string | null;
   images: { path: string; alt: string | null }[];
   documents: { type: string; title: string; path: string }[];
-  manufacturer: { name: string | null; address: string | null; email: string | null; website: string | null };
+  manufacturer: {
+    name: string | null;
+    address: string | null;
+    email: string | null;
+    website: string | null;
+  };
   batteries: ProductSummary[];
   // add-ons offered next to the buy box (e.g. diamond blades that fit this machine)
   accessories: ProductSummary[];
@@ -96,7 +104,7 @@ export interface ShopSettings {
 }
 
 const SUMMARY_SELECT = `
-  id, slug, name, sku, price_gross_cents, compare_at_price_cents, price_on_request, vat_rate, battery_platform, is_kit,
+  id, slug, name, sku, price_gross_cents, compare_at_price_cents, price_on_request, in_stock, vat_rate, battery_platform, is_kit,
   shipping_class, is_featured, created_at,
   brand:brands(slug, name),
   category:categories(slug, name),
@@ -129,6 +137,7 @@ function toSummary(r: Row, lowestPrice30dCents: number | null = null): ProductSu
     priceGrossCents: r.price_gross_cents,
     compareAtPriceCents: r.compare_at_price_cents,
     priceOnRequest: r.price_on_request ?? false,
+    inStock: r.in_stock ?? null,
     vatRate: Number(r.vat_rate),
     batteryPlatform: r.battery_platform,
     isKit: r.is_kit,
@@ -137,8 +146,11 @@ function toSummary(r: Row, lowestPrice30dCents: number | null = null): ProductSu
     createdAt: r.created_at,
     brand: { slug: r.brand?.slug ?? "", name: r.brand?.name ?? "" },
     category: { slug: r.category?.slug ?? "", name: r.category?.name ?? "" },
-    leadDays: { min: r.supplier?.lead_time_days_min ?? 2, max: r.supplier?.lead_time_days_max ?? 2 },
-    image: images[0] ? { path: images[0].path, alt: images[0].alt } : null,
+    leadDays: {
+      min: r.supplier?.lead_time_days_min ?? 2,
+      max: r.supplier?.lead_time_days_max ?? 2,
+    },
+    image: images[0] ? { path: productImageUrl(images[0].path), alt: images[0].alt } : null,
     specs: [...(r.specs ?? [])].sort(bySort).map((s: Row) => ({
       key: s.key,
       label: s.label,
@@ -153,13 +165,32 @@ function toSummary(r: Row, lowestPrice30dCents: number | null = null): ProductSu
 const isMarkedDown = (r: Row) => r.compare_at_price_cents != null && r.compare_at_price_cents > r.price_gross_cents;
 
 async function lowestPrice30d(db: ReturnType<typeof createPublicClient>, productId: string): Promise<number | null> {
-  const { data, error } = await db.rpc("lowest_price_30d", { p_product_id: productId });
+  const { data, error } = await db.rpc("lowest_price_30d", {
+    p_product_id: productId,
+  });
   if (error) fail("lowest price", error);
   return data ?? null;
 }
 
 function fail(what: string, error: { message: string } | null): never {
   throw new Error(`catalog: ${what} failed${error ? `: ${error.message}` : ""}`);
+}
+
+// PostgREST returns at most 1000 rows per request; the catalog is larger than that.
+const PAGE_ROWS = 1000;
+
+async function allRows(
+  what: string,
+  page: (from: number, to: number) => PromiseLike<{ data: unknown; error: { message: string } | null }>,
+): Promise<Row[]> {
+  const rows: Row[] = [];
+  for (let from = 0; ; from += PAGE_ROWS) {
+    const { data, error } = await page(from, from + PAGE_ROWS - 1);
+    if (error) fail(what, error);
+    const batch = (data ?? []) as Row[];
+    rows.push(...batch);
+    if (batch.length < PAGE_ROWS) return rows;
+  }
 }
 
 function tagCatalog() {
@@ -175,13 +206,20 @@ export async function getCategories(): Promise<Category[]> {
   const db = createPublicClient();
   const [cats, prods] = await Promise.all([
     db.from("categories").select("id, parent_id, slug, name, description, sort_order").order("sort_order"),
-    db.from("products").select("category_id, brand:brands(slug)").eq("status", "active").eq("is_listed", true),
+    allRows("category counts", (from, to) =>
+      db
+        .from("products")
+        .select("category_id, brand:brands(slug)")
+        .eq("status", "active")
+        .eq("is_listed", true)
+        .order("id")
+        .range(from, to),
+    ),
   ]);
   if (cats.error) fail("categories", cats.error);
-  if (prods.error) fail("category counts", prods.error);
 
   const direct = new Map<string, number>();
-  for (const p of prods.data as Row[]) {
+  for (const p of prods) {
     if (isShopBrand(p.brand?.slug)) direct.set(p.category_id, (direct.get(p.category_id) ?? 0) + 1);
   }
 
@@ -250,22 +288,37 @@ export async function getCategoryContext(slug: string): Promise<CategoryContext 
 
 // ───────────────────────────── Product lists ─────────────────────────────
 
+const LIST_SPECS = 6;
+// read from list data by the cart blade reminder (getMachineBlades)
+const LIST_SPEC_KEYS = new Set(["blade_included"]);
+
 export async function getAllProducts(): Promise<ProductSummary[]> {
   "use cache";
   tagCatalog();
   const db = createPublicClient();
-  const { data, error } = await db
-    .from("products")
-    .select(SUMMARY_SELECT)
-    .eq("status", "active")
-    .eq("is_listed", true)
-    .order("name");
-  if (error) fail("products", error);
-  const rows = (data as Row[]).filter((r) => isShopBrand(r.brand?.slug));
+  const data = await allRows("products", (from, to) =>
+    db
+      .from("products")
+      .select(SUMMARY_SELECT)
+      .eq("status", "active")
+      .eq("is_listed", true)
+      .order("name")
+      .order("id")
+      .range(from, to),
+  );
+  const rows = data.filter((r) => isShopBrand(r.brand?.slug));
   const lowest = new Map(
     await Promise.all(rows.filter(isMarkedDown).map(async (r) => [r.id, await lowestPrice30d(db, r.id)] as const)),
   );
-  return rows.map((r) => toSummary(r, lowest.get(r.id) ?? null));
+  // Lists show a few specs per card and filter on the filterable ones; the full table stays on the product
+  // page. Trimming keeps this cache entry small with ~1000 products.
+  return rows.map((r) => {
+    const p = toSummary(r, lowest.get(r.id) ?? null);
+    return {
+      ...p,
+      specs: p.specs.filter((s, i) => i < LIST_SPECS || s.isFilterable || LIST_SPEC_KEYS.has(s.key)),
+    };
+  });
 }
 
 // Every listed machine with the diamond blades that fit it (related_products type 'accessory'),
@@ -340,7 +393,11 @@ export async function getBrands(): Promise<BrandSummary[]> {
   };
   const brands = new Map<string, { name: string; count: number; roots: Set<Category> }>();
   for (const p of all) {
-    const entry = brands.get(p.brand.slug) ?? { name: p.brand.name, count: 0, roots: new Set<Category>() };
+    const entry = brands.get(p.brand.slug) ?? {
+      name: p.brand.name,
+      count: 0,
+      roots: new Set<Category>(),
+    };
     entry.count++;
     const root = rootOf(p.category.slug);
     if (root) entry.roots.add(root);
@@ -377,7 +434,9 @@ export async function searchProducts(query: string, limit = 48): Promise<Product
     .select(SUMMARY_SELECT)
     .eq("status", "active")
     .eq("is_listed", true)
-    .textSearch("search_vector", words.map((w) => `${w}:*`).join(" & "), { config: "simple" })
+    .textSearch("search_vector", words.map((w) => `${w}:*`).join(" & "), {
+      config: "simple",
+    })
     .order("is_featured", { ascending: false })
     .order("name")
     .limit(limit);
@@ -411,7 +470,8 @@ export async function getProduct(slug: string): Promise<ProductDetail | null> {
   ]);
   if (related.error) fail("related products", related.error);
 
-  const relatedOf = (type: string) => new Set((related.data as Row[]).filter((x) => x.type === type).map((x) => x.related_id));
+  const relatedOf = (type: string) =>
+    new Set((related.data as Row[]).filter((x) => x.type === type).map((x) => x.related_id));
   const batteryIds = relatedOf("battery");
   const accessoryIds = relatedOf("accessory");
   const listed = batteryIds.size || accessoryIds.size ? await getAllProducts() : [];
@@ -430,7 +490,7 @@ export async function getProduct(slug: string): Promise<ProductDetail | null> {
     rentalUrl: r.rental_url,
     seoTitle: r.seo_title,
     seoDescription: r.seo_description,
-    images: [...(r.images ?? [])].sort(bySort).map((i: Row) => ({ path: i.path, alt: i.alt })),
+    images: [...(r.images ?? [])].sort(bySort).map((i: Row) => ({ path: productImageUrl(i.path), alt: i.alt })),
     documents: r.documents ?? [],
     manufacturer: {
       name: r.brand_gpsr?.manufacturer_name ?? null,
@@ -462,7 +522,8 @@ export async function getShopSettings(): Promise<ShopSettings> {
     registerInfo: s.register_info ?? null,
     email: s.email ?? null,
     phone: s.phone ?? null,
-    shippingRates: Array.isArray(s.shipping_rates) && s.shipping_rates.length ? s.shipping_rates : DEFAULT_SHIPPING_RATES,
+    shippingRates:
+      Array.isArray(s.shipping_rates) && s.shipping_rates.length ? s.shipping_rates : DEFAULT_SHIPPING_RATES,
     freeShippingThresholdCents: s.free_shipping_threshold_cents ?? null,
     pickupAddress: s.pickup_address ?? null,
     pickupHours: s.pickup_hours ?? null,

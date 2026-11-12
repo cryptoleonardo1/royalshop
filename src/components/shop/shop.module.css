@@ -337,6 +337,16 @@
 .catNav li {
   flex-shrink: 0;
 }
+/* a full-range catalog has more top-level categories than fit one row: wrap on wide screens, scroll on phones */
+@media (min-width: 1024px) {
+  .catNav ul {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+  .catNav a {
+    padding-block: 9px;
+  }
+}
 .catNav a {
   position: relative;
   display: block;
@@ -982,6 +992,36 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--ink-2);
+}
+/* supplier stock (products.in_stock); nothing is shown when the supplier does not report it */
+.stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  justify-self: start;
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.stock::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border: 2px solid var(--ink);
+}
+.stock[data-out] {
+  color: var(--mute);
+}
+.stock[data-out]::before {
+  background: transparent;
+  border-color: var(--mute);
+}
+.addBtn[data-quiet] {
+  background: transparent;
 }
 .cardPrice {
   margin-top: auto;
@@ -3134,6 +3174,12 @@ a.engineCodeLink:hover {
   max-width: 72ch;
   font-size: 1.0625rem;
   line-height: 1.65;
+}
+.prose ul {
+  display: grid;
+  gap: 6px;
+  padding-left: 1.2em;
+  list-style: square;
 }
 .proseTitle {
   font-family: var(--f-display);

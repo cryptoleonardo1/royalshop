@@ -21,6 +21,17 @@
       "is_eu_import": true,
       "contact_email": "objednavky@goelz.test",
       "note": "Priamo od výrobcu. Dommersbach 51, 53940 Hellenthal, Nemecko. Ceny bez DPH podľa golzgroup.com, nákupná cena je zatiaľ odhad (marža 22 %)."
+    },
+    {
+      "slug": "makita",
+      "name": "Makita s. r. o.",
+      "country": "SK",
+      "lead_time_days_min": 1,
+      "lead_time_days_max": 3,
+      "default_margin_pct": null,
+      "is_eu_import": false,
+      "contact_email": null,
+      "note": "Royal stroje je autorizovaný predajca, tovar berieme priamo. Priemyselná 26, 974 01 Banská Bystrica. Stroje sa importujú z denného exportu MakitaTovary.xlsx (scripts/makita-catalog.py, scripts/import-makita.ts); nákupné ceny zatiaľ nemáme."
     }
   ],
   "brands": [
@@ -71,6 +82,14 @@
       "manufacturer_address": "Dommersbach 51, 53940 Hellenthal, Nemecko",
       "manufacturer_email": "info@goelz.de",
       "website": "https://www.golzgroup.com"
+    },
+    {
+      "slug": "makita",
+      "name": "Makita",
+      "manufacturer_name": "Makita s. r. o.",
+      "manufacturer_address": "Priemyselná 26, 974 01 Banská Bystrica, Slovensko",
+      "manufacturer_email": "info@makita.sk",
+      "website": "https://www.makita.sk"
     }
   ],
   "categories": [
@@ -189,9 +208,9 @@
     {
       "slug": "brusky-na-beton",
       "name": "Brúsky na betón",
-      "parent_slug": null,
+      "parent_slug": "brusky",
       "description": "Brúsky Gölz na brúsenie a leštenie betónu, poterov a kameňa a na odstraňovanie lepidiel a náterov.",
-      "sort_order": 6
+      "sort_order": 4
     },
     {
       "slug": "motory",
@@ -206,6 +225,273 @@
       "parent_slug": null,
       "description": "Tlmiace podložky, podvozky a ďalšie príslušenstvo k strojom z našej ponuky.",
       "sort_order": 8
+    },
+    {
+      "slug": "vrtacky-a-skrutkovace",
+      "name": "Vŕtačky a skrutkovače",
+      "parent_slug": null,
+      "description": "Akumulátorové a elektrické vŕtačky, skrutkovače a rázové uťahováky.",
+      "sort_order": 10
+    },
+    {
+      "slug": "vrtacie-skrutkovace",
+      "name": "Vŕtacie skrutkovače",
+      "parent_slug": "vrtacky-a-skrutkovace",
+      "sort_order": 1
+    },
+    {
+      "slug": "priklepove-skrutkovace",
+      "name": "Príklepové skrutkovače a vŕtačky",
+      "parent_slug": "vrtacky-a-skrutkovace",
+      "sort_order": 2
+    },
+    {
+      "slug": "razove-utahovaky",
+      "name": "Rázové uťahováky a skrutkovače",
+      "parent_slug": "vrtacky-a-skrutkovace",
+      "sort_order": 3
+    },
+    {
+      "slug": "skrutkovace",
+      "name": "Skrutkovače",
+      "parent_slug": "vrtacky-a-skrutkovace",
+      "sort_order": 4
+    },
+    {
+      "slug": "vrtacky",
+      "name": "Vŕtačky",
+      "parent_slug": "vrtacky-a-skrutkovace",
+      "sort_order": 5
+    },
+    {
+      "slug": "miesadla",
+      "name": "Miešadlá",
+      "parent_slug": "vrtacky-a-skrutkovace",
+      "sort_order": 6
+    },
+    {
+      "slug": "kladiva",
+      "name": "Kladivá",
+      "parent_slug": null,
+      "description": "Vŕtacie, kombinované a búracie kladivá SDS-Plus a SDS-Max.",
+      "sort_order": 11
+    },
+    {
+      "slug": "vrtacie-kladiva",
+      "name": "Vŕtacie a kombinované kladivá",
+      "parent_slug": "kladiva",
+      "sort_order": 1
+    },
+    {
+      "slug": "buracie-kladiva",
+      "name": "Búracie a sekacie kladivá",
+      "parent_slug": "kladiva",
+      "sort_order": 2
+    },
+    {
+      "slug": "brusky",
+      "name": "Brúsky",
+      "parent_slug": null,
+      "description": "Uhlové, vibračné, excentrické a pásové brúsky, leštičky a brúsky na betón.",
+      "sort_order": 12
+    },
+    {
+      "slug": "uhlove-brusky",
+      "name": "Uhlové brúsky",
+      "parent_slug": "brusky",
+      "sort_order": 1
+    },
+    {
+      "slug": "ostatne-brusky",
+      "name": "Vibračné, excentrické a pásové brúsky",
+      "parent_slug": "brusky",
+      "sort_order": 2
+    },
+    {
+      "slug": "lesticky",
+      "name": "Leštičky",
+      "parent_slug": "brusky",
+      "sort_order": 3
+    },
+    {
+      "slug": "pily",
+      "name": "Píly",
+      "parent_slug": null,
+      "description": "Okružné, pokosové, priamočiare a chvostové píly na drevo a stavebný materiál.",
+      "sort_order": 13
+    },
+    {
+      "slug": "okruzne-pily",
+      "name": "Okružné a ponorné píly",
+      "parent_slug": "pily",
+      "sort_order": 1
+    },
+    {
+      "slug": "pokosove-pily",
+      "name": "Pokosové a stolové píly na drevo",
+      "parent_slug": "pily",
+      "sort_order": 2
+    },
+    {
+      "slug": "priamociare-pily",
+      "name": "Priamočiare píly",
+      "parent_slug": "pily",
+      "sort_order": 3
+    },
+    {
+      "slug": "chvostove-pily",
+      "name": "Chvostové píly",
+      "parent_slug": "pily",
+      "sort_order": 4
+    },
+    {
+      "slug": "ostatne-pily",
+      "name": "Multi-tool a ostatné píly",
+      "parent_slug": "pily",
+      "sort_order": 5
+    },
+    {
+      "slug": "drazkovacie-frezy",
+      "name": "Drážkovacie frézy do muriva",
+      "parent_slug": "rezacia-technika",
+      "sort_order": 5
+    },
+    {
+      "slug": "rezanie-kovu",
+      "name": "Rezanie kovu",
+      "parent_slug": "rezacia-technika",
+      "sort_order": 6
+    },
+    {
+      "slug": "frezy-a-hobliky",
+      "name": "Frézy a hoblíky",
+      "parent_slug": null,
+      "description": "Horné a jednoručné frézy a hoblíky na drevo.",
+      "sort_order": 14
+    },
+    {
+      "slug": "frezy",
+      "name": "Frézy",
+      "parent_slug": "frezy-a-hobliky",
+      "sort_order": 1
+    },
+    {
+      "slug": "hobliky",
+      "name": "Hoblíky",
+      "parent_slug": "frezy-a-hobliky",
+      "sort_order": 2
+    },
+    {
+      "slug": "zahradna-technika",
+      "name": "Záhradná technika",
+      "parent_slug": null,
+      "description": "Kosačky, krovinorezy, plotostrihy, reťazové píly, dúchadlá a vysokotlakové čističe.",
+      "sort_order": 15
+    },
+    {
+      "slug": "kosacky",
+      "name": "Kosačky",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 1
+    },
+    {
+      "slug": "krovinorezy-a-vyzinace",
+      "name": "Krovinorezy a vyžínače",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 2
+    },
+    {
+      "slug": "plotostrihy",
+      "name": "Plotostrihy a nožnice",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 3
+    },
+    {
+      "slug": "retazove-pily",
+      "name": "Reťazové píly",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 4
+    },
+    {
+      "slug": "duchadla",
+      "name": "Dúchadlá",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 5
+    },
+    {
+      "slug": "vysokotlakove-cistice",
+      "name": "Vysokotlakové čističe",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 6
+    },
+    {
+      "slug": "ostatna-zahradna-technika",
+      "name": "Ostatná záhradná technika",
+      "parent_slug": "zahradna-technika",
+      "sort_order": 7
+    },
+    {
+      "slug": "vysavace",
+      "name": "Vysávače",
+      "parent_slug": null,
+      "description": "Akumulátorové a elektrické vysávače na stavbu aj do dielne.",
+      "sort_order": 16
+    },
+    {
+      "slug": "klincovacky-a-kompresory",
+      "name": "Klincovačky a kompresory",
+      "parent_slug": null,
+      "description": "Klincovačky, sponkovačky a kompresory.",
+      "sort_order": 17
+    },
+    {
+      "slug": "klincovacky",
+      "name": "Klincovačky a sponkovačky",
+      "parent_slug": "klincovacky-a-kompresory",
+      "sort_order": 1
+    },
+    {
+      "slug": "kompresory",
+      "name": "Kompresory",
+      "parent_slug": "klincovacky-a-kompresory",
+      "sort_order": 2
+    },
+    {
+      "slug": "ostatne-naradie",
+      "name": "Ostatné náradie",
+      "parent_slug": null,
+      "description": "Meracia technika, rádiá a svietidlá, teplovzdušné pištole, sady náradia a špeciálne stroje.",
+      "sort_order": 18
+    },
+    {
+      "slug": "meracia-technika",
+      "name": "Meracia technika",
+      "parent_slug": "ostatne-naradie",
+      "sort_order": 1
+    },
+    {
+      "slug": "radia-a-svietidla",
+      "name": "Rádiá, svietidlá a ventilátory",
+      "parent_slug": "ostatne-naradie",
+      "sort_order": 2
+    },
+    {
+      "slug": "teplovzdusne-pistole",
+      "name": "Teplovzdušné pištole",
+      "parent_slug": "ostatne-naradie",
+      "sort_order": 3
+    },
+    {
+      "slug": "sady-naradia",
+      "name": "Sady náradia",
+      "parent_slug": "ostatne-naradie",
+      "sort_order": 4
+    },
+    {
+      "slug": "specialne-naradie",
+      "name": "Špeciálne náradie",
+      "parent_slug": "ostatne-naradie",
+      "sort_order": 5
     }
   ],
   "products": [

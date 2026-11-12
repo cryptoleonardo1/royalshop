@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { connection } from "next/server";
-import { ArrowUpRight, BatteryCharging, Check, Factory, FileText, Mail, Phone, ShieldCheck, Store, Truck, Undo2 } from "lucide-react";
+import { AlertTriangle, ArrowUpRight, BatteryCharging, Check, Factory, FileText, Mail, Phone, ShieldCheck, Store, Truck, Undo2 } from "lucide-react";
 import {
   getCategoryContext,
   getProduct,
@@ -12,7 +12,7 @@ import {
   type ProductDetail,
   type ShopSettings,
 } from "@/lib/catalog";
-import { isAccessory } from "@/lib/accessories";
+import { isTestedBeforeDispatch } from "@/lib/accessories";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
 import { DELIVERY_MAX_WORKDAYS, returnCostEstimate } from "@/lib/legal";
 import { formatEur, netFromGross } from "@/lib/money";
@@ -46,19 +46,32 @@ function RichText({ text }: { text: string }) {
     .split(/\n{2,}/)
     .map((para) => para.trim())
     .filter(Boolean)
-    .map((para, i) => (
-      <p key={i}>
-        {para
-          .split(/(\*\*[^*]+\*\*)/g)
-          .map((part, j): ReactNode =>
-            part.startsWith("**") && part.endsWith("**") ? (
-              <strong key={j}>{part.slice(2, -2)}</strong>
-            ) : (
-              <Fragment key={j}>{part}</Fragment>
-            ),
-          )}
-      </p>
-    ));
+    .map((para, i) => {
+      const lines = para.split(/\n/);
+      // a paragraph of "- " lines is a bullet list (feature lists imported from supplier catalogues)
+      if (lines.every((l) => l.startsWith("- "))) {
+        return (
+          <ul key={i}>
+            {lines.map((l, j) => (
+              <li key={j}>{l.slice(2)}</li>
+            ))}
+          </ul>
+        );
+      }
+      return (
+        <p key={i}>
+          {para
+            .split(/(\*\*[^*]+\*\*)/g)
+            .map((part, j): ReactNode =>
+              part.startsWith("**") && part.endsWith("**") ? (
+                <strong key={j}>{part.slice(2, -2)}</strong>
+              ) : (
+                <Fragment key={j}>{part}</Fragment>
+              ),
+            )}
+        </p>
+      );
+    });
 }
 
 // Depends on today's date, so it renders per request inside its own Suspense boundary.
@@ -285,19 +298,36 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                 </div>
               )}
 
-              <Suspense fallback={<DeliveryFallback product={p} handlingDays={settings.handlingDays} />}>
-                <DeliveryEstimate product={p} settings={settings} />
-              </Suspense>
+              {p.inStock != null && (
+                <p className={css.stock} data-out={!p.inStock || undefined}>
+                  {p.inStock ? "Skladom" : "Nie je skladom"}
+                </p>
+              )}
+
+              {p.inStock !== false && (
+                <Suspense fallback={<DeliveryFallback product={p} handlingDays={settings.handlingDays} />}>
+                  <DeliveryEstimate product={p} settings={settings} />
+                </Suspense>
+              )}
 
               {p.priceOnRequest ? (
                 <PriceRequest product={p} phone={settings.phone} email={settings.email} />
+              ) : p.inStock === false ? (
+                <p className={css.notice}>
+                  <AlertTriangle size={18} aria-hidden="true" />
+                  <span>
+                    Tento produkt momentálne nie je skladom, preto ho nemožno objednať. Termín naskladnenia vám povieme
+                    {settings.phone ? ` na čísle ${settings.phone}` : " telefonicky"}
+                    {settings.email ? ` alebo e-mailom na ${settings.email}` : ""}.
+                  </span>
+                </p>
               ) : (
                 <BuyBox item={cartItem} />
               )}
 
               {p.accessories.length > 0 && <AccessoryPicker items={p.accessories} note={bladeNote(p)} />}
 
-              {!isAccessory(p) && (
+              {isTestedBeforeDispatch(p) && (
               <div className={`${css.testNote} ${css.dark}`}>
                 <span className={css.testStamp} aria-hidden="true">
                   <Check size={26} strokeWidth={3} />
