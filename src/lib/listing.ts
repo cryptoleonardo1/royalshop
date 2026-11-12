@@ -285,6 +285,15 @@ export function buildListing(products: ProductSummary[], sp: SearchParams, handl
   };
 }
 
+// Page numbers for the pager: always the first and the last page and the ones around the current page,
+// null = a gap ("…"). At most 7 slots, so the row has the same width on every page and never outgrows the layout.
+export function pagerPages(page: number, pageCount: number): (number | null)[] {
+  if (pageCount <= 7) return Array.from({ length: pageCount }, (_, i) => i + 1);
+  if (page <= 4) return [1, 2, 3, 4, 5, null, pageCount];
+  if (page >= pageCount - 3) return [1, null, ...Array.from({ length: 5 }, (_, i) => pageCount - 4 + i)];
+  return [1, null, page - 1, page, page + 1, null, pageCount];
+}
+
 // "Hmotnosť (EPTA)" → "Hmotnosť" so differently labelled weights read as one filter.
 function stripParens(label: string): string {
   return label.replace(/\s*\([^)]*\)\s*$/, "");

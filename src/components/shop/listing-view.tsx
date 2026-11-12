@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, SearchX, X } from "lucide-react";
 import type { ProductSummary } from "@/lib/catalog";
-import { buildListing, listingHref, listingHrefWithout, type SearchParams } from "@/lib/listing";
+import { buildListing, listingHref, listingHrefWithout, pagerPages, type SearchParams } from "@/lib/listing";
 import { ProductGrid } from "./product-card";
 import { FilterPanel, SortSelect } from "./filters";
 import css from "./shop.module.css";
@@ -124,16 +124,23 @@ export function ListingView({
               <span />
             )}
             <ol>
-              {Array.from({ length: pageCount }, (_, i) => i + 1).map((n) => (
-                <li key={n}>
-                  <Link
-                    href={listingHref(basePath, searchParams, { strana: n > 1 ? String(n) : null })}
-                    aria-current={n === filters.page ? "page" : undefined}
-                  >
-                    {n}
-                  </Link>
-                </li>
-              ))}
+              {pagerPages(filters.page, pageCount).map((n, i) =>
+                n == null ? (
+                  <li key={`gap-${i}`} className={css.pagerGap} aria-hidden="true">
+                    …
+                  </li>
+                ) : (
+                  <li key={n}>
+                    <Link
+                      href={listingHref(basePath, searchParams, { strana: n > 1 ? String(n) : null })}
+                      aria-current={n === filters.page ? "page" : undefined}
+                      aria-label={`Strana ${n}`}
+                    >
+                      {n}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ol>
             {filters.page < pageCount ? (
               <Link href={listingHref(basePath, searchParams, { strana: String(filters.page + 1) })}>

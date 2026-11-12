@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { ProductSummary } from "./catalog";
 import { deliveryDays, foldText, formatDeliveryDate, formatSpecValue, workDaysText } from "./format";
-import { buildListing, listingHref, listingHrefWithout, parseFilters } from "./listing";
+import { buildListing, listingHref, listingHrefWithout, pagerPages, parseFilters } from "./listing";
 import { discountPct, referencePrice } from "./pricing";
 
 function product(over: Partial<ProductSummary> & { slug: string }): ProductSummary {
@@ -156,5 +156,18 @@ describe("listing", () => {
     expect(listingHref("/produkty", sp, { strana: null, zoradit: "nazov" })).toBe(
       "/produkty?znacka=makita&znacka=ntc&zoradit=nazov",
     );
+  });
+
+  it("keeps the pager at 7 slots however many pages there are", () => {
+    expect(pagerPages(1, 1)).toEqual([1]);
+    expect(pagerPages(3, 7)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(pagerPages(1, 37)).toEqual([1, 2, 3, 4, 5, null, 37]);
+    expect(pagerPages(4, 37)).toEqual([1, 2, 3, 4, 5, null, 37]);
+    expect(pagerPages(5, 37)).toEqual([1, null, 4, 5, 6, null, 37]);
+    expect(pagerPages(33, 37)).toEqual([1, null, 32, 33, 34, null, 37]);
+    expect(pagerPages(34, 37)).toEqual([1, null, 33, 34, 35, 36, 37]);
+    expect(pagerPages(37, 37)).toEqual([1, null, 33, 34, 35, 36, 37]);
+    expect(pagerPages(4, 8)).toEqual([1, 2, 3, 4, 5, null, 8]);
+    expect(pagerPages(5, 8)).toEqual([1, null, 4, 5, 6, 7, 8]);
   });
 });

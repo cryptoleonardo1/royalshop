@@ -956,14 +956,14 @@
   line-height: 1;
   text-transform: uppercase;
   overflow-wrap: anywhere;
+  /* hover: a hi-vis rule draws in under the whole title (never behind the letters), see the hover block */
+  padding-bottom: 8px;
+  margin-bottom: -4px;
+  background: linear-gradient(var(--hivis), var(--hivis)) 0 100% / 0 4px no-repeat;
+  transition: background-size 0.35s var(--ease);
 }
 .cardLink {
   text-decoration: none;
-  background: linear-gradient(var(--hivis), var(--hivis)) 0 100% / 0 40% no-repeat;
-  transition: background-size 0.3s var(--ease);
-}
-.cardLink:hover {
-  background-size: 100% 40%;
 }
 .specs {
   display: grid;
@@ -2371,6 +2371,10 @@ a.engineCodeLink:hover {
   .card:hover .productImg {
     transform: scale(1.04);
   }
+  /* photo and title both lead to the detail: hovering either draws the rule under the title */
+  .card:has(.cardMedia:hover, .cardLink:hover) .cardTitle {
+    background-size: 100% 4px;
+  }
   .card:hover .plateIcon {
     transform: rotate(-8deg) scale(1.05);
   }
@@ -2772,6 +2776,8 @@ a.engineCodeLink:hover {
 }
 .listingMain {
   display: grid;
+  /* minmax(0, …): the column never grows with its content (a wide child used to push the grid off the page) */
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   min-width: 0;
 }
@@ -3108,7 +3114,17 @@ a.engineCodeLink:hover {
 }
 .pager ol {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
+}
+.pagerGap {
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 44px;
+  font-family: var(--f-mono);
+  font-weight: 700;
+  color: var(--mute);
 }
 .pager ol a {
   display: grid;
