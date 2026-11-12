@@ -13,6 +13,7 @@ import {
   type ShopSettings,
 } from "@/lib/catalog";
 import { isTestedBeforeDispatch } from "@/lib/accessories";
+import { productArticle } from "@/lib/product-articles";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
 import { DELIVERY_MAX_WORKDAYS, returnCostEstimate } from "@/lib/legal";
 import { formatEur, netFromGross } from "@/lib/money";
@@ -182,6 +183,7 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
   const [p, settings] = await Promise.all([getProduct(slug), getShopSettings()]);
   if (!p) notFound();
   const ctx = await getCategoryContext(p.category.slug);
+  const article = productArticle(p.slug);
 
   const off = discountPct(p);
   const ref = referencePrice(p);
@@ -370,6 +372,20 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                   ))}
                 </ul>
               </div>
+
+              {article && (
+                <a href={article.url} className={css.rental} data-article target="_blank" rel="noopener">
+                  <span className={css.rentalEyebrow}>Royal Stroje · recenzia</span>
+                  <span className={css.rentalTitle}>{article.title}</span>
+                  <span className={css.rentalText}>
+                    Podrobný test a porovnanie s konkurenciou na blogu Royal Stroje.{article.note ? ` ${article.note}` : ""}
+                  </span>
+                  <span className={css.rentalGo}>
+                    Prečítať článok <ArrowUpRight size={18} aria-hidden="true" />
+                    <span className={css.srOnly}> (otvorí sa v novom okne)</span>
+                  </span>
+                </a>
+              )}
 
               {p.rentalUrl && (
                 <a href={p.rentalUrl} className={css.rental} target="_blank" rel="noopener">

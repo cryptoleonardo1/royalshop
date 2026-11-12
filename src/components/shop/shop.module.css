@@ -1859,6 +1859,11 @@ a.askPrice {
   line-height: 1;
   text-transform: uppercase;
 }
+/* article titles are longer than the rental teaser */
+.rental[data-article] .rentalTitle {
+  font-size: 1.5rem;
+  line-height: 1.05;
+}
 .rentalText strong {
   white-space: nowrap;
 }

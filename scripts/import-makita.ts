@@ -29,6 +29,8 @@ const BRAND = "makita";
 const BUCKET = "product-images";
 const PHOTO_DIR = "originals/makita/img";
 const CHUNK = 100;
+// Shown as "Odporúčame" on the home page and first in the default sort (changed 2026-11-12: winter picks).
+const FEATURED = new Set(["makita-tw001gu201", "makita-duc254z", "makita-dhg180zk"]);
 
 const SAFETY_INFO =
   "Pred použitím si prečítajte návod na použitie a bezpečnostné pokyny. Používajte ochranu zraku, sluchu a dýchacích ciest a pracovné rukavice podľa druhu práce. Pred výmenou nástroja alebo údržbou vyberte akumulátor alebo odpojte stroj od siete.";
@@ -224,6 +226,7 @@ async function main() {
               safety_info: SAFETY_INFO,
               status: "active",
               in_stock: p.in_stock,
+              is_featured: FEATURED.has(p.slug),
             };
           }),
           { onConflict: "slug" },
