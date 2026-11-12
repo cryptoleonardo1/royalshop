@@ -4,8 +4,18 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 14) -- Peter tasklist, OZV research, supplier strategy, printed shop documents (2026-11-09/10)
+
+- Vault notes reviewed (Gölz launch e-mail 11-07 still unsent, legal task list 10-26); detailed tasklist for the user + Peter (read docs/08, VOP pages; decide sales mode, B2B returns, lawyer). Suggested additions to the Gölz e-mail: repair time vs our 30 days, pickup from customer, machine dimensions, crossed-bin marking.
+- OZV/ISOH research (subagent) -> Current State "EPR"; Gölz likely second wave. Unicon e-mail drafted (only ask the SK registration; batteries known by Peter; prices later).
+- ChatGPT dropship plan checked (2 subagents) -> Current State "Strategy check". Questions for ChatGPT given to the user.
+- Built, then dropped deposits/balance (user: full payment only). Kept: printable purchase contract `/admin/tlac/<nr>/zmluva` (only reservations or `on_premises`; states the on-premises clause) and handover protocol + training record `/admin/tlac/<nr>/protokol`; optional handover date on the "Zaplatená" step -> `estimated_delivery_date`, used as the admin delivery limit for `on_premises`. No migration needed.
+- Verified with Playwright on the local DB: shop sale (contract filled, no withdrawal) and payment link (withdrawal offered, no contract link). 61 unit tests, tsc + eslint clean. Not deployed.
+- Gotchas: `npx next typegen` after adding routes (PageProps types); Docker Desktop start then wait ~30 s before `supabase db reset`; checkout radios in Playwright need a JS click.
 
 ## What Was Done (Session 13) -- Gölz only, new photos, diamond blades with a picker (2026-11-07)
 

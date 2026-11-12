@@ -4,12 +4,12 @@
 
 ## Current State
 
-- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app, admin at `/admin`, customer portal at `/ucet`. Since session 13 **only Gölz** is shown (`SHOP_BRANDS` in `src/lib/shop-brands.ts`; Honda off until Honda confirms): 12 machines + 9 diamond blades. Goal now: launch ASAP; since session 14 the first supplier may be one with Slovak EPR registration (Unicon / Honda SK) instead of Gölz, see EPR below. Since session 12: **consumers send a non-binding reservation (no payment), companies pay at checkout**; no discounts, catalogue list prices only. Stripe test mode. No emails yet. Invoices + credit notes live since session 15.
-- **Session count:** 15
+- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app, admin at `/admin`, customer portal at `/ucet`. **Strategy changed 2026-11-12: full-range shop (1000+ items) instead of "premium machines >= 800 EUR, no cordless".** Shown brands (`SHOP_BRANDS` in `src/lib/shop-brands.ts`): Gölz (12 machines + 9 blades) and Makita (888 machines, 754 in stock) = 909 products. Consumers send a non-binding reservation (no payment), companies pay at checkout; no discounts. Stripe test mode. No emails yet. Invoices + credit notes live since session 15.
+- **Session count:** 16
 - **Decisions:** (2026-10-23) admin console lives in THIS repo at `/admin`, separate from RCC; only crm_core's invoice PDF/PAY by square, layout and reports get ported. Domains: shop `shop.royalstroje.sk`, admin `admin.shop.royalstroje.sk` (`ADMIN_HOST`). Plan: `docs/07-admin-konzola-plan.md`. Weight shipping bands (9,90 / 49 / 89 / 149) accepted until the founder says otherwise. 800 EUR minimum is a guideline only. (2026-11-03) No discounts at launch: prices exactly as the Gölz catalogue (ferrotech.sk sells the same Gölz saws at list -5 %; matching is the founder's call, depends on our real purchase price).
 - **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy. Benji (Mind Palace vault) also commits here (e.g. d9c4c72) -- fetch before work.
 - **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby; Pro needed before go-live for the DPA). Repo MUST stay public (private = every deploy fails "Git author must have access"). Check with `gh api repos/cryptoleonardo1/royalshop/commits/<sha>/statuses --jq '.[0]'`. Local Vercel CLI and Supabase CLI are different accounts -- use web UIs.
-- **Hosted Supabase:** project `royalshop1`, ref `vzytkquuljtoopgfcfak`, Frankfurt. Keys + DB URL in `.env.hosted.local` (gitignored). Migrations: `set -a; . ./.env.hosted.local; set +a; npx supabase db push --db-url "$SUPABASE_DB_URL"` (the agent may only `--dry-run`; the user runs the real push, SQL and seeds). Push code only after the migration it needs is applied. Remote is up to date through 20261110000001 (invoices, applied 2026-11-10 by the user). Data-only SQL lives in `supabase/snippets/` (blades snippet run by the user 2026-11-07).
+- **Hosted Supabase:** project `royalshop1`, ref `vzytkquuljtoopgfcfak`, Frankfurt. Keys + DB URL in `.env.hosted.local` (gitignored). Migrations: `set -a; . ./.env.hosted.local; set +a; npx supabase db push --db-url "$SUPABASE_DB_URL"` (the agent may only `--dry-run`; the user runs the real push, SQL and seeds). Push code only after the migration it needs is applied. Remote is up to date through 20261112000001 (products.in_stock). On 2026-11-12 the user let the agent run the migration + Makita import on hosted once (asked first); the default stays: ask before any hosted write. Data-only SQL lives in `supabase/snippets/` (blades snippet run by the user 2026-11-07).
 - **Stripe:** test mode, webhook `https://royalshop.vercel.app/api/webhooks/stripe` (completed + expired + charge.refunded). Immediate charge (no manual capture).
 - **Local DB:** Supabase via Docker on ports 564xx (API :56421, Studio :56423). Local dev for Playwright: `NEXT_PUBLIC_SITE_URL=http://localhost:3123 STRIPE_SECRET_KEY= PORT=3123 npm run dev` (`.env.local` sets the site URL to :3000, so checkout redirects break without the override; empty Stripe key = demo payments). `npm run build` needs the hosted env.
 - **Delivery time:** "zvyčajne 3-5" and binding "najneskôr do 10 pracovných dní od zaplatenia" (`DELIVERY_MAX_WORKDAYS`). SOI fined a shop for missing its upper bound, keep it real.
@@ -23,16 +23,11 @@
 - **Sales mode (2026-11-10):** no deposits. Consumers pay the full price either in the shop (signed contract, `on_premises`, no statutory withdrawal) or online via payment link (distance, 14-day withdrawal). User leans to shop-only payment at the start to cut risk; Peter decides.
 - **Invoices (session 15):** issued at "Potvrdená" via `issue_invoice()` (`src/lib/invoices/`), credit note on cancel-with-refund and withdrawal refund; PDF (jsPDF, Inter fonts traced via `outputFileTracingIncludes`) in bucket `documents`. No PAY by square (always paid before issue); IBAN printed only if mod-97 valid. Credit-note VS = corrected invoice VS. A refund made directly in the Stripe dashboard creates NO credit note -- refund from the admin. Before the first real invoice: reset `document_counters` (demo data used 202600001+). Accountant to confirm: `D` credit-note format, VS rule, one invoice after full payment.
 - **Reservations expiry (2026-11-10 decision):** cancelled BY HAND for now. Cron route `/api/cron/rezervacie` + `src/lib/expire-reservations.ts` are ready but unscheduled (no `vercel.json`); enabling = add the crons entry + `CRON_SECRET` in Vercel (docs/04 §7.5). Admin detail shows the VOP lapse date.
+- **Makita (session 16):** Royal stroje is an authorised dealer, buys direct (Makita s. r. o., Banská Bystrica = SK entity, so we are only a distributor for EPR). Pipeline: `docs/cenniky/MakitaTovary.xlsx` (daily export, git-ignored; where Peter downloads it is unknown) -> `python scripts/makita-catalog.py` (matches codes to makita.sk, cache + photos in git-ignored `originals/makita/`) -> `supabase/seed-data/makita.json` -> `npx tsx scripts/import-makita.ts` (idempotent; uploads photos to bucket `product-images`, archives machines that left the export; hosted: source `.env.hosted.local` first). Price = Makita MOC. `scripts/seed.ts` wipes the catalog, so re-run the import after it. Not imported: 5 025 accessories, 24 225 spare parts. The Trade days sheet prices are "1 sample per store" promo prices, NOT regular purchase prices.
+- **Stock:** `products.in_stock` (true / false / null = supplier does not report). false = no add-to-cart, server pricing drops it from the cart. Category tree for the full range lives in `catalog.json` (the import syncs it); `brusky-na-beton` moved under `brusky`.
+- **CEG (ceg.sk):** Slovak B2B-only wholesaler (Zlaté Moravce, 5.7 M EUR, owner Narimex), has NTC, Cedima, Enar, Master, Eibenstock, Rubi, Bosch, DeWalt; B2B portal on Offeris (REST API possible, key must be issued by CEG). Meeting with the owner 2026-11-20; question list given to the user in chat (API key + sample export + price list + importer per brand BEFORE the meeting). Competitor check: Stahlmann 10.5 M / 4.9 % net, A-Z Stroj 4.2 M / 4.7 %, MadMat 2.5 M / 0.9 %; all have stores and stock.
+- **Entity question (open):** shop under Royal stroje s. r. o. or a new s.r.o. (Royal stroje has a 49 % investor not involved in the shop). Agent recommended a new s.r.o. if owners differ (a separate bank account separates neither profit nor liability; SEO is not tied to the entity; Makita authorisation and VAT registration need checking). User discusses with Peter.
 - **Seed guard:** `seed_reset()` checks `company_settings.is_demo`. Set `is_demo = false` before real orders.
-
-## What Was Done (Session 14) -- Peter tasklist, OZV research, supplier strategy, printed shop documents (2026-11-09/10)
-
-- Vault notes reviewed (Gölz launch e-mail 11-07 still unsent, legal task list 10-26); detailed tasklist for the user + Peter (read docs/08, VOP pages; decide sales mode, B2B returns, lawyer). Suggested additions to the Gölz e-mail: repair time vs our 30 days, pickup from customer, machine dimensions, crossed-bin marking.
-- OZV/ISOH research (subagent) -> Current State "EPR"; Gölz likely second wave. Unicon e-mail drafted (only ask the SK registration; batteries known by Peter; prices later).
-- ChatGPT dropship plan checked (2 subagents) -> Current State "Strategy check". Questions for ChatGPT given to the user.
-- Built, then dropped deposits/balance (user: full payment only). Kept: printable purchase contract `/admin/tlac/<nr>/zmluva` (only reservations or `on_premises`; states the on-premises clause) and handover protocol + training record `/admin/tlac/<nr>/protokol`; optional handover date on the "Zaplatená" step -> `estimated_delivery_date`, used as the admin delivery limit for `on_premises`. No migration needed.
-- Verified with Playwright on the local DB: shop sale (contract filled, no withdrawal) and payment link (withdrawal offered, no contract link). 61 unit tests, tsc + eslint clean. Not deployed.
-- Gotchas: `npx next typegen` after adding routes (PageProps types); Docker Desktop start then wait ~30 s before `supabase db reset`; checkout radios in Playwright need a JS click.
 
 ## What Was Done (Session 15) -- Invoices + credit notes, reservation expiry prepared (2026-11-10)
 
@@ -42,38 +37,46 @@
 - Dev task 13: reservation expiry (10 working days, sk-calendar keeps 1. 9. / 17. 11. as holidays = conservative) built and tested, then user decided manual cancel for now -> cron left unscheduled (0bc20d5).
 - 74 unit tests, tsc + eslint clean. Gotchas: after `npm run build` the local dev server looped on reload -> delete `.next` and restart dev; Docker Desktop had stopped (restart it); "⚠ ./" dev warnings are the Big Shoulders font, harmless; Playwright on Windows needs PYTHONIOENCODING=utf-8 for Slovak output.
 
+## What Was Done (Session 16) -- Cart blade reminder, strategy change, 888 Makita machines live (2026-11-10/12)
+
+- Dev task 14 shipped (4420b87): blade picker under the cart lines when a saw has no fitting blade in the cart (not for machines with a blade in the box). User tested sessions 14-15 on prod end to end: no bugs.
+- Research (2 subagents) on CEG and on Stahlmann / MadMat / A-Z Stroj -> Current State "CEG". Advice given: CEG yes as supplier; show by margin, do not expect big margins on commodity brands.
+- Makita import built and deployed (2b7bed6): 870 of 888 machines matched on makita.sk, 1 911 photos in Storage; verified on prod with Playwright (909 products, search, out-of-stock behaviour).
+- Catalog reads now page past PostgREST's 1000-row cap; list data keeps only 6 specs + filterable + `blade_included` per product (cache size). Photos: `product_images.path` without a leading slash = object in bucket `product-images` (`src/lib/product-image.ts`).
+- Task 15 (switch brands per supplier answers) not done: no answers from Unicon / Honda yet.
+- Gotchas: after a Docker Desktop restart Windows reserved ports 56327-56426 (local Supabase 5642x) -> `supabase start` fails with "ports are not available"; fix = admin shell `net stop winnat; net start winnat` or reboot (this session ran the stack temporarily on 5542x, reverted). Do not run `prettier --write` with defaults (repo is formatted at 120 columns, no config). File IO was very slow while Docker was starting.
+
 ## What To Do Next
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Peter meeting (user): sales mode (shop-only payment at start?), Unicon e-mail (SK ISOH registration), Gölz e-mail (vault note 11-07, add repair-time question), bank account IBAN+SWIFT (then fill `company_settings.iban/swift` on hosted -- invoices print it once valid), shop@royalstroje.sk, lawyer for VOP + purchase contract, accountant: invoice/credit-note numbering. |
-| 2 | High | User tests session 15 on prod (0bc20d5): reservation detail shows the VOP lapse date + manual cancel; invoices already confirmed working. |
-| 3 | High | Dev task 14: cart reminder when a machine is in the cart without a blade (reuse `AccessoryPicker` / `src/lib/accessories.ts`). Then task 15: switch brands per supplier answers (`SHOP_BRANDS`, refresh Oct prices). Optional: serial number input at "Otestované" for the protocol. |
-| 4 | High | Resend once shop@ exists: order/reservation e-mails (poučenie on a durable medium before any distance sale), invoice PDF attached, withdrawal confirmation, Supabase Auth SMTP. |
-| 5 | High | Supplier answers: Unicon/Honda SK registration -> brands to enable; Gölz: blade prices (6 estimates), TS40GX/HS400F, 60 mm bore, RX1S/MS400, TS250A-330 photo, weights for OZV, DoC + SK manuals, warranty. OZV inquiry (SEWA, NATUR-PACK) only when importing (Gölz). |
-| 6 | Medium | Full user test on the deploy: reservation -> "Zaplatená" in shop (+ contract print) vs payment link + card 4242; company checkout; cancel (credit note); withdrawal + refund (credit note); portal invoice download. |
-| 7 | High | Pre-launch: reset `document_counters` + demo data (`is_demo = false`), SK manuals, GPSR data per product, accountant (Boldog prevádzkareň, eKasa), Vercel Pro (DPA), domain `shop.royalstroje.sk` + `ADMIN_HOST` last. B2B: verify IČO in ORSR/ŽRSR. Later: enable reservation cron when volume needs it. |
+| 1 | High | Peter (user): before the CEG meeting 2026-11-20 ask CEG for the API key/docs, a sample export, our price list, reseller terms, importer per brand. Decide the entity (Royal stroje vs new s.r.o.) before signing with CEG. Still open: sales mode, Gölz e-mail, IBAN+SWIFT, shop@royalstroje.sk, lawyer, accountant. |
+| 2 | High | Makita, ask Peter/Makita: consent to use makita.sk photos and texts (they are live on the demo now), regular dealer price list or discount from MOC (then fill `product_costs`), weights, where the daily export comes from (URL/login -> automate the stock + price sync; today it is a manual 3-step run). |
+| 3 | High | Storefront copy no longer fits the full range: home hero ("Prémiové stroje", "každý stroj odskúšame"), delivery texts "vrátane testu pred odoslaním" on product page/cart, "Odskúšanie pred kúpou" box. Card QC mark and the test note are already off for Makita (`isTestedBeforeDispatch`). Rework the home page for a multi-brand tool shop. |
+| 4 | High | Checkout for cheap items: consumers should pay online at once for boxed tools (reservation + phone call only makes sense for machines); add Packeta/Z-BOX. Needs a rule per product or price, and the VOP/legal texts updated (`LEGAL_VERSION`). |
+| 5 | Medium | Catalog UX for 900+ products: "len skladom" filter, sort by stock, 68 machines without weight are priced in the heaviest shipping band (149 EUR), 18 machines have no photo (no makita.sk page), a few odd categories (TW0350/TW1000 impact wrenches sit in "Skrutkovače"). Then Makita accessories (5 025) with machine links, spare parts later. |
+| 6 | Medium | Resend once shop@ exists: order/reservation e-mails (poučenie on a durable medium), invoice PDF, withdrawal confirmation, Supabase Auth SMTP. Dev task 15 when supplier answers arrive. |
+| 7 | High | Pre-launch: Vercel Pro (DPA + image optimization quota: ~1 900 remote photos now go through next/image), reset `document_counters` + demo data (`is_demo = false`), GPSR data per product (the Makita brand row lists Makita s. r. o. SK as the manufacturer contact: verify), SK manuals, accountant, domain + `ADMIN_HOST` last. |
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `docs/04-technicka-dokumentacia.md` | Source of truth: order states (§4.2 incl. reservations), data model, portal screens |
-| `docs/08-rizika-vratenia-reklamacie.md` / `docs/09-skript-rezervacia-telefonat.md` | Return/claim risks ranked + reservation rules; phone script for the shop |
-| `docs/06-pravne-stranky.md` | Legal decisions, founder/lawyer questions (details in `docs/pravne/`) |
-| `src/lib/order-state.ts` / `src/lib/withdrawal.ts` | Transitions (incl. `reserved`), `ContractPlace`; withdrawal windows incl. `on_premises` |
-| `src/lib/checkout-actions.ts` / `src/lib/orders.ts` | Reservation vs payment at checkout, `payOrder`; `markOrderPaid`, `markPaymentAbandoned` |
-| `src/lib/admin/order-actions.ts` / `refunds.ts` | Admin steps incl. manual/on-premises payment + handover date; refunds (Stripe or recorded manual) |
-| `src/app/admin/tlac/` / `src/lib/admin/print-data.ts` | Printed purchase contract + handover protocol (not reviewed by a lawyer) |
-| `src/components/shop/accessory-picker.tsx` / `src/lib/accessories.ts` | Blade picker on machine pages; accessory categories (task 14) |
-| `src/lib/invoices/` | Invoice/credit-note build (pure, tested), PDF render, issue + storage |
-| `supabase/seed-data/catalog.json` | Catalog source of truth (keep in sync with hosted edits) |
+| `docs/04-technicka-dokumentacia.md` | Source of truth: order states, data model, portal screens |
+| `docs/05-sortiment-stroje.md` | Assortment and suppliers; Makita import pipeline and what is missing |
+| `scripts/makita-catalog.py` / `scripts/import-makita.ts` | Makita export + makita.sk -> `supabase/seed-data/makita.json` -> database + Storage |
+| `src/lib/catalog.ts` / `src/lib/product-image.ts` | Public catalog reads (paged, cached), nav categories, photo URLs |
+| `src/lib/shop-brands.ts` / `src/lib/accessories.ts` | Brands shown; accessory rules, blade reminder, `isTestedBeforeDispatch` |
+| `src/lib/checkout-actions.ts` / `src/lib/orders.ts` | Reservation vs payment at checkout; server pricing (drops out-of-stock) |
+| `docs/08-rizika-vratenia-reklamacie.md` / `docs/06-pravne-stranky.md` | Return/claim risks + reservation rules; legal decisions |
+| `src/lib/order-state.ts` / `src/lib/admin/order-actions.ts` | Order transitions; admin steps incl. on-premises payment |
+| `src/lib/invoices/` | Invoice/credit-note build, PDF render, issue + storage |
+| `supabase/seed-data/catalog.json` | Catalog source for Gölz etc. + the category tree, Makita brand/supplier rows |
 
 ## Session Summary
 
 | Session | Date | Title |
 |---------|------|-------|
-| 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
 | 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |
@@ -83,3 +86,4 @@
 | 13 | 2026-11-07 | Gölz only, new photos, diamond blades + picker, launch questions |
 | 14 | 2026-11-10 | Peter tasklist, OZV research, supplier strategy, printed shop documents |
 | 15 | 2026-11-10 | Invoices + credit notes (PDF), reservation expiry prepared (manual cancel) |
+| 16 | 2026-11-12 | Cart blade reminder, strategy change to full range, 888 Makita machines live |
