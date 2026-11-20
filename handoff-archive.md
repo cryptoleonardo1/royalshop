@@ -4,10 +4,20 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
 | 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 16) -- Cart blade reminder, strategy change, 888 Makita machines live (2026-11-10/12)
+
+- Dev task 14 shipped (4420b87): blade picker under the cart lines when a saw has no fitting blade in the cart (not for machines with a blade in the box). User tested sessions 14-15 on prod end to end: no bugs.
+- Research (2 subagents) on CEG and on Stahlmann / MadMat / A-Z Stroj -> Current State "CEG". Advice given: CEG yes as supplier; show by margin, do not expect big margins on commodity brands.
+- Makita import built and deployed (2b7bed6): 870 of 888 machines matched on makita.sk, 1 911 photos in Storage; verified on prod with Playwright (909 products, search, out-of-stock behaviour).
+- Catalog reads now page past PostgREST's 1000-row cap; list data keeps only 6 specs + filterable + `blade_included` per product (cache size). Photos: `product_images.path` without a leading slash = object in bucket `product-images` (`src/lib/product-image.ts`).
+- Task 15 (switch brands per supplier answers) not done: no answers from Unicon / Honda yet.
+- Gotchas: after a Docker Desktop restart Windows reserved ports 56327-56426 (local Supabase 5642x) -> `supabase start` fails with "ports are not available"; fix = admin shell `net stop winnat; net start winnat` or reboot (this session ran the stack temporarily on 5542x, reverted). Do not run `prettier --write` with defaults (repo is formatted at 120 columns, no config). File IO was very slow while Docker was starting.
 
 ## What Was Done (Session 15) -- Invoices + credit notes, reservation expiry prepared (2026-11-10)
 

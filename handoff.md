@@ -4,8 +4,8 @@
 
 ## Current State
 
-- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app, admin at `/admin`, customer portal at `/ucet`. **Strategy changed 2026-11-12: full-range shop (1000+ items) instead of "premium machines >= 800 EUR, no cordless".** Shown brands (`SHOP_BRANDS` in `src/lib/shop-brands.ts`): Gölz (12 machines + 9 blades) and Makita (888 machines, 754 in stock) = 909 products. Consumers send a non-binding reservation (no payment), companies pay at checkout; no discounts. Stripe test mode. No emails yet. Invoices + credit notes live since session 15.
-- **Session count:** 17
+- **Phase:** Demo build -- storefront live on https://royalshop.vercel.app, admin at `/admin`, customer portal at `/ucet`. **Strategy changed 2026-11-12: full-range shop (1000+ items) instead of "premium machines >= 800 EUR, no cordless".** Shown brands (`SHOP_BRANDS` in `src/lib/shop-brands.ts`): Gölz (12 machines + 9 blades), Makita (888 machines, 754 in stock) and, since 2026-11-20, NTC, Bomag, Honda, Enar from Unicon (43 catalog products + 176 unlisted Honda engine variants sold from the table on `/kategoria/motory`). Atlas Copco stays off. Consumers send a non-binding reservation (no payment), companies pay at checkout; no discounts. Stripe test mode. No emails yet. Invoices + credit notes live since session 15.
+- **Session count:** 18
 - **Decisions:** (2026-10-23) admin console lives in THIS repo at `/admin`, separate from RCC; only crm_core's invoice PDF/PAY by square, layout and reports get ported. Domains: shop `shop.royalstroje.sk`, admin `admin.shop.royalstroje.sk` (`ADMIN_HOST`). Plan: `docs/07-admin-konzola-plan.md`. Weight shipping bands (9,90 / 49 / 89 / 149) accepted until the founder says otherwise. 800 EUR minimum is a guideline only. (2026-11-03) No discounts at launch: prices exactly as the Gölz catalogue (ferrotech.sk sells the same Gölz saws at list -5 %; matching is the founder's call, depends on our real purchase price).
 - **Repo status:** `main` tracks origin (github.com/cryptoleonardo1/royalshop, PUBLIC, `bugiiiii11` is collaborator). Push to `main` = Vercel production deploy. Benji (Mind Palace vault) also commits here (e.g. d9c4c72) -- fetch before work.
 - **Vercel:** project `royalshop`, team "Bugiiiii's projects" (Hobby; Pro needed before go-live for the DPA). Repo MUST stay public (private = every deploy fails "Git author must have access"). Check with `gh api repos/cryptoleonardo1/royalshop/commits/<sha>/statuses --jq '.[0]'`. Local Vercel CLI and Supabase CLI are different accounts -- use web UIs.
@@ -27,16 +27,8 @@
 - **Stock:** `products.in_stock` (true / false / null = supplier does not report). false = no add-to-cart, server pricing drops it from the cart. Category tree for the full range lives in `catalog.json` (the import syncs it); `brusky-na-beton` moved under `brusky`.
 - **CEG (ceg.sk):** Slovak B2B-only wholesaler (Zlaté Moravce, 5.7 M EUR, owner Narimex), has NTC, Cedima, Enar, Master, Eibenstock, Rubi, Bosch, DeWalt; B2B portal on Offeris (REST API possible, key must be issued by CEG). Meeting with the owner 2026-11-20; question list given to the user in chat (API key + sample export + price list + importer per brand BEFORE the meeting). Competitor check: Stahlmann 10.5 M / 4.9 % net, A-Z Stroj 4.2 M / 4.7 %, MadMat 2.5 M / 0.9 %; all have stores and stock.
 - **Entity question (open):** shop under Royal stroje s. r. o. or a new s.r.o. (Royal stroje has a 49 % investor not involved in the shop). Agent recommended a new s.r.o. if owners differ (a separate bank account separates neither profit nor liability; SEO is not tied to the entity; Makita authorisation and VAT registration need checking). User discusses with Peter.
+- **Unicon brands (2026-11-20, founder decision):** NTC, Bomag, Honda (engines AND machines) and Enar are all supplied by Unicon Ostrava (CZ). Web price = Unicon CZK list price / CNB rate, rounded to cents, x 1.23; rate fixed at 24.47 (CNB 2026-11-20) in git-ignored `docs/cenniky/data/zdroje.json`. Only items from those price lists, and only the 43 already in `catalog.json`: the user said no others. Our discount from Unicon is 17 % (Peter); NOT written to the repo (public) and `product_costs` still hold the old 20 % estimate. Honda SK direct dealership (terms in git-ignored `docs/honda/`: showroom corner, 6-8 machines on display, own service, 20-35 % rabat on machines) is not pursued. Our Honda engine prices are ~12 % above the Honda SK list of 2025-01-01 and ~8 % above the Honda SK list of 2026-10-01; the user checked this and keeps the Unicon prices. The Honda engine list on the web says valid to 2026-12-31.
 - **Seed guard:** `seed_reset()` checks `company_settings.is_demo`. Set `is_demo = false` before real orders.
-
-## What Was Done (Session 16) -- Cart blade reminder, strategy change, 888 Makita machines live (2026-11-10/12)
-
-- Dev task 14 shipped (4420b87): blade picker under the cart lines when a saw has no fitting blade in the cart (not for machines with a blade in the box). User tested sessions 14-15 on prod end to end: no bugs.
-- Research (2 subagents) on CEG and on Stahlmann / MadMat / A-Z Stroj -> Current State "CEG". Advice given: CEG yes as supplier; show by margin, do not expect big margins on commodity brands.
-- Makita import built and deployed (2b7bed6): 870 of 888 machines matched on makita.sk, 1 911 photos in Storage; verified on prod with Playwright (909 products, search, out-of-stock behaviour).
-- Catalog reads now page past PostgREST's 1000-row cap; list data keeps only 6 specs + filterable + `blade_included` per product (cache size). Photos: `product_images.path` without a leading slash = object in bucket `product-images` (`src/lib/product-image.ts`).
-- Task 15 (switch brands per supplier answers) not done: no answers from Unicon / Honda yet.
-- Gotchas: after a Docker Desktop restart Windows reserved ports 56327-56426 (local Supabase 5642x) -> `supabase start` fails with "ports are not available"; fix = admin shell `net stop winnat; net start winnat` or reboot (this session ran the stack temporarily on 5542x, reverted). Do not run `prettier --write` with defaults (repo is formatted at 120 columns, no config). File IO was very slow while Docker was starting.
 
 ## What Was Done (Session 17) -- Catalog UX: 12 per page, instant category switching, section backdrop, Makita featured (2026-11-12)
 
@@ -48,17 +40,28 @@
 - Last commit (NOT pushed): header menu rows start flush with the logo when the menu wraps (gap moved to the right of each link); `/produkty` lede no longer claims a test run.
 - Gotchas: Next keeps visited pages hidden in the DOM (Activity) -> a page-rendered `<style>` or a duplicate `id` from a hidden page still applies; use effects (cleaned up when hidden) and no ids. Global `scroll-padding-top: 160px` adds to any `scroll-margin-top`. `npm test` fails in every file from a lower-case `c:\` cwd -> run from `C:\...` (agent memory). A stopped `next start` can leave node on port 3123 -> `netstat -ano`, `taskkill /PID <pid> /T /F`. The agent's first hosted update also un-featured the 5 hidden machines (restored at once): scope hosted SQL by slug.
 
+## What Was Done (Session 18) -- Honda SK dealer terms analysed, Unicon brands back on sale at the new rate (2026-11-18/20)
+
+- Analysed the Honda SK dealer pack (terms 2027, engine price list, empty partner form). Outcome two days later: everything Honda goes through Unicon instead (see Current State "Unicon brands").
+- Brands NTC, Bomag, Honda, Enar switched on (d1af009, pushed, deployed, checked live). Prices re-calculated from 24.26 to 24.47 CZK/EUR (about -0.9 %): `catalog.json`, `src/data/honda-engines.json` (via `scripts/honda-engines.py`), hosted via `supabase/snippets/2026-11-20-unicon-prices.sql` (run by the user, spot-checked).
+- Every old price was traced back to an integer CZK list price first, so the data matches the price lists. Enar Dingo sets = drive unit + shaft, each rounded like its own row, then added.
+- The one-off re-pricing script was NOT kept (scratchpad). Next rate change: set the rate in `zdroje.json`, run `scripts/honda-engines.py`, recompute the 43 catalog prices the same way, write a new slug-scoped snippet.
+- `docs/honda/` added to `.gitignore` (dealer rabats, public repo).
+- Gotchas: a Vercel production build takes about 7 minutes (900+ product pages), "pending" that long is normal. The Supabase SQL editor warns about RLS on `create temporary table`: "Run without RLS" is right, and it shows only the last statement's result. The agent's read of hosted data with the service key was blocked by the permission classifier: ask the user to run check queries. Python on this machine: `python -I` hides user site-packages (pymupdf, openpyxl); PDFs cannot be read with the Read tool (no poppler), use pymupdf.
+
 ## What To Do Next
 
 | # | Priority | Task |
 |---|----------|------|
-| 1 | High | Peter (user): before the CEG meeting 2026-11-20 ask CEG for the API key/docs, a sample export, our price list, reseller terms, importer per brand. Decide the entity (Royal stroje vs new s.r.o.) before signing with CEG. Still open: sales mode, Gölz e-mail, IBAN+SWIFT, shop@royalstroje.sk, lawyer, accountant. |
-| 2 | High | Makita, ask Peter/Makita: consent to use makita.sk photos and texts (they are live on the demo now), regular dealer price list or discount from MOC (then fill `product_costs`), weights, where the daily export comes from (URL/login -> automate the stock + price sync; today it is a manual 3-step run). |
-| 3 | High | Storefront copy no longer fits the full range: home hero ("Prémiové stroje", "každý stroj odskúšame"), delivery texts "vrátane testu pred odoslaním" on product page/cart, "Odskúšanie pred kúpou" box. Card QC mark and the test note are already off for Makita (`isTestedBeforeDispatch`). Rework the home page for a multi-brand tool shop (the home "Odskúšané pred odoslaním" tile in `src/app/(shop)/page.tsx` is a business claim: ask Peter what stays true for boxed tools). |
-| 4 | High | Checkout for cheap items: consumers should pay online at once for boxed tools (reservation + phone call only makes sense for machines); add Packeta/Z-BOX. Needs a rule per product or price, and the VOP/legal texts updated (`LEGAL_VERSION`). |
-| 5 | Medium | Push the last local commit (menu alignment + lede) when the user says so. Catalog UX for 900+ products (offered in session 17, not requested yet): "len skladom" filter, sort by stock, lower cards, collapse long/empty filter groups, section mark on the product page; 68 machines without weight are priced in the heaviest shipping band (149 EUR), 18 machines have no photo (no makita.sk page), a few odd categories (TW0350/TW1000 impact wrenches sit in "Skrutkovače"). Then Makita accessories (5 025) with machine links, spare parts later. |
-| 6 | Medium | Resend once shop@ exists: order/reservation e-mails (poučenie on a durable medium), invoice PDF, withdrawal confirmation, Supabase Auth SMTP. Dev task 15 when supplier answers arrive. |
-| 7 | High | Pre-launch: Vercel Pro (DPA + image optimization quota: ~1 900 remote photos now go through next/image), reset `document_counters` + demo data (`is_demo = false`), GPSR data per product (the Makita brand row lists Makita s. r. o. SK as the manufacturer contact: verify), SK manuals, accountant, domain + `ADMIN_HOST` last. |
+| 1 | High | Peter (user): outcome of the CEG meeting of 2026-11-20 is not known to the agent (API key/docs, sample export, price list, reseller terms, importer per brand). Decide the entity (Royal stroje vs new s.r.o.) before signing with CEG. Still open: sales mode, Gölz e-mail, IBAN+SWIFT, shop@royalstroje.sk, lawyer, accountant. |
+| 2 | High | Unicon follow-ups (user checks with Peter): EPR/OZV for packaging and EEE (Unicon is CZ, so we are the Slovak "producer" for NTC/Bomag/Honda/Enar); written OK for e-shop sales; new Honda engine price list before 2026-12-31 (the web shows that end date); whether to fill the real 17 % into `product_costs` (via admin or a private SQL, not the public repo). |
+| 3 | High | Featured: 8 machines are flagged (3 Makita + NTC VDR 32, Bomag BPR 35/60, Honda EU32i, Honda WT30, Enar Dingo 3 m) but the home page shows 6 (`getFeaturedProducts`). Asked twice, no answer yet: ask which stay, then update `catalog.json`, `FEATURED` in `scripts/import-makita.ts` and hosted (slug-scoped SQL). |
+| 4 | High | Makita, ask Peter/Makita: consent to use makita.sk photos and texts (they are live on the demo now), regular dealer price list or discount from MOC (then fill `product_costs`), weights, where the daily export comes from (URL/login -> automate the stock + price sync; today it is a manual 3-step run). |
+| 5 | High | Storefront copy no longer fits the full range: home hero ("Prémiové stroje", "každý stroj odskúšame"), delivery texts "vrátane testu pred odoslaním" on product page/cart, "Odskúšanie pred kúpou" box. Card QC mark and the test note are already off for Makita (`isTestedBeforeDispatch`); check what it says for the Unicon brands. Rework the home page for a multi-brand tool shop (the home "Odskúšané pred odoslaním" tile in `src/app/(shop)/page.tsx` is a business claim: ask Peter what stays true for boxed tools). |
+| 6 | High | Checkout for cheap items: consumers should pay online at once for boxed tools (reservation + phone call only makes sense for machines); add Packeta/Z-BOX. Needs a rule per product or price, and the VOP/legal texts updated (`LEGAL_VERSION`). |
+| 7 | Medium | Catalog UX for 900+ products (offered in session 17, not requested yet): "len skladom" filter, sort by stock, lower cards, collapse long/empty filter groups, section mark on the product page; 68 Makita machines without weight are priced in the heaviest shipping band (149 EUR), 18 have no photo, a few odd categories (TW0350/TW1000 impact wrenches sit in "Skrutkovače"). Then Makita accessories (5 025) with machine links, spare parts later. |
+| 8 | Medium | Resend once shop@ exists: order/reservation e-mails (poučenie on a durable medium), invoice PDF, withdrawal confirmation, Supabase Auth SMTP. |
+| 9 | High | Pre-launch: Vercel Pro (DPA + image optimization quota: ~1 900 remote photos now go through next/image), reset `document_counters` + demo data (`is_demo = false`), GPSR data per product (the Makita brand row lists Makita s. r. o. SK as the manufacturer contact: verify), SK manuals, accountant, domain + `ADMIN_HOST` last. |
 
 ## Key Files
 
@@ -66,20 +69,19 @@
 |------|---------|
 | `docs/04-technicka-dokumentacia.md` | Source of truth: order states, data model, portal screens |
 | `docs/05-sortiment-stroje.md` | Assortment and suppliers; Makita import pipeline and what is missing |
+| `supabase/snippets/2026-11-20-unicon-prices.sql` / `scripts/honda-engines.py` | Pattern for re-pricing the Unicon brands on hosted; Honda engine list from the CZK price list + rate |
 | `scripts/makita-catalog.py` / `scripts/import-makita.ts` | Makita export + makita.sk -> `supabase/seed-data/makita.json` -> database + Storage |
 | `src/lib/catalog.ts` / `src/lib/product-image.ts` | Public catalog reads (paged, cached), nav categories, photo URLs |
 | `src/components/shop/listing-view.tsx` / `listing-nav.tsx` / `category-zone.tsx` | Listing + pagers, scroll-to-listing links, section backdrop + current menu item |
 | `src/lib/shop-brands.ts` / `src/lib/accessories.ts` | Brands shown; accessory rules, blade reminder, `isTestedBeforeDispatch` |
 | `src/lib/checkout-actions.ts` / `src/lib/orders.ts` | Reservation vs payment at checkout; server pricing (drops out-of-stock) |
 | `docs/08-rizika-vratenia-reklamacie.md` / `docs/06-pravne-stranky.md` | Return/claim risks + reservation rules; legal decisions |
-| `src/lib/invoices/` | Invoice/credit-note build, PDF render, issue + storage |
 | `supabase/seed-data/catalog.json` | Catalog source for Gölz etc. + the category tree, Makita brand/supplier rows |
 
 ## Session Summary
 
 | Session | Date | Title |
 |---------|------|-------|
-| 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
 | 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |
 | 10 | 2026-11-03 | Gölz + Honda only, trademark guideline, customer portal |
 | 11 | 2026-11-03 | Withdrawal (§ 20a): online form, portal panel, admin module |
@@ -89,3 +91,4 @@
 | 15 | 2026-11-10 | Invoices + credit notes (PDF), reservation expiry prepared (manual cancel) |
 | 16 | 2026-11-12 | Cart blade reminder, strategy change to full range, 888 Makita machines live |
 | 17 | 2026-11-12 | Catalog UX: 12 per page, instant category switching, section backdrop, Makita featured |
+| 18 | 2026-11-20 | Honda SK dealer terms analysed, Unicon brands (NTC, Bomag, Honda, Enar) back on sale at the new rate |
