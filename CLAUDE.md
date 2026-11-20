@@ -4,7 +4,7 @@
 
 Slovak e-shop for construction machines and professional tools. Sister project of royalstroje.sk (rental). Demo phase: real models, Stripe test mode, `noindex`.
 
-Strategy (changed 2026-11-12, replaces "premium machines only, minimum 800 €, no cordless tools" from 2026-10-12): a full-range shop with 1000+ items. Shown today: Gölz (machines + diamond blades, indicative prices) and Makita (Royal stroje is an authorised dealer; machines imported from Makita's daily export at Makita's recommended price, incl. cordless). Next: CEG wholesale catalogue (NTC, Cedima, Enar, Master and others). Brands shown are switched in `src/lib/shop-brands.ts`.
+Strategy (changed 2026-11-12, replaces "premium machines only, minimum 800 €, no cordless tools" from 2026-10-12): a full-range shop with 1000+ items. Shown today: Gölz (machines + diamond blades, indicative prices), Makita (Royal stroje is an authorised dealer; machines imported from Makita's daily export at Makita's recommended price, incl. cordless) and, since 2026-11-20, NTC, Bomag, Honda and Enar supplied by Unicon (prices = Unicon's CZK price lists converted to EUR). Next: CEG wholesale catalogue (Cedima, Master and others). Brands shown are switched in `src/lib/shop-brands.ts`.
 
 Read before larger changes:
 - `docs/04-technicka-dokumentacia.md`: architecture, order flow, data model, screens (source of truth)

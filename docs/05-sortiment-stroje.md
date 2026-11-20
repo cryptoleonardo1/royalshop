@@ -6,7 +6,7 @@ Stav k 22. 10. 2026. Sortiment NTC, Bomag, Honda a Enar = zeleno označené riad
 
 ## Ako sú ceny nastavené
 
-- **NTC, Bomag, Honda, Enar:** predajná cena = odporúčaná koncová cena z cenníka (CZK ÷ 24,26 = EUR bez DPH, zaokrúhlené na centy, × 1,23), presne ako stĺpec „Cena s DPH 23 % (EUR)“ v zošite. Súprava Enar Dingo = súčet pohonnej jednotky DINGO a hriadeľa TAX-TDX 3/AX58 resp. 5/AX58.
+- **NTC, Bomag, Honda, Enar:** predajná cena = odporúčaná koncová cena z cenníka (CZK ÷ 24,47 = EUR bez DPH; kurz ČNB z 20. 11. 2026, pri zmene kurzu prepočítať: `docs/cenniky/data/zdroje.json`, `scripts/honda-engines.py`, `supabase/snippets/2026-11-20-unicon-prices.sql`, zaokrúhlené na centy, × 1,23), presne ako stĺpec „Cena s DPH 23 % (EUR)“ v zošite. Súprava Enar Dingo = súčet pohonnej jednotky DINGO a hriadeľa TAX-TDX 3/AX58 resp. 5/AX58.
 - **Atlas Copco:** „cena na požiadanie“ (príznak `price_on_request`), kým nepríde cenník. Fiktívna cena ostáva v katalógu, ale nezobrazuje sa a produkt sa nedá kúpiť online. Po doplnení cien stačí v `catalog.json` zmazať `price_on_request` a nastaviť cenu.
 - **Nákupná cena:** zatiaľ cena bez DPH × 0,8 (predvolená marža Unicon 20 %), lebo rabat v zošite je 0 %. Po dohodnutí rabatu treba prepočítať.
 - Demo akcie (preškrtnuté ceny) boli 22. 10. zrušené.

@@ -10,7 +10,7 @@
       "type": "HX",
       "version": "4E",
       "colour": "OH",
-      "priceGrossCents": 104798
+      "priceGrossCents": 103899
     },
     {
       "code": "GX120T3-LX-4E-OH",
@@ -18,7 +18,7 @@
       "type": "LX",
       "version": "4E",
       "colour": "OH",
-      "priceGrossCents": 84366
+      "priceGrossCents": 83642
     },
     {
       "code": "GX120T3-QH-QE-OH",
@@ -26,7 +26,7 @@
       "type": "QH",
       "version": "QE",
       "colour": "OH",
-      "priceGrossCents": 58332
+      "priceGrossCents": 57831
     },
     {
       "code": "GX120T3-QX-4E-OH",
@@ -34,7 +34,7 @@
       "type": "QX",
       "version": "4E",
       "colour": "OH",
-      "priceGrossCents": 59193
+      "priceGrossCents": 58685
     },
     {
       "code": "GX120T3-QX-4E-SD",
@@ -42,7 +42,7 @@
       "type": "QX",
       "version": "4E",
       "colour": "SD",
-      "priceGrossCents": 59193
+      "priceGrossCents": 58685
     },
     {
       "code": "GX120T3-QX-9E-OH",
@@ -50,7 +50,7 @@
       "type": "QX",
       "version": "9E",
       "colour": "OH",
-      "priceGrossCents": 69105
+      "priceGrossCents": 68512
     },
     {
       "code": "GX120T3-QX-WE-SD",
@@ -58,7 +58,7 @@
       "type": "QX",
       "version": "WE",
       "colour": "SD",
-      "priceGrossCents": 70438
+      "priceGrossCents": 69834
     },
     {
       "code": "GX120T3-RH-QE-OH",
@@ -66,7 +66,7 @@
       "type": "RH",
       "version": "QE",
       "colour": "OH",
-      "priceGrossCents": 103607
+      "priceGrossCents": 102717
     },
     {
       "code": "GX120T3-SG-2E-SD",
@@ -74,7 +74,7 @@
       "type": "SG",
       "version": "2E",
       "colour": "SD",
-      "priceGrossCents": 70175
+      "priceGrossCents": 69572
     },
     {
       "code": "GX120T3-SH-QE-OH",
@@ -82,7 +82,7 @@
       "type": "SH",
       "version": "QE",
       "colour": "OH",
-      "priceGrossCents": 58332
+      "priceGrossCents": 57831
     },
     {
       "code": "GX120T3-SX-4E-OH",
@@ -90,7 +90,7 @@
       "type": "SX",
       "version": "4E",
       "colour": "OH",
-      "priceGrossCents": 59193
+      "priceGrossCents": 58685
     },
     {
       "code": "GX120T3-SX-SE-SD",
@@ -98,7 +98,7 @@
       "type": "SX",
       "version": "SE",
       "colour": "SD",
-      "priceGrossCents": 65039
+      "priceGrossCents": 64480
     },
     {
       "code": "GX120T3X-QX-W2-SD",
@@ -106,7 +106,7 @@
       "type": "QX",
       "version": "W2",
       "colour": "SD",
-      "priceGrossCents": 70438
+      "priceGrossCents": 69834
     },
     {
       "code": "GX160H2-QH-B1-OH",
@@ -114,7 +114,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "OH",
-      "priceGrossCents": 48713
+      "priceGrossCents": 48295
     },
     {
       "code": "GX160H2-QX-3-OH",
@@ -122,7 +122,7 @@
       "type": "QX",
       "version": "3",
       "colour": "OH",
-      "priceGrossCents": 55345
+      "priceGrossCents": 54870
     },
     {
       "code": "GX160H2-QX-3-SD",
@@ -130,7 +130,7 @@
       "type": "QX",
       "version": "3",
       "colour": "SD",
-      "priceGrossCents": 55345
+      "priceGrossCents": 54870
     },
     {
       "code": "GX160H2-SX-3-OH",
@@ -138,7 +138,7 @@
       "type": "SX",
       "version": "3",
       "colour": "OH",
-      "priceGrossCents": 55345
+      "priceGrossCents": 54870
     },
     {
       "code": "GX160H2-SX-3-SD",
@@ -146,7 +146,7 @@
       "type": "SX",
       "version": "3",
       "colour": "SD",
-      "priceGrossCents": 55345
+      "priceGrossCents": 54870
     },
     {
       "code": "GX160H2-VP-M6-OH",
@@ -154,7 +154,7 @@
       "type": "VP",
       "version": "M6",
       "colour": "OH",
-      "priceGrossCents": 44708
+      "priceGrossCents": 44324
     },
     {
       "code": "GX160H2-VS-P-OH",
@@ -162,7 +162,7 @@
       "type": "VS",
       "version": "P",
       "colour": "OH",
-      "priceGrossCents": 47644
+      "priceGrossCents": 47234
     },
     {
       "code": "GX160RT2X-QH-G4-OH",
@@ -170,7 +170,7 @@
       "type": "QH",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 57206
+      "priceGrossCents": 56715
     },
     {
       "code": "GX160RT2X-RH-G4-OH",
@@ -178,7 +178,7 @@
       "type": "RH",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 97939
+      "priceGrossCents": 97099
     },
     {
       "code": "GX160T2-VG-E4-OH",
@@ -186,7 +186,7 @@
       "type": "VG",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 65464
+      "priceGrossCents": 64903
     },
     {
       "code": "GX160T2-VG-E5-OH",
@@ -194,7 +194,7 @@
       "type": "VG",
       "version": "E5",
       "colour": "OH",
-      "priceGrossCents": 57586
+      "priceGrossCents": 57092
     },
     {
       "code": "GX160UH2X-QC-M-SD",
@@ -202,7 +202,7 @@
       "type": "QC",
       "version": "M",
       "colour": "SD",
-      "priceGrossCents": 66343
+      "priceGrossCents": 65773
     },
     {
       "code": "GX160UH2X-QH-Q4-OH",
@@ -210,7 +210,7 @@
       "type": "QH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 59908
+      "priceGrossCents": 59394
     },
     {
       "code": "GX160UH2X-QW-X2-SD",
@@ -218,7 +218,7 @@
       "type": "QW",
       "version": "X2",
       "colour": "SD",
-      "priceGrossCents": 72821
+      "priceGrossCents": 72196
     },
     {
       "code": "GX160UH2X-QX-4-OH",
@@ -226,7 +226,7 @@
       "type": "QX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 60760
+      "priceGrossCents": 60238
     },
     {
       "code": "GX160UH2X-QX-4-SD",
@@ -234,7 +234,7 @@
       "type": "QX",
       "version": "4",
       "colour": "SD",
-      "priceGrossCents": 60760
+      "priceGrossCents": 60238
     },
     {
       "code": "GX160UH2X-QX-9-OH",
@@ -242,7 +242,7 @@
       "type": "QX",
       "version": "9",
       "colour": "OH",
-      "priceGrossCents": 70448
+      "priceGrossCents": 69844
     },
     {
       "code": "GX160UH2X-SX-4-OH",
@@ -250,7 +250,7 @@
       "type": "SX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 60760
+      "priceGrossCents": 60238
     },
     {
       "code": "GX160UH2X-SX-S4-SD",
@@ -258,7 +258,7 @@
       "type": "SX",
       "version": "S4",
       "colour": "SD",
-      "priceGrossCents": 66529
+      "priceGrossCents": 65959
     },
     {
       "code": "GX160UH2X-VS-D9-OH",
@@ -266,7 +266,7 @@
       "type": "VS",
       "version": "D9",
       "colour": "OH",
-      "priceGrossCents": 58965
+      "priceGrossCents": 58459
     },
     {
       "code": "GX160UT2X-HX-4-OH",
@@ -274,7 +274,7 @@
       "type": "HX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 104763
+      "priceGrossCents": 103864
     },
     {
       "code": "GX160UT2X-LX-4-OH",
@@ -282,7 +282,7 @@
       "type": "LX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 87713
+      "priceGrossCents": 86960
     },
     {
       "code": "GX160UT2X-QA-X4-OH",
@@ -290,7 +290,7 @@
       "type": "QA",
       "version": "X4",
       "colour": "OH",
-      "priceGrossCents": 89847
+      "priceGrossCents": 89075
     },
     {
       "code": "GX160UT2X-QC-9-SD",
@@ -298,7 +298,7 @@
       "type": "QC",
       "version": "9",
       "colour": "SD",
-      "priceGrossCents": 65383
+      "priceGrossCents": 64822
     },
     {
       "code": "GX160UT2X-QM-C6-OH",
@@ -306,7 +306,7 @@
       "type": "QM",
       "version": "C6",
       "colour": "OH",
-      "priceGrossCents": 84705
+      "priceGrossCents": 83978
     },
     {
       "code": "GX160UT2X-QM-C8-OH",
@@ -314,7 +314,7 @@
       "type": "QM",
       "version": "C8",
       "colour": "OH",
-      "priceGrossCents": 77090
+      "priceGrossCents": 76429
     },
     {
       "code": "GX160UT2X-QM-D6-OH",
@@ -322,7 +322,7 @@
       "type": "QM",
       "version": "D6",
       "colour": "OH",
-      "priceGrossCents": 84705
+      "priceGrossCents": 83978
     },
     {
       "code": "GX160UT2X-QM-E4-OH",
@@ -330,7 +330,7 @@
       "type": "QM",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 56896
+      "priceGrossCents": 56408
     },
     {
       "code": "GX160UT2X-QX-E5-OH",
@@ -338,7 +338,7 @@
       "type": "QX",
       "version": "E5",
       "colour": "OH",
-      "priceGrossCents": 112337
+      "priceGrossCents": 111374
     },
     {
       "code": "GX160UT2X-QX-WE-OH",
@@ -346,7 +346,7 @@
       "type": "QX",
       "version": "WE",
       "colour": "OH",
-      "priceGrossCents": 121631
+      "priceGrossCents": 120587
     },
     {
       "code": "GX160UT2X-RH-Q4-OH",
@@ -354,7 +354,7 @@
       "type": "RH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 110882
+      "priceGrossCents": 109931
     },
     {
       "code": "GX160UT2X-RX-4-OH",
@@ -362,7 +362,7 @@
       "type": "RX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 118711
+      "priceGrossCents": 117693
     },
     {
       "code": "GX160UT2X-SG-24-SD",
@@ -370,7 +370,7 @@
       "type": "SG",
       "version": "24",
       "colour": "SD",
-      "priceGrossCents": 71614
+      "priceGrossCents": 71001
     },
     {
       "code": "GX160UT2X-SH-Q4-OH",
@@ -378,7 +378,7 @@
       "type": "SH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 59908
+      "priceGrossCents": 59394
     },
     {
       "code": "GX160UT2X-SM-C7-OH",
@@ -386,7 +386,7 @@
       "type": "SM",
       "version": "C7",
       "colour": "OH",
-      "priceGrossCents": 77090
+      "priceGrossCents": 76429
     },
     {
       "code": "GX160UT2X-SX-E5-OH",
@@ -394,7 +394,7 @@
       "type": "SX",
       "version": "E5",
       "colour": "OH",
-      "priceGrossCents": 112337
+      "priceGrossCents": 111374
     },
     {
       "code": "GX160UT2X-TX-4-OH",
@@ -402,7 +402,7 @@
       "type": "TX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 60172
+      "priceGrossCents": 59655
     },
     {
       "code": "GX160UT2X-VG-25-SD",
@@ -410,7 +410,7 @@
       "type": "VG",
       "version": "25",
       "colour": "SD",
-      "priceGrossCents": 67569
+      "priceGrossCents": 66989
     },
     {
       "code": "GX160UT2X-VX-E9-OH",
@@ -418,7 +418,7 @@
       "type": "VX",
       "version": "E9",
       "colour": "OH",
-      "priceGrossCents": 114081
+      "priceGrossCents": 113102
     },
     {
       "code": "GX160UT2X-WM-B0-OH",
@@ -426,7 +426,7 @@
       "type": "WM",
       "version": "B0",
       "colour": "OH",
-      "priceGrossCents": 71483
+      "priceGrossCents": 70869
     },
     {
       "code": "GX200H2-QH-B1-OH",
@@ -434,7 +434,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "OH",
-      "priceGrossCents": 53611
+      "priceGrossCents": 53151
     },
     {
       "code": "GX200H2-QH-B1-SD",
@@ -442,7 +442,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "SD",
-      "priceGrossCents": 53611
+      "priceGrossCents": 53151
     },
     {
       "code": "GX200H2-QX-3-OH",
@@ -450,7 +450,7 @@
       "type": "QX",
       "version": "3",
       "colour": "OH",
-      "priceGrossCents": 59239
+      "priceGrossCents": 58730
     },
     {
       "code": "GX200H2-QX-3-SD",
@@ -458,7 +458,7 @@
       "type": "QX",
       "version": "3",
       "colour": "SD",
-      "priceGrossCents": 59239
+      "priceGrossCents": 58730
     },
     {
       "code": "GX200H2-SX-3-OH",
@@ -466,7 +466,7 @@
       "type": "SX",
       "version": "3",
       "colour": "OH",
-      "priceGrossCents": 59239
+      "priceGrossCents": 58730
     },
     {
       "code": "GX200H2-SX-3-SD",
@@ -474,7 +474,7 @@
       "type": "SX",
       "version": "3",
       "colour": "SD",
-      "priceGrossCents": 59239
+      "priceGrossCents": 58730
     },
     {
       "code": "GX200H2-VS-P-OH",
@@ -482,7 +482,7 @@
       "type": "VS",
       "version": "P",
       "colour": "OH",
-      "priceGrossCents": 50412
+      "priceGrossCents": 49979
     },
     {
       "code": "GX200RT2X-RD-G4-OH",
@@ -490,7 +490,7 @@
       "type": "RD",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 110674
+      "priceGrossCents": 109725
     },
     {
       "code": "GX200RT2X-RH-ES-OH",
@@ -498,7 +498,7 @@
       "type": "RH",
       "version": "ES",
       "colour": "OH",
-      "priceGrossCents": 145299
+      "priceGrossCents": 144051
     },
     {
       "code": "GX200RT2X-RH-G4-OH",
@@ -506,7 +506,7 @@
       "type": "RH",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 107886
+      "priceGrossCents": 106961
     },
     {
       "code": "GX200RT2X-SW-G4-OH",
@@ -514,7 +514,7 @@
       "type": "SW",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 116795
+      "priceGrossCents": 115792
     },
     {
       "code": "GX200RT2X-VP-M4-OH",
@@ -522,7 +522,7 @@
       "type": "VP",
       "version": "M4",
       "colour": "OH",
-      "priceGrossCents": 64542
+      "priceGrossCents": 63988
     },
     {
       "code": "GX200RT2X-VS-19-OH",
@@ -530,7 +530,7 @@
       "type": "VS",
       "version": "19",
       "colour": "OH",
-      "priceGrossCents": 75083
+      "priceGrossCents": 74438
     },
     {
       "code": "GX200UH2X-QH-Q4-OH",
@@ -538,7 +538,7 @@
       "type": "QH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 64188
+      "priceGrossCents": 63637
     },
     {
       "code": "GX200UH2X-QX-4-OH",
@@ -546,7 +546,7 @@
       "type": "QX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 65034
+      "priceGrossCents": 64475
     },
     {
       "code": "GX200UH2X-QX-4-SD",
@@ -554,7 +554,7 @@
       "type": "QX",
       "version": "4",
       "colour": "SD",
-      "priceGrossCents": 65034
+      "priceGrossCents": 64475
     },
     {
       "code": "GX200UH2X-QX-9-OH",
@@ -562,7 +562,7 @@
       "type": "QX",
       "version": "9",
       "colour": "OH",
-      "priceGrossCents": 74794
+      "priceGrossCents": 74152
     },
     {
       "code": "GX200UH2X-SX-4-OH",
@@ -570,7 +570,7 @@
       "type": "SX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 65034
+      "priceGrossCents": 64475
     },
     {
       "code": "GX200UH2X-VS-D9-OH",
@@ -578,7 +578,7 @@
       "type": "VS",
       "version": "D9",
       "colour": "OH",
-      "priceGrossCents": 61951
+      "priceGrossCents": 61420
     },
     {
       "code": "GX200UT2X-LX-4-OH",
@@ -586,7 +586,7 @@
       "type": "LX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 104474
+      "priceGrossCents": 103577
     },
     {
       "code": "GX200UT2X-QC-9-OH",
@@ -594,7 +594,7 @@
       "type": "QC",
       "version": "9",
       "colour": "OH",
-      "priceGrossCents": 69662
+      "priceGrossCents": 69065
     },
     {
       "code": "GX200UT2X-QX-B2-OH",
@@ -602,7 +602,7 @@
       "type": "QX",
       "version": "B2",
       "colour": "OH",
-      "priceGrossCents": 83727
+      "priceGrossCents": 83009
     },
     {
       "code": "GX200UT2X-QX-D4-OH",
@@ -610,7 +610,7 @@
       "type": "QX",
       "version": "D4",
       "colour": "OH",
-      "priceGrossCents": 64410
+      "priceGrossCents": 63858
     },
     {
       "code": "GX200UT2X-QX-E5-OH",
@@ -618,7 +618,7 @@
       "type": "QX",
       "version": "E5",
       "colour": "OH",
-      "priceGrossCents": 116652
+      "priceGrossCents": 115651
     },
     {
       "code": "GX200UT2X-QX-E5-SD",
@@ -626,7 +626,7 @@
       "type": "QX",
       "version": "E5",
       "colour": "SD",
-      "priceGrossCents": 116652
+      "priceGrossCents": 115651
     },
     {
       "code": "GX200UT2X-RH-Q4-OH",
@@ -634,7 +634,7 @@
       "type": "RH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 129079
+      "priceGrossCents": 127972
     },
     {
       "code": "GX200UT2X-RX-4-OH",
@@ -642,7 +642,7 @@
       "type": "RX",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 131269
+      "priceGrossCents": 130143
     },
     {
       "code": "GX200UT2X-SC-WN-SD",
@@ -650,7 +650,7 @@
       "type": "SC",
       "version": "WN",
       "colour": "SD",
-      "priceGrossCents": 79357
+      "priceGrossCents": 78676
     },
     {
       "code": "GX200UT2X-SH-Q4-OH",
@@ -658,7 +658,7 @@
       "type": "SH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 64188
+      "priceGrossCents": 63637
     },
     {
       "code": "GX200UT2X-SM-12-SD",
@@ -666,7 +666,7 @@
       "type": "SM",
       "version": "12",
       "colour": "SD",
-      "priceGrossCents": 70950
+      "priceGrossCents": 70341
     },
     {
       "code": "GX200UT2X-SM-C4-OH",
@@ -674,7 +674,7 @@
       "type": "SM",
       "version": "C4",
       "colour": "OH",
-      "priceGrossCents": 89254
+      "priceGrossCents": 88487
     },
     {
       "code": "GX200UT2X-SM-CR-OH",
@@ -682,7 +682,7 @@
       "type": "SM",
       "version": "CR",
       "colour": "OH",
-      "priceGrossCents": 98567
+      "priceGrossCents": 97721
     },
     {
       "code": "GX200UT2X-SM-H4-OH",
@@ -690,7 +690,7 @@
       "type": "SM",
       "version": "H4",
       "colour": "OH",
-      "priceGrossCents": 91201
+      "priceGrossCents": 90417
     },
     {
       "code": "GX200UT2X-SX-E5-OH",
@@ -698,7 +698,7 @@
       "type": "SX",
       "version": "E5",
       "colour": "OH",
-      "priceGrossCents": 116652
+      "priceGrossCents": 115651
     },
     {
       "code": "GX200UT2X-VG-S5-OH",
@@ -706,7 +706,7 @@
       "type": "VG",
       "version": "S5",
       "colour": "OH",
-      "priceGrossCents": 66352
+      "priceGrossCents": 65783
     },
     {
       "code": "GX240UT2X-QH-B4-OH",
@@ -714,7 +714,7 @@
       "type": "QH",
       "version": "B4",
       "colour": "OH",
-      "priceGrossCents": 104565
+      "priceGrossCents": 103668
     },
     {
       "code": "GX240UT2X-QH-Q4-OH",
@@ -722,7 +722,7 @@
       "type": "QH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 103814
+      "priceGrossCents": 102924
     },
     {
       "code": "GX240UT2X-QX-B7-OH",
@@ -730,7 +730,7 @@
       "type": "QX",
       "version": "B7",
       "colour": "OH",
-      "priceGrossCents": 116982
+      "priceGrossCents": 115978
     },
     {
       "code": "GX240UT2X-QX-E4-OH",
@@ -738,7 +738,7 @@
       "type": "QX",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 148487
+      "priceGrossCents": 147213
     },
     {
       "code": "GX240UT2X-QX-Q4-OH",
@@ -746,7 +746,7 @@
       "type": "QX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 105934
+      "priceGrossCents": 105025
     },
     {
       "code": "GX25NTX-ST-SC-OH",
@@ -754,7 +754,7 @@
       "type": "ST",
       "version": "SC",
       "colour": "OH",
-      "priceGrossCents": 42751
+      "priceGrossCents": 42385
     },
     {
       "code": "GX25T-S4-OH",
@@ -762,7 +762,7 @@
       "type": "S4",
       "version": null,
       "colour": "OH",
-      "priceGrossCents": 39779
+      "priceGrossCents": 39439
     },
     {
       "code": "GX25T-ST-4-OH",
@@ -770,7 +770,7 @@
       "type": "ST",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 39779
+      "priceGrossCents": 39439
     },
     {
       "code": "GX270RT2X-QX-QL-OH",
@@ -778,7 +778,7 @@
       "type": "QX",
       "version": "QL",
       "colour": "OH",
-      "priceGrossCents": 103683
+      "priceGrossCents": 102794
     },
     {
       "code": "GX270RT2X-RD-G4-OH",
@@ -786,7 +786,7 @@
       "type": "RD",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 143134
+      "priceGrossCents": 141905
     },
     {
       "code": "GX270RT2X-RH-ES-OH",
@@ -794,7 +794,7 @@
       "type": "RH",
       "version": "ES",
       "colour": "OH",
-      "priceGrossCents": 180530
+      "priceGrossCents": 178981
     },
     {
       "code": "GX270RT2X-RH-G4-OH",
@@ -802,7 +802,7 @@
       "type": "RH",
       "version": "G4",
       "colour": "OH",
-      "priceGrossCents": 138525
+      "priceGrossCents": 137336
     },
     {
       "code": "GX270RT2X-VP-EP-OH",
@@ -810,7 +810,7 @@
       "type": "VP",
       "version": "EP",
       "colour": "OH",
-      "priceGrossCents": 120384
+      "priceGrossCents": 119351
     },
     {
       "code": "GX270T2-QB-E1-OH",
@@ -818,7 +818,7 @@
       "type": "QB",
       "version": "E1",
       "colour": "OH",
-      "priceGrossCents": 120683
+      "priceGrossCents": 119647
     },
     {
       "code": "GX270T2-QH-B1-OH",
@@ -826,7 +826,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "OH",
-      "priceGrossCents": 79909
+      "priceGrossCents": 79223
     },
     {
       "code": "GX270T2-QH-B1-SD",
@@ -834,7 +834,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "SD",
-      "priceGrossCents": 79909
+      "priceGrossCents": 79223
     },
     {
       "code": "GX270T2-QH-B2-OH",
@@ -842,7 +842,7 @@
       "type": "QH",
       "version": "B2",
       "colour": "OH",
-      "priceGrossCents": 101685
+      "priceGrossCents": 100813
     },
     {
       "code": "GX270T2-SH-B2-OH",
@@ -850,7 +850,7 @@
       "type": "SH",
       "version": "B2",
       "colour": "OH",
-      "priceGrossCents": 101685
+      "priceGrossCents": 100813
     },
     {
       "code": "GX270T2-VS-P-OH",
@@ -858,7 +858,7 @@
       "type": "VS",
       "version": "P",
       "colour": "OH",
-      "priceGrossCents": 83438
+      "priceGrossCents": 82722
     },
     {
       "code": "GX270T2-VS-P-SD",
@@ -866,7 +866,7 @@
       "type": "VS",
       "version": "P",
       "colour": "SD",
-      "priceGrossCents": 83438
+      "priceGrossCents": 82722
     },
     {
       "code": "GX270UT2X-LX-Q4-OH",
@@ -874,7 +874,7 @@
       "type": "LX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 135847
+      "priceGrossCents": 134681
     },
     {
       "code": "GX270UT2X-QA-4-OH",
@@ -882,7 +882,7 @@
       "type": "QA",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 125819
+      "priceGrossCents": 124739
     },
     {
       "code": "GX270UT2X-QA-4-SD",
@@ -890,7 +890,7 @@
       "type": "QA",
       "version": "4",
       "colour": "SD",
-      "priceGrossCents": 125819
+      "priceGrossCents": 124739
     },
     {
       "code": "GX270UT2X-QA-G2-OH",
@@ -898,7 +898,7 @@
       "type": "QA",
       "version": "G2",
       "colour": "OH",
-      "priceGrossCents": 120429
+      "priceGrossCents": 119396
     },
     {
       "code": "GX270UT2X-QC-2-SD",
@@ -906,7 +906,7 @@
       "type": "QC",
       "version": "2",
       "colour": "SD",
-      "priceGrossCents": 116535
+      "priceGrossCents": 115535
     },
     {
       "code": "GX270UT2X-QH-Q4-OH",
@@ -914,7 +914,7 @@
       "type": "QH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 106461
+      "priceGrossCents": 105548
     },
     {
       "code": "GX270UT2X-QK-E4-OH",
@@ -922,7 +922,7 @@
       "type": "QK",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 162120
+      "priceGrossCents": 160729
     },
     {
       "code": "GX270UT2X-QM-E2-OH",
@@ -930,7 +930,7 @@
       "type": "QM",
       "version": "E2",
       "colour": "OH",
-      "priceGrossCents": 170482
+      "priceGrossCents": 169018
     },
     {
       "code": "GX270UT2X-QX-B7-OH",
@@ -938,7 +938,7 @@
       "type": "QX",
       "version": "B7",
       "colour": "OH",
-      "priceGrossCents": 123036
+      "priceGrossCents": 121979
     },
     {
       "code": "GX270UT2X-QX-E4-OH",
@@ -946,7 +946,7 @@
       "type": "QX",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 157380
+      "priceGrossCents": 156029
     },
     {
       "code": "GX270UT2X-QX-Q4-OH",
@@ -954,7 +954,7 @@
       "type": "QX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 108591
+      "priceGrossCents": 107659
     },
     {
       "code": "GX270UT2X-QX-Q4-SD",
@@ -962,7 +962,7 @@
       "type": "QX",
       "version": "Q4",
       "colour": "SD",
-      "priceGrossCents": 108591
+      "priceGrossCents": 107659
     },
     {
       "code": "GX270UT2X-QZ-XR-OH",
@@ -970,7 +970,7 @@
       "type": "QZ",
       "version": "XR",
       "colour": "OH",
-      "priceGrossCents": 181554
+      "priceGrossCents": 179996
     },
     {
       "code": "GX270UT2X-RH-E5-OH",
@@ -978,7 +978,7 @@
       "type": "RH",
       "version": "E5",
       "colour": "OH",
-      "priceGrossCents": 180434
+      "priceGrossCents": 178885
     },
     {
       "code": "GX270UT2X-RH-Q5-OH",
@@ -986,7 +986,7 @@
       "type": "RH",
       "version": "Q5",
       "colour": "OH",
-      "priceGrossCents": 157609
+      "priceGrossCents": 156256
     },
     {
       "code": "GX270UT2X-RH-Q6-9S",
@@ -994,7 +994,7 @@
       "type": "RH",
       "version": "Q6",
       "colour": "9S",
-      "priceGrossCents": 169650
+      "priceGrossCents": 168194
     },
     {
       "code": "GX270UT2X-SH-Q4-OH",
@@ -1002,7 +1002,7 @@
       "type": "SH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 106461
+      "priceGrossCents": 105548
     },
     {
       "code": "GX270UT2X-SH-Q5-OH",
@@ -1010,7 +1010,7 @@
       "type": "SH",
       "version": "Q5",
       "colour": "OH",
-      "priceGrossCents": 106461
+      "priceGrossCents": 105548
     },
     {
       "code": "GX270UT2X-SM-C4-OH",
@@ -1018,7 +1018,7 @@
       "type": "SM",
       "version": "C4",
       "colour": "OH",
-      "priceGrossCents": 129692
+      "priceGrossCents": 128579
     },
     {
       "code": "GX270UT2X-SM-E1-OH",
@@ -1026,7 +1026,7 @@
       "type": "SM",
       "version": "E1",
       "colour": "OH",
-      "priceGrossCents": 170988
+      "priceGrossCents": 169521
     },
     {
       "code": "GX270UT2X-SM-E6-OH",
@@ -1034,7 +1034,7 @@
       "type": "SM",
       "version": "E6",
       "colour": "OH",
-      "priceGrossCents": 135690
+      "priceGrossCents": 134526
     },
     {
       "code": "GX270UT2X-SW-S4-SD",
@@ -1042,7 +1042,7 @@
       "type": "SW",
       "version": "S4",
       "colour": "SD",
-      "priceGrossCents": 109386
+      "priceGrossCents": 108448
     },
     {
       "code": "GX270UT2X-SX-CW-SD",
@@ -1050,7 +1050,7 @@
       "type": "SX",
       "version": "CW",
       "colour": "SD",
-      "priceGrossCents": 120572
+      "priceGrossCents": 119536
     },
     {
       "code": "GX270UT2X-SX-E4-OH",
@@ -1058,7 +1058,7 @@
       "type": "SX",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 157380
+      "priceGrossCents": 156029
     },
     {
       "code": "GX270UT2X-SX-Q4-OH",
@@ -1066,7 +1066,7 @@
       "type": "SX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 108591
+      "priceGrossCents": 107659
     },
     {
       "code": "GX270UT2X-SX-Q4-SD",
@@ -1074,7 +1074,7 @@
       "type": "SX",
       "version": "Q4",
       "colour": "SD",
-      "priceGrossCents": 108591
+      "priceGrossCents": 107659
     },
     {
       "code": "GX270UT2X-VS-D7-OH",
@@ -1082,7 +1082,7 @@
       "type": "VS",
       "version": "D7",
       "colour": "OH",
-      "priceGrossCents": 95170
+      "priceGrossCents": 94353
     },
     {
       "code": "GX270UT2X-VX-B7-OH",
@@ -1090,7 +1090,7 @@
       "type": "VX",
       "version": "B7",
       "colour": "OH",
-      "priceGrossCents": 95170
+      "priceGrossCents": 94353
     },
     {
       "code": "GX270UT2X-VX-E7-OH",
@@ -1098,7 +1098,7 @@
       "type": "VX",
       "version": "E7",
       "colour": "OH",
-      "priceGrossCents": 134839
+      "priceGrossCents": 133681
     },
     {
       "code": "GX390T2-QB-E1-OH",
@@ -1106,7 +1106,7 @@
       "type": "QB",
       "version": "E1",
       "colour": "OH",
-      "priceGrossCents": 150145
+      "priceGrossCents": 148857
     },
     {
       "code": "GX390T2-QH-B1-OH",
@@ -1114,7 +1114,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "OH",
-      "priceGrossCents": 107942
+      "priceGrossCents": 107015
     },
     {
       "code": "GX390T2-QH-B1-SD",
@@ -1122,7 +1122,7 @@
       "type": "QH",
       "version": "B1",
       "colour": "SD",
-      "priceGrossCents": 107942
+      "priceGrossCents": 107015
     },
     {
       "code": "GX390T2-QH-B2-OH",
@@ -1130,7 +1130,7 @@
       "type": "QH",
       "version": "B2",
       "colour": "OH",
-      "priceGrossCents": 132041
+      "priceGrossCents": 130906
     },
     {
       "code": "GX390T2-VP-XP-OH",
@@ -1138,7 +1138,7 @@
       "type": "VP",
       "version": "XP",
       "colour": "OH",
-      "priceGrossCents": 102583
+      "priceGrossCents": 101703
     },
     {
       "code": "GX390T2-VS-P-OH",
@@ -1146,7 +1146,7 @@
       "type": "VS",
       "version": "P",
       "colour": "OH",
-      "priceGrossCents": 101878
+      "priceGrossCents": 101004
     },
     {
       "code": "GX390T2-VS-P-SD",
@@ -1154,7 +1154,7 @@
       "type": "VS",
       "version": "P",
       "colour": "SD",
-      "priceGrossCents": 101878
+      "priceGrossCents": 101004
     },
     {
       "code": "GX390UT2X-LX-E4-OH",
@@ -1162,7 +1162,7 @@
       "type": "LX",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 209272
+      "priceGrossCents": 207476
     },
     {
       "code": "GX390UT2X-LX-Q4-OH",
@@ -1170,7 +1170,7 @@
       "type": "LX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 164884
+      "priceGrossCents": 163469
     },
     {
       "code": "GX390UT2X-PA-2-OH",
@@ -1178,7 +1178,7 @@
       "type": "PA",
       "version": "2",
       "colour": "OH",
-      "priceGrossCents": 148503
+      "priceGrossCents": 147229
     },
     {
       "code": "GX390UT2X-QA-4-SD",
@@ -1186,7 +1186,7 @@
       "type": "QA",
       "version": "4",
       "colour": "SD",
-      "priceGrossCents": 150059
+      "priceGrossCents": 148771
     },
     {
       "code": "GX390UT2X-QC-1-OH",
@@ -1194,7 +1194,7 @@
       "type": "QC",
       "version": "1",
       "colour": "OH",
-      "priceGrossCents": 151356
+      "priceGrossCents": 150058
     },
     {
       "code": "GX390UT2X-QC-3-OH",
@@ -1202,7 +1202,7 @@
       "type": "QC",
       "version": "3",
       "colour": "OH",
-      "priceGrossCents": 139006
+      "priceGrossCents": 137813
     },
     {
       "code": "GX390UT2X-QC-5-SD",
@@ -1210,7 +1210,7 @@
       "type": "QC",
       "version": "5",
       "colour": "SD",
-      "priceGrossCents": 147853
+      "priceGrossCents": 146584
     },
     {
       "code": "GX390UT2X-QC-9-SD",
@@ -1218,7 +1218,7 @@
       "type": "QC",
       "version": "9",
       "colour": "SD",
-      "priceGrossCents": 142413
+      "priceGrossCents": 141192
     },
     {
       "code": "GX390UT2X-QH-B4-OH",
@@ -1226,7 +1226,7 @@
       "type": "QH",
       "version": "B4",
       "colour": "OH",
-      "priceGrossCents": 126194
+      "priceGrossCents": 125111
     },
     {
       "code": "GX390UT2X-QK-4-OH",
@@ -1234,7 +1234,7 @@
       "type": "QK",
       "version": "4",
       "colour": "OH",
-      "priceGrossCents": 149404
+      "priceGrossCents": 148123
     },
     {
       "code": "GX390UT2X-QK-A4-OH",
@@ -1242,7 +1242,7 @@
       "type": "QK",
       "version": "A4",
       "colour": "OH",
-      "priceGrossCents": 194812
+      "priceGrossCents": 193141
     },
     {
       "code": "GX390UT2X-QM-E0-OH",
@@ -1250,7 +1250,7 @@
       "type": "QM",
       "version": "E0",
       "colour": "OH",
-      "priceGrossCents": 206596
+      "priceGrossCents": 204822
     },
     {
       "code": "GX390UT2X-QN-R2-OH",
@@ -1258,7 +1258,7 @@
       "type": "QN",
       "version": "R2",
       "colour": "OH",
-      "priceGrossCents": 212487
+      "priceGrossCents": 210663
     },
     {
       "code": "GX390UT2X-QX-B9-OH",
@@ -1266,7 +1266,7 @@
       "type": "QX",
       "version": "B9",
       "colour": "OH",
-      "priceGrossCents": 162937
+      "priceGrossCents": 161538
     },
     {
       "code": "GX390UT2X-QX-E4-OH",
@@ -1274,7 +1274,7 @@
       "type": "QX",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 188328
+      "priceGrossCents": 186712
     },
     {
       "code": "GX390UT2X-QX-Q4-OH",
@@ -1282,7 +1282,7 @@
       "type": "QX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 129886
+      "priceGrossCents": 128770
     },
     {
       "code": "GX390UT2X-QX-Q4-SD",
@@ -1290,7 +1290,7 @@
       "type": "QX",
       "version": "Q4",
       "colour": "SD",
-      "priceGrossCents": 129886
+      "priceGrossCents": 128770
     },
     {
       "code": "GX390UT2X-QZ-HW-OH",
@@ -1298,7 +1298,7 @@
       "type": "QZ",
       "version": "HW",
       "colour": "OH",
-      "priceGrossCents": 278382
+      "priceGrossCents": 275994
     },
     {
       "code": "GX390UT2X-QZ-RL-OH",
@@ -1306,7 +1306,7 @@
       "type": "QZ",
       "version": "RL",
       "colour": "OH",
-      "priceGrossCents": 278382
+      "priceGrossCents": 275994
     },
     {
       "code": "GX390UT2X-SC-1-OH",
@@ -1314,7 +1314,7 @@
       "type": "SC",
       "version": "1",
       "colour": "OH",
-      "priceGrossCents": 142413
+      "priceGrossCents": 141192
     },
     {
       "code": "GX390UT2X-SC-K4-OH",
@@ -1322,7 +1322,7 @@
       "type": "SC",
       "version": "K4",
       "colour": "OH",
-      "priceGrossCents": 191096
+      "priceGrossCents": 189456
     },
     {
       "code": "GX390UT2X-SH-Q4-OH",
@@ -1330,7 +1330,7 @@
       "type": "SH",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 125621
+      "priceGrossCents": 124544
     },
     {
       "code": "GX390UT2X-SH-Q5-OH",
@@ -1338,7 +1338,7 @@
       "type": "SH",
       "version": "Q5",
       "colour": "OH",
-      "priceGrossCents": 125621
+      "priceGrossCents": 124544
     },
     {
       "code": "GX390UT2X-SM-C1-OH",
@@ -1346,7 +1346,7 @@
       "type": "SM",
       "version": "C1",
       "colour": "OH",
-      "priceGrossCents": 156832
+      "priceGrossCents": 155487
     },
     {
       "code": "GX390UT2X-SM-E0-OH",
@@ -1354,7 +1354,7 @@
       "type": "SM",
       "version": "E0",
       "colour": "OH",
-      "priceGrossCents": 206596
+      "priceGrossCents": 204822
     },
     {
       "code": "GX390UT2X-SM-E6-OH",
@@ -1362,7 +1362,7 @@
       "type": "SM",
       "version": "E6",
       "colour": "OH",
-      "priceGrossCents": 161725
+      "priceGrossCents": 160338
     },
     {
       "code": "GX390UT2X-ST-C4-OH",
@@ -1370,7 +1370,7 @@
       "type": "ST",
       "version": "C4",
       "colour": "OH",
-      "priceGrossCents": 193687
+      "priceGrossCents": 192025
     },
     {
       "code": "GX390UT2X-SW-A4-SD",
@@ -1378,7 +1378,7 @@
       "type": "SW",
       "version": "A4",
       "colour": "SD",
-      "priceGrossCents": 154247
+      "priceGrossCents": 152923
     },
     {
       "code": "GX390UT2X-SX-BG-SD",
@@ -1386,7 +1386,7 @@
       "type": "SX",
       "version": "BG",
       "colour": "SD",
-      "priceGrossCents": 186330
+      "priceGrossCents": 184731
     },
     {
       "code": "GX390UT2X-SX-CW-SD",
@@ -1394,7 +1394,7 @@
       "type": "SX",
       "version": "CW",
       "colour": "SD",
-      "priceGrossCents": 191659
+      "priceGrossCents": 190014
     },
     {
       "code": "GX390UT2X-SX-E4-OH",
@@ -1402,7 +1402,7 @@
       "type": "SX",
       "version": "E4",
       "colour": "OH",
-      "priceGrossCents": 188328
+      "priceGrossCents": 186712
     },
     {
       "code": "GX390UT2X-SX-Q4-OH",
@@ -1410,7 +1410,7 @@
       "type": "SX",
       "version": "Q4",
       "colour": "OH",
-      "priceGrossCents": 129886
+      "priceGrossCents": 128770
     },
     {
       "code": "GX390UT2X-VN-27-SD",
@@ -1418,7 +1418,7 @@
       "type": "VN",
       "version": "27",
       "colour": "SD",
-      "priceGrossCents": 184312
+      "priceGrossCents": 182731
     },
     {
       "code": "GX390UT2X-VS-B9-OH",
@@ -1426,7 +1426,7 @@
       "type": "VS",
       "version": "B9",
       "colour": "OH",
-      "priceGrossCents": 124054
+      "priceGrossCents": 122990
     },
     {
       "code": "GX390UT2X-VS-D9-OH",
@@ -1434,7 +1434,7 @@
       "type": "VS",
       "version": "D9",
       "colour": "OH",
-      "priceGrossCents": 124054
+      "priceGrossCents": 122990
     },
     {
       "code": "GX390UT2X-VX-E7-OH",
@@ -1442,7 +1442,7 @@
       "type": "VX",
       "version": "E7",
       "colour": "OH",
-      "priceGrossCents": 177817
+      "priceGrossCents": 176292
     },
     {
       "code": "GX390UT2X-VX-E9-OH",
@@ -1450,7 +1450,7 @@
       "type": "VX",
       "version": "E9",
       "colour": "OH",
-      "priceGrossCents": 164346
+      "priceGrossCents": 162936
     }
   ]
 }
