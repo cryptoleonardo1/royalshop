@@ -6,11 +6,13 @@
 //
 // Safe to re-run: products are matched by slug, their specs, photos and documents are replaced, prices and
 // stock are updated, and Makita products that left the export are archived. Since 2026-11-24 only the machines
-// of the current Makita promotion are sold: supabase/seed-data/makita-akcia.json lists their codes (taken from
-// the promotion workbook in docs/cenniky/), every other Makita machine is archived. Delete that file to import
-// the whole export again. Run the import again after
-// `scripts/seed.ts`, which wipes the catalog. Selling prices are Makita's MOC; purchase prices are not known
-// yet, so no product_costs rows are written.
+// of the current Makita promotion are sold: supabase/seed-data/makita-akcia.json lists their codes and selling
+// prices (built from the promotion workbook by the git-ignored docs/cenniky/makita-akcia.py), every other
+// Makita machine is archived. Purchase prices go to product_costs when the git-ignored
+// docs/cenniky/data/makita-akcia-naklady.json is on disk. Delete makita-akcia.json to import the whole export
+// at Makita's MOC again. Run the import again after
+// `scripts/seed.ts`, which wipes the catalog. Without a promotion file selling prices are Makita's MOC and no
+// product_costs rows are written.
 
 import { config } from "dotenv";
 import { existsSync, readFileSync } from "node:fs";
@@ -32,6 +34,7 @@ const BRAND = "makita";
 const BUCKET = "product-images";
 const PHOTO_DIR = "originals/makita/img";
 const PROMO_FILE = "supabase/seed-data/makita-akcia.json";
+const PROMO_COSTS_FILE = "docs/cenniky/data/makita-akcia-naklady.json";
 const CHUNK = 100;
 // Shown as "Odporúčame" on the home page and first in the default sort (changed 2026-11-12: winter picks).
 const FEATURED = new Set(["makita-tw001gu201", "makita-duc254z", "makita-dhg180zk"]);
@@ -172,13 +175,20 @@ async function main() {
   const all: MakitaProduct[] = JSON.parse(
     readFileSync("supabase/seed-data/makita.json", "utf8"),
   ).products;
-  const promo: Set<string> | null = existsSync(PROMO_FILE)
-    ? new Set(JSON.parse(readFileSync(PROMO_FILE, "utf8")).codes)
+  // code -> selling price incl. VAT
+  const promo: Record<string, number> | null = existsSync(PROMO_FILE)
+    ? JSON.parse(readFileSync(PROMO_FILE, "utf8")).prices
     : null;
-  const products = promo ? all.filter((p) => promo.has(p.sku.toUpperCase())) : all;
+  const products = promo
+    ? all
+        .filter((p) => promo[p.sku.toUpperCase()] != null)
+        .map((p) => ({ ...p, price_gross_eur: promo[p.sku.toUpperCase()] }))
+    : all;
   console.log(
     `Importing ${products.length} Makita machines into ${url}` +
-      (promo ? ` (promotion only: ${promo.size} codes, ${all.length} machines in the export)` : ""),
+      (promo
+        ? ` (promotion only: ${Object.keys(promo).length} codes, ${all.length} machines in the export)`
+        : ""),
   );
 
   const supplier = catalog.suppliers.find((s) => s.slug === BRAND);
@@ -289,6 +299,17 @@ async function main() {
         "documents",
       );
     console.log(`  products ${Object.keys(ids).length}/${products.length}`);
+  }
+
+  // Purchase prices of the promotion (admin-only table); the file is not in the repo.
+  if (promo && existsSync(PROMO_COSTS_FILE)) {
+    const costs: Record<string, number> = JSON.parse(readFileSync(PROMO_COSTS_FILE, "utf8"));
+    const rows = products
+      .filter((p) => costs[p.sku.toUpperCase()] != null)
+      .map((p) => ({ product_id: ids[p.slug], purchase_price_net_cents: costs[p.sku.toUpperCase()] }));
+    for (const batch of chunks(rows))
+      must(await db.from("product_costs").upsert(batch, { onConflict: "product_id" }).select("product_id"), "costs");
+    console.log(`Purchase prices: ${rows.length} written to product_costs`);
   }
 
   // Machines that left Makita's export or the promotion stay in old orders but disappear from the shop.
