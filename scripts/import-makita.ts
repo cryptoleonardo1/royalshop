@@ -182,8 +182,8 @@ async function main() {
   const products = promo
     ? all
         .filter((p) => promo[p.sku.toUpperCase()] != null)
-        .map((p) => ({ ...p, price_gross_eur: promo[p.sku.toUpperCase()] }))
-    : all;
+        .map((p) => ({ ...p, price_gross_eur: promo[p.sku.toUpperCase()], moc_gross_eur: p.price_gross_eur }))
+    : all.map((p) => ({ ...p, moc_gross_eur: p.price_gross_eur }));
   console.log(
     `Importing ${products.length} Makita machines into ${url}` +
       (promo
@@ -235,6 +235,10 @@ async function main() {
               short_description: p.short_description,
               description: p.description,
               price_gross_cents: eurToCents(p.price_gross_eur),
+              // Promotion price below Makita's MOC: the MOC is shown crossed out. The discount itself is
+              // measured against the lowest price of the last 30 days (price_history), as the law asks.
+              compare_at_price_cents:
+                p.moc_gross_eur > p.price_gross_eur ? eurToCents(p.moc_gross_eur) : null,
               vat_rate: 23,
               weight_kg: p.weight_kg,
               shipping_class: "courier",
