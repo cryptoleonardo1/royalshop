@@ -10,7 +10,7 @@ import { BLADE_CATEGORY, bladeIncluded, type MachineBlades } from "@/lib/accesso
 
 // Public catalog reads. Everything here goes through the anon key (RLS: active products only)
 // and is cached under the "catalog" tag, so admin edits can call revalidateTag("catalog").
-// Only brands in SHOP_BRANDS are shown; the rest act as if they were not in the database.
+// Brands in HIDDEN_BRANDS are not shown; their products act as if they were not in the database.
 
 export type BatteryPlatform = "LXT_18V" | "XGT_40V" | "CXT_12V" | "none";
 export type ShippingClass = "courier" | "own_transport" | "pickup_only";

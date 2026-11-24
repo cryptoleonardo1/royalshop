@@ -61,6 +61,8 @@ const count = (n: number, one: string, few: string, many: string) => `${n} ${n =
 
 // Our main partner brand leads the brand grid (highlighted tile); the rest keep the product-count order.
 const PRIMARY_BRAND = "golz";
+// the hero sentence names the brands only while the list stays readable
+const MAX_BRANDS_IN_LEDE = 6;
 const brandsFirst = <T extends { slug: string }>(brands: T[]) => [
   ...brands.filter((b) => b.slug === PRIMARY_BRAND),
   ...brands.filter((b) => b.slug !== PRIMARY_BRAND),
@@ -108,7 +110,9 @@ export default async function HomePage() {
   ];
   const brandLine = singleBrand
     ? `Stroje ${singleBrand.name} priamo od výrobcu.`
-    : `Stroje ${brands.map((b) => b.name).join(", ").replace(/, ([^,]*)$/, " a $1")} od výrobcov a ich oficiálnych zastúpení.`;
+    : brands.length > MAX_BRANDS_IN_LEDE
+      ? "Stroje a náradie od výrobcov a ich oficiálnych zastúpení."
+      : `Stroje ${brands.map((b) => b.name).join(", ").replace(/, ([^,]*)$/, " a $1")} od výrobcov a ich oficiálnych zastúpení.`;
 
   return (
     <>

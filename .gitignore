@@ -51,3 +51,6 @@ docs/honda/
 
 # original supplier photos (large, not served)
 /originals/
+
+# AG náradie catalogue built from the supplier's feeds by scripts/ag-catalog.py (large, changes daily)
+/supabase/seed-data/ag.json

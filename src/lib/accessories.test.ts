@@ -43,6 +43,7 @@ describe("isTestedBeforeDispatch", () => {
     expect(isTestedBeforeDispatch(p("stolove-pily", "golz"))).toBe(true);
     expect(isTestedBeforeDispatch(p("diamantove-kotuce", "golz"))).toBe(false);
     expect(isTestedBeforeDispatch(p("kladiva", "makita"))).toBe(false);
+    expect(isTestedBeforeDispatch(p("rucne-naradie-klieste-hasaky", "knipex"))).toBe(false);
   });
 });
 

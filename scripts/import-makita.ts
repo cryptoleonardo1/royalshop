@@ -5,7 +5,10 @@
 //   set -a; . ./.env.hosted.local; set +a; npx tsx scripts/import-makita.ts       (hosted)
 //
 // Safe to re-run: products are matched by slug, their specs, photos and documents are replaced, prices and
-// stock are updated, and Makita products that left the export are archived. Run it again after
+// stock are updated, and Makita products that left the export are archived. Since 2026-11-24 only the machines
+// of the current Makita promotion are sold: supabase/seed-data/makita-akcia.json lists their codes (taken from
+// the promotion workbook in docs/cenniky/), every other Makita machine is archived. Delete that file to import
+// the whole export again. Run the import again after
 // `scripts/seed.ts`, which wipes the catalog. Selling prices are Makita's MOC; purchase prices are not known
 // yet, so no product_costs rows are written.
 
@@ -28,6 +31,7 @@ const db = createClient(url, key, { auth: { persistSession: false } });
 const BRAND = "makita";
 const BUCKET = "product-images";
 const PHOTO_DIR = "originals/makita/img";
+const PROMO_FILE = "supabase/seed-data/makita-akcia.json";
 const CHUNK = 100;
 // Shown as "Odporúčame" on the home page and first in the default sort (changed 2026-11-12: winter picks).
 const FEATURED = new Set(["makita-tw001gu201", "makita-duc254z", "makita-dhg180zk"]);
@@ -165,10 +169,17 @@ async function main() {
   const catalog: CatalogJson = JSON.parse(
     readFileSync("supabase/seed-data/catalog.json", "utf8"),
   );
-  const { products }: { products: MakitaProduct[] } = JSON.parse(
+  const all: MakitaProduct[] = JSON.parse(
     readFileSync("supabase/seed-data/makita.json", "utf8"),
+  ).products;
+  const promo: Set<string> | null = existsSync(PROMO_FILE)
+    ? new Set(JSON.parse(readFileSync(PROMO_FILE, "utf8")).codes)
+    : null;
+  const products = promo ? all.filter((p) => promo.has(p.sku.toUpperCase())) : all;
+  console.log(
+    `Importing ${products.length} Makita machines into ${url}` +
+      (promo ? ` (promotion only: ${promo.size} codes, ${all.length} machines in the export)` : ""),
   );
-  console.log(`Importing ${products.length} Makita machines into ${url}`);
 
   const supplier = catalog.suppliers.find((s) => s.slug === BRAND);
   const brand = catalog.brands.find((b) => b.slug === BRAND);
@@ -280,12 +291,14 @@ async function main() {
     console.log(`  products ${Object.keys(ids).length}/${products.length}`);
   }
 
-  // Machines that left Makita's export (discontinued) stay in old orders but disappear from the shop.
+  // Machines that left Makita's export or the promotion stay in old orders but disappear from the shop.
+  // Scoped by supplier: Makita tools that come from another supplier's feed are not this import's business.
   const current = must(
     await db
       .from("products")
       .select("id, slug")
       .eq("brand_id", brandId)
+      .eq("supplier_id", supplierId)
       .eq("status", "active")
       .limit(5000),
     "current",

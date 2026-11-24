@@ -1,0 +1,8 @@
+{
+  "note": "Rules for the AG náradie range, read by scripts/ag-catalog.py and src/lib/ag-feed.ts. min_price_gross_eur: only products at or above this price (incl. VAT) are sold. skip_brands: brand slugs we buy elsewhere (Makita comes direct, promotion machines only).",
+  "supplier_slug": "ag-naradie",
+  "min_price_gross_eur": 50,
+  "vat_rate": 23,
+  "max_images": 3,
+  "skip_brands": ["makita"]
+}

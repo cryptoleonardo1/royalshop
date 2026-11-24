@@ -100,6 +100,18 @@ Royal stroje je autorizovaný predajca Makita a tovar berie priamo. Stroje sa ne
 
 Stav 12. 11. 2026: 888 strojov, z toho 870 spárovaných s makita.sk, 754 skladom. Predajná cena = odporúčaná cena Makity. Chýba: nákupné ceny (zľava z odporúčanej ceny), súhlas Makity s použitím fotiek a textov, 18 strojov bez stránky na makita.sk (bez fotky), 68 bez hmotnosti (doprava sa im počíta v najvyššom pásme). Príslušenstvo (5 025) a náhradné diely (24 225) zatiaľ importované nie sú.
 
+## Zmeny 24. 11. 2026: Gölz skrytý, Makita len akcia, AG náradie
+
+- **Gölz** je skrytý (`HIDDEN_BRANDS` v `src/lib/shop-brands.ts`), kým sa nevyriešia povinnosti dovozcu (obaly, elektrozariadenia). Produkty ostávajú v databáze.
+- **Makita**: predávajú sa len stroje z aktuálnej akcie. Kódy sú v `supabase/seed-data/makita-akcia.json` (vytiahnuté z akciového zošita v `docs/cenniky/`), `scripts/import-makita.ts` importuje len tie a ostatné archivuje. Cena na webe je bežná MOC; mimoriadna fakturačná cena zo zošita je naša nákupná cena a do repozitára nepatrí. Zošit má 230 kódov, 186 z nich sú stroje v exporte; zvyšných 44 (akumulátory, nabíjačky, lampy, hadice) na webe nie je, lebo sa importujú len stroje.
+- **AG náradie** (veľkoobchod pre e-shopy): dva XML feedy, cenník (kód, zásoba, cena bez DPH) a karty (názvy, texty, fotky, strom kategórií). Adresy feedov obsahujú náš prístupový token, sú len v `.env.local` a vo Verceli (`AG_PRICE_FEED_URL`, `AG_CARDS_FEED_URL`).
+  - Výber: cena s DPH od 50 € (`supabase/seed-data/ag-config.json`), s fotkou a popisom, bez značky Makita. K 19. 11. 2026 je to 2 399 produktov, z toho 1 090 skladom.
+  - Predajná cena = cena z feedu + 23 % DPH, kým AG nepotvrdí, či je cena vo feede nákupná. Nákupné ceny sa nezapisujú.
+  - Importujú sa aj produkty, ktoré nie sú skladom; v katalógu a vyhľadávaní sú len tie skladom (`is_listed`), stránka vypredaného produktu ostáva a píše, že nie je dostupný.
+  - Postup: `python scripts/ag-catalog.py` (feedy -> `supabase/seed-data/ag.json` + fotky v `originals/ag/img/`, oboje mimo gitu) -> `npx tsx scripts/import-ag.ts`. Sklad a ceny denne aktualizuje cron `/api/cron/ag-sklad` (`vercel.json`), ručne `npx tsx scripts/ag-sync.ts`. Keď feed nejde alebo je neúplný, nič sa nemení.
+  - Kategórie: elektrické náradie ide do existujúcich kategórií podľa názvu, ostatné do nových sekcií (Ručné náradie, Inštalatérske náradie, Rezné náradie a brusivo, Stavebné náradie, Dielenské vybavenie, Zváranie a spájkovanie, Dom a hospodárstvo).
+  - Na overenie s AG: čo je cena vo feede, ako často sa feedy obnovujú, dodacia lehota (v databáze odhad 2 až 4 dni), súhlas s fotkami a textami, údaje o výrobcoch pre GPSR.
+
 ## Kompletný cenník motorov Honda (stránka Motory)
 
 - Pod produktmi v kategórii Motory je tabuľka všetkých 181 variantov z cenníka motorov Honda (platí 1. 10. – 31. 12. 2026), cena = odporúčaná koncová cena s DPH (rovnaký prepočet ako zošit). Varianty mimo ponuky sa dopytujú e-mailom, 5 variantov v ponuke odkazuje na produkt.
