@@ -54,3 +54,7 @@ docs/honda/
 
 # AG náradie catalogue built from the supplier's feeds by scripts/ag-catalog.py (large, changes daily)
 /supabase/seed-data/ag.json
+
+# Nivel System range taken from 3gonshop.sk by scripts/nivel-catalog.py: 3gon's texts, kept out of the public
+# repo until 3gon confirms we may use them
+/supabase/seed-data/nivel.json

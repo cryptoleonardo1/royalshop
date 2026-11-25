@@ -460,14 +460,15 @@
       "slug": "ostatne-naradie",
       "name": "Ostatné náradie",
       "parent_slug": null,
-      "description": "Meracia technika, rádiá a svietidlá, teplovzdušné pištole, sady náradia a špeciálne stroje.",
+      "description": "Rádiá a svietidlá, teplovzdušné pištole, sady náradia a špeciálne stroje.",
       "sort_order": 18
     },
     {
       "slug": "meracia-technika",
       "name": "Meracia technika",
-      "parent_slug": "ostatne-naradie",
-      "sort_order": 1
+      "parent_slug": null,
+      "description": "Rotačné a krížové lasery, nivelačné prístroje a teodolity, diaľkomery a digitálne vodováhy.",
+      "sort_order": 6
     },
     {
       "slug": "radia-a-svietidla",

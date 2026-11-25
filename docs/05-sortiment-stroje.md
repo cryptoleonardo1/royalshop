@@ -112,6 +112,16 @@ Stav 12. 11. 2026: 888 strojov, z toho 870 spárovaných s makita.sk, 754 sklado
   - Kategórie: elektrické náradie ide do existujúcich kategórií podľa názvu, ostatné do nových sekcií (Ručné náradie, Inštalatérske náradie, Rezné náradie a brusivo, Stavebné náradie, Dielenské vybavenie, Zváranie a spájkovanie, Dom a hospodárstvo).
   - Na overenie s AG: čo je cena vo feede, ako často sa feedy obnovujú, dodacia lehota (v databáze odhad 2 až 4 dni), súhlas s fotkami a textami, údaje o výrobcoch pre GPSR.
 
+## Nivel System (od 25. 11. 2026)
+
+- Meracia technika Nivel System (poľský výrobca). Dodávateľ je slovenský dovozca 3gon Slovakia, s.r.o. (IČO 52367339, prevádzka Galanta), ktorý predáva na 3gonshop.sk. Royal stroje je autorizovaný predajca, dodanie do 2 dní.
+- Predajná cena = cena s DPH na 3gonshop.sk (founder, 25. 11. 2026). Náš rabat (z ceny bez DPH) je len v `docs/cenniky/data/nivel-naklady.json` mimo gitu; import z neho zapisuje nákupné ceny do `product_costs`.
+- Výber: rotačné lasery, krížové lasery, nivelačné prístroje a teodolity, diaľkomery a meracie kolieska, digitálne vodováhy; od 50 € s DPH (oceľové pásma vypadli). K 25. 11. 2026 je to 57 produktov, z toho 45 skladom; 12 „na objednávku“ sa predáva tiež, bez údaja o sklade.
+- Sekcia „Meracia technika“ je odteraz hlavná kategória (predtým pod „Ostatné náradie“); laserové prístroje Makita a AG v nej ostávajú priamo.
+- 3gon zatiaľ nemá feed. `python scripts/nivel-catalog.py` číta stránky 3gonshopu (cache v `originals/nivel/html`, `--cached` bez sťahovania) -> `supabase/seed-data/nivel.json` + fotky v `originals/nivel/img/` (oboje mimo gitu, kým 3gon nepotvrdí súhlas s textami a fotkami) -> `npx tsx scripts/import-nivel.ts`.
+- Hmotnosť: stránky ju uvádzajú len pri 5 produktoch, ostatné majú odhad podľa skupiny (1 až 8 kg, kvôli dopravnému pásmu do 40 kg); na stránke produktu sa zobrazuje ako „Hmotnosť balenia“.
+- Na overenie s 3gonom: súhlas s textami a fotkami, výrobca pre GPSR (meno a adresa), hmotnosti, trieda lasera, EAN, dĺžka záruky, návody v slovenčine, registrácia výrobcu EEZ a batérií (EPR), XML feed (Shoptet ho vie), z akej ceny sa počíta rabat a dodanie tovaru „na objednávku“.
+
 ## Kompletný cenník motorov Honda (stránka Motory)
 
 - Pod produktmi v kategórii Motory je tabuľka všetkých 181 variantov z cenníka motorov Honda (platí 1. 10. – 31. 12. 2026), cena = odporúčaná koncová cena s DPH (rovnaký prepočet ako zošit). Varianty mimo ponuky sa dopytujú e-mailom, 5 variantov v ponuke odkazuje na produkt.
