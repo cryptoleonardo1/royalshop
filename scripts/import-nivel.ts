@@ -5,8 +5,10 @@
 //   npx tsx scripts/import-nivel.ts                                              (local, reads .env.local)
 //   set -a; . ./.env.hosted.local; set +a; npx tsx scripts/import-nivel.ts       (hosted)
 //
-// Safe to re-run: products are matched by slug (3gonshop's address), their specs and photos are replaced, prices
-// and stock are updated, and 3gon products that left nivel.json are archived. Run it again after scripts/seed.ts,
+// Safe to re-run: products are matched by slug (3gonshop's address), their specs, photos and documents (manuals
+// linked on nivelsystem.com) are replaced, prices and stock are updated, and 3gon products that left nivel.json are
+// archived. Tripods and staffs carry "accessory_for" (the instruments the manufacturer recommends them for): those
+// pairs replace the tripod's or staff's related_products rows of type 'accessory', shown on the instrument page. Run it again after scripts/seed.ts,
 // which wipes the catalog.
 // Purchase prices go to product_costs only when the git-ignored docs/cenniky/data/nivel-naklady.json is on disk
 // ({"discount_pct": n}: our discount off 3gonshop's price without VAT); the repo is public.
@@ -56,10 +58,13 @@ interface NivelProduct {
   specs: { key: string; label: string; value: string; unit: string | null; is_filterable: boolean }[];
   safety_info: string;
   images: string[];
+  documents?: { type: string; title: string; path: string }[];
+  accessory_for?: string[];
 }
 
 interface NivelJson {
-  brand: { slug: string; name: string; website: string };
+  // manufacturer_* = GPSR identification shown on the product page
+  brand: { slug: string; name: string; website: string; manufacturer_name?: string; manufacturer_address?: string; manufacturer_email?: string };
   categories: { slug: string; name: string; parent_slug: string | null; description?: string; sort_order: number }[];
   products: NivelProduct[];
 }
@@ -125,8 +130,8 @@ async function main() {
   console.log(`Importing ${products.length} Nivel System products into ${url}`);
 
   const supplierId = must(await db.from("suppliers").upsert(SUPPLIER, { onConflict: "slug" }).select("id").single(), "supplier").id;
-  // An existing brand row keeps its manufacturer details (GPSR), filled in by hand once 3gon sends them.
-  must(await db.from("brands").upsert(data.brand, { onConflict: "slug", ignoreDuplicates: true }).select("id"), "brand");
+  // nivel.json carries the manufacturer details (GPSR) from nivelsystem.com, so they overwrite the brand row.
+  must(await db.from("brands").upsert(data.brand, { onConflict: "slug" }).select("id"), "brand");
   const brandId = (await idsBySlug("brands"))[data.brand.slug];
   const categoryId = await syncCategories(data.categories);
 
@@ -165,12 +170,31 @@ async function main() {
   );
   const ids = Object.fromEntries(rows.map((r) => [r.slug, r.id]));
   const productIds = rows.map((r) => r.id);
-  for (const table of ["product_specs", "product_images"])
+  for (const table of ["product_specs", "product_images", "product_documents"])
     must(await db.from(table).delete().in("product_id", productIds).select("product_id"), `clear ${table}`);
   const specs = products.flatMap((p) => p.specs.map((s, i) => ({ ...s, product_id: ids[p.slug], sort_order: i })));
   const images = products.flatMap((p) => p.images.map((path, i) => ({ product_id: ids[p.slug], path, alt: p.name, sort_order: i })));
+  const documents = products.flatMap((p) => (p.documents ?? []).map((d) => ({ ...d, product_id: ids[p.slug] })));
   must(await db.from("product_specs").insert(specs).select("id"), "specs");
   must(await db.from("product_images").insert(images).select("id"), "images");
+  if (documents.length) must(await db.from("product_documents").insert(documents).select("id"), "documents");
+
+  // Tripods and staffs on the instrument pages: exactly the pairs in nivel.json.
+  const accessories = products.filter((p) => p.accessory_for);
+  if (accessories.length) {
+    must(
+      await db.from("related_products").delete().eq("type", "accessory").in("related_id", accessories.map((a) => ids[a.slug])).select("related_id"),
+      "clear accessories",
+    );
+    const pairs = accessories.flatMap((a) =>
+      (a.accessory_for ?? []).map((slug) => {
+        if (!ids[slug]) throw new Error(`${a.slug}: accessory_for points to ${slug}, which is not in nivel.json`);
+        return { product_id: ids[slug], related_id: ids[a.slug], type: "accessory" };
+      }),
+    );
+    if (pairs.length) must(await db.from("related_products").insert(pairs).select("product_id"), "accessories");
+    console.log(`Accessories: ${accessories.length} tripods/staffs, ${pairs.length} instrument pairs, ${documents.length} documents`);
+  }
 
   if (existsSync(COSTS)) {
     const { discount_pct } = JSON.parse(readFileSync(COSTS, "utf8")) as { discount_pct: number };
@@ -195,7 +219,10 @@ async function main() {
   if (gone.length) must(await db.from("products").update({ status: "archived" }).in("id", gone).select("id"), "archive");
 
   const inStock = products.filter((p) => p.in_stock).length;
-  console.log(`Done: ${products.length} products (${inStock} in stock, ${products.length - inStock} on order), ${gone.length} archived.`);
+  const unavailable = products.filter((p) => p.in_stock === false).length;
+  console.log(
+    `Done: ${products.length} products (${inStock} in stock, ${products.length - inStock - unavailable} on order, ${unavailable} unavailable), ${gone.length} archived.`,
+  );
 }
 
 main().catch((e) => {

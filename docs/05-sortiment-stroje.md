@@ -122,6 +122,20 @@ Stav 12. 11. 2026: 888 strojov, z toho 870 spárovaných s makita.sk, 754 sklado
 - Hmotnosť: stránky ju uvádzajú len pri 5 produktoch, ostatné majú odhad podľa skupiny (1 až 8 kg, kvôli dopravnému pásmu do 40 kg); na stránke produktu sa zobrazuje ako „Hmotnosť balenia“.
 - Na overenie s 3gonom: súhlas s textami a fotkami, výrobca pre GPSR (meno a adresa), hmotnosti, trieda lasera, EAN, dĺžka záruky, návody v slovenčine, registrácia výrobcu EEZ a batérií (EPR), XML feed (Shoptet ho vie), z akej ceny sa počíta rabat a dodanie tovaru „na objednávku“.
 
+### Príslušenstvo Nivel a údaje výrobcu (25. 11. 2026)
+
+- Statívy a laty z 3gonshopu (podkategória „Statívy a nivelačné laty“ pod Meracou technikou): SJJ1, SJJ32, SJJ-M1 EX, SJJ-M10 MOTOR, LS-24, LS-35, TS-5, TS-50, TS-70 (všetky nad 50 €; ťažký drevený statív Nedo nie je Nivel). TS-5 je na 3gonshope „Momentálne nedostupné“, preto `in_stock = false` (nedá sa kúpiť a v ponuke pri prístroji sa neukazuje).
+- Párovanie (stránka prístroja, „Odporúčané príslušenstvo“) berie výlučne zoznam „Odporúčané príslušenstvo“ zo stránky výrobcu nivelsystem.com/sk. Jediná výnimka: motorizovaný statív SJJ-M10 je podľa výrobcu „určený pre krížové lasery“ so závitom 5/8″ (nosnosť do 5 kg), preto ide ku všetkým krížovým laserom, ktoré majú podľa výrobcu závit 5/8″ (všetkých 27).
+- Výsledok: krížové lasery dostanú SJJ-M1 EX a SJJ-M10 (okrem CL4 aj latu LS-24), rotačné lasery SJJ1, SJJ32, LS-24, LS-35, N24x/N32x SJJ1 + TS-50 + TS-70, EL-32 SJJ1 + TS-5, teodolity SJJ1, diaľkomery HDM statív SJJ-M1 EX.
+- Zo stránky výrobcu sa tiež preberá úplná tabuľka parametrov (trieda lasera, závity, napájanie, rozmery, „Hmotnosť prístroja“), obsah balenia (do popisu) a odkazy na PDF návod a leták (EN/PL/DE, nie slovenčina, preto ostáva aj veta o slovenskom návode v balení). GPSR výrobca: TPI Sp. z o.o., Wał Miedzeszyński 598, Varšava (z pätičky nivelsystem.com), potvrdiť s 3gonom.
+
+## Príslušenstvo NTC k vibračným doskám (25. 11. 2026)
+
+- Všetky položky príslušenstva z cenníka NTC 2026 k doskám, ktoré predávame (VD 12P, VD 15, VD 18, VD 24, VD 450/22, VDR 26, VDR 32), okrem merača motohodín. Cena ako ostatné Unicon položky (CZK / 24,47 × 1,23), najlacnejšia 123,15 €. K rezačom škár a pechom cenník nemá iné príslušenstvo než merač motohodín.
+- Každá položka je v `catalog.json` s `accessory_for` presne podľa riadku cenníka („pro VD 15“, „pro VDR 20, 22, 26, 32“ …), overené na ntcshop.cz. Do DB: `npx tsx scripts/sync-accessories.ts ntc` (seed nie je potrebný).
+- Páka plynu radu Praktik NIE je priradená k VD 12P: v cenníku je VD 12P v tabuľke Praktik, ale na ntc.cz má vlastný rad „Mini“. Overiť s Unicon.
+- Bez fotky (na ntcshop.cz nie je): sada skrápania VD 450, VD 12P, VDR 26 a páka plynu Klasik. Fotky ostatných sú z ntcshop.cz.
+
 ## Kompletný cenník motorov Honda (stránka Motory)
 
 - Pod produktmi v kategórii Motory je tabuľka všetkých 181 variantov z cenníka motorov Honda (platí 1. 10. – 31. 12. 2026), cena = odporúčaná koncová cena s DPH (rovnaký prepočet ako zošit). Varianty mimo ponuky sa dopytujú e-mailom, 5 variantov v ponuke odkazuje na produkt.

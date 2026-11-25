@@ -8,10 +8,11 @@ import { AddToCartButton } from "./cart-buttons";
 import { Placeholder } from "./placeholder";
 import css from "./shop.module.css";
 
-// Spec keys a blade uses to tell the customer what it cuts and whether it fits.
-const PICK_SPECS = ["material", "diameter_mm", "bore_mm"];
+// Spec keys that tell the customer what an add-on is: a blade's material and size, a tripod's height, a staff's length.
+const PICK_SPECS = ["material", "diameter_mm", "bore_mm", "pracovna_vyska", "dlzka"];
 
-// Add-ons next to the buy box (and as the cart reminder): the customer picks the blade for the material they cut.
+// Add-ons next to the buy box (and as the cart reminder): blades by the material they cut, or the parts and
+// tripods the supplier names for this model.
 export function AccessoryPicker({
   items,
   note,

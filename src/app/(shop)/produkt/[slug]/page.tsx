@@ -12,7 +12,7 @@ import {
   type ProductDetail,
   type ShopSettings,
 } from "@/lib/catalog";
-import { isTestedBeforeDispatch } from "@/lib/accessories";
+import { BLADE_CATEGORY, isTestedBeforeDispatch } from "@/lib/accessories";
 import { productArticle } from "@/lib/product-articles";
 import { deliveryDays, formatDeliveryDate, formatSpecValue, PLATFORM_LABEL, workDaysText } from "@/lib/format";
 import { DELIVERY_MAX_WORKDAYS, returnCostEstimate } from "@/lib/legal";
@@ -187,6 +187,10 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
 
   const off = discountPct(p);
   const ref = referencePrice(p);
+  // add-ons that cannot be ordered right now are not offered; blades get their own picker
+  const offered = p.accessories.filter((a) => a.inStock !== false && !a.priceOnRequest);
+  const blades = offered.filter((a) => a.category.slug === BLADE_CATEGORY);
+  const parts = offered.filter((a) => a.category.slug !== BLADE_CATEGORY);
   const keySpecs = p.specs.filter((s) => s.key !== "brushless").slice(0, 4);
   const cartItem = {
     slug: p.slug,
@@ -327,7 +331,14 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                 <BuyBox item={cartItem} />
               )}
 
-              {p.accessories.length > 0 && <AccessoryPicker items={p.accessories} note={bladeNote(p)} />}
+              {blades.length > 0 && <AccessoryPicker items={blades} note={bladeNote(p)} />}
+              {parts.length > 0 && (
+                <AccessoryPicker
+                  items={parts}
+                  title="Odporúčané príslušenstvo"
+                  note="Príslušenstvo, ktoré výrobca uvádza pre tento model. Môžete ho pridať do košíka spolu s ním."
+                />
+              )}
 
               {isTestedBeforeDispatch(p) && (
               <div className={`${css.testNote} ${css.dark}`}>
@@ -456,18 +467,15 @@ async function ProductView({ params }: Pick<PageProps<"/produkt/[slug]">, "param
                   </div>
                 )}
               </dl>
-              {p.documents.length > 0 ? (
-                p.documents.map((d) => (
-                  <a key={d.path} href={d.path} className={css.gpsrLink}>
-                    <FileText size={18} aria-hidden="true" /> {d.title}
-                  </a>
-                ))
-              ) : (
-                <p className={css.gpsrNote}>
-                  <FileText size={18} aria-hidden="true" /> Návod a bezpečnostné pokyny v slovenčine sú súčasťou
-                  balenia.
-                </p>
-              )}
+              {p.documents.map((d) => (
+                <a key={d.path} href={d.path} className={css.gpsrLink} target="_blank" rel="noopener">
+                  <FileText size={18} aria-hidden="true" /> {d.title}
+                </a>
+              ))}
+              {/* the manufacturer's PDFs are not in Slovak, so the note stays next to them */}
+              <p className={css.gpsrNote}>
+                <FileText size={18} aria-hidden="true" /> Návod a bezpečnostné pokyny v slovenčine sú súčasťou balenia.
+              </p>
             </aside>
           </div>
         </div>

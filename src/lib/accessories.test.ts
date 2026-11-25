@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { bladeIncluded, bladeReminders, isTestedBeforeDispatch, type MachineBlades } from "./accessories";
+import { bladeIncluded, bladeReminders, isAccessory, isTestedBeforeDispatch, type MachineBlades } from "./accessories";
 import { productImageUrl } from "./product-image";
 
 const fits: MachineBlades<{ slug: string }>[] = [
@@ -44,6 +44,14 @@ describe("isTestedBeforeDispatch", () => {
     expect(isTestedBeforeDispatch(p("diamantove-kotuce", "golz"))).toBe(false);
     expect(isTestedBeforeDispatch(p("kladiva", "makita"))).toBe(false);
     expect(isTestedBeforeDispatch(p("rucne-naradie-klieste-hasaky", "knipex"))).toBe(false);
+    expect(isTestedBeforeDispatch(p("prislusenstvo", "ntc"))).toBe(false);
+  });
+});
+
+describe("isAccessory", () => {
+  it("blades, machine parts and Nivel tripods/staffs are add-ons, instruments and machines are not", () => {
+    for (const slug of ["diamantove-kotuce", "prislusenstvo", "stativy-a-laty"]) expect(isAccessory({ category: { slug } })).toBe(true);
+    for (const slug of ["krizove-lasery", "jednosmerne-vibracne-dosky"]) expect(isAccessory({ category: { slug } })).toBe(false);
   });
 });
 

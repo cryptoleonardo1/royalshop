@@ -6661,6 +6661,9 @@
       ],
       "images": [
         "/demo-products/ntc-tlmiaca-doska-vd-450.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-450-22"
       ]
     },
     {
@@ -6704,6 +6707,631 @@
       ],
       "images": [
         "/demo-products/ntc-podvozok-vd-450.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-450-22"
+      ]
+    },
+    {
+      "slug": "ntc-skrapanie-vd-450",
+      "name": "NTC Sada skrápania pre vibračnú dosku VD 450",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Skrápění VD 450",
+      "ean": null,
+      "short_description": "Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VD 450. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.",
+      "description": "**NTC sada skrápania VD 450** – Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VD 450. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.\n\nPotrebujete ju na hutnenie asfaltových (živičných) povrchov. Montuje sa na stroj podľa návodu výrobcu.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 216.15,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 140.58,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 450/20, VD 450/22",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [],
+      "accessory_for": [
+        "ntc-vd-450-22"
+      ]
+    },
+    {
+      "slug": "ntc-packa-plynu-vd-450",
+      "name": "NTC Páka plynu na rukoväti pre vibračné dosky VD 450/20 a VD 450/22",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Páčka plynu na rukojeti (Klasik)",
+      "ean": null,
+      "short_description": "Páka plynu na rukoväti vibračných dosiek NTC Klasik: otáčky motora ovládate priamo z rukoväte.",
+      "description": "**NTC páka plynu na rukoväti (Klasik)** – Páka plynu na rukoväti vibračných dosiek NTC Klasik: otáčky motora ovládate priamo z rukoväte.\n\nKompletná sada páky plynu s lankom, určená výrobcom pre rad Klasik.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 123.15,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 80.1,
+      "vat_rate": 23,
+      "weight_kg": 0.5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 450/20, VD 450/22 (rad Klasik)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [],
+      "accessory_for": [
+        "ntc-vd-450-22"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vd-15",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VD 15",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VD 15",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VD 15 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VD 15** – Pružná podložka pod hutniacu dosku NTC VD 15 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 150.8,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 98.08,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 15, VD 15P",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vd-15.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-15"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vd-18",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VD 18",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VD 18",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VD 18 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VD 18** – Pružná podložka pod hutniacu dosku NTC VD 18 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 165.88,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 107.89,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 18, VD 18P",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vd-18.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-18"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vd-20-24",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VD 20 a VD 24",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VD 20 a VD 24",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VD 20 a VD 24 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VD 20 a VD 24** – Pružná podložka pod hutniacu dosku NTC VD 20 a VD 24 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 180.96,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 117.7,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 20, VD 24, VD 20P, VD 24P",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vd-20-24.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-24"
+      ]
+    },
+    {
+      "slug": "ntc-podvozok-vd-elegant",
+      "name": "NTC Podvozok pre vibračné dosky VD 15, VD 18, VD 20 a VD 24 (rad Elegant)",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Podvozek VD 15, 18, 20, 24 (Elegant)",
+      "ean": null,
+      "short_description": "Prepravný podvozok s dvoma kolesami na presun jednosmernej vibračnej dosky NTC rady Elegant po stavenisku.",
+      "description": "**Podvozok pre vibračné dosky VD 15, VD 18, VD 20 a VD 24 (rad Elegant)** – Prepravný podvozok s dvoma kolesami na presun jednosmernej vibračnej dosky NTC rady Elegant po stavenisku.\n\nSúčasťou je závlačka na zaistenie rukoväte v pracovnej polohe.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 165.88,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 107.89,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 15, VD 18, VD 20, VD 24 (rad Elegant)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-podvozok-vd-elegant.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-15",
+        "ntc-vd-18",
+        "ntc-vd-24"
+      ]
+    },
+    {
+      "slug": "ntc-packa-plynu-vd-elegant",
+      "name": "NTC Páka plynu na rukoväti pre vibračné dosky VD 15, VD 18, VD 20 a VD 24",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Páčka plynu na rukojeti (Elegant)",
+      "ean": null,
+      "short_description": "Páka plynu na rukoväti vibračných dosiek NTC Elegant: otáčky motora ovládate priamo z rukoväte.",
+      "description": "**NTC páka plynu na rukoväti (Elegant)** – Páka plynu na rukoväti vibračných dosiek NTC Elegant: otáčky motora ovládate priamo z rukoväte.\n\nKompletná sada páky plynu s lankom, určená výrobcom pre rad Elegant.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 123.15,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 80.1,
+      "vat_rate": 23,
+      "weight_kg": 0.5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 15, VD 18, VD 20, VD 24 (rad Elegant)",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-packa-plynu-vd-elegant.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-15",
+        "ntc-vd-18",
+        "ntc-vd-24"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vd-12p",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VD 12P",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VD 12P",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VD 12P na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VD 12P** – Pružná podložka pod hutniacu dosku NTC VD 12P na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 135.72,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 88.27,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 12P",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vd-12p.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-12p"
+      ]
+    },
+    {
+      "slug": "ntc-podvozok-vd-12p",
+      "name": "NTC Podvozok pre vibračnú dosku VD 12P",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Podvozek VD 12P",
+      "ean": null,
+      "short_description": "Prepravný podvozok s dvoma kolesami na presun jednosmernej vibračnej dosky NTC VD 12P po stavenisku.",
+      "description": "**Podvozok pre vibračnú dosku VD 12P** – Prepravný podvozok s dvoma kolesami na presun jednosmernej vibračnej dosky NTC VD 12P po stavenisku.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 143.26,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 93.18,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 12P",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-podvozok-vd-12p.webp"
+      ],
+      "accessory_for": [
+        "ntc-vd-12p"
+      ]
+    },
+    {
+      "slug": "ntc-skrapanie-vd-12p",
+      "name": "NTC Sada skrápania pre vibračnú dosku VD 12P",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Skrápění VD 12P",
+      "ean": null,
+      "short_description": "Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VD 12P. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.",
+      "description": "**NTC sada skrápania VD 12P** – Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VD 12P. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.\n\nPotrebujete ju na hutnenie asfaltových (živičných) povrchov. Montuje sa na stroj podľa návodu výrobcu.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 226.2,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 147.12,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VD 12P",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [],
+      "accessory_for": [
+        "ntc-vd-12p"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vdr-26",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VDR 26",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VDR 26",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VDR 26 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VDR 26** – Pružná podložka pod hutniacu dosku NTC VDR 26 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 226.2,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 147.12,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VDR 26",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vdr-26.webp"
+      ],
+      "accessory_for": [
+        "ntc-vdr-26"
+      ]
+    },
+    {
+      "slug": "ntc-tlmiaca-doska-vdr-32",
+      "name": "NTC Tlmiaca doska pre vibračné dosky VDR 32",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Tlumící deska VDR 32",
+      "ean": null,
+      "short_description": "Pružná podložka pod hutniacu dosku NTC VDR 32 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.",
+      "description": "**NTC tlmiaca doska VDR 32** – Pružná podložka pod hutniacu dosku NTC VDR 32 na hutnenie zámkovej a betónovej dlažby bez poškriabania a odštiepenia povrchu.\n\nPodložka sa priskrutkuje pod spodnú dosku vibračnej dosky pomocou pozinkovanej upínacej lišty. Hodí sa na kladenie zámkovej dlažby a dlažobných kociek.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 246.31,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 160.2,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VDR 32",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-tlmiaca-doska-vdr-32.webp"
+      ],
+      "accessory_for": [
+        "ntc-vdr-32"
+      ]
+    },
+    {
+      "slug": "ntc-podvozok-vdr",
+      "name": "NTC Podvozok pre reverzné vibračné dosky VDR 20, 22, 26 a 32",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Podvozek VDR 20, 22, 26, 32",
+      "ean": null,
+      "short_description": "Pár prepravných kolies na presun reverznej vibračnej dosky NTC VDR po stavenisku.",
+      "description": "**Podvozok pre reverzné vibračné dosky VDR 20, 22, 26 a 32** – Pár prepravných kolies na presun reverznej vibračnej dosky NTC VDR po stavenisku.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 140.75,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 91.54,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VDR 20, VDR 22, VDR 26, VDR 32",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-podvozok-vdr.webp"
+      ],
+      "accessory_for": [
+        "ntc-vdr-26",
+        "ntc-vdr-32"
+      ]
+    },
+    {
+      "slug": "ntc-podvozok-vdr-drziak",
+      "name": "NTC Podvozok s držiakom na ráme pre reverzné vibračné dosky VDR 22, 26 a 32",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Podvozek s držákem VDR 22, 26, 32",
+      "ean": null,
+      "short_description": "Prepravný podvozok s držiakom na ráme stroja na presun reverznej vibračnej dosky NTC VDR po stavenisku.",
+      "description": "**Podvozok s držiakom na ráme pre reverzné vibračné dosky VDR 22, 26 a 32** – Prepravný podvozok s držiakom na ráme stroja na presun reverznej vibračnej dosky NTC VDR po stavenisku.\n\nPosielame kuriérom, prípadne si ho vyzdvihnete na pobočke.",
+      "price_gross_eur": 266.41,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 173.27,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VDR 22, VDR 26, VDR 32",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-podvozok-vdr-drziak.webp"
+      ],
+      "accessory_for": [
+        "ntc-vdr-26",
+        "ntc-vdr-32"
+      ]
+    },
+    {
+      "slug": "ntc-skrapanie-vdr-26",
+      "name": "NTC Sada skrápania pre vibračnú dosku VDR 26",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Skrápění VDR 26",
+      "ean": null,
+      "short_description": "Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VDR 26. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.",
+      "description": "**NTC sada skrápania VDR 26** – Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VDR 26. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.\n\nPotrebujete ju na hutnenie asfaltových (živičných) povrchov. Montuje sa na stroj podľa návodu výrobcu.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 276.47,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 179.82,
+      "vat_rate": 23,
+      "weight_kg": 6,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VDR 26",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [],
+      "accessory_for": [
+        "ntc-vdr-26"
+      ]
+    },
+    {
+      "slug": "ntc-skrapanie-vdr-32",
+      "name": "NTC Sada skrápania pre vibračnú dosku VDR 32",
+      "brand_slug": "ntc",
+      "supplier_slug": "unicon",
+      "category_slug": "prislusenstvo",
+      "sku": "Skrápění VDR 32",
+      "ean": null,
+      "short_description": "Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VDR 32. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.",
+      "description": "**NTC sada skrápania VDR 32** – Sada skrápania s nádržou na vodu pre vibračnú dosku NTC VDR 32. Vodný film zabráni nalepovaniu asfaltu na hutniacu dosku.\n\nPotrebujete ju na hutnenie asfaltových (živičných) povrchov. Montuje sa na stroj podľa návodu výrobcu.\n\nPosielame kuriérom, prípadne si ju vyzdvihnete na pobočke.",
+      "price_gross_eur": 306.61,
+      "compare_at_price_eur": null,
+      "purchase_price_net_eur": 199.42,
+      "vat_rate": 23,
+      "weight_kg": 5,
+      "shipping_class": "courier",
+      "battery_platform": "none",
+      "is_kit": false,
+      "warranty_months": 24,
+      "manufacturer_warranty_note": null,
+      "safety_info": "Príslušenstvo montujte a demontujte len pri vypnutom a vychladnutom stroji. Postupujte podľa návodu na obsluhu vibračnej dosky.",
+      "is_featured": false,
+      "rental_url": null,
+      "specs": [
+        {
+          "key": "compatible",
+          "label": "Vhodné pre",
+          "value": "NTC VDR 32",
+          "unit": null,
+          "is_filterable": false
+        }
+      ],
+      "images": [
+        "/demo-products/ntc-skrapanie-vdr-32.webp"
+      ],
+      "accessory_for": [
+        "ntc-vdr-32"
       ]
     },
     {
