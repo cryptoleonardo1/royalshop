@@ -4,6 +4,7 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 11 | 2026-11-03 | Withdrawal (§ 20a): online form, portal panel, admin module |
 | 10 | 2026-11-03 | Gölz + Honda only, trademark guideline, customer portal |
 | 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |
 | 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
@@ -11,6 +12,16 @@
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 19) -- Gölz hidden, Makita promotion only with discounts, AG náradie import prepared (2026-11-20/24)
+
+- AG feeds analysed (counts in Current State). Import + daily sync written and pushed, but NOT run against any database: on 2026-11-24 AG's server reset every connection (feeds and photos; AG is rebuilding its system). Only the pure rules are unit-tested and `ag-catalog.py --dry-run` was run on the cached export in `originals/ag/`.
+- Gölz hidden, footer trademark sentence removed (comment in `chrome.tsx` says what to restore). `SHOP_BRANDS` allow list replaced by the `HIDDEN_BRANDS` deny list because AG brings 70 brands.
+- "Tested before dispatch" promise is now a whitelist of machine brands (`TESTED_BRANDS` in `src/lib/accessories.ts`), so AG and Makita goods never carry it.
+- Makita on hosted: 186 promotion machines active (150 in stock), 702 archived; promotion selling prices, MOC crossed out, purchase prices in `product_costs`. All run by the agent with the user's go-ahead ("môžeš nahodiť"); checked live (TW001GU201 751,51 EUR; KP001GZ01 303,79 EUR, -22 %).
+- Home hero names the brands only up to 6 brands (`MAX_BRANDS_IN_LEDE`), otherwise a generic sentence.
+- Featured now: Makita TW001GU201 + the 5 Unicon machines = 6 (DUC254Z and DHG180ZK are archived), so the old "8 flagged" question is moot.
+- Gotchas: a bash heredoc holding apostrophes or TS template literals fails to parse on this machine, write such files with the Write tool and run them; hidden product pages answer HTTP 200 with the "Produkt nenájdený" page; Docker Desktop was off (started by hand), the local Supabase of this project was not started this session.
 
 ## What Was Done (Session 18) -- Honda SK dealer terms analysed, Unicon brands back on sale at the new rate (2026-11-18/20)
 
