@@ -4,12 +4,22 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 10 | 2026-11-03 | Gölz + Honda only, trademark guideline, customer portal |
 | 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |
 | 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
 | 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 18) -- Honda SK dealer terms analysed, Unicon brands back on sale at the new rate (2026-11-18/20)
+
+- Analysed the Honda SK dealer pack (terms 2027, engine price list, empty partner form). Outcome two days later: everything Honda goes through Unicon instead (see Current State "Unicon brands").
+- Brands NTC, Bomag, Honda, Enar switched on (d1af009, pushed, deployed, checked live). Prices re-calculated from 24.26 to 24.47 CZK/EUR (about -0.9 %): `catalog.json`, `src/data/honda-engines.json` (via `scripts/honda-engines.py`), hosted via `supabase/snippets/2026-11-20-unicon-prices.sql` (run by the user, spot-checked).
+- Every old price was traced back to an integer CZK list price first, so the data matches the price lists. Enar Dingo sets = drive unit + shaft, each rounded like its own row, then added.
+- The one-off re-pricing script was NOT kept (scratchpad). Next rate change: set the rate in `zdroje.json`, run `scripts/honda-engines.py`, recompute the 43 catalog prices the same way, write a new slug-scoped snippet.
+- `docs/honda/` added to `.gitignore` (dealer rabats, public repo).
+- Gotchas: a Vercel production build takes about 7 minutes (900+ product pages), "pending" that long is normal. The Supabase SQL editor warns about RLS on `create temporary table`: "Run without RLS" is right, and it shows only the last statement's result. The agent's read of hosted data with the service key was blocked by the permission classifier: ask the user to run check queries. Python on this machine: `python -I` hides user site-packages (pymupdf, openpyxl); PDFs cannot be read with the Read tool (no poppler), use pymupdf.
 
 ## What Was Done (Session 17) -- Catalog UX: 12 per page, instant category switching, section backdrop, Makita featured (2026-11-12)
 
