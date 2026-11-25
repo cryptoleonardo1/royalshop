@@ -4,11 +4,22 @@
 
 | Session | Date | Title |
 |---------|------|-------|
+| 9 | 2026-10-23 | Admin console phase 1a: orders, withdrawal-window tracking |
 | 8 | 2026-10-23 | Legal research, legal pages, immediate payment |
 | 7 | 2026-10-23 | Delivery 3-5 days, home polish, sale, contact page, new motto |
 | 6 | 2026-10-22 | Engines to cart, hovers, sticky header, real contacts, weight shipping |
 | 5 | 2026-10-22 | Gölz back, workbook list prices, price on request, Honda engine list |
 | 4 | 2026-10-21 | Free services, Unicon assortment, supplier price workbook |
+
+## What Was Done (Session 17) -- Catalog UX: 12 per page, instant category switching, section backdrop, Makita featured (2026-11-12)
+
+- Listing: 3 cards per row at 1920 px again (root cause: a pager listing every page widened the grid track; now `minmax(0, 1fr)` + short pager `pagerPages()`), 12 per page (`PAGE_SIZE`), small pager on top, card title hover = hi-vis rule under the title. Deployed 306cefb, 7d670d8.
+- Category switching without the skeleton: `<Link prefetch>` on menu + subcategory links (Cache Components + `partialPrefetching`). Only visible in a production build (`npm run build` + `npx next start -p 3123` with `.env.hosted.local` sourced), not in dev.
+- `CategoryZone` (blueprint grid + line icon + "Sekcia NN / NN") in the category page head; icons per root slug in `ZONE_ICONS`. Current menu item underlined via `ActiveSection` (effect sets `data-current`).
+- Featured = TW001GU201, DUC254Z, DHG180ZK (17bd16d). The list lives in TWO places: `FEATURED` in `scripts/import-makita.ts` (the import overwrites `is_featured` for Makita) and `is_featured` in `catalog.json` for the rest. Hosted flags switched by the agent with the user's OK (`supabase/snippets/2026-11-12-featured-makita.sql`). Five hidden-brand machines (NTC, Bomag, 2x Honda, Enar) are still featured and reappear when their brands are switched on.
+- Product page links a royalstroje.sk article per product: `src/lib/product-articles.ts`. The TW001G review covers set TW001GM201 (not in our catalog) and says 2050 Nm; our description says 2000 Nm -- verify with Makita data.
+- Last commit (NOT pushed): header menu rows start flush with the logo when the menu wraps (gap moved to the right of each link); `/produkty` lede no longer claims a test run.
+- Gotchas: Next keeps visited pages hidden in the DOM (Activity) -> a page-rendered `<style>` or a duplicate `id` from a hidden page still applies; use effects (cleaned up when hidden) and no ids. Global `scroll-padding-top: 160px` adds to any `scroll-margin-top`. `npm test` fails in every file from a lower-case `c:\` cwd -> run from `C:\...` (agent memory). A stopped `next start` can leave node on port 3123 -> `netstat -ano`, `taskkill /PID <pid> /T /F`. The agent's first hosted update also un-featured the 5 hidden machines (restored at once): scope hosted SQL by slug.
 
 ## What Was Done (Session 16) -- Cart blade reminder, strategy change, 888 Makita machines live (2026-11-10/12)
 
