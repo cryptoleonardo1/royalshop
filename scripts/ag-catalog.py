@@ -143,7 +143,9 @@ def short_description(text: str) -> str:
 
 # ───────────────────────────── categories ─────────────────────────────
 
-# New top-level sections for what the machine catalogue did not have: (slug, name, sort_order).
+# New sections for what the machine catalogue did not have: (slug, name, sort_order). Since 2026-11-25 the
+# shop keeps a handful of top-level groups (catalog.json), so these sit under one group of their own.
+GROUP = {"slug": "rucne-naradie-a-dielna", "name": "Ručné náradie a dielňa", "parent_slug": None, "sort_order": 6}
 SECTIONS = {
     "rucne": ("rucne-naradie", "Ručné náradie", 20),
     "rems": ("instalaterske-naradie", "Inštalatérske náradie", 21),
@@ -361,7 +363,8 @@ def main() -> None:
 
     # Subcategories of the new sections, from the feed's own tree; small ones fold into the section.
     sizes = Counter(p["place"] for p in products)
-    categories = {slug: {"slug": slug, "name": name, "parent_slug": None, "sort_order": order} for slug, name, order in SECTIONS.values()}
+    categories = {GROUP["slug"]: GROUP}
+    categories.update({slug: {"slug": slug, "name": name, "parent_slug": GROUP["slug"], "sort_order": order} for slug, name, order in SECTIONS.values()})
     for slug, name, parent in EXTRA.values():
         categories[slug] = {"slug": slug, "name": name, "parent_slug": parent, "sort_order": 20}
     for p in products:

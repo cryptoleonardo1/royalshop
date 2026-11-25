@@ -94,9 +94,30 @@
   ],
   "categories": [
     {
+      "slug": "stavebne-stroje",
+      "name": "Stavebné stroje",
+      "parent_slug": null,
+      "description": "Vibračné pechy a dosky, rezače škár, rozbrusovačky, stolové píly a betonárska technika.",
+      "sort_order": 1
+    },
+    {
+      "slug": "elektrocentraly-a-cerpadla",
+      "name": "Elektrocentrály, čerpadlá a motory",
+      "parent_slug": null,
+      "description": "Jednofázové a trojfázové elektrocentrály, kalové a motorové čerpadlá, motory Honda.",
+      "sort_order": 2
+    },
+    {
+      "slug": "elektricke-naradie",
+      "name": "Elektrické náradie",
+      "parent_slug": null,
+      "description": "Sieťové a akumulátorové náradie: vŕtačky, skrutkovače, kladivá, brúsky, píly, frézy, vysávače a ďalšie.",
+      "sort_order": 3
+    },
+    {
       "slug": "vibracna-technika",
       "name": "Vibračná technika",
-      "parent_slug": null,
+      "parent_slug": "stavebne-stroje",
       "description": "Vibračné pechy a vibračné dosky NTC a Bomag na hutnenie zemín, štrkových podkladov, asfaltu a zámkovej dlažby.",
       "sort_order": 1
     },
@@ -124,9 +145,9 @@
     {
       "slug": "elektrocentraly",
       "name": "Elektrocentrály",
-      "parent_slug": null,
+      "parent_slug": "elektrocentraly-a-cerpadla",
       "description": "Elektrocentrály Honda a elektrocentrály s motormi Honda pre stavby, servisy a záložné napájanie objektov.",
-      "sort_order": 2
+      "sort_order": 1
     },
     {
       "slug": "jednofazove-elektrocentraly",
@@ -145,9 +166,9 @@
     {
       "slug": "cerpadla",
       "name": "Čerpadlá",
-      "parent_slug": null,
+      "parent_slug": "elektrocentraly-a-cerpadla",
       "description": "Motorové čerpadlá Honda na odvodnenie výkopov, stavebných jám a zatopených priestorov.",
-      "sort_order": 3
+      "sort_order": 2
     },
     {
       "slug": "kalove-cerpadla-230v",
@@ -166,9 +187,9 @@
     {
       "slug": "rezacia-technika",
       "name": "Rezacia technika",
-      "parent_slug": null,
+      "parent_slug": "stavebne-stroje",
       "description": "Rezače škár, stolové a blokové píly a elektrické rozbrusovačky Gölz na rezanie betónu, asfaltu, dlažby a muriva.",
-      "sort_order": 4
+      "sort_order": 2
     },
     {
       "slug": "rezace-skar",
@@ -201,9 +222,9 @@
     {
       "slug": "betonarska-technika",
       "name": "Betonárska technika",
-      "parent_slug": null,
+      "parent_slug": "stavebne-stroje",
       "description": "Ponorné vibrátory, pohonné jednotky a hriadele Enar a vibračné lišty Enar na zhutnenie a stiahnutie čerstvého betónu.",
-      "sort_order": 5
+      "sort_order": 3
     },
     {
       "slug": "brusky-na-beton",
@@ -215,23 +236,23 @@
     {
       "slug": "motory",
       "name": "Motory",
-      "parent_slug": null,
+      "parent_slug": "elektrocentraly-a-cerpadla",
       "description": "Benzínové motory Honda GX na pohon a remotorizáciu stavebných strojov, čerpadiel a dosiek.",
-      "sort_order": 7
+      "sort_order": 3
     },
     {
       "slug": "prislusenstvo",
       "name": "Príslušenstvo",
       "parent_slug": null,
       "description": "Tlmiace podložky, podvozky a ďalšie príslušenstvo k strojom z našej ponuky.",
-      "sort_order": 8
+      "sort_order": 7
     },
     {
       "slug": "vrtacky-a-skrutkovace",
       "name": "Vŕtačky a skrutkovače",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Akumulátorové a elektrické vŕtačky, skrutkovače a rázové uťahováky.",
-      "sort_order": 10
+      "sort_order": 1
     },
     {
       "slug": "vrtacie-skrutkovace",
@@ -272,9 +293,9 @@
     {
       "slug": "kladiva",
       "name": "Kladivá",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Vŕtacie, kombinované a búracie kladivá SDS-Plus a SDS-Max.",
-      "sort_order": 11
+      "sort_order": 2
     },
     {
       "slug": "vrtacie-kladiva",
@@ -291,9 +312,9 @@
     {
       "slug": "brusky",
       "name": "Brúsky",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Uhlové, vibračné, excentrické a pásové brúsky, leštičky a brúsky na betón.",
-      "sort_order": 12
+      "sort_order": 3
     },
     {
       "slug": "uhlove-brusky",
@@ -316,9 +337,9 @@
     {
       "slug": "pily",
       "name": "Píly",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Okružné, pokosové, priamočiare a chvostové píly na drevo a stavebný materiál.",
-      "sort_order": 13
+      "sort_order": 4
     },
     {
       "slug": "okruzne-pily",
@@ -365,9 +386,9 @@
     {
       "slug": "frezy-a-hobliky",
       "name": "Frézy a hoblíky",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Horné a jednoručné frézy a hoblíky na drevo.",
-      "sort_order": 14
+      "sort_order": 5
     },
     {
       "slug": "frezy",
@@ -386,7 +407,7 @@
       "name": "Záhradná technika",
       "parent_slug": null,
       "description": "Kosačky, krovinorezy, plotostrihy, reťazové píly, dúchadlá a vysokotlakové čističe.",
-      "sort_order": 15
+      "sort_order": 4
     },
     {
       "slug": "kosacky",
@@ -433,16 +454,16 @@
     {
       "slug": "vysavace",
       "name": "Vysávače",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Akumulátorové a elektrické vysávače na stavbu aj do dielne.",
-      "sort_order": 16
+      "sort_order": 6
     },
     {
       "slug": "klincovacky-a-kompresory",
       "name": "Klincovačky a kompresory",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Klincovačky, sponkovačky a kompresory.",
-      "sort_order": 17
+      "sort_order": 7
     },
     {
       "slug": "klincovacky",
@@ -459,16 +480,16 @@
     {
       "slug": "ostatne-naradie",
       "name": "Ostatné náradie",
-      "parent_slug": null,
+      "parent_slug": "elektricke-naradie",
       "description": "Rádiá a svietidlá, teplovzdušné pištole, sady náradia a špeciálne stroje.",
-      "sort_order": 18
+      "sort_order": 8
     },
     {
       "slug": "meracia-technika",
       "name": "Meracia technika",
       "parent_slug": null,
       "description": "Rotačné a krížové lasery, nivelačné prístroje a teodolity, diaľkomery a digitálne vodováhy.",
-      "sort_order": 6
+      "sort_order": 5
     },
     {
       "slug": "radia-a-svietidla",

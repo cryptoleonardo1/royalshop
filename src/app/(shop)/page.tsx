@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, Check, GraduationCap, MessageSquareText, Wren
 import {
   getAllProducts,
   getBrands,
+  getCategories,
   getFeaturedProducts,
   getSaleProducts,
   getNavCategories,
@@ -69,14 +70,18 @@ const brandsFirst = <T extends { slug: string }>(brands: T[]) => [
 ];
 
 export default async function HomePage() {
-  const [settings, categories, featured, sale, brands, all] = await Promise.all([
+  const [settings, categories, featured, sale, brands, all, allCategories] = await Promise.all([
     getShopSettings(),
     getNavCategories(),
     getFeaturedProducts(6),
     getSaleProducts(3),
     getBrands(),
     getAllProducts(),
+    getCategories(),
   ]);
+  // what a category tile holds: its non-empty subcategories, in menu order
+  const subcategories = (id: string) =>
+    allCategories.filter((c) => c.parentId === id && c.productCount > 0).map((c) => c.name);
 
   const singleBrand = brands.length === 1 ? brands[0] : null;
   // in menu order, so the grid reads like the category tiles above it
@@ -234,10 +239,11 @@ export default async function HomePage() {
                 <Link href={`/kategoria/${c.slug}`}>
                   <span className={css.catIdx}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={css.catName}>{c.name}</span>
+                  {subcategories(c.id).length > 1 && <span className={css.catSubs}>{subcategories(c.id).join(" · ")}</span>}
                   <span className={css.catCount}>
                     {c.slug === BLADE_CATEGORY
                       ? count(c.productCount, "kotúč", "kotúče", "kotúčov")
-                      : count(c.productCount, "stroj", "stroje", "strojov")}{" "}
+                      : count(c.productCount, "produkt", "produkty", "produktov")}{" "}
                     <ArrowUpRight size={18} aria-hidden="true" />
                   </span>
                 </Link>
@@ -283,7 +289,7 @@ export default async function HomePage() {
             <div className={css.sectionHead}>
               <span className={css.tape}>02 / Značky</span>
               <h2 id="brand-title" className={css.h2}>
-                Značky, za ktorými <span>si stojíme</span>
+                Overené značky
               </h2>
             </div>
             <ul className={css.brands}>
@@ -294,7 +300,7 @@ export default async function HomePage() {
                     <span className={css.brandName}>{b.name}</span>
                     <span className={css.brandCats}>{b.categories.join(" · ")}</span>
                     <span className={css.catCount}>
-                      {b.productCount} {b.productCount === 1 ? "stroj" : b.productCount < 5 ? "stroje" : "strojov"}{" "}
+                      {count(b.productCount, "produkt", "produkty", "produktov")}{" "}
                       <ArrowRight size={18} aria-hidden="true" />
                     </span>
                   </Link>
@@ -325,7 +331,7 @@ export default async function HomePage() {
           <div className={css.sectionHead}>
             <span className={css.tape}>04 / Služby</span>
             <h2 id="services-title" className={css.h2}>
-              Služby v predajni <span>zadarmo</span>
+              Služby v predajni zadarmo
             </h2>
           </div>
           <ul className={css.services}>

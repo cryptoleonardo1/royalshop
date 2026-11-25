@@ -46,7 +46,7 @@ SECTION = {
     "name": "Meracia technika",
     "parent_slug": None,
     "description": "Rotačné a krížové lasery, nivelačné prístroje a teodolity, diaľkomery a digitálne vodováhy.",
-    "sort_order": 6,
+    "sort_order": 5,
 }
 # 3gonshop listing -> our subcategory (slug, name, sort order)
 CATEGORIES = [

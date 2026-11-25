@@ -795,6 +795,14 @@
   line-height: 0.95;
   text-transform: uppercase;
 }
+/* the subcategories a tile holds; inherits the tile colour so it reads on the dark first tile and on hover */
+.catSubs {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
+  opacity: 0.72;
+}
 .catCount {
   display: flex;
   justify-content: space-between;

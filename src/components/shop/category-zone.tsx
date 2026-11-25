@@ -9,6 +9,7 @@ import {
   Hammer,
   Package,
   PencilRuler,
+  Ruler,
   Trees,
   Waves,
   Wind,
@@ -38,7 +39,13 @@ function SawBlade({ className, strokeWidth = 1 }: { className?: string; strokeWi
 }
 
 // One line-art mark per top-level category. Unknown slugs get no mark (the page head stays plain).
+// Six sections since 2026-11-25 (the four below, zahradna-technika, prislusenstvo); the other slugs were
+// top-level before and stay for a menu that falls back to subcategories (getNavCategories).
 const ZONE_ICONS: Record<string, ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  "stavebne-stroje": BrickWall,
+  "elektrocentraly-a-cerpadla": Zap,
+  "elektricke-naradie": Drill,
+  "meracia-technika": Ruler,
   "vibracna-technika": AudioWaveform,
   elektrocentraly: Zap,
   cerpadla: Waves,
