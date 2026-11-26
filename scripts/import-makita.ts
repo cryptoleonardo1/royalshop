@@ -5,8 +5,8 @@
 //   set -a; . ./.env.hosted.local; set +a; npx tsx scripts/import-makita.ts       (hosted)
 //
 // Safe to re-run: products are matched by slug, their specs, photos and documents are replaced, prices and
-// stock are updated, and Makita products that left the export are archived. Since 2026-11-24 only the machines
-// of the current Makita promotion are sold: supabase/seed-data/makita-akcia.json lists their codes and selling
+// stock are updated, and Makita products that left the export are archived. Promotion mode (used 2026-11-24 to
+// 2026-11-26, off since: no discounts until a month after launch): supabase/seed-data/makita-akcia.json lists codes and selling
 // prices (built from the promotion workbook by the git-ignored docs/cenniky/makita-akcia.py), every other
 // Makita machine is archived. Purchase prices go to product_costs when the git-ignored
 // docs/cenniky/data/makita-akcia-naklady.json is on disk. Delete makita-akcia.json to import the whole export
