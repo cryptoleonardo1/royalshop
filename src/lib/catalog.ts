@@ -413,9 +413,14 @@ export async function getBrands(): Promise<BrandSummary[]> {
     .sort((a, b) => b.productCount - a.productCount || a.name.localeCompare(b.name, "sk"));
 }
 
+// Product pages prerendered at build time. Only the featured ones: prerendering all ~2 400 listed products
+// ran the build workers out of memory (2026-11-26, local and on Vercel). Every other product page is rendered
+// on its first visit and then served from the cache (Cache Components + Partial Prefetching).
 export async function getProductSlugs(): Promise<string[]> {
   const all = await getAllProducts();
-  return all.map((p) => p.slug);
+  const featured = all.filter((p) => p.isFeatured).map((p) => p.slug);
+  // Cache Components needs at least one param to validate the route.
+  return featured.length > 0 ? featured : all.slice(0, 1).map((p) => p.slug);
 }
 
 // ───────────────────────────── Search ─────────────────────────────
