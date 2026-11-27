@@ -5,10 +5,11 @@
 //   set -a; . ./.env.hosted.local; set +a; npx tsx scripts/import-makita.ts       (hosted)
 //
 // Safe to re-run: products are matched by slug, their specs, photos and documents are replaced, prices and
-// stock are updated, and Makita products that left the export are archived. Promotion mode (used 2026-11-24 to
-// 2026-11-26, off since: no discounts until a month after launch): supabase/seed-data/makita-akcia.json lists codes and selling
-// prices (built from the promotion workbook by the git-ignored docs/cenniky/makita-akcia.py), every other
-// Makita machine is archived. Purchase prices go to product_costs when the git-ignored
+// stock are updated, and Makita products that left the export are archived. Promotion mode:
+// supabase/seed-data/makita-akcia.json lists codes and selling prices (built from the promotion workbook by the
+// git-ignored docs/cenniky/makita-akcia.py); only those machines are sold, every other Makita machine is
+// archived. With "use_prices": false (since 2026-11-27, no discounts before launch) they sell at Makita's MOC
+// and nothing is crossed out; true = at the promotion prices with the MOC crossed out. Purchase prices go to product_costs when the git-ignored
 // docs/cenniky/data/makita-akcia-naklady.json is on disk. Delete makita-akcia.json to import the whole export
 // at Makita's MOC again. Run the import again after
 // `scripts/seed.ts`, which wipes the catalog. Without a promotion file selling prices are Makita's MOC and no
@@ -175,19 +176,27 @@ async function main() {
   const all: MakitaProduct[] = JSON.parse(
     readFileSync("supabase/seed-data/makita.json", "utf8"),
   ).products;
-  // code -> selling price incl. VAT
-  const promo: Record<string, number> | null = existsSync(PROMO_FILE)
-    ? JSON.parse(readFileSync(PROMO_FILE, "utf8")).prices
+  const promoFile: { use_prices?: boolean; prices: Record<string, number> } | null = existsSync(PROMO_FILE)
+    ? JSON.parse(readFileSync(PROMO_FILE, "utf8"))
     : null;
+  // code -> selling price incl. VAT
+  const promo = promoFile?.prices ?? null;
+  // false: the promotion only picks the machines, they sell at Makita's MOC (no discount before launch)
+  const usePromoPrices = promoFile?.use_prices === true;
   const products = promo
     ? all
         .filter((p) => promo[p.sku.toUpperCase()] != null)
-        .map((p) => ({ ...p, price_gross_eur: promo[p.sku.toUpperCase()], moc_gross_eur: p.price_gross_eur }))
+        .map((p) => ({
+          ...p,
+          price_gross_eur: usePromoPrices ? promo[p.sku.toUpperCase()] : p.price_gross_eur,
+          moc_gross_eur: p.price_gross_eur,
+        }))
     : all.map((p) => ({ ...p, moc_gross_eur: p.price_gross_eur }));
   console.log(
     `Importing ${products.length} Makita machines into ${url}` +
       (promo
-        ? ` (promotion only: ${Object.keys(promo).length} codes, ${all.length} machines in the export)`
+        ? ` (promotion only: ${Object.keys(promo).length} codes, ${all.length} machines in the export, ` +
+          `${usePromoPrices ? "promotion prices" : "at MOC"})`
         : ""),
   );
 
