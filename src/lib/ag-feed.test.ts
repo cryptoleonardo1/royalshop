@@ -1,19 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { AG_MIN_PRICE_CENTS, agGrossCents, agOffer, parseAgPriceFeed } from "./ag-feed";
+import { AG_MARKUP_PCT, AG_MIN_PRICE_CENTS, agGrossCents, agOffer, parseAgPriceFeed } from "./ag-feed";
 
 describe("AG náradie feed rules", () => {
-  it("adds VAT to the three-decimal feed price and rounds to cents", () => {
-    expect(agGrossCents(1.425)).toBe(175); // 1.75275
-    expect(agGrossCents(40.65)).toBe(5000); // 49.9995
-    expect(agGrossCents(126.428)).toBe(15551);
+  it("adds the 25 % markup and VAT to the three-decimal feed price and rounds to cents", () => {
+    expect(AG_MARKUP_PCT).toBe(25);
+    expect(agGrossCents(1.425)).toBe(219); // 1.425 * 1.25 * 1.23 = 2.1909375
+    expect(agGrossCents(32.52)).toBe(5000); // 49.9995
+    expect(agGrossCents(126.428)).toBe(19438); // 194.38305
     expect(agGrossCents(0)).toBe(0);
   });
 
   it("lists a product only when it is in stock and not below the minimum price", () => {
     expect(AG_MIN_PRICE_CENTS).toBe(5000);
-    expect(agOffer(53.6, 2)).toEqual({ priceGrossCents: 6593, inStock: true, isListed: true });
-    expect(agOffer(53.6, 0)).toEqual({ priceGrossCents: 6593, inStock: false, isListed: false });
-    expect(agOffer(40.64, 5)).toEqual({ priceGrossCents: 4999, inStock: true, isListed: false });
+    expect(agOffer(53.6, 2)).toEqual({ priceGrossCents: 8241, inStock: true, isListed: true });
+    expect(agOffer(53.6, 0)).toEqual({ priceGrossCents: 8241, inStock: false, isListed: false });
+    expect(agOffer(32.517, 5)).toEqual({ priceGrossCents: 4999, inStock: true, isListed: false });
     expect(agOffer(0, 5).inStock).toBe(false);
   });
 

@@ -1,17 +1,20 @@
 import config from "../../supabase/seed-data/ag-config.json";
 
 // AG náradie (wholesaler for e-shops): pure rules shared by the catalog import (scripts/import-ag.ts) and the
-// daily stock sync (src/lib/ag-sync.ts). The feed carries one price without VAT; until AG confirms what it is,
-// the shop sells at that price plus VAT (founder decision 2026-11-24).
+// daily stock sync (src/lib/ag-sync.ts). The feed carries one price without VAT, which matches market prices
+// at or below the lowest shops, so it is taken as our purchase price: the shop sells at that price plus a flat
+// markup plus VAT (founder decision 2026-11-27: 25 %, `markup_pct` in ag-config.json).
 
 export const AG_SUPPLIER = config.supplier_slug;
 export const AG_VAT_RATE = config.vat_rate;
+export const AG_MARKUP_PCT = config.markup_pct;
 export const AG_MIN_PRICE_CENTS = Math.round(config.min_price_gross_eur * 100);
 
 // The feed prices have three decimals ("1.425"): go through whole thousandths so the rounding is exact.
+// cents = mills / 1000 * (1 + markup) * (1 + VAT) * 100
 export function agGrossCents(netEur: number): number {
   const mills = Math.round(netEur * 1000);
-  return Math.round((mills * (100 + AG_VAT_RATE)) / 1000);
+  return Math.round((mills * (100 + AG_MARKUP_PCT) * (100 + AG_VAT_RATE)) / 100_000);
 }
 
 export interface AgOffer {

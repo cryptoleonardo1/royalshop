@@ -8,7 +8,7 @@ Inputs:
                                          token, so they are never committed
   originals/ag/cennik_export.xml         cache of the price feed (code, stock, price without VAT)
   originals/ag/sklad_karty_export.xml    cache of the product feed (names, texts, photos, category tree)
-  supabase/seed-data/ag-config.json      minimum price and VAT rate
+  supabase/seed-data/ag-config.json      minimum price, markup and VAT rate
 Output (git-ignored, rebuilt from the feeds):
   supabase/seed-data/ag.json             every product at or above the minimum price that has a photo and a
                                          description, whether it is in stock or not
@@ -292,16 +292,16 @@ def photos(code: str, urls: list[str]) -> list[str]:
 
 # ───────────────────────────── main ─────────────────────────────
 
-def gross_cents(net_eur: float, vat: int) -> int:
-    """The same rounding as agGrossCents in src/lib/ag-feed.ts (whole thousandths, half up)."""
-    return int(int(net_eur * 1000 + 0.5) * (100 + vat) / 1000 + 0.5)
+def gross_cents(net_eur: float, markup: int, vat: int) -> int:
+    """Selling price incl. markup and VAT, the same rounding as agGrossCents in src/lib/ag-feed.ts."""
+    return int(int(net_eur * 1000 + 0.5) * (100 + markup) * (100 + vat) / 100_000 + 0.5)
 
 
 def main() -> None:
     dry_run = "--dry-run" in sys.argv
     refresh_feeds()
     IMAGES.mkdir(parents=True, exist_ok=True)
-    vat, minimum = CONFIG["vat_rate"], CONFIG["min_price_gross_eur"]
+    vat, markup, minimum = CONFIG["vat_rate"], CONFIG["markup_pct"], CONFIG["min_price_gross_eur"]
 
     price_root = ET.parse(FEEDS["AG_PRICE_FEED_URL"]).getroot()
     prices = {}
@@ -316,7 +316,7 @@ def main() -> None:
         if card.tag != "Karta":
             continue
         code = (card.findtext("INTKOD") or "").strip()
-        if code in prices and gross_cents(prices[code][0], vat) >= round(minimum * 100):
+        if code in prices and gross_cents(prices[code][0], markup, vat) >= round(minimum * 100):
             images = [(o.findtext("URL") or "").strip() for o in card.iter("OBRAZOK")]
             main_first = sorted(
                 (u for u in images if IMAGE_FILE.search(u)),

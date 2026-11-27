@@ -1,8 +1,11 @@
 {
-  "note": "Rules for the AG náradie range, read by scripts/ag-catalog.py and src/lib/ag-feed.ts. min_price_gross_eur: only products at or above this price (incl. VAT) are sold. skip_brands: brand slugs we buy elsewhere (Makita comes direct, promotion machines only).",
+  "note": "Rules for the AG náradie range, read by scripts/ag-catalog.py and src/lib/ag-feed.ts. Selling price = feed price (CenaBezDPH, taken as our purchase price) + markup_pct + VAT (markup 25 % flat, founder 2026-11-27). min_price_gross_eur: only products whose selling price incl. VAT is at or above this are sold. skip_brands: brand slugs we buy elsewhere (Makita comes direct, promotion machines only).",
   "supplier_slug": "ag-naradie",
   "min_price_gross_eur": 50,
+  "markup_pct": 25,
   "vat_rate": 23,
   "max_images": 3,
-  "skip_brands": ["makita"]
+  "skip_brands": [
+    "makita"
+  ]
 }

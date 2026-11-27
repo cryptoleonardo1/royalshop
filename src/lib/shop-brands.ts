@@ -5,6 +5,7 @@
 // Gölz (2026-11-24, founder decision): hidden until the legal duties of a direct import from Germany are
 // settled (packaging and electrical-equipment producer registration).
 // Atlas Copco stays off (no price list, price on request only).
-export const HIDDEN_BRANDS: readonly string[] = ["golz", "atlas-copco"];
+// Bosch and Milwaukee (both from the AG náradie feed): hidden on 2026-11-27, founder decision.
+export const HIDDEN_BRANDS: readonly string[] = ["golz", "atlas-copco", "bosch", "milwaukee"];
 
 export const isShopBrand = (slug: string | null | undefined): boolean => slug != null && !HIDDEN_BRANDS.includes(slug);
